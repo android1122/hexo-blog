@@ -20,12 +20,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"android1122.github.io","root":"/hexo-blog/","images":"/hexo-blog/images","scheme":"Gemini","darkmode":true,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/hexo-blog/js/config.js"></script>
 
-    <meta name="description" content="tachidesk部署指南我愿称之为喜欢漫画的完美终结者，就是这么完美。Tachidesk是一个独立Tachiyomi的兼容软件，不是Tachiyomi的Fork。Tachidesk是一个免费的、开源的漫画阅读器服务器，可以运行为Tachiyomi构建的扩展。如果你不知道Tachiyomi的话，你就不会知道这个软件的强大之处，Tachiyomi是一个通过插件查看第三方漫画网站的工具，和之前大火的的">
+    <meta name="description" content="tachidesk部署指南我愿称之为喜欢漫画的完美终结者，就是这么完美。Tachidesk是一个独立Tachiyomi的兼容软件，不是Tachiyomi的Fork。Tachidesk是一个免费的、开源的漫画阅读器服务器，可以运行为Tachiyomi构建的扩展。   如果你不知道Tachiyomi的话，你就不会知道这个软件的强大之处，Tachiyomi是一个通过插件查看第三方漫画网站的工具，和之前大">
 <meta property="og:type" content="article">
 <meta property="og:title" content="tachidesk部署指南">
 <meta property="og:url" content="https://android1122.github.io/hexo-blog/2022/12/12/tachidesk%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
 <meta property="og:site_name" content="我是豆豆">
-<meta property="og:description" content="tachidesk部署指南我愿称之为喜欢漫画的完美终结者，就是这么完美。Tachidesk是一个独立Tachiyomi的兼容软件，不是Tachiyomi的Fork。Tachidesk是一个免费的、开源的漫画阅读器服务器，可以运行为Tachiyomi构建的扩展。如果你不知道Tachiyomi的话，你就不会知道这个软件的强大之处，Tachiyomi是一个通过插件查看第三方漫画网站的工具，和之前大火的的">
+<meta property="og:description" content="tachidesk部署指南我愿称之为喜欢漫画的完美终结者，就是这么完美。Tachidesk是一个独立Tachiyomi的兼容软件，不是Tachiyomi的Fork。Tachidesk是一个免费的、开源的漫画阅读器服务器，可以运行为Tachiyomi构建的扩展。   如果你不知道Tachiyomi的话，你就不会知道这个软件的强大之处，Tachiyomi是一个通过插件查看第三方漫画网站的工具，和之前大">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212153452.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212153721.png">
@@ -35,7 +35,8 @@
 <meta property="article:published_time" content="2022-12-12T07:50:31.000Z">
 <meta property="article:modified_time" content="2022-12-12T07:50:31.000Z">
 <meta property="article:author" content="张大爆">
-<meta property="article:tag" content="-漫画 -tachidesk">
+<meta property="article:tag" content="漫画">
+<meta property="article:tag" content="tachidesk">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212153452.png">
 
@@ -139,12 +140,12 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/hexo-blog/categories">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/hexo-blog/tags">
-        <span class="site-state-item-count">120</span>
+        <span class="site-state-item-count">153</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -220,19 +221,44 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="tachidesk部署指南"><a href="#tachidesk部署指南" class="headerlink" title="tachidesk部署指南"></a>tachidesk部署指南</h1><p>我愿称之为喜欢漫画的完美终结者，就是这么完美。<a target="_blank" rel="noopener" href="https://github.com/Suwayomi/Tachidesk-Server">Tachidesk</a>是一个独立<a target="_blank" rel="noopener" href="https://tachiyomi.org/">Tachiyomi</a>的兼容软件，不是Tachiyomi的Fork。Tachidesk是一个免费的、开源的漫画阅读器服务器，可以运行为Tachiyomi构建的扩展。<br>如果你不知道<a target="_blank" rel="noopener" href="https://tachiyomi.org/">Tachiyomi</a>的话，你就不会知道这个软件的强大之处，<a target="_blank" rel="noopener" href="https://tachiyomi.org/">Tachiyomi</a>是一个通过插件查看第三方漫画网站的工具，和之前大火的的多多猫类似的功能，不过区别在于它更加稳定，而且目前开源有人维护。<br>而<a target="_blank" rel="noopener" href="https://github.com/Suwayomi/Tachidesk-Server">Tachidesk</a>则是其开源的桌面版本，支持windows，Linux，macOS等主流系统。<br>优势：<br>    - 开源，且每周更新，更新强度不低<br>    - 可以查看主流和非主流的所有漫画网站<br>缺点：<br>    - 某些特殊漫画网站需要翻墙的话，你也的翻墙。<br>    - 没有用户登陆机制，所以部署在外网需要手动增加基础认证</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="tachidesk部署指南"><a href="#tachidesk部署指南" class="headerlink" title="tachidesk部署指南"></a>tachidesk部署指南</h1><p>我愿称之为喜欢漫画的完美终结者，就是这么完美。<a target="_blank" rel="noopener" href="https://github.com/Suwayomi/Tachidesk-Server">Tachidesk</a>是一个独立<a target="_blank" rel="noopener" href="https://tachiyomi.org/">Tachiyomi</a>的兼容软件，不是Tachiyomi的Fork。Tachidesk是一个免费的、开源的漫画阅读器服务器，可以运行为Tachiyomi构建的扩展。  </p>
+<p>如果你不知道<a target="_blank" rel="noopener" href="https://tachiyomi.org/">Tachiyomi</a>的话，你就不会知道这个软件的强大之处，<a target="_blank" rel="noopener" href="https://tachiyomi.org/">Tachiyomi</a>是一个通过插件查看第三方漫画网站的工具，和之前大火的的多多猫类似的功能，不过区别在于它更加稳定，而且目前开源有人维护。</p>
+<p>而<a target="_blank" rel="noopener" href="https://github.com/Suwayomi/Tachidesk-Server">Tachidesk</a>则是其开源的桌面版本，支持windows，Linux，macOS等主流系统。</p>
+<p>优势：</p>
+<pre><code>- 开源，且每周更新，更新强度不低
+
+- 可以查看主流和非主流的所有漫画网站
+</code></pre>
+<p>缺点：</p>
+<pre><code>- 某些特殊漫画网站需要翻墙的话，你也的翻墙。
+
+- 没有用户登陆机制，所以部署在外网需要手动增加基础认证
+</code></pre>
 <h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>首先说明部署，部署的话我采用的是docker方式，根据他的<a target="_blank" rel="noopener" href="https://github.com/Suwayomi/docker-tachidesk/pkgs/container/tachidesk">docker</a>说明，它的docker房子位置不在docker.io，这和很多其他的地方不一样，所以需要使用：</p>
-<pre><code>docker pull ghcr.io/suwayomi/tachidesk:preview-alpine
-</code></pre>
-<p>支持多个版本<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212153452.png" alt="20221212153452"><br>然后执行：</p>
-<pre><code>docker run -p 4567:4567 ghcr.io/suwayomi/tachidesk
-</code></pre>
-<p>就可以在127.0.0.1:4567上访问。<br>界面：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">docker pull ghcr.io/suwayomi/tachidesk:preview-alpine</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>支持多个版本</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212153452.png" alt="20221212153452"></p>
+<p>然后执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">docker run -p 4567:4567 ghcr.io/suwayomi/tachidesk</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>就可以在127.0.0.1:4567上访问。</p>
+<p>界面：</p>
 <ul>
-<li>主页面<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212153721.png" alt="20221212153721"></li>
-<li>插件页面<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212153734.png" alt="20221212153734"><br>插件安装记得筛选中文<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212154309.png" alt="20221212154309"></li>
-<li>设置页面<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212154022.png" alt="20221212154022"><br>虽然说页面不提供翻译，但是其实都很简单，不行可以下载<a target="_blank" rel="noopener" href="https://tachiyomi.org/">Tachiyomi</a>的界面进行对照，两边界面完全一样。</li>
+<li>主页面</li>
 </ul>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212153721.png" alt="20221212153721"></p>
+<ul>
+<li>插件页面</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212153734.png" alt="20221212153734"></p>
+<p>插件安装记得筛选中文</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212154309.png" alt="20221212154309"></p>
+<ul>
+<li>设置页面</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212154022.png" alt="20221212154022"></p>
+<p>虽然说页面不提供翻译，但是其实都很简单，不行可以下载<a target="_blank" rel="noopener" href="https://tachiyomi.org/">Tachiyomi</a>的界面进行对照，两边界面完全一样。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我觉得这个聚合漫画的方式可以完全满足我看漫画的需求，也不需要去自己繁琐的下载裁剪，可以通过网页直接查找自己需要的漫画：推荐57漫画这个插件，里面的东西大多数都有，而且还新。</p>
 
     </div>
@@ -243,7 +269,8 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/hexo-blog/tags/%E6%BC%AB%E7%94%BB-tachidesk/" rel="tag"># -漫画 -tachidesk</a>
+              <a href="/hexo-blog/tags/%E6%BC%AB%E7%94%BB/" rel="tag"># 漫画</a>
+              <a href="/hexo-blog/tags/tachidesk/" rel="tag"># tachidesk</a>
           </div>
 
         

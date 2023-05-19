@@ -130,12 +130,12 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/hexo-blog/categories">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/hexo-blog/tags">
-        <span class="site-state-item-count">120</span>
+        <span class="site-state-item-count">153</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -214,22 +214,25 @@
           <h1 id="青龙面板——京东库使用指南"><a href="#青龙面板——京东库使用指南" class="headerlink" title="青龙面板——京东库使用指南"></a>青龙面板——京东库使用指南</h1><h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><p>我用的是<a target="_blank" rel="noopener" href="https://github.com/6dylan6/jdpro">6dylan6&#x2F;jdpro</a>，GitHub上星星3000+，而且作者还不定时更新，但是作者编写的文档确实差钱人意，这边本着学习和记录的原则，来写一个指南吧。</p>
 <hr>
 <h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><ol>
-<li>拉库<blockquote>
+<li><p>拉库</p>
+<blockquote>
 <p>ql repo <a target="_blank" rel="noopener" href="https://github.com/6dylan6/jdpro.git">https://github.com/6dylan6/jdpro.git</a> “jd_|jx_|jddj_” “backUp” “^jd[^_]|USER|JD|function|sendNotify”</p>
 </blockquote>
 </li>
 </ol>
 <p>这块看下ql的官方命令说明：</p>
-<pre><code>ql repo 地址 拉取的文件 不拉去的文件 依赖文件 分支
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ql repo 地址 拉取的文件 不拉去的文件 依赖文件 分支</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>最后得出，这个拉库动作把backup文件给屏蔽了，依赖文件在function和sendNotify。如果你有不想要的任务或者别的可以这里面添加。</p>
 <ol start="2">
-<li>修改青龙的config.sh配置<blockquote>
+<li><p>修改青龙的config.sh配置</p>
+<blockquote>
 <p>RepoFileExtensions&#x3D;”js py”修改为 RepoFileExtensions&#x3D;”js py sh ts” 保存</p>
 </blockquote>
 </li>
 </ol>
-<p> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-40-49.png" alt="青龙面板_京东库使用指南-2023-04-21-21-40-49"><br>这块是因为你的库依赖有一些没有安装，所以需要sh脚本来把它安装上去，实现一个自动化，建议修改。</p>
+<p> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-40-49.png" alt="青龙面板_京东库使用指南-2023-04-21-21-40-49"></p>
+<p>这块是因为你的库依赖有一些没有安装，所以需要sh脚本来把它安装上去，实现一个自动化，建议修改。</p>
 <ol start="3">
 <li><p>在环境变量添加JD_COOKIE变量，然后就可以使用了</p>
 </li>
@@ -239,53 +242,35 @@
 <hr>
 <h2 id="推荐配置"><a href="#推荐配置" class="headerlink" title="推荐配置"></a>推荐配置</h2><p>以上配置是官方针对大众的使用，接下来有一些配置推荐你修改：</p>
 <ol>
-<li><p>任务是有随机延迟的，所以有一些准点运行的任务推荐修改命令，最后加上now<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-56-28.png" alt="青龙面板_京东库使用指南-2023-04-21-21-56-28"></p>
+<li><p>任务是有随机延迟的，所以有一些准点运行的任务推荐修改命令，最后加上now</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-56-28.png" alt="青龙面板_京东库使用指南-2023-04-21-21-56-28"></p>
 </li>
-<li><p>建议调整任务运行超时时间，青龙默认1小时有些跑不完就被强制结束，config.sh里配置。CommandTimeoutTime&#x3D;”3h”  即改为3小时，根据自己ck数量调整。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-41-32.png" alt="青龙面板_京东库使用指南-2023-04-21-21-41-32"></p>
+<li><p>建议调整任务运行超时时间，青龙默认1小时有些跑不完就被强制结束，config.sh里配置。CommandTimeoutTime&#x3D;”3h”  即改为3小时，根据自己ck数量调整。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-41-32.png" alt="青龙面板_京东库使用指南-2023-04-21-21-41-32"></p>
 </li>
 <li><p>JD_CART_REMOVE：清空购物车默认是不清空的，可以添加环境变量true</p>
 </li>
 <li><p>NOTIFY_AUTOCHECKCK 自动禁用失效CK开关 有CK失效自动禁用并通知，true为自动禁用，false不自动禁用，默认false 需用本库sendnotify文件，sendnotify文件功能很强大，针对CK，有以下几种：</p>
 </li>
 </ol>
-<pre><code>显示正常CK:  export CHECKCK_SHOWSUCCESSCK=&quot;true&quot;
-永远通知CK状态:  export CHECKCK_CKALWAYSNOTIFY=&quot;true&quot;
-停用自动启用CK:  export CHECKCK_CKAUTOENABLE=&quot;false&quot;	
-服务器空数据等错误不触发通知:  export CHECKCK_CKNOWARNERROR=&quot;true&quot;
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">显示正常CK:  export CHECKCK_SHOWSUCCESSCK=&quot;true&quot;</span><br><span class="line"></span><br><span class="line">永远通知CK状态:  export CHECKCK_CKALWAYSNOTIFY=&quot;true&quot;</span><br><span class="line"></span><br><span class="line">停用自动启用CK:  export CHECKCK_CKAUTOENABLE=&quot;false&quot;	</span><br><span class="line"></span><br><span class="line">服务器空数据等错误不触发通知:  export CHECKCK_CKNOWARNERROR=&quot;true&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>如果你账号很多的话：</p>
-<pre><code>export NOTIFY_SHOWNAMETYPE=&quot;1&quot;    不做任何变动
-export NOTIFY_SHOWNAMETYPE=&quot;2&quot;    效果是 :  账号名称：别名(备注)	
-export NOTIFY_SHOWNAMETYPE=&quot;3&quot;    效果是 :  账号名称：pin(备注)
-export NOTIFY_SHOWNAMETYPE=&quot;4&quot;    效果是 :  账号名称：备注
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;1&quot;    不做任何变动</span><br><span class="line"></span><br><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;2&quot;    效果是 :  账号名称：别名(备注)	</span><br><span class="line"></span><br><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;3&quot;    效果是 :  账号名称：pin(备注)</span><br><span class="line"></span><br><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;4&quot;    效果是 :  账号名称：备注</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>当然，如果你还有其他别的需求可以看<a target="_blank" rel="noopener" href="https://github.com/ccwav/QLScript2">这个</a>，包括但不仅限于所有任务的CK有效通知，所有任务的运行情况，已经有时候某些任务的CK任务失效等等。</p>
-<h2 id="CK和WSCK的获取方法"><a href="#CK和WSCK的获取方法" class="headerlink" title="CK和WSCK的获取方法"></a>CK和WSCK的获取方法</h2><p><a target="_blank" rel="noopener" href="https://github.com/6dylan6/jdpro">6dylan6&#x2F;jdpro</a>这个是一个混合库。所以有时候他会直接使用别人的一些程序。<br>Cookie的获取方法推荐使用<a target="_blank" rel="noopener" href="https://www.telerik.com/fiddler">fiddler</a>，一款抓包程序，10天试用-<a target="_blank" rel="noopener" href="https://github.com/msojocs/fiddler-everywhere-enhance/tree/master/v4.1.2">网上已经有破解版</a>。打开之后打开配置，安装证书：<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-22-16-58-17.png" alt="青龙面板_京东库使用指南-2023-04-22-16-58-17"></p>
-<p>打开连接选项，运行局域网登陆：<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-22-17-00-13.png" alt="青龙面板_京东库使用指南-2023-04-22-17-00-13"></p>
-<p>接着就是修改手机的代理节点，然后打开京东APP,随意浏览几次，抓取网络消息。获得他的COOKIE，但是有一个问题那就是失效，一般几天，如果你用的是短信验证，那会是30天左右。<br>但是如果使用WSCK的话，可以在Cookie过期之后自动获取新的Cookie，需要注意会自动转换成<code>JD_COOKIE</code>。<br>WSCK在POST方法中，需要找找。</p>
-<pre><code>变量名: JD_WSCK 参数: pin=xxxx;wskey=xxxx;
-# 注意分号 不要用中文分号!
+<h2 id="CK和WSCK的获取方法"><a href="#CK和WSCK的获取方法" class="headerlink" title="CK和WSCK的获取方法"></a>CK和WSCK的获取方法</h2><p><a target="_blank" rel="noopener" href="https://github.com/6dylan6/jdpro">6dylan6&#x2F;jdpro</a>这个是一个混合库。所以有时候他会直接使用别人的一些程序。</p>
+<p>Cookie的获取方法推荐使用<a target="_blank" rel="noopener" href="https://www.telerik.com/fiddler">fiddler</a>，一款抓包程序，10天试用-<a target="_blank" rel="noopener" href="https://github.com/msojocs/fiddler-everywhere-enhance/tree/master/v4.1.2">网上已经有破解版</a>。打开之后打开配置，安装证书：</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-22-16-58-17.png" alt="青龙面板_京东库使用指南-2023-04-22-16-58-17"></p>
+<p>打开连接选项，运行局域网登陆：</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-22-17-00-13.png" alt="青龙面板_京东库使用指南-2023-04-22-17-00-13"></p>
+<p>接着就是修改手机的代理节点，然后打开京东APP,随意浏览几次，抓取网络消息。获得他的COOKIE，但是有一个问题那就是失效，一般几天，如果你用的是短信验证，那会是30天左右。</p>
+<p>但是如果使用WSCK的话，可以在Cookie过期之后自动获取新的Cookie，需要注意会自动转换成<code>JD_COOKIE</code>。</p>
+<p>WSCK在POST方法中，需要找找。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">变量名: JD_WSCK 参数: pin=xxxx;wskey=xxxx;</span><br><span class="line"></span><br><span class="line"># 注意分号 不要用中文分号!</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">变量名: QL_PORT 参数: 端口号(int) </span><br><span class="line"></span><br><span class="line"># 修改过面板端口的人才需要填写 默认 5700 </span><br><span class="line"></span><br><span class="line"># 是本地的端口 不是 Docker 映射出去的端口! 如果你映射参数是 8888:5700 仍然填写5700</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">变量名: WSKEY_DISCHECK 参数: 任意(str)</span><br><span class="line"></span><br><span class="line"># 设置 WSKEY_DISCHECK变量后变量后 不检查有效性 直接更新 不使用请删除 而不是禁用</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">变量名: WSKEY_AUTO_DISABLE 参数: 任意(str)	</span><br><span class="line"></span><br><span class="line"># 设置 WSKEY_AUTO_DISABLE变量后 不会自动禁用变量</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">变量名: WSKEY_UPDATE_HOUR 参数: 整数(int) 单位：小时</span><br><span class="line"></span><br><span class="line"># 设置 WSKEY_UPDATE_HOUR 变量后 会按设定的间隔时间更新 CK</span><br><span class="line"></span><br><span class="line"># 注意：使用此参数后，即使 CK 过期也不会更新，请不要设置过大的间隔</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">变量名: WSKEY_TRY_COUNT 参数: 整数(int)</span><br><span class="line"></span><br><span class="line"># 设置 WSKEY_TRY_COUNT 变量后 获取 Token 失败会自动重试</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">变量名: WSKEY_SLEEP 参数: 整数(int)</span><br><span class="line"></span><br><span class="line"># 设置 WSKEY_SLEEP 可自定义间隔时间</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-变量名: QL_PORT 参数: 端口号(int) 
-# 修改过面板端口的人才需要填写 默认 5700 
-# 是本地的端口 不是 Docker 映射出去的端口! 如果你映射参数是 8888:5700 仍然填写5700
 
-变量名: WSKEY_DISCHECK 参数: 任意(str)
-# 设置 WSKEY_DISCHECK变量后变量后 不检查有效性 直接更新 不使用请删除 而不是禁用
 
-变量名: WSKEY_AUTO_DISABLE 参数: 任意(str)	
-# 设置 WSKEY_AUTO_DISABLE变量后 不会自动禁用变量
-
-变量名: WSKEY_UPDATE_HOUR 参数: 整数(int) 单位：小时
-# 设置 WSKEY_UPDATE_HOUR 变量后 会按设定的间隔时间更新 CK
-# 注意：使用此参数后，即使 CK 过期也不会更新，请不要设置过大的间隔
-
-变量名: WSKEY_TRY_COUNT 参数: 整数(int)
-# 设置 WSKEY_TRY_COUNT 变量后 获取 Token 失败会自动重试
-
-变量名: WSKEY_SLEEP 参数: 整数(int)
-# 设置 WSKEY_SLEEP 可自定义间隔时间
-</code></pre>
 <hr>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>青龙面板是好东西，但是你想要上手就用的可能性很低，所以很多时候需要我们根据实际情况配置一些东西。</p>
 
@@ -357,14 +342,15 @@ export NOTIFY_SHOWNAMETYPE=&quot;4&quot;    效果是 :  账号名称：备注
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="微软程序无法连接"><a href="#微软程序无法连接" class="headerlink" title="微软程序无法连接"></a>微软程序无法连接</h1><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>根据<a target="_blank" rel="noopener" href="https://sspai.com/post/41137">这里</a>说明：</p>
-<pre><code>UWP 是微软在 Windows 10 中引入的新概念，由于所有 UWP 应用均运行在被称为 App Container 的虚拟沙箱环境中，其安全性及纯净度远胜于传统的 EXE 应用。但 App Container 机制同时也阻止了网络流量发送到本机 使大部分网络抓包调试工具无法对 UWP 应用进行流量分析。同样的，该机制也阻止了 UWP 应用访问 localhost，即使你在系统设置中启用了代理，也无法令 UWP 应用访问本地代理服务器，十分恼人。
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">UWP 是微软在 Windows 10 中引入的新概念，由于所有 UWP 应用均运行在被称为 App Container 的虚拟沙箱环境中，其安全性及纯净度远胜于传统的 EXE 应用。但 App Container 机制同时也阻止了网络流量发送到本机 使大部分网络抓包调试工具无法对 UWP 应用进行流量分析。同样的，该机制也阻止了 UWP 应用访问 localhost，即使你在系统设置中启用了代理，也无法令 UWP 应用访问本地代理服务器，十分恼人。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>简单说就是微软官方的一些程序如果在你<strong>开代理</strong>的情况下，会无法同步和访问。比如常见的微软商店无法访问。这个问题困扰了我很久。终于在网上找到了原因。有了原因就好办了。</p>
 <hr>
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ol>
-<li><p>复杂版：<br>在注册表内找到对应程序的SID值，通过WIN+R键打开<code>运行</code>窗口。输入“regedit”打开注册表编辑器，然后定位到</p>
-<pre><code>HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Mappings
-</code></pre>
+<li><p>复杂版：</p>
+<p>在注册表内找到对应程序的SID值，通过WIN+R键打开<code>运行</code>窗口。输入“regedit”打开注册表编辑器，然后定位到</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Mappings</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>接着在左边的注册表项中找到你想解除网络隔离的应用，右边的 DisplayName 就是应用名称，而左边那一大串字符就是应用的 SID 值了。</p>
 <p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E5%BE%AE%E8%BD%AF%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5-2023-04-22-16-43-49.png" alt="微软无法连接-2023-04-22-16-43-49"></p>
 <p>接着打开CMD面板，输入</p>
@@ -373,13 +359,16 @@ export NOTIFY_SHOWNAMETYPE=&quot;4&quot;    效果是 :  账号名称：备注
 </blockquote>
 <p>然后对应UWP应用就可以愉快的上网。</p>
 </li>
-<li><p>简单版：<br>一键命令版，直接打开CMD运行即可：</p>
+<li><p>简单版：</p>
+<p>一键命令版，直接打开CMD运行即可：</p>
 <blockquote>
 <p>FOR &#x2F;F “tokens&#x3D;11 delims&#x3D;&quot; %p IN (‘REG QUERY “HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Mappings”‘) DO CheckNetIsolation.exe LoopbackExempt -a -p&#x3D;%p</p>
 </blockquote>
 <p>效果是所有的UWP就可以愉快的上网了。</p>
 </li>
-<li><p>程序版：<br>使用<a target="_blank" rel="noopener" href="https://telerik-fiddler.s3.amazonaws.com/fiddler/addons/enableloopbackutility.exe">网络调试工具 Fiddler</a>，直接手动选择。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E5%BE%AE%E8%BD%AF%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5-2023-04-22-16-50-32.png" alt="微软无法连接-2023-04-22-16-50-32"></p>
+<li><p>程序版：</p>
+<p>使用<a target="_blank" rel="noopener" href="https://telerik-fiddler.s3.amazonaws.com/fiddler/addons/enableloopbackutility.exe">网络调试工具 Fiddler</a>，直接手动选择。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E5%BE%AE%E8%BD%AF%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5-2023-04-22-16-50-32.png" alt="微软无法连接-2023-04-22-16-50-32"></p>
 </li>
 </ol>
 <hr>
@@ -580,49 +569,65 @@ export NOTIFY_SHOWNAMETYPE=&quot;4&quot;    效果是 :  账号名称：备注
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="IP工具"><a href="#IP工具" class="headerlink" title="IP工具"></a>IP工具</h1><h2 id="一些vps工具"><a href="#一些vps工具" class="headerlink" title="一些vps工具"></a>一些vps工具</h2><ol>
-<li><p><a target="_blank" rel="noopener" href="https://ipdata.co/">IP信息查看工具</a><br> 可以查看目前IP的污染程度和看到出口IP的类型：家庭或者公司。如果你想要访问的网站对IP有特殊要求，比如open ai等，有时候就是因为这个导致。所以在购买vps时候可以考虑，测试一下对方的IP</p>
+<li><p><a target="_blank" rel="noopener" href="https://ipdata.co/">IP信息查看工具</a></p>
+<p> 可以查看目前IP的污染程度和看到出口IP的类型：家庭或者公司。如果你想要访问的网站对IP有特殊要求，比如open ai等，有时候就是因为这个导致。所以在购买vps时候可以考虑，测试一下对方的IP</p>
 <p> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/IP%E5%B7%A5%E5%85%B7-2023-04-14-10-25-58.png" alt="IP工具-2023-04-14-10-25-58"></p>
 </li>
-<li><p>vps性能测试脚本<br> 综合性测试脚本，<a target="_blank" rel="noopener" href="https://bench.sh/">网址</a>，大佬写的测试脚本，可以简单测试系统系统，硬盘存储速度和某些节点的之间的速度</p>
-<pre><code>wget -qO- bench.sh | bash
-或者
-curl -Lso- bench.sh | bash
-</code></pre>
+<li><p>vps性能测试脚本</p>
+<p> 综合性测试脚本，<a target="_blank" rel="noopener" href="https://bench.sh/">网址</a>，大佬写的测试脚本，可以简单测试系统系统，硬盘存储速度和某些节点的之间的速度</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">wget -qO- bench.sh | bash</span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line"></span><br><span class="line">curl -Lso- bench.sh | bash</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
 </li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/lmc999/RegionRestrictionCheck">流媒体测试脚本</a><br>顾名思义就是测试这个IP可以访问流媒体，和上面的IP信息查看工具有异曲同工之妙，但是这个更加具体，你可以从中看到常见的所有流媒体，看看自己的这个IP能不能访问。</p>
-<pre><code> bash &lt;(curl -L -s check.unlock.media)
-</code></pre>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/lmc999/RegionRestrictionCheck">流媒体测试脚本</a></p>
+<p>顾名思义就是测试这个IP可以访问流媒体，和上面的IP信息查看工具有异曲同工之妙，但是这个更加具体，你可以从中看到常见的所有流媒体，看看自己的这个IP能不能访问。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">bash &lt;(curl -L -s check.unlock.media)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 </li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/zhucaidan/mtr_trace">回程路由测试</a><br>有时候商家说的是cn2线路，但是实际回程有可能不是，这时候就需要回程国内路由判断了。</p>
-<pre><code>curl https://raw.githubusercontent.com/zhucaidan/mtr_trace/main/mtr_trace.sh|bash
-</code></pre>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/zhucaidan/mtr_trace">回程路由测试</a></p>
+<p>有时候商家说的是cn2线路，但是实际回程有可能不是，这时候就需要回程国内路由判断了。</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">curl https://raw.githubusercontent.com/zhucaidan/mtr_trace/main/mtr_trace.sh|bash</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p> 需要注意的是，这个只能做参考，实际的线路根据你的地区，运营商，甚至小区位置都有关系，所以只能是个参考。</p>
 </li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/uxh/superspeed">网速测试</a><br> 全国各地三大运营商的speedtest的测速。</p>
-<pre><code>bash &lt;(curl -Lso- https://git.io/superspeed_uxh)
-</code></pre>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/uxh/superspeed">网速测试</a></p>
+<p> 全国各地三大运营商的speedtest的测速。</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">bash &lt;(curl -Lso- https://git.io/superspeed_uxh)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p> 如果需要下载啥的，可以考虑考虑。</p>
 </li>
 </ol>
-<h2 id="说说我对线路的看法"><a href="#说说我对线路的看法" class="headerlink" title="说说我对线路的看法"></a>说说我对线路的看法</h2><p>首先我们要明白：稳定，速度，价格三者不能共存。所以很多时候我们看到一些配置相同的，但是价格差很多，就是因为这个。然后目前如果没有特别的速度需求，那么CN2线路是可以满足你大部分需求的，至于CN2 GIA，你会发现大家宣传的统一口径就是：<code>晚高峰</code>的时候不会卡，但是就速度和延迟来说，如果同一个地区的两条线路差距不会大。<br>我推荐这样判断线路：</p>
+<h2 id="说说我对线路的看法"><a href="#说说我对线路的看法" class="headerlink" title="说说我对线路的看法"></a>说说我对线路的看法</h2><p>首先我们要明白：稳定，速度，价格三者不能共存。所以很多时候我们看到一些配置相同的，但是价格差很多，就是因为这个。然后目前如果没有特别的速度需求，那么CN2线路是可以满足你大部分需求的，至于CN2 GIA，你会发现大家宣传的统一口径就是：<code>晚高峰</code>的时候不会卡，但是就速度和延迟来说，如果同一个地区的两条线路差距不会大。</p>
+<p>我推荐这样判断线路：</p>
 <blockquote>
 <p>地区&gt;IPLC专线&gt;国内NAT+CN2&gt;CN线路&gt;普通线路</p>
 </blockquote>
 <p>现在目前无论是自用还是飞机场，主流的技术就这3种：</p>
 <ol>
-<li>IPLC线路：国际私有租赁线路<br>简单说就是私有线路，可以说得上是内网一般的速度，所以这种线路一般价格高，带宽也小，流量给的也少。但是速度绝对是快的，无论任何时候。</li>
-<li>国内NAT+国外线路<br>国内端口转发到境外，然后由境外服务器来进行访问目标网址。这个优势在于可以控制来回程的线路，注重一个稳定。而国内访问环境速度快，是一般机场的套路，但是这块国内NAT管控严格，所以成本高，价格也会贵。</li>
-<li>CN2,CN2 GIA线路<br>这种的就直接访问国外的IP，访问的去程和回程有时候会根据你所在的城市，运营商等等因素，甚至会出现一个绕路的可能性，所以速度忽上忽下。哪怕你是CN2 GIA线路下，也是有这个可能性，因为运营商网关是由负载平衡，它是根据当下情况来判断的。</li>
-<li>普通线路<br>没有优化的线路速度确实是比较慢，这个有目共睹。所以我一般不推荐。</li>
+<li><p>IPLC线路：国际私有租赁线路</p>
+<p>简单说就是私有线路，可以说得上是内网一般的速度，所以这种线路一般价格高，带宽也小，流量给的也少。但是速度绝对是快的，无论任何时候。</p>
+</li>
+<li><p>国内NAT+国外线路</p>
+<p>国内端口转发到境外，然后由境外服务器来进行访问目标网址。这个优势在于可以控制来回程的线路，注重一个稳定。而国内访问环境速度快，是一般机场的套路，但是这块国内NAT管控严格，所以成本高，价格也会贵。</p>
+</li>
+<li><p>CN2,CN2 GIA线路</p>
+<p>这种的就直接访问国外的IP，访问的去程和回程有时候会根据你所在的城市，运营商等等因素，甚至会出现一个绕路的可能性，所以速度忽上忽下。哪怕你是CN2 GIA线路下，也是有这个可能性，因为运营商网关是由负载平衡，它是根据当下情况来判断的。</p>
+</li>
+<li><p>普通线路</p>
+<p>没有优化的线路速度确实是比较慢，这个有目共睹。所以我一般不推荐。</p>
+</li>
 </ol>
 <p>最后，附上我推荐的几个搬瓦工的vps:</p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="https://bandwagonhost.com/aff.php?aff=20859&pid=57">49.99美元每年&#x2F;洛杉矶&#x2F;CN2线路</a><br><a target="_blank" rel="noopener" href="https://bwh81.net/aff.php?aff=20859&pid=57">备用地址-境内直接访问</a><br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/IP%E5%B7%A5%E5%85%B7-2023-04-16-10-24-26.png" alt="IP工具-2023-04-16-10-24-26"></p>
+<p><a target="_blank" rel="noopener" href="https://bandwagonhost.com/aff.php?aff=20859&pid=57">49.99美元每年&#x2F;洛杉矶&#x2F;CN2线路</a></p>
 </blockquote>
+<p><a target="_blank" rel="noopener" href="https://bwh81.net/aff.php?aff=20859&pid=57">备用地址-境内直接访问</a></p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/IP%E5%B7%A5%E5%85%B7-2023-04-16-10-24-26.png" alt="IP工具-2023-04-16-10-24-26"></p>
 <p>这个是目前最便宜的线路，速度和延迟都很不错，如果你还想更快的，更稳定，CN2 GIA线路,169.99美元一年：</p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="https://bandwagonhost.com/aff.php?aff=20859&pid=87">169.99美元每年&#x2F;洛杉矶&#x2F;CN2 GIA线路</a><br><a target="_blank" rel="noopener" href="https://bwh81.net/aff.php?aff=20859&pid=87">备用地址-境内直接访问</a><br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/IP%E5%B7%A5%E5%85%B7-2023-04-16-10-28-25.png" alt="IP工具-2023-04-16-10-28-25"></p>
+<p><a target="_blank" rel="noopener" href="https://bandwagonhost.com/aff.php?aff=20859&pid=87">169.99美元每年&#x2F;洛杉矶&#x2F;CN2 GIA线路</a></p>
 </blockquote>
+<p><a target="_blank" rel="noopener" href="https://bwh81.net/aff.php?aff=20859&pid=87">备用地址-境内直接访问</a></p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/IP%E5%B7%A5%E5%85%B7-2023-04-16-10-28-25.png" alt="IP工具-2023-04-16-10-28-25"></p>
 <p>这块不是很推荐，因为之间的差价足够你在国内买个NAT,然后再转发。</p>
 
       
@@ -771,7 +776,8 @@ curl -Lso- bench.sh | bash
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="时间不是万能的"><a href="#时间不是万能的" class="headerlink" title="时间不是万能的"></a>时间不是万能的</h1><h2 id="他不是玫瑰"><a href="#他不是玫瑰" class="headerlink" title="他不是玫瑰"></a>他不是玫瑰</h2><p>之前听说过，中国价值投资第一书《时间玫瑰》，抱着盛名，就下载下来看了，看完之后。觉得它说的有点对，但是又冥冥之中觉得，它说的道理我都懂，但是就是觉得有问题。时间是不是玫瑰我不知道，但是作者的这本书肯定不是玫瑰，书中充斥着大量自己参加会议的演讲稿，或者当初08年的一些投资建议。是的，当时它的眼光很好，很多企业也获得了长久的收益，如果按照他的建议，确实可能一朝翻身，成为百万富翁，当时他自己也说了，这中间的过程让人难以忍受，万科你08年买，过两年之后你的资产折价近一半，等到了18年左右才会实现20倍+的神话，茅台也是，在限酒令时期，茅台股价大跌，你那时候能拿的住么？诚然我现在是秋后算账，站在2023年的立场看过去15年的发展。但是他不也是，他站在18年的立场，看08年。<br>价值投资，前提是价值，我们作为一个简单的股票投资者，我们是没办法像企业的领导人一样了解企业的，类似医药茅台的美年健康，不也是爆出大雷，作者站在幸存者的视角来审阅自己，肯定得出的是正向的反馈，那么如果我们当初投资美年健康呢？投资的中兴呢？所以，这就是我疑问的第一年，作为中国价值投资的第一书，他没有告诉我们如何判断一个企业是真的在做企业，还是在搞钱。所谓的价值投资难道就是他说的那些企业，那么其他兢兢业业的企业算什么？A股市场20年以上股票不在少数，其他的企业都是没有价值的玩意么？没有增长点？作者泛泛而谈自己的投资多么的精准，多么的好，却没有输出一点任何有用的价值，就像好多没有学问的大老板夸夸而谈自己的发家史，殊不知，是时代裹挟着他，他的个人努力不是重点，重点是他押对了宝，做对了行业。</p>
+          <h1 id="时间不是万能的"><a href="#时间不是万能的" class="headerlink" title="时间不是万能的"></a>时间不是万能的</h1><h2 id="他不是玫瑰"><a href="#他不是玫瑰" class="headerlink" title="他不是玫瑰"></a>他不是玫瑰</h2><p>之前听说过，中国价值投资第一书《时间玫瑰》，抱着盛名，就下载下来看了，看完之后。觉得它说的有点对，但是又冥冥之中觉得，它说的道理我都懂，但是就是觉得有问题。时间是不是玫瑰我不知道，但是作者的这本书肯定不是玫瑰，书中充斥着大量自己参加会议的演讲稿，或者当初08年的一些投资建议。是的，当时它的眼光很好，很多企业也获得了长久的收益，如果按照他的建议，确实可能一朝翻身，成为百万富翁，当时他自己也说了，这中间的过程让人难以忍受，万科你08年买，过两年之后你的资产折价近一半，等到了18年左右才会实现20倍+的神话，茅台也是，在限酒令时期，茅台股价大跌，你那时候能拿的住么？诚然我现在是秋后算账，站在2023年的立场看过去15年的发展。但是他不也是，他站在18年的立场，看08年。</p>
+<p>价值投资，前提是价值，我们作为一个简单的股票投资者，我们是没办法像企业的领导人一样了解企业的，类似医药茅台的美年健康，不也是爆出大雷，作者站在幸存者的视角来审阅自己，肯定得出的是正向的反馈，那么如果我们当初投资美年健康呢？投资的中兴呢？所以，这就是我疑问的第一年，作为中国价值投资的第一书，他没有告诉我们如何判断一个企业是真的在做企业，还是在搞钱。所谓的价值投资难道就是他说的那些企业，那么其他兢兢业业的企业算什么？A股市场20年以上股票不在少数，其他的企业都是没有价值的玩意么？没有增长点？作者泛泛而谈自己的投资多么的精准，多么的好，却没有输出一点任何有用的价值，就像好多没有学问的大老板夸夸而谈自己的发家史，殊不知，是时代裹挟着他，他的个人努力不是重点，重点是他押对了宝，做对了行业。</p>
 <h2 id="时间仅仅是时间"><a href="#时间仅仅是时间" class="headerlink" title="时间仅仅是时间"></a>时间仅仅是时间</h2><p>时间玫瑰，我看不出时间在其中扮演的角色。也看不到作者的投资智慧。你如果能看到1年以后，那么你是一个神人，你看到50年以后，那么你就是一个普通人。时间是重要的，但是太过遥远的东西对我们来说并没有作用，作者举例从美国大萧条到现在持有股票，有意义么？有，但是也没有，资产如果是为下一代构筑的话，那么这一代的人做什么？我们追求资产的增值，而不要求时效，那么，可以选择存银行，每年吃复利，复利+时间，巴菲特的投资圣经。作者的资金很好，但是作为这么大的资金有很多种增值的机会，但是作者选择了最笨的方法，等。买房，玉石，信托在资金疯狂的年代，哪个不能做到1年翻几倍的地步，而偏偏选择了最笨的方法，买股票，然后等。中间的风险比前面几个投资渠道高多了，还自得其乐的说自己多么有远见。你看到的是10年之后，不是1年之后，在那个年代的普通人，只要有点了解，都会相信中国经济鹏飞，都觉得以后生活会越来越好，那么他们为啥不选择买股票呢，那是因为他们不笨，他们将他们的资金放在当前时代下最合适的地方，而不是靠着股票的自我增值，价值投资者在股票赚不到钱，巴菲特赚钱不是靠价值投资，是靠复利+时间。他投资的企业对企业有充分的理解，他花时间去经营和爱护这些未来现在有盈利能力的企业，而不是将钱给他，然后祈祷这个公司的管理者不要瞎搞。</p>
 <h3 id="没有价值投资"><a href="#没有价值投资" class="headerlink" title="没有价值投资"></a>没有价值投资</h3><p>价值投资在A股没有出路，最近杉杉股份就是一个例子，它们上市做衣服的，后面转型做电子材料，还有一定的建树。那么如果你听到一个做衣服的企业忽然要跨行业做电子材料，你脑中的想法是不是这企业瞎搞，你的价值投资会让你离开，还是根据时间+价值，坚定持有呢？这种过分看中领导决策的企业并没不是说没有价值，但是它不算价值投资。商业是一个很复杂的信息圈，我们只能接收到我们自己的信息，但是信息差正是商业的来源，我们的价值投资理念如果说是看好一个股票，然后坚定持有10年，那么你这是在赌，不是在投资。真正的投资是信息，我如果知道杉杉股份的转型信息，知道他们实验室要取得重大进展，那么这时候你买入是不是价值投资，也不是，因为杉杉股份公告有可能是假的，夸大得，真正得消息往往需要你实地去接触，接触管理层，接触他们得领导，甚至还要搭配当时得大环境，所以没有价值投资，有得就是内部消息，有得就是信息差。股票市场这个非实物得市场，有得只是信息投资，没有价值投资。</p>
 
@@ -842,26 +848,36 @@ curl -Lso- bench.sh | bash
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="v2rayN的路由设置"><a href="#v2rayN的路由设置" class="headerlink" title="v2rayN的路由设置"></a>v2rayN的路由设置</h1><h2 id="新版本变化"><a href="#新版本变化" class="headerlink" title="新版本变化"></a>新版本变化</h2><p>最近升级了v2rayN的系统，发现了没有了原来的pac模式，变成了简单的：清楚系统代理，自动配置代理，不改变系统代理。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230329122924.png" alt="20230329122924"><br>其中<code>改变系统代理</code>就是变成了以前的那种全局代理的模式，一开始并不了解，而且由于不支持PAC模式后，好多你不想代理的流量都走到v2ray去了。</p>
-<pre><code>旧模式
-</code></pre>
+          <h1 id="v2rayN的路由设置"><a href="#v2rayN的路由设置" class="headerlink" title="v2rayN的路由设置"></a>v2rayN的路由设置</h1><h2 id="新版本变化"><a href="#新版本变化" class="headerlink" title="新版本变化"></a>新版本变化</h2><p>最近升级了v2rayN的系统，发现了没有了原来的pac模式，变成了简单的：清楚系统代理，自动配置代理，不改变系统代理。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230329122924.png" alt="20230329122924"></p>
+<p>其中<code>改变系统代理</code>就是变成了以前的那种全局代理的模式，一开始并不了解，而且由于不支持PAC模式后，好多你不想代理的流量都走到v2ray去了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">旧模式</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230329090502.png" alt="20230329090502"></p>
-<pre><code>新模式
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230329090518.png" alt="20230329090518"><br>所以这种情况下我们就需要花点时间去配置路由了。<br>PS:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">新模式</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230329090518.png" alt="20230329090518"></p>
+<p>所以这种情况下我们就需要花点时间去配置路由了。</p>
+<p>PS:</p>
 <blockquote>
 <p>清除系统代理就是不代理了，而不改变系统代理，如果你有前端PAC分流的话，否则这个选项也是不代理的意思，所以建议使用自动配置系统代理。</p>
 </blockquote>
 <hr>
 <h2 id="Geo文件的使用"><a href="#Geo文件的使用" class="headerlink" title="Geo文件的使用"></a>Geo文件的使用</h2><p>新版v2rayN下载时候自带了两个Geo文件（路由规则文件）</p>
-<pre><code>&quot;geosite.dat&quot;：提供一个预定义好的 「全球域名」 列表;  
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&quot;geosite.dat&quot;：提供一个预定义好的 「全球域名」 列表;  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&quot;geoip.dat&quot; ：提供一个预定义好的 「全球 ip-地区」 列表.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-&quot;geoip.dat&quot; ：提供一个预定义好的 「全球 ip-地区」 列表.
-</code></pre>
 <p>里面的域名常用分类：</p>
 <blockquote>
-<p>category-ads：包含了常见的广告域名。<br>category-ads-all：包含了常见的广告域名，以及广告提供商的域名。<br>cn：相当于 geolocation-cn 和 tld-cn 的合集。<br>google：包含了 Google 旗下绝大部分域名。<br>microsoft：包含了 Microsoft 旗下绝大部分域名。<br>geolocation-!cn：包含了常见的非大陆站点域名，同时包含了 tld-!cn。<br>tld-cn：包含了 CNNIC 管理的用于中国大陆的顶级域名，如以 .cn、.中国 结尾的域名。<br>tld-!cn：包含了非中国大陆使用的顶级域名，如以 .hk（香港）、.tw（台湾）、.jp（日本）、.sg（新加坡）、.us（美国）.ca（加拿大）等结尾的域名。<br>category-games： 包含了 steam、ea、blizzard、epicgames 和 nintendo 等常见的游戏厂商。</p>
+<p>category-ads：包含了常见的广告域名。</p>
 </blockquote>
+<p>category-ads-all：包含了常见的广告域名，以及广告提供商的域名。</p>
+<p>cn：相当于 geolocation-cn 和 tld-cn 的合集。</p>
+<p>google：包含了 Google 旗下绝大部分域名。</p>
+<p>microsoft：包含了 Microsoft 旗下绝大部分域名。</p>
+<p>geolocation-!cn：包含了常见的非大陆站点域名，同时包含了 tld-!cn。</p>
+<p>tld-cn：包含了 CNNIC 管理的用于中国大陆的顶级域名，如以 .cn、.中国 结尾的域名。</p>
+<p>tld-!cn：包含了非中国大陆使用的顶级域名，如以 .hk（香港）、.tw（台湾）、.jp（日本）、.sg（新加坡）、.us（美国）.ca（加拿大）等结尾的域名。</p>
+<p>category-games： 包含了 steam、ea、blizzard、epicgames 和 nintendo 等常见的游戏厂商。</p>
 <p>当然，如果你还有别的需求，可以看 <a target="_blank" rel="noopener" href="https://github.com/v2fly/domain-list-community/tree/master/data">https://github.com/v2fly/domain-list-community/tree/master/data</a> 下具体的名称，如果你觉得它的规则不准确，这边也有一份国人专门设置的加强版规则： <a target="_blank" rel="noopener" href="https://github.com/Loyalsoldier/v2ray-rules-dat">https://github.com/Loyalsoldier/v2ray-rules-dat</a>  这是一个加强版合集，只需要下载geosite.dat和geoip.dat两个文件之后，替换掉v2rayN文件路径下的同名文件就行。</p>
 <p>PS:</p>
 <blockquote>
@@ -869,163 +885,90 @@ curl -Lso- bench.sh | bash
 </blockquote>
 <p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230329093023.png" alt="20230329093023"></p>
 <hr>
-<h2 id="高级用法"><a href="#高级用法" class="headerlink" title="高级用法"></a>高级用法</h2><p>如果你看到data目录下有<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230329093131.png" alt="20230329093131"><br>后面带有@cn标识，说明该域名有cn接口，想要直连的用户，可以设置类别<code>geosite:steam@cn</code> 为直连，意为将steam列表内所有被标记了<code> @cn</code>attribute 的规则（域名）设置为直连。</p>
+<h2 id="高级用法"><a href="#高级用法" class="headerlink" title="高级用法"></a>高级用法</h2><p>如果你看到data目录下有</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230329093131.png" alt="20230329093131"></p>
+<p>后面带有@cn标识，说明该域名有cn接口，想要直连的用户，可以设置类别<code>geosite:steam@cn</code> 为直连，意为将steam列表内所有被标记了<code> @cn</code>attribute 的规则（域名）设置为直连。</p>
 <blockquote>
 <p>需要注意的是：在路由配置中，类别越靠前（上）,优先级越高，所以<code>geosite:category-games@cn</code>等所有带有 <code>@cn</code> attribute 的规则都要放置在<code>geosite:geolocation-!cn</code>前（上）面才能生效。</p>
 </blockquote>
 <hr>
-<h2 id="路由其他功能"><a href="#路由其他功能" class="headerlink" title="路由其他功能"></a>路由其他功能</h2><p>这边顺带解释一下其他的几个配置的说明：<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230329091857.png" alt="20230329091857"><br>域名解析策略</p>
+<h2 id="路由其他功能"><a href="#路由其他功能" class="headerlink" title="路由其他功能"></a>路由其他功能</h2><p>这边顺带解释一下其他的几个配置的说明：</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230329091857.png" alt="20230329091857"></p>
+<p>域名解析策略</p>
 <blockquote>
-<p>AsIs：只使用域名进行路由选择，默认值；<code>推荐值</code><br>IpIfNonMatch：当域名没有匹配任何基于域名的规则时，将域名解析成 IP 然后去匹配，如果IP多，那就一直匹配到有为止。<br>IpOnDemand：如果有IP 的规则，立即将域名解析为 IP 进行匹配。</p>
+<p>AsIs：只使用域名进行路由选择，默认值；<code>推荐值</code></p>
 </blockquote>
+<p>IpIfNonMatch：当域名没有匹配任何基于域名的规则时，将域名解析成 IP 然后去匹配，如果IP多，那就一直匹配到有为止。</p>
+<p>IpOnDemand：如果有IP 的规则，立即将域名解析为 IP 进行匹配。</p>
 <p>域名匹配算法</p>
 <blockquote>
-<p>“hybrid”：使用新的域名匹配算法，速度更快且占用更少。默认值。<code>推荐值</code><br>“linear”：使用原来的域名匹配算法。</p>
+<p>“hybrid”：使用新的域名匹配算法，速度更快且占用更少。默认值。<code>推荐值</code></p>
 </blockquote>
+<p>“linear”：使用原来的域名匹配算法。</p>
 <hr>
 <h2 id="分享配置"><a href="#分享配置" class="headerlink" title="分享配置"></a>分享配置</h2><p>先说下我的日常模式，我比较经常访问谷歌搜索和GitHub两个地方，其他的网站我希望全部都是走直连的，所以我用如下配置：</p>
 <blockquote>
 <p> 代理的Domain或IP：</p>
 </blockquote>
 <p>Domain下配置：</p>
-<pre><code>geosite:google,
-geosite:github
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">geosite:google,</span><br><span class="line"></span><br><span class="line">geosite:github</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p> 直连的Domain或IP：</p>
 </blockquote>
 <p>Domain下配置：</p>
-<pre><code>geosite:cn
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">geosite:cn</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>IP下配置：</p>
-<pre><code>geoip:private,
-geoip:cn
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">geoip:private,</span><br><span class="line"></span><br><span class="line">geoip:cn</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p> 阻止的Domain或IP：</p>
 </blockquote>
 <p>Domain下配置：</p>
-<pre><code>geosite:category-ads-all
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">geosite:category-ads-all</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
 <p>这套配置实现了，所有国内的网站走直连，谷歌和Github走代理，而且还有广告屏蔽的功效。</p>
-<p>如果你有一个域名不在这里面，但是你想要让它走代理&#x2F;直连可以添加：domain:xxxx.com，或者ip：xxxxx<br>PS：<br>也可以直接使用域名，但是如果使用<code>domain:xxxx.com</code>，会匹配该域名下的所有子域名，至于匹配规则我觉得太过复杂，如果不是需求太奇特，一般用不到。</p>
+<p>如果你有一个域名不在这里面，但是你想要让它走代理&#x2F;直连可以添加：domain:xxxx.com，或者ip：xxxxx</p>
+<p>PS：</p>
+<p>也可以直接使用域名，但是如果使用<code>domain:xxxx.com</code>，会匹配该域名下的所有子域名，至于匹配规则我觉得太过复杂，如果不是需求太奇特，一般用不到。</p>
 <hr>
 <h2 id="高端玩家"><a href="#高端玩家" class="headerlink" title="高端玩家"></a>高端玩家</h2><blockquote>
 <p>该功能需要玩家有一定的知识储备，我个人不是很建议</p>
 </blockquote>
-<p>系统是支持高级模式的，点击<code>启用路由高级功能</code>，然后点击高级功能，添加规则集：<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230329103205.png" alt="20230329103205"></p>
-<p>打开之后，输入自己定义的名称，接下来就是重头戏：<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230329103354.png" alt="20230329103354"></p>
-<p>这边有个白名单模式（即在GFW的域名进行代理，其他的不走），有两种方式添加：<br>一种输入：<br><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/2dust/v2rayCustomRoutingList/master/custom_routing_rules_whitelist">https://raw.githubusercontent.com/2dust/v2rayCustomRoutingList/master/custom_routing_rules_whitelist</a><br>然后点击<code>从订阅的URL导入规则</code>即可，一种就是打开链接，然后选择<code>从剪贴板导入规则</code>。<br>接下来我们分析下对应的文件。**<code>以下规则已经被我修改，建议直接打开链接后复制</code>**</p>
-<pre><code>[
-  &#123;
-    &quot;outboundTag&quot;: &quot;direct&quot;, #直连的域名配置
-    &quot;domain&quot;: [
-      &quot;domain:example.com&quot;,
-      &quot;domain:example2.com&quot;
-    ]
-  &#125;,
-  &#123;
-    &quot;type&quot;: &quot;field&quot;,
-    &quot;outboundTag&quot;: &quot;block&quot;, #阻止的域名配置，下面是广告的域名Geo配置
-    &quot;domain&quot;: [
-      &quot;geosite:category-ads-all&quot;
-    ]
-  &#125;,
-  &#123;
-    &quot;type&quot;: &quot;field&quot;,
-    &quot;outboundTag&quot;: &quot;direct&quot;,  #直连的域名配置，内部包含个人域名，苹果，谷歌，和中国的域名
-    &quot;domain&quot;: [
-      &quot;geosite:private&quot;,
-      &quot;geosite:apple@cn&quot;,
-      &quot;geosite:google@cn&quot;,
-      &quot;geosite:tld-cn&quot;
-    ]
-  &#125;,
-  &#123;
-    &quot;type&quot;: &quot;field&quot;,
-    &quot;outboundTag&quot;: &quot;proxy&quot;, #代理的域名配置，不是中国网址
-    &quot;domain&quot;: [
-      &quot;geosite:geolocation-!cn&quot;
-    ]
-  &#125;,
-  &#123;
-    &quot;type&quot;: &quot;field&quot;,
-    &quot;outboundTag&quot;: &quot;direct&quot;,  #直连的IP配置，中国的IP和个人的IP
-    &quot;ip&quot;: [
-      &quot;geoip:private&quot;,
-      &quot;geoip:cn&quot;
-    ],
-    &quot;domain&quot;: [
-      &quot;geosite:cn&quot;
-    ]
-  &#125;,
-  &#123;
-    &quot;type&quot;: &quot;field&quot;, #这个是端口，忽略
-    &quot;port&quot;: &quot;0-65535&quot;,
-    &quot;outboundTag&quot;: &quot;proxy&quot;
-  &#125;
-]
-</code></pre>
-<p>其实和我上面设置的一样。只不过是更加方便的导入而已。<br>我更加推荐这个配置：<code>所有端口都是直连，如果有特定网站再走代理，还添加了广告过滤。</code>有上不去的，再进行添加。</p>
-<pre><code>[
-  &#123;
-    &quot;outboundTag&quot;: &quot;block&quot;,
-    &quot;domain&quot;: [
-      &quot;geosite:category-ads-all&quot;
-    ]
-  &#125;,
-  &#123;
-     &quot;outboundTag&quot;: &quot;proxy&quot;,
-     &quot;domain&quot;: [
-       &quot;geosite:google&quot;
-    ]
-  &#125;,
-  &#123;
-    &quot;port&quot;: &quot;0-65535&quot;,
-    &quot;outboundTag&quot;: &quot;direct&quot;
-  &#125;
-]
-</code></pre>
+<p>系统是支持高级模式的，点击<code>启用路由高级功能</code>，然后点击高级功能，添加规则集：</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230329103205.png" alt="20230329103205"></p>
+<p>打开之后，输入自己定义的名称，接下来就是重头戏：</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230329103354.png" alt="20230329103354"></p>
+<p>这边有个白名单模式（即在GFW的域名进行代理，其他的不走），有两种方式添加：</p>
+<p>一种输入：</p>
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/2dust/v2rayCustomRoutingList/master/custom_routing_rules_whitelist">https://raw.githubusercontent.com/2dust/v2rayCustomRoutingList/master/custom_routing_rules_whitelist</a></p>
+<p>然后点击<code>从订阅的URL导入规则</code>即可，一种就是打开链接，然后选择<code>从剪贴板导入规则</code>。</p>
+<p>接下来我们分析下对应的文件。**<code>以下规则已经被我修改，建议直接打开链接后复制</code>**</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">[</span><br><span class="line"></span><br><span class="line">  &#123;</span><br><span class="line"></span><br><span class="line">    &quot;outboundTag&quot;: &quot;direct&quot;, #直连的域名配置</span><br><span class="line"></span><br><span class="line">    &quot;domain&quot;: [</span><br><span class="line"></span><br><span class="line">      &quot;domain:example.com&quot;,</span><br><span class="line"></span><br><span class="line">      &quot;domain:example2.com&quot;</span><br><span class="line"></span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  &#123;</span><br><span class="line"></span><br><span class="line">    &quot;type&quot;: &quot;field&quot;,</span><br><span class="line"></span><br><span class="line">    &quot;outboundTag&quot;: &quot;block&quot;, #阻止的域名配置，下面是广告的域名Geo配置</span><br><span class="line"></span><br><span class="line">    &quot;domain&quot;: [</span><br><span class="line"></span><br><span class="line">      &quot;geosite:category-ads-all&quot;</span><br><span class="line"></span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  &#123;</span><br><span class="line"></span><br><span class="line">    &quot;type&quot;: &quot;field&quot;,</span><br><span class="line"></span><br><span class="line">    &quot;outboundTag&quot;: &quot;direct&quot;,  #直连的域名配置，内部包含个人域名，苹果，谷歌，和中国的域名</span><br><span class="line"></span><br><span class="line">    &quot;domain&quot;: [</span><br><span class="line"></span><br><span class="line">      &quot;geosite:private&quot;,</span><br><span class="line"></span><br><span class="line">      &quot;geosite:apple@cn&quot;,</span><br><span class="line"></span><br><span class="line">      &quot;geosite:google@cn&quot;,</span><br><span class="line"></span><br><span class="line">      &quot;geosite:tld-cn&quot;</span><br><span class="line"></span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  &#123;</span><br><span class="line"></span><br><span class="line">    &quot;type&quot;: &quot;field&quot;,</span><br><span class="line"></span><br><span class="line">    &quot;outboundTag&quot;: &quot;proxy&quot;, #代理的域名配置，不是中国网址</span><br><span class="line"></span><br><span class="line">    &quot;domain&quot;: [</span><br><span class="line"></span><br><span class="line">      &quot;geosite:geolocation-!cn&quot;</span><br><span class="line"></span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  &#123;</span><br><span class="line"></span><br><span class="line">    &quot;type&quot;: &quot;field&quot;,</span><br><span class="line"></span><br><span class="line">    &quot;outboundTag&quot;: &quot;direct&quot;,  #直连的IP配置，中国的IP和个人的IP</span><br><span class="line"></span><br><span class="line">    &quot;ip&quot;: [</span><br><span class="line"></span><br><span class="line">      &quot;geoip:private&quot;,</span><br><span class="line"></span><br><span class="line">      &quot;geoip:cn&quot;</span><br><span class="line"></span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    &quot;domain&quot;: [</span><br><span class="line"></span><br><span class="line">      &quot;geosite:cn&quot;</span><br><span class="line"></span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  &#123;</span><br><span class="line"></span><br><span class="line">    &quot;type&quot;: &quot;field&quot;, #这个是端口，忽略</span><br><span class="line"></span><br><span class="line">    &quot;port&quot;: &quot;0-65535&quot;,</span><br><span class="line"></span><br><span class="line">    &quot;outboundTag&quot;: &quot;proxy&quot;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>其实和我上面设置的一样。只不过是更加方便的导入而已。</p>
+<p>我更加推荐这个配置：<code>所有端口都是直连，如果有特定网站再走代理，还添加了广告过滤。</code>有上不去的，再进行添加。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">[</span><br><span class="line"></span><br><span class="line">  &#123;</span><br><span class="line"></span><br><span class="line">    &quot;outboundTag&quot;: &quot;block&quot;,</span><br><span class="line"></span><br><span class="line">    &quot;domain&quot;: [</span><br><span class="line"></span><br><span class="line">      &quot;geosite:category-ads-all&quot;</span><br><span class="line"></span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  &#123;</span><br><span class="line"></span><br><span class="line">     &quot;outboundTag&quot;: &quot;proxy&quot;,</span><br><span class="line"></span><br><span class="line">     &quot;domain&quot;: [</span><br><span class="line"></span><br><span class="line">       &quot;geosite:google&quot;</span><br><span class="line"></span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  &#123;</span><br><span class="line"></span><br><span class="line">    &quot;port&quot;: &quot;0-65535&quot;,</span><br><span class="line"></span><br><span class="line">    &quot;outboundTag&quot;: &quot;direct&quot;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
 <hr>
-<h2 id="DNS优化"><a href="#DNS优化" class="headerlink" title="DNS优化"></a>DNS优化</h2><p>根据 <a target="_blank" rel="noopener" href="https://github.com/chenxv399/v2ray-rules-dat">https://github.com/chenxv399/v2ray-rules-dat</a> 推荐，建议使用，可以抵抗DNS污染<br>使用方法：</p>
+<h2 id="DNS优化"><a href="#DNS优化" class="headerlink" title="DNS优化"></a>DNS优化</h2><p>根据 <a target="_blank" rel="noopener" href="https://github.com/chenxv399/v2ray-rules-dat">https://github.com/chenxv399/v2ray-rules-dat</a> 推荐，建议使用，可以抵抗DNS污染</p>
+<p>使用方法：</p>
 <blockquote>
 <p>设置-参数设置-DNS设置-直接curl+v粘贴规则</p>
 </blockquote>
 <p>规则：</p>
-<pre><code> &#123;
-  &quot;hosts&quot;: &#123;
-    &quot;dns.google&quot;: &quot;8.8.8.8&quot;,
-    &quot;dns.pub&quot;: &quot;119.29.29.29&quot;,
-    &quot;dns.alidns.com&quot;: &quot;223.5.5.5&quot;,
-    &quot;dns.opendns.com&quot;:&quot;208.67.222.222&quot;,
-    &quot;geosite:category-ads-all&quot;: &quot;127.0.0.1&quot;
-  &#125;,
-  &quot;servers&quot;: [
-    &#123;
-      &quot;address&quot;: &quot;208.67.222.222&quot;,
-      &quot;port&quot;: 5353,
-      &quot;domains&quot;: [&quot;geosite:geolocation-!cn&quot;],
-      &quot;expectIPs&quot;: [&quot;geoip:!cn&quot;]
-    &#125;,
-    &quot;8.8.8.8&quot;,
-    &quot;9.9.9.9&quot;,
-    &#123;
-      &quot;address&quot;: &quot;114.114.114.114&quot;,
-      &quot;port&quot;: 53,
-      &quot;domains&quot;: [&quot;geosite:cn&quot;, &quot;geosite:category-games@cn&quot;],
-      &quot;expectIPs&quot;: [&quot;geoip:cn&quot;],
-      &quot;skipFallback&quot;: true
-    &#125;,
-    &#123;
-      &quot;address&quot;: &quot;localhost&quot;,
-      &quot;skipFallback&quot;: true
-    &#125;
-  ]
-&#125;
-</code></pre>
-<p>看下来，就是查询hosts里面的DNS，没有则使用OPENDNS(208.67.222.222这个ip所指)，进行查询，要求域名&#x2F;ip不是中国的，如果是中国的域名&#x2F;ip使用114这个DNS.<br>实际使用下来，建议配置。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> &#123;</span><br><span class="line"></span><br><span class="line">  &quot;hosts&quot;: &#123;</span><br><span class="line"></span><br><span class="line">    &quot;dns.google&quot;: &quot;8.8.8.8&quot;,</span><br><span class="line"></span><br><span class="line">    &quot;dns.pub&quot;: &quot;119.29.29.29&quot;,</span><br><span class="line"></span><br><span class="line">    &quot;dns.alidns.com&quot;: &quot;223.5.5.5&quot;,</span><br><span class="line"></span><br><span class="line">    &quot;dns.opendns.com&quot;:&quot;208.67.222.222&quot;,</span><br><span class="line"></span><br><span class="line">    &quot;geosite:category-ads-all&quot;: &quot;127.0.0.1&quot;</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  &quot;servers&quot;: [</span><br><span class="line"></span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">      &quot;address&quot;: &quot;208.67.222.222&quot;,</span><br><span class="line"></span><br><span class="line">      &quot;port&quot;: 5353,</span><br><span class="line"></span><br><span class="line">      &quot;domains&quot;: [&quot;geosite:geolocation-!cn&quot;],</span><br><span class="line"></span><br><span class="line">      &quot;expectIPs&quot;: [&quot;geoip:!cn&quot;]</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &quot;8.8.8.8&quot;,</span><br><span class="line"></span><br><span class="line">    &quot;9.9.9.9&quot;,</span><br><span class="line"></span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">      &quot;address&quot;: &quot;114.114.114.114&quot;,</span><br><span class="line"></span><br><span class="line">      &quot;port&quot;: 53,</span><br><span class="line"></span><br><span class="line">      &quot;domains&quot;: [&quot;geosite:cn&quot;, &quot;geosite:category-games@cn&quot;],</span><br><span class="line"></span><br><span class="line">      &quot;expectIPs&quot;: [&quot;geoip:cn&quot;],</span><br><span class="line"></span><br><span class="line">      &quot;skipFallback&quot;: true</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">      &quot;address&quot;: &quot;localhost&quot;,</span><br><span class="line"></span><br><span class="line">      &quot;skipFallback&quot;: true</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  ]</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>看下来，就是查询hosts里面的DNS，没有则使用OPENDNS(208.67.222.222这个ip所指)，进行查询，要求域名&#x2F;ip不是中国的，如果是中国的域名&#x2F;ip使用114这个DNS.</p>
+<p>实际使用下来，建议配置。</p>
 <hr>
-<p>参考文档：<br><a target="_blank" rel="noopener" href="https://www.jamesdailylife.com/new_v2rayn_c">4.12 最新 v2rayN windows 进阶版使用教程 | 附PAC模式路由规则 | 多个自定义路由规则</a></p>
+<p>参考文档：</p>
+<p><a target="_blank" rel="noopener" href="https://www.jamesdailylife.com/new_v2rayn_c">4.12 最新 v2rayN windows 进阶版使用教程 | 附PAC模式路由规则 | 多个自定义路由规则</a></p>
 
       
     </div>
@@ -1094,22 +1037,38 @@ geoip:cn
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="FreshRSS定时规则的坑"><a href="#FreshRSS定时规则的坑" class="headerlink" title="FreshRSS定时规则的坑"></a>FreshRSS定时规则的坑</h1><p>使用过FreshRSS的用户就会对它的定时刷新问题头疼，虽然官方推荐了好多的定时刷新<a target="_blank" rel="noopener" href="https://freshrss.github.io/FreshRSS/en/users/09_refreshing_feeds.html#automatic-update-with-cron">方法</a>，但是由于我得vps布局。<br>目前的vps格局如下：<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/d__OneDrive_workplace_99typecho_VPS%E7%8E%B0%E7%8A%B6.png" alt="d__OneDrive_workplace_99typecho_VPS现状"><br>我没办法像它推荐的使用cron命令:</p>
-<pre><code>0 * * * * php /path/to/FreshRSS/app/actualize_script.php &gt; /tmp/FreshRSS.log 2&gt;&amp;1
-</code></pre>
-<p>这样我每次更新PHP的docker容器就会覆盖掉，所以我需要采用别的方式进行自动更新订阅。<br>系统给出了两种方式，都是使用HTTP进行强制刷新订阅源，但是我在实际使用过程中发现了一个坑<br>按照他给：</p>
-<pre><code>https://freshrss.example.net/i/?c=feed&amp;a=actualize&amp;force=1  强制刷新，需要在后台开启允许匿名刷新
-</code></pre>
-<p>但是我实际配置的时候，会提示重定向太多次，最后我查看后台的tokenID<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230328153338.png" alt="20230328153338"><br>会发现我得网址后面有个<code>/p</code>这个和给出来的example网址有一定的差距，于是我试着重新配置我得网址</p>
-<pre><code>https://freshrss.example.net/p/i/?c=feed&amp;a=actualize&amp;token=542345872345734  开启了后台的认证口令
-</code></pre>
-<p>获得了ok返回<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230328153632.png" alt="20230328153632"><br>至此完美解决这个问题。<br>后续就青龙增加了一个定时任务，方便每天上班时间自动刷新订阅源，省的自己每次都得登陆网页刷新。<br>这边说下几个参数</p>
+          <h1 id="FreshRSS定时规则的坑"><a href="#FreshRSS定时规则的坑" class="headerlink" title="FreshRSS定时规则的坑"></a>FreshRSS定时规则的坑</h1><p>使用过FreshRSS的用户就会对它的定时刷新问题头疼，虽然官方推荐了好多的定时刷新<a target="_blank" rel="noopener" href="https://freshrss.github.io/FreshRSS/en/users/09_refreshing_feeds.html#automatic-update-with-cron">方法</a>，但是由于我得vps布局。</p>
+<p>目前的vps格局如下：</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/d__OneDrive_workplace_99typecho_VPS%E7%8E%B0%E7%8A%B6.png" alt="d__OneDrive_workplace_99typecho_VPS现状"></p>
+<p>我没办法像它推荐的使用cron命令:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">0 * * * * php /path/to/FreshRSS/app/actualize_script.php &gt; /tmp/FreshRSS.log 2&gt;&amp;1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>这样我每次更新PHP的docker容器就会覆盖掉，所以我需要采用别的方式进行自动更新订阅。</p>
+<p>系统给出了两种方式，都是使用HTTP进行强制刷新订阅源，但是我在实际使用过程中发现了一个坑</p>
+<p>按照他给：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">https://freshrss.example.net/i/?c=feed&amp;a=actualize&amp;force=1  强制刷新，需要在后台开启允许匿名刷新</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>但是我实际配置的时候，会提示重定向太多次，最后我查看后台的tokenID</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230328153338.png" alt="20230328153338"></p>
+<p>会发现我得网址后面有个<code>/p</code>这个和给出来的example网址有一定的差距，于是我试着重新配置我得网址</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">https://freshrss.example.net/p/i/?c=feed&amp;a=actualize&amp;token=542345872345734  开启了后台的认证口令</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>获得了ok返回</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230328153632.png" alt="20230328153632"></p>
+<p>至此完美解决这个问题。</p>
+<p>后续就青龙增加了一个定时任务，方便每天上班时间自动刷新订阅源，省的自己每次都得登陆网页刷新。</p>
+<p>这边说下几个参数</p>
 <ol>
-<li>&amp;force&#x3D;1 强制马上刷新</li>
-<li>&amp;ajax&#x3D;1 会返回一个状态码OK，不会跳转到阅读界面</li>
-<li>&amp;maxFeeds&#x3D;10 刷新10个订阅源，不会把你全部的订阅源都刷新</li>
-<li>&amp;token&#x3D;xxxx 认真口令，如果没有则需要将后台的认证方式中允许匿名刷新文章。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230328155113.png" alt="20230328155113"></li>
+<li><p>&amp;force&#x3D;1 强制马上刷新</p>
+</li>
+<li><p>&amp;ajax&#x3D;1 会返回一个状态码OK，不会跳转到阅读界面</p>
+</li>
+<li><p>&amp;maxFeeds&#x3D;10 刷新10个订阅源，不会把你全部的订阅源都刷新</p>
+</li>
+<li><p>&amp;token&#x3D;xxxx 认真口令，如果没有则需要将后台的认证方式中允许匿名刷新文章。</p>
+</li>
 </ol>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230328155113.png" alt="20230328155113"></p>
 
       
     </div>
@@ -1178,20 +1137,15 @@ geoip:cn
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="青龙面板定时规则"><a href="#青龙面板定时规则" class="headerlink" title="青龙面板定时规则"></a>青龙面板定时规则</h1><p>青龙面板使用的是cron的时间格式，但是它又在上面基础上进行优化，使用的是5-6位的时间表达式：<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/!%5B20230328145315%5D(httpsraw.githubusercontent.comandroid1122typecho_imgmaster20230328145315.png).png" alt="![20230328145315](httpsraw.githubusercontent.comandroid1122typecho_imgmaster20230328145315.png)"><br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230328145545.png" alt="20230328145545"><br>知道这些之后，看下青龙内部经常使用的通配符</p>
-<pre><code>,：表示在两个及以上的时间点中都执行。如在月中的值为1,3，则表示1月和3月都触发事件
-*：表示匹配该域任意值，可解读为 “每”，如小时的字段为*时，表示每一小时都触发事件
-?：表示不指定值，用于日期和星期字段之间进行互斥。通常在日期和星期字段中的一个指定值，另外一个用?表示不指定值。使用的场景为不需要关心当前设置这个字段的值。例如:要在每月的6号触发一个操作，但不关心是周几，我们可以这么设置 0 0 0 6 * ?
--：表示范围，一个连续触发的区间。如：时的值为6-8，则表示6-8小时中的每个小时都触发事件。
-/：表示间隔时间触发事件（开始时间/时间间隔）。其中第一部分是起始值，除了秒以外都会降低一个单位，比如在 “秒” 上定义 5/10 表示从 第 5 秒开始 每 10 秒执行一次，而在 “分” 上则表示从 第 5 秒开始 每 10 分钟执行一次。
+          <h1 id="青龙面板定时规则"><a href="#青龙面板定时规则" class="headerlink" title="青龙面板定时规则"></a>青龙面板定时规则</h1><p>青龙面板使用的是cron的时间格式，但是它又在上面基础上进行优化，使用的是5-6位的时间表达式：</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/!%5B20230328145315%5D(httpsraw.githubusercontent.comandroid1122typecho_imgmaster20230328145315.png).png" alt="![20230328145315](httpsraw.githubusercontent.comandroid1122typecho_imgmaster20230328145315.png)"></p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230328145545.png" alt="20230328145545"></p>
+<p>知道这些之后，看下青龙内部经常使用的通配符</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">,：表示在两个及以上的时间点中都执行。如在月中的值为1,3，则表示1月和3月都触发事件</span><br><span class="line"></span><br><span class="line">*：表示匹配该域任意值，可解读为 “每”，如小时的字段为*时，表示每一小时都触发事件</span><br><span class="line"></span><br><span class="line">?：表示不指定值，用于日期和星期字段之间进行互斥。通常在日期和星期字段中的一个指定值，另外一个用?表示不指定值。使用的场景为不需要关心当前设置这个字段的值。例如:要在每月的6号触发一个操作，但不关心是周几，我们可以这么设置 0 0 0 6 * ?</span><br><span class="line"></span><br><span class="line">-：表示范围，一个连续触发的区间。如：时的值为6-8，则表示6-8小时中的每个小时都触发事件。</span><br><span class="line"></span><br><span class="line">/：表示间隔时间触发事件（开始时间/时间间隔）。其中第一部分是起始值，除了秒以外都会降低一个单位，比如在 “秒” 上定义 5/10 表示从 第 5 秒开始 每 10 秒执行一次，而在 “分” 上则表示从 第 5 秒开始 每 10 分钟执行一次。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#：表示该月第n个星期x(x#n)，仅用星期域。如：星期：6#3，表示该月的第三个星期六。</span><br><span class="line"></span><br><span class="line">L：表示LAST 最后（最后一天或最后一个星期几）；仅出现在日和星期的域中。用在日则表示该月的最后一天，用在星期则表示该月的最后一个星期X。如：星期域上的值为5L，则表示该月最后一个星期的星期四。在使用&#x27;L&#x27;时，不要指定列表&#x27;,&#x27;或范围&#x27;-&#x27;，否则易导致出现意料之外的结果。</span><br><span class="line"></span><br><span class="line">W：仅用在日的域中，表示距离当月给定日期最近的工作日（周一到周五）。 如：&quot;4W&quot;表示距离4号最近的工作日（当月的）触发事件； （1）当4号就是工作日时，则表示当天触发；当4号为周六时，则表示3号（周五）触发； （2）当4号为周日时，则表示在5号（周一）触发； 再如：&quot;1W&quot;表示距离1号最近的工作日触发事件，但是，该工作日只算当月的。假如当月1号是周六，则”1W“表示在当月3号（周一）触发事件。就算上个月的最后一天是工作日，也不会触发事件。</span><br><span class="line"></span><br><span class="line">LW：‘L’和&#x27;W&#x27;可以一起组合在日字段使用。表示当月的最后一个工作日触发事件。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-
-#：表示该月第n个星期x(x#n)，仅用星期域。如：星期：6#3，表示该月的第三个星期六。
-L：表示LAST 最后（最后一天或最后一个星期几）；仅出现在日和星期的域中。用在日则表示该月的最后一天，用在星期则表示该月的最后一个星期X。如：星期域上的值为5L，则表示该月最后一个星期的星期四。在使用&#39;L&#39;时，不要指定列表&#39;,&#39;或范围&#39;-&#39;，否则易导致出现意料之外的结果。
-W：仅用在日的域中，表示距离当月给定日期最近的工作日（周一到周五）。 如：&quot;4W&quot;表示距离4号最近的工作日（当月的）触发事件； （1）当4号就是工作日时，则表示当天触发；当4号为周六时，则表示3号（周五）触发； （2）当4号为周日时，则表示在5号（周一）触发； 再如：&quot;1W&quot;表示距离1号最近的工作日触发事件，但是，该工作日只算当月的。假如当月1号是周六，则”1W“表示在当月3号（周一）触发事件。就算上个月的最后一天是工作日，也不会触发事件。
-LW：‘L’和&#39;W&#39;可以一起组合在日字段使用。表示当月的最后一个工作日触发事件。
-</code></pre>
-<p>0 0 7-20 * * * 比如这个0秒0分7-19点内每天每月每周执行，即每天的7-19内0分0秒执行<br>如果要求在上班日（周一到周五），那么最后一个字符“周”就需要配置：0 0 7-20 * * 1-5<br>当然如果你不会的话，可以选择使用<a target="_blank" rel="noopener" href="https://cron.qqe2.com/">在线服务</a>,简单方便。</p>
+<p>0 0 7-20 * * * 比如这个0秒0分7-19点内每天每月每周执行，即每天的7-19内0分0秒执行</p>
+<p>如果要求在上班日（周一到周五），那么最后一个字符“周”就需要配置：0 0 7-20 * * 1-5</p>
+<p>当然如果你不会的话，可以选择使用<a target="_blank" rel="noopener" href="https://cron.qqe2.com/">在线服务</a>,简单方便。</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>青龙面板是个好东西，可视化的界面降低了开发人员的入门，没必要在部署上花费时间，简单的写个python程序，然后放到青龙上，剩下的就是等待，配合Gotify等通知软件，可以实现实时接收消息。</p>
 
       
@@ -1262,70 +1216,53 @@ LW：‘L’和&#39;W&#39;可以一起组合在日字段使用。表示当月的
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="v2ray配置文件"><a href="#v2ray配置文件" class="headerlink" title="v2ray配置文件"></a>v2ray配置文件</h1><p>config基本配置：</p>
-<pre><code>&#123;
-  &quot;log&quot;: &#123;&#125;,          #日志文件路径
-  &quot;api&quot;: &#123;&#125;,          #api路径配置
-  &quot;dns&quot;: &#123;&#125;,          #dns配置
-  &quot;stats&quot;: &#123;&#125;,          #如果有开启全局统计会出现在这
-  &quot;routing&quot;: &#123;&#125;,          #路由配置用来多个跨服务器商议
-  &quot;policy&quot;: &#123;&#125;          #政策，定义等级，可以分等级给配置
-  &quot;reverse&quot;: &#123;&#125;,          #全局统计开关
-  &quot;inbounds&quot;: []          #进站配置
-  &quot;outbounds&quot;: [],          #出战配置
-  &quot;transport&quot;: &#123;          #底层传输配置，全局设置
-&#125;
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">  &quot;log&quot;: &#123;&#125;,          #日志文件路径</span><br><span class="line"></span><br><span class="line">  &quot;api&quot;: &#123;&#125;,          #api路径配置</span><br><span class="line"></span><br><span class="line">  &quot;dns&quot;: &#123;&#125;,          #dns配置</span><br><span class="line"></span><br><span class="line">  &quot;stats&quot;: &#123;&#125;,          #如果有开启全局统计会出现在这</span><br><span class="line"></span><br><span class="line">  &quot;routing&quot;: &#123;&#125;,          #路由配置用来多个跨服务器商议</span><br><span class="line"></span><br><span class="line">  &quot;policy&quot;: &#123;&#125;          #政策，定义等级，可以分等级给配置</span><br><span class="line"></span><br><span class="line">  &quot;reverse&quot;: &#123;&#125;,          #全局统计开关</span><br><span class="line"></span><br><span class="line">  &quot;inbounds&quot;: []          #进站配置</span><br><span class="line"></span><br><span class="line">  &quot;outbounds&quot;: [],          #出战配置</span><br><span class="line"></span><br><span class="line">  &quot;transport&quot;: &#123;          #底层传输配置，全局设置</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
 <h2 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h2><p>V2Ray 支持以下协议：</p>
-<pre><code>Blackhole           #出战专用，黑洞，可以达到禁止访问某些网站的效果
-Dokodemo-door           #Dokodemo door           #（任意门）是一个入站数据协议，它可以监听一个本地端口，并把所有进入此端口的数据发送至指定服务器的一个端口，从而达到端口映射的效果
-Freedom           # Freedom 是一个出站协议，可以用来向任意网络发送（正常的） TCP 或 UDP 数据。
-HTTP          #出入站协议，模仿http
-MTProto           #MTProto 是一个 Telegram 专用的代理协议，不建议使用
-Shadowsocks           #Shadowsocks 协议，包含入站和出站两部分，兼容大部分其它版本的实现。老牌经典但是风险高
-Socks           # 标准 Socks 协议实现，兼容 Socks 4、Socks 4a 和 Socks 5。容易被查
-VMess           # VMess 是一个加密传输协议
-</code></pre>
-<p>除开那些用来阻止访问，特殊的转或者监听端口的，剩下的可以用的协议就是VMess，Shadowsocks，Socks，HTTP四个个协议。<br>如果是新版还有vless,trojan这两个。我们主要用VMess，Shadowsocks之前被爆出过有漏洞，可以准确的被GFW侦测到，确实之前我服务器也因此被封，最新的2022的Shadowsocks已经改善和解决了这个问题。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230328144407.png" alt="20230328144407"><br>但是这个需要使用Xray才可以支持。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Blackhole           #出战专用，黑洞，可以达到禁止访问某些网站的效果</span><br><span class="line"></span><br><span class="line">Dokodemo-door           #Dokodemo door           #（任意门）是一个入站数据协议，它可以监听一个本地端口，并把所有进入此端口的数据发送至指定服务器的一个端口，从而达到端口映射的效果</span><br><span class="line"></span><br><span class="line">Freedom           # Freedom 是一个出站协议，可以用来向任意网络发送（正常的） TCP 或 UDP 数据。</span><br><span class="line"></span><br><span class="line">HTTP          #出入站协议，模仿http</span><br><span class="line"></span><br><span class="line">MTProto           #MTProto 是一个 Telegram 专用的代理协议，不建议使用</span><br><span class="line"></span><br><span class="line">Shadowsocks           #Shadowsocks 协议，包含入站和出站两部分，兼容大部分其它版本的实现。老牌经典但是风险高</span><br><span class="line"></span><br><span class="line">Socks           # 标准 Socks 协议实现，兼容 Socks 4、Socks 4a 和 Socks 5。容易被查</span><br><span class="line"></span><br><span class="line">VMess           # VMess 是一个加密传输协议</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>除开那些用来阻止访问，特殊的转或者监听端口的，剩下的可以用的协议就是VMess，Shadowsocks，Socks，HTTP四个个协议。</p>
+<p>如果是新版还有vless,trojan这两个。我们主要用VMess，Shadowsocks之前被爆出过有漏洞，可以准确的被GFW侦测到，确实之前我服务器也因此被封，最新的2022的Shadowsocks已经改善和解决了这个问题。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230328144407.png" alt="20230328144407"></p>
+<p>但是这个需要使用Xray才可以支持。</p>
 <p>协议的配置既可以在”transport”，也可以在”inbounds”下进行单独的配置。如果在在前者，那么就是全局配置，如果是后者，可以针对不同用户进行配置。但是全局传输方式</p>
-<pre><code>&#123;
-  &quot;port&quot;: 1080,           #监听的端口
-  &quot;listen&quot;: &quot;127.0.0.1&quot;,          #监听的地址，如果在docker内网可以修改为docker的地址
-  &quot;protocol&quot;: &quot;协议名称&quot;,           #使用协议列表内入站的协议
-  &quot;settings&quot;: &#123;&#125;,           # 具体的配置内容，视协议不同而不同。详见每个协议中的InboundConfigurationObject。
-  &quot;streamSettings&quot;: &#123;&#125;,           # 这个就是之前说的&quot;transport&quot;在不同协议下的配置，实现一个协议下多个传输配置
-  &quot;tag&quot;: &quot;标识&quot;,          # 就是拿来标记的
-  &quot;sniffing&quot;: &#123;           # 尝试探测流量的类型，用来探测流量类型，然后
-    &quot;enabled&quot;: false,           #开关
-    &quot;destOverride&quot;: [&quot;http&quot;, &quot;tls&quot;]           #当流量为指定类型时，按其中包括的目标地址重置当前连接的目标。
-  &#125;,
-  &quot;allocate&quot;: &#123;       #端口分配策略。&quot;always&quot;表示总是分配所有已指定的端口，port中指定了多少个端口，V2Ray 就会监听这些端口。&quot;random&quot;表示随机开放端口，每隔refresh分钟在port范围中随机选取concurrency个端口来监听。
-    &quot;strategy&quot;: &quot;always&quot;,
-    &quot;refresh&quot;: 5,       #随机端口刷新间隔，单位为分钟。最小值为2，建议值为5。这个属性仅当strategy = random时有效。
-    &quot;concurrency&quot;: 3      #随机端口数量。最小值为1，最大值为port范围的三分之一。建议值为3。
-  &#125;
-&#125;
-</code></pre>
-<h2 id="传输方式"><a href="#传输方式" class="headerlink" title="传输方式"></a>传输方式</h2><p>这”streamSettings”下配置传输方式，一般而言，使用vmess协议，当然如果你是使用Shadowsocks软件可以是用用对应的协议。<br>接下来就传输方式，即你们经常见到的Websocket，Tcp，这些配置，这些决定了传输的速度，如果你对速度有要求，可以在这些方面上进行配置，已知的配置种类有：</p>
-<pre><code>TCP 
-mKCP
-WebSocket
-HTTP/2
-DomainSocket
-QUIC
-</code></pre>
-<h3 id="TCP传输方式"><a href="#TCP传输方式" class="headerlink" title="TCP传输方式"></a>TCP传输方式</h3><p>HTTP伪装：如果你没有增加TLS，即你没有为你的域名增加SSL证书的话，就是HTTP伪装，将你和服务器的流量伪装成网站流量，但是由于没有加密证书，所以不安全，大家也不推荐。<br>TLS:而TLS则需要你有一个域名，然后将你和服务器的流量伪装成一个正规网站的访问，安全性很高，而且不怕被检测，但是需要你申请ssl证书配置和路径，还需要打开tls。<br>TCP+TLS+其他：这种的就是，我v2ray使用tcp配置，但是不主动访问我得端口，前面访问一个正经的网站服务，可以得到回应，而且还能访问，只有在特殊路径或者特定情况下，前面的web服务器才会将流量转发过来，前端web服务器可以使用nginx，caddy，appache，如果不需要web服务器的话，直接来个TLS分流器也是可以的。这是一种可以跟web服务器共存的方式。</p>
-<h3 id="mKCP传输方式"><a href="#mKCP传输方式" class="headerlink" title="mKCP传输方式"></a>mKCP传输方式</h3><p>V2Ray 引入了 KCP 传输协议，并且做了一些不同的优化，称为 mKCP。如果你发现你的网络环境丢包严重，可以考虑一下使用 mKCP。由于快速重传的机制，相对于常规的 TCP 来说，mKCP 在高丢包率的网络下具有更大的优势，也正是因为此， mKCP 明显会比 TCP 耗费更多的流量，所以请酌情使用。要了解的一点是，mKCP 与 KCPTUN 同样是 KCP 协议，但两者并不兼容。<br>这个就是经常说的KCP。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">  &quot;port&quot;: 1080,           #监听的端口</span><br><span class="line"></span><br><span class="line">  &quot;listen&quot;: &quot;127.0.0.1&quot;,          #监听的地址，如果在docker内网可以修改为docker的地址</span><br><span class="line"></span><br><span class="line">  &quot;protocol&quot;: &quot;协议名称&quot;,           #使用协议列表内入站的协议</span><br><span class="line"></span><br><span class="line">  &quot;settings&quot;: &#123;&#125;,           # 具体的配置内容，视协议不同而不同。详见每个协议中的InboundConfigurationObject。</span><br><span class="line"></span><br><span class="line">  &quot;streamSettings&quot;: &#123;&#125;,           # 这个就是之前说的&quot;transport&quot;在不同协议下的配置，实现一个协议下多个传输配置</span><br><span class="line"></span><br><span class="line">  &quot;tag&quot;: &quot;标识&quot;,          # 就是拿来标记的</span><br><span class="line"></span><br><span class="line">  &quot;sniffing&quot;: &#123;           # 尝试探测流量的类型，用来探测流量类型，然后</span><br><span class="line"></span><br><span class="line">    &quot;enabled&quot;: false,           #开关</span><br><span class="line"></span><br><span class="line">    &quot;destOverride&quot;: [&quot;http&quot;, &quot;tls&quot;]           #当流量为指定类型时，按其中包括的目标地址重置当前连接的目标。</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  &quot;allocate&quot;: &#123;       #端口分配策略。&quot;always&quot;表示总是分配所有已指定的端口，port中指定了多少个端口，V2Ray 就会监听这些端口。&quot;random&quot;表示随机开放端口，每隔refresh分钟在port范围中随机选取concurrency个端口来监听。</span><br><span class="line"></span><br><span class="line">    &quot;strategy&quot;: &quot;always&quot;,</span><br><span class="line"></span><br><span class="line">    &quot;refresh&quot;: 5,       #随机端口刷新间隔，单位为分钟。最小值为2，建议值为5。这个属性仅当strategy = random时有效。</span><br><span class="line"></span><br><span class="line">    &quot;concurrency&quot;: 3      #随机端口数量。最小值为1，最大值为port范围的三分之一。建议值为3。</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="传输方式"><a href="#传输方式" class="headerlink" title="传输方式"></a>传输方式</h2><p>这”streamSettings”下配置传输方式，一般而言，使用vmess协议，当然如果你是使用Shadowsocks软件可以是用用对应的协议。</p>
+<p>接下来就传输方式，即你们经常见到的Websocket，Tcp，这些配置，这些决定了传输的速度，如果你对速度有要求，可以在这些方面上进行配置，已知的配置种类有：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">TCP </span><br><span class="line"></span><br><span class="line">mKCP</span><br><span class="line"></span><br><span class="line">WebSocket</span><br><span class="line"></span><br><span class="line">HTTP/2</span><br><span class="line"></span><br><span class="line">DomainSocket</span><br><span class="line"></span><br><span class="line">QUIC</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="TCP传输方式"><a href="#TCP传输方式" class="headerlink" title="TCP传输方式"></a>TCP传输方式</h3><p>HTTP伪装：如果你没有增加TLS，即你没有为你的域名增加SSL证书的话，就是HTTP伪装，将你和服务器的流量伪装成网站流量，但是由于没有加密证书，所以不安全，大家也不推荐。</p>
+<p>TLS:而TLS则需要你有一个域名，然后将你和服务器的流量伪装成一个正规网站的访问，安全性很高，而且不怕被检测，但是需要你申请ssl证书配置和路径，还需要打开tls。</p>
+<p>TCP+TLS+其他：这种的就是，我v2ray使用tcp配置，但是不主动访问我得端口，前面访问一个正经的网站服务，可以得到回应，而且还能访问，只有在特殊路径或者特定情况下，前面的web服务器才会将流量转发过来，前端web服务器可以使用nginx，caddy，appache，如果不需要web服务器的话，直接来个TLS分流器也是可以的。这是一种可以跟web服务器共存的方式。</p>
+<h3 id="mKCP传输方式"><a href="#mKCP传输方式" class="headerlink" title="mKCP传输方式"></a>mKCP传输方式</h3><p>V2Ray 引入了 KCP 传输协议，并且做了一些不同的优化，称为 mKCP。如果你发现你的网络环境丢包严重，可以考虑一下使用 mKCP。由于快速重传的机制，相对于常规的 TCP 来说，mKCP 在高丢包率的网络下具有更大的优势，也正是因为此， mKCP 明显会比 TCP 耗费更多的流量，所以请酌情使用。要了解的一点是，mKCP 与 KCPTUN 同样是 KCP 协议，但两者并不兼容。</p>
+<p>这个就是经常说的KCP。</p>
 <h3 id="DomainSocket传输方式"><a href="#DomainSocket传输方式" class="headerlink" title="DomainSocket传输方式"></a>DomainSocket传输方式</h3><p>Domain Socket 使用标准的 Unix domain socket 来传输数据。它的优势是使用了操作系统内建的传输通道，而不会占用网络缓存。相比起本地环回网络（local loopback）来说，Domain socket 速度略快一些。所以如果TCP+TLS+其他，其中TLS和web服务器都处理好了数据，剩下的就是系统内部端口的转发，这时候可以考虑使用DomainSocket，速度会更快，尤其速度超过 50Mbps 时，通常会有较明显的性能差距。但是需要注意 <code>	如果指定了 domain socket 作为传输方式，在入站出站代理中配置的端口和 IP 地址将会失效，所有的传输由 domain socket 取代。</code>毕竟内部传输不需要ip地址和监听这些的。</p>
 <h3 id="WebSocket传输方式"><a href="#WebSocket传输方式" class="headerlink" title="WebSocket传输方式"></a>WebSocket传输方式</h3><p>WebSocket是一种网络传输协议，可在单个TCP连接上进行全双工通信，位于OSI模型的应用层。而之前大火的WebSocket+TLS+CDN，就是三者的互相连接，我v2ray用WebSocket，然后用web服务器申请SSL证书，然后再套上一个CDN。其实没有什么难的，主要是涉及三个环节，所以大家会比较复杂，这种的类似TCP+TLS+其他，安全性是一样的，在网络上都是属于探查不到的，毕竟有CDN掩护，可以救那些被封锁的IP，其他倒是没有什么作用。</p>
 <h3 id="HTTP-x2F-2传输方式"><a href="#HTTP-x2F-2传输方式" class="headerlink" title="HTTP&#x2F;2传输方式"></a>HTTP&#x2F;2传输方式</h3><p>简单地说 HTTP&#x2F;2 是 HTTP&#x2F;1.1 的升级版（目前大多数网页还是 HTTP&#x2F;1.1）。其中HTTP&#x2F;2+TLS+WEB， H2流量理论上跟 ws 一样可以被 CDN 转发。 但是遗憾的是, Cloudflare 只支持与源服务器进行 HTTP&#x2F;1.x 通信。</p>
 <h3 id="QUIC-传输方式"><a href="#QUIC-传输方式" class="headerlink" title="QUIC 传输方式"></a>QUIC 传输方式</h3><p>QUIC 全称 Quick UDP Internet Connection，是由 Google 提出的使用 UDP 进行多路并发传输的协议。其主要优势是:</p>
 <ol>
-<li>减少了握手的延迟（1-RTT 或 0-RTT）</li>
-<li>多路复用，并且没有 TCP 的阻塞问题</li>
-<li>连接迁移，（主要是在客户端）当由 Wifi 转移到 4G 时，连接不会被断开。<br><del>QUIC 目前处于实验期，使用了正在标准化过程中的 IETF 实现，不能保证与最终版本的兼容性。</del></li>
+<li><p>减少了握手的延迟（1-RTT 或 0-RTT）</p>
+</li>
+<li><p>多路复用，并且没有 TCP 的阻塞问题</p>
+</li>
+<li><p>连接迁移，（主要是在客户端）当由 Wifi 转移到 4G 时，连接不会被断开。</p>
+</li>
 </ol>
-<p>最后来说说CDN：<br>目前和 V2Ray 兼容的 CDN 国外有 Cloudflare，国内阿里云和腾讯云，这三家的 CDN 是支持 WebSocket 的。剩下的几家不支持 WebSocket，也不会 keep TCP connection。因此 HTTP&#x2F;2 回源也不支持（访问支持 HTTP&#x2F;2 和回源支持 HTTP&#x2F;2 是两回事）。 另外，使用国内 CDN 需要域名备案并服务商实名认证。使用有风险，入坑需谨慎。<br><code>所以这也是为什么必须使用WebSocket+TLS+CDN才会大火，毕竟他在拯救被墙IP上无所替代。</code>根据最新的<a target="_blank" rel="noopener" href="https://developers.cloudflare.com/cache/how-to/enable-http2-to-origin/">Cloudflare文档</a>，应该是支持HTTP&#x2F;2回源的,但是还不支持多路复用。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230327124619.png" alt="20230327124619"><br>至于CDN加速问题，这个见仁见智，毕竟它对我的最大作用在于解封IP，加速反正我是没感觉到，因为CDN是边缘算法，但是并不是每次都能找到你最近的一个服务群。</p>
-<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><p>说了这么多，现在来总结一下:<br>如果IP被墙：那么只有套CDN一条路子：<code>WebSocket+TLS+CDN</code><br>如果IP是正常的，那么建议HTTP&#x2F;2+TLS或者TCP+TLS，没必要在前面套上一个CDN。<br>至于最近大火的Xray，相较于v2ray，它更加简便，没必要再tls加密之下，再加密一层，也可以增加响应速度。但是如果你的服务器像我一样，还有其他服务的话，那么不是很建议你更换，xray创新的xtls协议，需要接管全部端口，按照正常的话是web服务器分流，然后转发给xray。但是xray完全接管了服务器，把所有流量排查了之后，再转给后端的web服务器，让他去处理，所以如果你有在服务器上搭建网站，那么就会出现这个问题。</p>
+<p><del>QUIC 目前处于实验期，使用了正在标准化过程中的 IETF 实现，不能保证与最终版本的兼容性。</del></p>
+<p>最后来说说CDN：</p>
+<p>目前和 V2Ray 兼容的 CDN 国外有 Cloudflare，国内阿里云和腾讯云，这三家的 CDN 是支持 WebSocket 的。剩下的几家不支持 WebSocket，也不会 keep TCP connection。因此 HTTP&#x2F;2 回源也不支持（访问支持 HTTP&#x2F;2 和回源支持 HTTP&#x2F;2 是两回事）。 另外，使用国内 CDN 需要域名备案并服务商实名认证。使用有风险，入坑需谨慎。</p>
+<p><code>所以这也是为什么必须使用WebSocket+TLS+CDN才会大火，毕竟他在拯救被墙IP上无所替代。</code>根据最新的<a target="_blank" rel="noopener" href="https://developers.cloudflare.com/cache/how-to/enable-http2-to-origin/">Cloudflare文档</a>，应该是支持HTTP&#x2F;2回源的,但是还不支持多路复用。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230327124619.png" alt="20230327124619"></p>
+<p>至于CDN加速问题，这个见仁见智，毕竟它对我的最大作用在于解封IP，加速反正我是没感觉到，因为CDN是边缘算法，但是并不是每次都能找到你最近的一个服务群。</p>
+<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><p>说了这么多，现在来总结一下:</p>
+<p>如果IP被墙：那么只有套CDN一条路子：<code>WebSocket+TLS+CDN</code></p>
+<p>如果IP是正常的，那么建议HTTP&#x2F;2+TLS或者TCP+TLS，没必要在前面套上一个CDN。</p>
+<p>至于最近大火的Xray，相较于v2ray，它更加简便，没必要再tls加密之下，再加密一层，也可以增加响应速度。但是如果你的服务器像我一样，还有其他服务的话，那么不是很建议你更换，xray创新的xtls协议，需要接管全部端口，按照正常的话是web服务器分流，然后转发给xray。但是xray完全接管了服务器，把所有流量排查了之后，再转给后端的web服务器，让他去处理，所以如果你有在服务器上搭建网站，那么就会出现这个问题。</p>
 
       
     </div>
