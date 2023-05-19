@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/hexo-blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/hexo-blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/hexo-blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/hexo-blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/hexo-blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"android1122.github.io","root":"/hexo-blog/","images":"/hexo-blog/images","scheme":"Gemini","darkmode":true,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/hexo-blog/js/config.js"></script>
+
+    <meta name="description" content="Vscode配置明细不知道是vscode使用的人数比较少还是别的原因，最近用vscode编写程序的时候，老是会遇见一些奇奇怪怪的问题，但是网上一查都是“内容农场”，要么就是复制来复制去的，每次搜索都要花费大量时间，现在就记录一个文档，方便后续查询。  双击高亮大小写匹配开关。   打开之后，如果有些变量是大小写混写的话，可以快速双击查找出来。  jupyter的matplotlib的魔法函数，默认">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Vscode配置明细">
+<meta property="og:url" content="https://android1122.github.io/hexo-blog/2022/12/02/Vscode%E9%85%8D%E7%BD%AE%E6%98%8E%E7%BB%86/">
+<meta property="og:site_name" content="我是豆豆">
+<meta property="og:description" content="Vscode配置明细不知道是vscode使用的人数比较少还是别的原因，最近用vscode编写程序的时候，老是会遇见一些奇奇怪怪的问题，但是网上一查都是“内容农场”，要么就是复制来复制去的，每次搜索都要花费大量时间，现在就记录一个文档，方便后续查询。  双击高亮大小写匹配开关。   打开之后，如果有些变量是大小写混写的话，可以快速双击查找出来。  jupyter的matplotlib的魔法函数，默认">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220822153915.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//matplotlib.gif">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220907104305.png">
+<meta property="article:published_time" content="2022-12-02T14:08:00.000Z">
+<meta property="article:modified_time" content="2022-12-02T14:08:00.000Z">
+<meta property="article:author" content="张大爆">
+<meta property="article:tag" content="vscode">
+<meta property="article:tag" content="配置项">
+<meta property="article:tag" content="jupyter">
+<meta property="article:tag" content="好用得插件">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220822153915.png">
+
+
+<link rel="canonical" href="https://android1122.github.io/hexo-blog/2022/12/02/Vscode%E9%85%8D%E7%BD%AE%E6%98%8E%E7%BB%86/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://android1122.github.io/hexo-blog/2022/12/02/Vscode%E9%85%8D%E7%BD%AE%E6%98%8E%E7%BB%86/","path":"2022/12/02/Vscode配置明细/","title":"Vscode配置明细"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Vscode配置明细 | 我是豆豆</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/hexo-blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/hexo-blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">我是豆豆</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">吃饭，睡觉，打豆豆</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/hexo-blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/hexo-blog/categories" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a></li><li class="menu-item menu-item-tags"><a href="/hexo-blog/tags" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">154</span></a></li><li class="menu-item menu-item-archives"><a href="/hexo-blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">109</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vscode%E9%85%8D%E7%BD%AE%E6%98%8E%E7%BB%86"><span class="nav-number">1.</span> <span class="nav-text">Vscode配置明细</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">张大爆</p>
+  <div class="site-description" itemprop="description">经常会忘记一些东西，用这里来记录我们曾经来过</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/hexo-blog/archives/">
+          <span class="site-state-item-count">109</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/hexo-blog/categories">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/hexo-blog/tags">
+        <span class="site-state-item-count">154</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/android1122" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;android1122" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:noway@minsummer.com" title="E-Mail → mailto:noway@minsummer.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://android1122.github.io/hexo-blog/2022/12/02/Vscode%E9%85%8D%E7%BD%AE%E6%98%8E%E7%BB%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/hexo-blog/images/avatar.gif">
+      <meta itemprop="name" content="张大爆">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我是豆豆">
+      <meta itemprop="description" content="经常会忘记一些东西，用这里来记录我们曾经来过">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Vscode配置明细 | 我是豆豆">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Vscode配置明细
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-12-02 22:08:00" itemprop="dateCreated datePublished" datetime="2022-12-02T22:08:00+08:00">2022-12-02</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="Vscode配置明细"><a href="#Vscode配置明细" class="headerlink" title="Vscode配置明细"></a>Vscode配置明细</h1><p>不知道是vscode使用的人数比较少还是别的原因，最近用vscode编写程序的时候，老是会遇见一些奇奇怪怪的问题，但是网上一查都是“内容农场”，要么就是复制来复制去的，每次搜索都要花费大量时间，现在就记录一个文档，方便后续查询。</p>
+<ol>
+<li>双击高亮大小写匹配开关。</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220822153915.png" alt="20220822153915"></p>
+<p>打开之后，如果有些变量是大小写混写的话，可以快速双击查找出来。</p>
+<ol start="2">
+<li>jupyter的matplotlib的魔法函数，默认是%matplotlib inline，这个作用是画图时候直接在输出显示，无需每次增加plt.show()。剩下的魔法函数已经合并成%matplotlib widget，<a target="_blank" rel="noopener" href="https://github.com/microsoft/vscode-jupyter/wiki/Using-%25matplotlib-widget-instead-of-%25matplotlib-notebook,tk,etc">官方文档说明</a>，需要注意的事：需求安装ipympl模块。</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//matplotlib.gif" alt="matplotlib"></p>
+<p>用来3D画图时候方便。但是输出结果还是最后一张图片，等后续看能实现动图演示。</p>
+<ol start="3">
+<li><p>VScode断点失效问题，直接回退到python版本到2021年12月为止：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220907104305.png" alt="20220907104305"></p>
+</li>
+<li><p>宝塔面板的Python项目管理器：</p>
+<p>直接登录到对应虚拟环境目录下使用.&#x2F;pip安装所需要包，用.&#x2F;Python 执行。和python官方的虚拟环境有所区别。</p>
+</li>
+<li><p>插件arepl，实时运行python，就可以不用使用jupyter去查看了，在非数据科学下，用来直接编辑python特别方便。</p>
+</li>
+<li><p>kite插件，可以小网页打开对应函数的文档</p>
+</li>
+<li><p>python文件开头#!&#x2F;usr&#x2F;bin&#x2F;python和&#x2F;usr&#x2F;bin&#x2F;env python,后者可以使用虚拟环境下得pyhton执行程序.</p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/hexo-blog/tags/vscode/" rel="tag"># vscode</a>
+              <a href="/hexo-blog/tags/%E9%85%8D%E7%BD%AE%E9%A1%B9/" rel="tag"># 配置项</a>
+              <a href="/hexo-blog/tags/jupyter/" rel="tag"># jupyter</a>
+              <a href="/hexo-blog/tags/%E5%A5%BD%E7%94%A8%E5%BE%97%E6%8F%92%E4%BB%B6/" rel="tag"># 好用得插件</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/hexo-blog/2022/12/02/%E7%9E%8E%E7%9C%BC%E5%90%B1%E5%90%B1/" rel="prev" title="瞎眼吱吱">
+                  <i class="fa fa-chevron-left"></i> 瞎眼吱吱
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/hexo-blog/2022/12/02/%E6%9C%8D%E5%8A%A1%E5%99%A8docker%E5%8C%96%E7%AE%A1%E7%90%86/" rel="next" title="服务器docker化管理">
+                  服务器docker化管理 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 国窖1573 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">张大爆</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/hexo-blog/js/comments.js"></script><script src="/hexo-blog/js/utils.js"></script><script src="/hexo-blog/js/motion.js"></script><script src="/hexo-blog/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/hexo-blog/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>

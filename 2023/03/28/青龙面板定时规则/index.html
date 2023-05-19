@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/hexo-blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/hexo-blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/hexo-blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/hexo-blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/hexo-blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"android1122.github.io","root":"/hexo-blog/","images":"/hexo-blog/images","scheme":"Gemini","darkmode":true,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/hexo-blog/js/config.js"></script>
+
+    <meta name="description" content="青龙面板定时规则青龙面板使用的是cron的时间格式，但是它又在上面基础上进行优化，使用的是5-6位的时间表达式：   知道这些之后，看下青龙内部经常使用的通配符 1234567891011121314151617181920212223,：表示在两个及以上的时间点中都执行。如在月中的值为1,3，则表示1月和3月都触发事件*：表示匹配该域任意值，可解读为 “每”，如小时的字段为*时，表示每一小时都触">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="青龙面板定时规则">
+<meta property="og:url" content="https://android1122.github.io/hexo-blog/2023/03/28/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%AE%9A%E6%97%B6%E8%A7%84%E5%88%99/">
+<meta property="og:site_name" content="我是豆豆">
+<meta property="og:description" content="青龙面板定时规则青龙面板使用的是cron的时间格式，但是它又在上面基础上进行优化，使用的是5-6位的时间表达式：   知道这些之后，看下青龙内部经常使用的通配符 1234567891011121314151617181920212223,：表示在两个及以上的时间点中都执行。如在月中的值为1,3，则表示1月和3月都触发事件*：表示匹配该域任意值，可解读为 “每”，如小时的字段为*时，表示每一小时都触">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/!%5B20230328145315%5D(httpsraw.githubusercontent.comandroid1122typecho_imgmaster20230328145315.png).png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/20230328145545.png">
+<meta property="article:published_time" content="2023-03-28T07:10:59.000Z">
+<meta property="article:modified_time" content="2023-03-28T07:10:59.000Z">
+<meta property="article:author" content="张大爆">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="青龙面板">
+<meta property="article:tag" content="Gotify">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/!%5B20230328145315%5D(httpsraw.githubusercontent.comandroid1122typecho_imgmaster20230328145315.png).png">
+
+
+<link rel="canonical" href="https://android1122.github.io/hexo-blog/2023/03/28/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%AE%9A%E6%97%B6%E8%A7%84%E5%88%99/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://android1122.github.io/hexo-blog/2023/03/28/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%AE%9A%E6%97%B6%E8%A7%84%E5%88%99/","path":"2023/03/28/青龙面板定时规则/","title":"青龙面板定时规则"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>青龙面板定时规则 | 我是豆豆</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/hexo-blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/hexo-blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">我是豆豆</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">吃饭，睡觉，打豆豆</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/hexo-blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/hexo-blog/categories" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a></li><li class="menu-item menu-item-tags"><a href="/hexo-blog/tags" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">154</span></a></li><li class="menu-item menu-item-archives"><a href="/hexo-blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">109</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%AE%9A%E6%97%B6%E8%A7%84%E5%88%99"><span class="nav-number">1.</span> <span class="nav-text">青龙面板定时规则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">张大爆</p>
+  <div class="site-description" itemprop="description">经常会忘记一些东西，用这里来记录我们曾经来过</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/hexo-blog/archives/">
+          <span class="site-state-item-count">109</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/hexo-blog/categories">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/hexo-blog/tags">
+        <span class="site-state-item-count">154</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/android1122" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;android1122" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:noway@minsummer.com" title="E-Mail → mailto:noway@minsummer.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://android1122.github.io/hexo-blog/2023/03/28/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%AE%9A%E6%97%B6%E8%A7%84%E5%88%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/hexo-blog/images/avatar.gif">
+      <meta itemprop="name" content="张大爆">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我是豆豆">
+      <meta itemprop="description" content="经常会忘记一些东西，用这里来记录我们曾经来过">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="青龙面板定时规则 | 我是豆豆">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          青龙面板定时规则
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-03-28 15:10:59" itemprop="dateCreated datePublished" datetime="2023-03-28T15:10:59+08:00">2023-03-28</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="青龙面板定时规则"><a href="#青龙面板定时规则" class="headerlink" title="青龙面板定时规则"></a>青龙面板定时规则</h1><p>青龙面板使用的是cron的时间格式，但是它又在上面基础上进行优化，使用的是5-6位的时间表达式：</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/!%5B20230328145315%5D(httpsraw.githubusercontent.comandroid1122typecho_imgmaster20230328145315.png).png" alt="![20230328145315](httpsraw.githubusercontent.comandroid1122typecho_imgmaster20230328145315.png)"></p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230328145545.png" alt="20230328145545"></p>
+<p>知道这些之后，看下青龙内部经常使用的通配符</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">,：表示在两个及以上的时间点中都执行。如在月中的值为1,3，则表示1月和3月都触发事件</span><br><span class="line"></span><br><span class="line">*：表示匹配该域任意值，可解读为 “每”，如小时的字段为*时，表示每一小时都触发事件</span><br><span class="line"></span><br><span class="line">?：表示不指定值，用于日期和星期字段之间进行互斥。通常在日期和星期字段中的一个指定值，另外一个用?表示不指定值。使用的场景为不需要关心当前设置这个字段的值。例如:要在每月的6号触发一个操作，但不关心是周几，我们可以这么设置 0 0 0 6 * ?</span><br><span class="line"></span><br><span class="line">-：表示范围，一个连续触发的区间。如：时的值为6-8，则表示6-8小时中的每个小时都触发事件。</span><br><span class="line"></span><br><span class="line">/：表示间隔时间触发事件（开始时间/时间间隔）。其中第一部分是起始值，除了秒以外都会降低一个单位，比如在 “秒” 上定义 5/10 表示从 第 5 秒开始 每 10 秒执行一次，而在 “分” 上则表示从 第 5 秒开始 每 10 分钟执行一次。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#：表示该月第n个星期x(x#n)，仅用星期域。如：星期：6#3，表示该月的第三个星期六。</span><br><span class="line"></span><br><span class="line">L：表示LAST 最后（最后一天或最后一个星期几）；仅出现在日和星期的域中。用在日则表示该月的最后一天，用在星期则表示该月的最后一个星期X。如：星期域上的值为5L，则表示该月最后一个星期的星期四。在使用&#x27;L&#x27;时，不要指定列表&#x27;,&#x27;或范围&#x27;-&#x27;，否则易导致出现意料之外的结果。</span><br><span class="line"></span><br><span class="line">W：仅用在日的域中，表示距离当月给定日期最近的工作日（周一到周五）。 如：&quot;4W&quot;表示距离4号最近的工作日（当月的）触发事件； （1）当4号就是工作日时，则表示当天触发；当4号为周六时，则表示3号（周五）触发； （2）当4号为周日时，则表示在5号（周一）触发； 再如：&quot;1W&quot;表示距离1号最近的工作日触发事件，但是，该工作日只算当月的。假如当月1号是周六，则”1W“表示在当月3号（周一）触发事件。就算上个月的最后一天是工作日，也不会触发事件。</span><br><span class="line"></span><br><span class="line">LW：‘L’和&#x27;W&#x27;可以一起组合在日字段使用。表示当月的最后一个工作日触发事件。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>0 0 7-20 * * * 比如这个0秒0分7-19点内每天每月每周执行，即每天的7-19内0分0秒执行</p>
+<p>如果要求在上班日（周一到周五），那么最后一个字符“周”就需要配置：0 0 7-20 * * 1-5</p>
+<p>当然如果你不会的话，可以选择使用<a target="_blank" rel="noopener" href="https://cron.qqe2.com/">在线服务</a>,简单方便。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>青龙面板是个好东西，可视化的界面降低了开发人员的入门，没必要在部署上花费时间，简单的写个python程序，然后放到青龙上，剩下的就是等待，配合Gotify等通知软件，可以实现实时接收消息。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/hexo-blog/tags/python/" rel="tag"># python</a>
+              <a href="/hexo-blog/tags/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF/" rel="tag"># 青龙面板</a>
+              <a href="/hexo-blog/tags/Gotify/" rel="tag"># Gotify</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/hexo-blog/2023/03/28/v2ray%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-%E8%AF%B4%E6%98%8E/" rel="prev" title="v2ray配置文件-说明">
+                  <i class="fa fa-chevron-left"></i> v2ray配置文件-说明
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/hexo-blog/2023/03/28/FreshRSS%E5%AE%9A%E6%97%B6%E8%A7%84%E5%88%99%E7%9A%84%E5%9D%91/" rel="next" title="FreshRSS定时规则的坑">
+                  FreshRSS定时规则的坑 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 国窖1573 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">张大爆</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/hexo-blog/js/comments.js"></script><script src="/hexo-blog/js/utils.js"></script><script src="/hexo-blog/js/motion.js"></script><script src="/hexo-blog/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/hexo-blog/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
