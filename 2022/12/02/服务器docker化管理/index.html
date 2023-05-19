@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/hexo-blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/hexo-blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/hexo-blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/hexo-blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/hexo-blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"android1122.github.io","root":"/hexo-blog/","images":"/hexo-blog/images","scheme":"Gemini","darkmode":true,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/hexo-blog/js/config.js"></script>
+
+    <meta name="description" content="服务器docker化管理这台vps已经伴随我很久了,之前用的事宝塔,但是随着宝塔要手机验证码之后,折腾过国际版宝塔,现在应该是最后一次折腾,直接用docker将各个模块管理。先来分析下： 优势：  备份还原容易，升级容易 各个容器相互独立，一旦建立成功，就不会有什么大问题 不需要宝塔面板做中间人,直接可以保存发布 对系统占用小且整个系统干净，主要是各个数据相互独立除开有需要得文件，其他得文件都可以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="服务器docker化管理">
+<meta property="og:url" content="https://android1122.github.io/hexo-blog/2022/12/02/%E6%9C%8D%E5%8A%A1%E5%99%A8docker%E5%8C%96%E7%AE%A1%E7%90%86/">
+<meta property="og:site_name" content="我是豆豆">
+<meta property="og:description" content="服务器docker化管理这台vps已经伴随我很久了,之前用的事宝塔,但是随着宝塔要手机验证码之后,折腾过国际版宝塔,现在应该是最后一次折腾,直接用docker将各个模块管理。先来分析下： 优势：  备份还原容易，升级容易 各个容器相互独立，一旦建立成功，就不会有什么大问题 不需要宝塔面板做中间人,直接可以保存发布 对系统占用小且整个系统干净，主要是各个数据相互独立除开有需要得文件，其他得文件都可以">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/20221202094146.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221105160743.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221105161135.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221105163046.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221105163624.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221105164216.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221105175349.png">
+<meta property="article:published_time" content="2022-12-02T14:30:00.000Z">
+<meta property="article:modified_time" content="2022-12-02T14:30:00.000Z">
+<meta property="article:author" content="张大爆">
+<meta property="article:tag" content="-v2ray -vps -docker -服务器 -caddyv2">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/20221202094146.png">
+
+
+<link rel="canonical" href="https://android1122.github.io/hexo-blog/2022/12/02/%E6%9C%8D%E5%8A%A1%E5%99%A8docker%E5%8C%96%E7%AE%A1%E7%90%86/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://android1122.github.io/hexo-blog/2022/12/02/%E6%9C%8D%E5%8A%A1%E5%99%A8docker%E5%8C%96%E7%AE%A1%E7%90%86/","path":"2022/12/02/服务器docker化管理/","title":"服务器docker化管理"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>服务器docker化管理 | 我是豆豆</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/hexo-blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/hexo-blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">我是豆豆</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">吃饭，睡觉，打豆豆</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/hexo-blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/hexo-blog/tags" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/hexo-blog/categories" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/hexo-blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8docker%E5%8C%96%E7%AE%A1%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">服务器docker化管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85debain%E6%9C%80%E6%96%B0%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.1.</span> <span class="nav-text">1 安装debain最新系统:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E8%99%9A%E6%8B%9F%E4%BA%A4%E6%8D%A2%E5%86%85%E5%AD%98%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.1.1.</span> <span class="nav-text">增加虚拟交换内存步骤:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E7%94%A8%E6%88%B7docker"><span class="nav-number">1.1.2.</span> <span class="nav-text">增加用户docker</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%AE%89%E8%A3%85docker"><span class="nav-number">1.2.</span> <span class="nav-text">2 安装docker</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%AE%B9%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">部署容器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="nav-number">2.1.</span> <span class="nav-text">参考文档</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">张大爆</p>
+  <div class="site-description" itemprop="description">经常会忘记一些东西，用这里来记录我们曾经来过</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/hexo-blog/archives/">
+          <span class="site-state-item-count">109</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/hexo-blog/categories">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/hexo-blog/tags">
+        <span class="site-state-item-count">96</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/android1122" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;android1122" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:noway@minsummer.com" title="E-Mail → mailto:noway@minsummer.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://android1122.github.io/hexo-blog/2022/12/02/%E6%9C%8D%E5%8A%A1%E5%99%A8docker%E5%8C%96%E7%AE%A1%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/hexo-blog/images/avatar.gif">
+      <meta itemprop="name" content="张大爆">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我是豆豆">
+      <meta itemprop="description" content="经常会忘记一些东西，用这里来记录我们曾经来过">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="服务器docker化管理 | 我是豆豆">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          服务器docker化管理
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-12-02 22:30:00" itemprop="dateCreated datePublished" datetime="2022-12-02T22:30:00+08:00">2022-12-02</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="服务器docker化管理"><a href="#服务器docker化管理" class="headerlink" title="服务器docker化管理"></a>服务器docker化管理</h1><p>这台vps已经伴随我很久了,之前用的事宝塔,但是随着宝塔要手机验证码之后,折腾过国际版宝塔,现在应该是最后一次折腾,直接用docker将各个模块管理。先来分析下：</p>
+<p>优势：</p>
+<ol>
+<li>备份还原容易，升级容易</li>
+<li>各个容器相互独立，一旦建立成功，就不会有什么大问题</li>
+<li>不需要宝塔面板做中间人,直接可以保存发布</li>
+<li>对系统占用小且整个系统干净，主要是各个数据相互独立除开有需要得文件，其他得文件都可以放在容器内部，无需担心一些文件上得冲突</li>
+</ol>
+<p>缺点:</p>
+<ol>
+<li>技术要求高，docker得安装部署会遇见一些没遇见过的坑</li>
+</ol>
+<p>网络扑拓图:</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221202094146.png" alt="20221202094146"></p>
+<h2 id="1-安装debain最新系统"><a href="#1-安装debain最新系统" class="headerlink" title="1 安装debain最新系统:"></a>1 安装debain最新系统:</h2><hr>
+<p>好消息这块搬瓦工内部直接有最新的debain11系统，我个人是建议使用最新系统，这个在之前的文章说过，内置BBR等功能对我们网站速度很有帮助<br><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221105160743.png" alt="20221105160743"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221105161135.png" alt="20221105161135"><br>修改下默认的时区，直接复制粘贴即可</p>
+<pre><code>ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+</code></pre>
+<h3 id="增加虚拟交换内存步骤"><a href="#增加虚拟交换内存步骤" class="headerlink" title="增加虚拟交换内存步骤:"></a>增加虚拟交换内存步骤:</h3><p>这一步非必须，我的服务器是512M的内存，所以一般会增加1G或者1.5G的，在存储足够的情况下，我倾向于多增加一些交换缓存。</p>
+<ol>
+<li>创建内存交换文件<br>bs代表内存块大小,这边设置得是1M,数量1000,合计1G,if后面则是对应得<code>/swap</code>内存交换文件名,可以自行修改.<pre><code>dd if=/dev/zero of=/swap bs=1024000 count=1024
+</code></pre>
+ <img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221105163046.png" alt="20221105163046"></li>
+<li>注册内存交换文件 <pre><code>mkswap /swap
+</code></pre>
+</li>
+<li>激活服务器内存文件 <pre><code>swapon /swap
+#停用 swapoff -v /swap 
+</code></pre>
+</li>
+<li>设置权限(安全第一,改为只能让root修改) <pre><code># chmod 0600 /swap
+</code></pre>
+</li>
+<li>开启启动注册:在<code>/etc/fstab</code>最后一行增加<pre><code>/swap swap swap defaults 0 0
+</code></pre>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221105163624.png" alt="20221105163624"></p>
+<h3 id="增加用户docker"><a href="#增加用户docker" class="headerlink" title="增加用户docker"></a>增加用户<code>docker</code></h3><p>这一步也是非必须，增加一个可以使用<code>sudo</code>的用户是可以将权限隔离开来。</p>
+<pre><code>useradd docker  -d -m -s -c &quot;docker manger&quot;
+或者
+adduser docker
+</code></pre>
+<p>两者都是增加用户得方法,其中adduser是一个系统自带脚本,会自动提示输入对应得密码,而useradd需要输入对应的开始文件夹等信息,且需要使用<code>passwd</code>输入密码.<br><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221105164216.png" alt="20221105164216"><br>增加完用户,需要给用户提权,默认完全干净的debain是没有<code>sudo</code>命令的,需要使用</p>
+<pre><code>apt-get install sudo
+</code></pre>
+<p>安装,安装完之后需要进入<code>\etc\sudoers</code>增加一列<code>docker ALL=(ALL:ALL) ALL</code><br><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221105175349.png" alt="20221105175349">如果提示无法编辑,看下是不是文件没有给修改权限.<br>一切就绪之后,退出重新登陆,就可以使用sudo命令.如果直接使用root,不安装sudo,以下命令的sudo可以删除掉.</p>
+<h2 id="2-安装docker"><a href="#2-安装docker" class="headerlink" title="2 安装docker"></a>2 安装docker</h2><hr>
+<p>推荐使用apt,不推荐脚本,官方脚本安装是适用于测试和开发环境.<br>由于 apt 源使用 HTTPS 以确保软件下载过程中不被篡改。因此，我们首先需要添加使用 HTTPS 传输的软件包以及 CA 证书:</p>
+<pre><code>sudo apt-get update
+sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+</code></pre>
+<p>为了确认所下载软件包的合法性，需要添加软件源的 GPG 密钥。</p>
+<pre><code>官方源
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+</code></pre>
+<p>然后，我们需要向 sources.list 中添加 Docker 软件源：</p>
+<pre><code>官方源
+echo \
+  &quot;deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
+  $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+</code></pre>
+<p>如果行太长可以通过增加”\“来告诉系统我要换行,不需要执行,稍后一起执行<br>准备好之后更新一发:</p>
+<pre><code>sudo apt-get update
+</code></pre>
+<blockquote>
+<p>如果执行以上命令出现error错误,一般是没有对应得文件权限.<br>可以增加读写权限</p>
+</blockquote>
+<pre><code>sudo chmod a+r /etc/apt/keyrings/docker.gpg
+sudo apt-get update
+</code></pre>
+<p>以上是准备工作:然后安装对应得docker:<code>如果不需要docker-compose</code>可以取消掉</p>
+<pre><code>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+</code></pre>
+<p>建立 docker用户组<br>默认情况下，docker 命令会使用 Unix socket 与 Docker 引擎通讯。而只有 root 用户和 docker 组的用户才可以访问 Docker 引擎的 Unix socket。出于安全考虑，一般 Linux 系统上不会直接使用 root 用户。因此，更好地做法是将需要使用 docker 的用户加入 docker 用户组。<br>建立 docker 组</p>
+<pre><code>$ sudo groupadd docker
+</code></pre>
+<p>将<code>当前用户</code>增加进docker用户组.</p>
+<pre><code>$ sudo usermod -aG docker $USER
+</code></pre>
+<p>测试是否成功可以使用:</p>
+<pre><code>$ docker run --rm hello-world
+
+Unable to find image &#39;hello-world:latest&#39; locally
+latest: Pulling from library/hello-world
+b8dfde127a29: Pull complete
+Digest: sha256:308866a43596e83578c7dfa15e27a73011bdd402185a84c5cd7f32a88b501a24
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the &quot;hello-world&quot; image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+</code></pre>
+<h1 id="部署容器"><a href="#部署容器" class="headerlink" title="部署容器"></a>部署容器</h1><hr>
+<p>容器装载有两种方式,一种是一个个建立,然后统一使用一个网络来连接内部,一种是直接建立compose文件,直接安装docker集群,两者的方法是一样的,没有区别.只有一次安装和多次安装的区别.</p>
+<p>准备工作:<br>创建一个内部网络,确定对应网段docker network create -d bridge –subnet&#x3D;172.18.0.0&#x2F;16 root_caddy 后续所有的docker后面都需要加上<code>--network root_caddy</code>代表将容器加入创建的网络,使用<code>--ip 172.16.0.1</code>指定IP,方便后续调用</p>
+<p>拉取镜像:<code>apline</code>是一个以轻量小巧的liunx服务器系统,对应版本的镜像都是十分小巧,和debain的相差8倍.<br>整体的docker-compose文件</p>
+<pre><code>version: &quot;3.9&quot;  # optional since v1.27.0
+services:
+  caddyv2: #caddy反向代理
+    container_name: caddy
+    image: caddy:2.6-alpine
+    restart: unless-stopped
+    volumes:
+      - /root/docker_data/caddy/data:/data #caddy留存的证书信息,最好保存,方便后续迁移
+      - /root/docker_data/caddy/caddyconfig:/etc/caddy #caddyfile的配置文件
+      - /root/docker_data/caddy/file:/usr/share/caddy #caddy的运行网页
+    ports:
+      - &quot;80:80&quot;
+      - &quot;443:443&quot;
+      - &quot;443:443/udp&quot;
+    depends_on:
+      - v2ray
+    networks:
+      root_caddy:
+        ipv4_address: 172.18.0.3
+
+  v2ray: #v2翻墙
+    container_name: v2ray
+    image: teddysun/v2ray
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - /root/docker_data/v2ray/config:/etc/v2ray
+    expose:
+      - 8888
+    command: /usr/bin/env v2ray.vmess.aead.forced=false /usr/bin/v2ray run -config /etc/v2ray/config.json #由于MD5验证问题，覆盖容器原有得命令
+    networks:
+      root_caddy:
+        ipv4_address: 172.18.0.2
+
+  # calibre-web: #clibre电子阅读器-暂定，还未完全
+  #   image: lscr.io/linuxserver/calibre-web:latest
+  #   container_name: calibre-web
+  #   environment:
+  #     - TZ=Asia/Shanghai
+  #   volumes:
+  #     - /root/docker_data/calibre/config:/config
+  #     - /root/docker_data/calibre/library:/books
+  #   expose:
+  #     - &quot;8083&quot;
+  #   restart: unless-stopped
+  #   networks:
+  #     root_caddy:
+  #       ipv4_address: 172.18.0.4
+
+  # PHP:
+  #   image: php:fpm-alpine    
+  #   container_name: PHP
+  #   environment:
+  #     - TZ=Asia/Shanghai
+  #   volumes:
+  #     - /root/docker_data/caddy/file:/usr/share/caddy #路径最好和caddy得文件路径一致，否则会出现路径不匹配问题
+  #   expose:
+  #     - &quot;9000&quot;
+  #   restart: unless-stopped
+  #   networks:
+  #     root_caddy:
+  #       ipv4_address: 172.18.0.5
+
+  
+networks:
+  root_caddy:
+    external: true
+</code></pre>
+<p>以上将路径和对应的文件夹全部都映射完成，后续可以直接执行运转。这边采用的是Caddy来进行反代，因为它够简单，也够好用，足够满足我的需求。对应的Caddyfile文件</p>
+<pre><code>*.com &#123;
+    root * /usr/share/caddy
+    file_server
+    reverse_proxy 172.18.0.2:8888 &#123;
+            header_up Host &#123;http.request.host&#125;
+            header_up X-Real-IP &#123;http.request.remote&#125;
+            header_up X-Forwarded-For &#123;http.request.remote&#125;
+            header_up X-Forwarded-Port &#123;http.request.port&#125;
+            header_up X-Forwarded-Proto &#123;http.request.scheme&#125;
+            header_up Connection &#123;http.request.header.Connection&#125;
+            header_up Upgrade &#123;http.request.header.Upgrade&#125;
+    &#125;
+&#125;
+</code></pre>
+<p>一些常用的容器命令</p>
+<pre><code>修订容器内部时间
+docker cp -L /usr/share/zoneinfo/Asia/Shanghai 容器名称:/etc/localtime
+
+复制容器内部文件
+docker cp nginx:/etc/nginx/ /home/docker/ #将nginx整个文件夹复制到docker下
+docker cp nginx:/usr/share/nginx/html/ /home/docker/nginx
+
+进入容器内部操作
+docker exec -it 容器名称 /bin/bash 
+docker exec -it 容器名称 /bin/sh  #apline 进入容器命令
+
+清理无用的docker，解放硬盘空间（清理没用的image，包括build建立的缓存）
+docker system df 查看docker占用硬盘
+docker system prune -a
+</code></pre>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/429276977">docker 网络-容器间通信</a><br><a target="_blank" rel="noopener" href="https://www.linuxidc.com/Linux/2016-04/130522.htm">Debian普通用户获取root权限|sudo的安装与配置</a><br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1444268">Linux设置和修改时间与时区</a><br><a target="_blank" rel="noopener" href="https://joyqi.com/typecho/about-typecho-1-2-dev-plan.html">新版的Typecho开发计划</a><br><a target="_blank" rel="noopener" href="https://www.alpinelinux.org/">ALPINE</a><br><a target="_blank" rel="noopener" href="https://yeasy.gitbook.io/docker_practice/network/linking">容器互联</a><br><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/debian/">docker官方安装</a><br><a target="_blank" rel="noopener" href="https://p3terx.com/archives/add-normal-users-with-adduser-and-useradd.html">Linux 使用 adduser 与 useradd 添加普通用户的正确姿势</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/hexo-blog/tags/v2ray-vps-docker-%E6%9C%8D%E5%8A%A1%E5%99%A8-caddyv2/" rel="tag"># -v2ray -vps -docker -服务器 -caddyv2</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/hexo-blog/2022/12/02/Vscode%E9%85%8D%E7%BD%AE%E6%98%8E%E7%BB%86/" rel="prev" title="Vscode配置明细">
+                  <i class="fa fa-chevron-left"></i> Vscode配置明细
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/hexo-blog/2022/12/05/%E6%96%B0%E4%B8%80%E4%BB%A3%E7%9A%84VPS%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7VScode/" rel="next" title="新一代的VPS管理工具VScode">
+                  新一代的VPS管理工具VScode <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 国窖1573 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">张大爆</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/hexo-blog/js/comments.js"></script><script src="/hexo-blog/js/utils.js"></script><script src="/hexo-blog/js/motion.js"></script><script src="/hexo-blog/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/hexo-blog/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
