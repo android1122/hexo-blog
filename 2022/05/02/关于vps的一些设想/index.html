@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/hexo-blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/hexo-blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/hexo-blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/hexo-blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/hexo-blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"android1122.github.io","root":"/hexo-blog/","images":"/hexo-blog/images","scheme":"Gemini","darkmode":true,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/hexo-blog/js/config.js"></script>
+
+    <meta name="description" content="首先，描述一下我的服务器配置  cpu：1核   内存：512M  硬盘：10G  带宽：1G  流量：1000G&#x2F;月   这个是搬瓦工的512M的洛杉矶CN2线路，访问国内速度很快，电信联通尤其好，移动差劲。现在这款已经下架，目前最便宜的要1G内存20G硬盘-49.99美元&#x2F;年，这个只能说当初年少无知，没想到捡了一块宝。   但是相对的也存在问题：我们服务器内核不足，而且">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于vps的一些设想">
+<meta property="og:url" content="https://android1122.github.io/hexo-blog/2022/05/02/%E5%85%B3%E4%BA%8Evps%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%BE%E6%83%B3/">
+<meta property="og:site_name" content="我是豆豆">
+<meta property="og:description" content="首先，描述一下我的服务器配置  cpu：1核   内存：512M  硬盘：10G  带宽：1G  流量：1000G&#x2F;月   这个是搬瓦工的512M的洛杉矶CN2线路，访问国内速度很快，电信联通尤其好，移动差劲。现在这款已经下架，目前最便宜的要1G内存20G硬盘-49.99美元&#x2F;年，这个只能说当初年少无知，没想到捡了一块宝。   但是相对的也存在问题：我们服务器内核不足，而且">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220519195612.png">
+<meta property="article:published_time" content="2022-05-02T02:40:00.000Z">
+<meta property="article:modified_time" content="2022-05-02T02:40:00.000Z">
+<meta property="article:author" content="张大爆">
+<meta property="article:tag" content="-vps -linux系统">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220519195612.png">
+
+
+<link rel="canonical" href="https://android1122.github.io/hexo-blog/2022/05/02/%E5%85%B3%E4%BA%8Evps%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%BE%E6%83%B3/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://android1122.github.io/hexo-blog/2022/05/02/%E5%85%B3%E4%BA%8Evps%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%BE%E6%83%B3/","path":"2022/05/02/关于vps的一些设想/","title":"关于vps的一些设想"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>关于vps的一些设想 | 我是豆豆</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/hexo-blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/hexo-blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">我是豆豆</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">吃饭，睡觉，打豆豆</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/hexo-blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/hexo-blog/tags" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/hexo-blog/categories" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/hexo-blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">张大爆</p>
+  <div class="site-description" itemprop="description">经常会忘记一些东西，用这里来记录我们曾经来过</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/hexo-blog/archives/">
+          <span class="site-state-item-count">109</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/hexo-blog/categories">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/hexo-blog/tags">
+        <span class="site-state-item-count">116</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/android1122" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;android1122" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:noway@minsummer.com" title="E-Mail → mailto:noway@minsummer.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://android1122.github.io/hexo-blog/2022/05/02/%E5%85%B3%E4%BA%8Evps%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%BE%E6%83%B3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/hexo-blog/images/avatar.gif">
+      <meta itemprop="name" content="张大爆">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我是豆豆">
+      <meta itemprop="description" content="经常会忘记一些东西，用这里来记录我们曾经来过">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="关于vps的一些设想 | 我是豆豆">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          关于vps的一些设想
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-05-02 10:40:00" itemprop="dateCreated datePublished" datetime="2022-05-02T10:40:00+08:00">2022-05-02</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>  首先，描述一下我的服务器配置</p>
+<ul>
+<li><p>cpu：1核 </p>
+</li>
+<li><p>内存：512M</p>
+</li>
+<li><p>硬盘：10G</p>
+</li>
+<li><p>带宽：1G</p>
+</li>
+<li><p>流量：1000G&#x2F;月</p>
+</li>
+</ul>
+<p>这个是搬瓦工的512M的洛杉矶CN2线路，访问国内速度很快，电信联通尤其好，移动差劲。现在这款已经下架，目前最便宜的要<a target="_blank" rel="noopener" href="https://bandwagonhost.com/aff.php?aff=20859">1G内存20G硬盘-49.99美元&#x2F;年</a>，这个只能说当初年少无知，没想到捡了一块宝。</p>
+<p>  但是相对的也存在问题：我们服务器内核不足，而且内存不足，所以很多大型的服务我们是运行不起来的，尤其不建议运行Mysql服务，虽然通过虚拟化内存可以增加内存容量，但是1核心的cpu始终是系统短板。所以系统搭载以轻快+低负载为主。曾经想过将其变为一个网上影院，后面折腾来折腾去，发现不仅仅是硬盘不足，还有由于cn2网络的不稳定，有时候还不如挂代理直接访问一些视频网站舒服，毕竟人家有优化，有线路。那么综合下来，目前服务器上仅仅搭载3个服务：</p>
+<ul>
+<li><p>V2ray：翻墙工具，用来访问一些无法访问的东西。</p>
+</li>
+<li><p>typecho博客：轻量级博客，很适合这种低内存的小主机，主要是不需要安装数据库。</p>
+</li>
+<li><p>clibre-web电子书：在线阅读工具，更新迅速还开源。</p>
+</li>
+</ul>
+<p>其中v2使用脚本安装，安装在系统内部。typecho使用宝塔面板。clibre-web使用python项目管理部署。</p>
+<p>现在想重新整理这些服务，毕竟当初安装的时候试错和其他服务，所以导致整个系统的文件有点混乱，包括当初为了独立出一个python，也试过python共存。还有就是宝塔面板更新需要手机绑定等问题，导致一直使用旧的宝塔面板。所以现在想要从头梳理一下自己需求，从系统层面重新搭建一个干净的服务器。</p>
+<p>1.系统选择</p>
+<hr>
+<p>  目前是使用centos系统，当时搬瓦工可以安装的系统中自带BBR加速的</p>
+<blockquote>
+<p>BBR是 Google 在2016 年发布的一套拥塞控制算法。它尤其适合在存在一定丢包率的弱网环境下使用，在这类环境下，BBR 的性能远超 CUBIC 等传统的拥塞控制算法。</p>
+</blockquote>
+<p>  目前主流加速方式有2种：BBR和锐速。加速效果相近，对于海外的机器我是建议使用加速算法的，流量损耗大概在5%，但是效果提升巨大，目前已经成为大多数服务器自带的一个服务，自带的内核版本是Linux 4.9及以上的系统已经内置BBR但默认为关闭状态。目前CentOS 8.0+, Debian 9.5+都是这个内核以上版本，可以使用以下命令打开：</p>
+<pre><code>echo &quot;net.core.default_qdisc=fq&quot; &gt;&gt; /etc/sysctl.conf
+
+echo &quot;net.ipv4.tcp_congestion_control=bbr&quot; &gt;&gt; /etc/sysctl.conf
+
+sysctl -p
+</code></pre>
+<p>  如果还嫌弃不够可以再打开TCP Fast Open：</p>
+<pre><code>echo &quot;net.ipv4.tcp_fastopen=3&quot; &gt;&gt; /etc/sysctl.conf &amp;&amp; sysctl -p
+</code></pre>
+<p>  所以大多数Linux系统都是我们的选择。搬瓦工提供的安装系统：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220519195612.png" alt="20220519195612"></p>
+<p>  除了centos，debain，Ubuntu，还有一个AlmaLinux和rocky。这边不是很推荐最后两个系统，说是centos系统的后续接班人，但是相对来说文档不多，而且太小众，出现问题都找不到解决方案。然后在centos，debain，Ubuntu之间，我是会比较推荐debain系统，因为centos8系统生命周期2021年已经结束。虽然centos7还存续着，到2024年，但是系统毕竟属于后期维护，团队主力在centos stream。而且debain系统和centos系统相似（其实大多数Linux系统都是相似的，差别在一些包管理。最重要的是debain系统相较于centos系统，占用更小，系统更加稳定，128M的系统都可以完美运行debain系统。debain系统主打稳定性，建议一旦完美运行之后就别去再升级。文档来说相对于centos少，但是还是可以找到大多数的问题解决方案。其次如果是网站服务器，很多时候我们会使用控制面板，由它们来输入和执行命令，所以底层系统的差距对我们影响不大。</p>
+<blockquote>
+<p>总结：如果你是新手（不折腾），使用centos，如果你有一定的排查问题能力且是追求性能极致的（生命不止，折腾不休），那么建议你使用debain。</p>
+</blockquote>
+<p>2，控制面板选择</p>
+<hr>
+<p>  控制面板相当于我们和操作系统之间的一个中间媒介，用来控制服务器的文件读写，权限配置，php等其他程序的安装，让我们没必要修改一个文件需要打一大堆的命令行。面板能够提供：</p>
+<ul>
+<li><p>1，直观的文件操作和文档</p>
+</li>
+<li><p>2，傻瓜化网站部署，反向代理和ssl证书申请等</p>
+</li>
+<li><p>3，php状态查询还有一些插件的安装和卸载。</p>
+</li>
+</ul>
+<p>  主流的控制面板程序有很多，但是都大差不离。这边主要推荐两个：AMH，宝塔。</p>
+<p>  宝塔：大概占用200M左右，国内版本需要绑定手机号，虽说有办法可以绕过去，但总归不方便。每次升级还需要操作一次，这边推荐国际版，内容一样，但是是英文的。可以满足大多数需求：提供一键安装望着那个环境，支持nignx的各种操作，提供软件源，可以让你安装其他一些适配的程序，安装好之后可以直接界面操作，而无需输入命令行。</p>
+<p>  AMH：之前是特定版本免费，现在已经是直接有免费版本了，根据官网的<a target="_blank" rel="noopener" href="http://8.129.124.177:8888/index.php?c=index&a=index_csrf">演示版本</a>，他是更偏向于自定义的，很多东西不会默认给你安装，你需要一点点的去软件商店安装你需要的软件。自定义化程度高，但是相对的很多东西需要有一定的基础，软件商店提供的产品很多，很多都是知名的软件。上手成本高，但是最后成效是要好于宝塔，毕竟宝塔是自己开发，很多功能需要后面增加。这个直接采用主流软件挂载，基本可以实现所有操作。</p>
+<p>  推荐这两款主要是中文+有自己的文档社区。毕竟出问题好解决。</p>
+<blockquote>
+<p>总结：如果你是新手请直接选择宝塔。该有的都有，该配的都给你配好了，即开即用</p>
+</blockquote>
+<blockquote>
+<p>如果你是强迫症或者享受折腾的过程，那么请用AMH。</p>
+</blockquote>
+<p>3，服务器程序</p>
+<hr>
+<p>  服务器内存和核心都是短板，所以一般我不会在服务器运行一些大型程序，基本上关于数据库的操作我都不会部署。目前几个程序几乎都是采用sqllite进行数据操作。人们购买服务器的想法多样：有些是想要部署自己的博客，有些仅仅是为了看YouTube，还有就是自己学习需要一台24小时不间断的电脑，侧重稳定性。但是我想说的是服务器能做到的不仅仅如此：基本上只要是采用python的服务，我们都可以部署，同样基于PHP的我们也可以做到。如果你需要，你可以在服务器上部署jupyter来进行远端程序开发，或者部署一个爬虫抓取对应的资料。这边举例几个：</p>
+<ul>
+<li><p>jupyter：python开发工具，可以满足数据学习和爬虫开发，网页端运行。</p>
+</li>
+<li><p>爬虫：基于python的自动爬虫工具，数据可以直接保存成json。</p>
+</li>
+<li><p>frp：一款反向代理工具，可以将你内网的服务发布到外网，让别人可以通过域名或者公网IP进行访问。</p>
+</li>
+<li><p>博客：typecho或者其他基于python开发的博客。</p>
+</li>
+</ul>
+<p>当然，你如果喜欢也可以在上面安装docker，然后利用docker部署全部程序，实现完全独立的操作。</p>
+<p>最后还是要提示一句，服务器稳定为主，不建议经常折腾，如若不是有必要，还是别换来换去的，还有，千万要记得备份，备份，备份。</p>
+<p>结局：在一段时间后，我选择了重装系统，将系统换到Debain，面板采用宝塔国际版，英文界面，但是不影响使用，服务程序的重装比想象顺利，其中V2ray也进行了更新配置。</p>
+<p>参考文档：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/32274264">CentOS、Ubuntu、Debian三个linux比较异同</a></p>
+<p><a target="_blank" rel="noopener" href="https://suiyuanjian.com/474.html#toc-2">Debian&#x2F;Ubuntu&#x2F;CentOS等Linux开启BBR加速AWS&#x2F;GCP等云服务器访问</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/hexo-blog/tags/vps-linux%E7%B3%BB%E7%BB%9F/" rel="tag"># -vps -linux系统</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/hexo-blog/2022/05/01/%E7%A7%81%E4%BA%BA%E5%9B%BE%E4%B9%A6%E9%A6%86%E6%90%AD%E5%BB%BA-clibre/" rel="prev" title="私人图书馆搭建-clibre">
+                  <i class="fa fa-chevron-left"></i> 私人图书馆搭建-clibre
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/hexo-blog/2022/05/08/%E5%85%B3%E4%BA%8E%E5%90%8C%E4%BA%8B/" rel="next" title="关于同事">
+                  关于同事 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 国窖1573 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">张大爆</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/hexo-blog/js/comments.js"></script><script src="/hexo-blog/js/utils.js"></script><script src="/hexo-blog/js/motion.js"></script><script src="/hexo-blog/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/hexo-blog/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
