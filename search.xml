@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo部署指南-基于GitHub</title>
+    <url>/2023/05/17/110-hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h2 id="折腾啊折腾"><a href="#折腾啊折腾" class="headerlink" title="折腾啊折腾"></a>折腾啊折腾</h2><p>之前使用的是typecho博客，简单，轻量。满足需求，唯一的问题是不是很好看，好看的主题需要付费，如handsome，而且很多时候速度不快。最让我不能忍的是更新慢，而且对一些数学公式的支持并不是那么有效果。所以从很早以前就衍生出了想要换一个博客的想法，归根揭底就是闲了，想折腾了。</p>
+<span id="more"></span>
+<p>之前考虑的博客有两种Hexo，Hugo。两者都是静态博客，简单说就是你在本地都生成了网页，然后放上去就行，不需要任何的框架。能打开就能看到。这点的好处就是完全不用担心被攻击。犹记得当年使用typecho+MySQL，然后数据库被黑，对面要求我支付比特币解锁，最后只能忍痛重建。博客的框架千千万，最后归属大概率就是静态。毕竟博客作为一种展示的平台，好看，速度快是最重要的。<br>在Hexo和Hugo之间，我最后选择了Hexo，主要是因为Hugo也好久没有更新了，虽然静态博客不需要太多更新，但是随着技术和审美的改变，我还是希望有一个可以长久支持的系统来更新我得博客，我并不希望像typecho那样五年才一个更新，然后更新完之后还是有bug。所以再三思量之后就想着使用Hexo作为我的下一个博客框架。其实也和我现在的写作习惯有关系，平时写作时在电脑上，然后再复制到博客发布，电脑端用vscode编写好了markdown文件，也是有留底的，主要是之前太多次的博客重建，导致我习惯性本地一份，电脑一份。如果这次换成静态文件，那么就不需要再拷贝，直接git上传就可以。<br>我看了网上好多的教程都是安装Git，node，hexo然后在写，再发布。我并不喜欢这种做法，毕竟乱七八糟的，还要在电脑端安装这个环境那个环境，搞不好哪天环境冲突，就傻眼了，我这边就自己看了下，感觉可以利用GitHub实现无本地环境的部署：</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-05-18-10-21-47.png" alt="hexo无本地环境部署指南-2023-05-18-10-21-47"></p>
+<p>通过流程涂我们可以看到，本地环境的的作用其实就是用来渲染的，所以如果有一个机器能帮我们随时渲染的话，那么就不需要搭建本地环境。</p>
+<h2 id="部署步骤"><a href="#部署步骤" class="headerlink" title="部署步骤"></a>部署步骤</h2><ol>
+<li><p>复制基本文件</p>
+<blockquote>
+<p><a href="https://github.com/hexojs/hexo-starter.git">https://github.com/hexojs/hexo-starter.git</a></p>
+</blockquote>
+<p> 该文件是官方的初始文件，你可以选择下载，或者直接fork到你的GitHub库。具体文件夹可以查看官方<a href="https://hexo.io/zh-cn/docs/setup">文档说明</a>，对于我们来说，只需要知道，发布的放在&#x2F;source&#x2F;_posts，而相对应的主题放在themes文件夹下即可。</p>
+</li>
+<li><p>渲染<br>有了文件之后，你就可以写自己的博客，就是这么简单，写完之后就是渲染的问题，渲染这边使用的是GitHub的action来渲染：官方推荐了一个action脚本，在自己文件夹下创建.github&#x2F;workflows&#x2F;xxx.yaml，然后输入官方的代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: Pages #名称，随便写</span><br><span class="line"> on:</span><br><span class="line"> push:</span><br><span class="line">     branches:</span><br><span class="line">     - master # 默认路径</span><br><span class="line"></span><br><span class="line"> jobs:</span><br><span class="line"> pages:</span><br><span class="line">     runs-on: ubuntu-latest #选定使用的系统</span><br><span class="line">     permissions:</span><br><span class="line">     contents: write</span><br><span class="line">     steps:</span><br><span class="line">     - uses: actions/checkout@v3 #调用官方的脚本，直接复制我们的项目文件到虚拟系统 </span><br><span class="line">     - name: 安装node</span><br><span class="line">         uses: actions/setup-node@v2 #调用前人写好的脚本，安装node环境</span><br><span class="line">         with:</span><br><span class="line">         node-version: &quot;18&quot;</span><br><span class="line">     - name: Cache NPM dependencies #加载缓存，增加速度</span><br><span class="line">         uses: actions/cache@v2</span><br><span class="line">         with:</span><br><span class="line">         path: node_modules</span><br><span class="line">         key: $&#123;&#123; runner.OS &#125;&#125;-npm-cache</span><br><span class="line">         restore-keys: |</span><br><span class="line">             $&#123;&#123; runner.OS &#125;&#125;-npm-cache</span><br><span class="line">     - name: Install Dependencies #这里很重要，官方脚本如果缺少插件，可以使用这里进行增加</span><br><span class="line">         run: |</span><br><span class="line">         npm install</span><br><span class="line">         npm install hexo-markmap #如果还需要插件就回车，然后输入npm install 你要的插件名称</span><br><span class="line">     - name: Build</span><br><span class="line">         run: npm run build</span><br><span class="line">     - name: Deploy</span><br><span class="line">         uses: peaceiris/actions-gh-pages@v3 #他会创建分支，然后将分支发布到GitHub Pages上</span><br><span class="line">         with:</span><br><span class="line">         github_token: $&#123;&#123; secrets.GITHUB_TOKEN &#125;&#125;</span><br><span class="line">         publish_dir: ./public</span><br></pre></td></tr></table></figure>
+<p>这样之后，每次你修改文件，都会重新渲染所有的文件，然后发布到对应的GitHub Pages上</p>
+<p> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-05-18-10-46-58.png" alt="hexo无本地环境部署指南-2023-05-18-10-46-58"></p>
+</li>
+<li><p>发布<br>进入GitHub的settings，然后选择发布的分支，选择gh-pages，然后选择发布即可。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-05-18-10-34-15.png" alt="hexo无本地环境部署指南-2023-05-18-10-34-15"></p>
+</li>
+<li><p>浏览<br>打开分配的域名，你就可以看到对应的网页。</p>
+</li>
+<li><p>分配自己的域名<br>如果你有一个自己的域名想要分配的话，那么你就要在DNS管理中加上A记录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">185.199.108.153</span><br><span class="line">185.199.109.153</span><br><span class="line">185.199.110.153</span><br><span class="line">185.199.111.153</span><br></pre></td></tr></table></figure>
+<p>然后在增加一个CNAME记录，使用www，目标定位<code>&lt;user&gt;.github.io</code>，然后再page页面输入customsite：<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-05-20-19-53-18.png" alt="hexo无本地环境部署指南-2023-05-20-19-53-18"></p>
+<p>系统会检查DNS配置。</p>
+</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这个方法的好处是，不需要在本地搭建环境，而渲染的node环境你可以随时使用最新版的，所以极大的简化了自己搭建环境的问题。至于写作流程问题就更加的方便，可以简单的使用GitHub，也可以在本地写好之后，使用git上传上去，反正你的每次更改都会触发，让我更加专注于写作，而不需要去关注其他问题。<br>如果说唯一的缺点，那么就是无法实时预览你写的文章吧。</p>
+<hr>
+<p>参考文章：<br><a href="https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">域名配置</a></p>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>GitHub</tag>
+        <tag>无环境搭建</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>FinalShell跳板配置</title>
     <url>/2022/12/05/FinalShell%E8%B7%B3%E6%9D%BF%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h1 id="FinalShell跳板配置"><a href="#FinalShell跳板配置" class="headerlink" title="FinalShell跳板配置"></a>FinalShell跳板配置</h1><p>ssh跳板主要用来访问那些被封的IP，通过另外一台可以访问的IP跳板访问被墙的IP。</p>
@@ -1160,8 +1204,8 @@ sysctl -p
         <category>技术顾问</category>
       </categories>
       <tags>
-        <tag>图床</tag>
         <tag>GitHub</tag>
+        <tag>图床</tag>
         <tag>cdn</tag>
         <tag>jsdelivr</tag>
       </tags>
@@ -3553,7 +3597,7 @@ pip install requirements.txt
   <entry>
     <title>青龙面板——京东库使用指南</title>
     <url>/2023/04/22/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E2%80%94%E2%80%94%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h1 id="青龙面板——京东库使用指南"><a href="#青龙面板——京东库使用指南" class="headerlink" title="青龙面板——京东库使用指南"></a>青龙面板——京东库使用指南</h1><h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><p>我用的是<a href="https://github.com/6dylan6/jdpro">6dylan6&#x2F;jdpro</a>，GitHub上星星3000+，而且作者还不定时更新，但是作者编写的文档确实差钱人意，这边本着学习和记录的原则，来写一个指南吧。</p>
+    <content><![CDATA[<h1 id="青龙面板——京东库使用指南"><a href="#青龙面板——京东库使用指南" class="headerlink" title="青龙面板——京东库使用指南"></a>青龙面板——京东库使用指南</h1><h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><p>我用的是<a href="https://github.com/6dylan6/jdpro">6dylan6&#x2F;jdpro</a>，GitHub上星星3000+，而且作者还不定时更新，但是作者编写的文档不是很清楚，这边本着学习和记录的原则，来写一个指南吧。</p>
 <hr>
 <h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><ol>
 <li><p>拉库</p>
