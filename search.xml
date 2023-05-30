@@ -151,6 +151,96 @@
       </tags>
   </entry>
   <entry>
+    <title>Naiveproxy客户端搭建指南</title>
+    <url>/2023/05/29/116-Naiveproxy%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h2 id="小心使得万年船"><a href="#小心使得万年船" class="headerlink" title="小心使得万年船"></a>小心使得万年船</h2><p>最近又要进入敏感时期了，所以安全得包装，22年10月份封禁了一大批。随着Xray作者提出的<a href="https://github.com/XTLS/Trojan-killer">TLS in TLS可以被探测到</a>。可见目前协议不是安全的，Xray提出了一个解决方案：XTLS。但是XTLS会占用服务器得443端口，需要接手服务器所有流量。对于目前得我来说并不是很方便，而且我推崇服务器只开放常规端口，做到像普通服务器一样。</p>
+<span id="more"></span>
+<h2 id="几种解决方案"><a href="#几种解决方案" class="headerlink" title="几种解决方案"></a>几种解决方案</h2><p>那么，有没有别的安全得翻墙方式么？也是有的，针对TLS in TLS，那片文章也提出了三个解决方案。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-Naiveproxy%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97-2023-05-30-09-32-52.png" alt="117-Naiveproxy客户端搭建指南-2023-05-30-09-32-52"></p>
+<ol>
+<li>NaiveProxy<ul>
+<li>原理是高度模仿HTTPS访问</li>
+<li>使用的人数不多，而且客户端支持也不多，甚至文档也不多</li>
+</ul>
+</li>
+<li>魔改得shadowsocks<ul>
+<li>新版本得Xray支持，就是推荐的加密方式：<br>   2022-blake3-aes-128-gcm<br>   2022-blake3-aes-256-gcm<br>   2022-blake3-chacha20-poly1305</li>
+<li>好像不支持caddy转发，只能开放对应端口，不是很符合我尽量少开放端口得原则</li>
+<li>NaiveProxy说过不要自己戳密码，SS就是他举例得典型</li>
+</ul>
+</li>
+<li>MITM，简单说就内部流量脱去TLS加密，由服务器进行加密。<ul>
+<li>原理很简单，你不是TLS in TLS，那么我内部得就明文传输，这样就是完整的TLS</li>
+<li>问题也很简单，就是你翻墙访问得所有网站都会提示你证书不可信。</li>
+</ul>
+</li>
+</ol>
+<p>所以最后我选择了NaiveProxy。</p>
+<h2 id="部署方案"><a href="#部署方案" class="headerlink" title="部署方案"></a>部署方案</h2><p>准备材料：</p>
+<ul>
+<li>1台可以访问的VPS</li>
+<li>caddy v2<br>部署方式：</li>
+<li>docker部署</li>
+</ul>
+<p>这个很重要，请确认你的版本和我得是不是对应的，因为我这次找了很多文档，都是caddy v1的或者就是什么其他部署方式，对我来说，参考程度有限。<br>其次我不推崇使用一键脚本，那用起来舒服，但是对自己的服务器上有一块盲区，总归是不安全的。我推荐使用docker部署，安全和便捷兼具，我会尽量做到一步到尾。如果你还没又安装docker，可以翻看我之前的教程，或者去官方看教程。也是很简单的。<br>NaiveProxy是没有服务器软件的，直接使用包含naïve的caddy forwardproxy分支来代替单独的naïve服务端，所以我们需要一个docker安装caddy</p>
+<ol>
+<li><p>创建一个空文件夹,然后创建dockerfile，复制一下代码：</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FROM caddy:builder-alpine AS builder</span><br><span class="line"></span><br><span class="line">RUN xcaddy build \</span><br><span class="line">    --with github.com/caddyserver/forwardproxy@caddy2=github.com/klzgrad/forwardproxy@naive</span><br><span class="line">FROM caddy:alpine</span><br><span class="line"></span><br><span class="line">COPY --from=builder /usr/bin/caddy /usr/bin/caddy</span><br></pre></td></tr></table></figure>
+<p> 这里需要注意<a href="https://github.com/caddyserver/forwardproxy/tree/caddy2">forwardproxy</a>的master是caddy v1版本的，所以必须在后面写上<code>caddy2</code>，然后看文档也要注意，选择caddy2分支。两边不一样。</p>
+</li>
+<li><p>在同一个文件夹下面创建文件docker-compose.yml</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">version: &quot;3.9&quot;  # optional since v1.27.0</span><br><span class="line">services:</span><br><span class="line">caddy: #caddy反向代理</span><br><span class="line">    container_name: caddy</span><br><span class="line">    build:</span><br><span class="line">    context: .</span><br><span class="line">    dockerfile: dockerfile #这里就是调用你步骤一创建的文件</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    environment:</span><br><span class="line">    - PUID=1000</span><br><span class="line">    - PGID=1000</span><br><span class="line">    - TZ=Asia/Shanghai</span><br><span class="line">    volumes:</span><br><span class="line">    - /&lt;你的路径&gt;/data:/data #caddy留存的证书信息,最好保存,方便后续迁移</span><br><span class="line">    - /&lt;你的路径&gt;/caddyconfig:/etc/caddy #caddyfile的配置文件</span><br><span class="line">    - /&lt;你的路径&gt;/file:/usr/share/caddy #caddy的运行网页</span><br><span class="line">    ports:</span><br><span class="line">    - &quot;80:80&quot;</span><br><span class="line">    - &quot;443:443&quot;</span><br><span class="line">    - &quot;443:443/udp&quot;</span><br></pre></td></tr></table></figure></li>
+<li><p>部署docker，直接使用命令(确保路径下有这个文件)：</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker-compose up docker-compose.yml</span><br></pre></td></tr></table></figure></li>
+<li><p>在<code>- /&lt;你的路径&gt;/caddyconfig:/etc/caddy #caddyfile的配置文件</code>这个路径下创建Caddyfile文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:443, xxxx.xxxx.com &#123; # 443必须的，否则无法执行，逗号后面有个空格，别忘记了。</span><br><span class="line">    route &#123;</span><br><span class="line">        forward_proxy &#123;</span><br><span class="line">            basic_auth &lt;用户名&gt; &lt;密码&gt;</span><br><span class="line">            hide_ip</span><br><span class="line">            hide_via</span><br><span class="line">        &#125;</span><br><span class="line">        file_server &#123;</span><br><span class="line">            root /usr/share/caddy/share # 可以在之前的网页路径下随便放一个index网页</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>重启下docker就可以了。</p>
+</li>
+<li><p>打开本地电脑的客户端下的<code>config.json</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;listen&quot;: &quot;socks://127.0.0.1:1080&quot;,</span><br><span class="line">&quot;proxy&quot;: &quot;https://用户名:密码@xxxx.xxxx.com&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>端口可以改，也可以不改。</p>
+</li>
+<li><p>如果使用习惯v2rayng的话，可以：服务器——添加自定义服务器<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-Naiveproxy%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97-2023-05-30-10-13-21.png" alt="117-Naiveproxy客户端搭建指南-2023-05-30-10-13-21"><br>浏览选择一下对应的config.json即可。但是测速和测延迟就失效了。</p>
+</li>
+</ol>
+<p>到此就可以直接使用了，最后测一下速度：</p>
+<ol>
+<li><p>vless+h2+tls:<br> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-2023-05-29-21-06-43.png" alt="117-2023-05-29-21-06-43"></p>
+</li>
+<li><p>NavieProxy:<br> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-2023-05-29-21-08-18.png" alt="117-2023-05-29-21-08-18"></p>
+</li>
+<li><p>自建speedtest的测速:<br> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-2023-05-29-21-09-15.png" alt="117-2023-05-29-21-09-15"></p>
+</li>
+</ol>
+<p>最后的速度和网页测速差不多，这是晚高峰的速度，我1000M的网络跑到这个速度算是很可以了。</p>
+<h2 id="其他的配置说明"><a href="#其他的配置说明" class="headerlink" title="其他的配置说明"></a>其他的配置说明</h2><p>这里说明一下其他的可选配置：</p>
+<ol>
+<li>caddy的route功能：将一组指令按字面意思作为一个单元进行评估。路由块中包含的指令不会在内部被重新排序。所以route包围的命令就会同等对待，正常是按照先后顺序，前面的指令执行后面的指令就不会继续执行，所以使用route可以避免这种情况。</li>
+<li>forword的一些功能，具体的可以去看对应官方文档，反正功能挺齐全的。<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:443, example.com</span><br><span class="line"> route &#123;</span><br><span class="line">     forward_proxy &#123;</span><br><span class="line">         basic_auth user1 0NtCL2JPJBgPPMmlPcJ</span><br><span class="line">         basic_auth user2 密码 # 身份验证</span><br><span class="line">         ports     80 443 #端口，如果你用的是别的端口在这改</span><br><span class="line">         hide_ip # 推荐，防止主动探测的</span><br><span class="line">         hide_via #推荐，防止主动探测的</span><br><span class="line">         probe_resistance xxxx.com #防止主动探测的</span><br><span class="line">         serve_pac        /secret-proxy.pac # pac文件存放，可以</span><br><span class="line">         dial_timeout     30</span><br><span class="line">         upstream         https://user:password@extra-upstream-hop.com # 这个是上游的，用来配置代理链条的，即一台给另一台</span><br><span class="line">         acl &#123;</span><br><span class="line">             allow     *.caddyserver.com</span><br><span class="line">             deny      192.168.1.1/32 192.168.0.0/16 *.prohibitedsite.com *.localhost</span><br><span class="line">             allow     ::1/128 8.8.8.8 github.com *.github.io</span><br><span class="line">             allow_file /path/to/whitelist.txt</span><br><span class="line">             deny_file  /path/to/blacklist.txt</span><br><span class="line">             allow     all</span><br><span class="line">             deny      all # unreachable rule, remaining requests are matched by `allow all` above</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     file_server</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+其中:<ul>
+<li>hide_ip 用来删除头文件的ip和下面一样，推荐配置</li>
+<li>hide_via 用来删除头文件via的推荐配置，不删除的话是会显示<code>Via: 2.0 caddy</code></li>
+<li>probe_resistance:后面可以跟上网址，如果有人访问网址没有带用户名和密码的话，会默认弹出”407 Proxy Authentication Required” ，这样会暴露出我是代理服务器，这个配置就是你要访问这个秘密网址才会弹出，但是我们caddy使用了<code>route</code>，所以如果没有密码的话会访问到正常的网页，可以根据情况配置</li>
+<li>serve_pac：用来配置pac文件的，我用v2rayNg自带，所以不配置，默认pac文件位置<code>http:网址/proxy.pac</code>，你改好放那里就行</li>
+<li>dial_timeout：超时</li>
+<li>upstream：这个是用来配置代理链条的，如果你还希望再加一层，可以通过这个转发到上游去，让它继续代理。</li>
+<li>acl：路由规则，允许&#x2F;拒绝的ip，域名甚至文件都可以</li>
+</ul>
+</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>综合来说：NaiveProxy的优点很明显，服务器配置简单，而且安全。缺点也很直白，客户端简陋，支持的少。<br>从翻墙工具的发展历史我们可以看出这场攻防战的思路在变：<br>一开始时SS，讲究的是一个加密，破解不了，没人知道你访问的内容，后起之秀的思路也是顺着这条，加TLS等证书加密，但是随着墙的封锁，大家发现，我们和墙并不是对等关系，墙并不需要证据就可以封锁你，只要它觉得你是在翻墙就可以。战争的思路也要随着改变，更多的人选择藏木于林，尽可能的模拟正常的网站流量和藏匿自己的服务器。现在新一代的工具主流思想就是尽可能地模拟正常的网络流量。<br>思路的转变并不是坏事，毕竟局势不一样了，所以我目前的思路也是，尽可能的模仿正常网站，不会乱开多余的端口。<br>最后，有没人愿意合租服务器，使用NaiveProxy配置，流量没限制，主要NaiveProxy也无法限制。有的话可以留言或者联系我<a href="mailto:webmaster@example.com">noway@minsummer.com</a></p>
+<hr>
+<p>参考文章：<br><a href="https://github.com/XTLS/Trojan-killer">Trojan-Killer</a><br><a href="https://github.com/XTLS/Xray-core/discussions/1295">XTLS 深入浅出</a><br><a href="https://github.com/klzgrad/naiveproxy/wiki/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87">NaïveProxy官方部署文档</a><br><a href="https://github.com/caddyserver/forwardproxy/tree/caddy2">forwardproxy</a><br><a href="https://caddy2.dengxiaolong.com/docs/caddyfile/directives/route">caddy2的route指令</a><br><a href="https://dengxiaolong.com/caddy/zh/http.forwardproxy.html">caddy1-forwardproxy的中文文档</a></p>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>Naiveproxy客户端</tag>
+        <tag>关于墙的那些事</tag>
+        <tag>this is the war</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>FinalShell跳板配置</title>
     <url>/2022/12/05/FinalShell%E8%B7%B3%E6%9D%BF%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h1 id="FinalShell跳板配置"><a href="#FinalShell跳板配置" class="headerlink" title="FinalShell跳板配置"></a>FinalShell跳板配置</h1><p>ssh跳板主要用来访问那些被封的IP，通过另外一台可以访问的IP跳板访问被墙的IP。</p>
