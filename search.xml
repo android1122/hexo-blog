@@ -181,7 +181,7 @@
 <li>caddy v2<br>部署方式：</li>
 <li>docker部署</li>
 </ul>
-<p>这个很重要，请确认你的版本和我得是不是对应的，因为我这次找了很多文档，都是caddy v1的或者就是什么其他部署方式，对我来说，参考程度有限。<br>其次我不推崇使用一键脚本，那用起来舒服，但是对自己的服务器上有一块盲区，总归是不安全的。我推荐使用docker部署，安全和便捷兼具，我会尽量做到一步到尾。如果你还没又安装docker，可以翻看我之前的教程，或者去官方看教程。也是很简单的。<br>NaiveProxy是没有服务器软件的，直接使用包含naïve的caddy forwardproxy分支来代替单独的naïve服务端，所以我们需要一个docker安装caddy</p>
+<p>这个很重要，请确认你的版本和我得是不是对应的，因为我这次找了很多文档，都是caddy v1的或者就是什么其他部署方式，对我来说，参考程度有限。<br>其次我不推崇使用一键脚本，那用起来舒服，但是对自己的服务器上有一块盲区，总归是不安全的。我推荐使用docker部署，安全和便捷兼具，我会尽量做到一步到位。如果你还没安装docker，可以翻看我之前的教程，或者去官方看教程。也是很简单的。<br>NaiveProxy是没有服务器软件的，直接使用包含naïve的caddy forwardproxy分支来代替单独的naïve服务端，所以我们需要一个docker安装caddy即可。</p>
 <ol>
 <li><p>创建一个空文件夹,然后创建dockerfile，复制一下代码：</p>
  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FROM caddy:builder-alpine AS builder</span><br><span class="line"></span><br><span class="line">RUN xcaddy build \</span><br><span class="line">    --with github.com/caddyserver/forwardproxy@caddy2=github.com/klzgrad/forwardproxy@naive</span><br><span class="line">FROM caddy:alpine</span><br><span class="line"></span><br><span class="line">COPY --from=builder /usr/bin/caddy /usr/bin/caddy</span><br></pre></td></tr></table></figure>
@@ -238,6 +238,64 @@
         <tag>Naiveproxy客户端</tag>
         <tag>关于墙的那些事</tag>
         <tag>this is the war</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NaiveProxy优化</title>
+    <url>/2023/05/30/117-NaiveProxy%E4%BC%98%E5%8C%96/</url>
+    <content><![CDATA[<h2 id="代理链"><a href="#代理链" class="headerlink" title="代理链"></a>代理链</h2><p>之前在部署那边有个配置<code>upstream </code>可以配置上游代理链条，使用方法很简单，直接配置好上游的服务器然后在<code>upstram https://&lt;用户名&gt;:&lt;密码&gt;@&lt;上游网址&gt;</code>。<br>代理链的优势：</p>
+<ol>
+<li>拯救被墙的服务器</li>
+<li>优化线路速度</li>
+<li>可以随时变更出口机</li>
+<li>隐藏实际服务器</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>消耗双边流量</li>
+</ol>
+<span id="more"></span>
+<p>完整线路：你的电脑——|墙|——<code>下游服务器（落地机）——上游服务器（出口机）——谷歌</code>。<br>后段路程是固定的，所以延迟就看你本地运营商和落地机之间的速度。落地机的位置可以在墙内也可以在墙外，看个人能力。落地机被封的话，只要换一个就可以，这样就不会出现一封封锁一大堆主机的情况。</p>
+<h2 id="完整配置"><a href="#完整配置" class="headerlink" title="完整配置"></a>完整配置</h2><p>上游配置-出口机配置：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:443, xxxx.xxxx.com &#123; # 443必须的，否则无法执行，逗号后面有个空格，别忘记了。</span><br><span class="line">    route &#123;</span><br><span class="line">        forward_proxy &#123;</span><br><span class="line">            basic_auth &lt;用户名&gt; &lt;密码&gt;</span><br><span class="line">            hide_ip</span><br><span class="line">            hide_via</span><br><span class="line">        &#125;</span><br><span class="line">        file_server &#123;</span><br><span class="line">            root /usr/share/caddy/share # 可以在之前的网页路径下随便放一个index网页</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下游配置-落地机配置：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:443, xxxx.xxxx.com &#123; # 443必须的，否则无法执行，逗号后面有个空格，别忘记了。</span><br><span class="line">    route &#123;</span><br><span class="line">        forward_proxy &#123;</span><br><span class="line">            basic_auth &lt;用户名&gt; &lt;密码&gt;</span><br><span class="line">            hide_ip</span><br><span class="line">            hide_via</span><br><span class="line">            upstram https://&lt;用户名&gt;:&lt;密码&gt;@&lt;上游网址&gt;</span><br><span class="line">        &#125;</span><br><span class="line">        file_server &#123;</span><br><span class="line">            root /usr/share/caddy/share # 可以在之前的网页路径下随便放一个index网页</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后说下速度：<br>链式后速度：<br>    <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/01%E5%8D%9A%E5%AE%A2%E6%A8%A1%E6%9D%BF-2023-05-31-13-52-45.png" alt="01博客模板-2023-05-31-13-52-45"></p>
+<p>自建speedtest速度-套上了cloudfare的CDN：<br>    <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-NaiveProxy%E4%BC%98%E5%8C%96-2023-05-31-13-55-32.png" alt="117-NaiveProxy优化-2023-05-31-13-55-32"><br>速度快了点，但是延迟也高了点，毕竟是转发再转发一层。而cloudfare它拥有大量的服务器，可以直接用最快的服务器代理。这样最大的好处就是拯救哪些被墙的服务器又一条路子。就是流量要两边损耗。<br>当然如果有想法的人可以在落地机写下脚本，增加一个负载均衡。</p>
+<h2 id="性能调优"><a href="#性能调优" class="headerlink" title="性能调优"></a>性能调优</h2><p>NaiveProxy的作者写下了一些参数优化，分为服务器和本地：<br>服务器：</p>
+<ol>
+<li>使用BBR<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo sysctl -w net.ipv4.tcp_congestion_control=bbr</span><br></pre></td></tr></table></figure></li>
+<li>关闭tcp_slow_start_after_idle，作者说是可以稍微提高持久连接<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo sysctl -w net.ipv4.tcp_slow_start_after_idle=0</span><br></pre></td></tr></table></figure></li>
+<li>增加发送缓存大小<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo sysctl -w net.ipv4.tcp_notsent_lowat=16384</span><br></pre></td></tr></table></figure></li>
+<li>关闭TCP Fast Open，这个会会产生独特的流量特征</li>
+</ol>
+<p>本地：</p>
+<ol>
+<li><p>增加Chrome的最大代理连接数：chrome默认的代理连接数是32，可以增加连接数以获得更快的速度，但是需要注意最大值是99.<br>Linux的更改：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo mkdir -p /etc/chromium/policies/managed</span><br><span class="line"> echo &#x27;&#123; &quot;MaxConnectionsPerProxy&quot;: 99 &#125;&#x27; | sudo tee /etc/chromium/policies/managed/proxy.json</span><br></pre></td></tr></table></figure>
+<p>macOS的修改：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">defaults write com.google.Chrome MaxConnectionsPerProxy -int 99</span><br></pre></td></tr></table></figure>
+<p>最后是Windows的修改：</p>
+<ol>
+<li>在浏览器地址栏输入： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chrome://policy/</span><br></pre></td></tr></table></figure></li>
+<li>右上角搜索<code>MaxConnectionsPerProxy</code><br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-NaiveProxy%E4%BC%98%E5%8C%96-2023-05-31-15-10-34.png" alt="117-NaiveProxy优化-2023-05-31-15-10-34"></li>
+<li>看下数值，如果为0，说明你系统没有导入过政策，需要去官方下载一个<a href="https://dl.google.com/dl/edgedl/chrome/policy/policy_templates.zip">模板</a>，模板文件windows下examples下有个注册表导入文件，右键使用记事本打开，然后复制下面内容（当然你可以直接在上面修改直至只剩下下面内容）：  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line">; chrome version: 114.0.5735.91</span><br><span class="line"></span><br><span class="line">[HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome]</span><br><span class="line">&quot;MaxConnectionsPerProxy&quot;=dword:00000020</span><br></pre></td></tr></table></figure></li>
+<li>如果你的数值为32，这说明你安装时候已经导入过模板了，那么你直接到<strong>HKEY_LOCAL_MACHINE 或者 HKEY_CURRENT_USER</strong>下<code>Software\Policies\Google\Chrome</code>值：MaxConnectionsPerProxy，十进制，改为99即可<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-NaiveProxy%E4%BC%98%E5%8C%96-2023-05-31-15-09-05.png" alt="117-NaiveProxy优化-2023-05-31-15-09-05"></li>
+<li>回到浏览器，点击重新加载政策，看到99即证明成功了，chrome政策有很多，喜欢的话可以研究一下，主要是公司用来防止员工上一些奇奇怪怪的东西控制：<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-NaiveProxy%E4%BC%98%E5%8C%96-2023-05-31-15-27-34.png" alt="117-NaiveProxy优化-2023-05-31-15-27-34"></li>
+</ol>
+</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>一日一技，无论是链式代理，还是性能调优，不会带来那种十分巨大的提升，但是在用户众多或者环境特殊的情况下，多了解服务器的上限也是好的，增加了代理连接数可以在浏览器开的多的情况下带来优化。适合自己需求的才是最好的。</p>
+<hr>
+<p><a href="https://github.com/klzgrad/naiveproxy/wiki/Performance-Tuning">官方性能调优</a><br><a href="https://www.chromium.org/administrators/policy-templates/">chrome增加proxy连接说明</a></p>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>速度优化</tag>
+        <tag>老生常谈</tag>
       </tags>
   </entry>
   <entry>
