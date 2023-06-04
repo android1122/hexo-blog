@@ -247,7 +247,7 @@
 <ol>
 <li>拯救被墙的服务器</li>
 <li>优化线路速度</li>
-<li>可以随时变更出口机</li>
+<li>可以随时变更中转机</li>
 <li>隐藏实际服务器</li>
 </ol>
 <p>缺点：</p>
@@ -255,14 +255,14 @@
 <li>消耗双边流量</li>
 </ol>
 <span id="more"></span>
-<p>完整线路：你的电脑——|墙|——<code>下游服务器（落地机）——上游服务器（出口机）——谷歌</code>。<br>后段路程是固定的，所以延迟就看你本地运营商和落地机之间的速度。落地机的位置可以在墙内也可以在墙外，看个人能力。落地机被封的话，只要换一个就可以，这样就不会出现一封封锁一大堆主机的情况。</p>
-<h2 id="完整配置"><a href="#完整配置" class="headerlink" title="完整配置"></a>完整配置</h2><p>上游配置-出口机配置：</p>
+<p>完整线路：你的电脑——|墙|——<code>服务器（中转机）——上游服务器（落地机）——谷歌</code>。<br>后段路程是固定的，所以延迟就看你本地运营商和中转机之间的速度。中转机的位置可以在墙内也可以在墙外，看个人能力。中转机被封的话，只要换一个就可以，这样就不会出现一封封锁一大堆主机的情况。</p>
+<h2 id="完整配置"><a href="#完整配置" class="headerlink" title="完整配置"></a>完整配置</h2><p>上游配置-落地机配置：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:443, xxxx.xxxx.com &#123; # 443必须的，否则无法执行，逗号后面有个空格，别忘记了。</span><br><span class="line">    route &#123;</span><br><span class="line">        forward_proxy &#123;</span><br><span class="line">            basic_auth &lt;用户名&gt; &lt;密码&gt;</span><br><span class="line">            hide_ip</span><br><span class="line">            hide_via</span><br><span class="line">        &#125;</span><br><span class="line">        file_server &#123;</span><br><span class="line">            root /usr/share/caddy/share # 可以在之前的网页路径下随便放一个index网页</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>下游配置-落地机配置：</p>
+<p>下游配置-中转机配置：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:443, xxxx.xxxx.com &#123; # 443必须的，否则无法执行，逗号后面有个空格，别忘记了。</span><br><span class="line">    route &#123;</span><br><span class="line">        forward_proxy &#123;</span><br><span class="line">            basic_auth &lt;用户名&gt; &lt;密码&gt;</span><br><span class="line">            hide_ip</span><br><span class="line">            hide_via</span><br><span class="line">            upstram https://&lt;用户名&gt;:&lt;密码&gt;@&lt;上游网址&gt;</span><br><span class="line">        &#125;</span><br><span class="line">        file_server &#123;</span><br><span class="line">            root /usr/share/caddy/share # 可以在之前的网页路径下随便放一个index网页</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>最后说下速度：<br>链式后速度：<br>    <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/01%E5%8D%9A%E5%AE%A2%E6%A8%A1%E6%9D%BF-2023-05-31-13-52-45.png" alt="01博客模板-2023-05-31-13-52-45"></p>
-<p>自建speedtest速度-套上了cloudfare的CDN：<br>    <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-NaiveProxy%E4%BC%98%E5%8C%96-2023-05-31-13-55-32.png" alt="117-NaiveProxy优化-2023-05-31-13-55-32"><br>速度快了点，但是延迟也高了点，毕竟是转发再转发一层。而cloudfare它拥有大量的服务器，可以直接用最快的服务器代理。这样最大的好处就是拯救哪些被墙的服务器又一条路子。就是流量要两边损耗。<br>当然如果有想法的人可以在落地机写下脚本，增加一个负载均衡。</p>
+<p>自建speedtest速度-套上了cloudfare的CDN：<br>    <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-NaiveProxy%E4%BC%98%E5%8C%96-2023-05-31-13-55-32.png" alt="117-NaiveProxy优化-2023-05-31-13-55-32"><br>速度快了点，但是延迟也高了点，毕竟是转发再转发一层。而cloudfare它拥有大量的服务器，可以直接用最快的服务器代理。这样最大的好处就是拯救哪些被墙的服务器又一条路子。就是流量要两边损耗。<br>当然如果有想法的人可以在中转机写下脚本，增加一个负载均衡。</p>
 <h2 id="性能调优"><a href="#性能调优" class="headerlink" title="性能调优"></a>性能调优</h2><p>NaiveProxy的作者写下了一些参数优化，分为服务器和本地：<br>服务器：</p>
 <ol>
 <li>使用BBR<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo sysctl -w net.ipv4.tcp_congestion_control=bbr</span><br></pre></td></tr></table></figure></li>
