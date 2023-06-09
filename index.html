@@ -1076,6 +1076,13 @@
 
       <time title="创建时间：2023-04-22 17:04:19" itemprop="dateCreated datePublished" datetime="2023-04-22T17:04:19+08:00">2023-04-22</time>
     </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-06-09 00:00:00" itemprop="dateModified" datetime="2023-06-09T00:00:00+08:00">2023-06-09</time>
+    </span>
 
   
     <span class="post-meta-break"></span>
@@ -1108,61 +1115,15 @@
 <li>更新有保障</li>
 <li>包括但不限于签到，618任务，以及其他实时的活动。</li>
 </ol>
-<p>缺点：</p>
-<ol>
-<li>缝合怪，很多东西都是直接拉取别人库</li>
-<li>有些任务无法执行</li>
-</ol>
-<hr>
-<h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><ol>
-<li><p>拉库</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ql repo https://github.com/6dylan6/jdpro.git &quot;jd_|jx_|jddj_&quot; &quot;backUp&quot; &quot;^jd[^_]|USER|JD|function|sendNotify&quot;</span><br></pre></td></tr></table></figure>
-<p>这块看下ql的官方命令说明：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ql repo &lt;地址&gt; &lt;拉取的文件&gt; &lt;不拉取的文件&gt; &lt;依赖文件&gt; &lt;分支&gt;</span><br></pre></td></tr></table></figure>
-<p>可以使用正则表达，所以可以配置一些你不需要的任务，当然这边建议直接全部拉取。<br>需要注意：<br>2.11.1<code>前</code>版本青龙config.sh配置把GithubProxyUrl&#x3D;”<a target="_blank" rel="noopener" href="https://ghproxy.com/">https://ghproxy.com/</a> （差不在多19行）” 修改为GithubProxyUrl&#x3D;””，否则拉取失败，以上版本无需配置:<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E2%80%94%E2%80%94%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-06-09-21-00-20.png" alt="青龙面板——京东库使用指南-2023-06-09-21-00-20"></p>
-</li>
-<li><p>修改青龙的config.sh配置</p>
-<blockquote>
-<p>RepoFileExtensions&#x3D;”js py”修改为 RepoFileExtensions&#x3D;”js py sh ts” 保存</p>
-</blockquote>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-40-49.png" alt="青龙面板_京东库使用指南-2023-04-21-21-40-49"></p>
-<p>这块是因为你的库依赖有一些没有安装，所以需要sh脚本来把它安装上去，实现一个自动化，建议修改。<br>需要注意：<br>修改完后切记点击右上角&lt;保存&gt;按钮，否则修改不会生效。</p>
-</li>
-<li><p>获取京东的COOKIE<br>获取的方法多样，我这边使用的是F12，打开&lt;Network按钮&gt;，然后点击筛选<strong>log.gif</strong>，获取到对应的cookie，在环境变量中增加JD_COOKIE变量。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E2%80%94%E2%80%94%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-06-09-21-07-00.png" alt="青龙面板——京东库使用指南-2023-06-09-21-07-00"></p>
-<p>一般来说，这个时效是30天左右，建议后面配置cookie失效通知。失效之后再次获取一次。</p>
-</li>
-<li><p>把通知key变量添加刀配置管理config.sh<br>通知key有很多种，看你具体使用哪种，对应都有配置说明，我用的是gotify，直接输出对应的api就可以<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E2%80%94%E2%80%94%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-06-09-21-11-45.png" alt="青龙面板——京东库使用指南-2023-06-09-21-11-45"></p>
-</li>
-</ol>
-<hr>
-<h2 id="推荐配置"><a href="#推荐配置" class="headerlink" title="推荐配置"></a>推荐配置</h2><p>以上配置是官方针对大众的使用，接下来有一些配置推荐你修改：</p>
-<ol>
-<li><p>任务是有随机延迟的，所以有一些准点运行的任务推荐修改命令，最后加上now</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-56-28.png" alt="青龙面板_京东库使用指南-2023-04-21-21-56-28"></p>
-</li>
-<li><p>建议调整任务运行超时时间，青龙默认1小时有些跑不完就被强制结束，config.sh里配置。CommandTimeoutTime&#x3D;”3h”  即改为3小时，根据自己ck数量调整。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-41-32.png" alt="青龙面板_京东库使用指南-2023-04-21-21-41-32"></p>
-</li>
-<li><p>JD_CART_REMOVE：清空购物车默认是不清空的，可以添加环境变量true，这个很多时候跑任务的时候会增加对应的商品到购物车，所以可以使用这个每日清空购物车。</p>
-</li>
-<li><p>NOTIFY_AUTOCHECKCK 自动禁用失效CK开关 有CK失效自动禁用并通知，true为自动禁用，false不自动禁用，默认false 需用本库sendnotify文件，sendnotify文件功能很强大，针对CK，有以下几种：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">显示正常CK:  export CHECKCK_SHOWSUCCESSCK=&quot;true&quot;</span><br><span class="line">永远通知CK状态:  export CHECKCK_CKALWAYSNOTIFY=&quot;true&quot;</span><br><span class="line">停用自动启用CK:  export CHECKCK_CKAUTOENABLE=&quot;false&quot;	</span><br><span class="line">服务器空数据等错误不触发通知:  export CHECKCK_CKNOWARNERROR=&quot;true&quot;</span><br></pre></td></tr></table></figure>
-<p>如果你账号很多的话，可以改变通知的形式，比如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;1&quot;    不做任何变动</span><br><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;2&quot;    效果是 :  账号名称：别名(备注)	</span><br><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;3&quot;    效果是 :  账号名称：pin(备注)</span><br><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;4&quot;    效果是 :  账号名称：备注</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>当然，如果你还有其他别的需求可以看<a target="_blank" rel="noopener" href="https://github.com/ccwav/QLScript2">这个GitHub</a>，包括但不仅限于所有任务的CK有效通知，所有任务的运行情况，已经有时候某些任务的CK任务失效等等。</p>
-<h2 id="CK和WSCK的获取方法"><a href="#CK和WSCK的获取方法" class="headerlink" title="CK和WSCK的获取方法"></a>CK和WSCK的获取方法</h2><p><a target="_blank" rel="noopener" href="https://github.com/6dylan6/jdpro">6dylan6&#x2F;jdpro</a>这个是一个混合库。所以有时候他会直接使用别人的一些库，所以有时候如果你要达到一个完美的配置，需要在对应库下面的配置。</p>
-<p>Cookie的获取方法推荐使用<a target="_blank" rel="noopener" href="https://www.telerik.com/fiddler">fiddler</a>，一款抓包程序，10天试用-<a target="_blank" rel="noopener" href="https://github.com/msojocs/fiddler-everywhere-enhance/tree/master/v4.1.2">网上已经有破解版</a>。打开之后打开配置，安装证书：</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-22-16-58-17.png" alt="青龙面板_京东库使用指南-2023-04-22-16-58-17"></p>
-<p>打开连接选项，运行局域网登陆：</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-22-17-00-13.png" alt="青龙面板_京东库使用指南-2023-04-22-17-00-13"></p>
-<p>接着就是修改手机的代理节点，然后打开京东APP,随意浏览几次，抓取网络消息。获得他的COOKIE，但是有一个问题那就是失效，一般几天，如果你用的是短信验证，那会是30天左右。</p>
-<p>但是如果使用WSCK的话，可以在Cookie过期之后自动获取新的Cookie，需要注意会自动转换成<code>JD_COOKIE</code>。</p>
-<p>WSCK在POST方法中，需要找找。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">变量名: JD_WSCK 参数: pin=xxxx;wskey=xxxx;</span><br><span class="line"># 注意分号 不要用中文分号!</span><br><span class="line">变量名: QL_PORT 参数: 端口号(int) </span><br><span class="line"># 修改过面板端口的人才需要填写 默认 5700 </span><br><span class="line"># 是本地的端口 不是 Docker 映射出去的端口! 如果你映射参数是 8888:5700 仍然填写5700</span><br><span class="line">变量名: WSKEY_DISCHECK 参数: 任意(str)</span><br><span class="line"># 设置 WSKEY_DISCHECK变量后变量后 不检查有效性 直接更新 不使用请删除 而不是禁用</span><br><span class="line">变量名: WSKEY_AUTO_DISABLE 参数: 任意(str)	</span><br><span class="line"># 设置 WSKEY_AUTO_DISABLE变量后 不会自动禁用变量</span><br><span class="line">变量名: WSKEY_UPDATE_HOUR 参数: 整数(int) 单位：小时</span><br><span class="line"># 设置 WSKEY_UPDATE_HOUR 变量后 会按设定的间隔时间更新 CK</span><br><span class="line"># 注意：使用此参数后，即使 CK 过期也不会更新，请不要设置过大的间隔</span><br><span class="line">变量名: WSKEY_TRY_COUNT 参数: 整数(int)</span><br><span class="line"># 设置 WSKEY_TRY_COUNT 变量后 获取 Token 失败会自动重试</span><br><span class="line">变量名: WSKEY_SLEEP 参数: 整数(int)</span><br><span class="line"># 设置 WSKEY_SLEEP 可自定义间隔时间</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>青龙面板是好东西，极大的省略了我们一些需要定时的重复性操作，<a target="_blank" rel="noopener" href="https://github.com/6dylan6/jdpro">6dylan6&#x2F;jdpro</a>这个库好么？好，但是它也是一个缝合怪。好处在于目前他有人维护。很多GitHub上的库都已经缺少人维护，在动不动就某个活动的今天，有一个与时俱进的脚本是一件很重要的事。</p>
-
+<h2 id="缺点：1-缝合怪，很多东西都是直接拉取别人库2-有些任务无法执行"><a href="#缺点：1-缝合怪，很多东西都是直接拉取别人库2-有些任务无法执行" class="headerlink" title="缺点：1. 缝合怪，很多东西都是直接拉取别人库2. 有些任务无法执行"></a>缺点：<br>1. 缝合怪，很多东西都是直接拉取别人库<br>2. 有些任务无法执行<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/04/22/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E2%80%94%E2%80%94%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
