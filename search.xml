@@ -1,6 +1,253 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>IP工具</title>
+    <url>/2023/04/16/107-IP%E5%B7%A5%E5%85%B7/</url>
+    <content><![CDATA[<h2 id="常用vps工具"><a href="#常用vps工具" class="headerlink" title="常用vps工具"></a>常用vps工具</h2><ol>
+<li><a href="https://ipdata.co/">IP信息查看工具</a><br> 可以查看目前IP的污染程度和看到出口IP的类型：家庭或者公司。如果你想要访问的网站对IP有特殊要求，比如open ai等，有时候就是因为这个导致。所以在购买vps时候可以考虑，测试一下对方的IP是否干净，这个很重要。<br> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/IP%E5%B7%A5%E5%85%B7-2023-04-14-10-25-58.png" alt="IP工具-2023-04-14-10-25-58"></li>
+<li>vps性能测试脚本<br> 综合性测试脚本，<a href="https://bench.sh/">网址</a>，大佬写的测试脚本，可以简单测试系统系统，硬盘存储速度和某些节点的之间的速度，可以拿来参考下硬盘读取速度来判断是不是用的固态硬盘等。对机器性能要求比较高的可以看重这个。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget -qO- bench.sh | bash</span><br><span class="line">或者</span><br><span class="line">curl -Lso- bench.sh | bash</span><br></pre></td></tr></table></figure></li>
+<li><a href="https://github.com/lmc999/RegionRestrictionCheck">流媒体测试脚本</a><br>顾名思义就是测试这个IP可以访问流媒体，和上面的IP信息查看工具有异曲同工之妙，但是这个更加具体，你可以从中看到常见的所有流媒体，看看自己的这个IP能不能访问，也会提示如果你访问的话，会显示哪个地区的。像我得这个香港服务器就无法访问ChatGPT，但是我的洛杉矶线路可以。<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bash &lt;(curl -L -s check.unlock.media)</span><br></pre></td></tr></table></figure>
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/IP%E5%B7%A5%E5%85%B7-2023-06-11-09-44-49.png" alt="IP工具-2023-06-11-09-44-49"></li>
+<li><a href="https://github.com/zhucaidan/mtr_trace">回程路由测试</a><br>有时候商家说的是cn2线路，但是实际回程有可能不是，这时候就需要回程国内路由判断了。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl https://raw.githubusercontent.com/zhucaidan/mtr_trace/main/mtr_trace.sh|bash</span><br></pre></td></tr></table></figure>
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/IP%E5%B7%A5%E5%85%B7-2023-06-11-09-40-34.png" alt="IP工具-2023-06-11-09-40-34"><br> 需要注意的是，这个只能做参考，实际的线路根据你的地区，运营商，甚至小区位置都有关系，所以只能是个参考。还有瓦工既然反向虚标，我得cn2线路既然还能用上GIA，这个可是高级线路，而且上海还能用上联通的4837，总的来说，这个线路如果是电信和联通会比较舒服，而且北京上海大城市更加合适。<br> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/IP%E5%B7%A5%E5%85%B7-2023-06-11-10-33-57.jpg" alt="IP工具-2023-06-11-10-33-57"></li>
+<li><a href="https://github.com/uxh/superspeed">网速测试</a><br> <del>全国各地三大运营商的speedtest的测速。</del> 测试之后发现无法使用，可以参考上面的速度测试，或者使用我搭建的<a href="https://speedtt.minsummer.com/">speedtest</a>网页进行测速。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bash &lt;(curl -Lso- https://git.io/superspeed_uxh)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="说说我对线路的看法"><a href="#说说我对线路的看法" class="headerlink" title="说说我对线路的看法"></a>说说我对线路的看法</h2><p>首先我们要明白：稳定，速度，价格三者不能共存。所以很多时候我们看到一些配置相同的，但是价格差很多，就是因为这个。然后目前如果没有特别的速度需求，那么CN2线路是可以满足你大部分需求的，至于CN2 GIA，你会发现大家宣传的统一口径就是：<code>晚高峰</code>的时候不会卡，但是就速度和延迟来说，如果同一个地区的两条线路差距不会大。<br>我推荐这样判断线路：</p>
+<blockquote>
+<p>地区&gt;IPLC专线&gt;国内NAT+落地机&gt;精品线路&gt;CN线路&gt;普通线路</p>
+</blockquote>
+<p>现在目前无论是自用还是飞机场，主流的技术就这3种：</p>
+<ol>
+<li><p>IPLC线路：国际私有租赁线路<br>简单说就是私有线路，可以说得上是内网一般的速度，所以这种线路一般价格高，带宽也小，流量给的也少。但是速度绝对是快的，无论任何时候。</p>
+</li>
+<li><p>国内NAT+国外落地机<br>国内端口转发到境外，然后由境外服务器来进行访问目标网址。这个优势在于可以控制来回程的线路，注重一个稳定。而国内访问环境速度快，是一般机场的套路，但是这块国内NAT管控严格，所以成本高，价格也会贵。</p>
+</li>
+<li><p>精品线路or高级线路<br>主要是就是三大运营商的精品线路：</p>
+<ol>
+<li>移动CMI</li>
+<li>联通4837 或者 联通 CU VIP 还有联通9929，比4837好，但是也贵</li>
+<li>电信CN2 GIA 大名鼎鼎</li>
+</ol>
+<p>优点很明显，快。缺点也很明显，除开服务器厂商特殊优化，否则的话一般情况下你是哪家运营商就走哪条线路，所以如果你手里正好集齐三家运营商，那么大概率会有的快，有的慢。<br>所以这些年会有主机上推出那种固定回程线路的服务器，如果你手里运营商多，可以考虑。像我手机移动，宽带移动送的，我肯定优先选择移动的CMI。</p>
+</li>
+<li><p>CN2线路<br>这种的就直接访问国外的IP，访问的去程和回程有时候会根据你所在的城市，运营商等等因素，甚至会出现一个绕路的可能性，所以速度忽上忽下。哪怕你是CN2 GIA线路下，也是有这个可能性，因为运营商网关是由负载平衡，它是根据当下情况来判断的。</p>
+</li>
+<li><p>普通线路<br>这种一般走电信163，就是电信最开始搭建的那条线路。速度没保障，而且人多卡，是个机器都会走这条线路，所以很慢，很慢。所以我一般不推荐。</p>
+</li>
+</ol>
+<h2 id="推荐主机"><a href="#推荐主机" class="headerlink" title="推荐主机"></a>推荐主机</h2><p>最后，附上我推荐的几个搬瓦工的vps:<br><a href="https://bandwagonhost.com/aff.php?aff=20859&pid=57">49.99美元每年&#x2F;洛杉矶&#x2F;CN2线路</a><br><a href="https://bwh81.net/aff.php?aff=20859&pid=57">备用地址-境内直接访问</a><br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/IP%E5%B7%A5%E5%85%B7-2023-04-16-10-24-26.png" alt="IP工具-2023-04-16-10-24-26"></p>
+<p>这个存在反向虚标，如果你是大城市的电信或者联通。推荐这个，实际线路走的都是电信和联通的高端线路。<br>    <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/IP%E5%B7%A5%E5%85%B7-2023-06-11-10-33-57.jpg" alt="IP工具-2023-06-11-10-33-57"></p>
+<p>如果你还想更快的，更稳定，CN2 GIA线路,169.99美元一年：<br><a href="https://bandwagonhost.com/aff.php?aff=20859&pid=87">169.99美元每年&#x2F;洛杉矶&#x2F;CN2 GIA线路</a><br><a href="https://bwh81.net/aff.php?aff=20859&pid=87">备用地址-境内直接访问</a><br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/IP%E5%B7%A5%E5%85%B7-2023-04-16-10-28-25.png" alt="IP工具-2023-04-16-10-28-25"></p>
+<p>这块不是很推荐，因为之间的差价足够你在国内买个NAT,然后再转发。</p>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>搬瓦工</tag>
+        <tag>IP</tag>
+        <tag>回程路由</tag>
+        <tag>速度测试</tag>
+        <tag>工具</tag>
+        <tag>ChatGPT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>青龙面板-京东库使用指南</title>
+    <url>/2023/04/22/108-%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF-%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><p>青龙面板的用处很多，其中之一就是用来签到的，我现在已经稳定签到100多天。我用的是<a href="https://github.com/6dylan6/jdpro">6dylan6&#x2F;jdpro</a>，GitHub上星星3000+，而且作者还不定时更新，但是作者编写的文档不是很清楚，这边本着学习和记录的原则，来写一个指南吧。<br>这个库优势：</p>
+<ol>
+<li>有人维护</li>
+<li>更新有保障</li>
+<li>包括但不限于签到，618任务，以及其他实时的活动。</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>缝合怪，很多东西都是直接拉取别人库</li>
+<li>有些任务无法执行<span id="more"></span></li>
+</ol>
+<hr>
+<h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><ol>
+<li><p>拉库</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ql repo https://github.com/6dylan6/jdpro.git &quot;jd_|jx_|jddj_&quot; &quot;backUp&quot; &quot;^jd[^_]|USER|JD|function|sendNotify&quot;</span><br></pre></td></tr></table></figure>
+<p>这块看下ql的官方命令说明：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ql repo &lt;地址&gt; &lt;拉取的文件&gt; &lt;不拉取的文件&gt; &lt;依赖文件&gt; &lt;分支&gt;</span><br></pre></td></tr></table></figure>
+<p>可以使用正则表达，所以可以配置一些你不需要的任务，当然这边建议直接全部拉取。<br>需要注意：<br>2.11.1<code>前</code>版本青龙config.sh配置把GithubProxyUrl&#x3D;”<a href="https://ghproxy.com/">https://ghproxy.com/</a> （差不在多19行）” 修改为GithubProxyUrl&#x3D;””，否则拉取失败，以上版本无需配置:<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E2%80%94%E2%80%94%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-06-09-21-00-20.png" alt="青龙面板——京东库使用指南-2023-06-09-21-00-20"></p>
+</li>
+<li><p>修改青龙的config.sh配置</p>
+<blockquote>
+<p>RepoFileExtensions&#x3D;”js py”修改为 RepoFileExtensions&#x3D;”js py sh ts” 保存</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-40-49.png" alt="青龙面板_京东库使用指南-2023-04-21-21-40-49"></p>
+<p>这块是因为你的库依赖有一些没有安装，所以需要sh脚本来把它安装上去，实现一个自动化，建议修改。<br>需要注意：<br>修改完后切记点击右上角&lt;保存&gt;按钮，否则修改不会生效。</p>
+</li>
+<li><p>获取京东的COOKIE<br>获取的方法多样，我这边使用的是F12，打开&lt;Network按钮&gt;，然后点击筛选<strong>log.gif</strong>，获取到对应的cookie，在环境变量中增加JD_COOKIE变量。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E2%80%94%E2%80%94%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-06-09-21-07-00.png" alt="青龙面板——京东库使用指南-2023-06-09-21-07-00"></p>
+<p>一般来说，这个时效是30天左右，建议后面配置cookie失效通知。失效之后再次获取一次。</p>
+</li>
+<li><p>把通知key变量添加刀配置管理config.sh<br>通知key有很多种，看你具体使用哪种，对应都有配置说明，我用的是gotify，直接输出对应的api就可以<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E2%80%94%E2%80%94%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-06-09-21-11-45.png" alt="青龙面板——京东库使用指南-2023-06-09-21-11-45"></p>
+</li>
+</ol>
+<hr>
+<h2 id="推荐配置"><a href="#推荐配置" class="headerlink" title="推荐配置"></a>推荐配置</h2><p>以上配置是官方针对大众的使用，接下来有一些配置推荐你修改：</p>
+<ol>
+<li><p>任务是有随机延迟的，所以有一些准点运行的任务推荐修改命令，最后加上now</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-56-28.png" alt="青龙面板_京东库使用指南-2023-04-21-21-56-28"></p>
+</li>
+<li><p>建议调整任务运行超时时间，青龙默认1小时有些跑不完就被强制结束，config.sh里配置。CommandTimeoutTime&#x3D;”3h”  即改为3小时，根据自己ck数量调整。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-41-32.png" alt="青龙面板_京东库使用指南-2023-04-21-21-41-32"></p>
+</li>
+<li><p>JD_CART_REMOVE：清空购物车默认是不清空的，可以添加环境变量true，这个很多时候跑任务的时候会增加对应的商品到购物车，所以可以使用这个每日清空购物车。</p>
+</li>
+<li><p>NOTIFY_AUTOCHECKCK 自动禁用失效CK开关 有CK失效自动禁用并通知，true为自动禁用，false不自动禁用，默认false 需用本库sendnotify文件，sendnotify文件功能很强大，针对CK，有以下几种：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">显示正常CK:  export CHECKCK_SHOWSUCCESSCK=&quot;true&quot;</span><br><span class="line">永远通知CK状态:  export CHECKCK_CKALWAYSNOTIFY=&quot;true&quot;</span><br><span class="line">停用自动启用CK:  export CHECKCK_CKAUTOENABLE=&quot;false&quot;	</span><br><span class="line">服务器空数据等错误不触发通知:  export CHECKCK_CKNOWARNERROR=&quot;true&quot;</span><br></pre></td></tr></table></figure>
+<p>如果你账号很多的话，可以改变通知的形式，比如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;1&quot;    不做任何变动</span><br><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;2&quot;    效果是 :  账号名称：别名(备注)	</span><br><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;3&quot;    效果是 :  账号名称：pin(备注)</span><br><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;4&quot;    效果是 :  账号名称：备注</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>当然，如果你还有其他别的需求可以看<a href="https://github.com/ccwav/QLScript2">这个GitHub</a>，包括但不仅限于所有任务的CK有效通知，所有任务的运行情况，已经有时候某些任务的CK任务失效等等。</p>
+<h2 id="CK和WSCK的获取方法"><a href="#CK和WSCK的获取方法" class="headerlink" title="CK和WSCK的获取方法"></a>CK和WSCK的获取方法</h2><p><a href="https://github.com/6dylan6/jdpro">6dylan6&#x2F;jdpro</a>这个是一个混合库。所以有时候他会直接使用别人的一些库，所以有时候如果你要达到一个完美的配置，需要在对应库下面的配置。</p>
+<p>Cookie的获取方法推荐使用<a href="https://www.telerik.com/fiddler">fiddler</a>，一款抓包程序，10天试用-<a href="https://github.com/msojocs/fiddler-everywhere-enhance/tree/master/v4.1.2">网上已经有破解版</a>。打开之后打开配置，安装证书：</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-22-16-58-17.png" alt="青龙面板_京东库使用指南-2023-04-22-16-58-17"></p>
+<p>打开连接选项，运行局域网登陆：</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-22-17-00-13.png" alt="青龙面板_京东库使用指南-2023-04-22-17-00-13"></p>
+<p>接着就是修改手机的代理节点，然后打开京东APP,随意浏览几次，抓取网络消息。获得他的COOKIE，但是有一个问题那就是失效，一般几天，如果你用的是短信验证，那会是30天左右。</p>
+<p>但是如果使用WSCK的话，可以在Cookie过期之后自动获取新的Cookie，需要注意会自动转换成<code>JD_COOKIE</code>。</p>
+<p>WSCK在POST方法中，需要找找。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">变量名: JD_WSCK 参数: pin=xxxx;wskey=xxxx;</span><br><span class="line"># 注意分号 不要用中文分号!</span><br><span class="line">变量名: QL_PORT 参数: 端口号(int) </span><br><span class="line"># 修改过面板端口的人才需要填写 默认 5700 </span><br><span class="line"># 是本地的端口 不是 Docker 映射出去的端口! 如果你映射参数是 8888:5700 仍然填写5700</span><br><span class="line">变量名: WSKEY_DISCHECK 参数: 任意(str)</span><br><span class="line"># 设置 WSKEY_DISCHECK变量后变量后 不检查有效性 直接更新 不使用请删除 而不是禁用</span><br><span class="line">变量名: WSKEY_AUTO_DISABLE 参数: 任意(str)	</span><br><span class="line"># 设置 WSKEY_AUTO_DISABLE变量后 不会自动禁用变量</span><br><span class="line">变量名: WSKEY_UPDATE_HOUR 参数: 整数(int) 单位：小时</span><br><span class="line"># 设置 WSKEY_UPDATE_HOUR 变量后 会按设定的间隔时间更新 CK</span><br><span class="line"># 注意：使用此参数后，即使 CK 过期也不会更新，请不要设置过大的间隔</span><br><span class="line">变量名: WSKEY_TRY_COUNT 参数: 整数(int)</span><br><span class="line"># 设置 WSKEY_TRY_COUNT 变量后 获取 Token 失败会自动重试</span><br><span class="line">变量名: WSKEY_SLEEP 参数: 整数(int)</span><br><span class="line"># 设置 WSKEY_SLEEP 可自定义间隔时间</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>青龙面板是好东西，极大的省略了我们一些需要定时的重复性操作，<a href="https://github.com/6dylan6/jdpro">6dylan6&#x2F;jdpro</a>这个库好么？好，但是它也是一个缝合怪。好处在于目前他有人维护。很多GitHub上的库都已经缺少人维护，在动不动就某个活动的今天，有一个与时俱进的脚本是一件很重要的事。</p>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>青龙库</tag>
+        <tag>京东签到</tag>
+        <tag>jdpro</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tachidesk部署指南</title>
+    <url>/2022/12/12/109-tachidesk%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h1 id="tachidesk部署指南"><a href="#tachidesk部署指南" class="headerlink" title="tachidesk部署指南"></a>tachidesk部署指南</h1><p>在线漫画的完美终结者：<a href="https://github.com/Suwayomi/Tachidesk-Server">Tachidesk</a>。Tachidesk是一个免费的、开源的漫画阅读器服务器。<br><a href="https://github.com/Suwayomi/Tachidesk-Server">Tachidesk</a>是一个通过插件查看第三方漫画网站的工具，和之前大火的的多多猫类似的功能，不过区别在于它更加稳定，而且目前开源有人维护，支持windows，Linux，macOS等主流系统。如果你喜欢使用手机端看漫画的话这边推荐：<a href="https://tachiyomi.org/">Tachiyomi</a><br>优势：</p>
+<ul>
+<li>开源且更新</li>
+<li>可以查看主流和非主流的漫画网站</li>
+<li>支持chrome app安装</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>某些特殊漫画网站需要翻墙的话，你所部署的服务器也需要能够翻墙。</li>
+<li>没有中文</li>
+</ul>
+<span id="more"></span>
+<h2 id="docker部署"><a href="#docker部署" class="headerlink" title="docker部署"></a>docker部署</h2><p>首先说明部署，部署的话我采用的是docker方式，根据他的<a href="https://github.com/Suwayomi/docker-tachidesk/pkgs/container/tachidesk">docker</a>说明拉取对应的docker：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker pull ghcr.io/suwayomi/tachidesk:preview-alpine</span><br></pre></td></tr></table></figure>
+<p>支持多个版本，如果你需要特殊版本:<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212153452.png" alt="20221212153452"><br>直接执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -p 127.0.0.1:4567:4567  -e &quot;TZ=Europe/London 或者其他环境变量&quot;  -v &lt;folder path&gt;:/./home/suwayomi/.local/share/Tachidesk ghcr.io/suwayomi/tachidesk</span><br></pre></td></tr></table></figure>
+<p>或者dockers compose部署</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">version: &quot;3.9&quot;  # optional since v1.27.0</span><br><span class="line">services:</span><br><span class="line">  tachidesk: # 漫画软件</span><br><span class="line">    image: ghcr.io/suwayomi/tachidesk:stable-alpine</span><br><span class="line">    container_name: tachidesk</span><br><span class="line">    environment:</span><br><span class="line">      - PUID=1000</span><br><span class="line">      - PGID=1000</span><br><span class="line">      - TZ=Asia/Shanghai</span><br><span class="line">      - 其他环境变量，具体见下方</span><br><span class="line">    volumes:</span><br><span class="line">      - &lt;folder path&gt;::/./home/suwayomi/.local/share/Tachidesk #载入配置文件，方便后续定期删除多余图片</span><br><span class="line">    ports:</span><br><span class="line">      - 4567:4567</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    networks:</span><br><span class="line">      caddy-bridge:</span><br><span class="line">        ipv4_address: 172.18.0.3</span><br></pre></td></tr></table></figure>
+<p>建议把存储漫画的路径映射出来，方便后续删除漫画缓存，你每次在前端浏览漫画之后，系统不会自动删除对应的漫画历史。如果你硬盘小的话，有可能出现硬盘被完全占用满的情况。<br>如果是本地部署，可以在127.0.0.1:4567上访问，如果是vps部署的话，建议使用caddy2来反向代理:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#香港漫画</span><br><span class="line">xxxxx.com &#123;</span><br><span class="line">        reverse_proxy 127.0.0.1:4567</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后配置下删除历史文件：<br>打开debain系统自带的定时任务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
+<p>修改文件输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">0 2 * * * /bin/bash -c &#x27;rm -rf &lt;你配置的路径&gt;/thumbnails/* &gt;&gt; &lt;你配置的路径&gt;/dl.log 2&gt;&amp;1&#x27;</span><br><span class="line">0 2 * * * /bin/bash -c &#x27;rm -rf &lt;你配置的路径&gt;/downloads/* &gt;&gt; &lt;你配置的路径&gt;/dl.log 2&gt;&amp;1&#x27;</span><br></pre></td></tr></table></figure>
+<p>这样每天凌晨2点会删除所有这两个文件夹下的所有文件，一个存放的是封面，一个存放的是漫画内容。</p>
+<h2 id="个性配置"><a href="#个性配置" class="headerlink" title="个性配置"></a>个性配置</h2><table>
+<thead>
+<tr>
+<th>可用环境变量</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TZ</td>
+<td>Etc&#x2F;UTC</td>
+<td>时区</td>
+</tr>
+<tr>
+<td>BIND_IP</td>
+<td>0.0.0.0</td>
+<td>监听IP默认都监听</td>
+</tr>
+<tr>
+<td>BIND_PORT</td>
+<td>4567</td>
+<td>监听的端口</td>
+</tr>
+<tr>
+<td>SOCKS_PROXY_ENABLED</td>
+<td>false</td>
+<td>是否打开代理</td>
+</tr>
+<tr>
+<td>SOCKS_PROXY_HOST</td>
+<td>空</td>
+<td>代理地址</td>
+</tr>
+<tr>
+<td>SOCKS_PROXY_PORT</td>
+<td>空</td>
+<td>代理地址端口</td>
+</tr>
+<tr>
+<td>DOWNLOAD_AS_CBZ</td>
+<td>false</td>
+<td>是否保存为CBZ文件-否则会是一张张图片在对应文件夹下</td>
+</tr>
+<tr>
+<td>MAX_PARALLEL_UPDATE</td>
+<td>10</td>
+<td>同时最多更新插件数量</td>
+</tr>
+<tr>
+<td>BASIC_AUTH_ENABLED</td>
+<td>false</td>
+<td>是否打开登陆验证</td>
+</tr>
+<tr>
+<td>BASIC_AUTH_USERNAME</td>
+<td>空</td>
+<td>登录名</td>
+</tr>
+<tr>
+<td>BASIC_AUTH_PASSWORD</td>
+<td>空</td>
+<td>登陆密码</td>
+</tr>
+<tr>
+<td>DEBUG</td>
+<td>true</td>
+<td>日志记录</td>
+</tr>
+</tbody></table>
+<h2 id="界面："><a href="#界面：" class="headerlink" title="界面："></a>界面：</h2><ul>
+<li>主页面<br>  <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212153721.png" alt="20221212153721"></li>
+<li>插件页面<br>  <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212153734.png" alt="20221212153734"><br>  插件安装记得筛选中文<br>  <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212154309.png" alt="20221212154309"></li>
+<li>设置页面<br>  <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212154022.png" alt="20221212154022"></li>
+</ul>
+<p>虽然说页面不提供翻译，但是其实都很简单，不行可以下载<a href="https://tachiyomi.org/">Tachiyomi</a>的界面进行对照，两边界面完全一样。</p>
+<h2 id="推荐插件"><a href="#推荐插件" class="headerlink" title="推荐插件"></a>推荐插件</h2><p>最后说下推荐的几个插件：<br>普通漫画：</p>
+<ol>
+<li>57漫画-最新的海贼王，咒术回战都有</li>
+</ol>
+<p>18+：</p>
+<ol>
+<li>绅士漫画-大名鼎鼎，不过需要你的服务器能访问对应网站。</li>
+</ol>
+<p>这两个能够满足我大多数的需求。当然可以根据自己需求，不断增加。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我觉得这个聚合漫画的方式可以完全满足我看漫画的需求，也不需要去自己繁琐的下载裁剪，可以通过网页直接查找自己需要的漫画，我看了现在还支持对应的安卓客户端。如果想要在手机看的话可以考虑。<br>或者你可以直接使用我已经搭建好的：<a href="https://manhua.minsummer.com/">自建漫画网站</a>和<a href="https://manhua2.minsummer.com/">移动网络-漫画网站</a></p>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>漫画</tag>
+        <tag>tachidesk</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo部署指南-基于GitHub</title>
     <url>/2023/05/17/110-hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<h2 id="折腾啊折腾"><a href="#折腾啊折腾" class="headerlink" title="折腾啊折腾"></a>折腾啊折腾</h2><p>之前使用的是typecho博客，简单，轻量。满足需求，唯一的问题是不是很好看，好看的主题需要付费，如handsome，而且很多时候速度不快。最让我不能忍的是更新慢，而且对一些数学公式的支持并不是那么有效果。所以从很早以前就衍生出了想要换一个博客的想法，归根揭底就是闲了，想折腾了。</p>
@@ -312,8 +559,8 @@
         <category>随想</category>
       </categories>
       <tags>
-        <tag>《鬼灭之刃》</tag>
         <tag>漫画</tag>
+        <tag>《鬼灭之刃》</tag>
         <tag>代价</tag>
       </tags>
   </entry>
@@ -396,79 +643,6 @@
         <tag>订阅源</tag>
         <tag>坑</tag>
         <tag>RSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>IP工具</title>
-    <url>/2023/04/16/IP%E5%B7%A5%E5%85%B7/</url>
-    <content><![CDATA[<h1 id="IP工具"><a href="#IP工具" class="headerlink" title="IP工具"></a>IP工具</h1><h2 id="一些vps工具"><a href="#一些vps工具" class="headerlink" title="一些vps工具"></a>一些vps工具</h2><ol>
-<li><p><a href="https://ipdata.co/">IP信息查看工具</a></p>
-<p> 可以查看目前IP的污染程度和看到出口IP的类型：家庭或者公司。如果你想要访问的网站对IP有特殊要求，比如open ai等，有时候就是因为这个导致。所以在购买vps时候可以考虑，测试一下对方的IP</p>
-<p> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/IP%E5%B7%A5%E5%85%B7-2023-04-14-10-25-58.png" alt="IP工具-2023-04-14-10-25-58"></p>
-</li>
-<li><p>vps性能测试脚本</p>
-<p> 综合性测试脚本，<a href="https://bench.sh/">网址</a>，大佬写的测试脚本，可以简单测试系统系统，硬盘存储速度和某些节点的之间的速度</p>
- <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">wget -qO- bench.sh | bash</span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line"></span><br><span class="line">curl -Lso- bench.sh | bash</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p><a href="https://github.com/lmc999/RegionRestrictionCheck">流媒体测试脚本</a></p>
-<p>顾名思义就是测试这个IP可以访问流媒体，和上面的IP信息查看工具有异曲同工之妙，但是这个更加具体，你可以从中看到常见的所有流媒体，看看自己的这个IP能不能访问。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">bash &lt;(curl -L -s check.unlock.media)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><a href="https://github.com/zhucaidan/mtr_trace">回程路由测试</a></p>
-<p>有时候商家说的是cn2线路，但是实际回程有可能不是，这时候就需要回程国内路由判断了。</p>
- <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">curl https://raw.githubusercontent.com/zhucaidan/mtr_trace/main/mtr_trace.sh|bash</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p> 需要注意的是，这个只能做参考，实际的线路根据你的地区，运营商，甚至小区位置都有关系，所以只能是个参考。</p>
-</li>
-<li><p><a href="https://github.com/uxh/superspeed">网速测试</a></p>
-<p> 全国各地三大运营商的speedtest的测速。</p>
- <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">bash &lt;(curl -Lso- https://git.io/superspeed_uxh)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p> 如果需要下载啥的，可以考虑考虑。</p>
-</li>
-</ol>
-<h2 id="说说我对线路的看法"><a href="#说说我对线路的看法" class="headerlink" title="说说我对线路的看法"></a>说说我对线路的看法</h2><p>首先我们要明白：稳定，速度，价格三者不能共存。所以很多时候我们看到一些配置相同的，但是价格差很多，就是因为这个。然后目前如果没有特别的速度需求，那么CN2线路是可以满足你大部分需求的，至于CN2 GIA，你会发现大家宣传的统一口径就是：<code>晚高峰</code>的时候不会卡，但是就速度和延迟来说，如果同一个地区的两条线路差距不会大。</p>
-<p>我推荐这样判断线路：</p>
-<blockquote>
-<p>地区&gt;IPLC专线&gt;国内NAT+CN2&gt;CN线路&gt;普通线路</p>
-</blockquote>
-<p>现在目前无论是自用还是飞机场，主流的技术就这3种：</p>
-<ol>
-<li><p>IPLC线路：国际私有租赁线路</p>
-<p>简单说就是私有线路，可以说得上是内网一般的速度，所以这种线路一般价格高，带宽也小，流量给的也少。但是速度绝对是快的，无论任何时候。</p>
-</li>
-<li><p>国内NAT+国外线路</p>
-<p>国内端口转发到境外，然后由境外服务器来进行访问目标网址。这个优势在于可以控制来回程的线路，注重一个稳定。而国内访问环境速度快，是一般机场的套路，但是这块国内NAT管控严格，所以成本高，价格也会贵。</p>
-</li>
-<li><p>CN2,CN2 GIA线路</p>
-<p>这种的就直接访问国外的IP，访问的去程和回程有时候会根据你所在的城市，运营商等等因素，甚至会出现一个绕路的可能性，所以速度忽上忽下。哪怕你是CN2 GIA线路下，也是有这个可能性，因为运营商网关是由负载平衡，它是根据当下情况来判断的。</p>
-</li>
-<li><p>普通线路</p>
-<p>没有优化的线路速度确实是比较慢，这个有目共睹。所以我一般不推荐。</p>
-</li>
-</ol>
-<p>最后，附上我推荐的几个搬瓦工的vps:</p>
-<blockquote>
-<p><a href="https://bandwagonhost.com/aff.php?aff=20859&pid=57">49.99美元每年&#x2F;洛杉矶&#x2F;CN2线路</a></p>
-</blockquote>
-<p><a href="https://bwh81.net/aff.php?aff=20859&pid=57">备用地址-境内直接访问</a></p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/IP%E5%B7%A5%E5%85%B7-2023-04-16-10-24-26.png" alt="IP工具-2023-04-16-10-24-26"></p>
-<p>这个是目前最便宜的线路，速度和延迟都很不错，如果你还想更快的，更稳定，CN2 GIA线路,169.99美元一年：</p>
-<blockquote>
-<p><a href="https://bandwagonhost.com/aff.php?aff=20859&pid=87">169.99美元每年&#x2F;洛杉矶&#x2F;CN2 GIA线路</a></p>
-</blockquote>
-<p><a href="https://bwh81.net/aff.php?aff=20859&pid=87">备用地址-境内直接访问</a></p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/IP%E5%B7%A5%E5%85%B7-2023-04-16-10-28-25.png" alt="IP工具-2023-04-16-10-28-25"></p>
-<p>这块不是很推荐，因为之间的差价足够你在国内买个NAT,然后再转发。</p>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>搬瓦工</tag>
-        <tag>IP</tag>
       </tags>
   </entry>
   <entry>
@@ -673,128 +847,6 @@ x_&#123;n1&#125;&amp;x_&#123;n2&#125;&amp;\cdots&amp;x_&#123;np&#125;
         <tag>python</tag>
         <tag>机器学习</tag>
         <tag>最小二乘法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>tachidesk部署指南</title>
-    <url>/2022/12/12/tachidesk%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h1 id="tachidesk部署指南"><a href="#tachidesk部署指南" class="headerlink" title="tachidesk部署指南"></a>tachidesk部署指南</h1><p>在线漫画的完美终结者：<a href="https://github.com/Suwayomi/Tachidesk-Server">Tachidesk</a>。Tachidesk是一个免费的、开源的漫画阅读器服务器。<br><a href="https://github.com/Suwayomi/Tachidesk-Server">Tachidesk</a>是一个通过插件查看第三方漫画网站的工具，和之前大火的的多多猫类似的功能，不过区别在于它更加稳定，而且目前开源有人维护，支持windows，Linux，macOS等主流系统。如果你喜欢使用手机端看漫画的话这边推荐：<a href="https://tachiyomi.org/">Tachiyomi</a><br>优势：</p>
-<ul>
-<li>开源且更新</li>
-<li>可以查看主流和非主流的漫画网站</li>
-<li>支持chrome app安装</li>
-</ul>
-<p>缺点：</p>
-<ul>
-<li>某些特殊漫画网站需要翻墙的话，你所部署的服务器也需要能够翻墙。</li>
-<li>没有中文</li>
-</ul>
-<span id="more"></span>
-<h2 id="docker部署"><a href="#docker部署" class="headerlink" title="docker部署"></a>docker部署</h2><p>首先说明部署，部署的话我采用的是docker方式，根据他的<a href="https://github.com/Suwayomi/docker-tachidesk/pkgs/container/tachidesk">docker</a>说明拉取对应的docker：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker pull ghcr.io/suwayomi/tachidesk:preview-alpine</span><br></pre></td></tr></table></figure>
-<p>支持多个版本，如果你需要特殊版本:<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212153452.png" alt="20221212153452"><br>直接执行：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -p 127.0.0.1:4567:4567  -e &quot;TZ=Europe/London 或者其他环境变量&quot;  -v &lt;folder path&gt;:/./home/suwayomi/.local/share/Tachidesk ghcr.io/suwayomi/tachidesk</span><br></pre></td></tr></table></figure>
-<p>或者dockers compose部署</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">version: &quot;3.9&quot;  # optional since v1.27.0</span><br><span class="line">services:</span><br><span class="line">  tachidesk: # 漫画软件</span><br><span class="line">    image: ghcr.io/suwayomi/tachidesk:stable-alpine</span><br><span class="line">    container_name: tachidesk</span><br><span class="line">    environment:</span><br><span class="line">      - PUID=1000</span><br><span class="line">      - PGID=1000</span><br><span class="line">      - TZ=Asia/Shanghai</span><br><span class="line">      - 其他环境变量，具体见下方</span><br><span class="line">    volumes:</span><br><span class="line">      - &lt;folder path&gt;::/./home/suwayomi/.local/share/Tachidesk #载入配置文件，方便后续定期删除多余图片</span><br><span class="line">    ports:</span><br><span class="line">      - 4567:4567</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    networks:</span><br><span class="line">      caddy-bridge:</span><br><span class="line">        ipv4_address: 172.18.0.3</span><br></pre></td></tr></table></figure>
-<p>建议把存储漫画的路径映射出来，方便后续删除漫画缓存，你每次在前端浏览漫画之后，系统不会自动删除对应的漫画历史。如果你硬盘小的话，有可能出现硬盘被完全占用满的情况。<br>如果是本地部署，可以在127.0.0.1:4567上访问，如果是vps部署的话，建议使用caddy2来反向代理:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#香港漫画</span><br><span class="line">xxxxx.com &#123;</span><br><span class="line">        reverse_proxy 127.0.0.1:4567</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>最后配置下删除历史文件：<br>打开debain系统自带的定时任务</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
-<p>修改文件输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">0 2 * * * /bin/bash -c &#x27;rm -rf &lt;你配置的路径&gt;/thumbnails/* &gt;&gt; &lt;你配置的路径&gt;/dl.log 2&gt;&amp;1&#x27;</span><br><span class="line">0 2 * * * /bin/bash -c &#x27;rm -rf &lt;你配置的路径&gt;/downloads/* &gt;&gt; &lt;你配置的路径&gt;/dl.log 2&gt;&amp;1&#x27;</span><br></pre></td></tr></table></figure>
-<p>这样每天凌晨2点会删除所有这两个文件夹下的所有文件，一个存放的是封面，一个存放的是漫画内容。</p>
-<h2 id="个性配置"><a href="#个性配置" class="headerlink" title="个性配置"></a>个性配置</h2><table>
-<thead>
-<tr>
-<th>可用环境变量</th>
-<th>默认值</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>TZ</td>
-<td>Etc&#x2F;UTC</td>
-<td>时区</td>
-</tr>
-<tr>
-<td>BIND_IP</td>
-<td>0.0.0.0</td>
-<td>监听IP默认都监听</td>
-</tr>
-<tr>
-<td>BIND_PORT</td>
-<td>4567</td>
-<td>监听的端口</td>
-</tr>
-<tr>
-<td>SOCKS_PROXY_ENABLED</td>
-<td>false</td>
-<td>是否打开代理</td>
-</tr>
-<tr>
-<td>SOCKS_PROXY_HOST</td>
-<td>空</td>
-<td>代理地址</td>
-</tr>
-<tr>
-<td>SOCKS_PROXY_PORT</td>
-<td>空</td>
-<td>代理地址端口</td>
-</tr>
-<tr>
-<td>DOWNLOAD_AS_CBZ</td>
-<td>false</td>
-<td>是否保存为CBZ文件-否则会是一张张图片在对应文件夹下</td>
-</tr>
-<tr>
-<td>MAX_PARALLEL_UPDATE</td>
-<td>10</td>
-<td>同时最多更新插件数量</td>
-</tr>
-<tr>
-<td>BASIC_AUTH_ENABLED</td>
-<td>false</td>
-<td>是否打开登陆验证</td>
-</tr>
-<tr>
-<td>BASIC_AUTH_USERNAME</td>
-<td>空</td>
-<td>登录名</td>
-</tr>
-<tr>
-<td>BASIC_AUTH_PASSWORD</td>
-<td>空</td>
-<td>登陆密码</td>
-</tr>
-<tr>
-<td>DEBUG</td>
-<td>true</td>
-<td>日志记录</td>
-</tr>
-</tbody></table>
-<h2 id="界面："><a href="#界面：" class="headerlink" title="界面："></a>界面：</h2><ul>
-<li>主页面<br>  <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212153721.png" alt="20221212153721"></li>
-<li>插件页面<br>  <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212153734.png" alt="20221212153734"><br>  插件安装记得筛选中文<br>  <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212154309.png" alt="20221212154309"></li>
-<li>设置页面<br>  <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212154022.png" alt="20221212154022"></li>
-</ul>
-<p>虽然说页面不提供翻译，但是其实都很简单，不行可以下载<a href="https://tachiyomi.org/">Tachiyomi</a>的界面进行对照，两边界面完全一样。</p>
-<h2 id="推荐插件"><a href="#推荐插件" class="headerlink" title="推荐插件"></a>推荐插件</h2><p>最后说下推荐的几个插件：<br>普通漫画：</p>
-<ol>
-<li>57漫画-最新的海贼王，咒术回战都有</li>
-</ol>
-<p>18+：</p>
-<ol>
-<li>绅士漫画-大名鼎鼎，不过需要你的服务器能访问对应网站。</li>
-</ol>
-<p>这两个能够满足我大多数的需求。当然可以根据自己需求，不断增加。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我觉得这个聚合漫画的方式可以完全满足我看漫画的需求，也不需要去自己繁琐的下载裁剪，可以通过网页直接查找自己需要的漫画，我看了现在还支持对应的安卓客户端。如果想要在手机看的话可以考虑。<br>或者你可以直接使用我已经搭建好的：<a href="https://manhua.minsummer.com/">自建漫画网站</a>和<a href="https://manhua2.minsummer.com/">移动网络-漫画网站</a></p>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>漫画</tag>
-        <tag>tachidesk</tag>
       </tags>
   </entry>
   <entry>
@@ -3937,79 +3989,6 @@ pip install requirements.txt
       </categories>
       <tags>
         <tag>下雨</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>青龙面板——京东库使用指南</title>
-    <url>/2023/04/22/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E2%80%94%E2%80%94%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><p>青龙面板的用处很多，其中之一就是用来签到的，我现在已经稳定签到100多天。我用的是<a href="https://github.com/6dylan6/jdpro">6dylan6&#x2F;jdpro</a>，GitHub上星星3000+，而且作者还不定时更新，但是作者编写的文档不是很清楚，这边本着学习和记录的原则，来写一个指南吧。<br>这个库优势：</p>
-<ol>
-<li>有人维护</li>
-<li>更新有保障</li>
-<li>包括但不限于签到，618任务，以及其他实时的活动。</li>
-</ol>
-<p>缺点：</p>
-<ol>
-<li>缝合怪，很多东西都是直接拉取别人库</li>
-<li>有些任务无法执行<span id="more"></span></li>
-</ol>
-<hr>
-<h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><ol>
-<li><p>拉库</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ql repo https://github.com/6dylan6/jdpro.git &quot;jd_|jx_|jddj_&quot; &quot;backUp&quot; &quot;^jd[^_]|USER|JD|function|sendNotify&quot;</span><br></pre></td></tr></table></figure>
-<p>这块看下ql的官方命令说明：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ql repo &lt;地址&gt; &lt;拉取的文件&gt; &lt;不拉取的文件&gt; &lt;依赖文件&gt; &lt;分支&gt;</span><br></pre></td></tr></table></figure>
-<p>可以使用正则表达，所以可以配置一些你不需要的任务，当然这边建议直接全部拉取。<br>需要注意：<br>2.11.1<code>前</code>版本青龙config.sh配置把GithubProxyUrl&#x3D;”<a href="https://ghproxy.com/">https://ghproxy.com/</a> （差不在多19行）” 修改为GithubProxyUrl&#x3D;””，否则拉取失败，以上版本无需配置:<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E2%80%94%E2%80%94%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-06-09-21-00-20.png" alt="青龙面板——京东库使用指南-2023-06-09-21-00-20"></p>
-</li>
-<li><p>修改青龙的config.sh配置</p>
-<blockquote>
-<p>RepoFileExtensions&#x3D;”js py”修改为 RepoFileExtensions&#x3D;”js py sh ts” 保存</p>
-</blockquote>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-40-49.png" alt="青龙面板_京东库使用指南-2023-04-21-21-40-49"></p>
-<p>这块是因为你的库依赖有一些没有安装，所以需要sh脚本来把它安装上去，实现一个自动化，建议修改。<br>需要注意：<br>修改完后切记点击右上角&lt;保存&gt;按钮，否则修改不会生效。</p>
-</li>
-<li><p>获取京东的COOKIE<br>获取的方法多样，我这边使用的是F12，打开&lt;Network按钮&gt;，然后点击筛选<strong>log.gif</strong>，获取到对应的cookie，在环境变量中增加JD_COOKIE变量。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E2%80%94%E2%80%94%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-06-09-21-07-00.png" alt="青龙面板——京东库使用指南-2023-06-09-21-07-00"></p>
-<p>一般来说，这个时效是30天左右，建议后面配置cookie失效通知。失效之后再次获取一次。</p>
-</li>
-<li><p>把通知key变量添加刀配置管理config.sh<br>通知key有很多种，看你具体使用哪种，对应都有配置说明，我用的是gotify，直接输出对应的api就可以<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E2%80%94%E2%80%94%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-06-09-21-11-45.png" alt="青龙面板——京东库使用指南-2023-06-09-21-11-45"></p>
-</li>
-</ol>
-<hr>
-<h2 id="推荐配置"><a href="#推荐配置" class="headerlink" title="推荐配置"></a>推荐配置</h2><p>以上配置是官方针对大众的使用，接下来有一些配置推荐你修改：</p>
-<ol>
-<li><p>任务是有随机延迟的，所以有一些准点运行的任务推荐修改命令，最后加上now</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-56-28.png" alt="青龙面板_京东库使用指南-2023-04-21-21-56-28"></p>
-</li>
-<li><p>建议调整任务运行超时时间，青龙默认1小时有些跑不完就被强制结束，config.sh里配置。CommandTimeoutTime&#x3D;”3h”  即改为3小时，根据自己ck数量调整。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-41-32.png" alt="青龙面板_京东库使用指南-2023-04-21-21-41-32"></p>
-</li>
-<li><p>JD_CART_REMOVE：清空购物车默认是不清空的，可以添加环境变量true，这个很多时候跑任务的时候会增加对应的商品到购物车，所以可以使用这个每日清空购物车。</p>
-</li>
-<li><p>NOTIFY_AUTOCHECKCK 自动禁用失效CK开关 有CK失效自动禁用并通知，true为自动禁用，false不自动禁用，默认false 需用本库sendnotify文件，sendnotify文件功能很强大，针对CK，有以下几种：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">显示正常CK:  export CHECKCK_SHOWSUCCESSCK=&quot;true&quot;</span><br><span class="line">永远通知CK状态:  export CHECKCK_CKALWAYSNOTIFY=&quot;true&quot;</span><br><span class="line">停用自动启用CK:  export CHECKCK_CKAUTOENABLE=&quot;false&quot;	</span><br><span class="line">服务器空数据等错误不触发通知:  export CHECKCK_CKNOWARNERROR=&quot;true&quot;</span><br></pre></td></tr></table></figure>
-<p>如果你账号很多的话，可以改变通知的形式，比如：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;1&quot;    不做任何变动</span><br><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;2&quot;    效果是 :  账号名称：别名(备注)	</span><br><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;3&quot;    效果是 :  账号名称：pin(备注)</span><br><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;4&quot;    效果是 :  账号名称：备注</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>当然，如果你还有其他别的需求可以看<a href="https://github.com/ccwav/QLScript2">这个GitHub</a>，包括但不仅限于所有任务的CK有效通知，所有任务的运行情况，已经有时候某些任务的CK任务失效等等。</p>
-<h2 id="CK和WSCK的获取方法"><a href="#CK和WSCK的获取方法" class="headerlink" title="CK和WSCK的获取方法"></a>CK和WSCK的获取方法</h2><p><a href="https://github.com/6dylan6/jdpro">6dylan6&#x2F;jdpro</a>这个是一个混合库。所以有时候他会直接使用别人的一些库，所以有时候如果你要达到一个完美的配置，需要在对应库下面的配置。</p>
-<p>Cookie的获取方法推荐使用<a href="https://www.telerik.com/fiddler">fiddler</a>，一款抓包程序，10天试用-<a href="https://github.com/msojocs/fiddler-everywhere-enhance/tree/master/v4.1.2">网上已经有破解版</a>。打开之后打开配置，安装证书：</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-22-16-58-17.png" alt="青龙面板_京东库使用指南-2023-04-22-16-58-17"></p>
-<p>打开连接选项，运行局域网登陆：</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-22-17-00-13.png" alt="青龙面板_京东库使用指南-2023-04-22-17-00-13"></p>
-<p>接着就是修改手机的代理节点，然后打开京东APP,随意浏览几次，抓取网络消息。获得他的COOKIE，但是有一个问题那就是失效，一般几天，如果你用的是短信验证，那会是30天左右。</p>
-<p>但是如果使用WSCK的话，可以在Cookie过期之后自动获取新的Cookie，需要注意会自动转换成<code>JD_COOKIE</code>。</p>
-<p>WSCK在POST方法中，需要找找。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">变量名: JD_WSCK 参数: pin=xxxx;wskey=xxxx;</span><br><span class="line"># 注意分号 不要用中文分号!</span><br><span class="line">变量名: QL_PORT 参数: 端口号(int) </span><br><span class="line"># 修改过面板端口的人才需要填写 默认 5700 </span><br><span class="line"># 是本地的端口 不是 Docker 映射出去的端口! 如果你映射参数是 8888:5700 仍然填写5700</span><br><span class="line">变量名: WSKEY_DISCHECK 参数: 任意(str)</span><br><span class="line"># 设置 WSKEY_DISCHECK变量后变量后 不检查有效性 直接更新 不使用请删除 而不是禁用</span><br><span class="line">变量名: WSKEY_AUTO_DISABLE 参数: 任意(str)	</span><br><span class="line"># 设置 WSKEY_AUTO_DISABLE变量后 不会自动禁用变量</span><br><span class="line">变量名: WSKEY_UPDATE_HOUR 参数: 整数(int) 单位：小时</span><br><span class="line"># 设置 WSKEY_UPDATE_HOUR 变量后 会按设定的间隔时间更新 CK</span><br><span class="line"># 注意：使用此参数后，即使 CK 过期也不会更新，请不要设置过大的间隔</span><br><span class="line">变量名: WSKEY_TRY_COUNT 参数: 整数(int)</span><br><span class="line"># 设置 WSKEY_TRY_COUNT 变量后 获取 Token 失败会自动重试</span><br><span class="line">变量名: WSKEY_SLEEP 参数: 整数(int)</span><br><span class="line"># 设置 WSKEY_SLEEP 可自定义间隔时间</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>青龙面板是好东西，极大的省略了我们一些需要定时的重复性操作，<a href="https://github.com/6dylan6/jdpro">6dylan6&#x2F;jdpro</a>这个库好么？好，但是它也是一个缝合怪。好处在于目前他有人维护。很多GitHub上的库都已经缺少人维护，在动不动就某个活动的今天，有一个与时俱进的脚本是一件很重要的事。</p>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>青龙库</tag>
-        <tag>京东签到</tag>
-        <tag>jdpro</tag>
       </tags>
   </entry>
   <entry>

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"minsummer.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.17.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="tachidesk部署指南在线漫画的完美终结者：Tachidesk。Tachidesk是一个免费的、开源的漫画阅读器服务器。Tachidesk是一个通过插件查看第三方漫画网站的工具，和之前大火的的多多猫类似的功能，不过区别在于它更加稳定，而且目前开源有人维护，支持windows，Linux，macOS等主流系统。如果你喜欢使用手机端看漫画的话这边推荐：Tachiyomi优势：  开源且更新 可以查">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="tachidesk部署指南">
+<meta property="og:url" content="https://minsummer.com/2022/12/12/109-tachidesk%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+<meta property="og:site_name" content="我是豆豆">
+<meta property="og:description" content="tachidesk部署指南在线漫画的完美终结者：Tachidesk。Tachidesk是一个免费的、开源的漫画阅读器服务器。Tachidesk是一个通过插件查看第三方漫画网站的工具，和之前大火的的多多猫类似的功能，不过区别在于它更加稳定，而且目前开源有人维护，支持windows，Linux，macOS等主流系统。如果你喜欢使用手机端看漫画的话这边推荐：Tachiyomi优势：  开源且更新 可以查">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212153452.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212153721.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212153734.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212154309.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212154022.png">
+<meta property="article:published_time" content="2022-12-12T07:50:31.000Z">
+<meta property="article:modified_time" content="2023-06-09T16:00:00.000Z">
+<meta property="article:author" content="张大爆">
+<meta property="article:tag" content="漫画">
+<meta property="article:tag" content="tachidesk">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212153452.png">
+
+
+<link rel="canonical" href="https://minsummer.com/2022/12/12/109-tachidesk%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://minsummer.com/2022/12/12/109-tachidesk%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/","path":"2022/12/12/109-tachidesk部署指南/","title":"tachidesk部署指南"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>tachidesk部署指南 | 我是豆豆</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-189642379-1","only_pageview":true}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+  <script data-pjax defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{&quot;token&quot;: &quot;2c44721ef211470c8cb156f38ca476ea&quot;}'></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">我是豆豆</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">吃饭，睡觉，打豆豆</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-wechat fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">175</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">118</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#tachidesk%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97"><span class="nav-number">1.</span> <span class="nav-text">tachidesk部署指南</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#docker%E9%83%A8%E7%BD%B2"><span class="nav-number">1.1.</span> <span class="nav-text">docker部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AA%E6%80%A7%E9%85%8D%E7%BD%AE"><span class="nav-number">1.2.</span> <span class="nav-text">个性配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%95%8C%E9%9D%A2%EF%BC%9A"><span class="nav-number">1.3.</span> <span class="nav-text">界面：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E8%8D%90%E6%8F%92%E4%BB%B6"><span class="nav-number">1.4.</span> <span class="nav-text">推荐插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.5.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">张大爆</p>
+  <div class="site-description" itemprop="description">经常会忘记一些东西，用这里来记录我们曾经来过</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">118</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">175</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/android1122" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;android1122" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:noway@minsummer.com" title="E-Mail → mailto:noway@minsummer.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://manhua2.minsummer.com/" title="https:&#x2F;&#x2F;manhua2.minsummer.com" rel="noopener" target="_blank">漫画网站-移动</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://manhua.minsummer.com/" title="https:&#x2F;&#x2F;manhua.minsummer.com" rel="noopener" target="_blank">漫画网站</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://speedtt.minsummer.com/" title="https:&#x2F;&#x2F;speedtt.minsummer.com&#x2F;" rel="noopener" target="_blank">公益机场</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://speedtthk.minsummer.com/" title="https:&#x2F;&#x2F;speedtthk.minsummer.com&#x2F;" rel="noopener" target="_blank">公益机场-移动</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://minsummer.com/2022/12/12/109-tachidesk%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="张大爆">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我是豆豆">
+      <meta itemprop="description" content="经常会忘记一些东西，用这里来记录我们曾经来过">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="tachidesk部署指南 | 我是豆豆">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          tachidesk部署指南
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-12-12 15:50:31" itemprop="dateCreated datePublished" datetime="2022-12-12T15:50:31+08:00">2022-12-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-06-10 00:00:00" itemprop="dateModified" datetime="2023-06-10T00:00:00+08:00">2023-06-10</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>988</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="tachidesk部署指南"><a href="#tachidesk部署指南" class="headerlink" title="tachidesk部署指南"></a>tachidesk部署指南</h1><p>在线漫画的完美终结者：<a target="_blank" rel="noopener" href="https://github.com/Suwayomi/Tachidesk-Server">Tachidesk</a>。Tachidesk是一个免费的、开源的漫画阅读器服务器。<br><a target="_blank" rel="noopener" href="https://github.com/Suwayomi/Tachidesk-Server">Tachidesk</a>是一个通过插件查看第三方漫画网站的工具，和之前大火的的多多猫类似的功能，不过区别在于它更加稳定，而且目前开源有人维护，支持windows，Linux，macOS等主流系统。如果你喜欢使用手机端看漫画的话这边推荐：<a target="_blank" rel="noopener" href="https://tachiyomi.org/">Tachiyomi</a><br>优势：</p>
+<ul>
+<li>开源且更新</li>
+<li>可以查看主流和非主流的漫画网站</li>
+<li>支持chrome app安装</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>某些特殊漫画网站需要翻墙的话，你所部署的服务器也需要能够翻墙。</li>
+<li>没有中文</li>
+</ul>
+<span id="more"></span>
+<h2 id="docker部署"><a href="#docker部署" class="headerlink" title="docker部署"></a>docker部署</h2><p>首先说明部署，部署的话我采用的是docker方式，根据他的<a target="_blank" rel="noopener" href="https://github.com/Suwayomi/docker-tachidesk/pkgs/container/tachidesk">docker</a>说明拉取对应的docker：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull ghcr.io/suwayomi/tachidesk:preview-alpine</span><br></pre></td></tr></table></figure>
+<p>支持多个版本，如果你需要特殊版本:<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212153452.png" alt="20221212153452"><br>直接执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 127.0.0.1:4567:4567  -e &quot;TZ=Europe/London 或者其他环境变量&quot;  -v &lt;folder path&gt;:/./home/suwayomi/.local/share/Tachidesk ghcr.io/suwayomi/tachidesk</span><br></pre></td></tr></table></figure>
+<p>或者dockers compose部署</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">version: &quot;3.9&quot;  # optional since v1.27.0</span><br><span class="line">services:</span><br><span class="line">  tachidesk: # 漫画软件</span><br><span class="line">    image: ghcr.io/suwayomi/tachidesk:stable-alpine</span><br><span class="line">    container_name: tachidesk</span><br><span class="line">    environment:</span><br><span class="line">      - PUID=1000</span><br><span class="line">      - PGID=1000</span><br><span class="line">      - TZ=Asia/Shanghai</span><br><span class="line">      - 其他环境变量，具体见下方</span><br><span class="line">    volumes:</span><br><span class="line">      - &lt;folder path&gt;::/./home/suwayomi/.local/share/Tachidesk #载入配置文件，方便后续定期删除多余图片</span><br><span class="line">    ports:</span><br><span class="line">      - 4567:4567</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    networks:</span><br><span class="line">      caddy-bridge:</span><br><span class="line">        ipv4_address: 172.18.0.3</span><br></pre></td></tr></table></figure>
+<p>建议把存储漫画的路径映射出来，方便后续删除漫画缓存，你每次在前端浏览漫画之后，系统不会自动删除对应的漫画历史。如果你硬盘小的话，有可能出现硬盘被完全占用满的情况。<br>如果是本地部署，可以在127.0.0.1:4567上访问，如果是vps部署的话，建议使用caddy2来反向代理:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#香港漫画</span><br><span class="line">xxxxx.com &#123;</span><br><span class="line">        reverse_proxy 127.0.0.1:4567</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后配置下删除历史文件：<br>打开debain系统自带的定时任务</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
+<p>修改文件输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0 2 * * * /bin/bash -c &#x27;rm -rf &lt;你配置的路径&gt;/thumbnails/* &gt;&gt; &lt;你配置的路径&gt;/dl.log 2&gt;&amp;1&#x27;</span><br><span class="line">0 2 * * * /bin/bash -c &#x27;rm -rf &lt;你配置的路径&gt;/downloads/* &gt;&gt; &lt;你配置的路径&gt;/dl.log 2&gt;&amp;1&#x27;</span><br></pre></td></tr></table></figure>
+<p>这样每天凌晨2点会删除所有这两个文件夹下的所有文件，一个存放的是封面，一个存放的是漫画内容。</p>
+<h2 id="个性配置"><a href="#个性配置" class="headerlink" title="个性配置"></a>个性配置</h2><table>
+<thead>
+<tr>
+<th>可用环境变量</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TZ</td>
+<td>Etc&#x2F;UTC</td>
+<td>时区</td>
+</tr>
+<tr>
+<td>BIND_IP</td>
+<td>0.0.0.0</td>
+<td>监听IP默认都监听</td>
+</tr>
+<tr>
+<td>BIND_PORT</td>
+<td>4567</td>
+<td>监听的端口</td>
+</tr>
+<tr>
+<td>SOCKS_PROXY_ENABLED</td>
+<td>false</td>
+<td>是否打开代理</td>
+</tr>
+<tr>
+<td>SOCKS_PROXY_HOST</td>
+<td>空</td>
+<td>代理地址</td>
+</tr>
+<tr>
+<td>SOCKS_PROXY_PORT</td>
+<td>空</td>
+<td>代理地址端口</td>
+</tr>
+<tr>
+<td>DOWNLOAD_AS_CBZ</td>
+<td>false</td>
+<td>是否保存为CBZ文件-否则会是一张张图片在对应文件夹下</td>
+</tr>
+<tr>
+<td>MAX_PARALLEL_UPDATE</td>
+<td>10</td>
+<td>同时最多更新插件数量</td>
+</tr>
+<tr>
+<td>BASIC_AUTH_ENABLED</td>
+<td>false</td>
+<td>是否打开登陆验证</td>
+</tr>
+<tr>
+<td>BASIC_AUTH_USERNAME</td>
+<td>空</td>
+<td>登录名</td>
+</tr>
+<tr>
+<td>BASIC_AUTH_PASSWORD</td>
+<td>空</td>
+<td>登陆密码</td>
+</tr>
+<tr>
+<td>DEBUG</td>
+<td>true</td>
+<td>日志记录</td>
+</tr>
+</tbody></table>
+<h2 id="界面："><a href="#界面：" class="headerlink" title="界面："></a>界面：</h2><ul>
+<li>主页面<br>  <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212153721.png" alt="20221212153721"></li>
+<li>插件页面<br>  <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212153734.png" alt="20221212153734"><br>  插件安装记得筛选中文<br>  <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212154309.png" alt="20221212154309"></li>
+<li>设置页面<br>  <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221212154022.png" alt="20221212154022"></li>
+</ul>
+<p>虽然说页面不提供翻译，但是其实都很简单，不行可以下载<a target="_blank" rel="noopener" href="https://tachiyomi.org/">Tachiyomi</a>的界面进行对照，两边界面完全一样。</p>
+<h2 id="推荐插件"><a href="#推荐插件" class="headerlink" title="推荐插件"></a>推荐插件</h2><p>最后说下推荐的几个插件：<br>普通漫画：</p>
+<ol>
+<li>57漫画-最新的海贼王，咒术回战都有</li>
+</ol>
+<p>18+：</p>
+<ol>
+<li>绅士漫画-大名鼎鼎，不过需要你的服务器能访问对应网站。</li>
+</ol>
+<p>这两个能够满足我大多数的需求。当然可以根据自己需求，不断增加。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我觉得这个聚合漫画的方式可以完全满足我看漫画的需求，也不需要去自己繁琐的下载裁剪，可以通过网页直接查找自己需要的漫画，我看了现在还支持对应的安卓客户端。如果想要在手机看的话可以考虑。<br>或者你可以直接使用我已经搭建好的：<a target="_blank" rel="noopener" href="https://manhua.minsummer.com/">自建漫画网站</a>和<a target="_blank" rel="noopener" href="https://manhua2.minsummer.com/">移动网络-漫画网站</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%BC%AB%E7%94%BB/" rel="tag"># 漫画</a>
+              <a href="/tags/tachidesk/" rel="tag"># tachidesk</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/12/12/VPS%E7%BD%91%E8%B5%9A%EF%BC%9Apeer2profit%E5%92%8Ctraffmonetizer%E6%8C%82%E6%9C%BA%E7%BD%91%E8%B5%9A/" rel="prev" title="VPS网赚：peer2profit和traffmonetizer挂机网赚">
+                  <i class="fa fa-chevron-left"></i> VPS网赚：peer2profit和traffmonetizer挂机网赚
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/12/12/%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98/" rel="next" title="遇见的问题">
+                  遇见的问题 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 国窖1573 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">张大爆</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">166k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">10:03</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/android1122" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.4.3/mermaid.min.js","integrity":"sha256-e0o3JYsdjqKajf9eOe22FhioYSz9WofRY4dLKo3F6do="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"android1122","repo":"hexo-blog","client_id":"6950c9229796295b9867","client_secret":"9af4438d89e7a09669ec33d632ba554589a1f7d7","admin_user":"android1122","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"c96bd72b84237271615c51970cc7d893"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
