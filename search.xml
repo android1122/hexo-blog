@@ -352,10 +352,109 @@
   <entry>
     <title>技能树梳理</title>
     <url>/2023/05/22/113-%E6%8A%80%E8%83%BD%E6%A0%91/</url>
-    <content><![CDATA[
-<div class="markmap-container" style="height:800px">
-  <svg data="{&quot;t&quot;:&quot;root&quot;,&quot;d&quot;:0,&quot;v&quot;:&quot;&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[0,1]},&quot;v&quot;:&quot;技能树&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[1,2]},&quot;v&quot;:&quot;开发&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[2,3]},&quot;v&quot;:&quot;程序开发&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[3,4],&quot;f&quot;:true},&quot;v&quot;:&quot;python&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:8,&quot;p&quot;:{&quot;lines&quot;:[4,5],&quot;f&quot;:true},&quot;v&quot;:&quot;实现应用&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:10,&quot;p&quot;:{&quot;lines&quot;:[5,6],&quot;f&quot;:true},&quot;v&quot;:&quot;数据挖掘&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:12,&quot;p&quot;:{&quot;lines&quot;:[6,7],&quot;f&quot;:true},&quot;v&quot;:&quot;&lt;code&gt;没有数据可以挖掘&lt;/code&gt;&quot;}]},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:10,&quot;p&quot;:{&quot;lines&quot;:[7,8],&quot;f&quot;:true},&quot;v&quot;:&quot;爬虫&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:12,&quot;p&quot;:{&quot;lines&quot;:[8,9],&quot;f&quot;:true},&quot;v&quot;:&quot;&lt;code&gt;没有合适的需求&lt;/code&gt;&quot;}]},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:10,&quot;p&quot;:{&quot;lines&quot;:[9,10],&quot;f&quot;:true},&quot;v&quot;:&quot;简单的AI&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:12,&quot;p&quot;:{&quot;lines&quot;:[10,11],&quot;f&quot;:true},&quot;v&quot;:&quot;&lt;code&gt;底层的ai作用不强且没有较好的运用，大规模ai需要数据庞大&lt;/code&gt;&quot;}]}]},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:8,&quot;p&quot;:{&quot;lines&quot;:[11,12],&quot;f&quot;:true},&quot;v&quot;:&quot;&lt;a href=\&quot;https://tobebetterjavaer.com/xuexiluxian/python.html#_2-%E6%95%99%E7%A8%8B%E7%AF%87\&quot;&gt;高阶&lt;/a&gt;&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:10,&quot;p&quot;:{&quot;lines&quot;:[12,13],&quot;f&quot;:true},&quot;v&quot;:&quot;&lt;a href=\&quot;https://raw.githubusercontent.com/android1122/typecho_img/master/%E6%8A%80%E8%83%BD%E6%A0%91-2023-04-18-09-09-42.png\&quot;&gt;学习路线图&lt;/a&gt;&quot;}]}]}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[13,14]},&quot;v&quot;:&quot;运维&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[14,15]},&quot;v&quot;:&quot;&lt;a href=\&quot;https://yeasy.gitbook.io/docker_practice/\&quot;&gt;docker&lt;/a&gt;&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[15,16],&quot;f&quot;:true},&quot;v&quot;:&quot;服务器运维和自建docker&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[16,17]},&quot;v&quot;:&quot;数据分析&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[17,18]},&quot;v&quot;:&quot;&lt;a href=\&quot;https://www.lanrenexcel.com/excel-functions-list/\&quot;&gt;excle&lt;/a&gt;&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[18,19],&quot;f&quot;:true},&quot;v&quot;:&quot;满足目前98%的需求&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[19,20],&quot;f&quot;:true},&quot;v&quot;:&quot;已经搭建一个可以直观动态的数据表&quot;}]},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[20,21]},&quot;v&quot;:&quot;power BI&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[21,22],&quot;f&quot;:true},&quot;v&quot;:&quot;满足目前98%的需求&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[22,23],&quot;f&quot;:true},&quot;v&quot;:&quot;已经搭建一个需要手动更新的多维度数据表&quot;}]},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[23,24]},&quot;v&quot;:&quot;python-pandas&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[24,25],&quot;f&quot;:true},&quot;v&quot;:&quot;满足目前98%的需求&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[25,26],&quot;f&quot;:true},&quot;v&quot;:&quot;已经搭建一个需要手动更新的数据表&quot;}]}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[26,27]},&quot;v&quot;:&quot;应用树&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[27,28]},&quot;v&quot;:&quot;数据记录和显示&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[28,29],&quot;index&quot;:1},&quot;v&quot;:&quot;1. excel&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[29,30],&quot;f&quot;:true},&quot;v&quot;:&quot;优先使用，能解决大部分问题&quot;}]},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[30,31],&quot;index&quot;:2},&quot;v&quot;:&quot;2. power BI&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[31,32],&quot;f&quot;:true},&quot;v&quot;:&quot;处理大规模数据或者图形化&quot;}]},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[32,33],&quot;index&quot;:3},&quot;v&quot;:&quot;3. python&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[33,34],&quot;f&quot;:true},&quot;v&quot;:&quot;偏向服务端，无法直观显示数据，但是可以用来挖掘数据内在联系&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[34,35]},&quot;v&quot;:&quot;数据处理-自动化&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[35,36],&quot;index&quot;:1},&quot;v&quot;:&quot;1. python&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[36,37],&quot;f&quot;:true},&quot;v&quot;:&quot;方便处理excel等&quot;}]},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[37,38],&quot;index&quot;:2},&quot;v&quot;:&quot;2. excel&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[38,39],&quot;f&quot;:true},&quot;v&quot;:&quot;宏/vba，也可以处理，内在处理方式更加安全&quot;}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:2,&quot;p&quot;:{&quot;lines&quot;:[39,40]},&quot;v&quot;:&quot;爬虫&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[40,41],&quot;index&quot;:1},&quot;v&quot;:&quot;1. python&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[41,42],&quot;f&quot;:true},&quot;v&quot;:&quot;日常应用&quot;}]},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[42,43],&quot;index&quot;:2},&quot;v&quot;:&quot;2. excel&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[43,44],&quot;f&quot;:true},&quot;v&quot;:&quot;未实践，不过可以用在在内建表内显示目前情况&quot;}]},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:4,&quot;p&quot;:{&quot;lines&quot;:[44,45],&quot;index&quot;:3},&quot;v&quot;:&quot;3. power BI&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:6,&quot;p&quot;:{&quot;lines&quot;:[45,46],&quot;f&quot;:true},&quot;v&quot;:&quot;未实践，用来显示参考数据&quot;}]}]}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[46,47]},&quot;v&quot;:&quot;期望树&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[47,48]},&quot;v&quot;:&quot;但当涉猎，见往事尔：每样都涉及一点，都了解一点，不一定需要了解透彻&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[48,49]},&quot;v&quot;:&quot;前端开发：php&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[49,50]},&quot;v&quot;:&quot;数据挖掘书&quot;}]},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[50,51]},&quot;v&quot;:&quot;学不在广，在深在精：如果发现有东西可以应用落地，可以深入了解&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[51,52]},&quot;v&quot;:&quot;绝望之墙：没有应用项目&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[52,53]},&quot;v&quot;:&quot;破墙之路：兴趣爱好&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[53,54]},&quot;v&quot;:&quot;破墙之路：工作需求&quot;}]}]}],&quot;p&quot;:{}}"></svg>
-</div>
+    <content><![CDATA[<p>梳理一下自己的技能树</p>
+<span id="more"></span>
+<h1 id="技能树"><a href="#技能树" class="headerlink" title="技能树"></a>技能树</h1><h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><ul>
+<li>程序开发<ul>
+<li>python<ul>
+<li>实现应用<ul>
+<li>数据挖掘<ul>
+<li><code>没有数据可以挖掘</code></li>
+</ul>
+</li>
+<li>爬虫<ul>
+<li><code>没有合适的需求</code></li>
+</ul>
+</li>
+<li>简单的AI<ul>
+<li><code>底层的ai作用不强且没有较好的运用，大规模ai需要数据庞大</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://tobebetterjavaer.com/xuexiluxian/python.html#_2-%E6%95%99%E7%A8%8B%E7%AF%87">高阶</a><ul>
+<li><a href="https://raw.githubusercontent.com/android1122/typecho_img/master/%E6%8A%80%E8%83%BD%E6%A0%91-2023-04-18-09-09-42.png">学习路线图</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="运维"><a href="#运维" class="headerlink" title="运维"></a>运维</h2><ul>
+<li><a href="https://yeasy.gitbook.io/docker_practice/">docker</a><ul>
+<li>服务器运维和自建docker</li>
+</ul>
+</li>
+</ul>
+<h2 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h2><ul>
+<li><a href="https://www.lanrenexcel.com/excel-functions-list/">excle</a><ul>
+<li>满足目前98%的需求</li>
+<li>已经搭建一个可以直观动态的数据表</li>
+</ul>
+</li>
+<li>power BI<ul>
+<li>满足目前98%的需求</li>
+<li>已经搭建一个需要手动更新的多维度数据表</li>
+</ul>
+</li>
+<li>python-pandas<ul>
+<li>满足目前98%的需求</li>
+<li>已经搭建一个需要手动更新的数据表</li>
+</ul>
+</li>
+</ul>
+<h1 id="应用树"><a href="#应用树" class="headerlink" title="应用树"></a>应用树</h1><h2 id="数据记录和显示"><a href="#数据记录和显示" class="headerlink" title="数据记录和显示"></a>数据记录和显示</h2><ol>
+<li>excel<ul>
+<li>优先使用，能解决大部分问题</li>
+</ul>
+</li>
+<li>power BI<ul>
+<li>处理大规模数据或者图形化</li>
+</ul>
+</li>
+<li>python <ul>
+<li>偏向服务端，无法直观显示数据，但是可以用来挖掘数据内在联系</li>
+</ul>
+</li>
+</ol>
+<h2 id="数据处理-自动化"><a href="#数据处理-自动化" class="headerlink" title="数据处理-自动化"></a>数据处理-自动化</h2><ol>
+<li>python<ul>
+<li>方便处理excel等</li>
+</ul>
+</li>
+<li>excel<ul>
+<li>宏&#x2F;vba，也可以处理，内在处理方式更加安全</li>
+</ul>
+</li>
+</ol>
+<h2 id="爬虫"><a href="#爬虫" class="headerlink" title="爬虫"></a>爬虫</h2><ol>
+<li>python<ul>
+<li>日常应用</li>
+</ul>
+</li>
+<li>excel<ul>
+<li>未实践，不过可以用在在内建表内显示目前情况</li>
+</ul>
+</li>
+<li>power BI<ul>
+<li>未实践，用来显示参考数据</li>
+</ul>
+</li>
+</ol>
+<h1 id="期望树"><a href="#期望树" class="headerlink" title="期望树"></a>期望树</h1><ul>
+<li>但当涉猎，见往事尔：每样都涉及一点，都了解一点，不一定需要了解透彻<ul>
+<li>前端开发：php</li>
+<li>数据挖掘书</li>
+</ul>
+</li>
+<li>学不在广，在深在精：如果发现有东西可以应用落地，可以深入了解</li>
+<li>绝望之墙：没有应用项目<ul>
+<li>破墙之路：兴趣爱好</li>
+<li>破墙之路：工作需求</li>
+</ul>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>技术顾问</category>
@@ -368,10 +467,43 @@
   <entry>
     <title>git简明学习手册</title>
     <url>/2023/05/22/114git%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/</url>
-    <content><![CDATA[
-<div class="markmap-container" style="height:800px">
-  <svg data="{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[0,1]},&quot;v&quot;:&quot;git简明指南&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[1,2],&quot;index&quot;:0},&quot;v&quot;:&quot;0. git工作流&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[2,3],&quot;index&quot;:1},&quot;v&quot;:&quot;1. 本地git add到暂存区&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[3,4],&quot;index&quot;:2},&quot;v&quot;:&quot;2. 暂存区git commit到HEAD&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[4,5],&quot;index&quot;:3},&quot;v&quot;:&quot;3. HEAD的内容git push后才会到你的远程仓库&quot;}]},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[5,6],&quot;index&quot;:1},&quot;v&quot;:&quot;1. 创建/复制&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[6,7],&quot;index&quot;:1},&quot;v&quot;:&quot;1. git init&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[7,8],&quot;index&quot;:2},&quot;v&quot;:&quot;2. git clone&quot;}]},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[8,9],&quot;index&quot;:2},&quot;v&quot;:&quot;2. 增加/删除文件&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[9,10],&quot;index&quot;:1},&quot;v&quot;:&quot;1. git add&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[10,11],&quot;index&quot;:2},&quot;v&quot;:&quot;2. 或者直接增加&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[11,12],&quot;index&quot;:3},&quot;v&quot;:&quot;3. git rm&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[12,13],&quot;index&quot;:4},&quot;v&quot;:&quot;4. 或者直接删除&quot;}]},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[13,14],&quot;index&quot;:3},&quot;v&quot;:&quot;3. 回退版本&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[14,15],&quot;index&quot;:1},&quot;v&quot;:&quot;1. git reset&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:7,&quot;p&quot;:{&quot;lines&quot;:[15,16],&quot;index&quot;:1,&quot;f&quot;:true},&quot;v&quot;:&quot;1. --soft 回退上一次修改的内容&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:7,&quot;p&quot;:{&quot;lines&quot;:[16,17],&quot;index&quot;:2,&quot;f&quot;:true},&quot;v&quot;:&quot;2. --hard 回退所有内容&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:7,&quot;p&quot;:{&quot;lines&quot;:[17,18],&quot;index&quot;:3,&quot;f&quot;:true},&quot;v&quot;:&quot;3. HEAD~0 【0-n】回退到之前第几个版本&quot;}]}]},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[18,19],&quot;index&quot;:4},&quot;v&quot;:&quot;4. 分支管理&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[19,20],&quot;index&quot;:1},&quot;v&quot;:&quot;1. git branch 创建分支&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[20,21],&quot;index&quot;:2},&quot;v&quot;:&quot;2. git merge 合并分支&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:5,&quot;p&quot;:{&quot;lines&quot;:[21,22],&quot;index&quot;:3},&quot;v&quot;:&quot;3. git checout 切换分支&quot;}]}]}"></svg>
-</div>
+    <content><![CDATA[<p>简单易学的git知识导图</p>
+<span id="more"></span>
+<h1 id="git简明指南"><a href="#git简明指南" class="headerlink" title="git简明指南"></a>git简明指南</h1><ol start="0">
+<li>git工作流<ol>
+<li>本地git add到暂存区</li>
+<li>暂存区git commit到HEAD</li>
+<li>HEAD的内容git push后才会到你的远程仓库</li>
+</ol>
+</li>
+<li>创建&#x2F;复制<ol>
+<li>git init</li>
+<li>git clone</li>
+</ol>
+</li>
+<li>增加&#x2F;删除文件<ol>
+<li>git add</li>
+<li>或者直接增加</li>
+<li>git rm</li>
+<li>或者直接删除</li>
+</ol>
+</li>
+<li>回退版本<ol>
+<li>git reset<ol>
+<li>–soft 回退上一次修改的内容</li>
+<li>–hard 回退所有内容</li>
+<li>HEAD~0 【0-n】回退到之前第几个版本</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>分支管理<ol>
+<li>git branch 创建分支</li>
+<li>git merge 合并分支</li>
+<li>git checout 切换分支</li>
+</ol>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>技术顾问</category>
@@ -591,7 +723,7 @@
 </ol>
 <p>以上只是乱象中的一点现象，但是这些行为都增加了开放商的杠杆率。我们可以做一个完美的假设：<br>我花1亿买块地，但是出让金可以后续交，然后拿着1亿的地去银行贷款，贷出了8千万，拿其中4千万我去盖到一定程度，然后开始预售，我1亿的地，我卖房子2个亿。这些钱我通过途径拿了出来，现在我手现金里有2亿4千万；欠债1亿8千万。<br>现在摆在你面前的有两条路：</p>
 <ol>
-<li>还钱，还干净，然后拿着6千万的利润进入下一个行业。</li>
+<li>还钱，还干净，然后拿着6千万的利润进入下一个循环。</li>
 <li>不还钱，拿着2亿4千万继续到处打点关系，买地。</li>
 </ol>
 <p>事实证明那时候大多数饿地产商选择了第二条路，那段时间我们时常可以看到开发商建房速度多么多么快。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/119-%E5%85%B3%E4%BA%8E%E7%9D%80%E9%99%86-2023-06-16-10-09-37.png" alt="119-关于着陆-2023-06-16-10-09-37"><br>这样无形中提高了开发商的杠杆率，理论上你可以空手套白狼。如果你有资金那么可以套更多的狼。<br>地产的高利润让资金趋之若鹜，推高了地价，也推高了房价。于是卖房更赚钱了，大家就更加愿意进来了。于是更高的房价。但是就在我们之前看到的，开发商过高的杠杆率，如果在房价上涨的时候这么玩可以。如果房价下跌，会发生什么？</p>
@@ -600,7 +732,7 @@
 <li>购房者风险：抵押物价值低<br>如果房价下跌，你抵押的房子价值不足你的贷款，那么理论上你是需要补充抵押物，否则银行会考虑直接卖了你的房子。</li>
 <li>银行风险：收不回贷款<br>银行是不需要实物，无论是房子还是房子上的地。他的目的是放钱出去然后再收回来，如果继续恶化下去的话，那么就会出现银行成为最大的地产商和房产持有者——新一届的地主。</li>
 </ol>
-<p>这就是我们说得风险，系统性经济风险。一旦崩了的话，那么是一起崩，人民无所谓，开发商也死得其所，但是如果银行崩溃的话，那么就是国家经济的衰退。这个才是</p>
+<p>这就是我们说得风险，系统性经济风险。一旦崩了的话，那么是一起崩，人民无所谓，开发商也死得其所，但是如果银行崩溃的话，那么就是国家经济的衰退。这个才是最重要的。</p>
 <h2 id="阶段性救援-16年棚改货币化"><a href="#阶段性救援-16年棚改货币化" class="headerlink" title="阶段性救援-16年棚改货币化"></a>阶段性救援-16年棚改货币化</h2><blockquote>
 <p>苦一苦百姓，骂名我来担<br>———《大明王朝1566》</p>
 </blockquote>
@@ -634,6 +766,79 @@
         <tag>中国经济</tag>
         <tag>民科经济学</tag>
         <tag>暴论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>读史读的是什么——《明朝那些事儿》</title>
+    <url>/2023/06/20/120-%E8%AF%BB%E5%8F%B2%E8%AF%BB%E7%9A%84%E6%98%AF%E4%BB%80%E4%B9%88/</url>
+    <content><![CDATA[<p>闲来无事，想起来KK大神的一些言论。天底下没有新鲜事，于是就看了下白话的史书——《明朝那些事儿》。看完之后只能感叹，天底下果真没有啥新鲜事，其次就是，当年鲁迅说的狂人日记，原来就在我身边。<br>我是推荐读史书的，如果你最近闲来无事，手边又没有合适的书，那么我推荐你看一看过去发生的事情。无论是白话还是文言。有些人说文言史是正统，我不否认。但是每个人读书想法不同，有人用来打发时间，有人用来求知学新。我读史更多的是拿来当闲书看的，与其去追求小说剧情跌宕起伏，还不如看看我们过去发生的一些事。然后知道，太阳底下没啥新鲜事，都是发生过的。</p>
+<span id="more"></span>
+<p>《明朝这些事儿》我是很推荐的，无论是学习中的还是不在学习的。里面的很多事例都可以直接应用在作文之中，再也不用担心找不到例子凑字数了。而且都是真实发生，更加让人信服。而学习之外的看看这一个王朝时如何覆灭的也是不错的，以古论今也是一种收获。但是这本书当年是网文写作的，所以很多的叙述和描述上我个人人为是有问题的：</p>
+<ol>
+<li>结构混乱<br>作者的故事结构混乱，时而是人物小传，时而又变成了时间线叙述。作为讲历史的书，在有一个明确的主线之下，根据时间来做主心骨，然后按照时间发展穿插具体事情，这样让人更加能够融入和接受，知道前因和后果。<br>有时候叙事角色也有所跳脱，变成了和角色对话，如果你花一整个章节来描述也可以，但是你后面又变回了正常的叙事结构，只能说花样百出吧。<blockquote>
+<p>恭喜你，王守仁先生，可是也就到此为止了，生活是很现实的，悟道让人兴奋，但你还是早点儿洗了睡吧，因为明天一早，你还要拿起锄头去耕你那两块破地，哲学是伟大的、是重要的，但你应该清楚，吃饱饭才是最大的哲学。<br>根据历史导演的安排，王守仁先生还要在这里待段时间，直到一件事情的发生改变他的命运，这中间还有几年，我们就不陪王圣人开荒了。因为与此同时，一场好戏正在北京开演。</p>
+</blockquote>
+</li>
+<li>话多狐臊<br>随处可见的俏皮话，无意义的接话：<blockquote>
+<p>估计是转了一圈，没抢到多少实在玩意儿，所以皇太极决定，玩一把大的，他集结了所有兵力，猛攻永定门。<br> 明军于城下列阵，由满桂指挥，总兵力约四万，迎战后金。<br> 战役的结果再次证明，古代游牧民族在玩命方面，有优越性。<br> 经过整日激战，明军付出重大伤亡，主将满桂战死，但后金军也损失惨重，未能攻破城门，全军撤退。<br> 四年前，四品文官袁崇焕站在那座叫宁远的孤城里，面对着只知道攒钱的满桂、当过逃兵的赵率教、消极怠工的祖大寿，说：<br> “独卧孤城，以当虏耳！”<br> 在绝境之中，他们始终相信，坚定的信念，必将战胜强大的敌人。<br> 之后，他们战胜了努尔哈赤，战胜了皇太极，再之后，是反目、排挤、阵亡、定罪、叛逃。<br> 赵率教死了，袁崇焕坐牢了，满桂指认袁崇焕后，也死了，祖大寿终将走上那条不归之路。<br> 共患难者，不可共安乐，世上的事情，大致都是如此吧。</p>
+</blockquote>
+等等如此，显得文章有点杂乱。以上完全可以归结一句，打仗，打输了。这场战争本身没啥可写的，是袁崇焕被抓之后他的部下祖大寿的叛逃又回来，然后与后金军队打仗。这么一大段文字，说不清楚事情，反而在后面塞入了祖大寿后面发生的一系列故事，作为一个提前预告？</li>
+<li>情绪泛滥<br>废话太多也就算了，还喜欢抒情，还是用历史人物的视角。<br>如朱元璋的归宿这一章节。我明白作者是想要给朱元璋一个定论，或者给他写一个评论啥的，但是通篇下来有种小学作文的感觉，歌颂赞扬，想让人理解这个人物，但是却只能大段大段的惊叹词来感受。如果你深入研究过朱元璋，那么你有可能会对他说的话感到理解，但是作为一个小说来看，我是没办法在这里感同身受，甚至有时候会觉得废话好多，想要跳过这个章节。<blockquote>
+<p>朱元璋的归宿<br>此时的朱元璋才真正感觉到一种解脱，他打了一辈子仗，忙了一辈子公务，不但干了自己的工作，连儿子孙子的那份他也代劳了。<br>此时的大明帝国已经恢复了生机和活力，人民安居乐业，商业活动也有相当的发展，朝鲜归顺了大明，北元已经被打成了游击队。而朱元璋对他制定的那套政策更是信心爆棚，在他看来，后世子孙只要有着基本的行为能力，就能根据他的政策治理大明，并保万世平安。<br>都安排好了，我也可以放心地走了。<br>对大臣们来说，朱元璋可能不是个好君主，但是对朱元璋的子孙们来说，朱元璋绝对是个好父亲、好祖父。其实朱元璋的这种行为反差的理由也很简单，就如同今天独生子女的家长，特别是那些当年曾经挨过饿的人，自然不忍心让孩子受自己那样的苦，他们恨不得代替子女去承担他们将来要经受的苦难。<br>朱元璋确确实实是一个好父亲，他希望自己的子孙能够团结一致，共同辅佐他选定的继承人朱允炆。但就如今天所谓的“代沟”一样，子孙们有自己的打算，特别是皇族的子孙，他们是无法体会朱元璋这种深厚的父爱的，在他们看来，这个白发苍苍的老者早就应该领退休金走人了。他们关注的只是这个老者所坐的那把椅子。<br>朱元璋奋斗一生，为子孙积攒下了大笔的财富，可当他走到人生的终点时，他的子孙的眼睛却只盯着他手中握着的那笔财富，投向这个老人的只是冷冰冰的目光。<br>这无疑是朱元璋一生中最大的悲哀。<br>是时候了，让我们给朱元璋一个公正的评价吧。<br>朱元璋生于乱世之中，背负着父母双亡的痛苦，从赤贫起家，他没有背景、没有后台、没有依靠，他的一切都是自己争取来的。他经历千辛万苦，无数次躲过死神的追逐，从死人堆里爬起来，掩埋战友的尸体，然后继续前进、继续战斗。<br>朱元璋的那个时代有着无数的厉害角色，陈友谅、张士诚、王保保个个都不是省油的灯。朱元璋用他惊人的军事天赋战胜了这些敌人，可以说，在那个时代，最优秀统帅的称号非朱元璋莫属。<br>他几乎是赤手空拳、单枪匹马，凭借着自己的勇气和决心建立了庞大的帝国。<br>是的，谁会想到几十年前的那个衣衫褴褛、沿街乞讨的乞丐会成为一个大帝国的统治者。<br>是的，命运之神其实并不存在，他也不会将什么宝剑和钥匙交给一个乞丐，在那绝望的日子里，并没有人去同情和可怜这个人，他的一切都是自己争取来的。<br>他告诉我们，坚强的意志和决心可以战胜一切困难。<br>他告诉我们，执著的信念和无畏的心灵才是最强大的武器。<br>当朱元璋回望自己几十年的峥嵘岁月，回望自己一手建立的强大国家时，他有充足的理由为之骄傲和自豪！<br>我是朱元璋，是大明天下的缔造者！</p>
+</blockquote>
+</li>
+<li>为升华而升华<br>历史上的大多数角色都有其复杂性，无论是当初的言官求死，还是现在的明哲保身，都有着自己一套的理论。然而你夸了杨继盛知其不可为而为之，那么后面为他报仇的徐阶又是什么？<blockquote>
+<p>杨继盛看了信，却只是笑而不答，他的人生只剩下了一件事情。<br>在上书弹劾之前，杨继盛斋戒了三天。<br>这是他一生中最后的自由时光，四十二岁的杨继盛回顾了他的过去，从童年的贫寒，到青年的求索，熬过了继母的虐待，熬过了仇鸾的陷害，现在的他，是兵部武选司员外郎，前景光辉，仕途远大。<br>然而，现在他准备放弃所有的一切，去完成那件必死无疑的大业。<br>因为放牛的杨继盛、历经磨难的杨继盛、看尽官场黑暗的杨继盛，依然是同一个杨继盛。<br>在黑暗中的杨继盛，是一个纯洁的人。而面对这片窒息的黑暗，他无力反抗，只能发出那最后的呐喊。<br>杨继盛虽然不聪明，却也不笨，他十分明白，唐顺之的话是对的。<br>死劾确实并不是一个好的方法，但他没有更好的方法。他没有钱财，没有权势，没有庶吉士的背景和入阁的希望，更没有张居正和徐阶的智慧。归根结底，他只是个出身农家、天赋平凡的普通人。<br>他唯一拥有的，只是他的性命。<br>而弹劾后的流程他也很清楚，严嵩的诬告、锦衣卫的拷打、诏狱的长期关押，如果运气好，可能还有行刑人的大刀。在这样恐怖的环境下，根本不用指望什么九死一生，只有十死无生。<br>然而，他依然决定这样做。<br>明知不能成功，明知必死无疑，依然慷慨而行。一般说来这种行为有着很多称呼，比如愚蠢、不自量力、飞蛾扑火等，在西方人的眼中，这更是一种不可思议的违反逻辑的行为。<br>而在中国古老的哲学中，这种行为有着一个恰如其当的名称：<br>知其不可而为之。<br>我深信，这正是我们这个伟大民族的魂魄</p>
+</blockquote>
+这种为了升华而升华有点牵强。写历史的都要涉及到一点民族精神，但是公认的，或者成为大家一致认可的民族精神确实没有一个定论。<br>人无高尚低贱之分，杨继盛是民族魂魄，那么救大厦与之将倾的张居正算不算。人性是复杂的，敬业如张居正在享受和拿人钱财上也是有让人诟病的，不能因为杨继盛以死贡献就将其抬高到民族高度，诚然生命可贵。然而在现实中干的多的不如一个死人这就有点去本逐末了。活着的人好好活着，死去的人好好纪念，不要为了升华而升华。</li>
+</ol>
+<h2 id="所以读史，我在读什么"><a href="#所以读史，我在读什么" class="headerlink" title="所以读史，我在读什么"></a>所以读史，我在读什么</h2><p>读故事，读精神。<br>这本书的作者很有想法，就是能力有限，他希望借由一本书，一本讲述过去的书，来歌颂人类的一些美好品质，来纪念那些改变历史的人。然而我看史，我只看故事，那满是吃人的故事。鲁迅的狂人日记写着，书缝之间写着是满满的吃人两个字，那时候他们解读的是礼教。我今天看到了那本书是历史。<br>无论是朱元璋建立王朝，还是后期清兵入境。都是十几万十几万的大战，死伤都是论万起步。当人死多了，就不在是人了，是数字，是死伤多少人，是没名没姓。我一直在思考是什么让这些人如此奋不顾身的投入到这场战争？利益？财富？封王拜相还是名流青史？我觉得都不是，而是“活着”。<br>中国的民族精神不是不屈，不是不挠，也不是知其不可而为之，是活着。是无论在西北的黄土高原，还是在西藏的冰天雪地，活着是他们唯一的诉求。因为不反就会死，所以反叛，他们追求的只是简简单单的安居乐业，而不是名流青史。<br>诚然有很多人心有大志，想要发家富贵，但是大多数死去的士兵是没有这个梦想，也许就是世袭的兵，不明所以的就参加了军队，然后加入了战争。历史是一些人的历史，但也不仅仅是那些人的历史，有王侯将相，也得有无名之辈。我学史不是为了从那些万里挑一之中学到什么，相反是想看那些芸芸众生是如何度过自己的一生。因为那大概就是我得一生了。<br>然后就是故事，天底下没有新鲜事，无论你想得到的和想不到的，确确实实是真实发生的：兄弟相残，妈宝男，喜欢大自己十几岁的，甚至好人妻，好孕妇的。每每至此你都会感叹，那些小黄文远不如现实精彩。然而其中给我最深刻的莫过于：百姓为鱼肉罢了。<br>之前看KK大神讨论关于房价的文章，文章的主要立点之一就是：经济系统比你老百姓的房价重要。从古至今，苦的都是底层百姓。古往今来有几个百姓安居乐业。这是一个角度，很多时候我们作为百姓，我们内心希望上位者说的为了百姓，为了安居乐业是真话。但是很多时候是上位者知道你喜欢听这话才说的，你要明白这个事情。<br>如果我们抛弃自己的立场。从上位者的角度审查这一系列的事情，那么很多事情就可以说通：为啥房价不让跌，为啥工资不让涨，为啥要有户口。一个理论最重要的是要能自圆其说，比如房子，都说安居乐业，古往今来，有几个人安居乐业。房子一直都是奢侈品，从古至今，哪怕是我也是这几年才住进了真正的房子。所以人人有房，天地大同是宣传，不是最终目标。无论是东林党，还是魏忠贤。有几个是为了“安居乐业”。不都是为了自己得罢了。斗来斗去，斗得是一个首辅，斗得是一个权力。百姓不管他反倒是最好得治理，无为而治<br>读史让我更加明白；古来有之的现在也有，你说现代新，新的是外在，不是内里。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>《明朝那些事儿》我是很推荐阅读的，了解一下以前发生得事对看待现在得某些事是很有好处的。这本书说清楚了，作为一本入门书籍是很合适，不用去啃那些白话，也告诉了你那些权斗背后的阴谋，省的你去查。虽然文笔一般，但是作为一个药引，然后加深对历史的兴趣倒是十分合适。</p>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>《明朝那些事儿》</tag>
+        <tag>读史</tag>
+        <tag>书评</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>缸中之脑-黑镜S6-1</title>
+    <url>/2023/06/22/121-%E9%BB%91%E9%95%9C%E7%AC%AC6%E5%AD%A3%E7%AC%AC%E4%B8%80%E9%9B%86/</url>
+    <content><![CDATA[<p>好久不见得《黑镜》又更新了，我怀着激动的心情前来膜拜。黑镜一直都是科幻剧的巅峰，很多故事从立意上就硬核科幻。这一季一开始我就满怀着期待前来观看。</p>
+<span id="more"></span>
+<p>第一集的开始有点平淡，到了后面虽然看出来它是一部剧中剧，却依旧觉得一般。也许是我对黑镜的期待过高了吧。一想到黑镜系列，我就想到了：科幻，新颖，未来等等词汇，黑镜很大程度上是体现：在技术的支持下，我们要建立一个咋样的未来：是依靠他人评价来决定社会地位，还是用自己的克隆体来协助自己。科技的外表下是人的内核，是人要用科技来实现什么？技术是无罪的，重点是使用的人。<br>这一季开始也涉及了一些技术，但是总觉得无味。无论是应用的使用协议，还是不近人情的法律条款。如果你说你要描绘一个垄断大企业创造的压迫普通人的世界，这，可以，但是还不够。这个题材已经烂大街了。<br>所以知道最后结局的反转，我才觉得这有点意思。当我们发现女主原来也是通过量子计算演算出来的时候，也许还有点小惊喜。直到女主的砸计算机前的最后一句：“因为我站在这里这个事实表示，原版的琼已经在现实站在这里，我想怎样都不要紧，因为这一切所基于的原事件已经发生，这不是我得决定，是琼的决定。”<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/121-%E9%BB%91%E9%95%9C%E7%AC%AC6%E5%AD%A3%E7%AC%AC%E4%B8%80%E9%9B%86-2023-06-23-12-45-45.png" alt="121-黑镜第6季第一集-2023-06-23-12-45-45"></p>
+<p>这就很有意思了：<br>从电影中我们可以看出，其实剧中的人是可以有点偏差的，无论是行为还是言语，说明她们有一定的自主性。所以在不断的迭代和偏差，我相信在某一层级的剧里面，是可以出现不同的选择的的；而剧中的琼这句话就可以让人意味深长，首先这话肯定不是原版的琼说的，是她自己说的。因为原版的琼肯定不需要也不用说这些话。那么这句话就是剧版的琼自己的发言，他的发言就有两种解读了：</p>
+<ol>
+<li>我知道我得宿命，所以我无法选择，只能破坏这一切</li>
+<li>我知道我的宿命，所以我选择了，坦然接受我得命运。</li>
+</ol>
+<p>宿命一直是探讨人性中不可或缺的一点，在我们对我们的来一无所知之后，又有人提出了，我们对我们的去也不甚了解。然而人类讨厌一无所知，他们就给自己定下了去的理由，无论是转生来世，还是去往极乐。总归是界定了一个去的目标。然而一些人不界定满足一个大的，不可实现的目标，提出了宿命，提出了命运，这一具体到每个人头上的目标。当人类为一个集体时，可以忽略一些利益，荣辱。但是具体到每个人身上就变得让人恐惧，当一个算命先生告诉你，你的一辈子将碌碌无为时，你会如何做想，尤其再具体到你的工作，你的妻子，你的家庭。当他告诉你的细节越多，你就将越加的失望，人类有种自我实现的意愿，当一个人被告知你将会失败，他的内心会将这个念想实现。诚然，不少过往的经典都是在告诉我们人定胜天，让我们逃出这一自我实现的悲剧，感叹人类的伟大。<br>而黑镜中的剧版琼的发言正是对宿命存在的肯定，那么接下来是打破，还是接受；或者说你连选择的权力都没有，只能接受。<br>宿命就像是一个牢笼，禁锢着我们。我并不是要赞颂人类的伟大，但是正如剧中探讨的，如果我们仅仅是别人的投影呢？我们自认为自己做的一切选择都是自己的，其实不过是别人的投影。别人做了选择，然后你复制而已。当中间夹杂着你的意志之后，你会迷茫。我砸下去是我想，还是别人的投影。也许有人说：重要么？<br>我觉得重要，弗洛伊德将我分成自我，本我就是为了探清人的意志，当一切都是投影的时候，我们的来去都已经知晓，那么还剩下什么？——缸中之脑么？<br>这就是我喜欢黑镜的地方，这种技术上的进步，有时候会带来更多人性的思考，有些是道德方面，有些则是人本身。技术只是外在，人才是经久不衰的主题。</p>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>影评</tag>
+        <tag>黑镜</tag>
+        <tag>缸中之脑</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>悬疑剧——黑镜S6-2</title>
+    <url>/22023/06/24/122-%E9%BB%91%E9%95%9C%E7%AC%AC6%E5%AD%A3%E7%AC%AC%E4%BA%8C%E9%9B%86/</url>
+    <content><![CDATA[<p>普通，如果说第一集还算有点小精彩的话，第二集就是普通，普通的我甚至怀疑我是不是在看一部小成本的悬疑片。</p>
+<span id="more"></span>
+<p>如果说剧情普通就算了，那么没有眉毛的女主就完完全全是在膈应人，完完全全。我找不出理由也找不到借口，我就不明白了，为啥要找这么一个女演员。女主可以不是漂亮的，可以不是为剧情服务的，但是这女主没有眉毛，就完全属于恶心人。没看到为剧情服务，也没体现出女主的性格。我看不到这个理由。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/122-%E9%BB%91%E9%95%9C%E7%AC%AC6%E5%AD%A3%E7%AC%AC%E4%BA%8C%E9%9B%86-2023-06-25-21-50-19.png" alt="122-黑镜第6季第二集-2023-06-25-21-50-19"><br>抛开女主的颜值不讲，我对这部剧剩下的就是失望，这不是黑镜，我心中的黑镜是套着科技的外壳的，无论是天马行空的未来社会，还是前沿科技在这集里面都没有，有的就是景色，景色。然后就是虐杀，性虐待，杀人。对不起，在中国这种事离我们很遥远，而且也体会不到。<br>整片也像是一部小成本的悬疑剧一样，虽然有铺垫，但是最后谜底揭晓的太过~简单？因为一盘录影带！就这，抓了这么多年的凶手，因为一盘录影带就破解了，没有别的铺垫么？男主父亲的日常行为有没有特殊的，母亲呢？好歹多说点，酒吧老板的突然说出秘密，就是为了最后双线叙事增强悬疑感。然后没有了？<br>为啥酒吧老板不说？爱还是恐惧？没有强大情感逻辑，怎么可能让自己一个人保存秘密这么久。最后女主的作死也是完全为了剧服务，不会发邮件，不会过段时间再看，不会保护自己？作为一个成年人，应该知道哪里是界限，也应该知道该忍耐的时候要忍耐。<br>综合看下来，就是一集，小成本，没新意的悬疑剧，比9号故事那种为了悬疑而悬疑的故事差远了，那种毕竟还有一堆爱好者在看，这个完全就是不是黑镜的受众。</p>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>黑镜第六季</tag>
+        <tag>剧评</tag>
       </tags>
   </entry>
   <entry>
@@ -1715,7 +1920,7 @@ sysctl -p
   <entry>
     <title>在线图书</title>
     <url>/2022/05/01/%E5%9C%A8%E7%BA%BF%E5%9B%BE%E4%B9%A6/</url>
-    <content><![CDATA[<p>图书馆地址：<a href="https://book.minsummer.com/">https://book.minsummer.com/</a></p>
+    <content><![CDATA[<p>图书馆地址：<a href="https://clibre.minsummer.com/">https://clibre.minsummer.com/</a></p>
 <p>图书资源不定时更新，如果有想看的可以留言</p>
 <p>目前目录：</p>
 <ul>
@@ -3330,8 +3535,8 @@ sysctl -p
         <category>随想</category>
       </categories>
       <tags>
-        <tag>活着</tag>
         <tag>书评</tag>
+        <tag>活着</tag>
       </tags>
   </entry>
   <entry>
