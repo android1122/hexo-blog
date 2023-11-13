@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"minsummer.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="在关于路由器的门门道道，我说了几个常见的方案，然而哪些都是理论上的，今天就来做个截至2023目前常见的解决方案和价格。">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="路由器选择指北">
+<meta property="og:url" content="https://minsummer.com/2023/11/12/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97/">
+<meta property="og:site_name" content="我是豆豆">
+<meta property="og:description" content="在关于路由器的门门道道，我说了几个常见的方案，然而哪些都是理论上的，今天就来做个截至2023目前常见的解决方案和价格。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-09-09-50.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-09-58-49.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-09-24-27.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-14-38-33.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-10-35-57.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-14-49-14.png">
+<meta property="article:published_time" content="2023-11-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-11-12T16:00:00.000Z">
+<meta property="article:author" content="张大爆">
+<meta property="article:tag" content="路由器">
+<meta property="article:tag" content="路由器指北">
+<meta property="article:tag" content="性价比">
+<meta property="article:tag" content="花小钱办大事">
+<meta property="article:tag" content="购买指北">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-09-09-50.png">
+
+
+<link rel="canonical" href="https://minsummer.com/2023/11/12/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://minsummer.com/2023/11/12/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97/","path":"2023/11/12/136路由器选择指北/","title":"路由器选择指北"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>路由器选择指北 | 我是豆豆</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-189642379-1","only_pageview":true}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+  <script data-pjax defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{&quot;token&quot;: &quot;2c44721ef211470c8cb156f38ca476ea&quot;}'></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">我是豆豆</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">吃饭，睡觉，打豆豆</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-wechat fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">239</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">136</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%A1%881%EF%BC%9A%E5%85%89%E7%8C%AB-%E8%BD%AF%E8%B7%AF%E7%94%B1-AP"><span class="nav-number">1.</span> <span class="nav-text">方案1：光猫-软路由-AP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%A1%882%EF%BC%9A%E5%85%89%E7%8C%AB-%E6%97%81%E8%B7%AF%E7%94%B1"><span class="nav-number">2.</span> <span class="nav-text">方案2：光猫-旁路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%A1%883%EF%BC%9A%E5%85%89%E7%8C%AB-%E7%A1%AC%E8%B7%AF%E7%94%B1%EF%BC%88%E5%88%B7%E6%9C%BA%E5%90%8E%E7%9A%84%E8%B7%AF%E7%94%B1%E5%99%A8%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">方案3：光猫-硬路由（刷机后的路由器）</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">张大爆</p>
+  <div class="site-description" itemprop="description">经常会忘记一些东西，用这里来记录我们曾经来过</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">136</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">239</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/android1122" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;android1122" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:noway@minsummer.com" title="E-Mail → mailto:noway@minsummer.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://manhua2.minsummer.com/" title="https:&#x2F;&#x2F;manhua2.minsummer.com" rel="noopener" target="_blank">漫画网站-移动</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://speedtthk.minsummer.com/" title="https:&#x2F;&#x2F;speedtthk.minsummer.com&#x2F;" rel="noopener" target="_blank">公益机场-移动</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://filebox.minsummer.com/" title="https:&#x2F;&#x2F;filebox.minsummer.com&#x2F;" rel="noopener" target="_blank">网络U盘</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://minsummer.com/2023/11/12/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="张大爆">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我是豆豆">
+      <meta itemprop="description" content="经常会忘记一些东西，用这里来记录我们曾经来过">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="路由器选择指北 | 我是豆豆">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          路由器选择指北
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-11-13 00:00:00" itemprop="dateCreated datePublished" datetime="2023-11-13T00:00:00+08:00">2023-11-13</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>7 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>在<a href="https://minsummer.com/2023/11/09/135-%E5%85%B3%E4%BA%8E%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E9%97%A8%E9%97%A8%E9%81%93%E9%81%93/#more">关于路由器的门门道道</a>，我说了几个常见的方案，然而哪些都是理论上的，今天就来做个截至2023目前常见的解决方案和价格。</p>
+<span id="more"></span>
+<h3 id="方案1：光猫-软路由-AP"><a href="#方案1：光猫-软路由-AP" class="headerlink" title="方案1：光猫-软路由-AP"></a>方案1：光猫-软路由-AP</h3><p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-09-09-50.png" alt="136路由器选择指北-2023-11-13-09-09-50"><br>这里需要说明：由于x86设备很多时候都是默认不带内存和硬盘，所以这里很多我都是以4g内存和32g硬盘进行统计，价格大多来自咸鱼，所以配置上会上下浮动100~200。<br>这个方案的优势：<br>    1. 性能强大，可以组all in one。一台机子搞定nas和翻墙的需求。<br>缺点：<br>    1. 单网口和双网口的主板差距大。差距有多大呢，J1900加蜗牛星际机箱一套也就350左右，但是J1900双网口的路由器就要200+。大家都知道的。<br>    2. 建议J4125起步，J1900已经属于被淘汰的地步。当然如果需求不高，可以用J1900玩玩。</p>
+<p>也有其他选择，可以查看天梯图<br> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-09-58-49.png" alt="136路由器选择指北-2023-11-13-09-58-49"></p>
+<h3 id="方案2：光猫-旁路由"><a href="#方案2：光猫-旁路由" class="headerlink" title="方案2：光猫-旁路由"></a>方案2：光猫-旁路由</h3><p>旁路由其实是一个很尴尬的局面，正如上面所说。单网口和多网口的主板差价一般都是100~200之间，所以旁路由性价比真心不高，而且旁路由的原理是设定路由器或者电脑网关为旁路由的地址，加上光猫已经无法修改指定网关，所以很多时候为了方便我们还是需要在前面增加一个可以修改指定网关的路由器。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-09-24-27.png" alt="136路由器选择指北-2023-11-13-09-24-27"><br>方案优势：</p>
+<ol>
+<li>便宜？？？？</li>
+<li>如果使用魔百盒这些被淘汰的电视盒子确实可以做到很低的价格。<br>缺点：</li>
+<li>越高等级的主板，网口的价格差越小，所以，性能越差的方案价格差距大，但是到了J4125这一层级，已经没有多大价格差。</li>
+</ol>
+<p>十分不推荐用那些小主机，魔百盒这种奇奇怪怪的设备来做旁路由或者all in boom，除非你准备花费大量的时间和精力。即使有人手把手教学，但是也有可能让你陷入坑里，深刻教训啊。</p>
+<h3 id="方案3：光猫-硬路由（刷机后的路由器）"><a href="#方案3：光猫-硬路由（刷机后的路由器）" class="headerlink" title="方案3：光猫-硬路由（刷机后的路由器）"></a>方案3：光猫-硬路由（刷机后的路由器）</h3><p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-14-38-33.png" alt="136路由器选择指北-2023-11-13-14-38-33"><br>这个方案是最早，也是最纯粹的方案，最不折腾的方案。但是现在并不是主流，或者说让步于操作更加丰富的方案1，毕竟x86设备就哪几种，好适配。而路由的门道就花样百出了，不仅仅有cpu，cpu架构也分为mips，arm，x86，性能和功耗逐级递增。对应的板子更多了，然后还得有大佬愿意为这个板子做驱动增加信号的操作。所以不是所有路由器都可以刷机。这边我们理清三个简单的概念：<br>路由器cpu：电脑cpu类似，主流的有联科发，高通的，200价位以下很多用的都是联科发的MT726X的cpu，性能足够，但是是mips架构，已经属于被淘汰的地步，现在主流是ARM架构，性能会更好。<br>路由器内存：一般128M，256M，512M这个建议256M起步，512M最好，越大一些程序可以运行的越流畅。<br>路由器闪存：一般都是128M，说实话足够了，这个就是硬盘，当然大点的好处就是可以装更多的插件。<br>具体可以看<a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/thread-4056125-1-1.html">恩山帖子</a>，这里比较详细的解释了几大硬件，但是这个仅仅说的是架构，落实到具体的产品，就又分为几种：</p>
+<ol>
+<li>联发科阵营<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-10-35-57.png" alt="136路由器选择指北-2023-11-13-10-35-57"><ul>
+<li>现在常见的MT7261等等都是要淘汰的，一般用在百元机器上，性能足够，比如红米AC2100，可玩性强。</li>
+<li>现在已经慢慢转向ARM，<a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/thread-8304371-1-1.html">联发科Filogic820&#x2F;830等ARM架构方案（MT7986&#x2F;7981&#x2F;7622）路由器列表 </a>，这里可以看到最近的架构，而且主流的路由器配置，你可以从中选择一个，然后再去找对应的固件。</li>
+</ul>
+</li>
+<li>高通阵营<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-14-49-14.png" alt="136路由器选择指北-2023-11-13-14-49-14"><ul>
+<li>以前一般用在200元+的中高端机</li>
+<li><a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/forum.php?mod=viewthread&tid=8306906&page=1">高通WiFi6方案（ipq50XX&#x2F;60XX&#x2F;8XXX）路由器分类梳理</a></li>
+</ul>
+</li>
+</ol>
+<p>一般来说上面的路由器都是可以刷机的。<br>上面我们可以看出，有些机子明明配置很高，但是价格却很低，原因有多种：</p>
+<ol>
+<li>运营商定制机，这种机子一般需要破解，性能高，价格低是常态</li>
+<li>信号缩水，2.4g和5g信号还有专门芯片，如果用集成成本会降低很多</li>
+<li>网口，现在网口基本千兆标配，但是有些有2.5g网口所以成本会增加。<br>恩山也有人抓门统计<a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/thread-7338353-1-1.html">全网最全146个型号的运营商WiFi6 mesh路由的超详细配置总结 含可刷op型号</a>，而且持续更新，如果你觉得太麻烦可以直接看帖子的excel文档。</li>
+</ol>
+<p>总结下这个优势：</p>
+<ol>
+<li>简单，技术简单，哪怕出现问题之后只需要更换问题的路由器就可以。</li>
+<li>更加灵活，后续的nas不需要的话，200块就可以配置好一个可以翻墙的环境。<br>缺点：</li>
+<li>性能一般，肯定没有J1900强大的，但是如果你对它要求不多，仅仅用来处理网络的事情，那么绝对是足够的。</li>
+</ol>
+<p>我一般推荐路由器购买二手的，一是因为这东西我们平时摸不着看不到，所以哪怕脏点也是无所谓。二是现在科技行业太卷了，而且现在也处于mips转arm架构的变动期，也许你今天大几百买一台，几个月后这东西已经落伍。电子产品追求最新，最极限是一个耗费金钱精力的大活，我不建议。<br>我说下我比较或许考虑的几款机器：</p>
+<ol>
+<li>中国移动RAX3000M：双核A53，512M内存，128闪存&#x2F;64G硬盘，这两款现在都可以刷机，性能足够，内存大，价格在150上下，有现成的刷机包，联发科的优势就是几乎都可以刷openwrt。</li>
+<li>中国移动CMIOT-AX18&#x2F;兆能 ZN-M2：四核A53+单核NPU，NPU就是单独的网络计算芯片，有它网络运行更快。内存256M，有点小，但是胜在咸鱼只要不到100，价格太便宜了。当然缺点是信号用的是集成方案，所以相较于上面信号有差距，一般人拿他当主路由或者小户型使用，咸鱼上有改造512M的服务，不过慎用。</li>
+<li>MR30000D-CI&#x2F;DIQ：两款都可以，原生512M，只是架构不同，价格CI会便宜点，因为现在还没有固件可以刷。</li>
+</ol>
+<hr>
+<p>参考链接：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/thread-4056125-1-1.html">写给新手小白入门——硬件篇</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/thread-8304371-1-1.html">联发科Filogic820&#x2F;830等ARM架构方案（MT7986&#x2F;7981&#x2F;7622）路由器列表 </a></li>
+<li><a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/forum.php?mod=viewthread&tid=8306906&page=1">高通WiFi6方案（ipq50XX&#x2F;60XX&#x2F;8XXX）路由器分类梳理</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/thread-7338353-1-1.html">全网最全146个型号的运营商WiFi6 mesh路由的超详细配置总结 含可刷op型号</a></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" rel="tag"># 路由器</a>
+              <a href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8%E6%8C%87%E5%8C%97/" rel="tag"># 路由器指北</a>
+              <a href="/tags/%E6%80%A7%E4%BB%B7%E6%AF%94/" rel="tag"># 性价比</a>
+              <a href="/tags/%E8%8A%B1%E5%B0%8F%E9%92%B1%E5%8A%9E%E5%A4%A7%E4%BA%8B/" rel="tag"># 花小钱办大事</a>
+              <a href="/tags/%E8%B4%AD%E4%B9%B0%E6%8C%87%E5%8C%97/" rel="tag"># 购买指北</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/11/09/135-%E5%85%B3%E4%BA%8E%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E9%97%A8%E9%97%A8%E9%81%93%E9%81%93/" rel="prev" title="关于路由器的门门道道">
+                  <i class="fa fa-angle-left"></i> 关于路由器的门门道道
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 国窖1573 – 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">张大爆</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">197k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">11:56</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/android1122" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.5.0/mermaid.min.js","integrity":"sha256-K7oJiQlDulzl24ZUFOywuYme1JqBBvQzK6m8qHjt9Gk="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"android1122","repo":"hexo-blog","client_id":"6950c9229796295b9867","client_secret":"9af4438d89e7a09669ec33d632ba554589a1f7d7","admin_user":"android1122","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"926b07a10ce728e0b29987943be1ebf9"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
