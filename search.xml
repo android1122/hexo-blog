@@ -55,7 +55,7 @@
   <entry>
     <title>青龙面板-京东库使用指南</title>
     <url>/2023/04/22/108-%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF-%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><p>青龙面板的用处很多，其中之一就是用来签到的，我现在已经稳定签到100多天。我用的是<a href="https://github.com/6dylan6/jdpro">6dylan6&#x2F;jdpro</a>，GitHub上星星3000+，而且作者还不定时更新，但是作者编写的文档不是很清楚，这边本着学习和记录的原则，来写一个指南吧。<br>这个库优势：</p>
+    <content><![CDATA[<h1 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h1><p>青龙面板的用处很多，其中之一就是用来签到的，我现在已经稳定签到100多天。我用的是<a href="https://github.com/6dylan6/jdpro">6dylan6&#x2F;jdpro</a>，GitHub上星星3000+，而且作者还不定时更新，但是作者编写的文档不是很清楚，这边本着学习和记录的原则，来写一个指南吧。<br>这个库优势：</p>
 <ol>
 <li>有人维护</li>
 <li>更新有保障</li>
@@ -67,32 +67,25 @@
 <li>有些任务无法执行<span id="more"></span></li>
 </ol>
 <hr>
-<h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><ol>
-<li><p>拉库</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ql repo https://github.com/6dylan6/jdpro.git &quot;jd_|jx_|jddj_&quot; &quot;backUp&quot; &quot;^jd[^_]|USER|JD|function|sendNotify&quot;</span><br></pre></td></tr></table></figure>
-<p>这块看下ql的官方命令说明：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ql repo &lt;地址&gt; &lt;拉取的文件&gt; &lt;不拉取的文件&gt; &lt;依赖文件&gt; &lt;分支&gt;</span><br></pre></td></tr></table></figure>
-<p>可以使用正则表达，所以可以配置一些你不需要的任务，当然这边建议直接全部拉取。<br>需要注意：<br>2.11.1<code>前</code>版本青龙config.sh配置把GithubProxyUrl&#x3D;”<a href="https://ghproxy.com/">https://ghproxy.com/</a> （差不在多19行）” 修改为GithubProxyUrl&#x3D;””，否则拉取失败，以上版本无需配置:<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E2%80%94%E2%80%94%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-06-09-21-00-20.png" alt="青龙面板——京东库使用指南-2023-06-09-21-00-20"></p>
-</li>
-<li><p>修改青龙的config.sh配置</p>
-<blockquote>
-<p>RepoFileExtensions&#x3D;”js py”修改为 RepoFileExtensions&#x3D;”js py sh ts” 保存</p>
-</blockquote>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-40-49.png" alt="青龙面板_京东库使用指南-2023-04-21-21-40-49"></p>
-<p>这块是因为你的库依赖有一些没有安装，所以需要sh脚本来把它安装上去，实现一个自动化，建议修改。<br>需要注意：<br>修改完后切记点击右上角&lt;保存&gt;按钮，否则修改不会生效。</p>
-</li>
-<li><p>获取京东的COOKIE<br>获取的方法多样，我这边使用的是F12，打开&lt;Network按钮&gt;，然后点击筛选<strong>log.gif</strong>，获取到对应的cookie，在环境变量中增加JD_COOKIE变量。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E2%80%94%E2%80%94%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-06-09-21-07-00.png" alt="青龙面板——京东库使用指南-2023-06-09-21-07-00"></p>
-<p>一般来说，这个时效是30天左右，建议后面配置cookie失效通知。失效之后再次获取一次。</p>
-</li>
-<li><p>把通知key变量添加刀配置管理config.sh<br>通知key有很多种，看你具体使用哪种，对应都有配置说明，我用的是gotify，直接输出对应的api就可以<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E2%80%94%E2%80%94%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-06-09-21-11-45.png" alt="青龙面板——京东库使用指南-2023-06-09-21-11-45"></p>
-</li>
-</ol>
+<h1 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h1><h2 id="1-拉库"><a href="#1-拉库" class="headerlink" title="1. 拉库"></a>1. 拉库</h2>   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ql repo https://github.com/6dylan6/jdpro.git &quot;jd_|jx_|jddj_&quot; &quot;backUp&quot; &quot;^jd[^_]|USER|JD|function|sendNotify&quot;</span><br></pre></td></tr></table></figure>
+<p>   这块看下ql的官方命令说明：<br>   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ql repo &lt;地址&gt; &lt;拉取的文件&gt; &lt;不拉取的文件&gt; &lt;依赖文件&gt; &lt;分支&gt;</span><br></pre></td></tr></table></figure><br>   可以使用正则表达，所以可以配置一些你不需要的任务，当然这边建议直接全部拉取。<br>   需要注意：<br>   2.11.1<code>前</code>版本青龙config.sh配置把GithubProxyUrl&#x3D;”<a href="https://ghproxy.com/">https://ghproxy.com/</a> （差不在多19行）” 修改为GithubProxyUrl&#x3D;””，否则拉取失败，以上版本无需配置:<br>         <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E2%80%94%E2%80%94%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-06-09-21-00-20.png" alt="青龙面板——京东库使用指南-2023-06-09-21-00-20"></p>
+<h2 id="2-修改青龙的config-sh配置"><a href="#2-修改青龙的config-sh配置" class="headerlink" title="2. 修改青龙的config.sh配置"></a>2. 修改青龙的config.sh配置</h2><pre><code>  &gt; RepoFileExtensions=&quot;js py&quot;修改为 RepoFileExtensions=&quot;js py sh ts&quot; 保存
+
+  ![青龙面板_京东库使用指南-2023-04-21-21-40-49](https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-40-49.png)
+</code></pre>
+<p>   这块是因为你的库依赖有一些没有安装，所以需要sh脚本来把它安装上去，实现一个自动化，建议修改。<br>   需要注意：<br>   修改完后切记点击右上角&lt;保存&gt;按钮，否则修改不会生效。</p>
+<h2 id="3-获取京东的COOKIE"><a href="#3-获取京东的COOKIE" class="headerlink" title="3. 获取京东的COOKIE"></a>3. 获取京东的COOKIE</h2><p>   获取的方法多样，我这边使用的是F12，打开&lt;Network按钮&gt;，然后点击筛选<strong>log.gif</strong>，获取到对应的cookie，在环境变量中增加JD_COOKIE变量。<br>   <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E2%80%94%E2%80%94%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-06-09-21-07-00.png" alt="青龙面板——京东库使用指南-2023-06-09-21-07-00"></p>
+<p>   一般来说，这个时效是30天左右，建议后面配置cookie失效通知。失效之后再次获取一次。</p>
+<h2 id="4-把通知key变量添加刀配置管理config-sh"><a href="#4-把通知key变量添加刀配置管理config-sh" class="headerlink" title="4. 把通知key变量添加刀配置管理config.sh"></a>4. 把通知key变量添加刀配置管理config.sh</h2><p>   通知key有很多种，看你具体使用哪种，对应都有配置说明，我用的是gotify，直接输出对应的api就可以<br>   <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E2%80%94%E2%80%94%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-06-09-21-11-45.png" alt="青龙面板——京东库使用指南-2023-06-09-21-11-45"></p>
 <hr>
-<h2 id="推荐配置"><a href="#推荐配置" class="headerlink" title="推荐配置"></a>推荐配置</h2><p>以上配置是官方针对大众的使用，接下来有一些配置推荐你修改：</p>
+<h1 id="推荐配置"><a href="#推荐配置" class="headerlink" title="推荐配置"></a>推荐配置</h1><p>以上配置是官方针对大众的使用，接下来有一些配置推荐你修改：</p>
 <ol>
 <li><p>任务是有随机延迟的，所以有一些准点运行的任务推荐修改命令，最后加上now</p>
 <p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-56-28.png" alt="青龙面板_京东库使用指南-2023-04-21-21-56-28"></p>
 </li>
+</ol>
+<p> 或者修改延迟的秒数，在config文件中修改时间配置。<br> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/108-%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF-%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-11-29-14-12-08.png" alt="108-青龙面板-京东库使用指南-2023-11-29-14-12-08"></p>
+<ol start="2">
 <li><p>建议调整任务运行超时时间，青龙默认1小时有些跑不完就被强制结束，config.sh里配置。CommandTimeoutTime&#x3D;”3h”  即改为3小时，根据自己ck数量调整。</p>
 <p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-41-32.png" alt="青龙面板_京东库使用指南-2023-04-21-21-41-32"></p>
 </li>
@@ -104,17 +97,16 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;1&quot;    不做任何变动</span><br><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;2&quot;    效果是 :  账号名称：别名(备注)	</span><br><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;3&quot;    效果是 :  账号名称：pin(备注)</span><br><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;4&quot;    效果是 :  账号名称：备注</span><br></pre></td></tr></table></figure></li>
 </ol>
 <p>当然，如果你还有其他别的需求可以看<a href="https://github.com/ccwav/QLScript2">这个GitHub</a>，包括但不仅限于所有任务的CK有效通知，所有任务的运行情况，已经有时候某些任务的CK任务失效等等。</p>
-<h2 id="CK和WSCK的获取方法"><a href="#CK和WSCK的获取方法" class="headerlink" title="CK和WSCK的获取方法"></a>CK和WSCK的获取方法</h2><p><a href="https://github.com/6dylan6/jdpro">6dylan6&#x2F;jdpro</a>这个是一个混合库。所以有时候他会直接使用别人的一些库，所以有时候如果你要达到一个完美的配置，需要在对应库下面的配置。</p>
-<p>Cookie的获取方法推荐使用<a href="https://www.telerik.com/fiddler">fiddler</a>，一款抓包程序，10天试用-<a href="https://github.com/msojocs/fiddler-everywhere-enhance/tree/master/v4.1.2">网上已经有破解版</a>。打开之后打开配置，安装证书：</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-22-16-58-17.png" alt="青龙面板_京东库使用指南-2023-04-22-16-58-17"></p>
-<p>打开连接选项，运行局域网登陆：</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-22-17-00-13.png" alt="青龙面板_京东库使用指南-2023-04-22-17-00-13"></p>
-<p>接着就是修改手机的代理节点，然后打开京东APP,随意浏览几次，抓取网络消息。获得他的COOKIE，但是有一个问题那就是失效，一般几天，如果你用的是短信验证，那会是30天左右。</p>
-<p>但是如果使用WSCK的话，可以在Cookie过期之后自动获取新的Cookie，需要注意会自动转换成<code>JD_COOKIE</code>。</p>
-<p>WSCK在POST方法中，需要找找。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">变量名: JD_WSCK 参数: pin=xxxx;wskey=xxxx;</span><br><span class="line"># 注意分号 不要用中文分号!</span><br><span class="line">变量名: QL_PORT 参数: 端口号(int) </span><br><span class="line"># 修改过面板端口的人才需要填写 默认 5700 </span><br><span class="line"># 是本地的端口 不是 Docker 映射出去的端口! 如果你映射参数是 8888:5700 仍然填写5700</span><br><span class="line">变量名: WSKEY_DISCHECK 参数: 任意(str)</span><br><span class="line"># 设置 WSKEY_DISCHECK变量后变量后 不检查有效性 直接更新 不使用请删除 而不是禁用</span><br><span class="line">变量名: WSKEY_AUTO_DISABLE 参数: 任意(str)	</span><br><span class="line"># 设置 WSKEY_AUTO_DISABLE变量后 不会自动禁用变量</span><br><span class="line">变量名: WSKEY_UPDATE_HOUR 参数: 整数(int) 单位：小时</span><br><span class="line"># 设置 WSKEY_UPDATE_HOUR 变量后 会按设定的间隔时间更新 CK</span><br><span class="line"># 注意：使用此参数后，即使 CK 过期也不会更新，请不要设置过大的间隔</span><br><span class="line">变量名: WSKEY_TRY_COUNT 参数: 整数(int)</span><br><span class="line"># 设置 WSKEY_TRY_COUNT 变量后 获取 Token 失败会自动重试</span><br><span class="line">变量名: WSKEY_SLEEP 参数: 整数(int)</span><br><span class="line"># 设置 WSKEY_SLEEP 可自定义间隔时间</span><br></pre></td></tr></table></figure>
+<h2 id="2023-11-29更新"><a href="#2023-11-29更新" class="headerlink" title="2023-11-29更新"></a>2023-11-29更新</h2><h1 id="依赖安装"><a href="#依赖安装" class="headerlink" title="依赖安装"></a>依赖安装</h1><ul>
+<li>NodeJs<br>NodeJs里面所需依赖 添加依赖—&gt;选择自动拆分，把以下内容全部复制到名称里，之后点击确定 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ts-md5</span><br><span class="line">@types/node</span><br><span class="line">prettytable</span><br><span class="line">node-telegram-bot-api</span><br><span class="line">tslib</span><br><span class="line">ql</span><br><span class="line">common</span><br><span class="line">fs</span><br><span class="line">typescript</span><br><span class="line">axios</span><br><span class="line">png-js</span><br><span class="line">axios</span><br><span class="line">ws@7.4.3</span><br><span class="line">crypto-js</span><br><span class="line">jieba</span><br><span class="line">global-agent</span><br><span class="line">jsdom -g</span><br><span class="line">moment</span><br><span class="line">form-data</span><br><span class="line">date-fns</span><br><span class="line">node-jsencrypt</span><br><span class="line">require</span><br><span class="line">js-base64</span><br><span class="line">tough-cookie</span><br><span class="line">json5</span><br><span class="line">jsdom</span><br><span class="line">dotenv</span><br><span class="line">qs</span><br></pre></td></tr></table></figure></li>
+<li>Python3:<br>Python3依赖 添加依赖—&gt;选择自动拆分，把以下内容全部复制到名称里，之后点击确定 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ping3</span><br><span class="line">canvas</span><br><span class="line">requests</span><br><span class="line">jieba</span><br><span class="line">PyExecJS</span><br><span class="line">httpx</span><br></pre></td></tr></table></figure></li>
+<li>.Linux下<br>Linux依赖 添加依赖—&gt;选择自动拆分，把以下内容全部复制到名称里，之后点击确定 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gcc</span><br></pre></td></tr></table></figure>
+切换使用<br>KR库</li>
+</ul>
 <hr>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>青龙面板是好东西，极大的省略了我们一些需要定时的重复性操作，<a href="https://github.com/6dylan6/jdpro">6dylan6&#x2F;jdpro</a>这个库好么？好，但是它也是一个缝合怪。好处在于目前他有人维护。很多GitHub上的库都已经缺少人维护，在动不动就某个活动的今天，有一个与时俱进的脚本是一件很重要的事。</p>
+<hr>
+<p>参考：<br><a href="https://www.bilibili.com/read/cv24472970/">青龙面板集合仓库</a></p>
 ]]></content>
       <categories>
         <category>技术顾问</category>
@@ -1211,7 +1203,7 @@
   </entry>
   <entry>
     <title>全飞秒近视手术记录</title>
-    <url>/2023/11/16/136-%E5%85%A8%E9%A3%9E%E7%A7%92%E8%BF%91%E8%A7%86%E6%89%8B%E6%9C%AF%E7%BA%AA%E5%BD%95/</url>
+    <url>/2023/11/11/136-%E5%85%A8%E9%A3%9E%E7%A7%92%E8%BF%91%E8%A7%86%E6%89%8B%E6%9C%AF%E7%BA%AA%E5%BD%95/</url>
     <content><![CDATA[<p>上次我说过我准备去做近视手术，在做了一些简单的功课之后，我最终在市里的眼科医院做了这次手术，之前一直听到的概念是激光，但是确实没有花心思去了解，也没有想法去做，毕竟没有对我的生活带来太多的麻烦。事情的起因我侄子要去参军，做了全飞秒。人有时候就是这么奇妙，平时没有经历就没有概念，但是身边的人经历过之后，忽然就觉得这个我也可以。他在我们老家做的，挺草率就是，从做到结束一共就两三天，价格是23800。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/136-%E5%85%A8%E9%A3%9E%E7%A7%92%E8%BF%91%E8%A7%86%E6%89%8B%E6%9C%AF%E7%BA%AA%E5%BD%95-2023-11-15-20-17-14.png" alt="136-全飞秒近视手术纪录-2023-11-15-20-17-14"></p>
 <span id="more"></span>
 <h3 id="初查"><a href="#初查" class="headerlink" title="初查"></a>初查</h3><p>说来惭愧，初查我犹豫了好几天，一是一时无法接受这种新事物。对我来说，这种新玩意我需要很大的决心。也许是无法接受，也许是对未来的恐惧。我做了几天的思想工作，而且想着一鼓作气，不给自己任何犹豫时间，然而实际上我前后差不多花了一个多月菜结束。<br>天津眼科医院在行业内排名还算靠前。而且它们有独立的公众号：天津眼科医院激光视力治疗中心。在眼科医院内部，但是似乎是独立运营的，公众号上有很详细的手术讲解和日常问题解答。公众号的形式很简洁，很多视频也是院长亲自过来录几句就结束，有种脚踏实地的美~。<br>初查我随便选了一个医生，医生上会有介绍，比如这个医生负责院长得术前检查，那个医生负责负责谁的。我选择了院长术前医生。<br>过去之后，上来就是开单子，门口得护士熟门熟路，直接让我缴费检查，在查完一通之后，包括一次散瞳：【散瞳验光的实质是放松由于眼肌长时间的过度紧张而产生的疲劳，从而得到眼睛真正的屈光状态。散瞳验光是应用药物使眼睛的睫状肌完全麻痹，失去调节作用的情况下进行验光。】，最后才是医生门诊。<br>医生会简单得询问理由：是单纯不想带还是有什么特殊原因。然后会告诉你手术得风险，这些都是例行询问，你直接回答就行。第一次初查我得两眼比较对称，所以没什么问题，全飞秒和半飞秒都可以做，医生简单得介绍了两者得区别：全飞伤口小但是切割掉部位较大，术后恢复比较快；半飞伤口大但是切割掉部位小，术后恢复会慢点。这个要根据个人实际情况进行抉择的。其实医院还有ICL术式【晶体植入】，但是医生没说，我也就没想着做那个。<br>那段时间由于我刚刚结束过敏，医生看我眼睛还有血丝，不建议我现在做，让我回家买点滴露，连续滴一个月，一个月后再来。到时候直接选择术前复查即可。<br>这里需要说到他们开药的方式，他们在墙上贴了四种药的图片，然后让我拍下来。然后说买1号药滴一个月即可。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/136-%E5%85%A8%E9%A3%9E%E7%A7%92%E8%BF%91%E8%A7%86%E6%89%8B%E6%9C%AF%E7%BA%AA%E5%BD%95-2023-11-15-20-38-05.png" alt="136-全飞秒近视手术纪录-2023-11-15-20-38-05"><br>这点我觉得很有意思，这种快速沟通的小纸条贯彻了整个流程，后面还会出现很多这种小条子，告诉你你想得到的，想不到的所有事。</p>
@@ -1292,7 +1284,7 @@
   </entry>
   <entry>
     <title>路由器选择指北</title>
-    <url>/2023/11/12/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97/</url>
+    <url>/2023/11/12/137-%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97/</url>
     <content><![CDATA[<p>在<a href="https://minsummer.com/2023/11/09/135-%E5%85%B3%E4%BA%8E%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E9%97%A8%E9%97%A8%E9%81%93%E9%81%93/#more">关于路由器的门门道道</a>，我说了几个常见的方案，然而哪些都是理论上的，今天就来做个截至2023目前常见的解决方案和价格。</p>
 <span id="more"></span>
 <h3 id="方案1：光猫-软路由-AP"><a href="#方案1：光猫-软路由-AP" class="headerlink" title="方案1：光猫-软路由-AP"></a>方案1：光猫-软路由-AP</h3><p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-09-09-50.png" alt="136路由器选择指北-2023-11-13-09-09-50"><br>这里需要说明：由于x86设备很多时候都是默认不带内存和硬盘，所以这里很多我都是以4g内存和32g硬盘进行统计，价格大多来自咸鱼，所以配置上会上下浮动100~200。<br>这个方案的优势：<br>    1. 性能强大，可以组all in one。一台机子搞定nas和翻墙的需求。<br>缺点：<br>    1. 单网口和双网口的主板差距大。差距有多大呢，J1900加蜗牛星际机箱一套也就350左右，但是J1900双网口的路由器就要200+。大家都知道的。<br>    2. 建议J4125起步，J1900已经属于被淘汰的地步。当然如果需求不高，可以用J1900玩玩。</p>
@@ -1353,6 +1345,63 @@
         <tag>性价比</tag>
         <tag>花小钱办大事</tag>
         <tag>购买指北</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iperf3测速来选择服务器</title>
+    <url>/2023/11/28/138-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B5%8B%E9%80%9F%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p>现在网上充斥着各种线路：GIA，CMI，9929等等，但是很多时候线路并不代表全部，线路还需要服务器商对其进行优化，否则有可能会绕到天南地北的情况。<br>而作为富强的使用者，我们最关心的就是速度。一般推荐使用iperf3进行测速。</p>
+<span id="more"></span>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>iperf3安装十分简单，服务器版本安装<br>Debain系统</p>
+<blockquote>
+<p>apt-get install iperf3</p>
+</blockquote>
+<p>Ubuntu系统</p>
+<blockquote>
+<p>　apt install iperf3</p>
+</blockquote>
+<p>这样服务器即安装完成，事实上不少服务器自带iperf3。</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>软件分为服务端和客户端。输入以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">iperf3 -s -i 1 -p 端口</span><br></pre></td></tr></table></figure>
+<p>说明下参数</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-s 代表启动的服务端</span><br><span class="line">-i 几秒显示信息，默认10秒显示，现在改成1秒刷新信息</span><br><span class="line">-p 端口，一会需要客户端连接测速的</span><br></pre></td></tr></table></figure>
+<p>客户端的话，一般是Windows，需要去<a href="https://iperf.fr/iperf-download.php">官网</a>下载对应的客户端，解压后是有两个文件：<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/138-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B5%8B%E9%80%9F%E6%8C%87%E5%8D%97-2023-11-29-09-24-26.png" alt="138-服务器测速指南-2023-11-29-09-24-26"><br>使用方式需要打开cmd：</p>
+<ol>
+<li>进入对应的文件夹：<blockquote>
+<p>cd 解压的文件夹</p>
+</blockquote>
+</li>
+</ol>
+<p>打开测试端</p>
+<blockquote>
+<p>iperf3 -c 服务器IP -p 端口 -t 60 -R</p>
+</blockquote>
+<p> 或者直接告诉cmd位置也行</p>
+<blockquote>
+<p> 解压的文件夹&#x2F;iperf3 -c 服务器IP -p 端口 -t 60 -R</p>
+</blockquote>
+<p> 参数说明：<br> <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"> -c 代表客户端</span><br><span class="line"> -p 端口，需要与服务端一致</span><br><span class="line">-t 后面接时间，意思是持续测试60秒，可以适当加长或减少</span><br><span class="line">-R 反向模式运行，即服务端发送，客户端接收</span><br></pre></td></tr></table></figure><br>其他参数，大家可以自行选择：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">通用参数：</span><br><span class="line">-v 查看版本信息</span><br><span class="line">-p 端口号</span><br><span class="line">-f 指定带宽输出格式： Kbits、Mbits、Gbits、Tbits</span><br><span class="line">-i 监控报告时间间隔，单位秒(s)</span><br><span class="line">-J Json格式输出结果</span><br><span class="line">--logfile 将结果输出到指定文件中</span><br><span class="line">服务端参数：</span><br><span class="line">-s 以服务器模式运行</span><br><span class="line">-D 后台运行服务器模式</span><br><span class="line">客户端参数：</span><br><span class="line">-c 以客户端模式运行，连接到服务端</span><br><span class="line">-t 传输时间，默认10秒</span><br><span class="line">-n 传输内容大小，不能与-t同时使用</span><br><span class="line">-b 目标比特率(0表示无限)(UDP默认1Mbit/sec，TCP不受限制)</span><br><span class="line">-l 要读取或写入的缓冲区长度(TCP默认128 KB，UDP默认1460)</span><br><span class="line">-O 忽略前几秒</span><br><span class="line">-R 反向模式运行，即服务端发送，客户端接收</span><br><span class="line">-u 使用UDP协议，默认使用TCP协议</span><br><span class="line">--get-server-output 输出服务端的结果</span><br></pre></td></tr></table></figure>
+<p>执行后即会跑出速度<br> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/138-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B5%8B%E9%80%9F%E6%8C%87%E5%8D%97-2023-11-29-09-36-22.png" alt="138-服务器测速指南-2023-11-29-09-36-22"><br> <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"> Interval表示时间间隔。</span><br><span class="line">Transfer表示时间间隔里面转输的数据量，越多越好。</span><br><span class="line">Bandwidth是时间间隔里的传输速率，越高越好。</span><br></pre></td></tr></table></figure><br>需要注意的是这里测速都是单线程测速，如果要测试多线程需要<code>-P 线程数</code>进行测试，但是实际情况大多数场景都是单线程：比如富强，下载等等，这就是为啥，明明给的1G的口，但是你跑下来最多10m&#x2F;s，换算带宽也就100Mbp最多。但是如果你10个线程，一般都是可以跑满1G的口。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>最合适自己的才是最好的，不要迷信线路，这次测试下来之后，手里的三台机器：东京软银线路，香港三网CMI线路，洛杉矶三网GIA线路，测试下来一圈发现，还是香港CMI香，测试环境包括联通和移动，电信没有。这算是提供一个思路作为取舍小鸡的思路。这个测试结果也许和网上的测试结果有差距，但是绝对是最符合你自己的情况的。</p>
+<ol>
+<li>搬瓦工日本软银<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. 中午12点联通</span><br><span class="line">[ ID] Interval           Transfer     Bandwidth       Retr</span><br><span class="line">[  5]   0.00-60.00  sec   226 MBytes  31.6 Mbits/sec    0             sender</span><br><span class="line">[  5]   0.00-60.00  sec   224 MBytes  31.3 Mbits/sec                  receiver</span><br><span class="line">2. 下午4点联通</span><br><span class="line">[ ID] Interval           Transfer     Bandwidth       Retr</span><br><span class="line">[  5]   0.00-60.00  sec   210 MBytes  29.4 Mbits/sec    0             sender</span><br><span class="line">[  5]   0.00-60.00  sec   207 MBytes  29.0 Mbits/sec                  receiver</span><br><span class="line">3.晚上6点移动</span><br><span class="line">[ ID] Interval           Transfer     Bandwidth       Retr</span><br><span class="line">[  5]   0.00-60.00  sec   110 MBytes  15.3 Mbits/sec    1             sender</span><br><span class="line">[  5]   0.00-60.00  sec   107 MBytes  15.0 Mbits/sec                  receiver</span><br><span class="line">4.晚上8点移动</span><br><span class="line">[ ID] Interval           Transfer     Bandwidth       Retr</span><br><span class="line">[  5]   0.00-60.00  sec   105 MBytes  14.7 Mbits/sec    2             sender</span><br><span class="line">[  5]   0.00-60.00  sec   102 MBytes  14.2 Mbits/sec                  receiver</span><br><span class="line">5. 晚上9点移动</span><br><span class="line">[ ID] Interval           Transfer     Bandwidth       Retr</span><br><span class="line">[  5]   0.00-60.00  sec   114 MBytes  16.0 Mbits/sec    0             sender</span><br><span class="line">[  5]   0.00-60.00  sec   111 MBytes  15.5 Mbits/sec                  receiver</span><br></pre></td></tr></table></figure></li>
+<li>DMIT洛杉矶三网GIA<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1.早上8点联通</span><br><span class="line">[ ID] Interval           Transfer     Bandwidth       Retr</span><br><span class="line">[  5]   0.00-60.00  sec  64.8 MBytes  9.06 Mbits/sec    0             sender</span><br><span class="line">[  5]   0.00-60.00  sec  63.2 MBytes  8.84 Mbits/sec                  receiver</span><br><span class="line">2.中午12点联通</span><br><span class="line">[ ID] Interval           Transfer     Bandwidth       Retr</span><br><span class="line">[  5]   0.00-60.00  sec  68.0 MBytes  9.50 Mbits/sec    2             sender</span><br><span class="line">[  5]   0.00-60.00  sec  66.3 MBytes  9.28 Mbits/sec                  receiver</span><br><span class="line">3.下午4点联通</span><br><span class="line">[ ID] Interval           Transfer     Bandwidth       Retr</span><br><span class="line">[  5]   0.00-60.00  sec  69.7 MBytes  9.75 Mbits/sec    3             sender</span><br><span class="line">[  5]   0.00-60.00  sec  67.7 MBytes  9.46 Mbits/sec                  receiver</span><br><span class="line">4.晚上6点移动</span><br><span class="line">[ ID] Interval           Transfer     Bandwidth       Retr</span><br><span class="line">[  5]   0.00-60.00  sec  60.9 MBytes  8.52 Mbits/sec    1             sender</span><br><span class="line">[  5]   0.00-60.00  sec  58.0 MBytes  8.10 Mbits/sec                  receiver</span><br><span class="line">5. 晚上8点移动</span><br><span class="line">[ ID] Interval           Transfer     Bandwidth       Retr</span><br><span class="line">[  5]   0.00-60.00  sec  59.6 MBytes  8.33 Mbits/sec    3             sender</span><br><span class="line">[  5]   0.00-60.00  sec  56.9 MBytes  7.95 Mbits/sec                  receiver</span><br><span class="line">6.晚上9点移动</span><br><span class="line">[ ID] Interval           Transfer     Bandwidth       Retr</span><br><span class="line">[  5]   0.00-60.00  sec  60.9 MBytes  8.51 Mbits/sec    7             sender</span><br><span class="line">[  5]   0.00-60.00  sec  58.3 MBytes  8.16 Mbits/sec                  receiver</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>V.PS香港CMI<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1.早上8点联通</span><br><span class="line">[ ID] Interval           Transfer     Bandwidth       Retr</span><br><span class="line">[  5]   0.00-60.00  sec   146 MBytes  20.5 Mbits/sec    0             sender</span><br><span class="line">[  5]   0.00-60.00  sec   145 MBytes  20.3 Mbits/sec                  receiver</span><br><span class="line">2.中午12点联通</span><br><span class="line">[ ID] Interval           Transfer     Bandwidth       Retr</span><br><span class="line">[  5]   0.00-60.00  sec   146 MBytes  20.5 Mbits/sec    0             sender</span><br><span class="line">[  5]   0.00-60.00  sec   145 MBytes  20.2 Mbits/sec                  receiver</span><br><span class="line">3.下午4点联通</span><br><span class="line">[ ID] Interval           Transfer     Bandwidth       Retr</span><br><span class="line">[  5]   0.00-60.00  sec   148 MBytes  20.7 Mbits/sec    0             sender</span><br><span class="line">[  5]   0.00-60.00  sec   146 MBytes  20.5 Mbits/sec                  receiver</span><br><span class="line">4.晚上6点移动</span><br><span class="line">[ ID] Interval           Transfer     Bandwidth       Retr</span><br><span class="line">[  5]   0.00-60.00  sec   197 MBytes  27.5 Mbits/sec    7             sender</span><br><span class="line">[  5]   0.00-60.00  sec   195 MBytes  27.2 Mbits/sec                  receiver</span><br><span class="line">5.晚上8点移动</span><br><span class="line">[ ID] Interval           Transfer     Bandwidth       Retr</span><br><span class="line">[  5]   0.00-60.00  sec   193 MBytes  27.0 Mbits/sec    2             sender</span><br><span class="line">[  5]   0.00-60.00  sec   190 MBytes  26.6 Mbits/sec                  receiver</span><br><span class="line">6.晚上9点移动</span><br><span class="line">[ ID] Interval           Transfer     Bandwidth       Retr</span><br><span class="line">[  5]   0.00-60.00  sec   218 MBytes  30.5 Mbits/sec    0             sender</span><br><span class="line">[  5]   0.00-60.00  sec   216 MBytes  30.2 Mbits/sec                  receiver</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+其实最后分析一下，网上的确实有一定的参考性，比如GIA就是稳，无论时间和网络，它都是一个速度。联通的确实软银好，速度快且稳，晚高峰立刻打折。移动的网络在CMI下面可以，联通过来也要打折。可以根据自己的实际情况进行分析和抉择。</li>
+</ol>
+<hr>
+<p>参考：<br><a href="https://zhuanlan.zhihu.com/p/546330081">Iperf3测速教程</a></p>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>线路</tag>
+        <tag>网络测速</tag>
+        <tag>iperf3</tag>
+        <tag>vps选择</tag>
+        <tag>vps</tag>
       </tags>
   </entry>
   <entry>
@@ -1482,8 +1531,8 @@
         <category>技术顾问</category>
       </categories>
       <tags>
-        <tag>v2ray</tag>
         <tag>vps</tag>
+        <tag>v2ray</tag>
         <tag>网赚</tag>
       </tags>
   </entry>
@@ -2690,8 +2739,8 @@ sysctl -p
         <category>技术顾问</category>
       </categories>
       <tags>
-        <tag>v2ray</tag>
         <tag>vps</tag>
+        <tag>v2ray</tag>
         <tag>图床</tag>
         <tag>宝塔面板</tag>
       </tags>
@@ -3554,8 +3603,8 @@ sysctl -p
         <category>技术顾问</category>
       </categories>
       <tags>
-        <tag>v2ray</tag>
         <tag>vps</tag>
+        <tag>v2ray</tag>
         <tag>docker</tag>
         <tag>服务器</tag>
         <tag>caddyv2</tag>
@@ -3613,8 +3662,8 @@ sysctl -p
       </categories>
       <tags>
         <tag>搬瓦工</tag>
-        <tag>CN2线路</tag>
         <tag>线路</tag>
+        <tag>CN2线路</tag>
         <tag>TraceRoute</tag>
       </tags>
   </entry>
