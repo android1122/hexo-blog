@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"minsummer.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="最近买了两个红米AX 5 JDC版本，分别放在公司和家里。很多时候需要访问家里的一些服务，比如摸鱼时候，想要提前下载东西，回家就能看。或者看到自己青龙京东的COOKIE过期，直接公司更新COOKIE。其实我得场景更多不需要将内网服务开放到公网去。我只是需要我可以在外面访问到内网服务即可。">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Openwrt下ZeroTier部署指南">
+<meta property="og:url" content="https://minsummer.com/2023/11/29/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+<meta property="og:site_name" content="我是豆豆">
+<meta property="og:description" content="最近买了两个红米AX 5 JDC版本，分别放在公司和家里。很多时候需要访问家里的一些服务，比如摸鱼时候，想要提前下载东西，回家就能看。或者看到自己青龙京东的COOKIE过期，直接公司更新COOKIE。其实我得场景更多不需要将内网服务开放到公网去。我只是需要我可以在外面访问到内网服务即可。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-44-39.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-46-31.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-48-54.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-46-31.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-52-38.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-53-32.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-55-16.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-57-23.png">
+<meta property="article:published_time" content="2023-11-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-11-29T16:00:00.000Z">
+<meta property="article:author" content="张大爆">
+<meta property="article:tag" content="ZeroTier">
+<meta property="article:tag" content="内网穿透">
+<meta property="article:tag" content="跨域局域网">
+<meta property="article:tag" content="局域网">
+<meta property="article:tag" content="openwrt系统">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-44-39.png">
+
+
+<link rel="canonical" href="https://minsummer.com/2023/11/29/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://minsummer.com/2023/11/29/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/","path":"2023/11/29/139-ZeroTier部署指南/","title":"Openwrt下ZeroTier部署指南"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Openwrt下ZeroTier部署指南 | 我是豆豆</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-189642379-1","only_pageview":true}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+  <script data-pjax defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{&quot;token&quot;: &quot;2c44721ef211470c8cb156f38ca476ea&quot;}'></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">我是豆豆</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">吃饭，睡觉，打豆豆</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-wechat fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">252</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">139</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ZeroTier"><span class="nav-number">1.</span> <span class="nav-text">ZeroTier</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2"><span class="nav-number">2.</span> <span class="nav-text">部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%B3%A8%E5%86%8C"><span class="nav-number">2.1.</span> <span class="nav-text">1. 注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Openwrt%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="nav-number">2.2.</span> <span class="nav-text">2. Openwrt插件配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">张大爆</p>
+  <div class="site-description" itemprop="description">经常会忘记一些东西，用这里来记录我们曾经来过</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">139</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">252</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/android1122" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;android1122" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:noway@minsummer.com" title="E-Mail → mailto:noway@minsummer.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://manhua2.minsummer.com/" title="https:&#x2F;&#x2F;manhua2.minsummer.com" rel="noopener" target="_blank">漫画网站-移动</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://speedtthk.minsummer.com/" title="https:&#x2F;&#x2F;speedtthk.minsummer.com&#x2F;" rel="noopener" target="_blank">公益机场-移动</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://filebox.minsummer.com/" title="https:&#x2F;&#x2F;filebox.minsummer.com&#x2F;" rel="noopener" target="_blank">网络U盘</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://minsummer.com/2023/11/29/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="张大爆">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我是豆豆">
+      <meta itemprop="description" content="经常会忘记一些东西，用这里来记录我们曾经来过">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Openwrt下ZeroTier部署指南 | 我是豆豆">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Openwrt下ZeroTier部署指南
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-11-30 00:00:00" itemprop="dateCreated datePublished" datetime="2023-11-30T00:00:00+08:00">2023-11-30</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>917</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>最近买了两个红米AX 5 JDC版本，分别放在公司和家里。很多时候需要访问家里的一些服务，比如摸鱼时候，想要提前下载东西，回家就能看。或者看到自己青龙京东的COOKIE过期，直接公司更新COOKIE。其实我得场景更多不需要将内网服务开放到公网去。我只是需要我可以在外面访问到内网服务即可。</p>
+<span id="more"></span>
+<h2 id="ZeroTier"><a href="#ZeroTier" class="headerlink" title="ZeroTier"></a><a target="_blank" rel="noopener" href="https://my.zerotier.com/network">ZeroTier</a></h2><p>国外的一个服务，可以帮助异地组网。简而言之就是将A地和B地的网络组合成一个局域网。支持Linux，Windows系统，也支持Openwrt插件部署。我这边两台路由器都是Openwrt系统，于是就使用插件部署，部署之后的效果就是：输入异地的内网任何地址，我这边都可以访问到。</p>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="1-注册"><a href="#1-注册" class="headerlink" title="1. 注册"></a>1. 注册</h3><p>注册一个<a target="_blank" rel="noopener" href="https://my.zerotier.com/network">ZeroTier</a>，获取到NETWORK ID</p>
+<h3 id="2-Openwrt插件配置"><a href="#2-Openwrt插件配置" class="headerlink" title="2. Openwrt插件配置"></a>2. Openwrt插件配置</h3><p>进入路由器系统，找到ZeroTier的配置项，输入获取到的INETWORK ID</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-44-39.png" alt="139-ZeroTier部署指南-2023-11-30-10-44-39"></p>
+<p>这是加入了ZeroTier，去网站那勾选前面的复选框，允许其接入。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-46-31.png" alt="139-ZeroTier部署指南-2023-11-30-10-46-31"></p>
+<p>成功的现象是Managed IPs会回去到一个地址，记住这个地址。回到路由器，打开接口配置，新建一个接口：协议静态，地址就是网站上的地址，子网掩码就是255.255.255.0.<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-48-54.png" alt="139-ZeroTier部署指南-2023-11-30-10-48-54"></p>
+<p>这是加入了ZeroTier，去网站那勾选前面的复选框，允许其接入。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-46-31.png" alt="139-ZeroTier部署指南-2023-11-30-10-46-31"></p>
+<p>然后进入接口-物理设置，插件会生成一个虚拟网卡，将这个网卡接入，网卡一般是zt开头，：</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-52-38.png" alt="139-ZeroTier部署指南-2023-11-30-10-52-38"></p>
+<p>如果不知道，可以去ZeroTier下的接口信息查看</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-53-32.png" alt="139-ZeroTier部署指南-2023-11-30-10-53-32"></p>
+<p>最后是将防火墙打开，允许转发，进出站：</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-55-16.png" alt="139-ZeroTier部署指南-2023-11-30-10-55-16"></p>
+<p>至此，路由器配置完成了，后续你直接加入这个INETWORK ID就可以访问到这个路由器，接下来配置允许访问路由器网段内的其他地址，这时候就需要到ZeroTier配置下，在设置里面输入网段，比如你公司网段时192.168.1.0<del>199，那么你就可以配置192.168.1.0&#x2F;24，右边的就是你刚才配置的静态地址。这样的效果就是你加入这个网络之后，可以访问192.168.1.0</del>199内的所有设备。如果你想要两个网段互相访问，需要注意，两个网段的地址不要重复，公司时192.168.1网段那么家里只能时192.168.2网段，否则会冲突。我这边是家里网段开放，但是公司网段不开放，所以公司任意一台都可以通过输入对应地址访问家里设备，家里的不行，只能访问到配置插件的路由器，其他的不行。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-57-23.png" alt="139-ZeroTier部署指南-2023-11-30-10-57-23"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>相比较DDNS这些将服务开放到公网，我更加需要这种异地组网，更适合我。而且也不用担心网络攻击的问题。适合自己的才是最重要，至于搭建自己的moon服务器，目前还不需要，毕竟我只是更新信息或者提前下载，两边网速慢点也是可以的，至少目前体验下来，没有网速瓶颈。</p>
+<hr>
+<p>参考文章：<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1hT4y1E78k/?spm_id_from=333.337.search-card.all.click&vd_source=004ea20ecc05f6fa780db2013e61781b">Openwrt的Zerotier插件玩法</a><br><a target="_blank" rel="noopener" href="https://my.zerotier.com/network"> ZeroTier官网地址</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/ZeroTier/" rel="tag"># ZeroTier</a>
+              <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" rel="tag"># 内网穿透</a>
+              <a href="/tags/%E8%B7%A8%E5%9F%9F%E5%B1%80%E5%9F%9F%E7%BD%91/" rel="tag"># 跨域局域网</a>
+              <a href="/tags/%E5%B1%80%E5%9F%9F%E7%BD%91/" rel="tag"># 局域网</a>
+              <a href="/tags/openwrt%E7%B3%BB%E7%BB%9F/" rel="tag"># openwrt系统</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/11/28/138-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B5%8B%E9%80%9F%E6%8C%87%E5%8D%97/" rel="prev" title="iperf3测速来选择服务器">
+                  <i class="fa fa-angle-left"></i> iperf3测速来选择服务器
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 国窖1573 – 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">张大爆</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">202k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">12:15</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/android1122" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.5.0/mermaid.min.js","integrity":"sha256-K7oJiQlDulzl24ZUFOywuYme1JqBBvQzK6m8qHjt9Gk="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"android1122","repo":"hexo-blog","client_id":"6950c9229796295b9867","client_secret":"9af4438d89e7a09669ec33d632ba554589a1f7d7","admin_user":"android1122","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"3103668b1d0044f52c7089b920879063"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
