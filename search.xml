@@ -1466,7 +1466,7 @@
 </li>
 </ol>
 <p>   戴克里先将罗马一分为四，君士坦丁统一了西罗马帝国，从此奉基督教为国教，基督教开始称别的宗教信徒为异教徒，开始摧毁异教物品。哲学家逃亡阿拉伯国家，遇见穆斯林。罗马十字军东征，试图用军事手段证明基督教义的正确性，九次东征，除第一次攻其不备，其余八次全部四百，第九次进攻地点为东罗马帝国。西罗马灭亡之后，基督教作为依旧成为欧洲宗教，这段时间是基督教最具控制力的时候，赎罪卷，裁判所等，真是个人人噤若寒蝉的时代。</p>
-<ol start="5">
+<ol start="2">
 <li>马丁路德：因信称义-只要真心相信，就可以成为义人。更加注重内心，外在的行为不重要：缴纳税款，昂贵的宗教仪式等都不重要。<ol>
 <li>什一税：圣经内多次提到，教徒要将收入的十分之一捐献出来。教会推出的什一税。</li>
 <li>中世纪百姓将遗产捐献给教会是一种世俗习惯。教皇下令之后神父在的时候遗嘱才能生效。</li>
@@ -1590,6 +1590,266 @@
         <tag>畅销榜</tag>
         <tag>读书</tag>
         <tag>《亚财政》</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ServerStatus搭建指南</title>
+    <url>/2023/12/10/143-ServerStatus%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p>ServerStatus，云监控，即我们一般说的探针。用来监控远端服务器的状态。可以实现实时查看系统负载，同时如果服务器超载可以自动报警。如果你服务器很多，那么安装一个这个可以方便快捷的查看实用的流量负载，不必每次都登陆后台面板进行跟踪。</p>
+<span id="more"></span>
+<p>分为服务端和客户端，服务端即网页用来展示的，客户端即为一个python文件，查询信息之后发送给服务端。</p>
+<h2 id="服务端安装"><a href="#服务端安装" class="headerlink" title="服务端安装"></a>服务端安装</h2><p>我使用的是docker安装，简单快捷。根据官网的命令。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. 创建文件夹下载默认的配置文件</span><br><span class="line"></span><br><span class="line">wget --no-check-certificate -qO ~/serverstatus-config.json https://raw.githubusercontent.com/cppla/ServerStatus/master/server/config.json &amp;&amp; mkdir ~/serverstatus-monthtraffic   </span><br><span class="line"></span><br><span class="line">2. docker允许，开放80和35601端口进行通信，需要注意35601必须开启，80端口还可以进行映射</span><br><span class="line"></span><br><span class="line">docker run -d --restart=always --name=serverstatus -v ~/serverstatus-config.json:/ServerStatus/server/config.json -v ~/serverstatus-monthtraffic:/usr/share/nginx/html/json -p 80:80 -p 35601:35601 cppla/serverstatus:latest     </span><br></pre></td></tr></table></figure>
+
+<p>直接执行即可，然后在<code> ~/serverstatus-config.json</code>进行配置。这里如果你用root登陆，命令会创建文件夹<code>/root//serverstatus-config.json</code>，需要注意如果你修改了文件夹，需要将dockers命令的映射一同修改<br>配置文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">        &quot;servers&quot;:</span><br><span class="line">	[</span><br><span class="line">		&#123;</span><br><span class="line">			&quot;username&quot;: &quot;s01&quot;,——用户名，登陆有用</span><br><span class="line">			&quot;name&quot;: &quot;vps-1&quot;,——显示名称</span><br><span class="line">			&quot;type&quot;: &quot;kvm&quot;,——显示虚拟化</span><br><span class="line">			&quot;host&quot;: &quot;chengdu&quot;,——不会显示，内部用来去别的</span><br><span class="line">			&quot;location&quot;: &quot;🇨🇳&quot;,——位置</span><br><span class="line">			&quot;password&quot;: &quot;USER_DEFAULT_PASSWORD&quot;,——密码，和上面用户名用来登陆</span><br><span class="line">			&quot;monthstart&quot;: 1——月流量清零，一般vps的清零时间不是1号，所以需要变化</span><br><span class="line">		&#125;,</span><br><span class="line">	],</span><br><span class="line">	&quot;watchdog&quot;:</span><br><span class="line">	[</span><br><span class="line">	        &#123;</span><br><span class="line">			&quot;name&quot;: &quot;服务器负载高监控，排除内存大于32G物理机，同时排除俄勒冈机器&quot;,</span><br><span class="line">			&quot;rule&quot;: &quot;cpu&gt;90&amp;load_1&gt;4&amp;memory_total&lt;33554432&amp;name!=&#x27;俄勒冈&#x27;&quot;,</span><br><span class="line">			&quot;interval&quot;: 600,</span><br><span class="line">			&quot;callback&quot;: &quot;https://yourSMSurl&quot;</span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">                        &quot;name&quot;: &quot;服务器内存使用率过高监控&quot;,</span><br><span class="line">                        &quot;rule&quot;: &quot;(memory_used/memory_total)*100&gt;90&quot;,</span><br><span class="line">                        &quot;interval&quot;: 600,</span><br><span class="line">                        &quot;callback&quot;: &quot;https://yourSMSurl&quot;</span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                        &quot;name&quot;: &quot;服务器宕机告警，排出俄勒冈，排除s02&quot;,</span><br><span class="line">                        &quot;rule&quot;: &quot;online4=0&amp;online6=0&amp;name!=&#x27;俄勒冈&#x27;&amp;username!=&#x27;s02&#x27;&quot;,</span><br><span class="line">                        &quot;interval&quot;: 600,</span><br><span class="line">                        &quot;callback&quot;: &quot;https://yourSMSurl&quot;</span><br><span class="line">                &#125;,</span><br><span class="line">		&#123;</span><br><span class="line">                        &quot;name&quot;: &quot;DDOS和CC攻击监控&quot;,</span><br><span class="line">                        &quot;rule&quot;: &quot;tcp_count&gt;600&quot;,</span><br><span class="line">                        &quot;interval&quot;: 300,</span><br><span class="line">                        &quot;callback&quot;: &quot;https://yourSMSurl&quot;</span><br><span class="line">                &#125;,</span><br><span class="line">		&#123;</span><br><span class="line">			&quot;name&quot;: &quot;服务器月出口流量999GB告警&quot;,</span><br><span class="line">			&quot;rule&quot;: &quot;(network_out-last_network_out)/1024/1024/1024&gt;999&quot;,</span><br><span class="line">			&quot;interval&quot;: 3600,</span><br><span class="line">			&quot;callback&quot;: &quot;https://yourSMSurl&quot;</span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">			&quot;name&quot;: &quot;你可以组合任何已知字段的表达式&quot;,</span><br><span class="line">			&quot;rule&quot;: &quot;(hdd_used/hdd_total)*100&gt;95&quot;,</span><br><span class="line">			&quot;interval&quot;: 1800,</span><br><span class="line">			&quot;callback&quot;: &quot;https://yourSMSurl&quot;</span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;       </span><br></pre></td></tr></table></figure>
+<h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><p>客户端很简单，但是需要至此python3</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget --no-check-certificate -qO client-linux.py &#x27;https://raw.githubusercontent.com/cppla/ServerStatus/master/clients/client-linux.py&#x27; &amp;&amp; nohup python3 client-linux.py SERVER=&#123;$SERVER&#125; USER=&#123;$USER&#125; PASSWORD=&#123;$PASSWORD&#125; &gt;/dev/null 2&gt;&amp;1 &amp;</span><br><span class="line"></span><br><span class="line">eg:</span><br><span class="line">wget --no-check-certificate -qO client-linux.py &#x27;https://raw.githubusercontent.com/cppla/ServerStatus/master/clients/client-linux.py&#x27; &amp;&amp; nohup python3 client-linux.py SERVER=45.79.67.132 USER=s04  &gt;/dev/null 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
+<p><code>&gt;/dev/null 2&gt;&amp;1</code> 这块命令建议改成具体文件夹下的路径，这是用来记载日志的，方便后续可以查看相关日志。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>安装之后确实美观，让人有种想把它填满的冲动，怪不得一些人买卖机器不停，确实让人难以抗拒。最后实现的效果如图：<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/143-ServerStatus%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97-2023-12-11-15-21-40.png" alt="143-ServerStatus搭建指南-2023-12-11-15-21-40"></p>
+<p>你想知道的信息都有，可以方便追踪目前的机器情况。</p>
+<hr>
+<p>参考文章：<br><a href="https://github.com/cppla/ServerStatus?tab=readme-ov-file">ServerStatus</a></p>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>ServerStatus</tag>
+        <tag>搭建指南</tag>
+        <tag>docker</tag>
+        <tag>探针</tag>
+        <tag>以针会友</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2023年VPS传家宝指南</title>
+    <url>/2023/12/24/144-2023%E5%B9%B4VPS%E4%BC%A0%E5%AE%B6%E5%AE%9D%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p>每年11，12两个月份，由于黑五，圣诞等节日，会出现好多传家宝神机。在商家刻意冲年末销量的情况下，会出现一些特别低的价格，特别好的配置。趁着这个机会我就来统计下今年出现的传家宝套餐。<br>我得传家宝要求：</p>
+<ol>
+<li>持有价格够低，年付200人民币以下算好，100以下算神机。</li>
+<li>够稀有，一般都是下架了，买不到目前</li>
+<li>线路好，毕竟富强是第一需求</li>
+<li>配置合格，至少能翻墙<span id="more"></span></li>
+</ol>
+<h2 id="1-V-PS"><a href="#1-V-PS" class="headerlink" title="1.V.PS"></a>1.<a href="https://v.ps/">V.PS</a></h2><blockquote>
+<p>v.ps是Xtom的主机商，Xtom是香港的一家网络服务商。知名的搬瓦工的香港HK线路就是用的他们家的，所以安全性挺高的，大牌子。今年在双十一和黑五各做了一个活动。</p>
+</blockquote>
+<p>双十一活动：</p>
+<table>
+<thead>
+<tr>
+<th align="center">机房</th>
+<th align="center">配置</th>
+<th align="center">带宽</th>
+<th align="center">流量</th>
+<th align="center">价格</th>
+<th align="center">人民币</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">东京</td>
+<td align="center">1核1G内存15G硬盘</td>
+<td align="center">200Mbps</td>
+<td align="center">250G&#x2F;月</td>
+<td align="center">11欧&#x2F;年</td>
+<td align="center">87元 &#x2F;年</td>
+<td align="center">联通精品网络</td>
+</tr>
+<tr>
+<td align="center">阿姆斯特丹</td>
+<td align="center">1核1G内存15G硬盘</td>
+<td align="center">200Mbps</td>
+<td align="center">250G&#x2F;月</td>
+<td align="center">11欧&#x2F;年</td>
+<td align="center">87元 &#x2F;年</td>
+<td align="center">联通精品网络</td>
+</tr>
+<tr>
+<td align="center">法兰克福</td>
+<td align="center">1核1G内存15G硬盘</td>
+<td align="center">200Mbps</td>
+<td align="center">250G&#x2F;月</td>
+<td align="center">11欧&#x2F;年</td>
+<td align="center">87元 &#x2F;年</td>
+<td align="center">联通精品网络</td>
+</tr>
+<tr>
+<td align="center">圣何塞</td>
+<td align="center">1核1G内存15G硬盘</td>
+<td align="center">200Mbps</td>
+<td align="center">250G&#x2F;月</td>
+<td align="center">20.23欧&#x2F;年</td>
+<td align="center">160元 &#x2F;年</td>
+<td align="center">移动CMIN2,联通9929,电信GIA</td>
+</tr>
+<tr>
+<td align="center">香港</td>
+<td align="center">1核1G内存15G硬盘</td>
+<td align="center">200Mbps</td>
+<td align="center">250G&#x2F;月</td>
+<td align="center">20.23欧&#x2F;年</td>
+<td align="center">160元 &#x2F;年</td>
+<td align="center">移动CMI</td>
+</tr>
+</tbody></table>
+<p>评价：个人富强神机，流量够，配置够，线路好，价格低，圣何塞是最优选，如果移动网络香港不错，其他三条线路都是联通。</p>
+<p>黑五活动：</p>
+<table>
+<thead>
+<tr>
+<th align="center">机房</th>
+<th align="center">配置</th>
+<th align="center">带宽</th>
+<th align="center">流量</th>
+<th align="center">价格</th>
+<th align="center">人民币</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">东京</td>
+<td align="center">1核1G内存15G硬盘</td>
+<td align="center">500Mbps</td>
+<td align="center">400G&#x2F;月</td>
+<td align="center">20.23欧&#x2F;年</td>
+<td align="center">160元 &#x2F;年</td>
+<td align="center">联通精品网络</td>
+</tr>
+<tr>
+<td align="center">阿姆斯特丹</td>
+<td align="center">1核1G内存15G硬盘</td>
+<td align="center">500Mbps</td>
+<td align="center">400G&#x2F;月</td>
+<td align="center">20.23欧&#x2F;年</td>
+<td align="center">160元 &#x2F;年</td>
+<td align="center">联通精品网络</td>
+</tr>
+<tr>
+<td align="center">法兰克福</td>
+<td align="center">1核1G内存15G硬盘</td>
+<td align="center">500Mbps</td>
+<td align="center">400G&#x2F;月</td>
+<td align="center">20.23欧&#x2F;年</td>
+<td align="center">160元 &#x2F;年</td>
+<td align="center">联通精品网络</td>
+</tr>
+<tr>
+<td align="center">圣何塞</td>
+<td align="center">1核1G内存15G硬盘</td>
+<td align="center">500Mbps</td>
+<td align="center">400G&#x2F;月</td>
+<td align="center">29.99欧&#x2F;年</td>
+<td align="center">240元 &#x2F;年</td>
+<td align="center">移动CMIN2,联通9929,电信GIA</td>
+</tr>
+<tr>
+<td align="center">香港</td>
+<td align="center">1核1G内存15G硬盘</td>
+<td align="center">500Mbps</td>
+<td align="center">400G&#x2F;月</td>
+<td align="center">29.99欧&#x2F;年</td>
+<td align="center">240元 &#x2F;年</td>
+<td align="center">移动CMI</td>
+</tr>
+</tbody></table>
+<p>评价：高富帅富强神机，双十一款带宽比较小，这款加大带宽，同时流量增多，如果2个人或者有看视频需求，这款无敌。</p>
+<h2 id="2-DMIT"><a href="#2-DMIT" class="headerlink" title="2. DMIT"></a>2. <a href="www.dmit.io">DMIT</a></h2><blockquote>
+<p>DMIT 也是和瓦工并提的老牌服务商，他的机器之前都是走高端，比如199美元&#x2F;年等等，这次黑五估计是为了冲量，难得的出了一款平民快乐机。</p>
+</blockquote>
+<p>黑五活动DMIT PVM.LAX.Pro.Wee:</p>
+<table>
+<thead>
+<tr>
+<th align="center">机房</th>
+<th align="center">配置</th>
+<th align="center">带宽</th>
+<th align="center">流量</th>
+<th align="center">价格</th>
+<th align="center">人民币</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">洛杉矶</td>
+<td align="center">1核1G内存10G硬盘</td>
+<td align="center">500Mbps</td>
+<td align="center">450G&#x2F;月</td>
+<td align="center">36.9美元&#x2F;年</td>
+<td align="center">265元 &#x2F;年</td>
+<td align="center">电信GIA免费换IP</td>
+</tr>
+</tbody></table>
+<p>评价：如果说瓦工46刀三网GIA是神机，那么DMIT这款更是神机中的神机，三网GIA跟瓦工一样配置，价格更低，而且如果你IP被封，可以免费换IP，15天间隔。<br>这款机器我用过，后面出掉，速度中规中矩，但是就是稳，我在一天不同时间内跑了多次测速，每次速度都是一样的，这是其他机器做不到的。</p>
+<h2 id="3-AkileCloud"><a href="#3-AkileCloud" class="headerlink" title="3. AkileCloud"></a>3. <a href="https://akile.io/">AkileCloud</a></h2><blockquote>
+<p>AkileCloud，国人商家，成立于2023年中，剩下自己品。</p>
+</blockquote>
+<p>圣诞节活动LAXPro-One(Merry Christmas!)：</p>
+<table>
+<thead>
+<tr>
+<th align="center">机房</th>
+<th align="center">配置</th>
+<th align="center">带宽</th>
+<th align="center">流量</th>
+<th align="center">价格</th>
+<th align="center">人民币</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">洛杉矶</td>
+<td align="center">1核1G内存10G硬盘</td>
+<td align="center">100Mbps</td>
+<td align="center">300G&#x2F;月</td>
+<td align="center">119.99元&#x2F;年</td>
+<td align="center">119.99元 &#x2F;年</td>
+<td align="center">移动CMIN2,联通9929,电信GIA</td>
+</tr>
+</tbody></table>
+<p>评价：最懂国人永远是国人商家，这配置，这价格，妥妥的用来给个人富强用的，不过这款是半夜少量放货，有的人不多，加上是新商家，估计想要借此炒作吧，买到的人很少很少。</p>
+<h2 id="4-wap-ac"><a href="#4-wap-ac" class="headerlink" title="4. wap.ac"></a>4. <a href="https://wap.ac/">wap.ac</a></h2><blockquote>
+<p>国人商家，剩下不多说</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">机房</th>
+<th align="center">配置</th>
+<th align="center">带宽</th>
+<th align="center">流量</th>
+<th align="center">价格</th>
+<th align="center">人民币</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">洛杉矶</td>
+<td align="center">1核256M内存5G硬盘</td>
+<td align="center">1000Mbps</td>
+<td align="center">500G&#x2F;月</td>
+<td align="center">年付6刀&#x2F;月付1刀</td>
+<td align="center">50元 &#x2F;年</td>
+<td align="center">移动CMIN2,联通9929,电信GIA</td>
+</tr>
+</tbody></table>
+<p>评价：慎重吧，这款不定期放货，而且每次一点，有点也是饥饿营销的意思，除了这款还有香港款，也是优化线路。见仁见智吧，有些人觉得每月7块钱，跑了都不亏，有些人不觉得。<br>顺带提一嘴，这家的界面和hytron的一摸一样，估计也是公模的商城网站吧。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>传家宝之所以为传家宝，肯定有它过人之处，如果有一台的话，基本可以不再需要别的服务器，但是相对的，时代是在发展的，会有越来越多线路好，价格合适的机器出现的，所以错过也不必拘泥于非要这一款，可以耐心的等待。</p>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>VPS</tag>
+        <tag>黑五</tag>
+        <tag>圣诞节</tag>
+        <tag>双十一</tag>
+        <tag>V.PS</tag>
+        <tag>DV</tag>
+        <tag>AkileCloud</tag>
+        <tag>wap.ac</tag>
+        <tag>DMIT PVM.LAX.Pro.Wee</tag>
       </tags>
   </entry>
   <entry>
@@ -3792,8 +4052,8 @@ sysctl -p
       </categories>
       <tags>
         <tag>vps</tag>
-        <tag>v2ray</tag>
         <tag>docker</tag>
+        <tag>v2ray</tag>
         <tag>服务器</tag>
         <tag>caddyv2</tag>
       </tags>
@@ -4875,8 +5135,8 @@ pip install requirements.txt
       </categories>
       <tags>
         <tag>vscode</tag>
-        <tag>v2ray</tag>
         <tag>docker</tag>
+        <tag>v2ray</tag>
         <tag>caddyv2</tag>
       </tags>
   </entry>
