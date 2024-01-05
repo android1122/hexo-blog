@@ -1851,6 +1851,51 @@
       </tags>
   </entry>
   <entry>
+    <title>OPENWRT-DNS指南</title>
+    <url>/2024/01/04/145-OPENWRT-DNS%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p>最近买了一个路由器，刷机之后，兼具翻墙的功能，但是时不时的无法翻墙，线路是没问题的，最后的排查下来是DNS的问题，openwrt系统作为一个高度自定义的路由器系统，可以配置的东西太多了，这就非常不适合小白用户，这就是为啥之前我都是用毛子固件，这次就重新理一下openwrt的配置吧。</p>
+<span id="more"></span>
+<h2 id="DNS顺序关系"><a href="#DNS顺序关系" class="headerlink" title="DNS顺序关系"></a>DNS顺序关系</h2><p>我刷机的是QWRT，里面可以配置DNS的的地方有：</p>
+<ol>
+<li>网络设置下的DHCP&#x2F;DNS-自带的dnsmasq</li>
+<li>WAN口和LAN口下的DNS设置</li>
+<li>Turbo ACC下的DNS缓存</li>
+<li>翻墙插件使用的DNS</li>
+</ol>
+<p>这里面需要注意的是，如果你打开了<code>3.Turbo ACC下的DNS缓存</code>，系统会修改掉<code>1. 网络设置下的DHCP/DNS-自带的dnsmasq</code>里面的转发配置，最后就是<code>3. Turbo ACC下的DNS缓存</code>，本来这没什么问题，但是由于Turbo ACC的DNS缓存时通过查询多个DNS服务器结果，然后找到一个最快的结果返回给电脑，国内的结果肯定快，但是却不一定对，所以这就是我的问题所在。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/145-OPENWRT-DNS%E6%8C%87%E5%8D%97-2024-01-05-10-42-35.png" alt="145-OPENWRT-DNS指南-2024-01-05-10-42-35"></p>
+<p>所以不要瞎几把配置</p>
+<h2 id="翻墙软件的正确配置"><a href="#翻墙软件的正确配置" class="headerlink" title="翻墙软件的正确配置"></a>翻墙软件的正确配置</h2><ol>
+<li>不要动<code>1. 网络设置下的DHCP/DNS-自带的dnsmasq</code>的任何配置，大多数系统都会联动，所以不要自己动手配置。</li>
+<li>翻墙插件模式选择绕过<code>中国大陆IP模式</code>，然后选择国内的DNS服务器和国外的DNS服务器即可<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/145-OPENWRT-DNS%E6%8C%87%E5%8D%97-2024-01-05-10-49-52.png" alt="145-OPENWRT-DNS指南-2024-01-05-10-49-52"></li>
+</ol>
+<blockquote>
+<p>绕过中国大陆的模式是通过IP池子进行判断，这样的结果是流量消耗大一些【不会太多】，只要它认为不是的他就会给你代理。当然你也可以选择GFW模式，这种类似黑名单，只有在这上面的才会走代理，但是用下来你就会发现，动不动的就会有访问不了的网站~~.</p>
+</blockquote>
+<h2 id="高级配置"><a href="#高级配置" class="headerlink" title="高级配置"></a>高级配置</h2><p>你说如果我想要过滤广告，那么就在所有的DNS服务之前加个上游，在<code>3.Turbo ACC下的DNS缓存</code>修改的那个位置。<br>但是我得建议就是：</p>
+<blockquote>
+<p>如无必要，勿增实体</p>
+</blockquote>
+<p>PS:</p>
+<ol>
+<li>私人提供DNS是违法的</li>
+<li>ADguard Home 占用大</li>
+</ol>
+<hr>
+<p><a href="https://renyili.org/post/openwrt_dns_process/">OpenWrt DNS解析流程研究</a><br><a href="https://www.right.com.cn/forum/forum.php?mod=viewthread&tid=1098206">Turbo ACC 网络加速设置中的DNS加速应该怎么用？</a><br><a href="https://github.com/luckyyyyy/blog/issues/57">OpenWRT 分流DNS的设置</a><br><a href="https://blognas.hwb0307.com/nas/3904">NAS系列 OpenWrt的DNS设置</a><br><a href="https://blognas.hwb0307.com/nas/3892">NAS系列 基于多ADGuard Home实现DNS分流和个性化管理</a></p>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>OPENWRT</tag>
+        <tag>QWRT</tag>
+        <tag>DNS</tag>
+        <tag>配置指南</tag>
+        <tag>Turbo ACC</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>FinalShell跳板配置</title>
     <url>/2022/12/05/FinalShell%E8%B7%B3%E6%9D%BF%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h1 id="FinalShell跳板配置"><a href="#FinalShell跳板配置" class="headerlink" title="FinalShell跳板配置"></a>FinalShell跳板配置</h1><p>ssh跳板主要用来访问那些被封的IP，通过另外一台可以访问的IP跳板访问被墙的IP。</p>
@@ -2264,8 +2309,8 @@ x_&#123;n1&#125;&amp;x_&#123;n2&#125;&amp;\cdots&amp;x_&#123;np&#125;
         <category>技术顾问</category>
       </categories>
       <tags>
-        <tag>v2ray</tag>
         <tag>DNS</tag>
+        <tag>v2ray</tag>
         <tag>路由配置</tag>
       </tags>
   </entry>
