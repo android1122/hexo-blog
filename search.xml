@@ -2287,6 +2287,31 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo博客谷歌广告验证</title>
+    <url>/2024/03/21/159-Hexo%E8%B0%B7%E6%AD%8C%E5%B9%BF%E5%91%8A%E9%AA%8C%E8%AF%81/</url>
+    <content><![CDATA[<p>谷歌广告算是一种不错的博客收益，所以花点时间配置一下谷歌网站所有权验证；方便自己增加一些收益也是可以的。需要注意：谷歌广告对个人博客的好感度不高，反正我是没有成功过。</p>
+<span id="more"></span>
+<h2 id="1-ads-txt"><a href="#1-ads-txt" class="headerlink" title="1. ads.txt"></a>1. ads.txt</h2><p>谷歌支持3种网站所有权验证方式：1.增加代码短；2.用ads.txt；3.元标记<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/159-Hexo%E8%B0%B7%E6%AD%8C%E5%B9%BF%E5%91%8A%E9%AA%8C%E8%AF%81-2024-03-22-10-32-19.png" alt="159-Hexo谷歌广告验证-2024-03-22-10-32-19"></p>
+<p>其中最简单的就是使用ads.txt，你只需要在source文件夹下面增加一个ads.txt即可<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/159-Hexo%E8%B0%B7%E6%AD%8C%E5%B9%BF%E5%91%8A%E9%AA%8C%E8%AF%81-2024-03-22-10-34-08.png" alt="159-Hexo谷歌广告验证-2024-03-22-10-34-08"></p>
+<p>后续Hexo部署额时候就可以部署到网站的文件呈中，谷歌就可以以此来验证网站所有权。</p>
+<h2 id="2-Next主题验证"><a href="#2-Next主题验证" class="headerlink" title="2.Next主题验证"></a>2.Next主题验证</h2><p>如果你恰巧和我一样，使用的是Next主题，那么可以使用主题自带的客制化功能将代码段插入到head里面：</p>
+<ol>
+<li><p>在source下创建_data文件夹，然后创建head.swig，里面复制上谷歌的head代码。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/159-Hexo%E8%B0%B7%E6%AD%8C%E5%B9%BF%E5%91%8A%E9%AA%8C%E8%AF%81-2024-03-22-10-36-17.png" alt="159-Hexo谷歌广告验证-2024-03-22-10-36-17"></p>
+</li>
+<li><p>到配置文件_config.next.yml里面找到对应的custom_file_path参数，配置下head即可。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/159-Hexo%E8%B0%B7%E6%AD%8C%E5%B9%BF%E5%91%8A%E9%AA%8C%E8%AF%81-2024-03-22-10-37-34.png" alt="159-Hexo谷歌广告验证-2024-03-22-10-37-34"></p>
+</li>
+</ol>
+<p>上传以后，新生成的页面的head就有对应的代码，需要注意：这个功能不仅仅可以增加谷歌验证代码，如果你有别的需求，比如付费阅读等，也可以通过这个方法配置。</p>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>谷歌广告</tag>
+        <tag>google adsense</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>FinalShell跳板配置</title>
     <url>/2022/12/05/FinalShell%E8%B7%B3%E6%9D%BF%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h1 id="FinalShell跳板配置"><a href="#FinalShell跳板配置" class="headerlink" title="FinalShell跳板配置"></a>FinalShell跳板配置</h1><p>ssh跳板主要用来访问那些被封的IP，通过另外一台可以访问的IP跳板访问被墙的IP。</p>
