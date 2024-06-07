@@ -2918,6 +2918,27 @@
       </tags>
   </entry>
   <entry>
+    <title>瓦工香港GIA补货</title>
+    <url>/2024/06/06/175-%E7%93%A6%E5%B7%A5%E9%A6%99%E6%B8%AFGIA%E8%A1%A5%E8%B4%A7/</url>
+    <content><![CDATA[<p>真是活久见，瓦工的香港GIA线路，补货。这个线路都绝版几年了。<br>套餐内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Basic VPS - Self-managed - SPECIAL 40G KVM PROMO V5 - HONG KONG CN2 GIA</span><br><span class="line">SSD: 40 GB RAID-10</span><br><span class="line">RAM: 2048 MB</span><br><span class="line">CPU: 2x Intel Xeon</span><br><span class="line">Transfer: 500 GB/mo</span><br><span class="line">Link speed: 1 Gigabit</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Location: Hong Kong MEGA2</span><br><span class="line">Direct route via China Telecom (CN2 GIA), China Unicom, China Mobile</span><br><span class="line"></span><br><span class="line">Free automatic backups</span><br><span class="line">Free snapshots</span><br><span class="line">VPS technology: KVM/KiwiVM</span><br><span class="line">OS: 32 or 64 bit Centos, Debian, Ubuntu</span><br><span class="line">Instant OS reload</span><br><span class="line">IPv4: 1 dedicated address</span><br><span class="line">Secondary private network interface</span><br><span class="line">IPv6 support: **No**</span><br><span class="line">Full root access</span><br><span class="line">Instant RDNS update from control panel</span><br><span class="line">No contract, anytime cancellation</span><br><span class="line">Strictly self-managed, no support</span><br><span class="line">99.9% uptime guarantee</span><br><span class="line"></span><br><span class="line">899.99 USD/Year</span><br></pre></td></tr></table></figure>
+
+<p>没钱测试，直接上结论：</p>
+<ol>
+<li>不缺钱的主上，炒作的主自己掂量着点<span id="more"></span></li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>搬瓦工</tag>
+        <tag>香港机房</tag>
+        <tag>CN-GIA</tag>
+        <tag>补货</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>FinalShell跳板配置</title>
     <url>/2022/12/05/FinalShell%E8%B7%B3%E6%9D%BF%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h1 id="FinalShell跳板配置"><a href="#FinalShell跳板配置" class="headerlink" title="FinalShell跳板配置"></a>FinalShell跳板配置</h1><p>ssh跳板主要用来访问那些被封的IP，通过另外一台可以访问的IP跳板访问被墙的IP。</p>
