@@ -6,7 +6,7 @@
   <link href="https://minsummer.com/atom.xml" rel="self"/>
   
   <link href="https://minsummer.com/"/>
-  <updated>2024-10-06T16:00:00.000Z</updated>
+  <updated>2024-10-14T16:00:00.000Z</updated>
   <id>https://minsummer.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo打开RSS订阅</title>
+    <link href="https://minsummer.com/2024/10/14/183-Hexo%E6%89%93%E5%BC%80RSS%E8%AE%A2%E9%98%85/"/>
+    <id>https://minsummer.com/2024/10/14/183-Hexo%E6%89%93%E5%BC%80RSS%E8%AE%A2%E9%98%85/</id>
+    <published>2024-10-14T16:00:00.000Z</published>
+    <updated>2024-10-14T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;好久没有写教程了，这次带来的是给博客主题开通RSS订阅。一开始我是没有开通的，觉得RSS需要的人不一定多。但是后面有个留言提醒了我，用户不可能闲着没事就上你网站刷新下，再加上我的更新频率不定，如果真的有志同道合的，点个RSS。遇见自己喜欢的文字也可以看看。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="RSS" scheme="https://minsummer.com/tags/RSS/"/>
+    
+  </entry>
   
   <entry>
     <title>关于营销</title>
@@ -1991,13 +2010,13 @@
     <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
     
     
+    <category term="RSS" scheme="https://minsummer.com/tags/RSS/"/>
+    
     <category term="FreshRSS" scheme="https://minsummer.com/tags/FreshRSS/"/>
     
     <category term="订阅源" scheme="https://minsummer.com/tags/%E8%AE%A2%E9%98%85%E6%BA%90/"/>
     
     <category term="坑" scheme="https://minsummer.com/tags/%E5%9D%91/"/>
-    
-    <category term="RSS" scheme="https://minsummer.com/tags/RSS/"/>
     
   </entry>
   

@@ -3166,6 +3166,60 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo打开RSS订阅</title>
+    <url>/2024/10/14/183-Hexo%E6%89%93%E5%BC%80RSS%E8%AE%A2%E9%98%85/</url>
+    <content><![CDATA[<p>好久没有写教程了，这次带来的是给博客主题开通RSS订阅。一开始我是没有开通的，觉得RSS需要的人不一定多。但是后面有个留言提醒了我，用户不可能闲着没事就上你网站刷新下，再加上我的更新频率不定，如果真的有志同道合的，点个RSS。遇见自己喜欢的文字也可以看看。</p>
+<span id="more"></span>
+<p>hexo实现RSS用的是插件：<a href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a>。实现靠的是插件，而不是主题。所以next主题在7.11版本之后就取消了默认开启RSS的按钮，因为会给人误解，主题自带RSS。<br>所以接下来就简单了。</p>
+<ol>
+<li>安装插件，如果你是本地自带环境，可以是用<blockquote>
+<p>npm install hexo-generator-feed –save</p>
+</blockquote>
+</li>
+</ol>
+<p>安装插件，如果你和我一样是使用GitHub的action部署，那么只要在workflows增加一句：npm install hexo-generator-feed即可。</p>
+<ol start="2">
+<li>网站配置：</li>
+</ol>
+<p>在<code>_config.yml</code>最下面增加下面代码，如果没有特殊需求，可以直接复制粘贴进去，下面是完美实例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">feed:</span><br><span class="line">  enable: true</span><br><span class="line">  type: atom</span><br><span class="line">  path: atom.xml</span><br><span class="line">  limit: </span><br><span class="line">  hub:</span><br><span class="line">  content:ture</span><br><span class="line">  content_limit: 0</span><br><span class="line">  content_limit_delim: &#x27; &#x27;</span><br><span class="line">  order_by: -date</span><br><span class="line">  icon: icon.png</span><br><span class="line">  autodiscovery: true</span><br><span class="line">  template:</span><br></pre></td></tr></table></figure>
+<ul>
+<li>enable:是否开通</li>
+<li>type:rss类型，可以支持多个atom，rss2,需要指定对应路径。默认为空即可<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">feed:</span><br><span class="line">type: atom</span><br><span class="line">type:</span><br><span class="line">    - atom</span><br><span class="line">    - rss2</span><br><span class="line">path:</span><br><span class="line">    - atom.xml</span><br><span class="line">    - rss2.xml</span><br></pre></td></tr></table></figure></li>
+<li>path:默认即可，如果有多个类型，要配置多个</li>
+<li>limit:每次订阅最大推送量，一般是为了一次性推送太多过去，打扰他人</li>
+<li>hub:忽略，订阅中心网址</li>
+<li>content:如果为true，会全文发送。即订阅里面包含文章。方便用户直接在自己的客户端观看。</li>
+<li>content_limit:文章字数限制</li>
+<li>content_limit_delim: 如果文章字数达到限制，会进行截断，并且附上这里的内容，比如：‘全文未完’</li>
+<li>order_by: 排序，默认是日期</li>
+<li>icon: 图标</li>
+<li>autodiscovery: 自动发现，建议打开，如果阅读者有RSS阅读工具，会自动识别</li>
+<li>template:配置模板，可以指定路径读取对应的配置模板，方便那种大型配置或者独立配置备份。</li>
+</ul>
+<ol>
+<li>打开你的主题RSS订阅按钮：</li>
+</ol>
+<p>你可以在你的主题，菜单，甚至文章末尾增加订阅按钮。<br>以Next为例，你可以在<code>_config.next.yml</code>下：</p>
+<ol>
+<li>menu:菜单</li>
+<li>sidebar:侧边栏</li>
+<li>follow_me:文章末尾</li>
+</ol>
+<p>在对应配置下面增加一句</p>
+<blockquote>
+<p>RSS: &#x2F;atom.xml || fa fa-rss</p>
+</blockquote>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>确实，对于一个更新不稳定的私人博客来说，RSS确实是一个不错的沟通桥梁。</p>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>RSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>FinalShell跳板配置</title>
     <url>/2022/12/05/FinalShell%E8%B7%B3%E6%9D%BF%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h1 id="FinalShell跳板配置"><a href="#FinalShell跳板配置" class="headerlink" title="FinalShell跳板配置"></a>FinalShell跳板配置</h1><p>ssh跳板主要用来访问那些被封的IP，通过另外一台可以访问的IP跳板访问被墙的IP。</p>
@@ -3240,10 +3294,10 @@
         <category>技术顾问</category>
       </categories>
       <tags>
+        <tag>RSS</tag>
         <tag>FreshRSS</tag>
         <tag>订阅源</tag>
         <tag>坑</tag>
-        <tag>RSS</tag>
       </tags>
   </entry>
   <entry>
