@@ -289,7 +289,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1k</span>
+      <span>1.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -318,6 +318,9 @@
 <li>ssh使用指定密钥连接<br>  如果你的系统内有多个密钥，想要指定一个密钥来访问，那么打开刚才的 .ssh文件夹下面，然后config使用txt打开： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host github.com #名字，随便写</span><br><span class="line">HostName github.com #连接的地址或域名</span><br><span class="line">User git #登陆的用户名</span><br><span class="line">IdentityFile &quot;存放私钥的路径&quot;</span><br><span class="line">IdentitiesOnly yes</span><br></pre></td></tr></table></figure>
   <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85-2023-05-21-22-13-16.png" alt="112-git工具安装-2023-05-21-22-13-16"></li>
 </ol>
+<p>需要注意，不要使用中文路径，否则提交时候会出现乱码<br>如果说非要使用，那么需要修改Git的全局变量：打开Git的bash，输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.quotePath false</span><br></pre></td></tr></table></figure>
+<p>后续你就会发现中文名就可以正确识别。</p>
 <hr>
 <h2 id="PS"><a href="#PS" class="headerlink" title="PS"></a>PS</h2><p>最近登录发现，会提示：GitHub does not provide shell access。具体表现是不断出现指纹让你验证。<br>这是由于GitHub不在提供ssh登录验证。之前我们使用ssh是希望可以绕过网络封锁，但是由于GitHub不在支持，那么直接不要更改操作5即可。<br>这样就需要你的网络可以翻墙，否则还是会出现登录不了的情况。</p>
 <hr>
