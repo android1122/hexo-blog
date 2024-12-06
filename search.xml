@@ -314,7 +314,7 @@
   </entry>
   <entry>
     <title>git工具的安装和使用</title>
-    <url>/2023/05/20/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/</url>
+    <url>/2024/12/04/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/</url>
     <content><![CDATA[<h2 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h2><p>由于我是一个非专业的程序员，所以我一直不用git来管理我得代码，我的代码只有ctrl+z，没有版本管理。这次强上git的缘由是我决定不再使用Typecho了，转型为静态博客。</p>
 <span id="more"></span>
 <h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><ol>
@@ -323,10 +323,12 @@
 下一步是输入存放地址，默认的即可，切记这里输入的是文件路径，不要输入文件夹路径。接着会要求你输入密码：<br>  <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85-2023-05-21-21-50-27.png" alt="112-git工具安装-2023-05-21-21-50-27"><br>  <code>这个密码不是你的GitHub登陆密码，是你使用这个密钥时候输入的密码</code>，是的，就是这么的严格，密钥还有密码验证的，所以我这边建议是不输入，直接回车即可。否则你每提交一次就要被输入一次。<br>  如果一切顺利的话，那么会在目录<code>c/Users/你的电脑名字/.ssh/</code>下看到刚才生成的文件时（id_rsa、id_rsa.pub），表示生成成功。</li>
 <li>部署私钥<br>  接下来就是告诉GitHub我得公钥即id_rsa.pub，然后使用id_rsa进行连接，打开GitHub：<br>  <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85-2023-05-21-21-56-17.png" alt="112-git工具安装-2023-05-21-21-56-17"><br>  Settings下面有个<br>  <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85-2023-05-21-21-57-06.png" alt="112-git工具安装-2023-05-21-21-57-06"><br>  然后用txt打开公钥，把里面的内容复制到即可。</li>
 <li>vscode与git使用<br>当你上面配置好之后，你打开vscode，就可以看到版本管理已经可使用，这边推荐打开设置：<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85-2023-05-21-22-02-36.png" alt="112-git工具安装-2023-05-21-22-02-36"><br>打开之后就会以你本地的文件为主，如果遇见一次大版本的版本回退，你也可以直接覆盖掉之前的修改。<br>然后是Git History这个插件，装好之后可以看到自己提交的历史记录，还支持回退<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85-2023-05-21-22-04-28.png" alt="112-git工具安装-2023-05-21-22-04-28"><br>回退有两种，即soft和hard，soft的话就是哪些动了，就恢复。hard就是把所有文件都删除了，重新来。但是切记，回退之后如果你没有重新推送，系统会显示几个更改要下载，如果你下载了，那么就又变成回退之前的版本，所以每次回退都得强行推送一次，让版本被覆盖掉。如果你返回了，你也可以通过历史记录回到任何一个提交版本。</li>
-<li>使用ssh连接github<br>使用ssh连接的好处就是稳定，因为GitHub域名有时候访问不上，所以这边建议直接改为ssh连接，在你创建仓库的文件夹下有一个<code>.git</code>的文件夹，这个就是配置，打开config，把url：<code>https://github.com/USERNAME/REPOSITORY.git</code>改成<code>git@github.com:USERNAME/REPOSITORY.git</code><br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85-2023-05-21-22-09-38.png" alt="112-git工具安装-2023-05-21-22-09-38"></li>
+<li>使用ssh连接github–现在已经不知此<br>使用ssh连接的好处就是稳定，因为GitHub域名有时候访问不上，所以这边建议直接改为ssh连接，在你创建仓库的文件夹下有一个<code>.git</code>的文件夹，这个就是配置，打开config，把url：<code>https://github.com/USERNAME/REPOSITORY.git</code>改成<code>git@github.com:USERNAME/REPOSITORY.git</code><br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85-2023-05-21-22-09-38.png" alt="112-git工具安装-2023-05-21-22-09-38"></li>
 <li>ssh使用指定密钥连接<br>  如果你的系统内有多个密钥，想要指定一个密钥来访问，那么打开刚才的 .ssh文件夹下面，然后config使用txt打开： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Host github.com #名字，随便写</span><br><span class="line">HostName github.com #连接的地址或域名</span><br><span class="line">User git #登陆的用户名</span><br><span class="line">IdentityFile &quot;存放私钥的路径&quot;</span><br><span class="line">IdentitiesOnly yes</span><br></pre></td></tr></table></figure>
   <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85-2023-05-21-22-13-16.png" alt="112-git工具安装-2023-05-21-22-13-16"></li>
 </ol>
+<hr>
+<h2 id="PS"><a href="#PS" class="headerlink" title="PS"></a>PS</h2><p>最近登录发现，会提示：GitHub does not provide shell access。具体表现是不断出现指纹让你验证。<br>这是由于GitHub不在提供ssh登录验证。之前我们使用ssh是希望可以绕过网络封锁，但是由于GitHub不在支持，那么直接不要更改操作5即可。<br>这样就需要你的网络可以翻墙，否则还是会出现登录不了的情况。</p>
 <hr>
 <p>参考文章：<br><a href="https://git-scm.com/">Git官网</a><br><a href="https://www.huangziheng.com/docs/git/connecting-to-github-with-ssh/">使用SSH连接GitHub</a></p>
 ]]></content>

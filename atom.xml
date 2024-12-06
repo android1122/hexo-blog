@@ -17,6 +17,29 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>git工具的安装和使用</title>
+    <link href="https://minsummer.com/2024/12/04/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/"/>
+    <id>https://minsummer.com/2024/12/04/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/</id>
+    <published>2024-12-04T16:00:00.000Z</published>
+    <updated>2024-12-24T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;缘由&quot;&gt;&lt;a href=&quot;#缘由&quot; class=&quot;headerlink&quot; title=&quot;缘由&quot;&gt;&lt;/a&gt;缘由&lt;/h2&gt;&lt;p&gt;由于我是一个非专业的程序员，所以我一直不用git来管理我得代码，我的代码只有ctrl+z，没有版本管理。这次强上git的缘由是我决定不再使用Typecho了，转型为静态博客。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="git" scheme="https://minsummer.com/tags/git/"/>
+    
+    <category term="vscode" scheme="https://minsummer.com/tags/vscode/"/>
+    
+    <category term="博客搬运" scheme="https://minsummer.com/tags/%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%BF%90/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Power BI 指北</title>
     <link href="https://minsummer.com/2024/12/04/184-PowerBI%E6%8C%87%E5%8C%97/"/>
     <id>https://minsummer.com/2024/12/04/184-PowerBI%E6%8C%87%E5%8C%97/</id>
@@ -1729,29 +1752,6 @@
     <category term="git" scheme="https://minsummer.com/tags/git/"/>
     
     <category term="一日一技术" scheme="https://minsummer.com/tags/%E4%B8%80%E6%97%A5%E4%B8%80%E6%8A%80%E6%9C%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git工具的安装和使用</title>
-    <link href="https://minsummer.com/2023/05/20/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/"/>
-    <id>https://minsummer.com/2023/05/20/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/</id>
-    <published>2023-05-20T16:00:00.000Z</published>
-    <updated>2023-05-20T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;缘由&quot;&gt;&lt;a href=&quot;#缘由&quot; class=&quot;headerlink&quot; title=&quot;缘由&quot;&gt;&lt;/a&gt;缘由&lt;/h2&gt;&lt;p&gt;由于我是一个非专业的程序员，所以我一直不用git来管理我得代码，我的代码只有ctrl+z，没有版本管理。这次强上git的缘由是我决定不再使用Typecho了，转型为静态博客。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
-    
-    
-    <category term="git" scheme="https://minsummer.com/tags/git/"/>
-    
-    <category term="vscode" scheme="https://minsummer.com/tags/vscode/"/>
-    
-    <category term="博客搬运" scheme="https://minsummer.com/tags/%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%BF%90/"/>
     
   </entry>
   
