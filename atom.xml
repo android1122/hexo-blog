@@ -6,7 +6,7 @@
   <link href="https://minsummer.com/atom.xml" rel="self"/>
   
   <link href="https://minsummer.com/"/>
-  <updated>2024-10-14T16:00:00.000Z</updated>
+  <updated>2024-12-24T16:00:00.000Z</updated>
   <id>https://minsummer.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Power BI 指北</title>
+    <link href="https://minsummer.com/2024/12/04/184-PowerBI%E6%8C%87%E5%8C%97/"/>
+    <id>https://minsummer.com/2024/12/04/184-PowerBI%E6%8C%87%E5%8C%97/</id>
+    <published>2024-12-04T16:00:00.000Z</published>
+    <updated>2024-12-24T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;最近由于工作数据需要归集，所以在网络三找了一圈数据处理之后，发现了Power BI这个简单的神器。于是想着造福别人的角度，就做了这么一篇Power BI 指北教程，本文从最基础，最实用的概念教学，没有各种函数的复杂的研究，但是能满足入门者99%的需求。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="Power BI" scheme="https://minsummer.com/tags/Power-BI/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo打开RSS订阅</title>
