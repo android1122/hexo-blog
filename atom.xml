@@ -6,7 +6,7 @@
   <link href="https://minsummer.com/atom.xml" rel="self"/>
   
   <link href="https://minsummer.com/"/>
-  <updated>2024-12-24T16:00:00.000Z</updated>
+  <updated>2024-12-13T16:00:00.000Z</updated>
   <id>https://minsummer.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于2025的一些展望</title>
+    <link href="https://minsummer.com/2024/12/13/185-%E5%85%B3%E4%BA%8E2025%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B1%95%E6%9C%9B/"/>
+    <id>https://minsummer.com/2024/12/13/185-%E5%85%B3%E4%BA%8E2025%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B1%95%E6%9C%9B/</id>
+    <published>2024-12-13T16:00:00.000Z</published>
+    <updated>2024-12-13T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;每年我都会写一些关于下一年的想法；倒不是为了验证自己的预言有多准。而是一种莫向外求的概念。诚然我并不是什么专业的经济学家，但是一个你避不开的经济问题摆在你面前，你应该知道自己的答案是什么，而不是简简单单的复制，粘贴别人的答案。模仿，然后做出自己的答案。这是很简单的学习手段。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+    
+    <category term="2024" scheme="https://minsummer.com/tags/2024/"/>
+    
+    <category term="2025" scheme="https://minsummer.com/tags/2025/"/>
+    
+    <category term="一些想法" scheme="https://minsummer.com/tags/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>git工具的安装和使用</title>
