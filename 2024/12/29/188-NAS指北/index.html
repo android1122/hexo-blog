@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"minsummer.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="先说说现状：我目前有一台机顶盒CM311-1A，性能来说勉强是够用得。后面给我刷成了Armbian，用来挂青龙docker。外挂了一个U盘当作存储池。它的缺点很明显：  硬盘容量少，外接U盘也只能是usb2.0的 网口是百兆网口，如果操作过多会卡顿 ARM系统，性能偏弱，太复杂的复制粘贴有时候会卡死，不知道是usb2.0的问题还行机器问题 没有WiFi优点也有： 显卡性能可以 价格便宜，是真便宜，">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="NAS指北">
+<meta property="og:url" content="https://minsummer.com/2024/12/29/188-NAS%E6%8C%87%E5%8C%97/">
+<meta property="og:site_name" content="我是豆豆">
+<meta property="og:description" content="先说说现状：我目前有一台机顶盒CM311-1A，性能来说勉强是够用得。后面给我刷成了Armbian，用来挂青龙docker。外挂了一个U盘当作存储池。它的缺点很明显：  硬盘容量少，外接U盘也只能是usb2.0的 网口是百兆网口，如果操作过多会卡顿 ARM系统，性能偏弱，太复杂的复制粘贴有时候会卡死，不知道是usb2.0的问题还行机器问题 没有WiFi优点也有： 显卡性能可以 价格便宜，是真便宜，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-13-48-03.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-14-40-36.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-14-34-42.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-15-04-56.png">
+<meta property="article:published_time" content="2024-12-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-12-29T16:00:00.000Z">
+<meta property="article:author" content="张大爆">
+<meta property="article:tag" content="NAS">
+<meta property="article:tag" content="硬件指南">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-13-48-03.png">
+
+
+<link rel="canonical" href="https://minsummer.com/2024/12/29/188-NAS%E6%8C%87%E5%8C%97/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://minsummer.com/2024/12/29/188-NAS%E6%8C%87%E5%8C%97/","path":"2024/12/29/188-NAS指北/","title":"NAS指北"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>NAS指北 | 我是豆豆</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-189642379-1","only_pageview":true,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+  <script data-pjax defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{&quot;token&quot;: &quot;2c44721ef211470c8cb156f38ca476ea&quot;}'></script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3599006834125162"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="我是豆豆" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">我是豆豆</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">吃饭，睡觉，打豆豆</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">343</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">185</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%83%A0%E6%99%AE%E5%B7%A5%E4%BD%9C%E7%AB%99"><span class="nav-number">1.</span> <span class="nav-text">惠普工作站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%BA%E6%88%BF%E9%80%80%E4%BC%8D%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">机房退伍服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E9%80%89%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">机器选型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%AD%E4%B9%B0%E8%BF%87%E7%A8%8B"><span class="nav-number">4.</span> <span class="nav-text">购买过程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number"></span> <span class="nav-text">总结</span></a></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">张大爆</p>
+  <div class="site-description" itemprop="description">经常会忘记一些东西，用这里来记录我们曾经来过</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">185</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">343</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/android1122" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;android1122" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:noway@minsummer.com" title="E-Mail → mailto:noway@minsummer.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://speedtt.minsummer.com/" title="https:&#x2F;&#x2F;speedtt.minsummer.com&#x2F;" rel="noopener" target="_blank">共享机场-移动</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://speedttsjc.minsummer.com/" title="https:&#x2F;&#x2F;speedttsjc.minsummer.com&#x2F;" rel="noopener" target="_blank">共享机场-三网</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wangergoudebaobaodian.taobao.com/" title="https:&#x2F;&#x2F;wangergoudebaobaodian.taobao.com&#x2F;" rel="noopener" target="_blank">淘宝店</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://minsummer.com/2024/12/29/188-NAS%E6%8C%87%E5%8C%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="张大爆">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我是豆豆">
+      <meta itemprop="description" content="经常会忘记一些东西，用这里来记录我们曾经来过">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="NAS指北 | 我是豆豆">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          NAS指北
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-12-30 00:00:00" itemprop="dateCreated datePublished" datetime="2024-12-30T00:00:00+08:00">2024-12-30</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>7 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>先说说现状：我目前有一台机顶盒CM311-1A，性能来说勉强是够用得。后面给我刷成了Armbian，用来挂青龙docker。外挂了一个U盘当作存储池。<br>它的缺点很明显：</p>
+<ol>
+<li>硬盘容量少，外接U盘也只能是usb2.0的</li>
+<li>网口是百兆网口，如果操作过多会卡顿</li>
+<li>ARM系统，性能偏弱，太复杂的复制粘贴有时候会卡死，不知道是usb2.0的问题还行机器问题</li>
+<li>没有WiFi<br>优点也有：</li>
+<li>显卡性能可以</li>
+<li>价格便宜，是真便宜，我当初买的时候只要60，内存2G，硬盘8G</li>
+<li>可玩性强，可以刷成服务器，也可以刷成机顶盒，后续准备刷成机顶盒试试。</li>
+</ol>
+<span id="more"></span>
+<p>说完现状，现在说说我的需求，其实更多的是对应CM311-1A的那些缺点：</p>
+<ol>
+<li>X86系统，ARM系统太过小众，需要资料不好找，性能也不强。</li>
+<li>可以接多个硬盘，之前U盘才64G，我每次下载东西都要删除点啥。</li>
+</ol>
+<p>基于以上，我选出了一些配置和相对应的价格，硬件选型：</p>
+<ol>
+<li>软路由，类似J1900，N100这些性能强大的新款路由器，外接或者直接内置一个硬盘</li>
+<li>惠普工作站：z230，z240.</li>
+<li>标准服务器：戴尔PowerEdge R730XD，浪潮SA5212M4，华为 RH2285 v2机架式服务器</li>
+<li>退休的NAS：群晖等</li>
+</ol>
+<p>NAS和普通电脑最大的不同也许不在于功耗，而是硬盘。正常的电脑，硬盘价格占据整体机器也许就是十分之一，甚至二十分之一，但是NAS由于需要大容量，往往会有10T，20T容量，多盘位省下来可以使用比较低容量的硬盘，所以往往NAS成本构中的大头是硬盘，其他配件一般1000以内搞定。然后现在除开硬盘的硬件成本其实很低，主要的选型在于三点：硬盘数量，性能，价格。</p>
+<ol>
+<li>软路由硬盘少，性能强，价格高，直接pass。</li>
+<li>惠普的工作站硬盘数量中等，性能强，价格中等，如果你想要买个先玩玩可以考虑。</li>
+<li>服务器：硬盘数量多，性能强，价格合适，如果想一一步到位，且家里有地方放的话，可以直接考虑。</li>
+<li>成品NAS：硬盘数量多的，价格高，而且性能一般般。成品NAS是最不推荐的一款，毕竟成品NAS是出了名的买系统，送硬件。</li>
+</ol>
+<p>现在主流的平台一般就是X99平台，其中C612平台和X99平台可以混用，主要是BIOS需要魔改。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-13-48-03.png" alt="188-NAS指北-2024-12-31-13-48-03"></p>
+<p>以上图为例，很多X99平台经过魔改BIOS，也可以用上C612芯片组的CPU，这点在鱼龙混杂的山寨寨板里面是十分正常的。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-14-40-36.png" alt="188-NAS指北-2024-12-31-14-40-36"></p>
+<h2 id="惠普工作站"><a href="#惠普工作站" class="headerlink" title="惠普工作站"></a>惠普工作站</h2><p>工作站：为专业领域设计的，所以硬件上会相较于普通的电脑会有更多优势，比如适配更好的CPU，更多的的通道等。<br>现在主流的工作站有，Z220,Z440,Z2g4，20，40，代表代数越往上，越高。然后前面的Z2,Z4,Z8分别代表着E3,E5,E5双路。需要知道，虽然接口都一致，但是由于BIOS问题，很多时候无法使用民用的CPU，所以购买时候需要问清楚有没有魔改BIOS。<br>品牌机的话有：800g2，800g3，800g4，前面的800代表机型外貌，g2，g3，g4分别对应4-5代，6-7代，8-9代CPU。后缀sff是半高机箱，twr是全高机型。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-14-34-42.png" alt="188-NAS指北-2024-12-31-14-34-42"></p>
+<p>以z220为例，咸鱼只要169包邮，而最高级的Z2g4支持8-9代cpu和E-21系列的，只要438.缺点是硬盘位少。800g4也是8-9代cpu支持，但是只有330左右。需要注意，很多机器是经过BIOS魔改的，让他可以支持服务器的，这点需要注意。</p>
+<h2 id="机房退伍服务器"><a href="#机房退伍服务器" class="headerlink" title="机房退伍服务器"></a>机房退伍服务器</h2><p>服务器目前主流的是三款产品：戴尔PowerEdge R730XD，浪潮SA5212M4，华为 RH2285 v2机架式服务器等。具体可以参考<a target="_blank" rel="noopener" href="https://www.bilibili.com/opus/808391022366162966?spm_id_from=333.1387.0.0">b站网友写的文章</a>，里面进行了分析，我觉得很合理，通过参考盘位，拓展性，综合分析，之后得出结论。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-15-04-56.png" alt="188-NAS指北-2024-12-31-15-04-56"></p>
+<p>其中戴尔有R730，和R730xd，xd后缀是有12个3.5英寸盘位。<br>其实，同样的Z440和服务器准系统价格是一样的，但是服务器的拓展性，还可以双路E5，是吊打工作站。唯一的问题是功耗和噪音。噪音的问题已经解决，功耗的问题，只能说见仁见智了。</p>
+<h2 id="机器选型"><a href="#机器选型" class="headerlink" title="机器选型"></a>机器选型</h2><p>我看了下，网络上大多数选择的是DELL R730XD，作为一个垃圾佬，我选择浪潮5212M4，网络上选择戴尔的原因很多一般是由于：戴尔的管理网口比较好和戴尔的拓展性。但是我由于并没有太多的拓展需求，最多后续增加PCIE万兆网卡。至于管理网口的功能，我的需求也不大，所以也不需要太好。<br>这边需要注意两点，服务器也分版本，我们需要注意优先选择带3008阵列和82599双万兆网卡(sfp+接口)的，前者阵列卡由于是板载的，所以一旦没有那么就不会</p>
+<h2 id="购买过程"><a href="#购买过程" class="headerlink" title="购买过程"></a>购买过程</h2><ol>
+<li>咸鱼上很多都是鱼龙混杂，需要多问问，现在问下来准系统：戴尔R730 XD最低要600不包邮，邮费给你50，也得650+。浪潮5212M4准系统随便问几家都要330+，有些夸张的，箱子加邮费要你100，到400+，所以这两者差价就100到200之间。</li>
+<li>最后240准系统+50块钱2块E5 2650 v4 +120块钱2条镁光16g内存，运费50 ，合计460一套齐全。</li>
+<li>整体购买下来的感受就是要多问：一个是因为鱼龙混杂，一个是因为确实一分钱一分货。同样是C610芯片组的，戴尔的相较于浪潮贵的原因是浪潮的产品是2015年左右的，但是戴尔的是2019年左右。5年的时间，400块钱不到的差价。人生啊</li>
+</ol>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>我购买次服务器的原因很简单，我有需求，现在好多看到Github上比较有兴趣的项目我都苦于手上美有一台性能强劲的服务器可以让我测试一下。这是我的兴趣爱好之一；更何况这次整体成本大头是在硬盘，服务器反而是怎么垃圾怎么来。性能也绝对是够用的。剩下的问题是电费，但是实际上我是无所谓的，电这东西是幸福感必须花费的东西，无论是电脑，电视，空调，热水器。我们不能因为害怕电费，而去放弃这些东西。电已经和水，空气成为了一个现代人生活的必需品了。</p>
+<p>后续我会撰写相对应的服务器的搭建，毕竟我也是第一次使用服务器系统。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/NAS/" rel="tag"># NAS</a>
+              <a href="/tags/%E7%A1%AC%E4%BB%B6%E6%8C%87%E5%8D%97/" rel="tag"># 硬件指南</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/12/13/185-%E5%85%B3%E4%BA%8E2025%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B1%95%E6%9C%9B/" rel="prev" title="关于2025的一些展望">
+                  <i class="fa fa-angle-left"></i> 关于2025的一些展望
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 国窖1573 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">张大爆</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">290k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">17:34</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/android1122" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.min.js","integrity":"sha256-G8ouPAnw4zzMbnAenHnVz6h9XpKbNdOkrqTh7AadyHs="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"android1122","repo":"hexo-blog","client_id":"6950c9229796295b9867","client_secret":"9af4438d89e7a09669ec33d632ba554589a1f7d7","admin_user":"android1122","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"a21fb0135cf2c7ec4fefbdfa3500f77d"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
