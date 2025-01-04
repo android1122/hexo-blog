@@ -6,7 +6,7 @@
   <link href="https://minsummer.com/atom.xml" rel="self"/>
   
   <link href="https://minsummer.com/"/>
-  <updated>2024-12-29T16:00:00.000Z</updated>
+  <updated>2023-02-01T16:00:00.000Z</updated>
   <id>https://minsummer.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>搬瓦工上新DC99限量POWERBOX</title>
+    <link href="https://minsummer.com/2025/01/04/190-%E7%93%A6%E5%B7%A525%E5%B9%B4%E4%B8%8A%E6%96%B0DC99%E9%99%90%E9%87%8FPOWERBOX/"/>
+    <id>https://minsummer.com/2025/01/04/190-%E7%93%A6%E5%B7%A525%E5%B9%B4%E4%B8%8A%E6%96%B0DC99%E9%99%90%E9%87%8FPOWERBOX/</id>
+    <published>2025-01-04T06:51:04.940Z</published>
+    <updated>2023-02-01T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;瓦工2025年新年第一弹，很具有作为传家宝的优质服务器。&lt;br&gt;套餐配置：&lt;br&gt;SSD：30 GB RAID-10&lt;br&gt;内存：1536 MB&lt;br&gt;CPU：1x Intel Xeon&lt;br&gt;传输：1500 GB&amp;#x2F;月&lt;br&gt;链接速度：2.5 Gigabit&lt;br&gt;位置：洛杉矶，DC99&lt;br&gt;(6.77%)循环优惠码：BWHCGLUKKB&lt;br&gt;折后价：$41.95 &amp;#x2F;年：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想，技术顾问，那些年遇见的人，那本书" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3%EF%BC%8C%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE%EF%BC%8C%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA%EF%BC%8C%E9%82%A3%E6%9C%AC%E4%B9%A6/"/>
+    
+    
+    <category term="标签1" scheme="https://minsummer.com/tags/%E6%A0%87%E7%AD%BE1/"/>
+    
+    <category term="标签2" scheme="https://minsummer.com/tags/%E6%A0%87%E7%AD%BE2/"/>
+    
+  </entry>
   
   <entry>
     <title>NAS指北</title>
@@ -974,6 +995,28 @@
     <category term="配置指南" scheme="https://minsummer.com/tags/%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/"/>
     
     <category term="Turbo ACC" scheme="https://minsummer.com/tags/Turbo-ACC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NAS系统选型讨论</title>
+    <link href="https://minsummer.com/2024/01/02/189-NAS%E7%B3%BB%E7%BB%9F%E9%80%89%E5%9E%8B%E8%AE%A8%E8%AE%BA/"/>
+    <id>https://minsummer.com/2024/01/02/189-NAS%E7%B3%BB%E7%BB%9F%E9%80%89%E5%9E%8B%E8%AE%A8%E8%AE%BA/</id>
+    <published>2024-01-02T16:00:00.000Z</published>
+    <updated>2024-01-02T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;上文说到这次买了一个浪潮的老旧服务器，那么接下来就要讨论我这台服务器需要安装什么系统。还是说下我的需求：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;安装飞牛的nas系统&lt;/li&gt;
+&lt;li&gt;可以让我使用一个Windows系统来测试一些东西</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="NAS" scheme="https://minsummer.com/tags/NAS/"/>
     
   </entry>
   
