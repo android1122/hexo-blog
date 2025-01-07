@@ -18,9 +18,9 @@
   
   <entry>
     <title>搬瓦工上新DC99限量POWERBOX</title>
-    <link href="https://minsummer.com/2025/01/04/190-%E7%93%A6%E5%B7%A525%E5%B9%B4%E4%B8%8A%E6%96%B0DC99%E9%99%90%E9%87%8FPOWERBOX/"/>
-    <id>https://minsummer.com/2025/01/04/190-%E7%93%A6%E5%B7%A525%E5%B9%B4%E4%B8%8A%E6%96%B0DC99%E9%99%90%E9%87%8FPOWERBOX/</id>
-    <published>2025-01-04T06:51:04.940Z</published>
+    <link href="https://minsummer.com/2025/01/07/190-%E7%93%A6%E5%B7%A525%E5%B9%B4%E4%B8%8A%E6%96%B0DC99%E9%99%90%E9%87%8FPOWERBOX/"/>
+    <id>https://minsummer.com/2025/01/07/190-%E7%93%A6%E5%B7%A525%E5%B9%B4%E4%B8%8A%E6%96%B0DC99%E9%99%90%E9%87%8FPOWERBOX/</id>
+    <published>2025-01-07T01:08:38.418Z</published>
     <updated>2023-02-01T16:00:00.000Z</updated>
     
     
@@ -31,9 +31,11 @@
     <category term="随想，技术顾问，那些年遇见的人，那本书" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3%EF%BC%8C%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE%EF%BC%8C%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA%EF%BC%8C%E9%82%A3%E6%9C%AC%E4%B9%A6/"/>
     
     
-    <category term="标签1" scheme="https://minsummer.com/tags/%E6%A0%87%E7%AD%BE1/"/>
+    <category term="搬瓦工" scheme="https://minsummer.com/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/"/>
     
-    <category term="标签2" scheme="https://minsummer.com/tags/%E6%A0%87%E7%AD%BE2/"/>
+    <category term="VPS" scheme="https://minsummer.com/tags/VPS/"/>
+    
+    <category term="POWERBOX" scheme="https://minsummer.com/tags/POWERBOX/"/>
     
   </entry>
   
@@ -999,6 +1001,29 @@
   </entry>
   
   <entry>
+    <title>浪潮SA5112M4安装EXSI</title>
+    <link href="https://minsummer.com/2024/01/04/191-%E6%B5%AA%E6%BD%AESA5112M4%E5%AE%89%E8%A3%85EXSI/"/>
+    <id>https://minsummer.com/2024/01/04/191-%E6%B5%AA%E6%BD%AESA5112M4%E5%AE%89%E8%A3%85EXSI/</id>
+    <published>2024-01-04T16:00:00.000Z</published>
+    <updated>2024-01-04T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;买的服务器终于到货了，在安装EXSI系统中吃了不少的坑，在此特别记录一下。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="NAS" scheme="https://minsummer.com/tags/NAS/"/>
+    
+    <category term="家用服务器" scheme="https://minsummer.com/tags/%E5%AE%B6%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="浪潮SA5112M4" scheme="https://minsummer.com/tags/%E6%B5%AA%E6%BD%AESA5112M4/"/>
+    
+  </entry>
+  
+  <entry>
     <title>NAS系统选型讨论</title>
     <link href="https://minsummer.com/2024/01/02/189-NAS%E7%B3%BB%E7%BB%9F%E9%80%89%E5%9E%8B%E8%AE%A8%E8%AE%BA/"/>
     <id>https://minsummer.com/2024/01/02/189-NAS%E7%B3%BB%E7%BB%9F%E9%80%89%E5%9E%8B%E8%AE%A8%E8%AE%BA/</id>
@@ -1017,6 +1042,8 @@
     
     
     <category term="NAS" scheme="https://minsummer.com/tags/NAS/"/>
+    
+    <category term="NAS系统选型" scheme="https://minsummer.com/tags/NAS%E7%B3%BB%E7%BB%9F%E9%80%89%E5%9E%8B/"/>
     
   </entry>
   
@@ -2824,9 +2851,9 @@
     <category term="那些年遇见的人" scheme="https://minsummer.com/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/"/>
     
     
-    <category term="那些年的二哥" scheme="https://minsummer.com/tags/%E9%82%A3%E4%BA%9B%E5%B9%B4%E7%9A%84%E4%BA%8C%E5%93%A5/"/>
-    
     <category term="二哥" scheme="https://minsummer.com/tags/%E4%BA%8C%E5%93%A5/"/>
+    
+    <category term="那些年的二哥" scheme="https://minsummer.com/tags/%E9%82%A3%E4%BA%9B%E5%B9%B4%E7%9A%84%E4%BA%8C%E5%93%A5/"/>
     
   </entry>
   
