@@ -18,9 +18,9 @@
   
   <entry>
     <title>搬瓦工上新DC99限量POWERBOX</title>
-    <link href="https://minsummer.com/2025/01/08/190-%E7%93%A6%E5%B7%A525%E5%B9%B4%E4%B8%8A%E6%96%B0DC99%E9%99%90%E9%87%8FPOWERBOX/"/>
-    <id>https://minsummer.com/2025/01/08/190-%E7%93%A6%E5%B7%A525%E5%B9%B4%E4%B8%8A%E6%96%B0DC99%E9%99%90%E9%87%8FPOWERBOX/</id>
-    <published>2025-01-08T03:17:55.634Z</published>
+    <link href="https://minsummer.com/2025/01/16/190-%E7%93%A6%E5%B7%A525%E5%B9%B4%E4%B8%8A%E6%96%B0DC99%E9%99%90%E9%87%8FPOWERBOX/"/>
+    <id>https://minsummer.com/2025/01/16/190-%E7%93%A6%E5%B7%A525%E5%B9%B4%E4%B8%8A%E6%96%B0DC99%E9%99%90%E9%87%8FPOWERBOX/</id>
+    <published>2025-01-16T09:23:29.752Z</published>
     <updated>2023-02-01T16:00:00.000Z</updated>
     
     
@@ -59,6 +59,31 @@
     <category term="浪潮SA5112M4" scheme="https://minsummer.com/tags/%E6%B5%AA%E6%BD%AESA5112M4/"/>
     
     <category term="服务器" scheme="https://minsummer.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>openwrt使用指南</title>
+    <link href="https://minsummer.com/2025/01/06/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
+    <id>https://minsummer.com/2025/01/06/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
+    <published>2025-01-06T16:00:00.000Z</published>
+    <updated>2025-01-06T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;之前买了3个小米AX5京东云版本的路由器，刷了openwrt，最近趁着空闲，想着给它升级下固件，顺带记录下中间遇见的坑&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="路由器" scheme="https://minsummer.com/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
+    
+    <category term="openwrt" scheme="https://minsummer.com/tags/openwrt/"/>
+    
+    <category term="lede" scheme="https://minsummer.com/tags/lede/"/>
+    
+    <category term="IPQ60XX" scheme="https://minsummer.com/tags/IPQ60XX/"/>
     
   </entry>
   
