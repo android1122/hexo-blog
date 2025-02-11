@@ -345,145 +345,6 @@
       </tags>
   </entry>
   <entry>
-    <title>git简明学习手册</title>
-    <url>/2023/05/22/114git%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/</url>
-    <content><![CDATA[<p>简单易学的git知识导图</p>
-<span id="more"></span>
-<h1 id="git简明指南"><a href="#git简明指南" class="headerlink" title="git简明指南"></a>git简明指南</h1><ol start="0">
-<li>git工作流<ol>
-<li>本地git add到暂存区</li>
-<li>暂存区git commit到HEAD</li>
-<li>HEAD的内容git push后才会到你的远程仓库</li>
-</ol>
-</li>
-<li>创建&#x2F;复制<ol>
-<li>git init</li>
-<li>git clone</li>
-</ol>
-</li>
-<li>增加&#x2F;删除文件<ol>
-<li>git add</li>
-<li>或者直接增加</li>
-<li>git rm</li>
-<li>或者直接删除</li>
-</ol>
-</li>
-<li>回退版本<ol>
-<li>git reset<ol>
-<li>–soft 回退上一次修改的内容</li>
-<li>–hard 回退所有内容</li>
-<li>HEAD~0 【0-n】回退到之前第几个版本</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>分支管理<ol>
-<li>git branch 创建分支</li>
-<li>git merge 合并分支</li>
-<li>git checout 切换分支</li>
-</ol>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-        <tag>一日一技术</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Naiveproxy客户端搭建指南</title>
-    <url>/2023/05/29/116-Naiveproxy%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h2 id="小心使得万年船"><a href="#小心使得万年船" class="headerlink" title="小心使得万年船"></a>小心使得万年船</h2><p>最近又要进入敏感时期了，所以安全得包装，22年10月份封禁了一大批。随着Xray作者提出的<a href="https://github.com/XTLS/Trojan-killer">TLS in TLS可以被探测到</a>。可见目前协议不是安全的，Xray提出了一个解决方案：XTLS。但是XTLS会占用服务器得443端口，需要接手服务器所有流量。对于目前得我来说并不是很方便，而且我推崇服务器只开放常规端口，做到像普通服务器一样。</p>
-<span id="more"></span>
-<h2 id="几种解决方案"><a href="#几种解决方案" class="headerlink" title="几种解决方案"></a>几种解决方案</h2><p>那么，有没有别的安全得翻墙方式么？也是有的，针对TLS in TLS，那片文章也提出了三个解决方案。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-Naiveproxy%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97-2023-05-30-09-32-52.png" alt="117-Naiveproxy客户端搭建指南-2023-05-30-09-32-52"></p>
-<ol>
-<li>NaiveProxy<ul>
-<li>原理是高度模仿HTTPS访问</li>
-<li>使用的人数不多，而且客户端支持也不多，甚至文档也不多</li>
-</ul>
-</li>
-<li>魔改得shadowsocks<ul>
-<li>新版本得Xray支持，就是推荐的加密方式：<br>   2022-blake3-aes-128-gcm<br>   2022-blake3-aes-256-gcm<br>   2022-blake3-chacha20-poly1305</li>
-<li>好像不支持caddy转发，只能开放对应端口，不是很符合我尽量少开放端口得原则</li>
-<li>NaiveProxy说过不要自己戳密码，SS就是他举例得典型</li>
-</ul>
-</li>
-<li>MITM，简单说就内部流量脱去TLS加密，由服务器进行加密。<ul>
-<li>原理很简单，你不是TLS in TLS，那么我内部得就明文传输，这样就是完整的TLS</li>
-<li>问题也很简单，就是你翻墙访问得所有网站都会提示你证书不可信。</li>
-</ul>
-</li>
-</ol>
-<p>所以最后我选择了NaiveProxy。</p>
-<h2 id="部署方案"><a href="#部署方案" class="headerlink" title="部署方案"></a>部署方案</h2><p>准备材料：</p>
-<ul>
-<li>1台可以访问的VPS</li>
-<li>caddy v2<br>部署方式：</li>
-<li>docker部署</li>
-</ul>
-<p>这个很重要，请确认你的版本和我得是不是对应的，因为我这次找了很多文档，都是caddy v1的或者就是什么其他部署方式，对我来说，参考程度有限。<br>其次我不推崇使用一键脚本，那用起来舒服，但是对自己的服务器上有一块盲区，总归是不安全的。我推荐使用docker部署，安全和便捷兼具，我会尽量做到一步到位。如果你还没安装docker，可以翻看我之前的教程，或者去官方看教程。也是很简单的。<br>NaiveProxy是没有服务器软件的，直接使用包含naïve的caddy forwardproxy分支来代替单独的naïve服务端，所以我们需要一个docker安装caddy即可。</p>
-<ol>
-<li><p>创建一个空文件夹,然后创建dockerfile，复制一下代码：</p>
- <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FROM caddy:builder-alpine AS builder</span><br><span class="line"></span><br><span class="line">RUN xcaddy build \</span><br><span class="line">    --with github.com/caddyserver/forwardproxy@caddy2=github.com/klzgrad/forwardproxy@naive</span><br><span class="line">FROM caddy:alpine</span><br><span class="line"></span><br><span class="line">COPY --from=builder /usr/bin/caddy /usr/bin/caddy</span><br></pre></td></tr></table></figure>
-<p> 这里需要注意<a href="https://github.com/caddyserver/forwardproxy/tree/caddy2">forwardproxy</a>的master是caddy v1版本的，所以必须在后面写上<code>caddy2</code>，然后看文档也要注意，选择caddy2分支。两边不一样。</p>
-</li>
-<li><p>在同一个文件夹下面创建文件docker-compose.yml</p>
- <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">version: &quot;3.9&quot;  # optional since v1.27.0</span><br><span class="line">services:</span><br><span class="line">caddy: #caddy反向代理</span><br><span class="line">    container_name: caddy</span><br><span class="line">    build:</span><br><span class="line">    context: .</span><br><span class="line">    dockerfile: dockerfile #这里就是调用你步骤一创建的文件</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    environment:</span><br><span class="line">    - PUID=1000</span><br><span class="line">    - PGID=1000</span><br><span class="line">    - TZ=Asia/Shanghai</span><br><span class="line">    volumes:</span><br><span class="line">    - /&lt;你的路径&gt;/data:/data #caddy留存的证书信息,最好保存,方便后续迁移</span><br><span class="line">    - /&lt;你的路径&gt;/caddyconfig:/etc/caddy #caddyfile的配置文件</span><br><span class="line">    - /&lt;你的路径&gt;/file:/usr/share/caddy #caddy的运行网页</span><br><span class="line">    ports:</span><br><span class="line">    - &quot;80:80&quot;</span><br><span class="line">    - &quot;443:443&quot;</span><br><span class="line">    - &quot;443:443/udp&quot;</span><br></pre></td></tr></table></figure></li>
-<li><p>部署docker，直接使用命令(确保路径下有这个文件)：</p>
- <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker-compose up docker-compose.yml</span><br></pre></td></tr></table></figure></li>
-<li><p>在<code>- /&lt;你的路径&gt;/caddyconfig:/etc/caddy #caddyfile的配置文件</code>这个路径下创建Caddyfile文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:443, xxxx.xxxx.com &#123; # 443必须的，否则无法执行，逗号后面有个空格，别忘记了。</span><br><span class="line">    route &#123;</span><br><span class="line">        forward_proxy &#123;</span><br><span class="line">            basic_auth &lt;用户名&gt; &lt;密码&gt;</span><br><span class="line">            hide_ip</span><br><span class="line">            hide_via</span><br><span class="line">        &#125;</span><br><span class="line">        file_server &#123;</span><br><span class="line">            root /usr/share/caddy/share # 可以在之前的网页路径下随便放一个index网页</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>重启下docker就可以了。</p>
-</li>
-<li><p>打开本地电脑的客户端下的<code>config.json</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;listen&quot;: &quot;socks://127.0.0.1:1080&quot;,</span><br><span class="line">&quot;proxy&quot;: &quot;https://用户名:密码@xxxx.xxxx.com&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>端口可以改，也可以不改。</p>
-</li>
-<li><p>如果使用习惯v2rayng的话，可以：服务器——添加自定义服务器<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-Naiveproxy%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97-2023-05-30-10-13-21.png" alt="117-Naiveproxy客户端搭建指南-2023-05-30-10-13-21"><br>浏览选择一下对应的config.json即可。但是测速和测延迟就失效了。</p>
-</li>
-</ol>
-<p>到此就可以直接使用了，最后测一下速度：</p>
-<ol>
-<li><p>vless+h2+tls:<br> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-2023-05-29-21-06-43.png" alt="117-2023-05-29-21-06-43"></p>
-</li>
-<li><p>NavieProxy:<br> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-2023-05-29-21-08-18.png" alt="117-2023-05-29-21-08-18"></p>
-</li>
-<li><p>自建speedtest的测速:<br> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-2023-05-29-21-09-15.png" alt="117-2023-05-29-21-09-15"></p>
-</li>
-</ol>
-<p>最后的速度和网页测速差不多，这是晚高峰的速度，我1000M的网络跑到这个速度算是很可以了。</p>
-<h2 id="其他的配置说明"><a href="#其他的配置说明" class="headerlink" title="其他的配置说明"></a>其他的配置说明</h2><p>这里说明一下其他的可选配置：</p>
-<ol>
-<li>caddy的route功能：将一组指令按字面意思作为一个单元进行评估。路由块中包含的指令不会在内部被重新排序。所以route包围的命令就会同等对待，正常是按照先后顺序，前面的指令执行后面的指令就不会继续执行，所以使用route可以避免这种情况。</li>
-<li>forword的一些功能，具体的可以去看对应官方文档，反正功能挺齐全的。<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:443, example.com</span><br><span class="line"> route &#123;</span><br><span class="line">     forward_proxy &#123;</span><br><span class="line">         basic_auth user1 0NtCL2JPJBgPPMmlPcJ</span><br><span class="line">         basic_auth user2 密码 # 身份验证</span><br><span class="line">         ports     80 443 #端口，如果你用的是别的端口在这改</span><br><span class="line">         hide_ip # 推荐，防止主动探测的</span><br><span class="line">         hide_via #推荐，防止主动探测的</span><br><span class="line">         probe_resistance xxxx.com #防止主动探测的</span><br><span class="line">         serve_pac        /secret-proxy.pac # pac文件存放，可以</span><br><span class="line">         dial_timeout     30</span><br><span class="line">         upstream         https://user:password@extra-upstream-hop.com # 这个是上游的，用来配置代理链条的，即一台给另一台</span><br><span class="line">         acl &#123;</span><br><span class="line">             allow     *.caddyserver.com</span><br><span class="line">             deny      192.168.1.1/32 192.168.0.0/16 *.prohibitedsite.com *.localhost</span><br><span class="line">             allow     ::1/128 8.8.8.8 github.com *.github.io</span><br><span class="line">             allow_file /path/to/whitelist.txt</span><br><span class="line">             deny_file  /path/to/blacklist.txt</span><br><span class="line">             allow     all</span><br><span class="line">             deny      all # unreachable rule, remaining requests are matched by `allow all` above</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     file_server</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-其中:<ul>
-<li>hide_ip 用来删除头文件的ip和下面一样，推荐配置</li>
-<li>hide_via 用来删除头文件via的推荐配置，不删除的话是会显示<code>Via: 2.0 caddy</code></li>
-<li>probe_resistance:后面可以跟上网址，如果有人访问网址没有带用户名和密码的话，会默认弹出”407 Proxy Authentication Required” ，这样会暴露出我是代理服务器，这个配置就是你要访问这个秘密网址才会弹出，但是我们caddy使用了<code>route</code>，所以如果没有密码的话会访问到正常的网页，可以根据情况配置</li>
-<li>serve_pac：用来配置pac文件的，我用v2rayNg自带，所以不配置，默认pac文件位置<code>http:网址/proxy.pac</code>，你改好放那里就行</li>
-<li>dial_timeout：超时</li>
-<li>upstream：这个是用来配置代理链条的，如果你还希望再加一层，可以通过这个转发到上游去，让它继续代理。</li>
-<li>acl：路由规则，允许&#x2F;拒绝的ip，域名甚至文件都可以</li>
-</ul>
-</li>
-</ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>综合来说：NaiveProxy的优点很明显，服务器配置简单，而且安全。缺点也很直白，客户端简陋，支持的少。<br>从翻墙工具的发展历史我们可以看出这场攻防战的思路在变：<br>一开始时SS，讲究的是一个加密，破解不了，没人知道你访问的内容，后起之秀的思路也是顺着这条，加TLS等证书加密，但是随着墙的封锁，大家发现，我们和墙并不是对等关系，墙并不需要证据就可以封锁你，只要它觉得你是在翻墙就可以。战争的思路也要随着改变，更多的人选择藏木于林，尽可能的模拟正常的网站流量和藏匿自己的服务器。现在新一代的工具主流思想就是尽可能地模拟正常的网络流量。<br>思路的转变并不是坏事，毕竟局势不一样了，所以我目前的思路也是，尽可能的模仿正常网站，不会乱开多余的端口。<br>最后，有没人愿意合租服务器，使用NaiveProxy配置，流量没限制，主要NaiveProxy也无法限制。有的话可以留言或者联系我<a href="mailto:webmaster@example.com">noway@minsummer.com</a></p>
-<hr>
-<p>参考文章：<br><a href="https://github.com/XTLS/Trojan-killer">Trojan-Killer</a><br><a href="https://github.com/XTLS/Xray-core/discussions/1295">XTLS 深入浅出</a><br><a href="https://github.com/klzgrad/naiveproxy/wiki/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87">NaïveProxy官方部署文档</a><br><a href="https://github.com/caddyserver/forwardproxy/tree/caddy2">forwardproxy</a><br><a href="https://caddy2.dengxiaolong.com/docs/caddyfile/directives/route">caddy2的route指令</a><br><a href="https://dengxiaolong.com/caddy/zh/http.forwardproxy.html">caddy1-forwardproxy的中文文档</a></p>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>Naiveproxy客户端</tag>
-        <tag>关于墙的那些事</tag>
-        <tag>this is the war</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>技能树梳理</title>
     <url>/2023/05/22/113-%E6%8A%80%E8%83%BD%E6%A0%91/</url>
     <content><![CDATA[<p>梳理一下自己的技能树</p>
@@ -599,6 +460,55 @@
       </tags>
   </entry>
   <entry>
+    <title>git简明学习手册</title>
+    <url>/2023/05/22/114git%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/</url>
+    <content><![CDATA[<p>简单易学的git知识导图</p>
+<span id="more"></span>
+<h1 id="git简明指南"><a href="#git简明指南" class="headerlink" title="git简明指南"></a>git简明指南</h1><ol start="0">
+<li>git工作流<ol>
+<li>本地git add到暂存区</li>
+<li>暂存区git commit到HEAD</li>
+<li>HEAD的内容git push后才会到你的远程仓库</li>
+</ol>
+</li>
+<li>创建&#x2F;复制<ol>
+<li>git init</li>
+<li>git clone</li>
+</ol>
+</li>
+<li>增加&#x2F;删除文件<ol>
+<li>git add</li>
+<li>或者直接增加</li>
+<li>git rm</li>
+<li>或者直接删除</li>
+</ol>
+</li>
+<li>回退版本<ol>
+<li>git reset<ol>
+<li>–soft 回退上一次修改的内容</li>
+<li>–hard 回退所有内容</li>
+<li>HEAD~0 【0-n】回退到之前第几个版本</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>分支管理<ol>
+<li>git branch 创建分支</li>
+<li>git merge 合并分支</li>
+<li>git checout 切换分支</li>
+</ol>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>一日一技术</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>真相不重要--《毒舌大状》影评</title>
     <url>/2023/05/27/115-%E7%9C%9F%E7%9B%B8%E4%B8%8D%E9%87%8D%E8%A6%81--%E3%80%8A%E6%AF%92%E8%88%8C%E5%A4%A7%E7%8A%B6%E3%80%8B%E5%BD%B1%E8%AF%84/</url>
     <content><![CDATA[<p>毒舌大状，好看，这算是这些年为数不多的好片，在如今爆米花电影为主流的时代下，有这么一部可以调动人的情绪，可以让人热血上头的电影，确实不可多得。<br>这部片的定位是剧情片，不是侦探类型的电影。从内容上来看，确实也不是侦探电影，本片主要讲的是单亲妈妈曾洁儿的女儿在家被发现受伤倒地，然后由检方提起公诉，起诉曾洁儿误伤儿童，后面女儿去世，误伤改为了误杀。黄之华饰演的律师一开始把这件案件当作简单的案件，在取得情夫钟子颐的口供后手续不全，对方法庭上翻供，导致曾洁儿被判17年，入狱2年后，黄子华日日煎熬，终于在一位证人去世时的遗书上发现上起诉的可能性，最后成功打赢官司。</p>
@@ -612,6 +522,96 @@
         <tag>影评</tag>
         <tag>毒舌大状</tag>
         <tag>对一些事的看法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Naiveproxy客户端搭建指南</title>
+    <url>/2023/05/29/116-Naiveproxy%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h2 id="小心使得万年船"><a href="#小心使得万年船" class="headerlink" title="小心使得万年船"></a>小心使得万年船</h2><p>最近又要进入敏感时期了，所以安全得包装，22年10月份封禁了一大批。随着Xray作者提出的<a href="https://github.com/XTLS/Trojan-killer">TLS in TLS可以被探测到</a>。可见目前协议不是安全的，Xray提出了一个解决方案：XTLS。但是XTLS会占用服务器得443端口，需要接手服务器所有流量。对于目前得我来说并不是很方便，而且我推崇服务器只开放常规端口，做到像普通服务器一样。</p>
+<span id="more"></span>
+<h2 id="几种解决方案"><a href="#几种解决方案" class="headerlink" title="几种解决方案"></a>几种解决方案</h2><p>那么，有没有别的安全得翻墙方式么？也是有的，针对TLS in TLS，那片文章也提出了三个解决方案。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-Naiveproxy%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97-2023-05-30-09-32-52.png" alt="117-Naiveproxy客户端搭建指南-2023-05-30-09-32-52"></p>
+<ol>
+<li>NaiveProxy<ul>
+<li>原理是高度模仿HTTPS访问</li>
+<li>使用的人数不多，而且客户端支持也不多，甚至文档也不多</li>
+</ul>
+</li>
+<li>魔改得shadowsocks<ul>
+<li>新版本得Xray支持，就是推荐的加密方式：<br>   2022-blake3-aes-128-gcm<br>   2022-blake3-aes-256-gcm<br>   2022-blake3-chacha20-poly1305</li>
+<li>好像不支持caddy转发，只能开放对应端口，不是很符合我尽量少开放端口得原则</li>
+<li>NaiveProxy说过不要自己戳密码，SS就是他举例得典型</li>
+</ul>
+</li>
+<li>MITM，简单说就内部流量脱去TLS加密，由服务器进行加密。<ul>
+<li>原理很简单，你不是TLS in TLS，那么我内部得就明文传输，这样就是完整的TLS</li>
+<li>问题也很简单，就是你翻墙访问得所有网站都会提示你证书不可信。</li>
+</ul>
+</li>
+</ol>
+<p>所以最后我选择了NaiveProxy。</p>
+<h2 id="部署方案"><a href="#部署方案" class="headerlink" title="部署方案"></a>部署方案</h2><p>准备材料：</p>
+<ul>
+<li>1台可以访问的VPS</li>
+<li>caddy v2<br>部署方式：</li>
+<li>docker部署</li>
+</ul>
+<p>这个很重要，请确认你的版本和我得是不是对应的，因为我这次找了很多文档，都是caddy v1的或者就是什么其他部署方式，对我来说，参考程度有限。<br>其次我不推崇使用一键脚本，那用起来舒服，但是对自己的服务器上有一块盲区，总归是不安全的。我推荐使用docker部署，安全和便捷兼具，我会尽量做到一步到位。如果你还没安装docker，可以翻看我之前的教程，或者去官方看教程。也是很简单的。<br>NaiveProxy是没有服务器软件的，直接使用包含naïve的caddy forwardproxy分支来代替单独的naïve服务端，所以我们需要一个docker安装caddy即可。</p>
+<ol>
+<li><p>创建一个空文件夹,然后创建dockerfile，复制一下代码：</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FROM caddy:builder-alpine AS builder</span><br><span class="line"></span><br><span class="line">RUN xcaddy build \</span><br><span class="line">    --with github.com/caddyserver/forwardproxy@caddy2=github.com/klzgrad/forwardproxy@naive</span><br><span class="line">FROM caddy:alpine</span><br><span class="line"></span><br><span class="line">COPY --from=builder /usr/bin/caddy /usr/bin/caddy</span><br></pre></td></tr></table></figure>
+<p> 这里需要注意<a href="https://github.com/caddyserver/forwardproxy/tree/caddy2">forwardproxy</a>的master是caddy v1版本的，所以必须在后面写上<code>caddy2</code>，然后看文档也要注意，选择caddy2分支。两边不一样。</p>
+</li>
+<li><p>在同一个文件夹下面创建文件docker-compose.yml</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">version: &quot;3.9&quot;  # optional since v1.27.0</span><br><span class="line">services:</span><br><span class="line">caddy: #caddy反向代理</span><br><span class="line">    container_name: caddy</span><br><span class="line">    build:</span><br><span class="line">    context: .</span><br><span class="line">    dockerfile: dockerfile #这里就是调用你步骤一创建的文件</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    environment:</span><br><span class="line">    - PUID=1000</span><br><span class="line">    - PGID=1000</span><br><span class="line">    - TZ=Asia/Shanghai</span><br><span class="line">    volumes:</span><br><span class="line">    - /&lt;你的路径&gt;/data:/data #caddy留存的证书信息,最好保存,方便后续迁移</span><br><span class="line">    - /&lt;你的路径&gt;/caddyconfig:/etc/caddy #caddyfile的配置文件</span><br><span class="line">    - /&lt;你的路径&gt;/file:/usr/share/caddy #caddy的运行网页</span><br><span class="line">    ports:</span><br><span class="line">    - &quot;80:80&quot;</span><br><span class="line">    - &quot;443:443&quot;</span><br><span class="line">    - &quot;443:443/udp&quot;</span><br></pre></td></tr></table></figure></li>
+<li><p>部署docker，直接使用命令(确保路径下有这个文件)：</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker-compose up docker-compose.yml</span><br></pre></td></tr></table></figure></li>
+<li><p>在<code>- /&lt;你的路径&gt;/caddyconfig:/etc/caddy #caddyfile的配置文件</code>这个路径下创建Caddyfile文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:443, xxxx.xxxx.com &#123; # 443必须的，否则无法执行，逗号后面有个空格，别忘记了。</span><br><span class="line">    route &#123;</span><br><span class="line">        forward_proxy &#123;</span><br><span class="line">            basic_auth &lt;用户名&gt; &lt;密码&gt;</span><br><span class="line">            hide_ip</span><br><span class="line">            hide_via</span><br><span class="line">        &#125;</span><br><span class="line">        file_server &#123;</span><br><span class="line">            root /usr/share/caddy/share # 可以在之前的网页路径下随便放一个index网页</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>重启下docker就可以了。</p>
+</li>
+<li><p>打开本地电脑的客户端下的<code>config.json</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;listen&quot;: &quot;socks://127.0.0.1:1080&quot;,</span><br><span class="line">&quot;proxy&quot;: &quot;https://用户名:密码@xxxx.xxxx.com&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>端口可以改，也可以不改。</p>
+</li>
+<li><p>如果使用习惯v2rayng的话，可以：服务器——添加自定义服务器<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-Naiveproxy%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97-2023-05-30-10-13-21.png" alt="117-Naiveproxy客户端搭建指南-2023-05-30-10-13-21"><br>浏览选择一下对应的config.json即可。但是测速和测延迟就失效了。</p>
+</li>
+</ol>
+<p>到此就可以直接使用了，最后测一下速度：</p>
+<ol>
+<li><p>vless+h2+tls:<br> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-2023-05-29-21-06-43.png" alt="117-2023-05-29-21-06-43"></p>
+</li>
+<li><p>NavieProxy:<br> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-2023-05-29-21-08-18.png" alt="117-2023-05-29-21-08-18"></p>
+</li>
+<li><p>自建speedtest的测速:<br> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-2023-05-29-21-09-15.png" alt="117-2023-05-29-21-09-15"></p>
+</li>
+</ol>
+<p>最后的速度和网页测速差不多，这是晚高峰的速度，我1000M的网络跑到这个速度算是很可以了。</p>
+<h2 id="其他的配置说明"><a href="#其他的配置说明" class="headerlink" title="其他的配置说明"></a>其他的配置说明</h2><p>这里说明一下其他的可选配置：</p>
+<ol>
+<li>caddy的route功能：将一组指令按字面意思作为一个单元进行评估。路由块中包含的指令不会在内部被重新排序。所以route包围的命令就会同等对待，正常是按照先后顺序，前面的指令执行后面的指令就不会继续执行，所以使用route可以避免这种情况。</li>
+<li>forword的一些功能，具体的可以去看对应官方文档，反正功能挺齐全的。<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:443, example.com</span><br><span class="line"> route &#123;</span><br><span class="line">     forward_proxy &#123;</span><br><span class="line">         basic_auth user1 0NtCL2JPJBgPPMmlPcJ</span><br><span class="line">         basic_auth user2 密码 # 身份验证</span><br><span class="line">         ports     80 443 #端口，如果你用的是别的端口在这改</span><br><span class="line">         hide_ip # 推荐，防止主动探测的</span><br><span class="line">         hide_via #推荐，防止主动探测的</span><br><span class="line">         probe_resistance xxxx.com #防止主动探测的</span><br><span class="line">         serve_pac        /secret-proxy.pac # pac文件存放，可以</span><br><span class="line">         dial_timeout     30</span><br><span class="line">         upstream         https://user:password@extra-upstream-hop.com # 这个是上游的，用来配置代理链条的，即一台给另一台</span><br><span class="line">         acl &#123;</span><br><span class="line">             allow     *.caddyserver.com</span><br><span class="line">             deny      192.168.1.1/32 192.168.0.0/16 *.prohibitedsite.com *.localhost</span><br><span class="line">             allow     ::1/128 8.8.8.8 github.com *.github.io</span><br><span class="line">             allow_file /path/to/whitelist.txt</span><br><span class="line">             deny_file  /path/to/blacklist.txt</span><br><span class="line">             allow     all</span><br><span class="line">             deny      all # unreachable rule, remaining requests are matched by `allow all` above</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     file_server</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+其中:<ul>
+<li>hide_ip 用来删除头文件的ip和下面一样，推荐配置</li>
+<li>hide_via 用来删除头文件via的推荐配置，不删除的话是会显示<code>Via: 2.0 caddy</code></li>
+<li>probe_resistance:后面可以跟上网址，如果有人访问网址没有带用户名和密码的话，会默认弹出”407 Proxy Authentication Required” ，这样会暴露出我是代理服务器，这个配置就是你要访问这个秘密网址才会弹出，但是我们caddy使用了<code>route</code>，所以如果没有密码的话会访问到正常的网页，可以根据情况配置</li>
+<li>serve_pac：用来配置pac文件的，我用v2rayNg自带，所以不配置，默认pac文件位置<code>http:网址/proxy.pac</code>，你改好放那里就行</li>
+<li>dial_timeout：超时</li>
+<li>upstream：这个是用来配置代理链条的，如果你还希望再加一层，可以通过这个转发到上游去，让它继续代理。</li>
+<li>acl：路由规则，允许&#x2F;拒绝的ip，域名甚至文件都可以</li>
+</ul>
+</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>综合来说：NaiveProxy的优点很明显，服务器配置简单，而且安全。缺点也很直白，客户端简陋，支持的少。<br>从翻墙工具的发展历史我们可以看出这场攻防战的思路在变：<br>一开始时SS，讲究的是一个加密，破解不了，没人知道你访问的内容，后起之秀的思路也是顺着这条，加TLS等证书加密，但是随着墙的封锁，大家发现，我们和墙并不是对等关系，墙并不需要证据就可以封锁你，只要它觉得你是在翻墙就可以。战争的思路也要随着改变，更多的人选择藏木于林，尽可能的模拟正常的网站流量和藏匿自己的服务器。现在新一代的工具主流思想就是尽可能地模拟正常的网络流量。<br>思路的转变并不是坏事，毕竟局势不一样了，所以我目前的思路也是，尽可能的模仿正常网站，不会乱开多余的端口。<br>最后，有没人愿意合租服务器，使用NaiveProxy配置，流量没限制，主要NaiveProxy也无法限制。有的话可以留言或者联系我<a href="mailto:webmaster@example.com">noway@minsummer.com</a></p>
+<hr>
+<p>参考文章：<br><a href="https://github.com/XTLS/Trojan-killer">Trojan-Killer</a><br><a href="https://github.com/XTLS/Xray-core/discussions/1295">XTLS 深入浅出</a><br><a href="https://github.com/klzgrad/naiveproxy/wiki/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87">NaïveProxy官方部署文档</a><br><a href="https://github.com/caddyserver/forwardproxy/tree/caddy2">forwardproxy</a><br><a href="https://caddy2.dengxiaolong.com/docs/caddyfile/directives/route">caddy2的route指令</a><br><a href="https://dengxiaolong.com/caddy/zh/http.forwardproxy.html">caddy1-forwardproxy的中文文档</a></p>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>Naiveproxy客户端</tag>
+        <tag>关于墙的那些事</tag>
+        <tag>this is the war</tag>
       </tags>
   </entry>
   <entry>
@@ -1469,22 +1469,6 @@
       </tags>
   </entry>
   <entry>
-    <title>《亚财政：制度性腐败与中国历史博弈》-妥妥的标题党</title>
-    <url>/2023/12/08/141-%E3%80%8A%E4%BA%9A%E8%B4%A2%E6%94%BF%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/</url>
-    <content><![CDATA[<p>《亚财政：制度性腐败与中国历史博弈》最近花了点时间看了下，也是一部看起来很宏大的，财政，制度，历史，腐败。可以说的上是标题拉满，那我们看下书的正经内容：海瑞的私生活，明清官员的生活记录。标题的大没有体现，反而是一个个事例堆砌的去证明。</p>
-<span id="more"></span>
-<p>开篇就是海瑞的私生活，没问题，讲述了官员的收入和支出，但是对海瑞娶多个小妾的经济来源表示疑问，甚至对海瑞死后残留的遗产表示疑问。但是后面也多次提到，但是每次提及都是独立的，没有连贯的，重复。这就像这本书一样，似乎是作者的多个独立篇章搜集一下，然后汇聚成书。并不是一开始就按照一本书的逻辑编纂而成。<br>同样存在问题的是：这本书的研究性，书里有引用材料，但是引用的都是别人已经成稿的材料，不会直接引用第一手的史料，或者偏少。史料的引用和论证在我看来是一部研究历史书的基本功，但是这本书这块很缺失。若说经济学，这书又没有太多的数学，唯一的创举算是通过米价换算成当时购买力，但也是别人的研究成果。<br>标题的财政，没体现；制度：也没有大量史料佐证；历史那就更加无从说起。书的标题尚且如此，接下来是内容，内容分崩离析，没有一个主旨。更多的是腐败的一些现象，然后介绍下当时的腐败状况，没有对背后的原因进行挖掘，没有对产生的影响进行归因，很多都是一个故事，一段计算，然后叹畏腐败之甚。<br>我没有为这本书写下笔记，也没有别的想思考的地方，没有，完全就是一本闲书，看过就看过了。</p>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>《亚财政：制度性腐败与中国历史博弈》</tag>
-        <tag>标题党</tag>
-        <tag>经济学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>哲学家都干了些什么-读书笔记</title>
     <url>/2023/12/07/140-%E5%93%B2%E5%AD%A6%E5%AE%B6%E4%BB%AC%E9%83%BD%E5%B9%B2%E4%BA%86%E4%BA%9B%E4%BB%80%E4%B9%88-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>古希腊哲学</p>
@@ -1575,6 +1559,22 @@
         <tag>《哲学家都干了些什么》</tag>
         <tag>读书笔记</tag>
         <tag>哲学史</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《亚财政：制度性腐败与中国历史博弈》-妥妥的标题党</title>
+    <url>/2023/12/08/141-%E3%80%8A%E4%BA%9A%E8%B4%A2%E6%94%BF%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/</url>
+    <content><![CDATA[<p>《亚财政：制度性腐败与中国历史博弈》最近花了点时间看了下，也是一部看起来很宏大的，财政，制度，历史，腐败。可以说的上是标题拉满，那我们看下书的正经内容：海瑞的私生活，明清官员的生活记录。标题的大没有体现，反而是一个个事例堆砌的去证明。</p>
+<span id="more"></span>
+<p>开篇就是海瑞的私生活，没问题，讲述了官员的收入和支出，但是对海瑞娶多个小妾的经济来源表示疑问，甚至对海瑞死后残留的遗产表示疑问。但是后面也多次提到，但是每次提及都是独立的，没有连贯的，重复。这就像这本书一样，似乎是作者的多个独立篇章搜集一下，然后汇聚成书。并不是一开始就按照一本书的逻辑编纂而成。<br>同样存在问题的是：这本书的研究性，书里有引用材料，但是引用的都是别人已经成稿的材料，不会直接引用第一手的史料，或者偏少。史料的引用和论证在我看来是一部研究历史书的基本功，但是这本书这块很缺失。若说经济学，这书又没有太多的数学，唯一的创举算是通过米价换算成当时购买力，但也是别人的研究成果。<br>标题的财政，没体现；制度：也没有大量史料佐证；历史那就更加无从说起。书的标题尚且如此，接下来是内容，内容分崩离析，没有一个主旨。更多的是腐败的一些现象，然后介绍下当时的腐败状况，没有对背后的原因进行挖掘，没有对产生的影响进行归因，很多都是一个故事，一段计算，然后叹畏腐败之甚。<br>我没有为这本书写下笔记，也没有别的想思考的地方，没有，完全就是一本闲书，看过就看过了。</p>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>《亚财政：制度性腐败与中国历史博弈》</tag>
+        <tag>标题党</tag>
+        <tag>经济学</tag>
       </tags>
   </entry>
   <entry>
@@ -1878,21 +1878,6 @@
       </tags>
   </entry>
   <entry>
-    <title>兵哥2</title>
-    <url>/2024/01/16/146-%E5%85%B5%E5%93%A52/</url>
-    <content><![CDATA[<p>那一次赌博结束之后，我就觉得会有下一次；那一次处理得太过轻描淡写，太过无所谓了。无论是我大伯，还是兵哥。他们觉得只不过是几十万而已。于是，第三次就开始了。</p>
-<span id="more"></span>
-<p>这一次倒是没有什么遮掩，还是兵哥媳妇主动告发了。倒不是她良心发现，而是兵哥玩了两个月，又输钱了。所以媳妇开始闹。闹什么？闹离婚，闹兵哥赌博，闹一切。我们早已麻木，每次兵哥赌博都要闹，完全把自己得责任撇清楚，两个月之前你就应该告诉大家，而不是又填不上窟窿了再来告发。<br>这次我们完全没有参与，这次兵哥没有借兄弟姐妹得钱，他拿了他爸得贷款，一笔90万得贷款，他还了之后又借出来了30万。这笔贷款是用兵哥名下得房子抵押的。这一次我们以为会是又一场腥风血雨，然而出奇的平静。一开始我们还是不知道，直到我大伯打兵哥电话一直不接，所以打电话给我哥让我哥劝劝。这年头，做错事的还硬气的只有儿子。<br>其实，大家知道是早晚的事，我大伯不是会藏事情的人，他会到处和自己的朋友说，会吐槽，会骂，就是不会和自己的孩子说；这是他的一种宣泄方法。<br>金额已经不重要了，这次按部就班。先带着他去了趟银行，打了份征信。看看还有多少钱没还，然后再让他自己供出有那些钱没还，剩下的就是还钱。不同的是之前这些事我哥，三问四问才问出了七七八八。这次没人问，我大伯并不关心，也没有问这些事。这种事毕竟他们家丑，我哥也不好多问，就看到征信上的30万借款，问了才知道。至于其他的多少，没问，问了也不一定说。<br>兵哥的解释和之前一样，我才输十几万，凭我得本事，能填上这窟窿。大伯没有任何的表态，也没下任何的指示，只是打了几个电话，骂了一通。兵哥的兄弟姐妹们也没人发话，毕竟这次兵哥不欠他们钱，他们不紧张。最关心的反而是我们这些局外人：堂兄弟，姑姑。但是没用。我见到了人类的悲欢，也见识了人类的参差。<br>这次我想说下兵哥媳妇，兵哥媳妇在上一次赌博后，也在闹离婚，那次闹得很成功，成功的分散了大家的注意力，她也为自己争取到了极大的利益。这一次也是这样，大家已经麻木，没有劝的人了，毕竟和离婚相比，更加应该解决兵哥赌瘾的问题，离就离吧。他媳妇在兵哥赌博被大家知道之后，就开始了他的骚操作，包括不给兵哥煮饭。我是没有明白这同床得鸳鸯为何这么轻而易举得开始划清界限，然而就这样，兵哥得内心还是希望和他媳妇好好过下去得；想法是好，但是人不对。<br>兵哥这段时间也不在家住了，大伯听见了也没说啥。他的几个兄弟姐妹也没有发话，这漠不关心得态度迟早会让兵哥再度走上歧路得。我大伯迟早会为他的冷漠付出代价，希望那时候他负担得起吧。<br>对于兵哥的事其实我想说的还有很多，比如他的姐姐们这次一言不发，比如我大伯知道之后迟迟不愿意解决，比如钱，比如他的媳妇。然而这一切都是他们的家事，如今的我已经没办法参与太多，甚至连知道都不应该，这是他们的家事。</p>
-]]></content>
-      <categories>
-        <category>那些年遇见的人</category>
-      </categories>
-      <tags>
-        <tag>兵哥</tag>
-        <tag>大伯</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OPENWRT-DNS指南</title>
     <url>/2024/01/04/145-OPENWRT-DNS%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<p>最近买了一个路由器，刷机之后，兼具翻墙的功能，但是时不时的无法翻墙，线路是没问题的，最后的排查下来是DNS的问题，openwrt系统作为一个高度自定义的路由器系统，可以配置的东西太多了，这就非常不适合小白用户，这就是为啥之前我都是用毛子固件，这次就重新理一下openwrt的配置吧。</p>
@@ -1935,6 +1920,21 @@
         <tag>DNS</tag>
         <tag>配置指南</tag>
         <tag>Turbo ACC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>兵哥2</title>
+    <url>/2024/01/16/146-%E5%85%B5%E5%93%A52/</url>
+    <content><![CDATA[<p>那一次赌博结束之后，我就觉得会有下一次；那一次处理得太过轻描淡写，太过无所谓了。无论是我大伯，还是兵哥。他们觉得只不过是几十万而已。于是，第三次就开始了。</p>
+<span id="more"></span>
+<p>这一次倒是没有什么遮掩，还是兵哥媳妇主动告发了。倒不是她良心发现，而是兵哥玩了两个月，又输钱了。所以媳妇开始闹。闹什么？闹离婚，闹兵哥赌博，闹一切。我们早已麻木，每次兵哥赌博都要闹，完全把自己得责任撇清楚，两个月之前你就应该告诉大家，而不是又填不上窟窿了再来告发。<br>这次我们完全没有参与，这次兵哥没有借兄弟姐妹得钱，他拿了他爸得贷款，一笔90万得贷款，他还了之后又借出来了30万。这笔贷款是用兵哥名下得房子抵押的。这一次我们以为会是又一场腥风血雨，然而出奇的平静。一开始我们还是不知道，直到我大伯打兵哥电话一直不接，所以打电话给我哥让我哥劝劝。这年头，做错事的还硬气的只有儿子。<br>其实，大家知道是早晚的事，我大伯不是会藏事情的人，他会到处和自己的朋友说，会吐槽，会骂，就是不会和自己的孩子说；这是他的一种宣泄方法。<br>金额已经不重要了，这次按部就班。先带着他去了趟银行，打了份征信。看看还有多少钱没还，然后再让他自己供出有那些钱没还，剩下的就是还钱。不同的是之前这些事我哥，三问四问才问出了七七八八。这次没人问，我大伯并不关心，也没有问这些事。这种事毕竟他们家丑，我哥也不好多问，就看到征信上的30万借款，问了才知道。至于其他的多少，没问，问了也不一定说。<br>兵哥的解释和之前一样，我才输十几万，凭我得本事，能填上这窟窿。大伯没有任何的表态，也没下任何的指示，只是打了几个电话，骂了一通。兵哥的兄弟姐妹们也没人发话，毕竟这次兵哥不欠他们钱，他们不紧张。最关心的反而是我们这些局外人：堂兄弟，姑姑。但是没用。我见到了人类的悲欢，也见识了人类的参差。<br>这次我想说下兵哥媳妇，兵哥媳妇在上一次赌博后，也在闹离婚，那次闹得很成功，成功的分散了大家的注意力，她也为自己争取到了极大的利益。这一次也是这样，大家已经麻木，没有劝的人了，毕竟和离婚相比，更加应该解决兵哥赌瘾的问题，离就离吧。他媳妇在兵哥赌博被大家知道之后，就开始了他的骚操作，包括不给兵哥煮饭。我是没有明白这同床得鸳鸯为何这么轻而易举得开始划清界限，然而就这样，兵哥得内心还是希望和他媳妇好好过下去得；想法是好，但是人不对。<br>兵哥这段时间也不在家住了，大伯听见了也没说啥。他的几个兄弟姐妹也没有发话，这漠不关心得态度迟早会让兵哥再度走上歧路得。我大伯迟早会为他的冷漠付出代价，希望那时候他负担得起吧。<br>对于兵哥的事其实我想说的还有很多，比如他的姐姐们这次一言不发，比如我大伯知道之后迟迟不愿意解决，比如钱，比如他的媳妇。然而这一切都是他们的家事，如今的我已经没办法参与太多，甚至连知道都不应该，这是他们的家事。</p>
+]]></content>
+      <categories>
+        <category>那些年遇见的人</category>
+      </categories>
+      <tags>
+        <tag>兵哥</tag>
+        <tag>大伯</tag>
       </tags>
   </entry>
   <entry>
@@ -2034,6 +2034,29 @@
       </tags>
   </entry>
   <entry>
+    <title>Tachidesk插件安装</title>
+    <url>/2024/02/26/153-tachidesk%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<p>最近因为韩国Kakao公司法律威胁，1月14日，Tachiyomi 发布公告表示：由于特殊情况，决定清理扩展列表以确保 Tachiyomi 的长期可持续性。随后开发者发布公告表示不再维护软件并逐步关闭官方开发社区：具体见<a href="https://tachiyomi.org/news/2024-01-13-goodbye">社区公告</a></p>
+<span id="more"></span>
+<p>其实之前就已经移除了<a href="https://tachiyomi.org/news/2024-01-09-extensions-removal">插件商店</a>，那段时间忽然安装不了插件，甚至已经下载得插件都失效了，但是还是可以手动安装插件：</p>
+<h2 id="手动安装插件"><a href="#手动安装插件" class="headerlink" title="手动安装插件"></a>手动安装插件</h2><p>1.打开设置-浏览器<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/153-tachidesk%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85-2024-02-27-12-26-04.png" alt="153-tachidesk插件安装-2024-02-27-12-26-04"><br>2. 输入插件订阅的地址</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.min.json</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/153-tachidesk%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85-2024-02-27-12-26-35.png" alt="153-tachidesk插件安装-2024-02-27-12-26-35"><br>然后去前台刷新下即可<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/153-tachidesk%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85-2024-02-27-12-28-39.png" alt="153-tachidesk插件安装-2024-02-27-12-28-39"></p>
+<p>这个方法只是解决了插件不能安装的问题，但是后续，慢慢的这个程序将不会更新，如果后续有更好的软件可以看漫画，我会逐步替换掉。</p>
+<h2 id="汉化"><a href="#汉化" class="headerlink" title="汉化"></a>汉化</h2><p>汉化我看了下，目前已经有人正在汉化，之前有非官方的汉化，但是随着版本更新已经失效了。</p>
+<hr>
+<p><a href="https://zhuanlan.zhihu.com/p/678017331">Tachiyomi替代方案</a><br><a href="https://github.com/keiyoushi/extensions">插件安装教程</a></p>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>Tachidesk</tag>
+        <tag>插件安装</tag>
+        <tag>Tachiyomi</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>佛祖说了些什么-读书笔记</title>
     <url>/2024/02/25/152-%E4%BD%9B%E7%A5%96%E8%AF%B4%E4%BA%86%E4%BA%9B%E4%BB%80%E4%B9%88%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>这是用kindle标记的一些读书笔记，总结整理下，后续方便写观后感。</p>
@@ -2117,29 +2140,6 @@
         <tag>摘要</tag>
         <tag>《佛祖说了些什么》</tag>
         <tag>林欣浩</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Tachidesk插件安装</title>
-    <url>/2024/02/26/153-tachidesk%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<p>最近因为韩国Kakao公司法律威胁，1月14日，Tachiyomi 发布公告表示：由于特殊情况，决定清理扩展列表以确保 Tachiyomi 的长期可持续性。随后开发者发布公告表示不再维护软件并逐步关闭官方开发社区：具体见<a href="https://tachiyomi.org/news/2024-01-13-goodbye">社区公告</a></p>
-<span id="more"></span>
-<p>其实之前就已经移除了<a href="https://tachiyomi.org/news/2024-01-09-extensions-removal">插件商店</a>，那段时间忽然安装不了插件，甚至已经下载得插件都失效了，但是还是可以手动安装插件：</p>
-<h2 id="手动安装插件"><a href="#手动安装插件" class="headerlink" title="手动安装插件"></a>手动安装插件</h2><p>1.打开设置-浏览器<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/153-tachidesk%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85-2024-02-27-12-26-04.png" alt="153-tachidesk插件安装-2024-02-27-12-26-04"><br>2. 输入插件订阅的地址</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.min.json</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/153-tachidesk%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85-2024-02-27-12-26-35.png" alt="153-tachidesk插件安装-2024-02-27-12-26-35"><br>然后去前台刷新下即可<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/153-tachidesk%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85-2024-02-27-12-28-39.png" alt="153-tachidesk插件安装-2024-02-27-12-28-39"></p>
-<p>这个方法只是解决了插件不能安装的问题，但是后续，慢慢的这个程序将不会更新，如果后续有更好的软件可以看漫画，我会逐步替换掉。</p>
-<h2 id="汉化"><a href="#汉化" class="headerlink" title="汉化"></a>汉化</h2><p>汉化我看了下，目前已经有人正在汉化，之前有非官方的汉化，但是随着版本更新已经失效了。</p>
-<hr>
-<p><a href="https://zhuanlan.zhihu.com/p/678017331">Tachiyomi替代方案</a><br><a href="https://github.com/keiyoushi/extensions">插件安装教程</a></p>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>Tachidesk</tag>
-        <tag>插件安装</tag>
-        <tag>Tachiyomi</tag>
       </tags>
   </entry>
   <entry>
@@ -2241,6 +2241,26 @@
       </tags>
   </entry>
   <entry>
+    <title>佛祖什么都说了</title>
+    <url>/2024/03/02/156-%E4%BD%9B%E7%A5%96%E4%BB%80%E4%B9%88%E9%83%BD%E8%AF%B4%E4%BA%86/</url>
+    <content><![CDATA[<p>《佛祖说了些什么》这本书我很早就读完了。但是经过过年，慵懒等理由，我迟迟不下笔写下这篇文章。我觉得值得为它写一篇文章。</p>
+<span id="more"></span>
+<p>佛教作为一个宗教，它是具有严格得推演和逻辑得。只不过像基督教得圣经一样，它推演得基础也在那些公案和典籍。且不论推演的基础是否正确，单单就推演也可以成为一门正经的学科。我以前还曾经迷惑，神学佛学有什么可以学习得，在很多教科书上都是一言以蔽之得东西。除开教科书无法详尽的描述它的原因之外，宗教在传播过程中，大量简化和浓缩它的教义，也许最后就总归成了一句：“善有善报，恶有恶报”。在看完这本书之后，确实发现，我们在门外看到得，和门内修行得人是两回事。专业的事有专业得人来干。<br>无论是“万法缘起得解读”，到后面为了适应民众得俗讲。佛学在那个古老的时代里确确实实构建出了一个世界观，包含人，世界，人生目标等等。在那个对世界一无所知的年代，它给了当时的人一个世界的解释；佛学也算是哲学，只不过它更大，更久，以至于独立出来；甚至很多哲学家从中获取灵感。宗教是一个庞大得系统，它不仅仅解释世界，还要求行为规范，它要随着时代发展来更新自己。大到航天飞机能否找到极乐世界，小到牛奶僧人是否可以喝。都是切切实实得摆在人面前得问题。一个宗教代表着另一个世界，你在现实世界中有得东西，佛学世界也必须有，甚至你还得引经据典得说明它如何而来，为何而来。因为它不同于别的哲学家，别的哲学家只对未知部分进行解释，宗教对已知的也进行解释。这就好像在现实世界中又套入了另一个世界。这和平时得圈子还不一样，在这个嵌套得世界里，它需要对外面世界来得所有东西都需要有一套自己得解释。如果解释不通，那么就说明外面得那个世界比你佛学世界要大，等级要高，甚至否定你的真实性。那么对宗教而言是打击性质得。所以它需要不断得发展和扩大，甚至超前。<br>最后是，在追求非理性上面，佛教和现代科学似乎都走在了同一条路上。佛教推崇顿悟，甚至要求信徒放弃逻辑，以达到那种与佛一致得概念。但是佛教也说了，顿悟只是心境得变化，不会是那种圣光加持，忽然变身得东西。佛，更多得向内而求，不是向外。所以很多人修佛，修得是自己心境。文人雅士为何喜欢他，正如里面说的：</p>
+<blockquote>
+<p>“只有酒足饭饱的知识分子才有精力去看文艺片，也只有酒足饭饱的知识分子才会喜欢禅宗。 文艺片和禅宗可以让人们不假任何万物，只靠精神上的运动就可以超越世俗的痛苦，平静对待世间万物。这很棒。但对于连饭都吃不饱的人来说，它们提供不了任何帮助。”</p>
+</blockquote>
+<p>而科学到了目前阶段，也不得不承认自己的逻辑无法完美的解释这个世界。那么真理在逻辑之外。其实如果我们更加客观的看待宗教的话，也许发现它并没有那么可怕，它只不过是给当世之人一个庇护之地罢了。<br>宗教有人把它当世外桃源，有人将它视为救命稻草。无论是家长里短，还是富贵长寿，在人的眼里，它无所不能，但是这一切都是宗教下潜到群众必须做得事情。理智的人也许只是花钱求个心安，疯狂的人会觉得自己不够虔诚。他们都在为自己的执念买单。而佛在那不问也不说，现在如此，以后也如此。<br>我并不想批判什么，只要它不是强迫威胁甚至威逼利诱即可。归根结底还是人傻，你又能奈它何。我恶心的是基层民众，会觉得增加一个信徒会是一件大功德，为了自己的功德，骗那些傻子屋里有鬼，需要搬家，需要虔诚。其实这点书中也提到过，人怀着自私自利的心去帮助他人呢？佛学的解释是你心怀不轨，做再大的功德也是枉然。宗教的体量很大，难免不了有大部分人都是心怀鬼胎的，这是它的管理问题，但是也是问题；我不想为它开脱，甚至想责难它。如果你管不好这么多人，那么就应该承受它带来的非议，甚至因此而落寞也是罪有应得。当然也有可能宗教就是最早的那批贩卖焦虑的人。如果一个东西根都坏了，只有少部分人保持真心，那么这个东西还是原来的东西么？说什么与时俱进，说什么顺应时代，归根揭底还不过是趴在人民群众身上的吸血鬼罢了。<br>人为刀殂，我为鱼肉。</p>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>《佛祖说了些什么》</tag>
+        <tag>林欣浩</tag>
+        <tag>读后感</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>也许这就是生活</title>
     <url>/2024/03/09/158-%E4%B9%9F%E8%AE%B8%E8%BF%99%E5%B0%B1%E6%98%AF%E7%94%9F%E6%B4%BB/</url>
     <content><![CDATA[<p>《我在北京送快递》这本书是我同学推荐给我的，他说让我看看什么是底层生活。于是我在回家的动车上看完了它。</p>
@@ -2284,26 +2304,6 @@
       </categories>
       <tags>
         <tag>我在北京送快递</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>佛祖什么都说了</title>
-    <url>/2024/03/02/156-%E4%BD%9B%E7%A5%96%E4%BB%80%E4%B9%88%E9%83%BD%E8%AF%B4%E4%BA%86/</url>
-    <content><![CDATA[<p>《佛祖说了些什么》这本书我很早就读完了。但是经过过年，慵懒等理由，我迟迟不下笔写下这篇文章。我觉得值得为它写一篇文章。</p>
-<span id="more"></span>
-<p>佛教作为一个宗教，它是具有严格得推演和逻辑得。只不过像基督教得圣经一样，它推演得基础也在那些公案和典籍。且不论推演的基础是否正确，单单就推演也可以成为一门正经的学科。我以前还曾经迷惑，神学佛学有什么可以学习得，在很多教科书上都是一言以蔽之得东西。除开教科书无法详尽的描述它的原因之外，宗教在传播过程中，大量简化和浓缩它的教义，也许最后就总归成了一句：“善有善报，恶有恶报”。在看完这本书之后，确实发现，我们在门外看到得，和门内修行得人是两回事。专业的事有专业得人来干。<br>无论是“万法缘起得解读”，到后面为了适应民众得俗讲。佛学在那个古老的时代里确确实实构建出了一个世界观，包含人，世界，人生目标等等。在那个对世界一无所知的年代，它给了当时的人一个世界的解释；佛学也算是哲学，只不过它更大，更久，以至于独立出来；甚至很多哲学家从中获取灵感。宗教是一个庞大得系统，它不仅仅解释世界，还要求行为规范，它要随着时代发展来更新自己。大到航天飞机能否找到极乐世界，小到牛奶僧人是否可以喝。都是切切实实得摆在人面前得问题。一个宗教代表着另一个世界，你在现实世界中有得东西，佛学世界也必须有，甚至你还得引经据典得说明它如何而来，为何而来。因为它不同于别的哲学家，别的哲学家只对未知部分进行解释，宗教对已知的也进行解释。这就好像在现实世界中又套入了另一个世界。这和平时得圈子还不一样，在这个嵌套得世界里，它需要对外面世界来得所有东西都需要有一套自己得解释。如果解释不通，那么就说明外面得那个世界比你佛学世界要大，等级要高，甚至否定你的真实性。那么对宗教而言是打击性质得。所以它需要不断得发展和扩大，甚至超前。<br>最后是，在追求非理性上面，佛教和现代科学似乎都走在了同一条路上。佛教推崇顿悟，甚至要求信徒放弃逻辑，以达到那种与佛一致得概念。但是佛教也说了，顿悟只是心境得变化，不会是那种圣光加持，忽然变身得东西。佛，更多得向内而求，不是向外。所以很多人修佛，修得是自己心境。文人雅士为何喜欢他，正如里面说的：</p>
-<blockquote>
-<p>“只有酒足饭饱的知识分子才有精力去看文艺片，也只有酒足饭饱的知识分子才会喜欢禅宗。 文艺片和禅宗可以让人们不假任何万物，只靠精神上的运动就可以超越世俗的痛苦，平静对待世间万物。这很棒。但对于连饭都吃不饱的人来说，它们提供不了任何帮助。”</p>
-</blockquote>
-<p>而科学到了目前阶段，也不得不承认自己的逻辑无法完美的解释这个世界。那么真理在逻辑之外。其实如果我们更加客观的看待宗教的话，也许发现它并没有那么可怕，它只不过是给当世之人一个庇护之地罢了。<br>宗教有人把它当世外桃源，有人将它视为救命稻草。无论是家长里短，还是富贵长寿，在人的眼里，它无所不能，但是这一切都是宗教下潜到群众必须做得事情。理智的人也许只是花钱求个心安，疯狂的人会觉得自己不够虔诚。他们都在为自己的执念买单。而佛在那不问也不说，现在如此，以后也如此。<br>我并不想批判什么，只要它不是强迫威胁甚至威逼利诱即可。归根结底还是人傻，你又能奈它何。我恶心的是基层民众，会觉得增加一个信徒会是一件大功德，为了自己的功德，骗那些傻子屋里有鬼，需要搬家，需要虔诚。其实这点书中也提到过，人怀着自私自利的心去帮助他人呢？佛学的解释是你心怀不轨，做再大的功德也是枉然。宗教的体量很大，难免不了有大部分人都是心怀鬼胎的，这是它的管理问题，但是也是问题；我不想为它开脱，甚至想责难它。如果你管不好这么多人，那么就应该承受它带来的非议，甚至因此而落寞也是罪有应得。当然也有可能宗教就是最早的那批贩卖焦虑的人。如果一个东西根都坏了，只有少部分人保持真心，那么这个东西还是原来的东西么？说什么与时俱进，说什么顺应时代，归根揭底还不过是趴在人民群众身上的吸血鬼罢了。<br>人为刀殂，我为鱼肉。</p>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>《佛祖说了些什么》</tag>
-        <tag>林欣浩</tag>
-        <tag>读后感</tag>
       </tags>
   </entry>
   <entry>
@@ -3515,7 +3515,7 @@
   </entry>
   <entry>
     <title>搬瓦工上新DC99限量POWERBOX</title>
-    <url>/2025/01/23/190-%E7%93%A6%E5%B7%A525%E5%B9%B4%E4%B8%8A%E6%96%B0DC99%E9%99%90%E9%87%8FPOWERBOX/</url>
+    <url>/2025/02/11/190-%E7%93%A6%E5%B7%A525%E5%B9%B4%E4%B8%8A%E6%96%B0DC99%E9%99%90%E9%87%8FPOWERBOX/</url>
     <content><![CDATA[<p>瓦工2025年新年第一弹，很具有作为传家宝的优质服务器。<br>套餐配置：<br>SSD：30 GB RAID-10<br>内存：1536 MB<br>CPU：1x Intel Xeon<br>传输：1500 GB&#x2F;月<br>链接速度：2.5 Gigabit<br>位置：洛杉矶，DC99<br>(6.77%)循环优惠码：BWHCGLUKKB<br>折后价：$41.95 &#x2F;年：</p>
 <span id="more"></span>
 
@@ -3597,42 +3597,6 @@
       </tags>
   </entry>
   <entry>
-    <title>openwrt使用指南</title>
-    <url>/2025/01/06/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p>之前买了3个小米AX5京东云版本的路由器，刷了openwrt，最近趁着空闲，想着给它升级下固件，顺带记录下中间遇见的坑</p>
-<span id="more"></span>
-<h2 id="自编译固件"><a href="#自编译固件" class="headerlink" title="自编译固件"></a>自编译固件</h2><p>固件有两种获得方式：1，是通过论坛之类的，通过别人编译分享的。2，自己编译，编译也分为两种，一种是通过GitHub action进行，还有一种自己通过Linux服务器进行编译。<br>我两种都会说一下，但是主要是自己编译，因为GitHub action的比较麻烦。</p>
-<ol>
-<li>Linux系统<br>这个各凭本事，你可以使用Windows的wsl，或者直接做个系统。我这边用的是ESXi系统安装的一个虚拟机debian 12，需要注意的是：系统的硬盘最好大于32GB，否则后续编译过程会不够。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2025-01-15-12-17-46.png" alt="194-openwrt使用指南-2025-01-15-12-17-46"></li>
-<li>编译环境搭建<br>我是用的lede大佬的固件，这点大佬在<a href="https://github.com/coolsnowwolf/lede/blob/master/README.md">GitHub主页</a>上由详细的教程。直接按照命令一行行执行即可。<br>这里需要注意的是：debian 12 中upx-ucl已经不再支持了，命令中可以直接删除这个。这个只是个加压缩文件，删除了也不影响。</li>
-<li>固件编译<br>这里需要你的网络可以翻墙，毕竟需要去GitHub上拉去项目，当然你要是有办法下载后再上传到文件夹下也可以。<br>然后我们主要配置的就三个地方：<ol>
-<li>系统平台</li>
-<li>路由器型号【需要找到路由器硬件的型号，实在没有可以用通用，但是不能保证能用】</li>
-<li>APP【默认别动，增加自己喜欢的，具体可以看下<a href="https://www.right.com.cn/forum/thread-3682029-1-1.html">常见的目录</a>】<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2025-01-14-15-39-52.png" alt="194-openwrt使用指南-2025-01-14-15-39-52"><br> APP需要用空格进行选择，需要注意将值按到【Y】，M代表意思是编译但不写入固件，Y才是固件自带。<br> 选择结束后，默认是保存到.config文件中。当然你也可以自己命名。<br> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2025-01-14-15-48-09.png" alt="194-openwrt使用指南-2025-01-14-15-48-09"><br> 后续是自己下载dl库进行编译，这边推荐第一次编译用单线程，但是我头铁，直接48核启动。没有上面意外。<br> PS:如果你中间中断了，记得清理下make clean。否则你的硬盘容量会不够。</li>
-</ol>
-</li>
-</ol>
-<p>这边说下使用GitHub action进行编译，我们最后生成的.config文件上传到GitHub上进行编译即可，看起来很简单是吧。这样生成出来的就是你想要的插件的包。如果你没有config文件，那么你就需要自己手动修改下config文件，具体要看你的<a href="https://github.com/android1122/openwrt-ci">GitHub</a>上。</p>
-<h2 id="路由配置【旁路由配置】"><a href="#路由配置【旁路由配置】" class="headerlink" title="路由配置【旁路由配置】"></a>路由配置【旁路由配置】</h2><p>相较于更多高端家庭，普通人的家庭一般就是，光猫-路由器，有时候会由于信号不好，所以光猫下会有两个路由器。这里需要注意，从光猫出来的网线插的是路由器的WAN口，还是LAN口。如果是LAN口，那么这台路由器就相当于光猫的衍生，你不需要做任何事就可以直接上网，到时候直接连上 WIFI即可。<br>而我们常见的是插在WAN口，这种就是常见的旁路由模式。我们的上网主要是通过路由器来进行控制，而光猫主要是一个网络提供者，没有任何作用。需要注意，如果做到透明代理，必须是旁路由模式，否则刷OPENWRT的意义就少了一半。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2025-01-15-10-22-12.png" alt="194-openwrt使用指南-2025-01-15-10-22-12"></p>
-<ol>
-<li><p>配置-网络-接口<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2025-01-15-10-23-14.png" alt="194-openwrt使用指南-2025-01-15-10-23-14"></p>
-<p>WAN口配置：DHCP客户端，系统会自动获得来自上游光猫的IP地址对应网关。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2025-01-15-10-24-42.png" alt="194-openwrt使用指南-2025-01-15-10-24-42"></p>
-<p>LAN口配置：静态地址，这里的静态地址就是路由器的管理地址。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2025-01-15-10-26-44.png" alt="194-openwrt使用指南-2025-01-15-10-26-44"><br>需要注意DHCP服务可以启动，但是不要和光猫的冲突。DHCP就是分配IP给下游的功能，如果光猫用了192.168.2.101给一台设备，你这台路由器又把这个IP给你路由器下的其他设备，就会出现问题。这种解决方案一般就两种：<br>1.让光猫分配192.168.1.1-100，让下游路由器分配192.168.1.101-250。只要两者不冲突就行。<br>2.分开两个网段，光猫是192.168.18.1网段，路由器的静态地址是192.168.2.1网段，互不影响。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2025-01-15-10-32-09.png" alt="194-openwrt使用指南-2025-01-15-10-32-09"></p>
-</li>
-</ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>虽然最后编译好了也没有用。路由器这东西，只要没有什么太大的问题，那就保持原样即可，不要想着花里胡哨的功能。很多东西都是用不上。以我为例：主要使用：科学上网，广告过滤【DNS过滤广告网址】，zerotier。至于docker，下载之类的，一个是路由器性能一般，不想太多负担，另外是我自己有一台服务器可以专门干这些活。<br>路由器现在有种偏向轻NAS的感觉，但是性能不够强，容量又不够大。很多时候都是鸡肋。都是NAS的过渡设备。</p>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>路由器</tag>
-        <tag>openwrt</tag>
-        <tag>lede</tag>
-        <tag>IPQ60XX</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ESXI安装HomeAsistantOS</title>
     <url>/2025/01/06/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS/</url>
     <content><![CDATA[<p>我家里有一台小米的空气净化器，还有小米得几个空调遥控器，定时器。虽然可以使用官方得app控制，但是总归是不方便，还是希望可以更加得智能化，尤其我这人对空调吹多了冷，吹少了热。<br>其实之前我使用过一阵子，但是那时候官方没有支持，导致我使用HA进行控制之后就不能使用官方app控制。正好这次官方宣布支持，我就想着再试试。</p>
@@ -3671,6 +3635,42 @@
       </tags>
   </entry>
   <entry>
+    <title>openwrt使用指南</title>
+    <url>/2025/01/06/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p>之前买了3个小米AX5京东云版本的路由器，刷了openwrt，最近趁着空闲，想着给它升级下固件，顺带记录下中间遇见的坑</p>
+<span id="more"></span>
+<h2 id="自编译固件"><a href="#自编译固件" class="headerlink" title="自编译固件"></a>自编译固件</h2><p>固件有两种获得方式：1，是通过论坛之类的，通过别人编译分享的。2，自己编译，编译也分为两种，一种是通过GitHub action进行，还有一种自己通过Linux服务器进行编译。<br>我两种都会说一下，但是主要是自己编译，因为GitHub action的比较麻烦。</p>
+<ol>
+<li>Linux系统<br>这个各凭本事，你可以使用Windows的wsl，或者直接做个系统。我这边用的是ESXi系统安装的一个虚拟机debian 12，需要注意的是：系统的硬盘最好大于32GB，否则后续编译过程会不够。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2025-01-15-12-17-46.png" alt="194-openwrt使用指南-2025-01-15-12-17-46"></li>
+<li>编译环境搭建<br>我是用的lede大佬的固件，这点大佬在<a href="https://github.com/coolsnowwolf/lede/blob/master/README.md">GitHub主页</a>上由详细的教程。直接按照命令一行行执行即可。<br>这里需要注意的是：debian 12 中upx-ucl已经不再支持了，命令中可以直接删除这个。这个只是个加压缩文件，删除了也不影响。</li>
+<li>固件编译<br>这里需要你的网络可以翻墙，毕竟需要去GitHub上拉去项目，当然你要是有办法下载后再上传到文件夹下也可以。<br>然后我们主要配置的就三个地方：<ol>
+<li>系统平台</li>
+<li>路由器型号【需要找到路由器硬件的型号，实在没有可以用通用，但是不能保证能用】</li>
+<li>APP【默认别动，增加自己喜欢的，具体可以看下<a href="https://www.right.com.cn/forum/thread-3682029-1-1.html">常见的目录</a>】<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2025-01-14-15-39-52.png" alt="194-openwrt使用指南-2025-01-14-15-39-52"><br> APP需要用空格进行选择，需要注意将值按到【Y】，M代表意思是编译但不写入固件，Y才是固件自带。<br> 选择结束后，默认是保存到.config文件中。当然你也可以自己命名。<br> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2025-01-14-15-48-09.png" alt="194-openwrt使用指南-2025-01-14-15-48-09"><br> 后续是自己下载dl库进行编译，这边推荐第一次编译用单线程，但是我头铁，直接48核启动。没有上面意外。<br> PS:如果你中间中断了，记得清理下make clean。否则你的硬盘容量会不够。</li>
+</ol>
+</li>
+</ol>
+<p>这边说下使用GitHub action进行编译，我们最后生成的.config文件上传到GitHub上进行编译即可，看起来很简单是吧。这样生成出来的就是你想要的插件的包。如果你没有config文件，那么你就需要自己手动修改下config文件，具体要看你的<a href="https://github.com/android1122/openwrt-ci">GitHub</a>上。</p>
+<h2 id="路由配置【旁路由配置】"><a href="#路由配置【旁路由配置】" class="headerlink" title="路由配置【旁路由配置】"></a>路由配置【旁路由配置】</h2><p>相较于更多高端家庭，普通人的家庭一般就是，光猫-路由器，有时候会由于信号不好，所以光猫下会有两个路由器。这里需要注意，从光猫出来的网线插的是路由器的WAN口，还是LAN口。如果是LAN口，那么这台路由器就相当于光猫的衍生，你不需要做任何事就可以直接上网，到时候直接连上 WIFI即可。<br>而我们常见的是插在WAN口，这种就是常见的旁路由模式。我们的上网主要是通过路由器来进行控制，而光猫主要是一个网络提供者，没有任何作用。需要注意，如果做到透明代理，必须是旁路由模式，否则刷OPENWRT的意义就少了一半。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2025-01-15-10-22-12.png" alt="194-openwrt使用指南-2025-01-15-10-22-12"></p>
+<ol>
+<li><p>配置-网络-接口<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2025-01-15-10-23-14.png" alt="194-openwrt使用指南-2025-01-15-10-23-14"></p>
+<p>WAN口配置：DHCP客户端，系统会自动获得来自上游光猫的IP地址对应网关。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2025-01-15-10-24-42.png" alt="194-openwrt使用指南-2025-01-15-10-24-42"></p>
+<p>LAN口配置：静态地址，这里的静态地址就是路由器的管理地址。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2025-01-15-10-26-44.png" alt="194-openwrt使用指南-2025-01-15-10-26-44"><br>需要注意DHCP服务可以启动，但是不要和光猫的冲突。DHCP就是分配IP给下游的功能，如果光猫用了192.168.2.101给一台设备，你这台路由器又把这个IP给你路由器下的其他设备，就会出现问题。这种解决方案一般就两种：<br>1.让光猫分配192.168.1.1-100，让下游路由器分配192.168.1.101-250。只要两者不冲突就行。<br>2.分开两个网段，光猫是192.168.18.1网段，路由器的静态地址是192.168.2.1网段，互不影响。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2025-01-15-10-32-09.png" alt="194-openwrt使用指南-2025-01-15-10-32-09"></p>
+</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>虽然最后编译好了也没有用。路由器这东西，只要没有什么太大的问题，那就保持原样即可，不要想着花里胡哨的功能。很多东西都是用不上。以我为例：主要使用：科学上网，广告过滤【DNS过滤广告网址】，zerotier。至于docker，下载之类的，一个是路由器性能一般，不想太多负担，另外是我自己有一台服务器可以专门干这些活。<br>路由器现在有种偏向轻NAS的感觉，但是性能不够强，容量又不够大。很多时候都是鸡肋。都是NAS的过渡设备。</p>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>路由器</tag>
+        <tag>openwrt</tag>
+        <tag>lede</tag>
+        <tag>IPQ60XX</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>飞牛小雅超集部署指南</title>
     <url>/2025/01/20/195-%E9%A3%9E%E7%89%9B%E5%B0%8F%E9%9B%85%E8%B6%85%E9%9B%86%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<p>飞牛OS算是最近比较火的一个系统，安装方便，硬件兼容好，而且里面部署了那些常用的服务，其中就包含小雅Alist。</p>
@@ -3692,6 +3692,46 @@
         <tag>飞牛OS</tag>
         <tag>小雅超集</tag>
         <tag>gitlab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ADguardHome部署指北</title>
+    <url>/2025/02/10/196-ADguardHome%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8C%97/</url>
+    <content><![CDATA[<p> ADguardHome是一个大名鼎鼎的广告拦截工具，之前也想过部署，但是需求不大，所以一直没有认真研究。网络上好多都是教你怎么部署的，但是没有人说清楚你需不需要一个 ADguardHome。<br> <span id="more"></span></p>
+<ol>
+<li><p>需求<br>   DNS是域名系统 (Domain Name System)，域名系统是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。DNS使用TCP和UDP端口53。简而言之就是你查询一个网址，DNS会返回对应的IP地址等信息，同时这几年有些不良的DNS服务商会在里面穿插一些广告链接，这就是有时候你访问一些网址会弹窗一些广告。需要注意的是在国内公网开放 53 的 DNS 没有资质是不允许搭建的。<br>ADguardHome是一款注重隐私的DNS自搭建服务。主要的作用其实是为了安全防止别人将木马等病毒插入到你访问的网站，根据规则过滤其中的广告也是它可以实现的功能。但是需要注意的是，如果你单纯的只是需要一个广告过滤的DNS建议你直接用官方提供的DNS服务，包含大多数的广告过滤功能。<a href="https://adguard-dns.io/kb/zh-CN/general/dns-providers/">已知的 DNS 提供商</a>这个网页提供了大多数公共的DNS服务商。所以如果你只是想要简单的过滤一些常见的广告，那么普通的DNS提供商已经能满足你大部分要求。<br>ADguardHome的强大之处在于它支持的几大过滤规则语法，这就给予了个人极大的空间，可以任意屏蔽某些自己不喜欢的广告和网址。<br>ADguardHome是个人版和团队版。区别在于团队版可以提供2个IPV4专用地址，就是给你一个专属的DNS提供商，但是需要付费。普通人一般都是搭建在自己的家庭局域网内，所以可以不需要。如果你设备多，且网络复杂可以考虑，但是还需要注意，个人用户搭建公网开放 53 的 DNS有一定的法律风险。</p>
+<p> 总结：<br> 普通用户：使用官网提供的DNS服务。<br> 进阶用户：嫌弃官网广告过滤不精准，而且愿意花时间研究对应的语法和规则，那么可以考虑自己搭建。<br> 需要注意：很多时候你花时间研究语法规则，也最多只是从普通用户的90%提升到95%的过滤。广告和防广告是一场攻防战，只要你活得够久，那么你就会遇见规则之外的广告域名。所以除非你的需求特别大，那么我还是建议你直接用官方的DNS服务商即可。而且过滤规则不是万能药，有时候会误封一些域名，如果你发现网银之类的无法使用，那么建议你可以暂停下这个服务。</p>
+</li>
+<li><p>搭建<br>搭建很简单，根据<a href="https://github.com/AdguardTeam/AdGuardHome#getting-started">GitHub</a>上的教程，分分钟成功。官方提供了多种安装方式，ADguardHome大致需要100MB的内存，我这边用的是EXSI搭建一台2G内存的虚拟机，直接使用官方脚本安装即可：</p>
+<blockquote>
+<p>curl -s -S -L <a href="https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh">https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh</a> | sh -s – -v</p>
+</blockquote>
+<p>如果提示curl命令不存在，直接使用以下命令安装curl</p>
+<blockquote>
+<p>apt install curl</p>
+</blockquote>
+<p>  需要注意的是，脚本的安装路径是&#x2F;opt&#x2F;AdGuardHome，这就意味着你调用的时候需要用：</p>
+<blockquote>
+<p>sudo &#x2F;opt&#x2F;AdGuardHome&#x2F;AdGuardHome -s install</p>
+</blockquote>
+<p>  以下是控制服务可能需要的其他命令：</p>
+<blockquote>
+<p>AdGuardHome -s uninstall：卸载 AdGuard Home 服务。<br>  AdGuardHome -s start：启动服务。<br>  AdGuardHome -s stop：停止服务。<br>  AdGuardHome -s restart：重新启动服务。<br>  AdGuardHome -s status：显示当前服务状态。</p>
+</blockquote>
+<p> 安装完成之后，系统会弹出访问的接口一般是<a href="http://127.0.0.1:3000。直接访问即可，后续就是设置下新的访问端口，已经监听的端口。访问端口可以改成3003，后续访问地址就会变为：http://127.0.0.1:3003。">http://127.0.0.1:3000。直接访问即可，后续就是设置下新的访问端口，已经监听的端口。访问端口可以改成3003，后续访问地址就会变为：http://127.0.0.1:3003。</a></p>
+</li>
+<li><p>配置<br>这边需要配置的就是黑名单，这边推荐两个规则，一个是官方自带的anti-AD。是官方针对中国区域进行设置的。另一个是<a href="https://adrules.top/">AdRules</a>点击网站进去，选择你的设备，会自动生成对应设备的链接，复制添加即可。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/196-ADguardHome%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8C%97-2025-02-11-13-16-57.png" alt="196-ADguardHome部署指北-2025-02-11-13-16-57"><br>一切配置完成之后，只需要将你的路由器DNS换成ADguardHome的IP地址即可。需要注意保存之后，需要重启下路由器，让配所有设备的配置重新下发一遍才会生效。</p>
+</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>ADguardHome大致需要100MB的内存，所以搭建之前需要注意看下你的硬件是否支持。其次就是不要想着一劳永逸，官方的过滤比较宽泛，你自己的有可能比较严格，这是一个不断折腾的过程。</p>
+<hr>
+<p>引用：<br><a href="https://www.dqzboy.com/16007.html">玩转路由器：AdGuardHome安装，实现全网设备去广告和国内外分流</a><br><a href="https://adguard-dns.io/kb/zh-CN/adguard-home/getting-started/">ADguardHome官方指南</a></p>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>ADguardHome</tag>
       </tags>
   </entry>
   <entry>
@@ -4803,6 +4843,33 @@ sysctl -p
       </tags>
   </entry>
   <entry>
+    <title>女人文学</title>
+    <url>/2022/04/30/%E5%A5%B3%E4%BA%BA%E6%96%87%E5%AD%A6/</url>
+    <content><![CDATA[<p>忘掉一个女人最好的方法，就是将她变成文学。——来自不知道是谁说的，但是我就是想拿它来当开头。</p>
+<p>正如上述所言，我想忘掉她，但是我却不知从何忘起。因为她似乎就没有在我的脑海中呆过,又拿什么来忘记.</p>
+<p>搜索我的脑海，我忽然找不到关于他的一切，但是在日常中却又不经意间出现——我们曾聊过这个话题。我记得但是忘记了时间,地点,原因，但是又能回忆起一些零零碎碎的碎片-“月中发工资很不舒服，好像离月底很远也离月初很远”，或是”上个公司是每月28号发当月工资”。不真实的让我怀疑这一切是不是我脑补的.也许是自己精神出了问题吧。我不知道是哪里出问题，也许我永远也不会知道。</p>
+<p>如今，我只想将她变成文学，一部简单的文学。</p>
+<p>可悲的是，这里的末尾并没有要求背诵全文</p>
+<p>但是我还是记下了碎片的全部，也许是我太孤单了，无处诉说我的悲哀</p>
+<p>然而就算我们真的在一起了，也许也没法向她倾诉吧，毕竟，她和我能说到一块的前提应该是他说我听，我为他排忧解难。但是这一切已经不再有可能.</p>
+<p>自私，不过人么？不都这样，你要一个人考虑周全，推己及人，那样她会很累。但是如果只考虑自己一切都将变得完美无瑕。我们没必要和自己过不去啊</p>
+<p>正如所有的爱情一样，我初遇倾心，再见更倾心。但是由于并没有恋爱，所以没有那些始于颜值，忠于品格的美好。我这边一直忠于的是颜值。也许我是个颜控吧，但感觉更多的是对美的贪婪，就像对钱的贪婪一般。如果将其换成足够吸引我的美钞，我想我的内心也会燃起那熊熊的欲望之火。</p>
+<p>好消息是：我们每个上班日还能偶尔的见面，但却连陌生人都不如,也许这是个坏消息</p>
+<p>坏消息是：男人对于细节的种种臆想总是能让男人自己疯狂，却改变不了现实，所以我一直在疯狂的边缘。</p>
+<p>我不知道我何时失去理智，但是也许在我失去理智之后，我会过得更开心。毕竟，理性使人痛苦。也许这是个好消息,我还尚存理性.</p>
+<p>然而毕竟不是什么大富子弟，还是要养活自己，也不是什么文艺青年，还是要卑躬屈膝。作为一个平凡的人，我重复着大多数人都在做的事，也许是只有我才觉得她是如此的不平凡。但这也无所谓。就好像我对睡眠采取的态度一样</p>
+<p>我是不是也该对我的爱情采取一个这样的态度</p>
+<p>最后的结果往往就跟我的睡眠状态一样，规律，但是没有赖床，多了理性，少了感性。我很喜欢目前的睡眠，但是我好歹也是享受过10多年的睡眠之后，才满足于现在，对于爱情，我经历的还太少。所以我并不想将其归入与此。那么就保持自己追爱的初心，然后抛弃那些不现实的想法吧，让那些兔子在你脑海奔跑吧，别去追逐。</p>
+]]></content>
+      <categories>
+        <category>那些年遇见的人</category>
+      </categories>
+      <tags>
+        <tag>女人</tag>
+        <tag>那只兔子</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>好像我一直在期待</title>
     <url>/2022/04/30/%E5%A5%BD%E5%83%8F%E6%88%91%E4%B8%80%E7%9B%B4%E5%9C%A8%E6%9C%9F%E5%BE%85/</url>
     <content><![CDATA[<p>好像我一直在期待</p>
@@ -4833,33 +4900,6 @@ sysctl -p
       </categories>
       <tags>
         <tag>内省</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>女人文学</title>
-    <url>/2022/04/30/%E5%A5%B3%E4%BA%BA%E6%96%87%E5%AD%A6/</url>
-    <content><![CDATA[<p>忘掉一个女人最好的方法，就是将她变成文学。——来自不知道是谁说的，但是我就是想拿它来当开头。</p>
-<p>正如上述所言，我想忘掉她，但是我却不知从何忘起。因为她似乎就没有在我的脑海中呆过,又拿什么来忘记.</p>
-<p>搜索我的脑海，我忽然找不到关于他的一切，但是在日常中却又不经意间出现——我们曾聊过这个话题。我记得但是忘记了时间,地点,原因，但是又能回忆起一些零零碎碎的碎片-“月中发工资很不舒服，好像离月底很远也离月初很远”，或是”上个公司是每月28号发当月工资”。不真实的让我怀疑这一切是不是我脑补的.也许是自己精神出了问题吧。我不知道是哪里出问题，也许我永远也不会知道。</p>
-<p>如今，我只想将她变成文学，一部简单的文学。</p>
-<p>可悲的是，这里的末尾并没有要求背诵全文</p>
-<p>但是我还是记下了碎片的全部，也许是我太孤单了，无处诉说我的悲哀</p>
-<p>然而就算我们真的在一起了，也许也没法向她倾诉吧，毕竟，她和我能说到一块的前提应该是他说我听，我为他排忧解难。但是这一切已经不再有可能.</p>
-<p>自私，不过人么？不都这样，你要一个人考虑周全，推己及人，那样她会很累。但是如果只考虑自己一切都将变得完美无瑕。我们没必要和自己过不去啊</p>
-<p>正如所有的爱情一样，我初遇倾心，再见更倾心。但是由于并没有恋爱，所以没有那些始于颜值，忠于品格的美好。我这边一直忠于的是颜值。也许我是个颜控吧，但感觉更多的是对美的贪婪，就像对钱的贪婪一般。如果将其换成足够吸引我的美钞，我想我的内心也会燃起那熊熊的欲望之火。</p>
-<p>好消息是：我们每个上班日还能偶尔的见面，但却连陌生人都不如,也许这是个坏消息</p>
-<p>坏消息是：男人对于细节的种种臆想总是能让男人自己疯狂，却改变不了现实，所以我一直在疯狂的边缘。</p>
-<p>我不知道我何时失去理智，但是也许在我失去理智之后，我会过得更开心。毕竟，理性使人痛苦。也许这是个好消息,我还尚存理性.</p>
-<p>然而毕竟不是什么大富子弟，还是要养活自己，也不是什么文艺青年，还是要卑躬屈膝。作为一个平凡的人，我重复着大多数人都在做的事，也许是只有我才觉得她是如此的不平凡。但这也无所谓。就好像我对睡眠采取的态度一样</p>
-<p>我是不是也该对我的爱情采取一个这样的态度</p>
-<p>最后的结果往往就跟我的睡眠状态一样，规律，但是没有赖床，多了理性，少了感性。我很喜欢目前的睡眠，但是我好歹也是享受过10多年的睡眠之后，才满足于现在，对于爱情，我经历的还太少。所以我并不想将其归入与此。那么就保持自己追爱的初心，然后抛弃那些不现实的想法吧，让那些兔子在你脑海奔跑吧，别去追逐。</p>
-]]></content>
-      <categories>
-        <category>那些年遇见的人</category>
-      </categories>
-      <tags>
-        <tag>女人</tag>
-        <tag>那只兔子</tag>
       </tags>
   </entry>
   <entry>
@@ -5202,25 +5242,6 @@ sysctl -p
       </tags>
   </entry>
   <entry>
-    <title>感情</title>
-    <url>/2022/04/30/%E6%84%9F%E6%83%85/</url>
-    <content><![CDATA[<p>我感情丰富</p>
-<p>我用它生活</p>
-<p>用它写诗</p>
-<p>也用它伤害自己</p>
-<p>但我又感情匮乏</p>
-<p>我用它平静</p>
-<p>用它观察</p>
-<p>也用它去追求爱情</p>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>感情</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>情书</title>
     <url>/2022/04/30/%E6%83%85%E4%B9%A6/</url>
     <content><![CDATA[<p>我一面佯装平静，一面想把卡片揣进兜里，然而不凑巧，我喜欢的围裙，上下没有一个兜—–岩井俊二《情书》</p>
@@ -5237,6 +5258,25 @@ sysctl -p
       </categories>
       <tags>
         <tag>我想写情书</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>感情</title>
+    <url>/2022/04/30/%E6%84%9F%E6%83%85/</url>
+    <content><![CDATA[<p>我感情丰富</p>
+<p>我用它生活</p>
+<p>用它写诗</p>
+<p>也用它伤害自己</p>
+<p>但我又感情匮乏</p>
+<p>我用它平静</p>
+<p>用它观察</p>
+<p>也用它去追求爱情</p>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>感情</tag>
       </tags>
   </entry>
   <entry>
@@ -5680,63 +5720,6 @@ sysctl -p
       </tags>
   </entry>
   <entry>
-    <title>服务器线路测试</title>
-    <url>/2022/06/08/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BA%BF%E8%B7%AF%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<p>贴一下服务器配置：</p>
-<ul>
-<li><p>cpu：1核 </p>
-</li>
-<li><p>内存：512M</p>
-</li>
-<li><p>硬盘：10G</p>
-</li>
-<li><p>带宽：1G</p>
-</li>
-<li><p>流量：1000G&#x2F;月</p>
-</li>
-</ul>
-<p>这个是搬瓦工的512M的洛杉矶CN2线路，访问国内速度很快，电信联通尤其好，移动差劲。</p>
-<p>最近需要更换宽带，正好借此机会，研究一下：我的服务器对为啥对移动这么排斥，联通和电信哪个更好？根据后台的Billing，我可以看出我得服务器，在洛杉矶，机房代号为：USCA_2。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220608110005.png" alt="20220608110005"></p>
-<p>我查了下这个机房：</p>
-<blockquote>
-<p>搬瓦工的洛杉矶DC2机房来自QN机房(全称<a href="https://www.quadranet.com/cn/">QuadraNet机房</a>)，目前已接入CN2 GT直连线路，机房CN2直连线路由QN机房官方部署。</p>
-</blockquote>
-<p>这个机房是有自己得服务器业务的，包括托管别人的服务器，搬瓦工就相当于把这个服务器放在人家那托管，至于速度啥的由这个机房自己控制。这个机房是有自己的官网的，有兴趣可以做些测试。网站也提供一些测试IP。</p>
-<p>说完机房我们来说线路，我们经常听到CN2 GIA,CN2 GT线路之类的，简单说这两条线路都是<strong>中国电信</strong>的明星产品，GIA线路负载小，贵，所以快。GT性价比高，所以人多堵塞。但是这一切都是电信的线路。</p>
-<p>搬瓦工后面自己发行了一个CN2 GIA线路的自主机房，这时候那些卖机子的就开始狂吹。其实完全没有必要，只要是任何中国直连的线路都有不错的速度。我们只需要关注对应机房是否对中国线路有没有进行优化就可以。</p>
-<p>由于我的服务器在QuadraNet机房，归属于QuadraNet这个公司的，所以我不再使用自己的服务器IP进行测试，直接用他们<a href="https://www.quadranet.com/los-angeles-datacenter">洛杉矶机房提供的测试IP</a>和文件进行测试：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220608112920.png" alt="20220608112920"></p>
-<p>这边官方贴心的提供了亚洲优化的IP,只用<a href="https://tools.ipip.net/traceroute.php">TraceRoute查询</a>查询对应IP在对应线路下的跳转，使用TCP进行查询，最大化模拟访问。</p>
-<p>| 访问IP | 节点数 |运营商|跨洋线路|落地表现|</p>
-<p>| -| – |—–|—|-|</p>
-<p>| 69.12.66.26-未优化 | 15 |电信|AS4134-163网络|到美国加利福尼亚，美国国内跳转5次，从cogentco跳转到QuadraNet </p>
-<p>|69.12.66.26-未优化|18|移动|AS9808跳AS58453|到美国，国内跳转8次，从cogentco跳转到QuadraNet</p>
-<p>|69.12.66.26-未优化|12|联通|AS4837-联通169网络|到美国，国内跳转3次，从cust.net跳转到QuadraNet</p>
-<p>| 204.152.218.25-优化IP | 12 |电信|AS4134-163网络|到美国直达QuadraNet</p>
-<p>|204.152.218.25-优化IP|16 |移动|AS9808跳AS58453|到美国后直达QuadraNet数据中心</p>
-<p>|204.152.218.25-优化IP |11|联通|AS4837-联通169网络|到美国后到美国联通公司再直达QuadraNet</p>
-<p>一通测试下来之后发现，这个机房的优化IP有效果，都可以在到达美国之后，直接跳转到机房，这个很重要。至于国内内部跳问题这个无解，就像移动老是喜欢跳香港（原因后面解释），再出国，联通喜欢走广东出国之类的。其实国内的内部跳转很快的都是1ms这些的，所以瓶颈在于跨洋线路和到美国之后的跳转，这些都是150+ms，跨洋线路的话，我这次测试没有遇见到的CN2 GT路线（AS4809）,三大运营商用的都是自己的主要干线，如果高峰期这条线路堵塞卡顿也是正常的，<strong>特别吐槽下移动：AS9808为移动境内的骨干网，未设与国际ISP Peer，故所有出境流量通过AS58453（CMI）与外网互联，所以好好的就是速度比联通慢</strong>。</p>
-<p>接下来测试自己VPS主机IP：</p>
-<p>|运营商|节点数|跨洋线路|表现|</p>
-<p>|-|-|-|-|</p>
-<p>|电信|13|AS4134-163网络|到美国后直达</p>
-<p>|联通|13|AS4837-联通169网络|到美国后直达</p>
-<p>|移动|16|AS9808跳AS58453|到美国后直达</p>
-<p>综合测试下来，我的服务器IP也享受到了QuadraNet的机房优化效果，至于电信的CN2线路，可以确定的是QuadraNet机房有接入这条线路，但是实际能不能用到要由机房决定。对几条骨干线路感兴趣的话，可以参考<a href="https://zhuanlan.zhihu.com/p/451683996">国内几大骨干网介绍</a>和<a href="https://zhuanlan.zhihu.com/p/64467370">国内主流网络运营商国际连接线路简谈</a>。</p>
-<p>所以购买服务器的时候，只要是对国内线路有优化的服务器就可以，没必要追求CN2线路，那是电信的线路，除非是专线：即所有的进出都走且只能走这条线路，否则一般你你运营商都会选择走自己的骨干网络。而如果你是专线的话，又会涉及到跨运营商访问的问题，除非你手机，宽带都是电信，还有别人访问你的网络也都是电信。但是这往往是不可能的。而跨运营商访问话，需要看你的城市是否有<strong>国家级互联网骨干直联点</strong>。否则你的路由也得经由这个城市再转发到电信线路去。所以，说实话，直接普通的<a href="https://bandwagonhost.com/aff.php?aff=20859">CN2线路</a>就能满足大部分人的大多数需求。</p>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>搬瓦工</tag>
-        <tag>线路</tag>
-        <tag>CN2线路</tag>
-        <tag>TraceRoute</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>服务器docker化管理</title>
     <url>/2022/12/02/%E6%9C%8D%E5%8A%A1%E5%99%A8docker%E5%8C%96%E7%AE%A1%E7%90%86/</url>
     <content><![CDATA[<h1 id="服务器docker化管理"><a href="#服务器docker化管理" class="headerlink" title="服务器docker化管理"></a>服务器docker化管理</h1><p>这台vps已经伴随我很久了,之前用的事宝塔,但是随着宝塔要手机验证码之后,折腾过国际版宝塔,现在应该是最后一次折腾,直接用docker将各个模块管理。先来分析下：</p>
@@ -5877,6 +5860,63 @@ sysctl -p
         <tag>服务器</tag>
         <tag>v2ray</tag>
         <tag>caddyv2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>服务器线路测试</title>
+    <url>/2022/06/08/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BA%BF%E8%B7%AF%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<p>贴一下服务器配置：</p>
+<ul>
+<li><p>cpu：1核 </p>
+</li>
+<li><p>内存：512M</p>
+</li>
+<li><p>硬盘：10G</p>
+</li>
+<li><p>带宽：1G</p>
+</li>
+<li><p>流量：1000G&#x2F;月</p>
+</li>
+</ul>
+<p>这个是搬瓦工的512M的洛杉矶CN2线路，访问国内速度很快，电信联通尤其好，移动差劲。</p>
+<p>最近需要更换宽带，正好借此机会，研究一下：我的服务器对为啥对移动这么排斥，联通和电信哪个更好？根据后台的Billing，我可以看出我得服务器，在洛杉矶，机房代号为：USCA_2。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220608110005.png" alt="20220608110005"></p>
+<p>我查了下这个机房：</p>
+<blockquote>
+<p>搬瓦工的洛杉矶DC2机房来自QN机房(全称<a href="https://www.quadranet.com/cn/">QuadraNet机房</a>)，目前已接入CN2 GT直连线路，机房CN2直连线路由QN机房官方部署。</p>
+</blockquote>
+<p>这个机房是有自己得服务器业务的，包括托管别人的服务器，搬瓦工就相当于把这个服务器放在人家那托管，至于速度啥的由这个机房自己控制。这个机房是有自己的官网的，有兴趣可以做些测试。网站也提供一些测试IP。</p>
+<p>说完机房我们来说线路，我们经常听到CN2 GIA,CN2 GT线路之类的，简单说这两条线路都是<strong>中国电信</strong>的明星产品，GIA线路负载小，贵，所以快。GT性价比高，所以人多堵塞。但是这一切都是电信的线路。</p>
+<p>搬瓦工后面自己发行了一个CN2 GIA线路的自主机房，这时候那些卖机子的就开始狂吹。其实完全没有必要，只要是任何中国直连的线路都有不错的速度。我们只需要关注对应机房是否对中国线路有没有进行优化就可以。</p>
+<p>由于我的服务器在QuadraNet机房，归属于QuadraNet这个公司的，所以我不再使用自己的服务器IP进行测试，直接用他们<a href="https://www.quadranet.com/los-angeles-datacenter">洛杉矶机房提供的测试IP</a>和文件进行测试：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220608112920.png" alt="20220608112920"></p>
+<p>这边官方贴心的提供了亚洲优化的IP,只用<a href="https://tools.ipip.net/traceroute.php">TraceRoute查询</a>查询对应IP在对应线路下的跳转，使用TCP进行查询，最大化模拟访问。</p>
+<p>| 访问IP | 节点数 |运营商|跨洋线路|落地表现|</p>
+<p>| -| – |—–|—|-|</p>
+<p>| 69.12.66.26-未优化 | 15 |电信|AS4134-163网络|到美国加利福尼亚，美国国内跳转5次，从cogentco跳转到QuadraNet </p>
+<p>|69.12.66.26-未优化|18|移动|AS9808跳AS58453|到美国，国内跳转8次，从cogentco跳转到QuadraNet</p>
+<p>|69.12.66.26-未优化|12|联通|AS4837-联通169网络|到美国，国内跳转3次，从cust.net跳转到QuadraNet</p>
+<p>| 204.152.218.25-优化IP | 12 |电信|AS4134-163网络|到美国直达QuadraNet</p>
+<p>|204.152.218.25-优化IP|16 |移动|AS9808跳AS58453|到美国后直达QuadraNet数据中心</p>
+<p>|204.152.218.25-优化IP |11|联通|AS4837-联通169网络|到美国后到美国联通公司再直达QuadraNet</p>
+<p>一通测试下来之后发现，这个机房的优化IP有效果，都可以在到达美国之后，直接跳转到机房，这个很重要。至于国内内部跳问题这个无解，就像移动老是喜欢跳香港（原因后面解释），再出国，联通喜欢走广东出国之类的。其实国内的内部跳转很快的都是1ms这些的，所以瓶颈在于跨洋线路和到美国之后的跳转，这些都是150+ms，跨洋线路的话，我这次测试没有遇见到的CN2 GT路线（AS4809）,三大运营商用的都是自己的主要干线，如果高峰期这条线路堵塞卡顿也是正常的，<strong>特别吐槽下移动：AS9808为移动境内的骨干网，未设与国际ISP Peer，故所有出境流量通过AS58453（CMI）与外网互联，所以好好的就是速度比联通慢</strong>。</p>
+<p>接下来测试自己VPS主机IP：</p>
+<p>|运营商|节点数|跨洋线路|表现|</p>
+<p>|-|-|-|-|</p>
+<p>|电信|13|AS4134-163网络|到美国后直达</p>
+<p>|联通|13|AS4837-联通169网络|到美国后直达</p>
+<p>|移动|16|AS9808跳AS58453|到美国后直达</p>
+<p>综合测试下来，我的服务器IP也享受到了QuadraNet的机房优化效果，至于电信的CN2线路，可以确定的是QuadraNet机房有接入这条线路，但是实际能不能用到要由机房决定。对几条骨干线路感兴趣的话，可以参考<a href="https://zhuanlan.zhihu.com/p/451683996">国内几大骨干网介绍</a>和<a href="https://zhuanlan.zhihu.com/p/64467370">国内主流网络运营商国际连接线路简谈</a>。</p>
+<p>所以购买服务器的时候，只要是对国内线路有优化的服务器就可以，没必要追求CN2线路，那是电信的线路，除非是专线：即所有的进出都走且只能走这条线路，否则一般你你运营商都会选择走自己的骨干网络。而如果你是专线的话，又会涉及到跨运营商访问的问题，除非你手机，宽带都是电信，还有别人访问你的网络也都是电信。但是这往往是不可能的。而跨运营商访问话，需要看你的城市是否有<strong>国家级互联网骨干直联点</strong>。否则你的路由也得经由这个城市再转发到电信线路去。所以，说实话，直接普通的<a href="https://bandwagonhost.com/aff.php?aff=20859">CN2线路</a>就能满足大部分人的大多数需求。</p>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>搬瓦工</tag>
+        <tag>线路</tag>
+        <tag>CN2线路</tag>
+        <tag>TraceRoute</tag>
       </tags>
   </entry>
   <entry>
@@ -6634,6 +6674,25 @@ pip install requirements.txt
       </tags>
   </entry>
   <entry>
+    <title>缘起</title>
+    <url>/2022/09/15/%E7%BC%98%E8%B5%B7/</url>
+    <content><![CDATA[<p>好多时候，我好喜欢佛教的那一套：缘起缘灭，因果循环。虽然我知道这些只是表面上的一些说法，实际深入研究会是另一番解释。然而这样正好，太远太近都不合适，这份距离恰恰合适。</p>
+<p>而这就是一个距离恰好的故事，女孩美丽大方，品学兼优，为了自己的梦想努力，在毕业之后也进入了大公司，在里面步步晋升，就好像别人家的孩子一样。那你说这个故事有没有男孩，有，在不同的班级，在不同的小区，在不同的大学甚至在不同的城市，他们之间的交集用点来表示，数量繁多但不重要，甚至不被人察觉，但这并不妨碍女孩在男孩心中的地位，男孩在年段红榜上见到过女孩，男孩固定周末去女孩的小区打球，为了能在球场上看到女孩，男孩也在每天去食堂的路上走后面的楼梯，因为他会经过女孩的窗前。两人并不认识，也没有交流，但是这恰好的距离让男孩在心中补全了剩下的拼图。哪怕多年以后，男孩还是抱着那份拼图怀念，思绪。</p>
+<p>这一切的缘也许是那一瞥，也许是那一次照面。反正就像佛教的因果循环一样。没有理由，没有逻辑，甚至没有可以解释的地方。他们会说这样好浪漫，好美。这里面没有任何现实的东西，都是美好的，没有共处，没有争吵，没有冲突。有的只是一个爱和被爱的人，爱的人满足了他的幻想，被爱的人也没有被这份爱情所困扰，完美的爱情，往往是脱离一切的现实，是悬浮的，是瞬间的。在逻辑和现实下，爱情会变成一些荷尔蒙，会变成一些生物性征。但这并不妨碍我们追求美。我们追求的爱情之美。PS 只要别被这份美蒙蔽了现实就是。</p>
+<p>对于爱情的美，我们希望是伟大的，是宏大的，是众人皆知的，是甜蜜的。他不同于英雄之美，英雄之美在于救赎，在于一人之力。而爱情之美，在于挈合，在于凹凸。不，不，不是性，或者说不止是性，爱情之美在于以我之剑，刺子之鞘，反过来也是一样。追求的两者心之所向。他不一定山崩地裂，也没必要海枯石烂，也许就是昨夜星辰，画楼西畔。由大至小，由远及近的。</p>
+<p>就如我上面所说的，最好的爱情就是发生在两个没有关联的人之间，他们各自从对方获得自己所需要的东西，在他们需要的时候。我本来想拿一部电影来举例的，但是发现似乎没有一部电影能将这件事完美的表达出来，所有的爱情电影都是在打碎或者撕破完美的爱情来制造悬念或者深思的，他们从中探讨和探究什么是完美的爱情：似乎就是爱情之美在于不爱。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220915202924.png" alt="20220915202924"></p>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>缘起</tag>
+        <tag>大话西游</tag>
+        <tag>爱情之美</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>聊天</title>
     <url>/2022/04/30/%E8%81%8A%E5%A4%A9/</url>
     <content><![CDATA[<p>我讨厌久等不回，也讨厌寡言少语。</p>
@@ -6676,25 +6735,6 @@ pip install requirements.txt
       </categories>
       <tags>
         <tag>聊天</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>缘起</title>
-    <url>/2022/09/15/%E7%BC%98%E8%B5%B7/</url>
-    <content><![CDATA[<p>好多时候，我好喜欢佛教的那一套：缘起缘灭，因果循环。虽然我知道这些只是表面上的一些说法，实际深入研究会是另一番解释。然而这样正好，太远太近都不合适，这份距离恰恰合适。</p>
-<p>而这就是一个距离恰好的故事，女孩美丽大方，品学兼优，为了自己的梦想努力，在毕业之后也进入了大公司，在里面步步晋升，就好像别人家的孩子一样。那你说这个故事有没有男孩，有，在不同的班级，在不同的小区，在不同的大学甚至在不同的城市，他们之间的交集用点来表示，数量繁多但不重要，甚至不被人察觉，但这并不妨碍女孩在男孩心中的地位，男孩在年段红榜上见到过女孩，男孩固定周末去女孩的小区打球，为了能在球场上看到女孩，男孩也在每天去食堂的路上走后面的楼梯，因为他会经过女孩的窗前。两人并不认识，也没有交流，但是这恰好的距离让男孩在心中补全了剩下的拼图。哪怕多年以后，男孩还是抱着那份拼图怀念，思绪。</p>
-<p>这一切的缘也许是那一瞥，也许是那一次照面。反正就像佛教的因果循环一样。没有理由，没有逻辑，甚至没有可以解释的地方。他们会说这样好浪漫，好美。这里面没有任何现实的东西，都是美好的，没有共处，没有争吵，没有冲突。有的只是一个爱和被爱的人，爱的人满足了他的幻想，被爱的人也没有被这份爱情所困扰，完美的爱情，往往是脱离一切的现实，是悬浮的，是瞬间的。在逻辑和现实下，爱情会变成一些荷尔蒙，会变成一些生物性征。但这并不妨碍我们追求美。我们追求的爱情之美。PS 只要别被这份美蒙蔽了现实就是。</p>
-<p>对于爱情的美，我们希望是伟大的，是宏大的，是众人皆知的，是甜蜜的。他不同于英雄之美，英雄之美在于救赎，在于一人之力。而爱情之美，在于挈合，在于凹凸。不，不，不是性，或者说不止是性，爱情之美在于以我之剑，刺子之鞘，反过来也是一样。追求的两者心之所向。他不一定山崩地裂，也没必要海枯石烂，也许就是昨夜星辰，画楼西畔。由大至小，由远及近的。</p>
-<p>就如我上面所说的，最好的爱情就是发生在两个没有关联的人之间，他们各自从对方获得自己所需要的东西，在他们需要的时候。我本来想拿一部电影来举例的，但是发现似乎没有一部电影能将这件事完美的表达出来，所有的爱情电影都是在打碎或者撕破完美的爱情来制造悬念或者深思的，他们从中探讨和探究什么是完美的爱情：似乎就是爱情之美在于不爱。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220915202924.png" alt="20220915202924"></p>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>缘起</tag>
-        <tag>大话西游</tag>
-        <tag>爱情之美</tag>
       </tags>
   </entry>
   <entry>
@@ -6939,6 +6979,21 @@ pip install requirements.txt
       </tags>
   </entry>
   <entry>
+    <title>随想</title>
+    <url>/2022/04/30/%E9%9A%8F%E6%83%B3/</url>
+    <content><![CDATA[<p>想养一只猫</p>
+<p>给他取名叫米奇</p>
+<p>为啥</p>
+<p>因为老一辈的人相信贱名好养活。</p>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>喵</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>酒馆战旗为啥不好玩了</title>
     <url>/2022/06/13/%E9%85%92%E9%A6%86%E6%88%98%E6%97%97%E4%B8%BA%E5%95%A5%E4%B8%8D%E5%A5%BD%E7%8E%A9%E4%BA%86/</url>
     <content><![CDATA[<h2 id="炉石传说"><a href="#炉石传说" class="headerlink" title="炉石传说"></a>炉石传说</h2><p>  和麻将一样，炉石传说也具有麻将的一搬特性：特定数量的棋子数，随机的战斗过程。相较于炉石不同的是，麻将追求的是一个特定的组合，但是炉石则更复杂，是追求的是比烂，你不一定要达到完美的组合，但是你只要比其他几个好就行。而且对战过程的随机性使得运气成分占据一定的地位。</p>
@@ -6958,21 +7013,6 @@ pip install requirements.txt
         <tag>六字真言</tag>
         <tag>酒馆战旗</tag>
         <tag>暴雪</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>随想</title>
-    <url>/2022/04/30/%E9%9A%8F%E6%83%B3/</url>
-    <content><![CDATA[<p>想养一只猫</p>
-<p>给他取名叫米奇</p>
-<p>为啥</p>
-<p>因为老一辈的人相信贱名好养活。</p>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>喵</tag>
       </tags>
   </entry>
   <entry>
