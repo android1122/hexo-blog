@@ -18,9 +18,9 @@
   
   <entry>
     <title>搬瓦工上新DC99限量POWERBOX</title>
-    <link href="https://minsummer.com/2025/02/11/190-%E7%93%A6%E5%B7%A525%E5%B9%B4%E4%B8%8A%E6%96%B0DC99%E9%99%90%E9%87%8FPOWERBOX/"/>
-    <id>https://minsummer.com/2025/02/11/190-%E7%93%A6%E5%B7%A525%E5%B9%B4%E4%B8%8A%E6%96%B0DC99%E9%99%90%E9%87%8FPOWERBOX/</id>
-    <published>2025-02-11T06:21:23.275Z</published>
+    <link href="https://minsummer.com/2025/02/14/190-%E7%93%A6%E5%B7%A525%E5%B9%B4%E4%B8%8A%E6%96%B0DC99%E9%99%90%E9%87%8FPOWERBOX/"/>
+    <id>https://minsummer.com/2025/02/14/190-%E7%93%A6%E5%B7%A525%E5%B9%B4%E4%B8%8A%E6%96%B0DC99%E9%99%90%E9%87%8FPOWERBOX/</id>
+    <published>2025-02-14T08:35:17.296Z</published>
     <updated>2023-02-01T16:00:00.000Z</updated>
     
     
@@ -36,6 +36,69 @@
     <category term="VPS" scheme="https://minsummer.com/tags/VPS/"/>
     
     <category term="POWERBOX" scheme="https://minsummer.com/tags/POWERBOX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>飞牛OS云端数据备份和取回</title>
+    <link href="https://minsummer.com/2025/02/11/197-%E9%A3%9E%E7%89%9BOS%E4%BA%91%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%92%8C%E5%8F%96%E5%9B%9E/"/>
+    <id>https://minsummer.com/2025/02/11/197-%E9%A3%9E%E7%89%9BOS%E4%BA%91%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%92%8C%E5%8F%96%E5%9B%9E/</id>
+    <published>2025-02-11T16:00:00.000Z</published>
+    <updated>2025-02-11T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;我算是比较早一批用云盘的用户，更多的是用来备份上班时候的数据，方便加班或者电脑没带的时候简单处理下。私心就是离职的时候我就不用费劲巴拉的拷贝文件。这些年主流的几个网盘程序都使用过了，趁现在自己买了一个NAS，想要把数据都回笼，所以趁着这个机会也来评判下用过网盘的优劣：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="飞牛OS" scheme="https://minsummer.com/tags/%E9%A3%9E%E7%89%9BOS/"/>
+    
+    <category term="百度云盘" scheme="https://minsummer.com/tags/%E7%99%BE%E5%BA%A6%E4%BA%91%E7%9B%98/"/>
+    
+    <category term="OneDrive" scheme="https://minsummer.com/tags/OneDrive/"/>
+    
+    <category term="坚果云盘" scheme="https://minsummer.com/tags/%E5%9D%9A%E6%9E%9C%E4%BA%91%E7%9B%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>哪吒探针部署指南</title>
+    <link href="https://minsummer.com/2025/02/11/198-%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-onedrive-safeBackup-0001/"/>
+    <id>https://minsummer.com/2025/02/11/198-%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-onedrive-safeBackup-0001/</id>
+    <published>2025-02-11T16:00:00.000Z</published>
+    <updated>2025-02-11T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;我之前用的是serverstatus，服务端直接docker部署，客户端python命令文件。好处是部署简单，功能够用，但是不如哪吒面板好看，而且客户端需要python对一些性能比较差的机器就无法监控，比如openwrt路由器，这次的想法就是将所有的设备进行监控。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="哪吒探针" scheme="https://minsummer.com/tags/%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>哪吒探针部署指南</title>
+    <link href="https://minsummer.com/2025/02/11/198-%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/"/>
+    <id>https://minsummer.com/2025/02/11/198-%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/</id>
+    <published>2025-02-11T16:00:00.000Z</published>
+    <updated>2025-02-11T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;我之前用的是serverstatus，服务端直接docker部署，客户端python命令文件。好处是部署简单，功能够用，但是不如哪吒面板好看，而且客户端需要python对一些性能比较差的机器就无法监控，比如openwrt路由器，这次的想法就是将所有的设备进行监控。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="哪吒探针" scheme="https://minsummer.com/tags/%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88/"/>
     
   </entry>
   
