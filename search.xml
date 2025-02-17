@@ -1230,6 +1230,71 @@
       </tags>
   </entry>
   <entry>
+    <title>路由器选择指北</title>
+    <url>/2023/11/12/137-%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97/</url>
+    <content><![CDATA[<p>在<a href="https://minsummer.com/2023/11/09/135-%E5%85%B3%E4%BA%8E%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E9%97%A8%E9%97%A8%E9%81%93%E9%81%93/#more">关于路由器的门门道道</a>，我说了几个常见的方案，然而哪些都是理论上的，今天就来做个截至2023目前常见的解决方案和价格。</p>
+<span id="more"></span>
+<h3 id="方案1：光猫-软路由-AP"><a href="#方案1：光猫-软路由-AP" class="headerlink" title="方案1：光猫-软路由-AP"></a>方案1：光猫-软路由-AP</h3><p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-09-09-50.png" alt="136路由器选择指北-2023-11-13-09-09-50"><br>这里需要说明：由于x86设备很多时候都是默认不带内存和硬盘，所以这里很多我都是以4g内存和32g硬盘进行统计，价格大多来自咸鱼，所以配置上会上下浮动100~200。<br>这个方案的优势：<br>    1. 性能强大，可以组all in one。一台机子搞定nas和翻墙的需求。<br>缺点：<br>    1. 单网口和双网口的主板差距大。差距有多大呢，J1900加蜗牛星际机箱一套也就350左右，但是J1900双网口的路由器就要200+。大家都知道的。<br>    2. 建议J4125起步，J1900已经属于被淘汰的地步。当然如果需求不高，可以用J1900玩玩。</p>
+<p>也有其他选择，可以查看天梯图<br> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-09-58-49.png" alt="136路由器选择指北-2023-11-13-09-58-49"></p>
+<h3 id="方案2：光猫-旁路由"><a href="#方案2：光猫-旁路由" class="headerlink" title="方案2：光猫-旁路由"></a>方案2：光猫-旁路由</h3><p>旁路由其实是一个很尴尬的局面，正如上面所说。单网口和多网口的主板差价一般都是100~200之间，所以旁路由性价比真心不高，而且旁路由的原理是设定路由器或者电脑网关为旁路由的地址，加上光猫已经无法修改指定网关，所以很多时候为了方便我们还是需要在前面增加一个可以修改指定网关的路由器。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-09-24-27.png" alt="136路由器选择指北-2023-11-13-09-24-27"><br>方案优势：</p>
+<ol>
+<li>便宜？？？？</li>
+<li>如果使用魔百盒这些被淘汰的电视盒子确实可以做到很低的价格。<br>缺点：</li>
+<li>越高等级的主板，网口的价格差越小，所以，性能越差的方案价格差距大，但是到了J4125这一层级，已经没有多大价格差。</li>
+</ol>
+<p>十分不推荐用那些小主机，魔百盒这种奇奇怪怪的设备来做旁路由或者all in boom，除非你准备花费大量的时间和精力。即使有人手把手教学，但是也有可能让你陷入坑里，深刻教训啊。</p>
+<h3 id="方案3：光猫-硬路由（刷机后的路由器）"><a href="#方案3：光猫-硬路由（刷机后的路由器）" class="headerlink" title="方案3：光猫-硬路由（刷机后的路由器）"></a>方案3：光猫-硬路由（刷机后的路由器）</h3><p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-14-38-33.png" alt="136路由器选择指北-2023-11-13-14-38-33"><br>这个方案是最早，也是最纯粹的方案，最不折腾的方案。但是现在并不是主流，或者说让步于操作更加丰富的方案1，毕竟x86设备就哪几种，好适配。而路由的门道就花样百出了，不仅仅有cpu，cpu架构也分为mips，arm，x86，性能和功耗逐级递增。对应的板子更多了，然后还得有大佬愿意为这个板子做驱动增加信号的操作。所以不是所有路由器都可以刷机。这边我们理清三个简单的概念：<br>路由器cpu：电脑cpu类似，主流的有联科发，高通的，200价位以下很多用的都是联科发的MT726X的cpu，性能足够，但是是mips架构，已经属于被淘汰的地步，现在主流是ARM架构，性能会更好。<br>路由器内存：一般128M，256M，512M这个建议256M起步，512M最好，越大一些程序可以运行的越流畅。<br>路由器闪存：一般都是128M，说实话足够了，这个就是硬盘，当然大点的好处就是可以装更多的插件。<br>具体可以看<a href="https://www.right.com.cn/forum/thread-4056125-1-1.html">恩山帖子</a>，这里比较详细的解释了几大硬件，但是这个仅仅说的是架构，落实到具体的产品，就又分为几种：</p>
+<ol>
+<li>联发科阵营<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-10-35-57.png" alt="136路由器选择指北-2023-11-13-10-35-57"><ul>
+<li>现在常见的MT7261等等都是要淘汰的，一般用在百元机器上，性能足够，比如红米AC2100，可玩性强。</li>
+<li>现在已经慢慢转向ARM，<a href="https://www.right.com.cn/forum/thread-8304371-1-1.html">联发科Filogic820&#x2F;830等ARM架构方案（MT7986&#x2F;7981&#x2F;7622）路由器列表 </a>，这里可以看到最近的架构，而且主流的路由器配置，你可以从中选择一个，然后再去找对应的固件。</li>
+</ul>
+</li>
+<li>高通阵营<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-14-49-14.png" alt="136路由器选择指北-2023-11-13-14-49-14"><ul>
+<li>以前一般用在200元+的中高端机</li>
+<li><a href="https://www.right.com.cn/forum/forum.php?mod=viewthread&tid=8306906&page=1">高通WiFi6方案（ipq50XX&#x2F;60XX&#x2F;8XXX）路由器分类梳理</a></li>
+</ul>
+</li>
+</ol>
+<p>一般来说上面的路由器都是可以刷机的。<br>上面我们可以看出，有些机子明明配置很高，但是价格却很低，原因有多种：</p>
+<ol>
+<li>运营商定制机，这种机子一般需要破解，性能高，价格低是常态</li>
+<li>信号缩水，2.4g和5g信号还有专门芯片，如果用集成成本会降低很多</li>
+<li>网口，现在网口基本千兆标配，但是有些有2.5g网口所以成本会增加。<br>恩山也有人抓门统计<a href="https://www.right.com.cn/forum/thread-7338353-1-1.html">全网最全146个型号的运营商WiFi6 mesh路由的超详细配置总结 含可刷op型号</a>，而且持续更新，如果你觉得太麻烦可以直接看帖子的excel文档。</li>
+</ol>
+<p>总结下这个优势：</p>
+<ol>
+<li>简单，技术简单，哪怕出现问题之后只需要更换问题的路由器就可以。</li>
+<li>更加灵活，后续的nas不需要的话，200块就可以配置好一个可以翻墙的环境。<br>缺点：</li>
+<li>性能一般，肯定没有J1900强大的，但是如果你对它要求不多，仅仅用来处理网络的事情，那么绝对是足够的。</li>
+</ol>
+<p>我一般推荐路由器购买二手的，一是因为这东西我们平时摸不着看不到，所以哪怕脏点也是无所谓。二是现在科技行业太卷了，而且现在也处于mips转arm架构的变动期，也许你今天大几百买一台，几个月后这东西已经落伍。电子产品追求最新，最极限是一个耗费金钱精力的大活，我不建议。<br>我说下我比较或许考虑的几款机器：</p>
+<ol>
+<li>中国移动RAX3000M：双核A53，512M内存，128闪存&#x2F;64G硬盘，这两款现在都可以刷机，性能足够，内存大，价格在150上下，有现成的刷机包，联发科的优势就是几乎都可以刷openwrt。</li>
+<li>中国移动CMIOT-AX18&#x2F;兆能 ZN-M2：四核A53+单核NPU，NPU就是单独的网络计算芯片，有它网络运行更快。内存256M，有点小，但是胜在咸鱼只要不到100，价格太便宜了。当然缺点是信号用的是集成方案，所以相较于上面信号有差距，一般人拿他当主路由或者小户型使用，咸鱼上有改造512M的服务，不过慎用。</li>
+<li>MR30000D-CI&#x2F;DIQ：两款都可以，原生512M，只是架构不同，价格CI会便宜点，因为现在还没有固件可以刷。</li>
+</ol>
+<hr>
+<p>参考链接：</p>
+<ol>
+<li><a href="https://www.right.com.cn/forum/thread-4056125-1-1.html">写给新手小白入门——硬件篇</a></li>
+<li><a href="https://www.right.com.cn/forum/thread-8304371-1-1.html">联发科Filogic820&#x2F;830等ARM架构方案（MT7986&#x2F;7981&#x2F;7622）路由器列表 </a></li>
+<li><a href="https://www.right.com.cn/forum/forum.php?mod=viewthread&tid=8306906&page=1">高通WiFi6方案（ipq50XX&#x2F;60XX&#x2F;8XXX）路由器分类梳理</a></li>
+<li><a href="https://www.right.com.cn/forum/thread-7338353-1-1.html">全网最全146个型号的运营商WiFi6 mesh路由的超详细配置总结 含可刷op型号</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>路由器</tag>
+        <tag>路由器指北</tag>
+        <tag>性价比</tag>
+        <tag>花小钱办大事</tag>
+        <tag>购买指北</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>全飞秒近视手术记录</title>
     <url>/2023/11/11/136-%E5%85%A8%E9%A3%9E%E7%A7%92%E8%BF%91%E8%A7%86%E6%89%8B%E6%9C%AF%E7%BA%AA%E5%BD%95/</url>
     <content><![CDATA[<p>上次我说过我准备去做近视手术，在做了一些简单的功课之后，我最终在市里的眼科医院做了这次手术，之前一直听到的概念是激光，但是确实没有花心思去了解，也没有想法去做，毕竟没有对我的生活带来太多的麻烦。事情的起因我侄子要去参军，做了全飞秒。人有时候就是这么奇妙，平时没有经历就没有概念，但是身边的人经历过之后，忽然就觉得这个我也可以。他在我们老家做的，挺草率就是，从做到结束一共就两三天，价格是23800。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/136-%E5%85%A8%E9%A3%9E%E7%A7%92%E8%BF%91%E8%A7%86%E6%89%8B%E6%9C%AF%E7%BA%AA%E5%BD%95-2023-11-15-20-17-14.png" alt="136-全飞秒近视手术纪录-2023-11-15-20-17-14"></p>
@@ -1311,71 +1376,6 @@
       </tags>
   </entry>
   <entry>
-    <title>路由器选择指北</title>
-    <url>/2023/11/12/137-%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97/</url>
-    <content><![CDATA[<p>在<a href="https://minsummer.com/2023/11/09/135-%E5%85%B3%E4%BA%8E%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E9%97%A8%E9%97%A8%E9%81%93%E9%81%93/#more">关于路由器的门门道道</a>，我说了几个常见的方案，然而哪些都是理论上的，今天就来做个截至2023目前常见的解决方案和价格。</p>
-<span id="more"></span>
-<h3 id="方案1：光猫-软路由-AP"><a href="#方案1：光猫-软路由-AP" class="headerlink" title="方案1：光猫-软路由-AP"></a>方案1：光猫-软路由-AP</h3><p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-09-09-50.png" alt="136路由器选择指北-2023-11-13-09-09-50"><br>这里需要说明：由于x86设备很多时候都是默认不带内存和硬盘，所以这里很多我都是以4g内存和32g硬盘进行统计，价格大多来自咸鱼，所以配置上会上下浮动100~200。<br>这个方案的优势：<br>    1. 性能强大，可以组all in one。一台机子搞定nas和翻墙的需求。<br>缺点：<br>    1. 单网口和双网口的主板差距大。差距有多大呢，J1900加蜗牛星际机箱一套也就350左右，但是J1900双网口的路由器就要200+。大家都知道的。<br>    2. 建议J4125起步，J1900已经属于被淘汰的地步。当然如果需求不高，可以用J1900玩玩。</p>
-<p>也有其他选择，可以查看天梯图<br> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-09-58-49.png" alt="136路由器选择指北-2023-11-13-09-58-49"></p>
-<h3 id="方案2：光猫-旁路由"><a href="#方案2：光猫-旁路由" class="headerlink" title="方案2：光猫-旁路由"></a>方案2：光猫-旁路由</h3><p>旁路由其实是一个很尴尬的局面，正如上面所说。单网口和多网口的主板差价一般都是100~200之间，所以旁路由性价比真心不高，而且旁路由的原理是设定路由器或者电脑网关为旁路由的地址，加上光猫已经无法修改指定网关，所以很多时候为了方便我们还是需要在前面增加一个可以修改指定网关的路由器。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-09-24-27.png" alt="136路由器选择指北-2023-11-13-09-24-27"><br>方案优势：</p>
-<ol>
-<li>便宜？？？？</li>
-<li>如果使用魔百盒这些被淘汰的电视盒子确实可以做到很低的价格。<br>缺点：</li>
-<li>越高等级的主板，网口的价格差越小，所以，性能越差的方案价格差距大，但是到了J4125这一层级，已经没有多大价格差。</li>
-</ol>
-<p>十分不推荐用那些小主机，魔百盒这种奇奇怪怪的设备来做旁路由或者all in boom，除非你准备花费大量的时间和精力。即使有人手把手教学，但是也有可能让你陷入坑里，深刻教训啊。</p>
-<h3 id="方案3：光猫-硬路由（刷机后的路由器）"><a href="#方案3：光猫-硬路由（刷机后的路由器）" class="headerlink" title="方案3：光猫-硬路由（刷机后的路由器）"></a>方案3：光猫-硬路由（刷机后的路由器）</h3><p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-14-38-33.png" alt="136路由器选择指北-2023-11-13-14-38-33"><br>这个方案是最早，也是最纯粹的方案，最不折腾的方案。但是现在并不是主流，或者说让步于操作更加丰富的方案1，毕竟x86设备就哪几种，好适配。而路由的门道就花样百出了，不仅仅有cpu，cpu架构也分为mips，arm，x86，性能和功耗逐级递增。对应的板子更多了，然后还得有大佬愿意为这个板子做驱动增加信号的操作。所以不是所有路由器都可以刷机。这边我们理清三个简单的概念：<br>路由器cpu：电脑cpu类似，主流的有联科发，高通的，200价位以下很多用的都是联科发的MT726X的cpu，性能足够，但是是mips架构，已经属于被淘汰的地步，现在主流是ARM架构，性能会更好。<br>路由器内存：一般128M，256M，512M这个建议256M起步，512M最好，越大一些程序可以运行的越流畅。<br>路由器闪存：一般都是128M，说实话足够了，这个就是硬盘，当然大点的好处就是可以装更多的插件。<br>具体可以看<a href="https://www.right.com.cn/forum/thread-4056125-1-1.html">恩山帖子</a>，这里比较详细的解释了几大硬件，但是这个仅仅说的是架构，落实到具体的产品，就又分为几种：</p>
-<ol>
-<li>联发科阵营<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-10-35-57.png" alt="136路由器选择指北-2023-11-13-10-35-57"><ul>
-<li>现在常见的MT7261等等都是要淘汰的，一般用在百元机器上，性能足够，比如红米AC2100，可玩性强。</li>
-<li>现在已经慢慢转向ARM，<a href="https://www.right.com.cn/forum/thread-8304371-1-1.html">联发科Filogic820&#x2F;830等ARM架构方案（MT7986&#x2F;7981&#x2F;7622）路由器列表 </a>，这里可以看到最近的架构，而且主流的路由器配置，你可以从中选择一个，然后再去找对应的固件。</li>
-</ul>
-</li>
-<li>高通阵营<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/136%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E6%8B%A9%E6%8C%87%E5%8C%97-2023-11-13-14-49-14.png" alt="136路由器选择指北-2023-11-13-14-49-14"><ul>
-<li>以前一般用在200元+的中高端机</li>
-<li><a href="https://www.right.com.cn/forum/forum.php?mod=viewthread&tid=8306906&page=1">高通WiFi6方案（ipq50XX&#x2F;60XX&#x2F;8XXX）路由器分类梳理</a></li>
-</ul>
-</li>
-</ol>
-<p>一般来说上面的路由器都是可以刷机的。<br>上面我们可以看出，有些机子明明配置很高，但是价格却很低，原因有多种：</p>
-<ol>
-<li>运营商定制机，这种机子一般需要破解，性能高，价格低是常态</li>
-<li>信号缩水，2.4g和5g信号还有专门芯片，如果用集成成本会降低很多</li>
-<li>网口，现在网口基本千兆标配，但是有些有2.5g网口所以成本会增加。<br>恩山也有人抓门统计<a href="https://www.right.com.cn/forum/thread-7338353-1-1.html">全网最全146个型号的运营商WiFi6 mesh路由的超详细配置总结 含可刷op型号</a>，而且持续更新，如果你觉得太麻烦可以直接看帖子的excel文档。</li>
-</ol>
-<p>总结下这个优势：</p>
-<ol>
-<li>简单，技术简单，哪怕出现问题之后只需要更换问题的路由器就可以。</li>
-<li>更加灵活，后续的nas不需要的话，200块就可以配置好一个可以翻墙的环境。<br>缺点：</li>
-<li>性能一般，肯定没有J1900强大的，但是如果你对它要求不多，仅仅用来处理网络的事情，那么绝对是足够的。</li>
-</ol>
-<p>我一般推荐路由器购买二手的，一是因为这东西我们平时摸不着看不到，所以哪怕脏点也是无所谓。二是现在科技行业太卷了，而且现在也处于mips转arm架构的变动期，也许你今天大几百买一台，几个月后这东西已经落伍。电子产品追求最新，最极限是一个耗费金钱精力的大活，我不建议。<br>我说下我比较或许考虑的几款机器：</p>
-<ol>
-<li>中国移动RAX3000M：双核A53，512M内存，128闪存&#x2F;64G硬盘，这两款现在都可以刷机，性能足够，内存大，价格在150上下，有现成的刷机包，联发科的优势就是几乎都可以刷openwrt。</li>
-<li>中国移动CMIOT-AX18&#x2F;兆能 ZN-M2：四核A53+单核NPU，NPU就是单独的网络计算芯片，有它网络运行更快。内存256M，有点小，但是胜在咸鱼只要不到100，价格太便宜了。当然缺点是信号用的是集成方案，所以相较于上面信号有差距，一般人拿他当主路由或者小户型使用，咸鱼上有改造512M的服务，不过慎用。</li>
-<li>MR30000D-CI&#x2F;DIQ：两款都可以，原生512M，只是架构不同，价格CI会便宜点，因为现在还没有固件可以刷。</li>
-</ol>
-<hr>
-<p>参考链接：</p>
-<ol>
-<li><a href="https://www.right.com.cn/forum/thread-4056125-1-1.html">写给新手小白入门——硬件篇</a></li>
-<li><a href="https://www.right.com.cn/forum/thread-8304371-1-1.html">联发科Filogic820&#x2F;830等ARM架构方案（MT7986&#x2F;7981&#x2F;7622）路由器列表 </a></li>
-<li><a href="https://www.right.com.cn/forum/forum.php?mod=viewthread&tid=8306906&page=1">高通WiFi6方案（ipq50XX&#x2F;60XX&#x2F;8XXX）路由器分类梳理</a></li>
-<li><a href="https://www.right.com.cn/forum/thread-7338353-1-1.html">全网最全146个型号的运营商WiFi6 mesh路由的超详细配置总结 含可刷op型号</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>路由器</tag>
-        <tag>路由器指北</tag>
-        <tag>性价比</tag>
-        <tag>花小钱办大事</tag>
-        <tag>购买指北</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>iperf3测速来选择服务器</title>
     <url>/2023/11/28/138-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B5%8B%E9%80%9F%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<p>现在网上充斥着各种线路：GIA，CMI，9929等等，但是很多时候线路并不代表全部，线路还需要服务器商对其进行优化，否则有可能会绕到天南地北的情况。<br>而作为富强的使用者，我们最关心的就是速度。一般推荐使用iperf3进行测速。</p>
@@ -1430,42 +1430,6 @@
         <tag>iperf3</tag>
         <tag>vps选择</tag>
         <tag>vps</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Openwrt下ZeroTier部署指南</title>
-    <url>/2023/11/29/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p>最近买了两个红米AX 5 JDC版本，分别放在公司和家里。很多时候需要访问家里的一些服务，比如摸鱼时候，想要提前下载东西，回家就能看。或者看到自己青龙京东的COOKIE过期，直接公司更新COOKIE。其实我得场景更多不需要将内网服务开放到公网去。我只是需要我可以在外面访问到内网服务即可。</p>
-<span id="more"></span>
-<h2 id="ZeroTier"><a href="#ZeroTier" class="headerlink" title="ZeroTier"></a><a href="https://my.zerotier.com/network">ZeroTier</a></h2><p>国外的一个服务，可以帮助异地组网。简而言之就是将A地和B地的网络组合成一个局域网。支持Linux，Windows系统，也支持Openwrt插件部署。我这边两台路由器都是Openwrt系统，于是就使用插件部署，部署之后的效果就是：输入异地的内网任何地址，我这边都可以访问到。</p>
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="1-注册"><a href="#1-注册" class="headerlink" title="1. 注册"></a>1. 注册</h3><p>注册一个<a href="https://my.zerotier.com/network">ZeroTier</a>，获取到NETWORK ID</p>
-<h3 id="2-Openwrt插件配置"><a href="#2-Openwrt插件配置" class="headerlink" title="2. Openwrt插件配置"></a>2. Openwrt插件配置</h3><p>进入路由器系统，找到ZeroTier的配置项，输入获取到的INETWORK ID</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-44-39.png" alt="139-ZeroTier部署指南-2023-11-30-10-44-39"></p>
-<p>这是加入了ZeroTier，去网站那勾选前面的复选框，允许其接入。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-46-31.png" alt="139-ZeroTier部署指南-2023-11-30-10-46-31"></p>
-<p>成功的现象是Managed IPs会回去到一个地址，记住这个地址。回到路由器，打开接口配置，新建一个接口：协议静态，地址就是网站上的地址，子网掩码就是255.255.255.0.<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-48-54.png" alt="139-ZeroTier部署指南-2023-11-30-10-48-54"></p>
-<p>这是加入了ZeroTier，去网站那勾选前面的复选框，允许其接入。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-46-31.png" alt="139-ZeroTier部署指南-2023-11-30-10-46-31"></p>
-<p>然后进入接口-物理设置，插件会生成一个虚拟网卡，将这个网卡接入，网卡一般是zt开头，：</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-52-38.png" alt="139-ZeroTier部署指南-2023-11-30-10-52-38"></p>
-<p>如果不知道，可以去ZeroTier下的接口信息查看</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-53-32.png" alt="139-ZeroTier部署指南-2023-11-30-10-53-32"></p>
-<p>最后是将防火墙打开，允许转发，进出站：</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-55-16.png" alt="139-ZeroTier部署指南-2023-11-30-10-55-16"></p>
-<p>至此，路由器配置完成了，后续你直接加入这个INETWORK ID就可以访问到这个路由器，接下来配置允许访问路由器网段内的其他地址，这时候就需要到ZeroTier配置下，在设置里面输入网段，比如你公司网段时192.168.1.0<del>199，那么你就可以配置192.168.1.0&#x2F;24，右边的就是你刚才配置的静态地址。这样的效果就是你加入这个网络之后，可以访问192.168.1.0</del>199内的所有设备。如果你想要两个网段互相访问，需要注意，两个网段的地址不要重复，公司时192.168.1网段那么家里只能时192.168.2网段，否则会冲突。我这边是家里网段开放，但是公司网段不开放，所以公司任意一台都可以通过输入对应地址访问家里设备，家里的不行，只能访问到配置插件的路由器，其他的不行。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-57-23.png" alt="139-ZeroTier部署指南-2023-11-30-10-57-23"></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>相比较DDNS这些将服务开放到公网，我更加需要这种异地组网，更适合我。而且也不用担心网络攻击的问题。适合自己的才是最重要，至于搭建自己的moon服务器，目前还不需要，毕竟我只是更新信息或者提前下载，两边网速慢点也是可以的，至少目前体验下来，没有网速瓶颈。</p>
-<hr>
-<p>参考文章：<br><a href="https://www.bilibili.com/video/BV1hT4y1E78k/?spm_id_from=333.337.search-card.all.click&vd_source=004ea20ecc05f6fa780db2013e61781b">Openwrt的Zerotier插件玩法</a><br><a href="https://my.zerotier.com/network"> ZeroTier官网地址</a></p>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>ZeroTier</tag>
-        <tag>内网穿透</tag>
-        <tag>跨域局域网</tag>
-        <tag>局域网</tag>
-        <tag>openwrt系统</tag>
       </tags>
   </entry>
   <entry>
@@ -1562,6 +1526,42 @@
       </tags>
   </entry>
   <entry>
+    <title>Openwrt下ZeroTier部署指南</title>
+    <url>/2023/11/29/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p>最近买了两个红米AX 5 JDC版本，分别放在公司和家里。很多时候需要访问家里的一些服务，比如摸鱼时候，想要提前下载东西，回家就能看。或者看到自己青龙京东的COOKIE过期，直接公司更新COOKIE。其实我得场景更多不需要将内网服务开放到公网去。我只是需要我可以在外面访问到内网服务即可。</p>
+<span id="more"></span>
+<h2 id="ZeroTier"><a href="#ZeroTier" class="headerlink" title="ZeroTier"></a><a href="https://my.zerotier.com/network">ZeroTier</a></h2><p>国外的一个服务，可以帮助异地组网。简而言之就是将A地和B地的网络组合成一个局域网。支持Linux，Windows系统，也支持Openwrt插件部署。我这边两台路由器都是Openwrt系统，于是就使用插件部署，部署之后的效果就是：输入异地的内网任何地址，我这边都可以访问到。</p>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="1-注册"><a href="#1-注册" class="headerlink" title="1. 注册"></a>1. 注册</h3><p>注册一个<a href="https://my.zerotier.com/network">ZeroTier</a>，获取到NETWORK ID</p>
+<h3 id="2-Openwrt插件配置"><a href="#2-Openwrt插件配置" class="headerlink" title="2. Openwrt插件配置"></a>2. Openwrt插件配置</h3><p>进入路由器系统，找到ZeroTier的配置项，输入获取到的INETWORK ID</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-44-39.png" alt="139-ZeroTier部署指南-2023-11-30-10-44-39"></p>
+<p>这是加入了ZeroTier，去网站那勾选前面的复选框，允许其接入。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-46-31.png" alt="139-ZeroTier部署指南-2023-11-30-10-46-31"></p>
+<p>成功的现象是Managed IPs会回去到一个地址，记住这个地址。回到路由器，打开接口配置，新建一个接口：协议静态，地址就是网站上的地址，子网掩码就是255.255.255.0.<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-48-54.png" alt="139-ZeroTier部署指南-2023-11-30-10-48-54"></p>
+<p>这是加入了ZeroTier，去网站那勾选前面的复选框，允许其接入。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-46-31.png" alt="139-ZeroTier部署指南-2023-11-30-10-46-31"></p>
+<p>然后进入接口-物理设置，插件会生成一个虚拟网卡，将这个网卡接入，网卡一般是zt开头，：</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-52-38.png" alt="139-ZeroTier部署指南-2023-11-30-10-52-38"></p>
+<p>如果不知道，可以去ZeroTier下的接口信息查看</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-53-32.png" alt="139-ZeroTier部署指南-2023-11-30-10-53-32"></p>
+<p>最后是将防火墙打开，允许转发，进出站：</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-55-16.png" alt="139-ZeroTier部署指南-2023-11-30-10-55-16"></p>
+<p>至此，路由器配置完成了，后续你直接加入这个INETWORK ID就可以访问到这个路由器，接下来配置允许访问路由器网段内的其他地址，这时候就需要到ZeroTier配置下，在设置里面输入网段，比如你公司网段时192.168.1.0<del>199，那么你就可以配置192.168.1.0&#x2F;24，右边的就是你刚才配置的静态地址。这样的效果就是你加入这个网络之后，可以访问192.168.1.0</del>199内的所有设备。如果你想要两个网段互相访问，需要注意，两个网段的地址不要重复，公司时192.168.1网段那么家里只能时192.168.2网段，否则会冲突。我这边是家里网段开放，但是公司网段不开放，所以公司任意一台都可以通过输入对应地址访问家里设备，家里的不行，只能访问到配置插件的路由器，其他的不行。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-57-23.png" alt="139-ZeroTier部署指南-2023-11-30-10-57-23"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>相比较DDNS这些将服务开放到公网，我更加需要这种异地组网，更适合我。而且也不用担心网络攻击的问题。适合自己的才是最重要，至于搭建自己的moon服务器，目前还不需要，毕竟我只是更新信息或者提前下载，两边网速慢点也是可以的，至少目前体验下来，没有网速瓶颈。</p>
+<hr>
+<p>参考文章：<br><a href="https://www.bilibili.com/video/BV1hT4y1E78k/?spm_id_from=333.337.search-card.all.click&vd_source=004ea20ecc05f6fa780db2013e61781b">Openwrt的Zerotier插件玩法</a><br><a href="https://my.zerotier.com/network"> ZeroTier官网地址</a></p>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>ZeroTier</tag>
+        <tag>内网穿透</tag>
+        <tag>跨域局域网</tag>
+        <tag>局域网</tag>
+        <tag>openwrt系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>《亚财政：制度性腐败与中国历史博弈》-妥妥的标题党</title>
     <url>/2023/12/08/141-%E3%80%8A%E4%BA%9A%E8%B4%A2%E6%94%BF%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/</url>
     <content><![CDATA[<p>《亚财政：制度性腐败与中国历史博弈》最近花了点时间看了下，也是一部看起来很宏大的，财政，制度，历史，腐败。可以说的上是标题拉满，那我们看下书的正经内容：海瑞的私生活，明清官员的生活记录。标题的大没有体现，反而是一个个事例堆砌的去证明。</p>
@@ -1635,13 +1635,7 @@
 <p>你想知道的信息都有，可以方便追踪目前的机器情况。</p>
 <h2 id="后续更新"><a href="#后续更新" class="headerlink" title="后续更新"></a>后续更新</h2><p>在更换哪吒无果之后，我还是选择继续换回ServerStatus，现在着重解决几个问题：</p>
 <ol>
-<li><p>主题<br>官方的主题太丑了，我更换<a href="https://github.com/orilights/ServerStatus-Theme-Light">另一个</a>，相对好一些。更换的方式比较麻烦，首先你需要按照上面的命令执行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --restart=always --name=serverstatus -v ~/serverstatus-config.json:/ServerStatus/server/config.json -v ~/serverstatus-monthtraffic:/usr/share/nginx/html/json -p 80:80 -p 35601:35601 cppla/serverstatus:latest     </span><br></pre></td></tr></table></figure>
-<p>然后执行：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker cp 【你的的容器名称】:/usr/share/nginx/html/ 【你要存放的位置】</span><br></pre></td></tr></table></figure>
-<p>将里面nginx&#x2F;html的文件备份一下，然后再重新建立一下docker</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --restart=always --name=serverstatus -v ~/serverstatus-config.json:/ServerStatus/server/config.json -v 【你要存放的位置】:/usr/share/nginx/html -p 80:80 -p 35601:35601 cppla/serverstatus:latest     </span><br></pre></td></tr></table></figure>
-<p>即可。<br>需要注意的是，这边的图标用的是svg，所以你地区location参数不能用中文，要使用image&#x2F;flag下面有的名称图标。<br>我最后还是换回来了，发现延迟信息无法查看，所以还是选择原来的主题，难看就难看些吧。</p>
+<li><p>主题<br>主题的话，官方提供了三个主题搬运，之前用简洁模式图标会有问题，主要是我的location参数用的是中文，系统识别不到对应正确的svg图标，我将location改成cn之后，系统就能显示正确的图标</p>
 </li>
 <li><p>定制延迟测试<br>程序自带的三网延迟测试只是测试到对应网站的，但是由于我们地区不同，所有很多时候需要一个vps到我们地区的延迟来做参考，修改起来也很简单:<br>搜索下全国三网IP，找到自己省份的，然后复制下来。<br>直接下载：<a href="https://raw.githubusercontent.com/cppla/ServerStatus/master/clients/client-linux.py">https://raw.githubusercontent.com/cppla/ServerStatus/master/clients/client-linux.py</a> 这个就是客户端文件。<br>用文档打开，修改CU，CT，CM三个参数即可。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/143-ServerStatus%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97-2025-02-14-15-18-16.png" alt="143-ServerStatus搭建指南-2025-02-14-15-18-16"></p>
 </li>
@@ -2253,6 +2247,52 @@
       </tags>
   </entry>
   <entry>
+    <title>也许这就是生活</title>
+    <url>/2024/03/09/158-%E4%B9%9F%E8%AE%B8%E8%BF%99%E5%B0%B1%E6%98%AF%E7%94%9F%E6%B4%BB/</url>
+    <content><![CDATA[<p>《我在北京送快递》这本书是我同学推荐给我的，他说让我看看什么是底层生活。于是我在回家的动车上看完了它。</p>
+<span id="more"></span>
+<p>看完了感触很多，和我生活中遇见的形形色色的人都很像，到此时我才发现，我也不过是底层的一人。我们在工作中进行着无用的社交，只是因为这些同事抬头不见低头见，我们重复着那些轱辘话，谈论着并不喜欢的政治，以及办公室的八卦。</p>
+<blockquote>
+<p>并不是说我们心里有多么不满，只是这些话能拉近我们的距离，赢得彼此的好感和信任，建立一种同仇敌忾的阶级情谊。说白了那就是些场面话，和北京人见面互相问一句“吃了吗”差不多。</p>
+</blockquote>
+<p>也是那之后，我切切实实的明白了，也许工作仅仅是工作，不要把同事当成朋友，也不要把公司当自己家，我们只不过是员工罢了：</p>
+<blockquote>
+<p>我很理解他的苦处，但并不同情他，因为我的处境和他一样，甚至比他还不如。我当然不想成为下一个他。</p>
+</blockquote>
+<p>后面，慢慢的我就不在工作中投入太多，毕竟这是个糊口的东西，我们花费大量的时间，仅仅是为了生活；</p>
+<blockquote>
+<p>从头到尾，我们所有人只是在旁观，静静地看着事态发展，没有人出来教训他，也没有人伸手援助孕妇，顶多只是安慰她几句。我们也各有各的压力，各有各家里不顺心的事，谁也没有余力顾别人。在那种工作场所里，每个人都被生活压榨着，同情心因此透支，然后不知不觉地变得麻木、冷漠。</p>
+</blockquote>
+<p>我并没有什么宏图伟业想着在工作中实现，工作无法满足我得梦想。在工作中我没有梦想。</p>
+<blockquote>
+<p>我是一个怎样的人，很大程度上是由我所处的环境，而不是由我的所谓本性决定的</p>
+</blockquote>
+<p>我后面回想了我当初的一些工作，从初出茅庐觉得工资破万，到后面去当一个电话销售。但是没有当太久我就辞职了，我不愿意放下我得自尊。</p>
+<blockquote>
+<p>我想我可以被解雇，但不能被羞辱。</p>
+</blockquote>
+<p>我慢慢的受不了一遍遍的电话，一遍遍的被拒绝。作为一个机器而不是人在哪里站着。我其实之前面试过保险的电话销售，那里的环境更加糟糕，我以为换个好点的环境会让我更舒服，但终归，我不愿意成为一个“粗人”，放下自己自尊。</p>
+<blockquote>
+<p>其实更喜欢性格“粗”点儿的快递员，因为“粗人”身上没有多余的自尊心。后来在工作中我亲身体会到，自尊心确实是一种妨碍。</p>
+</blockquote>
+<p>我的第二份工作，老板对我报以希望；我甚至是他为数不多的救命稻草。手底下的业务员只剩下两个，业务也在萎缩。他给了我一个方向，希望我可以自学java开发，他很喜欢画饼，夸大自己，然后觉得这业务马上就要成了。但是当时的我学不下去，我想赚钱，而不是学习。他给的工资太低，让我只想接业务拿提成。</p>
+<blockquote>
+<p>我想一个人得有多么空虚或自卑，才会这样吹牛啊。可是现在回过头看，我对他当时的做法多了一些理解</p>
+</blockquote>
+<p>我在他手底下没有做成一单。到了年底，我提辞职；他很不解。他甚至在我离职前花了大钱请我们几个业务员出去吃饭。</p>
+<blockquote>
+<p>她大概认为自己待我不薄，我哪怕不能鞠躬尽瘁死而后已，起码也该知恩图报，留下来充当她可以信任的助手，和她同甘共苦，一起创业。</p>
+</blockquote>
+<p>然而领导和员工的看法是不一样的，我只是觉得在他手底下没有希望，我想更高的工资，更好的机会。后面我离开了天津，我把天津能投的企业都投了一遍，但是没有一个面试。我那时候想当然的觉得，也许换个城市会更好。于是我走到了厦门。那时的我还不明白，其实工作，在哪都一样。<br>我又重复了之前的事情，工作，然后慢慢的厌烦；好处是工资够高，所以我没有频繁跳槽。在一份三年的疲倦期之后，我忽然明白，这份饿不死但也发不了财的工作不适合我。我日复一日的上班，进行着无用的社交，然后看似满满当当的完成了一天的事情，最后拖着疲惫的身躯回去，等待明天的到来。工资很多，但是没有多到我可以随意的花费，我精打细算的计算着开销，周末也只是在家呆着。即便如此，我一年也只不过存下七八万。我曾经幻想着自己买房娶妻远远的看不到希望。在这座城市了我没有房子，没有家。我要拿出20%的工资给房东。我甚至幻想，如果房子是我自己的，我每个月2000块钱花掉会是多么舒服的事情，我越想越开心。我看到了房子的重要性，但是我却无能为力。</p>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>我在北京送快递</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我在北京送快递</title>
     <url>/2024/03/09/157-%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E9%80%81%E5%BF%AB%E9%80%92-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>《我在北京送快递》我更喜欢它的前半部，在北京的那些生活。</p>
@@ -2299,52 +2339,6 @@
       <tags>
         <tag>我在北京送快递</tag>
         <tag>胡安焉</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>也许这就是生活</title>
-    <url>/2024/03/09/158-%E4%B9%9F%E8%AE%B8%E8%BF%99%E5%B0%B1%E6%98%AF%E7%94%9F%E6%B4%BB/</url>
-    <content><![CDATA[<p>《我在北京送快递》这本书是我同学推荐给我的，他说让我看看什么是底层生活。于是我在回家的动车上看完了它。</p>
-<span id="more"></span>
-<p>看完了感触很多，和我生活中遇见的形形色色的人都很像，到此时我才发现，我也不过是底层的一人。我们在工作中进行着无用的社交，只是因为这些同事抬头不见低头见，我们重复着那些轱辘话，谈论着并不喜欢的政治，以及办公室的八卦。</p>
-<blockquote>
-<p>并不是说我们心里有多么不满，只是这些话能拉近我们的距离，赢得彼此的好感和信任，建立一种同仇敌忾的阶级情谊。说白了那就是些场面话，和北京人见面互相问一句“吃了吗”差不多。</p>
-</blockquote>
-<p>也是那之后，我切切实实的明白了，也许工作仅仅是工作，不要把同事当成朋友，也不要把公司当自己家，我们只不过是员工罢了：</p>
-<blockquote>
-<p>我很理解他的苦处，但并不同情他，因为我的处境和他一样，甚至比他还不如。我当然不想成为下一个他。</p>
-</blockquote>
-<p>后面，慢慢的我就不在工作中投入太多，毕竟这是个糊口的东西，我们花费大量的时间，仅仅是为了生活；</p>
-<blockquote>
-<p>从头到尾，我们所有人只是在旁观，静静地看着事态发展，没有人出来教训他，也没有人伸手援助孕妇，顶多只是安慰她几句。我们也各有各的压力，各有各家里不顺心的事，谁也没有余力顾别人。在那种工作场所里，每个人都被生活压榨着，同情心因此透支，然后不知不觉地变得麻木、冷漠。</p>
-</blockquote>
-<p>我并没有什么宏图伟业想着在工作中实现，工作无法满足我得梦想。在工作中我没有梦想。</p>
-<blockquote>
-<p>我是一个怎样的人，很大程度上是由我所处的环境，而不是由我的所谓本性决定的</p>
-</blockquote>
-<p>我后面回想了我当初的一些工作，从初出茅庐觉得工资破万，到后面去当一个电话销售。但是没有当太久我就辞职了，我不愿意放下我得自尊。</p>
-<blockquote>
-<p>我想我可以被解雇，但不能被羞辱。</p>
-</blockquote>
-<p>我慢慢的受不了一遍遍的电话，一遍遍的被拒绝。作为一个机器而不是人在哪里站着。我其实之前面试过保险的电话销售，那里的环境更加糟糕，我以为换个好点的环境会让我更舒服，但终归，我不愿意成为一个“粗人”，放下自己自尊。</p>
-<blockquote>
-<p>其实更喜欢性格“粗”点儿的快递员，因为“粗人”身上没有多余的自尊心。后来在工作中我亲身体会到，自尊心确实是一种妨碍。</p>
-</blockquote>
-<p>我的第二份工作，老板对我报以希望；我甚至是他为数不多的救命稻草。手底下的业务员只剩下两个，业务也在萎缩。他给了我一个方向，希望我可以自学java开发，他很喜欢画饼，夸大自己，然后觉得这业务马上就要成了。但是当时的我学不下去，我想赚钱，而不是学习。他给的工资太低，让我只想接业务拿提成。</p>
-<blockquote>
-<p>我想一个人得有多么空虚或自卑，才会这样吹牛啊。可是现在回过头看，我对他当时的做法多了一些理解</p>
-</blockquote>
-<p>我在他手底下没有做成一单。到了年底，我提辞职；他很不解。他甚至在我离职前花了大钱请我们几个业务员出去吃饭。</p>
-<blockquote>
-<p>她大概认为自己待我不薄，我哪怕不能鞠躬尽瘁死而后已，起码也该知恩图报，留下来充当她可以信任的助手，和她同甘共苦，一起创业。</p>
-</blockquote>
-<p>然而领导和员工的看法是不一样的，我只是觉得在他手底下没有希望，我想更高的工资，更好的机会。后面我离开了天津，我把天津能投的企业都投了一遍，但是没有一个面试。我那时候想当然的觉得，也许换个城市会更好。于是我走到了厦门。那时的我还不明白，其实工作，在哪都一样。<br>我又重复了之前的事情，工作，然后慢慢的厌烦；好处是工资够高，所以我没有频繁跳槽。在一份三年的疲倦期之后，我忽然明白，这份饿不死但也发不了财的工作不适合我。我日复一日的上班，进行着无用的社交，然后看似满满当当的完成了一天的事情，最后拖着疲惫的身躯回去，等待明天的到来。工资很多，但是没有多到我可以随意的花费，我精打细算的计算着开销，周末也只是在家呆着。即便如此，我一年也只不过存下七八万。我曾经幻想着自己买房娶妻远远的看不到希望。在这座城市了我没有房子，没有家。我要拿出20%的工资给房东。我甚至幻想，如果房子是我自己的，我每个月2000块钱花掉会是多么舒服的事情，我越想越开心。我看到了房子的重要性，但是我却无能为力。</p>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>我在北京送快递</tag>
       </tags>
   </entry>
   <entry>
@@ -3405,6 +3399,64 @@
       </tags>
   </entry>
   <entry>
+    <title>NAS指北</title>
+    <url>/2024/12/29/188-NAS%E6%8C%87%E5%8C%97/</url>
+    <content><![CDATA[<p>先说说现状：我目前有一台机顶盒CM311-1A，性能来说勉强是够用得。后面给我刷成了Armbian，用来挂青龙docker。外挂了一个U盘当作存储池。<br>它的缺点很明显：</p>
+<ol>
+<li>硬盘容量少，外接U盘也只能是usb2.0的</li>
+<li>网口是百兆网口，如果操作过多会卡顿</li>
+<li>ARM系统，性能偏弱，太复杂的复制粘贴有时候会卡死，不知道是usb2.0的问题还行机器问题</li>
+<li>没有WiFi<br>优点也有：</li>
+<li>显卡性能可以</li>
+<li>价格便宜，是真便宜，我当初买的时候只要60，内存2G，硬盘8G</li>
+<li>可玩性强，可以刷成服务器，也可以刷成机顶盒，后续准备刷成机顶盒试试。</li>
+</ol>
+<span id="more"></span>
+<p>说完现状，现在说说我的需求，其实更多的是对应CM311-1A的那些缺点：</p>
+<ol>
+<li>X86系统，ARM系统太过小众，需要资料不好找，性能也不强。</li>
+<li>可以接多个硬盘，之前U盘才64G，我每次下载东西都要删除点啥。</li>
+</ol>
+<p>基于以上，我选出了一些配置和相对应的价格，硬件选型：</p>
+<ol>
+<li>软路由，类似J1900，N100这些性能强大的新款路由器，外接或者直接内置一个硬盘</li>
+<li>惠普工作站：z230，z240.</li>
+<li>标准服务器：戴尔PowerEdge R730XD，浪潮SA5212M4，华为 RH2285 v2机架式服务器</li>
+<li>退休的NAS：群晖等</li>
+</ol>
+<p>NAS和普通电脑最大的不同也许不在于功耗，而是硬盘。正常的电脑，硬盘价格占据整体机器也许就是十分之一，甚至二十分之一，但是NAS由于需要大容量，往往会有10T，20T容量，多盘位省下来可以使用比较低容量的硬盘，所以往往NAS成本构中的大头是硬盘，其他配件一般1000以内搞定。然后现在除开硬盘的硬件成本其实很低，主要的选型在于三点：硬盘数量，性能，价格。</p>
+<ol>
+<li>软路由硬盘少，性能强，价格高，直接pass。</li>
+<li>惠普的工作站硬盘数量中等，性能强，价格中等，如果你想要买个先玩玩可以考虑。</li>
+<li>服务器：硬盘数量多，性能强，价格合适，如果想一一步到位，且家里有地方放的话，可以直接考虑。</li>
+<li>成品NAS：硬盘数量多的，价格高，而且性能一般般。成品NAS是最不推荐的一款，毕竟成品NAS是出了名的买系统，送硬件。</li>
+</ol>
+<p>现在主流的平台一般就是X99平台，其中C612平台和X99平台可以混用，主要是BIOS需要魔改。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-13-48-03.png" alt="188-NAS指北-2024-12-31-13-48-03"></p>
+<p>以上图为例，很多X99平台经过魔改BIOS，也可以用上C612芯片组的CPU，这点在鱼龙混杂的山寨寨板里面是十分正常的。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-14-40-36.png" alt="188-NAS指北-2024-12-31-14-40-36"></p>
+<h2 id="惠普工作站"><a href="#惠普工作站" class="headerlink" title="惠普工作站"></a>惠普工作站</h2><p>工作站：为专业领域设计的，所以硬件上会相较于普通的电脑会有更多优势，比如适配更好的CPU，更多的的通道等。<br>现在主流的工作站有，Z220,Z440,Z2g4，20，40，代表代数越往上，越高。然后前面的Z2,Z4,Z8分别代表着E3,E5,E5双路。需要知道，虽然接口都一致，但是由于BIOS问题，很多时候无法使用民用的CPU，所以购买时候需要问清楚有没有魔改BIOS。<br>品牌机的话有：800g2，800g3，800g4，前面的800代表机型外貌，g2，g3，g4分别对应4-5代，6-7代，8-9代CPU。后缀sff是半高机箱，twr是全高机型。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-14-34-42.png" alt="188-NAS指北-2024-12-31-14-34-42"></p>
+<p>以z220为例，咸鱼只要169包邮，而最高级的Z2g4支持8-9代cpu和E-21系列的，只要438.缺点是硬盘位少。800g4也是8-9代cpu支持，但是只有330左右。需要注意，很多机器是经过BIOS魔改的，让他可以支持服务器的，这点需要注意。</p>
+<h2 id="机房退伍服务器"><a href="#机房退伍服务器" class="headerlink" title="机房退伍服务器"></a>机房退伍服务器</h2><p>服务器目前主流的是三款产品：戴尔PowerEdge R730XD，浪潮SA5212M4，华为 RH2285 v2机架式服务器等。具体可以参考<a href="https://www.bilibili.com/opus/808391022366162966?spm_id_from=333.1387.0.0">b站网友写的文章</a>，里面进行了分析，我觉得很合理，通过参考盘位，拓展性，综合分析，之后得出结论。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-15-04-56.png" alt="188-NAS指北-2024-12-31-15-04-56"></p>
+<p>其中戴尔有R730，和R730xd，xd后缀是有12个3.5英寸盘位。<br>其实，同样的Z440和服务器准系统价格是一样的，但是服务器的拓展性，还可以双路E5，是吊打工作站。唯一的问题是功耗和噪音。噪音的问题已经解决，功耗的问题，只能说见仁见智了。</p>
+<h2 id="机器选型"><a href="#机器选型" class="headerlink" title="机器选型"></a>机器选型</h2><p>我看了下，网络上大多数选择的是DELL R730XD，作为一个垃圾佬，我选择浪潮5212M4，网络上选择戴尔的原因很多一般是由于：戴尔的管理网口比较好和戴尔的拓展性。但是我由于并没有太多的拓展需求，最多后续增加PCIE万兆网卡。至于管理网口的功能，我的需求也不大，所以也不需要太好。<br>这边需要注意两点，服务器也分版本，我们需要注意优先选择带3008阵列和82599双万兆网卡(sfp+接口)的，前者阵列卡由于是板载的，所以一旦没有那么就不会</p>
+<h2 id="购买过程"><a href="#购买过程" class="headerlink" title="购买过程"></a>购买过程</h2><ol>
+<li>咸鱼上很多都是鱼龙混杂，需要多问问，现在问下来准系统：戴尔R730 XD最低要600不包邮，邮费给你50，也得650+。浪潮5212M4准系统随便问几家都要330+，有些夸张的，箱子加邮费要你100，到400+，所以这两者差价就100到200之间。</li>
+<li>最后240准系统+50块钱2块E5 2650 v4 +120块钱2条镁光16g内存，运费50 ，合计460一套齐全。</li>
+<li>整体购买下来的感受就是要多问：一个是因为鱼龙混杂，一个是因为确实一分钱一分货。同样是C610芯片组的，戴尔的相较于浪潮贵的原因是浪潮的产品是2015年左右的，但是戴尔的是2019年左右，其次是戴尔的系统易用性比浪潮的好，如果你动手能力比较差的话，最好还是买戴尔的，尤其是系统配置。</li>
+</ol>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>我购买次服务器的原因很简单，我有需求，现在好多看到Github上比较有兴趣的项目我都苦于手上美有一台性能强劲的服务器可以让我测试一下。这是我的兴趣爱好之一；更何况这次整体成本大头是在硬盘，服务器反而是怎么垃圾怎么来。性能也绝对是够用的。剩下的问题是电费，但是实际上我是无所谓的，电这东西是幸福感必须花费的东西，无论是电脑，电视，空调，热水器。我们不能因为害怕电费，而去放弃这些东西。电已经和水，空气成为了一个现代人生活的必需品了。</p>
+<p>后续我会撰写相对应的服务器的搭建，毕竟我也是第一次使用服务器系统。</p>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>NAS</tag>
+        <tag>硬件指南</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于农村</title>
     <url>/2024/12/24/187-%E5%85%B3%E4%BA%8E%E5%86%9C%E6%9D%91/</url>
     <content><![CDATA[<p>今天和我天津的同事一起聊天，发现他们对农村有着莫名的喜欢，在我看来农村并不是一个那么讨喜的地方，甚至我觉得只有有权有势的人才能在农村中生存下来。我来自南方沿海的一个农村，根据我这些年的见闻，我来说下我心目中的农村。</p>
@@ -3467,64 +3519,6 @@
       </tags>
   </entry>
   <entry>
-    <title>NAS指北</title>
-    <url>/2024/12/29/188-NAS%E6%8C%87%E5%8C%97/</url>
-    <content><![CDATA[<p>先说说现状：我目前有一台机顶盒CM311-1A，性能来说勉强是够用得。后面给我刷成了Armbian，用来挂青龙docker。外挂了一个U盘当作存储池。<br>它的缺点很明显：</p>
-<ol>
-<li>硬盘容量少，外接U盘也只能是usb2.0的</li>
-<li>网口是百兆网口，如果操作过多会卡顿</li>
-<li>ARM系统，性能偏弱，太复杂的复制粘贴有时候会卡死，不知道是usb2.0的问题还行机器问题</li>
-<li>没有WiFi<br>优点也有：</li>
-<li>显卡性能可以</li>
-<li>价格便宜，是真便宜，我当初买的时候只要60，内存2G，硬盘8G</li>
-<li>可玩性强，可以刷成服务器，也可以刷成机顶盒，后续准备刷成机顶盒试试。</li>
-</ol>
-<span id="more"></span>
-<p>说完现状，现在说说我的需求，其实更多的是对应CM311-1A的那些缺点：</p>
-<ol>
-<li>X86系统，ARM系统太过小众，需要资料不好找，性能也不强。</li>
-<li>可以接多个硬盘，之前U盘才64G，我每次下载东西都要删除点啥。</li>
-</ol>
-<p>基于以上，我选出了一些配置和相对应的价格，硬件选型：</p>
-<ol>
-<li>软路由，类似J1900，N100这些性能强大的新款路由器，外接或者直接内置一个硬盘</li>
-<li>惠普工作站：z230，z240.</li>
-<li>标准服务器：戴尔PowerEdge R730XD，浪潮SA5212M4，华为 RH2285 v2机架式服务器</li>
-<li>退休的NAS：群晖等</li>
-</ol>
-<p>NAS和普通电脑最大的不同也许不在于功耗，而是硬盘。正常的电脑，硬盘价格占据整体机器也许就是十分之一，甚至二十分之一，但是NAS由于需要大容量，往往会有10T，20T容量，多盘位省下来可以使用比较低容量的硬盘，所以往往NAS成本构中的大头是硬盘，其他配件一般1000以内搞定。然后现在除开硬盘的硬件成本其实很低，主要的选型在于三点：硬盘数量，性能，价格。</p>
-<ol>
-<li>软路由硬盘少，性能强，价格高，直接pass。</li>
-<li>惠普的工作站硬盘数量中等，性能强，价格中等，如果你想要买个先玩玩可以考虑。</li>
-<li>服务器：硬盘数量多，性能强，价格合适，如果想一一步到位，且家里有地方放的话，可以直接考虑。</li>
-<li>成品NAS：硬盘数量多的，价格高，而且性能一般般。成品NAS是最不推荐的一款，毕竟成品NAS是出了名的买系统，送硬件。</li>
-</ol>
-<p>现在主流的平台一般就是X99平台，其中C612平台和X99平台可以混用，主要是BIOS需要魔改。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-13-48-03.png" alt="188-NAS指北-2024-12-31-13-48-03"></p>
-<p>以上图为例，很多X99平台经过魔改BIOS，也可以用上C612芯片组的CPU，这点在鱼龙混杂的山寨寨板里面是十分正常的。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-14-40-36.png" alt="188-NAS指北-2024-12-31-14-40-36"></p>
-<h2 id="惠普工作站"><a href="#惠普工作站" class="headerlink" title="惠普工作站"></a>惠普工作站</h2><p>工作站：为专业领域设计的，所以硬件上会相较于普通的电脑会有更多优势，比如适配更好的CPU，更多的的通道等。<br>现在主流的工作站有，Z220,Z440,Z2g4，20，40，代表代数越往上，越高。然后前面的Z2,Z4,Z8分别代表着E3,E5,E5双路。需要知道，虽然接口都一致，但是由于BIOS问题，很多时候无法使用民用的CPU，所以购买时候需要问清楚有没有魔改BIOS。<br>品牌机的话有：800g2，800g3，800g4，前面的800代表机型外貌，g2，g3，g4分别对应4-5代，6-7代，8-9代CPU。后缀sff是半高机箱，twr是全高机型。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-14-34-42.png" alt="188-NAS指北-2024-12-31-14-34-42"></p>
-<p>以z220为例，咸鱼只要169包邮，而最高级的Z2g4支持8-9代cpu和E-21系列的，只要438.缺点是硬盘位少。800g4也是8-9代cpu支持，但是只有330左右。需要注意，很多机器是经过BIOS魔改的，让他可以支持服务器的，这点需要注意。</p>
-<h2 id="机房退伍服务器"><a href="#机房退伍服务器" class="headerlink" title="机房退伍服务器"></a>机房退伍服务器</h2><p>服务器目前主流的是三款产品：戴尔PowerEdge R730XD，浪潮SA5212M4，华为 RH2285 v2机架式服务器等。具体可以参考<a href="https://www.bilibili.com/opus/808391022366162966?spm_id_from=333.1387.0.0">b站网友写的文章</a>，里面进行了分析，我觉得很合理，通过参考盘位，拓展性，综合分析，之后得出结论。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-15-04-56.png" alt="188-NAS指北-2024-12-31-15-04-56"></p>
-<p>其中戴尔有R730，和R730xd，xd后缀是有12个3.5英寸盘位。<br>其实，同样的Z440和服务器准系统价格是一样的，但是服务器的拓展性，还可以双路E5，是吊打工作站。唯一的问题是功耗和噪音。噪音的问题已经解决，功耗的问题，只能说见仁见智了。</p>
-<h2 id="机器选型"><a href="#机器选型" class="headerlink" title="机器选型"></a>机器选型</h2><p>我看了下，网络上大多数选择的是DELL R730XD，作为一个垃圾佬，我选择浪潮5212M4，网络上选择戴尔的原因很多一般是由于：戴尔的管理网口比较好和戴尔的拓展性。但是我由于并没有太多的拓展需求，最多后续增加PCIE万兆网卡。至于管理网口的功能，我的需求也不大，所以也不需要太好。<br>这边需要注意两点，服务器也分版本，我们需要注意优先选择带3008阵列和82599双万兆网卡(sfp+接口)的，前者阵列卡由于是板载的，所以一旦没有那么就不会</p>
-<h2 id="购买过程"><a href="#购买过程" class="headerlink" title="购买过程"></a>购买过程</h2><ol>
-<li>咸鱼上很多都是鱼龙混杂，需要多问问，现在问下来准系统：戴尔R730 XD最低要600不包邮，邮费给你50，也得650+。浪潮5212M4准系统随便问几家都要330+，有些夸张的，箱子加邮费要你100，到400+，所以这两者差价就100到200之间。</li>
-<li>最后240准系统+50块钱2块E5 2650 v4 +120块钱2条镁光16g内存，运费50 ，合计460一套齐全。</li>
-<li>整体购买下来的感受就是要多问：一个是因为鱼龙混杂，一个是因为确实一分钱一分货。同样是C610芯片组的，戴尔的相较于浪潮贵的原因是浪潮的产品是2015年左右的，但是戴尔的是2019年左右，其次是戴尔的系统易用性比浪潮的好，如果你动手能力比较差的话，最好还是买戴尔的，尤其是系统配置。</li>
-</ol>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>我购买次服务器的原因很简单，我有需求，现在好多看到Github上比较有兴趣的项目我都苦于手上美有一台性能强劲的服务器可以让我测试一下。这是我的兴趣爱好之一；更何况这次整体成本大头是在硬盘，服务器反而是怎么垃圾怎么来。性能也绝对是够用的。剩下的问题是电费，但是实际上我是无所谓的，电这东西是幸福感必须花费的东西，无论是电脑，电视，空调，热水器。我们不能因为害怕电费，而去放弃这些东西。电已经和水，空气成为了一个现代人生活的必需品了。</p>
-<p>后续我会撰写相对应的服务器的搭建，毕竟我也是第一次使用服务器系统。</p>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>NAS</tag>
-        <tag>硬件指南</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>NAS系统选型讨论</title>
     <url>/2024/01/02/189-NAS%E7%B3%BB%E7%BB%9F%E9%80%89%E5%9E%8B%E8%AE%A8%E8%AE%BA/</url>
     <content><![CDATA[<p>上文说到这次买了一个浪潮的老旧服务器，那么接下来就要讨论我这台服务器需要安装什么系统。还是说下我的需求：</p>
@@ -3556,7 +3550,7 @@
   </entry>
   <entry>
     <title>搬瓦工上新DC99限量POWERBOX</title>
-    <url>/2025/02/15/190-%E7%93%A6%E5%B7%A525%E5%B9%B4%E4%B8%8A%E6%96%B0DC99%E9%99%90%E9%87%8FPOWERBOX/</url>
+    <url>/2025/02/17/190-%E7%93%A6%E5%B7%A525%E5%B9%B4%E4%B8%8A%E6%96%B0DC99%E9%99%90%E9%87%8FPOWERBOX/</url>
     <content><![CDATA[<p>瓦工2025年新年第一弹，很具有作为传家宝的优质服务器。<br>套餐配置：<br>SSD：30 GB RAID-10<br>内存：1536 MB<br>CPU：1x Intel Xeon<br>传输：1500 GB&#x2F;月<br>链接速度：2.5 Gigabit<br>位置：洛杉矶，DC99<br>(6.77%)循环优惠码：BWHCGLUKKB<br>折后价：$41.95 &#x2F;年：</p>
 <span id="more"></span>
 
@@ -3861,7 +3855,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dashboard.example.com &#123;</span><br><span class="line">    @grpcProto &#123;</span><br><span class="line">        path /proto.NezhaService/*</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    reverse_proxy @grpcProto &#123;</span><br><span class="line">        header_up Host &#123;host&#125;</span><br><span class="line">        header_up nz-realip &#123;http.CF-Connecting-IP&#125; # 替换为你的 CDN 提供的私有 header，此处为 CloudFlare 默认</span><br><span class="line">        # header_up nz-realip &#123;remote_host&#125; # 如果你使用caddy作为最外层，就把上面一行注释掉，启用此行</span><br><span class="line">        transport http &#123;</span><br><span class="line">            versions h2c</span><br><span class="line">            read_buffer 4096</span><br><span class="line">        &#125;</span><br><span class="line">        to localhost:8008</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    reverse_proxy &#123;</span><br><span class="line">        header_up Host &#123;host&#125;</span><br><span class="line">        header_up Origin https://&#123;host&#125;</span><br><span class="line">        header_up nz-realip &#123;http.CF-Connecting-IP&#125; # 替换为你的 CDN 提供的私有 header，此处为 CloudFlare 默认</span><br><span class="line">        # header_up nz-realip &#123;remote_host&#125; # 如果你使用caddy作为最外层，就把上面一行注释掉，启用此行</span><br><span class="line">        transport http &#123;</span><br><span class="line">            read_buffer 16384</span><br><span class="line">        &#125;</span><br><span class="line">        to localhost:8008</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>PS:官方没有说明这个caddy配置文件是v1的还是v2的，但是我根据reverse_proxy判断这个应该是v2的。</p>
 <p>这样即可部署完成。</p>
-<h2 id="客户端部署"><a href="#客户端部署" class="headerlink" title="客户端部署"></a>客户端部署</h2><p>哪吒的客户端是我选择它的重要因素，除开普通的Linux，连比较特殊群晖；openwrt都有对应的客户端。<br>部署客户端根据一键命令部署，但是完成之后并没有效果，根据官方的一些排查也没有个结果，重点是脚本安装，我找不到对应的输出日志信息。最后不得已放弃。</p>
+<h2 id="客户端部署"><a href="#客户端部署" class="headerlink" title="客户端部署"></a>客户端部署</h2><p>哪吒的客户端是我选择它的重要因素，除开普通的Linux，连比较特殊群晖；openwrt都有对应的客户端。<br>部署客户端根据一键命令部署，但是完成之后并没有效果，根据官方的一些排查也没有个结果，重点是脚本安装，我找不到对应的输出日志信息。最后不得已放弃。<br>PS:<br>一键脚本不要乱使用啊，我安装完成之后，系统负载长期100%，导致服务器被关机，一开始以为是docker问题，但是docker我都删除了，还是占用高，估计是后台定时发送或者我脚本执行多次导致进程占用，但是我也按照提示卸载了对应的脚本安装。最后只能以重装系统解决。还好数据都在。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>虽然是开源，但是好多步骤都是一键脚本安装，没有提供自我部署的步骤。而且安装完服务端docker之后，系统cpu占用长期为100%。最后我不得已放弃了，有些说是版本问题，我现在用的是V1最新版，换个旧版就行。实在是无力折腾，于是想着还是搞好我的serverstatus吧。</p>
 ]]></content>
       <categories>
@@ -4773,6 +4767,25 @@ sysctl -p
       </tags>
   </entry>
   <entry>
+    <title>关于未来</title>
+    <url>/2022/04/30/%E5%85%B3%E4%BA%8E%E6%9C%AA%E6%9D%A5/</url>
+    <content><![CDATA[<p>有时候，我忽然感到莫名的恐惧，好似背后有人袭来一般，全身紧张。然后，就陷入了一股莫名的情绪不定中。</p>
+<p>在多次经历之后，我忽然发现这一切的原因既然来自未来。</p>
+<p>有时候会想到未来的某一天自己会怎么样，然后陷入开心或者恐惧之中，最后就导致上述事件的发生。在此我不禁想知道未来到底是什么。我知道这又是一个没有答案的问题，而我接下来的内容你完全可以参考你当初的八百文。</p>
+<p>好吧，在一切的开始，我们有过去，然后现在，幻想着未来。然后我们不止一次被人拿未来欺骗我们，而我们也一次次的为了这个不存在的东西努力，希望它实现。但事实是未来不存在。你想的只是你想的，未来是未来，不要拿自己的想法然后强加在一个不存在的事物，然后对我们宣布，看这就是未来，这就是当初我对你们说的未来。</p>
+<p>姑且不论唯物观点来说，未来根本连唯心主义概念都扯不上。他不想过去一样，有事情，有物体，有痕迹。也不像现在这样，只至少有人在感受和运动，但是未来有什么，物体？感受？没有，事实是没有。所以根本不存在预言未来这么一回事。至少在目前的体系内这事情是不存在的。有人说时间如同河流，奔流不息。这体现的是时间的流动，我更觉得时间就像一只笔，写下的都成事实无法更改，只有存在，而还没写的，就什么都没，我不能说接下来的字是存在的，事实上，到目前为止是存在的，但是以后，你没办法证明以后的事。</p>
+<p>当然你会在现在说上一段文字是存在的，但是你现在证明的是过去。额，这不是一个文字游戏，也不是人类对过去未来的定义错误，事实上，人们已经发现这个世界远比我们想象的复杂，两件事情最大的相关性也就才百分三十到四十，什么意思呢，就是说你叫你手下去买包烟，也才最大百分三十的可能性导致你手下去买烟。当然你也会在事后说，因为你是他老板所以他会去买，事实上这就跟我上面说的一样，你证明的是两件有已经发生的事情，当然是百分百。</p>
+<p>当然不必悲观，事实上，我们的世界的确很复杂，但是我们人类其实很简单，在大量的统计下，我们的事物其实有个趋近区间，简单说就是你这个老板叫下属买东西，下属去买的趋势靠近这个区间，依据人类的判断来说这个概率应该是很高的，但结果是我不知道，这个十分难统计，而且数量越大，结果越正确。以上只不过是我想说不是所有你想的事情都是百分百实现的，哪怕他多符合你的想法，话说，我好像讲理一大堆墨菲定律。</p>
+<p>好了，综上来看，似乎我们的未来处于一片混沌之中，现在的事情对他的影响可以说是有限的。于是乎未来这东西根本在我们如今的体系内是不存在的，因为他无法被证明，也无法被探知，更无法掌握规律。</p>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>未来</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于同事</title>
     <url>/2022/05/08/%E5%85%B3%E4%BA%8E%E5%90%8C%E4%BA%8B/</url>
     <content><![CDATA[<p>  关于同事，之前我有一个页面专门是来描述当初我遇见得这些同事的．后来感情淡了，看开了．就删除了页面，改写成了茫茫多的文章一篇．对于同事，我们其实是很矛盾的，作为一个社会人，我们其实相处最多的不是自己的家人，而是这一天8小时，一周5天一直合作无间的同事．相较于家人，有时候我们和同事相处的时间反而更多．所以很多人，就慢慢的觉得，自己的同事像自己的家人一样，甚至与其交心，互相倾诉．</p>
@@ -4865,25 +4878,6 @@ sysctl -p
         <tag>图床</tag>
         <tag>cdn</tag>
         <tag>jsdelivr</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于未来</title>
-    <url>/2022/04/30/%E5%85%B3%E4%BA%8E%E6%9C%AA%E6%9D%A5/</url>
-    <content><![CDATA[<p>有时候，我忽然感到莫名的恐惧，好似背后有人袭来一般，全身紧张。然后，就陷入了一股莫名的情绪不定中。</p>
-<p>在多次经历之后，我忽然发现这一切的原因既然来自未来。</p>
-<p>有时候会想到未来的某一天自己会怎么样，然后陷入开心或者恐惧之中，最后就导致上述事件的发生。在此我不禁想知道未来到底是什么。我知道这又是一个没有答案的问题，而我接下来的内容你完全可以参考你当初的八百文。</p>
-<p>好吧，在一切的开始，我们有过去，然后现在，幻想着未来。然后我们不止一次被人拿未来欺骗我们，而我们也一次次的为了这个不存在的东西努力，希望它实现。但事实是未来不存在。你想的只是你想的，未来是未来，不要拿自己的想法然后强加在一个不存在的事物，然后对我们宣布，看这就是未来，这就是当初我对你们说的未来。</p>
-<p>姑且不论唯物观点来说，未来根本连唯心主义概念都扯不上。他不想过去一样，有事情，有物体，有痕迹。也不像现在这样，只至少有人在感受和运动，但是未来有什么，物体？感受？没有，事实是没有。所以根本不存在预言未来这么一回事。至少在目前的体系内这事情是不存在的。有人说时间如同河流，奔流不息。这体现的是时间的流动，我更觉得时间就像一只笔，写下的都成事实无法更改，只有存在，而还没写的，就什么都没，我不能说接下来的字是存在的，事实上，到目前为止是存在的，但是以后，你没办法证明以后的事。</p>
-<p>当然你会在现在说上一段文字是存在的，但是你现在证明的是过去。额，这不是一个文字游戏，也不是人类对过去未来的定义错误，事实上，人们已经发现这个世界远比我们想象的复杂，两件事情最大的相关性也就才百分三十到四十，什么意思呢，就是说你叫你手下去买包烟，也才最大百分三十的可能性导致你手下去买烟。当然你也会在事后说，因为你是他老板所以他会去买，事实上这就跟我上面说的一样，你证明的是两件有已经发生的事情，当然是百分百。</p>
-<p>当然不必悲观，事实上，我们的世界的确很复杂，但是我们人类其实很简单，在大量的统计下，我们的事物其实有个趋近区间，简单说就是你这个老板叫下属买东西，下属去买的趋势靠近这个区间，依据人类的判断来说这个概率应该是很高的，但结果是我不知道，这个十分难统计，而且数量越大，结果越正确。以上只不过是我想说不是所有你想的事情都是百分百实现的，哪怕他多符合你的想法，话说，我好像讲理一大堆墨菲定律。</p>
-<p>好了，综上来看，似乎我们的未来处于一片混沌之中，现在的事情对他的影响可以说是有限的。于是乎未来这东西根本在我们如今的体系内是不存在的，因为他无法被证明，也无法被探知，更无法掌握规律。</p>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>未来</tag>
       </tags>
   </entry>
   <entry>
@@ -4980,6 +4974,33 @@ sysctl -p
       </tags>
   </entry>
   <entry>
+    <title>女人文学</title>
+    <url>/2022/04/30/%E5%A5%B3%E4%BA%BA%E6%96%87%E5%AD%A6/</url>
+    <content><![CDATA[<p>忘掉一个女人最好的方法，就是将她变成文学。——来自不知道是谁说的，但是我就是想拿它来当开头。</p>
+<p>正如上述所言，我想忘掉她，但是我却不知从何忘起。因为她似乎就没有在我的脑海中呆过,又拿什么来忘记.</p>
+<p>搜索我的脑海，我忽然找不到关于他的一切，但是在日常中却又不经意间出现——我们曾聊过这个话题。我记得但是忘记了时间,地点,原因，但是又能回忆起一些零零碎碎的碎片-“月中发工资很不舒服，好像离月底很远也离月初很远”，或是”上个公司是每月28号发当月工资”。不真实的让我怀疑这一切是不是我脑补的.也许是自己精神出了问题吧。我不知道是哪里出问题，也许我永远也不会知道。</p>
+<p>如今，我只想将她变成文学，一部简单的文学。</p>
+<p>可悲的是，这里的末尾并没有要求背诵全文</p>
+<p>但是我还是记下了碎片的全部，也许是我太孤单了，无处诉说我的悲哀</p>
+<p>然而就算我们真的在一起了，也许也没法向她倾诉吧，毕竟，她和我能说到一块的前提应该是他说我听，我为他排忧解难。但是这一切已经不再有可能.</p>
+<p>自私，不过人么？不都这样，你要一个人考虑周全，推己及人，那样她会很累。但是如果只考虑自己一切都将变得完美无瑕。我们没必要和自己过不去啊</p>
+<p>正如所有的爱情一样，我初遇倾心，再见更倾心。但是由于并没有恋爱，所以没有那些始于颜值，忠于品格的美好。我这边一直忠于的是颜值。也许我是个颜控吧，但感觉更多的是对美的贪婪，就像对钱的贪婪一般。如果将其换成足够吸引我的美钞，我想我的内心也会燃起那熊熊的欲望之火。</p>
+<p>好消息是：我们每个上班日还能偶尔的见面，但却连陌生人都不如,也许这是个坏消息</p>
+<p>坏消息是：男人对于细节的种种臆想总是能让男人自己疯狂，却改变不了现实，所以我一直在疯狂的边缘。</p>
+<p>我不知道我何时失去理智，但是也许在我失去理智之后，我会过得更开心。毕竟，理性使人痛苦。也许这是个好消息,我还尚存理性.</p>
+<p>然而毕竟不是什么大富子弟，还是要养活自己，也不是什么文艺青年，还是要卑躬屈膝。作为一个平凡的人，我重复着大多数人都在做的事，也许是只有我才觉得她是如此的不平凡。但这也无所谓。就好像我对睡眠采取的态度一样</p>
+<p>我是不是也该对我的爱情采取一个这样的态度</p>
+<p>最后的结果往往就跟我的睡眠状态一样，规律，但是没有赖床，多了理性，少了感性。我很喜欢目前的睡眠，但是我好歹也是享受过10多年的睡眠之后，才满足于现在，对于爱情，我经历的还太少。所以我并不想将其归入与此。那么就保持自己追爱的初心，然后抛弃那些不现实的想法吧，让那些兔子在你脑海奔跑吧，别去追逐。</p>
+]]></content>
+      <categories>
+        <category>那些年遇见的人</category>
+      </categories>
+      <tags>
+        <tag>女人</tag>
+        <tag>那只兔子</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>好像我一直在期待</title>
     <url>/2022/04/30/%E5%A5%BD%E5%83%8F%E6%88%91%E4%B8%80%E7%9B%B4%E5%9C%A8%E6%9C%9F%E5%BE%85/</url>
     <content><![CDATA[<p>好像我一直在期待</p>
@@ -5039,33 +5060,6 @@ sysctl -p
       </categories>
       <tags>
         <tag>找到自己</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>女人文学</title>
-    <url>/2022/04/30/%E5%A5%B3%E4%BA%BA%E6%96%87%E5%AD%A6/</url>
-    <content><![CDATA[<p>忘掉一个女人最好的方法，就是将她变成文学。——来自不知道是谁说的，但是我就是想拿它来当开头。</p>
-<p>正如上述所言，我想忘掉她，但是我却不知从何忘起。因为她似乎就没有在我的脑海中呆过,又拿什么来忘记.</p>
-<p>搜索我的脑海，我忽然找不到关于他的一切，但是在日常中却又不经意间出现——我们曾聊过这个话题。我记得但是忘记了时间,地点,原因，但是又能回忆起一些零零碎碎的碎片-“月中发工资很不舒服，好像离月底很远也离月初很远”，或是”上个公司是每月28号发当月工资”。不真实的让我怀疑这一切是不是我脑补的.也许是自己精神出了问题吧。我不知道是哪里出问题，也许我永远也不会知道。</p>
-<p>如今，我只想将她变成文学，一部简单的文学。</p>
-<p>可悲的是，这里的末尾并没有要求背诵全文</p>
-<p>但是我还是记下了碎片的全部，也许是我太孤单了，无处诉说我的悲哀</p>
-<p>然而就算我们真的在一起了，也许也没法向她倾诉吧，毕竟，她和我能说到一块的前提应该是他说我听，我为他排忧解难。但是这一切已经不再有可能.</p>
-<p>自私，不过人么？不都这样，你要一个人考虑周全，推己及人，那样她会很累。但是如果只考虑自己一切都将变得完美无瑕。我们没必要和自己过不去啊</p>
-<p>正如所有的爱情一样，我初遇倾心，再见更倾心。但是由于并没有恋爱，所以没有那些始于颜值，忠于品格的美好。我这边一直忠于的是颜值。也许我是个颜控吧，但感觉更多的是对美的贪婪，就像对钱的贪婪一般。如果将其换成足够吸引我的美钞，我想我的内心也会燃起那熊熊的欲望之火。</p>
-<p>好消息是：我们每个上班日还能偶尔的见面，但却连陌生人都不如,也许这是个坏消息</p>
-<p>坏消息是：男人对于细节的种种臆想总是能让男人自己疯狂，却改变不了现实，所以我一直在疯狂的边缘。</p>
-<p>我不知道我何时失去理智，但是也许在我失去理智之后，我会过得更开心。毕竟，理性使人痛苦。也许这是个好消息,我还尚存理性.</p>
-<p>然而毕竟不是什么大富子弟，还是要养活自己，也不是什么文艺青年，还是要卑躬屈膝。作为一个平凡的人，我重复着大多数人都在做的事，也许是只有我才觉得她是如此的不平凡。但这也无所谓。就好像我对睡眠采取的态度一样</p>
-<p>我是不是也该对我的爱情采取一个这样的态度</p>
-<p>最后的结果往往就跟我的睡眠状态一样，规律，但是没有赖床，多了理性，少了感性。我很喜欢目前的睡眠，但是我好歹也是享受过10多年的睡眠之后，才满足于现在，对于爱情，我经历的还太少。所以我并不想将其归入与此。那么就保持自己追爱的初心，然后抛弃那些不现实的想法吧，让那些兔子在你脑海奔跑吧，别去追逐。</p>
-]]></content>
-      <categories>
-        <category>那些年遇见的人</category>
-      </categories>
-      <tags>
-        <tag>女人</tag>
-        <tag>那只兔子</tag>
       </tags>
   </entry>
   <entry>
@@ -5728,6 +5722,42 @@ sysctl -p
       </tags>
   </entry>
   <entry>
+    <title>新教伦理和资本主义精神</title>
+    <url>/2022/07/08/%E6%96%B0%E6%95%99%E4%BC%A6%E7%90%86%E5%92%8C%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E7%B2%BE%E7%A5%9E/</url>
+    <content><![CDATA[<p>写在前面：</p>
+<ol>
+<li><p>翻译很重要，这本作者是德国，然后被人翻译成英文，再翻译成中文，所以翻译很重要，不仅如此，以后所有的外文书籍都要关注下翻译质量，不行多下几本电子书对比。我一开始看的完全是狗屁不通的机器直翻。</p>
+</li>
+<li><p>这本书的脚注完全不建议去看。尤其如果你只是像我一样想要了解内容的读者，完全没有必要去看。作为一篇论文，本文的脚注大部分是文献的引用，其余的也是作者和别人的争辩。如果你不是专业人士或者资深爱好者，你会对他们的争辩内容感到迷惑，所以建议看原文就可以，脚注完全忽略，而且不会影响你理解的。</p>
+</li>
+<li><p>也许是我下的电子书版本问题，或许这种论文内容太少的缘故吧。我这本书一开始导言，然后是导读，导论，绪论，序言。最后才是正文。当到正文的时候书本内容已经接近一半了。这里并不是吐槽书本注水，相反，前面的导言导论对我们理解书本内容有很大的帮助，甚至可以说，如果你只是前来观瞻一下这部伟大的著作的话。那么只要读完前面的这些即可。由于时代背景和专业背景缘故。你观看正文的理解也许还没有前面的导论清楚，而且这是部宗教论文，所以很多时候提及的很多重大事项变革并不是为我们所熟悉。所以导论，导读可以帮助我们理解。</p>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220702100534.png" alt="20220702100534"></p>
+<h3 id="哲学？不，是宗教"><a href="#哲学？不，是宗教" class="headerlink" title="哲学？不，是宗教"></a>哲学？不，是宗教</h3><p>很多人会把这本书奉为一本哲学著作，然我并不是什么哲学家,更多的是对人性有着自己的思考。人性和现实之间存在着一层隔阂,人有时候会无法在社会生存。人类对自己的欲望或者需求的了解知之甚少，虽然从很久以前就已经有了内省，更多的人却无法了解自己，很多时候自己的直观需求和大众认知存在着明显的差距。那这种情况下是以什么为准，是极端的自我主义还是为了大我放弃小我的伟大奉献抑或是更加现代化的责任义务划分呢。我对当代社会的矛盾很多时候觉得不是主义之间的矛盾，而是个人和群体的矛盾，西方自我思想的侵入或许是人民心智的成熟，越来越多的人感到对社会的不适，我们996，我们007，我们丁克，我们不婚。我们内心需求的是一亩三分地，老婆孩子热炕头，但是生活却是地下室，接盘侠，6个钱包。我相信政府或者说那些先驱的梦想中的光景并不是如此，但又是什么让我们陷入如此田地呢。我不否认个人的作用，但我想在大势之内个人的作用微乎其微。很多时候祖国，民族，甚至家庭所裹挟，在大众道德的观念影响下，我们做出了一些违背甚至损害自我利益的行为。这就是伦理的力量。而如今社会发生的这一切难道不是和书里所描写的如此相像：我们也正在经历一场清教徒式的伦理改革：对名利和金钱的追求变得前所未有的赤裸，如果追求不到，那么再极端的调转船头，成为一个抛名弃利的清高之人，然后再通过这遗世独立的人设，换着法的追名逐利。任何以抛弃名利的行为最后都会称为名利。我们在始终在这看不见的名利场内。</p>
+<h3 id="宗教？不，是人生"><a href="#宗教？不，是人生" class="headerlink" title="宗教？不，是人生"></a>宗教？不，是人生</h3><p>我们逃不出，摆不脱，追不上名利，却只能在这白皑皑的世间，给人当着垫脚的石子。人活一世，究竟室为了什么：为了功名，为了声望那个，还是为了钱财。生而为人，却不知前路在哪，说的是行行出状元，条条通罗马，但是哪个不是人中龙凤，哪个不是名师辅佐。十四万万之人又有几人能飞升得道，又有几人能静心苦读。人的痛苦一目了然。人类苦于自己的欲望和通途之间的矛盾，需要寻求另外一种更加容易达到的解脱，于是这种廉价且易得的道路出现了：宗教。或许有些人说，随着科学技术的发展慢慢的这些迷信会渐渐式微。如果说早期的萨满教等古典宗教解答的是人类对自然的无知，如今的宗教解决的是人类自身的需求：需要追寻自己来这一趟的目标是什么？诚然，自我强大之人能在自己人生的道路上慢慢找到目标，但是更多碌碌无为之人，却是终其一生不得其宗。宗教的存在有其意义，如今的宗教依旧存在，他给与人目标，让他们更加潜心学习，实现自己美好的生活，而跳过了那追寻的过程。但是宗教并不是这个问题的唯一答案，只是众多答案之一：父母的耐心教导不失为另一种答案。</p>
+<h3 id="人生？不，是上帝"><a href="#人生？不，是上帝" class="headerlink" title="人生？不，是上帝"></a>人生？不，是上帝</h3><p>书里面拿了基督教作为案例。基督教其实是有很多分支的，分支的原因在于两点：1. 哪个版本的《圣经》，2. 怎么解读《圣经》。语言的歧义和不断进化这些特性，导致我们对古代文献的解读在各个时期是不一样的，姑且不论各种宗教的差异，在书里主要是通过对新教这一基督教分支进行分析，这也是这本书的书名由来。根据新教的教义：大多数的人类都是不值得救赎的，只有一小部分人类是可以救赎的，而这一小部分是由上帝确定的。在这种教义之下，教众很容易就会陷入一种宿命论的牢笼，既然我注定要下地狱，那我又为何要好好的过呢。</p>
+<blockquote>
+<p>对于加尔文来说，上帝的decretum horribile（可怕裁定）并不是像路德认为的那样来自宗教经验，而是出于他自己思想的逻辑需要。因此，随着他的宗教思想越来越具有逻辑一致性，decretum horribile也越来越具有重要意义。它唯一关注的是上帝，而不是人；上帝不是为了人类而存在的，相反，人类的存在完全是为了上帝。一切造物，当然包括加尔文深信不疑的事实，即只有一小部分人能被选中而得享永恒的恩宠，它们的全部意义就在于体现了上帝的荣耀和威严。以尘世的公正标准来衡量上帝的最高旨意不仅毫无意义，而且是亵渎上帝，因为上帝是自由的，而且只有上帝才是自由的，就是说，上帝不受制于任何律对于被罚入地狱的人来说，抱怨自己的命运不济，差不多等于动物抱怨它们不曾生而为人，因为肉体的一切都与上帝隔着一条无法逾越的鸿沟，只要上帝还没有为了自己的荣耀而做出其他判决，人就该当永灭。我们所知道的只是：人类只有一部分能够得救，其余都被罚入地狱。如果认为人的功或罪在决定这种命运时会起到一定作用，则无异于认为上帝绝对自由的旨意会因为人的影响而改变，而上帝的旨意又是永恒确定了的，这是于理不通的自相矛盾。</p>
+</blockquote>
+<p>在极致的悲观下，就慢慢引申出了另一种教义理解。都是一样的被抛弃者，我们也是要有当抛弃者的作用的：我们如火柴一样，燃烧自己仅仅是为了上帝在人间美景的繁荣。按照如今的观念来看，也许这完全是一个妥妥的邪教主义，但是宗教的本质就是宣言恐惧，然后利用救赎扩张，利用人性的弱点和贪欲。如果好好引导的话也确实能够控制住一大群人：在这个教义的影响下：人们压抑自己的欲望，开始进入了一种打工人的模式，甚至连邻居都不交往：简单的人际关系，按部就班的工作模式，让人类摆脱大多数的烦恼，于是就有人认为这是救赎的象征——即使教义写明救赎没有任何象征，但这并不影响他们的想法，于是就更加虔诚的投入。这一过程产生的财富得以保留。和以前的商人最大的不同就在于此，他们没有将财富花出去，成为一个循环，而是留在手里，慢慢的积累。而这正是资本主义的精神：利润。</p>
+<p>这一过程改变了很多：1，人们对工作的态度，人们不再厌恶工作，反而更加喜欢工作，认为这是救赎的方法。 2，产生的巨大财富使得形成垄断组织或者资本寄生虫得到可能，以前是赚的多，花的多，现在是赚得多花点少。3，人们对薪酬的态度，苦修式的人们生活对救赎有所裨益，所以不需要太多工资，资本家可以截取大量的利润。</p>
+<p>这一精神下，让资本主义慢慢的走到了如今的地位，在这一内核下，资本主义需要实现的就是：更高的利润。而至于这些年产生的技术进步，则更多是为了产生更高利润产品的夫家活动罢了，工人不会因为生产高利润的产品而获得更多薪酬，产品和他的制造者以及生产资料三者完美的划分开了，每一块都只需要支付最合适的价格，从而实现资本主义最高利润的目标。更恐怖的是这就意味着，资本主义的未来不是人类的大一统宇宙，不是星辰大海，而是一个个虔诚的教众，技术进步只是其实现目标路上的工具而已。事实上，没有一个哲学思想将全人类的未来当作方向，更多的都是实现其心目中乌托邦的工具罢了。如果有一个东西能让我们成为一个个虔诚的教众，那么到那个时候，既不需要星辰大海，科学技术这些华而不实的东西了。而那个东西他已经来了</p>
+<h3 id="上帝？不，是消费主义"><a href="#上帝？不，是消费主义" class="headerlink" title="上帝？不，是消费主义"></a>上帝？不，是消费主义</h3><p>资本主义初期，人们发现我们可以通过增加产品的技术或者功能来获取更高的利润，于是就产生了专利，技术研发等等，但是技术研发投入太高而且还有失败的风险，技术推广也需要很长时间，所以，慢慢的这一套已经日渐失落了。现如今，资本主义已经进化成了消费主义：不再创造一个统一宗教的虔诚教众，而是创造千千万万个宗教的虔诚教众：奢侈品教众，轻奢教众，联名教众。只要宗教够多，那么就会将所有的人都划分进来，无论是是男女，LGBT，甚至猫狗都可以。这一套成本投入少，附加值高，起效快，已经成为了新一代的资本主义</p>
+<p>消费主义从人和人的差异中创造价值，无论是性别，身高，取向，财富。他从一个虚无的空间里拿出了一把尺子，将人和人划分到一个个不同的圈子了，每个圈子都能源源不断的产生金钱，甚至圈子和圈子之间碰撞都能产生金钱。人类的思想就这么在现实中得到了体现，这算是人类踏入虚无主义的第一步吧。</p>
+<p>我甚至无端猜想：如果有一天，圈子不再产生利润了，那么人类的社会会是怎么样？是大家都和谐统一，对任何事都有一样的看法了。还是圈子破裂，大家四散开来，再也聚不到一起。</p>
+<p>有人说：人类的思想是无穷无尽的能源？那不过是诗人们的一厢情愿罢了，人都有价值，人的思想也是，不过也是金钱罢了。如果真到了耗尽思想的那一天时：人类在耗尽的物质，又耗尽了思想，那么还剩下什么呢？</p>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>马克思韦伯</tag>
+        <tag>新教伦理</tag>
+        <tag>资本主义精神</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>新一代的VPS管理工具VScode</title>
     <url>/2022/12/05/%E6%96%B0%E4%B8%80%E4%BB%A3%E7%9A%84VPS%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7VScode/</url>
     <content><![CDATA[<h1 id="新一代的VPS管理工具VScode"><a href="#新一代的VPS管理工具VScode" class="headerlink" title="新一代的VPS管理工具VScode"></a>新一代的VPS管理工具VScode</h1><p>最近正在调整我的vps，发现了一个新颖的docker管理工具，可以替代掉那些复杂的面板工具，对于个人用户来说十分的友好。</p>
@@ -5768,42 +5798,6 @@ sysctl -p
         <tag>vscode</tag>
         <tag>vps</tag>
         <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>新教伦理和资本主义精神</title>
-    <url>/2022/07/08/%E6%96%B0%E6%95%99%E4%BC%A6%E7%90%86%E5%92%8C%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E7%B2%BE%E7%A5%9E/</url>
-    <content><![CDATA[<p>写在前面：</p>
-<ol>
-<li><p>翻译很重要，这本作者是德国，然后被人翻译成英文，再翻译成中文，所以翻译很重要，不仅如此，以后所有的外文书籍都要关注下翻译质量，不行多下几本电子书对比。我一开始看的完全是狗屁不通的机器直翻。</p>
-</li>
-<li><p>这本书的脚注完全不建议去看。尤其如果你只是像我一样想要了解内容的读者，完全没有必要去看。作为一篇论文，本文的脚注大部分是文献的引用，其余的也是作者和别人的争辩。如果你不是专业人士或者资深爱好者，你会对他们的争辩内容感到迷惑，所以建议看原文就可以，脚注完全忽略，而且不会影响你理解的。</p>
-</li>
-<li><p>也许是我下的电子书版本问题，或许这种论文内容太少的缘故吧。我这本书一开始导言，然后是导读，导论，绪论，序言。最后才是正文。当到正文的时候书本内容已经接近一半了。这里并不是吐槽书本注水，相反，前面的导言导论对我们理解书本内容有很大的帮助，甚至可以说，如果你只是前来观瞻一下这部伟大的著作的话。那么只要读完前面的这些即可。由于时代背景和专业背景缘故。你观看正文的理解也许还没有前面的导论清楚，而且这是部宗教论文，所以很多时候提及的很多重大事项变革并不是为我们所熟悉。所以导论，导读可以帮助我们理解。</p>
-</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220702100534.png" alt="20220702100534"></p>
-<h3 id="哲学？不，是宗教"><a href="#哲学？不，是宗教" class="headerlink" title="哲学？不，是宗教"></a>哲学？不，是宗教</h3><p>很多人会把这本书奉为一本哲学著作，然我并不是什么哲学家,更多的是对人性有着自己的思考。人性和现实之间存在着一层隔阂,人有时候会无法在社会生存。人类对自己的欲望或者需求的了解知之甚少，虽然从很久以前就已经有了内省，更多的人却无法了解自己，很多时候自己的直观需求和大众认知存在着明显的差距。那这种情况下是以什么为准，是极端的自我主义还是为了大我放弃小我的伟大奉献抑或是更加现代化的责任义务划分呢。我对当代社会的矛盾很多时候觉得不是主义之间的矛盾，而是个人和群体的矛盾，西方自我思想的侵入或许是人民心智的成熟，越来越多的人感到对社会的不适，我们996，我们007，我们丁克，我们不婚。我们内心需求的是一亩三分地，老婆孩子热炕头，但是生活却是地下室，接盘侠，6个钱包。我相信政府或者说那些先驱的梦想中的光景并不是如此，但又是什么让我们陷入如此田地呢。我不否认个人的作用，但我想在大势之内个人的作用微乎其微。很多时候祖国，民族，甚至家庭所裹挟，在大众道德的观念影响下，我们做出了一些违背甚至损害自我利益的行为。这就是伦理的力量。而如今社会发生的这一切难道不是和书里所描写的如此相像：我们也正在经历一场清教徒式的伦理改革：对名利和金钱的追求变得前所未有的赤裸，如果追求不到，那么再极端的调转船头，成为一个抛名弃利的清高之人，然后再通过这遗世独立的人设，换着法的追名逐利。任何以抛弃名利的行为最后都会称为名利。我们在始终在这看不见的名利场内。</p>
-<h3 id="宗教？不，是人生"><a href="#宗教？不，是人生" class="headerlink" title="宗教？不，是人生"></a>宗教？不，是人生</h3><p>我们逃不出，摆不脱，追不上名利，却只能在这白皑皑的世间，给人当着垫脚的石子。人活一世，究竟室为了什么：为了功名，为了声望那个，还是为了钱财。生而为人，却不知前路在哪，说的是行行出状元，条条通罗马，但是哪个不是人中龙凤，哪个不是名师辅佐。十四万万之人又有几人能飞升得道，又有几人能静心苦读。人的痛苦一目了然。人类苦于自己的欲望和通途之间的矛盾，需要寻求另外一种更加容易达到的解脱，于是这种廉价且易得的道路出现了：宗教。或许有些人说，随着科学技术的发展慢慢的这些迷信会渐渐式微。如果说早期的萨满教等古典宗教解答的是人类对自然的无知，如今的宗教解决的是人类自身的需求：需要追寻自己来这一趟的目标是什么？诚然，自我强大之人能在自己人生的道路上慢慢找到目标，但是更多碌碌无为之人，却是终其一生不得其宗。宗教的存在有其意义，如今的宗教依旧存在，他给与人目标，让他们更加潜心学习，实现自己美好的生活，而跳过了那追寻的过程。但是宗教并不是这个问题的唯一答案，只是众多答案之一：父母的耐心教导不失为另一种答案。</p>
-<h3 id="人生？不，是上帝"><a href="#人生？不，是上帝" class="headerlink" title="人生？不，是上帝"></a>人生？不，是上帝</h3><p>书里面拿了基督教作为案例。基督教其实是有很多分支的，分支的原因在于两点：1. 哪个版本的《圣经》，2. 怎么解读《圣经》。语言的歧义和不断进化这些特性，导致我们对古代文献的解读在各个时期是不一样的，姑且不论各种宗教的差异，在书里主要是通过对新教这一基督教分支进行分析，这也是这本书的书名由来。根据新教的教义：大多数的人类都是不值得救赎的，只有一小部分人类是可以救赎的，而这一小部分是由上帝确定的。在这种教义之下，教众很容易就会陷入一种宿命论的牢笼，既然我注定要下地狱，那我又为何要好好的过呢。</p>
-<blockquote>
-<p>对于加尔文来说，上帝的decretum horribile（可怕裁定）并不是像路德认为的那样来自宗教经验，而是出于他自己思想的逻辑需要。因此，随着他的宗教思想越来越具有逻辑一致性，decretum horribile也越来越具有重要意义。它唯一关注的是上帝，而不是人；上帝不是为了人类而存在的，相反，人类的存在完全是为了上帝。一切造物，当然包括加尔文深信不疑的事实，即只有一小部分人能被选中而得享永恒的恩宠，它们的全部意义就在于体现了上帝的荣耀和威严。以尘世的公正标准来衡量上帝的最高旨意不仅毫无意义，而且是亵渎上帝，因为上帝是自由的，而且只有上帝才是自由的，就是说，上帝不受制于任何律对于被罚入地狱的人来说，抱怨自己的命运不济，差不多等于动物抱怨它们不曾生而为人，因为肉体的一切都与上帝隔着一条无法逾越的鸿沟，只要上帝还没有为了自己的荣耀而做出其他判决，人就该当永灭。我们所知道的只是：人类只有一部分能够得救，其余都被罚入地狱。如果认为人的功或罪在决定这种命运时会起到一定作用，则无异于认为上帝绝对自由的旨意会因为人的影响而改变，而上帝的旨意又是永恒确定了的，这是于理不通的自相矛盾。</p>
-</blockquote>
-<p>在极致的悲观下，就慢慢引申出了另一种教义理解。都是一样的被抛弃者，我们也是要有当抛弃者的作用的：我们如火柴一样，燃烧自己仅仅是为了上帝在人间美景的繁荣。按照如今的观念来看，也许这完全是一个妥妥的邪教主义，但是宗教的本质就是宣言恐惧，然后利用救赎扩张，利用人性的弱点和贪欲。如果好好引导的话也确实能够控制住一大群人：在这个教义的影响下：人们压抑自己的欲望，开始进入了一种打工人的模式，甚至连邻居都不交往：简单的人际关系，按部就班的工作模式，让人类摆脱大多数的烦恼，于是就有人认为这是救赎的象征——即使教义写明救赎没有任何象征，但这并不影响他们的想法，于是就更加虔诚的投入。这一过程产生的财富得以保留。和以前的商人最大的不同就在于此，他们没有将财富花出去，成为一个循环，而是留在手里，慢慢的积累。而这正是资本主义的精神：利润。</p>
-<p>这一过程改变了很多：1，人们对工作的态度，人们不再厌恶工作，反而更加喜欢工作，认为这是救赎的方法。 2，产生的巨大财富使得形成垄断组织或者资本寄生虫得到可能，以前是赚的多，花的多，现在是赚得多花点少。3，人们对薪酬的态度，苦修式的人们生活对救赎有所裨益，所以不需要太多工资，资本家可以截取大量的利润。</p>
-<p>这一精神下，让资本主义慢慢的走到了如今的地位，在这一内核下，资本主义需要实现的就是：更高的利润。而至于这些年产生的技术进步，则更多是为了产生更高利润产品的夫家活动罢了，工人不会因为生产高利润的产品而获得更多薪酬，产品和他的制造者以及生产资料三者完美的划分开了，每一块都只需要支付最合适的价格，从而实现资本主义最高利润的目标。更恐怖的是这就意味着，资本主义的未来不是人类的大一统宇宙，不是星辰大海，而是一个个虔诚的教众，技术进步只是其实现目标路上的工具而已。事实上，没有一个哲学思想将全人类的未来当作方向，更多的都是实现其心目中乌托邦的工具罢了。如果有一个东西能让我们成为一个个虔诚的教众，那么到那个时候，既不需要星辰大海，科学技术这些华而不实的东西了。而那个东西他已经来了</p>
-<h3 id="上帝？不，是消费主义"><a href="#上帝？不，是消费主义" class="headerlink" title="上帝？不，是消费主义"></a>上帝？不，是消费主义</h3><p>资本主义初期，人们发现我们可以通过增加产品的技术或者功能来获取更高的利润，于是就产生了专利，技术研发等等，但是技术研发投入太高而且还有失败的风险，技术推广也需要很长时间，所以，慢慢的这一套已经日渐失落了。现如今，资本主义已经进化成了消费主义：不再创造一个统一宗教的虔诚教众，而是创造千千万万个宗教的虔诚教众：奢侈品教众，轻奢教众，联名教众。只要宗教够多，那么就会将所有的人都划分进来，无论是是男女，LGBT，甚至猫狗都可以。这一套成本投入少，附加值高，起效快，已经成为了新一代的资本主义</p>
-<p>消费主义从人和人的差异中创造价值，无论是性别，身高，取向，财富。他从一个虚无的空间里拿出了一把尺子，将人和人划分到一个个不同的圈子了，每个圈子都能源源不断的产生金钱，甚至圈子和圈子之间碰撞都能产生金钱。人类的思想就这么在现实中得到了体现，这算是人类踏入虚无主义的第一步吧。</p>
-<p>我甚至无端猜想：如果有一天，圈子不再产生利润了，那么人类的社会会是怎么样？是大家都和谐统一，对任何事都有一样的看法了。还是圈子破裂，大家四散开来，再也聚不到一起。</p>
-<p>有人说：人类的思想是无穷无尽的能源？那不过是诗人们的一厢情愿罢了，人都有价值，人的思想也是，不过也是金钱罢了。如果真到了耗尽思想的那一天时：人类在耗尽的物质，又耗尽了思想，那么还剩下什么呢？</p>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>马克思韦伯</tag>
-        <tag>新教伦理</tag>
-        <tag>资本主义精神</tag>
       </tags>
   </entry>
   <entry>
@@ -6535,6 +6529,26 @@ sysctl -p
       </tags>
   </entry>
   <entry>
+    <title>瞎眼吱吱</title>
+    <url>/2022/12/02/%E7%9E%8E%E7%9C%BC%E5%90%B1%E5%90%B1/</url>
+    <content><![CDATA[<h1 id="瞎眼吱吱"><a href="#瞎眼吱吱" class="headerlink" title="瞎眼吱吱"></a>瞎眼吱吱</h1><p>瞎眼吱吱就是老鼠，村里得人总是在晚上听到田里面响出吱吱得声音，这就是瞎眼吱吱的叫声，区别以普通的家老鼠，它的特征就是吱吱叫。我们家就住进了一只瞎眼吱吱。</p>
+<p>那些年我爸破了产，我哥自立门户。我妈每天担心受怕，有空就问生意如何，一是问的多了，二是不想让老人担心就回说还行，还行。我妈听后大喜过望，直说这是菩萨显灵，是她在庙里给菩萨求得财运，让我哥赚到钱。我哥听完也无奈了，但总归只是花点答谢金罢了，老人买个心安就算了。</p>
+<p>那天吃着早饭，我妈拿着一个粘鼠板，骂骂咧咧得夹着出去了，口里不断说着：咋就这么不长眼呢？村里家家户户都有养鸡鸭，有时候剩菜盆里面还没来得及喂，所以难免有几只老鼠，家家户户也都常备着粘鼠板。我们也注意，毕竟扔出去等老鼠自己饿死就行了。晚上，正在厅里闲坐着，看到一只黑影晃过，有老鼠。我妈眼疾手快，几个跺脚把老鼠赶进了卫生间。关上了门，我们正准备家伙事呢，忽然我妈就把门打开了。“这是瞎眼吱吱，打不得！打不得！”一边说着，一边还把通往厨房得门也打开了。我们不解，她就压低了声音，神秘的说道：“瞎眼吱吱管的财运，打不得！打不得！”</p>
+<p>哭笑不得啊。</p>
+<p>“它就是一只老鼠啊”</p>
+<p>“不是，是瞎眼吱吱，你们小孩不懂，这是我早上放生的那只，你看它背上还有块毛被粘鼠板夹着呢。”</p>
+<p>“合着这家伙还是您认识得啊，那给取个名字吧，以后见面了好打招呼”</p>
+<p>“叫小妹吧，您不是一直想生个女儿，正好”——我哥打趣道。</p>
+<p>我妈也不恼，心里或许还有些得意，就这样，我家住进了一只瞎眼吱吱，我妈每天开着通往厨房得门，大抵，小妹已经快子孙满堂了吧。不知道到时候我妈还愿不愿意收留他们。</p>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>一些往事</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>码农</title>
     <url>/2022/04/30/%E7%A0%81%E5%86%9C/</url>
     <content><![CDATA[<p>额，最近好像来的比较频繁，似乎跟上次一样，也是一阵时间内多次到来</p>
@@ -6565,26 +6579,6 @@ sysctl -p
       </categories>
       <tags>
         <tag>码农</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>瞎眼吱吱</title>
-    <url>/2022/12/02/%E7%9E%8E%E7%9C%BC%E5%90%B1%E5%90%B1/</url>
-    <content><![CDATA[<h1 id="瞎眼吱吱"><a href="#瞎眼吱吱" class="headerlink" title="瞎眼吱吱"></a>瞎眼吱吱</h1><p>瞎眼吱吱就是老鼠，村里得人总是在晚上听到田里面响出吱吱得声音，这就是瞎眼吱吱的叫声，区别以普通的家老鼠，它的特征就是吱吱叫。我们家就住进了一只瞎眼吱吱。</p>
-<p>那些年我爸破了产，我哥自立门户。我妈每天担心受怕，有空就问生意如何，一是问的多了，二是不想让老人担心就回说还行，还行。我妈听后大喜过望，直说这是菩萨显灵，是她在庙里给菩萨求得财运，让我哥赚到钱。我哥听完也无奈了，但总归只是花点答谢金罢了，老人买个心安就算了。</p>
-<p>那天吃着早饭，我妈拿着一个粘鼠板，骂骂咧咧得夹着出去了，口里不断说着：咋就这么不长眼呢？村里家家户户都有养鸡鸭，有时候剩菜盆里面还没来得及喂，所以难免有几只老鼠，家家户户也都常备着粘鼠板。我们也注意，毕竟扔出去等老鼠自己饿死就行了。晚上，正在厅里闲坐着，看到一只黑影晃过，有老鼠。我妈眼疾手快，几个跺脚把老鼠赶进了卫生间。关上了门，我们正准备家伙事呢，忽然我妈就把门打开了。“这是瞎眼吱吱，打不得！打不得！”一边说着，一边还把通往厨房得门也打开了。我们不解，她就压低了声音，神秘的说道：“瞎眼吱吱管的财运，打不得！打不得！”</p>
-<p>哭笑不得啊。</p>
-<p>“它就是一只老鼠啊”</p>
-<p>“不是，是瞎眼吱吱，你们小孩不懂，这是我早上放生的那只，你看它背上还有块毛被粘鼠板夹着呢。”</p>
-<p>“合着这家伙还是您认识得啊，那给取个名字吧，以后见面了好打招呼”</p>
-<p>“叫小妹吧，您不是一直想生个女儿，正好”——我哥打趣道。</p>
-<p>我妈也不恼，心里或许还有些得意，就这样，我家住进了一只瞎眼吱吱，我妈每天开着通往厨房得门，大抵，小妹已经快子孙满堂了吧。不知道到时候我妈还愿不愿意收留他们。</p>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>一些往事</tag>
       </tags>
   </entry>
   <entry>
@@ -6686,6 +6680,24 @@ pip install requirements.txt
       </tags>
   </entry>
   <entry>
+    <title>第四章</title>
+    <url>/2022/04/30/%E7%AC%AC%E5%9B%9B%E7%AB%A0/</url>
+    <content><![CDATA[<p>我一直想找个轻松愉快的话题，但是天生悲观的我似乎与欢乐无缘。所以，我依旧选择一个让人无法笑颜的主题：时间。</p>
+<p>我一直想找个机会写写时间，但是我一直没有写，因为我知道我一定写的很差，时间伴随着我已经近25年了，但是我却对他一点都不了解，如同呼吸一般，它无时无刻不伴随着我们，但是我们对他的所知仅仅是它支持着我们的活动。</p>
+<p>抛开物理层面那些晦涩难懂的概念，我仅剩下的就是一些关于它的故事。如同每个人都有的一样，我跟他有着二十五年的故事。有时候，认识的久感情就会越深，然而时间这个连物品都算不上，我们又怎么能希望他能通灵呢，那么这章就这么结束吧，对于时间我所知甚少，所写就更少了。</p>
+<p>我一直想用我贫瘠的物理知识来描述这个三维世界的第三维，但是我却始终找不到答案，要知道，在还没看过时间简史之前，我一直认为时间是一种文学，而不是一个物理概念，时间对我更像是一种玄学，所以我迷恋仙道，因为他们能穿越古今，后来迷恋机器，以为他们带我回到过去，唯一没想到的是，真正的可能穿越之路，在于一个计算你的加速度这个无聊的科目里，我始终无法明白为何物理要在你我他之间的速度纠结半天，最后来句，理论上会是如此，但是实际就。</p>
+<p>对于时间，这个你甚至说不出他的最基本的组成部分，因为他既像实体，但又不是实体，是力但却找不到发生点，好似一个无源无终的物品。因为无源，我们无法知道我们已经过去多久，因为无终，我们不知道自己还有多久。这就是小时候一直缠绕着我的噩梦，我甚至为这个想法入迷，我不知何时结束，也不知何时开始，我一想到，在我之后，还有好长好长的时间，或者以后永远不会有我，我就害怕，我害怕的无法入睡，直至今日，我依旧将其当作我的一个无法进行深思的想法。</p>
+<p>或许这在他人看来有点杞人忧天，但是对于我来说，这是一个接受和不接受的行为，我不允许我不是永恒的存在，我希望自己永久的活着。虽然这看来就是一场梦，但是我的内心依旧追求的是永恒，而不是永生。我可以死去，但是我的意识希望还能继续，能像此时一样思考，即使是一件不值得思考的事情。如此的想法也许会给我未来带来很大的麻烦，也许未来的某一天，我可能加入今日我嘲笑的不切实际的宗教团体，并为之疯狂。人老后总是会干出一些奇怪的事情，我希望那时的如此时一般明智，而不是跟此时一样自信。</p>
+<p>对于时间，我是又爱又恨，如同大多数人一样，我在小时候渴望长大，我希望时间过得快些，我甚至发呆，祈求时间就这样飞速的过去吧，但是到了25岁，我发现，时间并不是达成我愿望的最好途径，你要知道，在15岁的年龄里，我幻想着自己18岁以后可以跟女人上床，于是我希望三年的时间快点过去，然而到了18岁，我发现原来上床和书上所说的并不一样，不是你进入女人的房间，然后发生，过程充满的艰辛。于是，我只能不停的等待，等待一个愿意让我进入他房间的女人，然后。。。，就这样，七年过去了，当初的三年等的我急不可耐，而如今的七年，对我来说恍如昨日。我就不吐槽时间的善变了，如今的我只能一天一天的过去，对它却毫无办法，我永远不知道时间是什么，什么时候快，什么时候慢，就如同女人的喜怒一样。时间和女人，我这辈子最大的伤悲。</p>
+]]></content>
+      <categories>
+        <category>那本书</category>
+      </categories>
+      <tags>
+        <tag>曾经我想写一本书</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>算是迟来的网站描述吧</title>
     <url>/2022/04/30/%E7%AE%97%E6%98%AF%E8%BF%9F%E6%9D%A5%E7%9A%84%E7%BD%91%E7%AB%99%E6%8F%8F%E8%BF%B0%E5%90%A7/</url>
     <content><![CDATA[<p>似乎想要写些什么，但是一到提笔，就什么都写不出来 。</p>
@@ -6704,24 +6716,6 @@ pip install requirements.txt
       </categories>
       <tags>
         <tag>我为啥要写下这些</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>第四章</title>
-    <url>/2022/04/30/%E7%AC%AC%E5%9B%9B%E7%AB%A0/</url>
-    <content><![CDATA[<p>我一直想找个轻松愉快的话题，但是天生悲观的我似乎与欢乐无缘。所以，我依旧选择一个让人无法笑颜的主题：时间。</p>
-<p>我一直想找个机会写写时间，但是我一直没有写，因为我知道我一定写的很差，时间伴随着我已经近25年了，但是我却对他一点都不了解，如同呼吸一般，它无时无刻不伴随着我们，但是我们对他的所知仅仅是它支持着我们的活动。</p>
-<p>抛开物理层面那些晦涩难懂的概念，我仅剩下的就是一些关于它的故事。如同每个人都有的一样，我跟他有着二十五年的故事。有时候，认识的久感情就会越深，然而时间这个连物品都算不上，我们又怎么能希望他能通灵呢，那么这章就这么结束吧，对于时间我所知甚少，所写就更少了。</p>
-<p>我一直想用我贫瘠的物理知识来描述这个三维世界的第三维，但是我却始终找不到答案，要知道，在还没看过时间简史之前，我一直认为时间是一种文学，而不是一个物理概念，时间对我更像是一种玄学，所以我迷恋仙道，因为他们能穿越古今，后来迷恋机器，以为他们带我回到过去，唯一没想到的是，真正的可能穿越之路，在于一个计算你的加速度这个无聊的科目里，我始终无法明白为何物理要在你我他之间的速度纠结半天，最后来句，理论上会是如此，但是实际就。</p>
-<p>对于时间，这个你甚至说不出他的最基本的组成部分，因为他既像实体，但又不是实体，是力但却找不到发生点，好似一个无源无终的物品。因为无源，我们无法知道我们已经过去多久，因为无终，我们不知道自己还有多久。这就是小时候一直缠绕着我的噩梦，我甚至为这个想法入迷，我不知何时结束，也不知何时开始，我一想到，在我之后，还有好长好长的时间，或者以后永远不会有我，我就害怕，我害怕的无法入睡，直至今日，我依旧将其当作我的一个无法进行深思的想法。</p>
-<p>或许这在他人看来有点杞人忧天，但是对于我来说，这是一个接受和不接受的行为，我不允许我不是永恒的存在，我希望自己永久的活着。虽然这看来就是一场梦，但是我的内心依旧追求的是永恒，而不是永生。我可以死去，但是我的意识希望还能继续，能像此时一样思考，即使是一件不值得思考的事情。如此的想法也许会给我未来带来很大的麻烦，也许未来的某一天，我可能加入今日我嘲笑的不切实际的宗教团体，并为之疯狂。人老后总是会干出一些奇怪的事情，我希望那时的如此时一般明智，而不是跟此时一样自信。</p>
-<p>对于时间，我是又爱又恨，如同大多数人一样，我在小时候渴望长大，我希望时间过得快些，我甚至发呆，祈求时间就这样飞速的过去吧，但是到了25岁，我发现，时间并不是达成我愿望的最好途径，你要知道，在15岁的年龄里，我幻想着自己18岁以后可以跟女人上床，于是我希望三年的时间快点过去，然而到了18岁，我发现原来上床和书上所说的并不一样，不是你进入女人的房间，然后发生，过程充满的艰辛。于是，我只能不停的等待，等待一个愿意让我进入他房间的女人，然后。。。，就这样，七年过去了，当初的三年等的我急不可耐，而如今的七年，对我来说恍如昨日。我就不吐槽时间的善变了，如今的我只能一天一天的过去，对它却毫无办法，我永远不知道时间是什么，什么时候快，什么时候慢，就如同女人的喜怒一样。时间和女人，我这辈子最大的伤悲。</p>
-]]></content>
-      <categories>
-        <category>那本书</category>
-      </categories>
-      <tags>
-        <tag>曾经我想写一本书</tag>
       </tags>
   </entry>
   <entry>
@@ -6830,22 +6824,6 @@ pip install requirements.txt
       </tags>
   </entry>
   <entry>
-    <title>许三观卖血记</title>
-    <url>/2022/05/30/%E8%AE%B8%E4%B8%89%E8%A7%82%E5%8D%96%E8%A1%80%E8%AE%B0/</url>
-    <content><![CDATA[<p>  卖血记得内核还是没变，依旧是父母，家庭。相较于之前不同的，许三观里面采用了大量的对话来描述他故事，而不是正常的叙事。这相较于之前的两本可以说的上市一番创新。卖血记的感受相较于兄弟的荒诞，无聊，活着的无助，旁观。更多的是诙谐，自由。许三观知道卖血的坏，也知道卖血对身体的伤害。但是他并没有沉沦其中，他卖血不是为了自己，更多的时候是为了家庭。就好像一个错误的行为套上了一个高大上的目标。就能让整体得到升华。许三观的血正是这种升华。小说描述许三观卖血的次数不多，更多的是他的家长里短，他的生活。而卖血给了他在危机降临时候的解药，在许三观的世界里，没有什么是卖血解决不了的，如果有，那就一路卖过去。</p>
-<p>  许三观的卖血并不是盈利，也不是他想的。但是卖血可以让他在存活下来。就像他说着，活着才是最重要的。他怕死，他看到他的血友卖血过多的坏处。他了解这个坏处，但就像他对铁匠说的：人总是要逼一逼，不到绝路谁又愿意走上卖血的道路呢。</p>
-<p>  <img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220525105612.png" alt="20220525105612"></p>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>余华</tag>
-        <tag>许三观</tag>
-        <tag>家庭</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>聊天</title>
     <url>/2022/04/30/%E8%81%8A%E5%A4%A9/</url>
     <content><![CDATA[<p>我讨厌久等不回，也讨厌寡言少语。</p>
@@ -6891,6 +6869,22 @@ pip install requirements.txt
       </tags>
   </entry>
   <entry>
+    <title>许三观卖血记</title>
+    <url>/2022/05/30/%E8%AE%B8%E4%B8%89%E8%A7%82%E5%8D%96%E8%A1%80%E8%AE%B0/</url>
+    <content><![CDATA[<p>  卖血记得内核还是没变，依旧是父母，家庭。相较于之前不同的，许三观里面采用了大量的对话来描述他故事，而不是正常的叙事。这相较于之前的两本可以说的上市一番创新。卖血记的感受相较于兄弟的荒诞，无聊，活着的无助，旁观。更多的是诙谐，自由。许三观知道卖血的坏，也知道卖血对身体的伤害。但是他并没有沉沦其中，他卖血不是为了自己，更多的时候是为了家庭。就好像一个错误的行为套上了一个高大上的目标。就能让整体得到升华。许三观的血正是这种升华。小说描述许三观卖血的次数不多，更多的是他的家长里短，他的生活。而卖血给了他在危机降临时候的解药，在许三观的世界里，没有什么是卖血解决不了的，如果有，那就一路卖过去。</p>
+<p>  许三观的卖血并不是盈利，也不是他想的。但是卖血可以让他在存活下来。就像他说着，活着才是最重要的。他怕死，他看到他的血友卖血过多的坏处。他了解这个坏处，但就像他对铁匠说的：人总是要逼一逼，不到绝路谁又愿意走上卖血的道路呢。</p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220525105612.png" alt="20220525105612"></p>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>余华</tag>
+        <tag>许三观</tag>
+        <tag>家庭</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>诗</title>
     <url>/2022/04/30/%E8%AF%97/</url>
     <content><![CDATA[<p>好像又是似乎，我想写首诗</p>
@@ -6908,23 +6902,6 @@ pip install requirements.txt
       </categories>
       <tags>
         <tag>诗</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>过去</title>
-    <url>/2022/04/30/%E8%BF%87%E5%8E%BB/</url>
-    <content><![CDATA[<p>上一次是年前，这次就跑到了十四号了，看来时间在这里流逝的是相当的快</p>
-<p>我终于获得了宁静，在吵吵嚷嚷了一天之后。不知为何，我总希望在周末的时候，静下心来，看看书，但是我知道我的内心是拒绝的，因为有更多好玩的事情，但是我总是会在玩了一盘高端质量局的dota之后，后悔自己浪费了一个小时在这，然后反之回想如果我用这一个小时拿来看书，会看多少多少。恩，我将前者当作罪恶，而将后者当成了一个任务。如果放任不管，我也可以每天游戏娱乐，然后这样的过去，其实我每天看书也是这样的过去，且不要拿每天看书会增加学识的这种蠢话来迷糊自己，小说更多的时候是古人打发时间的道具，如果他们有电子游戏也许早就抛弃了他们。也许在未来，新的娱乐方式出现，游戏就会变成现在读书的地位，我的目的并不是在鼓吹读书无用论，而是调整自己的心态，时间是自己的，将他花费在读书还是游戏并没有什么贵贱之分，也没必要将其当成罪恶或者是一个任务，给予自己在这么一个宁静的周末施加如此大的负担。且开心的玩乐吧，生活需要它。</p>
-<p>我并不认为像苦修士将自己与快乐分开能让自己开心或者能让人生饱满。我跟看重的是可以专心一致的倾注于某件事，他们的存在让我倾注于读书，看进书中的内容，写下一点东西.而周围的戚戚嚷嚷和我这边是两个风格。我越发的佩服大隐隐于市的隐士了。坚持自我并不是一件难事，但是难得是在一个这样的环境里坚持自我。</p>
-<p>在一个环境并不适合做某件事情的时候，我将它延后，恩，他就从一个欲望转化为一个执念，一个任务。如果等到我时候的环境之后，我要是还没放下它，那么就会去做，要是放下了，也许就会去做那时候更合适的事情吧。这正如我对性的排解一样。</p>
-<p>回到最初，我总是后悔自己过去的一小时所作的事情，尤其是这件事情失败了，让我尤为懊恼，希望时间回去，做出别的行为。现在想来，大可不必如此。其实时间对所有事情都是公平的，我玩游戏获得了愉悦，看书也是。本没有高低之分，但是自己内心高傲的看低游戏，觉得读书是件高端的事情。但正如我上面所说的，那不过是另一种愉悦自己的方式罢了，我之所以更倾向读书，因为读书随时可以停止，但是游戏不行。所以会让我产生一种沉迷的概念，因为我必须连续一个小时专注于此。看来如此长时间的专注事项除了工作都可以叫做沉迷啊。</p>
-<p>这么说来，有些人该问，难道闲暇时间所耗费的都是打发时间，就没有让自己提升的东西么？恩，其实是有的，重要是看你对提升的定义吧，看更多的小说，提升的是你的文学，玩更多的游戏，提升的是你的技术，而学生花更多的时间，提升的则是你的学识和记忆，本质同样是花费时间来换取别的，正如土地是经济的最基础载体，时间也是。你当然也可以花上一个小时，看些高端的书，但是 你不能想说自己过去的一个小时都浪费了，其实没有。与其想过去的一个小时干了啥，我觉得更多的时候还是想想后面要干啥吧，我对过去更多的是别犯同样的错和昨天吃了什么，恩今天换个吧。而前者老是忘记，后者记得清楚，但是却也没多大用，今天想吃和昨天也没有什么必然的联系，回归这个欲望本身吧，看他想吃啥。</p>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>过去</tag>
       </tags>
   </entry>
   <entry>
@@ -6978,6 +6955,23 @@ pip install requirements.txt
         <tag>经济展望</tag>
         <tag>2023</tag>
         <tag>比亚迪</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>过去</title>
+    <url>/2022/04/30/%E8%BF%87%E5%8E%BB/</url>
+    <content><![CDATA[<p>上一次是年前，这次就跑到了十四号了，看来时间在这里流逝的是相当的快</p>
+<p>我终于获得了宁静，在吵吵嚷嚷了一天之后。不知为何，我总希望在周末的时候，静下心来，看看书，但是我知道我的内心是拒绝的，因为有更多好玩的事情，但是我总是会在玩了一盘高端质量局的dota之后，后悔自己浪费了一个小时在这，然后反之回想如果我用这一个小时拿来看书，会看多少多少。恩，我将前者当作罪恶，而将后者当成了一个任务。如果放任不管，我也可以每天游戏娱乐，然后这样的过去，其实我每天看书也是这样的过去，且不要拿每天看书会增加学识的这种蠢话来迷糊自己，小说更多的时候是古人打发时间的道具，如果他们有电子游戏也许早就抛弃了他们。也许在未来，新的娱乐方式出现，游戏就会变成现在读书的地位，我的目的并不是在鼓吹读书无用论，而是调整自己的心态，时间是自己的，将他花费在读书还是游戏并没有什么贵贱之分，也没必要将其当成罪恶或者是一个任务，给予自己在这么一个宁静的周末施加如此大的负担。且开心的玩乐吧，生活需要它。</p>
+<p>我并不认为像苦修士将自己与快乐分开能让自己开心或者能让人生饱满。我跟看重的是可以专心一致的倾注于某件事，他们的存在让我倾注于读书，看进书中的内容，写下一点东西.而周围的戚戚嚷嚷和我这边是两个风格。我越发的佩服大隐隐于市的隐士了。坚持自我并不是一件难事，但是难得是在一个这样的环境里坚持自我。</p>
+<p>在一个环境并不适合做某件事情的时候，我将它延后，恩，他就从一个欲望转化为一个执念，一个任务。如果等到我时候的环境之后，我要是还没放下它，那么就会去做，要是放下了，也许就会去做那时候更合适的事情吧。这正如我对性的排解一样。</p>
+<p>回到最初，我总是后悔自己过去的一小时所作的事情，尤其是这件事情失败了，让我尤为懊恼，希望时间回去，做出别的行为。现在想来，大可不必如此。其实时间对所有事情都是公平的，我玩游戏获得了愉悦，看书也是。本没有高低之分，但是自己内心高傲的看低游戏，觉得读书是件高端的事情。但正如我上面所说的，那不过是另一种愉悦自己的方式罢了，我之所以更倾向读书，因为读书随时可以停止，但是游戏不行。所以会让我产生一种沉迷的概念，因为我必须连续一个小时专注于此。看来如此长时间的专注事项除了工作都可以叫做沉迷啊。</p>
+<p>这么说来，有些人该问，难道闲暇时间所耗费的都是打发时间，就没有让自己提升的东西么？恩，其实是有的，重要是看你对提升的定义吧，看更多的小说，提升的是你的文学，玩更多的游戏，提升的是你的技术，而学生花更多的时间，提升的则是你的学识和记忆，本质同样是花费时间来换取别的，正如土地是经济的最基础载体，时间也是。你当然也可以花上一个小时，看些高端的书，但是 你不能想说自己过去的一个小时都浪费了，其实没有。与其想过去的一个小时干了啥，我觉得更多的时候还是想想后面要干啥吧，我对过去更多的是别犯同样的错和昨天吃了什么，恩今天换个吧。而前者老是忘记，后者记得清楚，但是却也没多大用，今天想吃和昨天也没有什么必然的联系，回归这个欲望本身吧，看他想吃啥。</p>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>过去</tag>
       </tags>
   </entry>
   <entry>

@@ -289,14 +289,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>602</span>
+      <span>716</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>3 分钟</span>
     </span>
 </div>
 
@@ -316,7 +316,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">dashboard.example.com &#123;</span><br><span class="line">    @grpcProto &#123;</span><br><span class="line">        path /proto.NezhaService/*</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    reverse_proxy @grpcProto &#123;</span><br><span class="line">        header_up Host &#123;host&#125;</span><br><span class="line">        header_up nz-realip &#123;http.CF-Connecting-IP&#125; # 替换为你的 CDN 提供的私有 header，此处为 CloudFlare 默认</span><br><span class="line">        # header_up nz-realip &#123;remote_host&#125; # 如果你使用caddy作为最外层，就把上面一行注释掉，启用此行</span><br><span class="line">        transport http &#123;</span><br><span class="line">            versions h2c</span><br><span class="line">            read_buffer 4096</span><br><span class="line">        &#125;</span><br><span class="line">        to localhost:8008</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    reverse_proxy &#123;</span><br><span class="line">        header_up Host &#123;host&#125;</span><br><span class="line">        header_up Origin https://&#123;host&#125;</span><br><span class="line">        header_up nz-realip &#123;http.CF-Connecting-IP&#125; # 替换为你的 CDN 提供的私有 header，此处为 CloudFlare 默认</span><br><span class="line">        # header_up nz-realip &#123;remote_host&#125; # 如果你使用caddy作为最外层，就把上面一行注释掉，启用此行</span><br><span class="line">        transport http &#123;</span><br><span class="line">            read_buffer 16384</span><br><span class="line">        &#125;</span><br><span class="line">        to localhost:8008</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>PS:官方没有说明这个caddy配置文件是v1的还是v2的，但是我根据reverse_proxy判断这个应该是v2的。</p>
 <p>这样即可部署完成。</p>
-<h2 id="客户端部署"><a href="#客户端部署" class="headerlink" title="客户端部署"></a>客户端部署</h2><p>哪吒的客户端是我选择它的重要因素，除开普通的Linux，连比较特殊群晖；openwrt都有对应的客户端。<br>部署客户端根据一键命令部署，但是完成之后并没有效果，根据官方的一些排查也没有个结果，重点是脚本安装，我找不到对应的输出日志信息。最后不得已放弃。</p>
+<h2 id="客户端部署"><a href="#客户端部署" class="headerlink" title="客户端部署"></a>客户端部署</h2><p>哪吒的客户端是我选择它的重要因素，除开普通的Linux，连比较特殊群晖；openwrt都有对应的客户端。<br>部署客户端根据一键命令部署，但是完成之后并没有效果，根据官方的一些排查也没有个结果，重点是脚本安装，我找不到对应的输出日志信息。最后不得已放弃。<br>PS:<br>一键脚本不要乱使用啊，我安装完成之后，系统负载长期100%，导致服务器被关机，一开始以为是docker问题，但是docker我都删除了，还是占用高，估计是后台定时发送或者我脚本执行多次导致进程占用，但是我也按照提示卸载了对应的脚本安装。最后只能以重装系统解决。还好数据都在。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>虽然是开源，但是好多步骤都是一键脚本安装，没有提供自我部署的步骤。而且安装完服务端docker之后，系统cpu占用长期为100%。最后我不得已放弃了，有些说是版本问题，我现在用的是V1最新版，换个旧版就行。实在是无力折腾，于是想着还是搞好我的serverstatus吧。</p>
 
     </div>
@@ -396,7 +396,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">18:42</span>
+    <span title="站点阅读时长">18:41</span>
   </span>
 </div>
 <div class="busuanzi-count">

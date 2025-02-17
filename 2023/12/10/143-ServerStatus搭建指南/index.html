@@ -305,7 +305,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.5k</span>
+      <span>1.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -337,13 +337,7 @@
 <p>你想知道的信息都有，可以方便追踪目前的机器情况。</p>
 <h2 id="后续更新"><a href="#后续更新" class="headerlink" title="后续更新"></a>后续更新</h2><p>在更换哪吒无果之后，我还是选择继续换回ServerStatus，现在着重解决几个问题：</p>
 <ol>
-<li><p>主题<br>官方的主题太丑了，我更换<a target="_blank" rel="noopener" href="https://github.com/orilights/ServerStatus-Theme-Light">另一个</a>，相对好一些。更换的方式比较麻烦，首先你需要按照上面的命令执行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --restart=always --name=serverstatus -v ~/serverstatus-config.json:/ServerStatus/server/config.json -v ~/serverstatus-monthtraffic:/usr/share/nginx/html/json -p 80:80 -p 35601:35601 cppla/serverstatus:latest     </span><br></pre></td></tr></table></figure>
-<p>然后执行：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker cp 【你的的容器名称】:/usr/share/nginx/html/ 【你要存放的位置】</span><br></pre></td></tr></table></figure>
-<p>将里面nginx&#x2F;html的文件备份一下，然后再重新建立一下docker</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --restart=always --name=serverstatus -v ~/serverstatus-config.json:/ServerStatus/server/config.json -v 【你要存放的位置】:/usr/share/nginx/html -p 80:80 -p 35601:35601 cppla/serverstatus:latest     </span><br></pre></td></tr></table></figure>
-<p>即可。<br>需要注意的是，这边的图标用的是svg，所以你地区location参数不能用中文，要使用image&#x2F;flag下面有的名称图标。<br>我最后还是换回来了，发现延迟信息无法查看，所以还是选择原来的主题，难看就难看些吧。</p>
+<li><p>主题<br>主题的话，官方提供了三个主题搬运，之前用简洁模式图标会有问题，主要是我的location参数用的是中文，系统识别不到对应正确的svg图标，我将location改成cn之后，系统就能显示正确的图标</p>
 </li>
 <li><p>定制延迟测试<br>程序自带的三网延迟测试只是测试到对应网站的，但是由于我们地区不同，所有很多时候需要一个vps到我们地区的延迟来做参考，修改起来也很简单:<br>搜索下全国三网IP，找到自己省份的，然后复制下来。<br>直接下载：<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/cppla/ServerStatus/master/clients/client-linux.py">https://raw.githubusercontent.com/cppla/ServerStatus/master/clients/client-linux.py</a> 这个就是客户端文件。<br>用文档打开，修改CU，CT，CM三个参数即可。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/143-ServerStatus%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97-2025-02-14-15-18-16.png" alt="143-ServerStatus搭建指南-2025-02-14-15-18-16"></p>
 </li>
@@ -460,7 +454,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">18:42</span>
+    <span title="站点阅读时长">18:41</span>
   </span>
 </div>
 <div class="busuanzi-count">
