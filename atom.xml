@@ -6,7 +6,7 @@
   <link href="https://minsummer.com/atom.xml" rel="self"/>
   
   <link href="https://minsummer.com/"/>
-  <updated>2023-02-01T16:00:00.000Z</updated>
+  <updated>2025-02-11T16:00:00.000Z</updated>
   <id>https://minsummer.com/</id>
   
   <author>
@@ -15,29 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>搬瓦工上新DC99限量POWERBOX</title>
-    <link href="https://minsummer.com/2025/02/17/190-%E7%93%A6%E5%B7%A525%E5%B9%B4%E4%B8%8A%E6%96%B0DC99%E9%99%90%E9%87%8FPOWERBOX/"/>
-    <id>https://minsummer.com/2025/02/17/190-%E7%93%A6%E5%B7%A525%E5%B9%B4%E4%B8%8A%E6%96%B0DC99%E9%99%90%E9%87%8FPOWERBOX/</id>
-    <published>2025-02-17T07:27:37.516Z</published>
-    <updated>2023-02-01T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;瓦工2025年新年第一弹，很具有作为传家宝的优质服务器。&lt;br&gt;套餐配置：&lt;br&gt;SSD：30 GB RAID-10&lt;br&gt;内存：1536 MB&lt;br&gt;CPU：1x Intel Xeon&lt;br&gt;传输：1500 GB&amp;#x2F;月&lt;br&gt;链接速度：2.5 Gigabit&lt;br&gt;位置：洛杉矶，DC99&lt;br&gt;(6.77%)循环优惠码：BWHCGLUKKB&lt;br&gt;折后价：$41.95 &amp;#x2F;年：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="随想，技术顾问，那些年遇见的人，那本书" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3%EF%BC%8C%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE%EF%BC%8C%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA%EF%BC%8C%E9%82%A3%E6%9C%AC%E4%B9%A6/"/>
-    
-    
-    <category term="搬瓦工" scheme="https://minsummer.com/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/"/>
-    
-    <category term="VPS" scheme="https://minsummer.com/tags/VPS/"/>
-    
-    <category term="POWERBOX" scheme="https://minsummer.com/tags/POWERBOX/"/>
-    
-  </entry>
   
   <entry>
     <title>飞牛OS云端数据备份和取回</title>
@@ -197,6 +174,52 @@
   </entry>
   
   <entry>
+    <title>浪潮SA5112M4安装ESXI</title>
+    <link href="https://minsummer.com/2025/01/04/191-%E6%B5%AA%E6%BD%AESA5112M4%E5%AE%89%E8%A3%85ESXI/"/>
+    <id>https://minsummer.com/2025/01/04/191-%E6%B5%AA%E6%BD%AESA5112M4%E5%AE%89%E8%A3%85ESXI/</id>
+    <published>2025-01-04T16:00:00.000Z</published>
+    <updated>2025-01-04T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;买的服务器终于到货了，在安装ESXI系统中吃了不少的坑，在此特别记录一下。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="NAS" scheme="https://minsummer.com/tags/NAS/"/>
+    
+    <category term="家用服务器" scheme="https://minsummer.com/tags/%E5%AE%B6%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="浪潮SA5112M4" scheme="https://minsummer.com/tags/%E6%B5%AA%E6%BD%AESA5112M4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搬瓦工上新DC99限量POWERBOX</title>
+    <link href="https://minsummer.com/2025/01/03/190-%E7%93%A6%E5%B7%A525%E5%B9%B4%E4%B8%8A%E6%96%B0DC99%E9%99%90%E9%87%8FPOWERBOX/"/>
+    <id>https://minsummer.com/2025/01/03/190-%E7%93%A6%E5%B7%A525%E5%B9%B4%E4%B8%8A%E6%96%B0DC99%E9%99%90%E9%87%8FPOWERBOX/</id>
+    <published>2025-01-03T16:00:00.000Z</published>
+    <updated>2025-01-03T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;瓦工2025年新年第一弹，很具有作为传家宝的优质服务器。&lt;br&gt;套餐配置：&lt;br&gt;SSD：30 GB RAID-10&lt;br&gt;内存：1536 MB&lt;br&gt;CPU：1x Intel Xeon&lt;br&gt;传输：1500 GB&amp;#x2F;月&lt;br&gt;链接速度：2.5 Gigabit&lt;br&gt;位置：洛杉矶，DC99&lt;br&gt;(6.77%)循环优惠码：BWHCGLUKKB&lt;br&gt;折后价：$41.95 &amp;#x2F;年：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想，技术顾问，那些年遇见的人，那本书" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3%EF%BC%8C%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE%EF%BC%8C%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA%EF%BC%8C%E9%82%A3%E6%9C%AC%E4%B9%A6/"/>
+    
+    
+    <category term="搬瓦工" scheme="https://minsummer.com/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/"/>
+    
+    <category term="VPS" scheme="https://minsummer.com/tags/VPS/"/>
+    
+    <category term="POWERBOX" scheme="https://minsummer.com/tags/POWERBOX/"/>
+    
+  </entry>
+  
+  <entry>
     <title>NAS指北</title>
     <link href="https://minsummer.com/2024/12/29/188-NAS%E6%8C%87%E5%8C%97/"/>
     <id>https://minsummer.com/2024/12/29/188-NAS%E6%8C%87%E5%8C%97/</id>
@@ -248,6 +271,27 @@
   </entry>
   
   <entry>
+    <title>2024VPS厂商优惠回顾</title>
+    <link href="https://minsummer.com/2024/12/13/186-2024VPS%E5%9B%9E%E9%A1%BE/"/>
+    <id>https://minsummer.com/2024/12/13/186-2024VPS%E5%9B%9E%E9%A1%BE/</id>
+    <published>2024-12-13T16:00:00.000Z</published>
+    <updated>2024-12-13T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;今年的VPS厂商可以说是安静如鸟，无论是黑五还是双十一，无论是国行还是国际，都没有什么比较优惠或者好的VPS。目前比较值得注意的只有2个：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="搬瓦工" scheme="https://minsummer.com/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/"/>
+    
+    <category term="VPS" scheme="https://minsummer.com/tags/VPS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>关于2025的一些展望</title>
     <link href="https://minsummer.com/2024/12/13/185-%E5%85%B3%E4%BA%8E2025%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B1%95%E6%9C%9B/"/>
     <id>https://minsummer.com/2024/12/13/185-%E5%85%B3%E4%BA%8E2025%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B1%95%E6%9C%9B/</id>
@@ -267,27 +311,6 @@
     <category term="2025" scheme="https://minsummer.com/tags/2025/"/>
     
     <category term="一些想法" scheme="https://minsummer.com/tags/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2024VPS厂商优惠回顾</title>
-    <link href="https://minsummer.com/2024/12/13/186-2024VPS%E5%9B%9E%E9%A1%BE/"/>
-    <id>https://minsummer.com/2024/12/13/186-2024VPS%E5%9B%9E%E9%A1%BE/</id>
-    <published>2024-12-13T16:00:00.000Z</published>
-    <updated>2024-12-13T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;今年的VPS厂商可以说是安静如鸟，无论是黑五还是双十一，无论是国行还是国际，都没有什么比较优惠或者好的VPS。目前比较值得注意的只有2个：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
-    
-    
-    <category term="搬瓦工" scheme="https://minsummer.com/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/"/>
-    
-    <category term="VPS" scheme="https://minsummer.com/tags/VPS/"/>
     
   </entry>
   
@@ -889,25 +912,6 @@
   </entry>
   
   <entry>
-    <title>也许这就是生活</title>
-    <link href="https://minsummer.com/2024/03/09/158-%E4%B9%9F%E8%AE%B8%E8%BF%99%E5%B0%B1%E6%98%AF%E7%94%9F%E6%B4%BB/"/>
-    <id>https://minsummer.com/2024/03/09/158-%E4%B9%9F%E8%AE%B8%E8%BF%99%E5%B0%B1%E6%98%AF%E7%94%9F%E6%B4%BB/</id>
-    <published>2024-03-09T16:00:00.000Z</published>
-    <updated>2024-03-09T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;《我在北京送快递》这本书是我同学推荐给我的，他说让我看看什么是底层生活。于是我在回家的动车上看完了它。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
-    
-    
-    <category term="我在北京送快递" scheme="https://minsummer.com/tags/%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E9%80%81%E5%BF%AB%E9%80%92/"/>
-    
-  </entry>
-  
-  <entry>
     <title>我在北京送快递</title>
     <link href="https://minsummer.com/2024/03/09/157-%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E9%80%81%E5%BF%AB%E9%80%92-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     <id>https://minsummer.com/2024/03/09/157-%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E9%80%81%E5%BF%AB%E9%80%92-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</id>
@@ -925,6 +929,25 @@
     <category term="我在北京送快递" scheme="https://minsummer.com/tags/%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E9%80%81%E5%BF%AB%E9%80%92/"/>
     
     <category term="胡安焉" scheme="https://minsummer.com/tags/%E8%83%A1%E5%AE%89%E7%84%89/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>也许这就是生活</title>
+    <link href="https://minsummer.com/2024/03/09/158-%E4%B9%9F%E8%AE%B8%E8%BF%99%E5%B0%B1%E6%98%AF%E7%94%9F%E6%B4%BB/"/>
+    <id>https://minsummer.com/2024/03/09/158-%E4%B9%9F%E8%AE%B8%E8%BF%99%E5%B0%B1%E6%98%AF%E7%94%9F%E6%B4%BB/</id>
+    <published>2024-03-09T16:00:00.000Z</published>
+    <updated>2024-03-09T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;《我在北京送快递》这本书是我同学推荐给我的，他说让我看看什么是底层生活。于是我在回家的动车上看完了它。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+    
+    <category term="我在北京送快递" scheme="https://minsummer.com/tags/%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E9%80%81%E5%BF%AB%E9%80%92/"/>
     
   </entry>
   
@@ -1175,29 +1198,6 @@
     <category term="配置指南" scheme="https://minsummer.com/tags/%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/"/>
     
     <category term="Turbo ACC" scheme="https://minsummer.com/tags/Turbo-ACC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>浪潮SA5112M4安装ESXI</title>
-    <link href="https://minsummer.com/2024/01/04/191-%E6%B5%AA%E6%BD%AESA5112M4%E5%AE%89%E8%A3%85ESXI/"/>
-    <id>https://minsummer.com/2024/01/04/191-%E6%B5%AA%E6%BD%AESA5112M4%E5%AE%89%E8%A3%85ESXI/</id>
-    <published>2024-01-04T16:00:00.000Z</published>
-    <updated>2024-01-04T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;买的服务器终于到货了，在安装ESXI系统中吃了不少的坑，在此特别记录一下。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
-    
-    
-    <category term="NAS" scheme="https://minsummer.com/tags/NAS/"/>
-    
-    <category term="家用服务器" scheme="https://minsummer.com/tags/%E5%AE%B6%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-    <category term="浪潮SA5112M4" scheme="https://minsummer.com/tags/%E6%B5%AA%E6%BD%AESA5112M4/"/>
     
   </entry>
   
