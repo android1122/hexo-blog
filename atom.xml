@@ -6,7 +6,7 @@
   <link href="https://minsummer.com/atom.xml" rel="self"/>
   
   <link href="https://minsummer.com/"/>
-  <updated>2025-01-03T16:00:00.000Z</updated>
+  <updated>2025-04-11T16:00:00.000Z</updated>
   <id>https://minsummer.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Calibre-Web搭建docker</title>
+    <link href="https://minsummer.com/2025/04/11/201-cralibre-web%E6%90%AD%E5%BB%BA/"/>
+    <id>https://minsummer.com/2025/04/11/201-cralibre-web%E6%90%AD%E5%BB%BA/</id>
+    <published>2025-04-11T16:00:00.000Z</published>
+    <updated>2025-04-11T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/janeczku/calibre-web&quot;&gt;Calibre-Web&lt;/a&gt;一款知名的电子书阅读器，支持格式转换和OPDS。我个人有时候需要一个可以随时随地看书的地方，所以就部署了一下，之前出过一个教程，但是由于那时候官方没有推出docker只能用玩家自己编译得，所以那时候选择使用宝塔面板部署，这次趁机更新一下。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="电子书" scheme="https://minsummer.com/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/"/>
+    
+    <category term="Calibre-Web" scheme="https://minsummer.com/tags/Calibre-Web/"/>
+    
+  </entry>
   
   <entry>
     <title>2025传家宝指北</title>
@@ -635,6 +656,41 @@
   </entry>
   
   <entry>
+    <title>V.PS2023款黑五香港测试</title>
+    <link href="https://minsummer.com/2024/05/30/171-V.PS2023%E6%AC%BE%E9%BB%91%E4%BA%94%E9%A6%99%E6%B8%AF%E6%B5%8B%E8%AF%95/"/>
+    <id>https://minsummer.com/2024/05/30/171-V.PS2023%E6%AC%BE%E9%BB%91%E4%BA%94%E9%A6%99%E6%B8%AF%E6%B5%8B%E8%AF%95/</id>
+    <published>2024-05-30T16:00:00.000Z</published>
+    <updated>2024-05-30T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;套餐内容：&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;V.PS 2023年黑五款-HK &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 vCPU&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 GB RAM&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20G SSD Storage&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;400GB Transfer&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;500Mbps VirtIO Interface&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 IPv4 &amp;amp; 1 IPv6 /64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Premium Network Profile&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29.9 Euro/Year &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;结论&quot;&gt;&lt;a href=&quot;#结论&quot; class=&quot;headerlink&quot; title=&quot;结论&quot;&gt;&lt;/a&gt;结论&lt;/h2&gt;&lt;p&gt;上来先说结论：&lt;br&gt;  优点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;香港线路，延迟特别低，移动快乐机，联通电信也能用&lt;/li&gt;
+&lt;li&gt;价格便宜，一年240人民币左右，一个月20&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;   缺点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;流量双向的，翻墙可以直接默认200G,适合一个人用，而且还得少看YouTube，有一个月刷YouTube过多，直接给我关机了。&lt;/li&gt;
+&lt;li&gt;经常被打，尤其是电信，建议绕道&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;总结：推荐一个人使用，多一个人就马上捉急，然后就是这家后续更新服务说明，已经不保证线路了，唯一的优势是香港延迟低，但是除移动外其他线路丢包厉害，经常被打。今年到期我会放生它或者转卖出去。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="融合怪" scheme="https://minsummer.com/tags/%E8%9E%8D%E5%90%88%E6%80%AA/"/>
+    
+    <category term="V.PS 黑五HK" scheme="https://minsummer.com/tags/V-PS-%E9%BB%91%E4%BA%94HK/"/>
+    
+    <category term="香港线路" scheme="https://minsummer.com/tags/%E9%A6%99%E6%B8%AF%E7%BA%BF%E8%B7%AF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>V.PS2024款猫彦祖圣塞何测试</title>
     <link href="https://minsummer.com/2024/05/30/172-V.PS2024%E6%AC%BE%E7%8C%AB%E5%BD%A6%E7%A5%96%E6%AC%BE%E6%B5%8B%E8%AF%95/"/>
     <id>https://minsummer.com/2024/05/30/172-V.PS2024%E6%AC%BE%E7%8C%AB%E5%BD%A6%E7%A5%96%E6%AC%BE%E6%B5%8B%E8%AF%95/</id>
@@ -668,41 +724,6 @@
     <category term="美西线路" scheme="https://minsummer.com/tags/%E7%BE%8E%E8%A5%BF%E7%BA%BF%E8%B7%AF/"/>
     
     <category term="三网优化" scheme="https://minsummer.com/tags/%E4%B8%89%E7%BD%91%E4%BC%98%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>V.PS2023款黑五香港测试</title>
-    <link href="https://minsummer.com/2024/05/30/171-V.PS2023%E6%AC%BE%E9%BB%91%E4%BA%94%E9%A6%99%E6%B8%AF%E6%B5%8B%E8%AF%95/"/>
-    <id>https://minsummer.com/2024/05/30/171-V.PS2023%E6%AC%BE%E9%BB%91%E4%BA%94%E9%A6%99%E6%B8%AF%E6%B5%8B%E8%AF%95/</id>
-    <published>2024-05-30T16:00:00.000Z</published>
-    <updated>2024-05-30T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;套餐内容：&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;V.PS 2023年黑五款-HK &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 vCPU&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 GB RAM&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20G SSD Storage&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;400GB Transfer&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;500Mbps VirtIO Interface&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 IPv4 &amp;amp; 1 IPv6 /64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Premium Network Profile&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29.9 Euro/Year &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;结论&quot;&gt;&lt;a href=&quot;#结论&quot; class=&quot;headerlink&quot; title=&quot;结论&quot;&gt;&lt;/a&gt;结论&lt;/h2&gt;&lt;p&gt;上来先说结论：&lt;br&gt;  优点：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;香港线路，延迟特别低，移动快乐机，联通电信也能用&lt;/li&gt;
-&lt;li&gt;价格便宜，一年240人民币左右，一个月20&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;   缺点：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;流量双向的，翻墙可以直接默认200G,适合一个人用，而且还得少看YouTube，有一个月刷YouTube过多，直接给我关机了。&lt;/li&gt;
-&lt;li&gt;经常被打，尤其是电信，建议绕道&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;总结：推荐一个人使用，多一个人就马上捉急，然后就是这家后续更新服务说明，已经不保证线路了，唯一的优势是香港延迟低，但是除移动外其他线路丢包厉害，经常被打。今年到期我会放生它或者转卖出去。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
-    
-    
-    <category term="融合怪" scheme="https://minsummer.com/tags/%E8%9E%8D%E5%90%88%E6%80%AA/"/>
-    
-    <category term="V.PS 黑五HK" scheme="https://minsummer.com/tags/V-PS-%E9%BB%91%E4%BA%94HK/"/>
-    
-    <category term="香港线路" scheme="https://minsummer.com/tags/%E9%A6%99%E6%B8%AF%E7%BA%BF%E8%B7%AF/"/>
     
   </entry>
   
@@ -3628,19 +3649,13 @@
   
   <entry>
     <title>私人图书馆搭建-clibre</title>
-    <link href="https://minsummer.com/2022/05/01/%E7%A7%81%E4%BA%BA%E5%9B%BE%E4%B9%A6%E9%A6%86%E6%90%AD%E5%BB%BA-clibre/"/>
-    <id>https://minsummer.com/2022/05/01/%E7%A7%81%E4%BA%BA%E5%9B%BE%E4%B9%A6%E9%A6%86%E6%90%AD%E5%BB%BA-clibre/</id>
+    <link href="https://minsummer.com/2022/05/01/105-%E7%A7%81%E4%BA%BA%E5%9B%BE%E4%B9%A6%E9%A6%86%E6%90%AD%E5%BB%BA-Clibre/"/>
+    <id>https://minsummer.com/2022/05/01/105-%E7%A7%81%E4%BA%BA%E5%9B%BE%E4%B9%A6%E9%A6%86%E6%90%AD%E5%BB%BA-Clibre/</id>
     <published>2022-05-01T09:07:00.000Z</published>
     <updated>2022-05-01T09:07:00.000Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt; </summary>
-        
-      
+    <summary type="html">&lt;p&gt;PS: 该博文已经过期，现在推荐直接使用官方得docker系统进行搭建。&lt;/p&gt;</summary>
     
     
     
@@ -3655,8 +3670,8 @@
   
   <entry>
     <title>在线图书</title>
-    <link href="https://minsummer.com/2022/05/01/%E5%9C%A8%E7%BA%BF%E5%9B%BE%E4%B9%A6/"/>
-    <id>https://minsummer.com/2022/05/01/%E5%9C%A8%E7%BA%BF%E5%9B%BE%E4%B9%A6/</id>
+    <link href="https://minsummer.com/2022/05/01/106-%E5%9C%A8%E7%BA%BF%E5%9B%BE%E4%B9%A6/"/>
+    <id>https://minsummer.com/2022/05/01/106-%E5%9C%A8%E7%BA%BF%E5%9B%BE%E4%B9%A6/</id>
     <published>2022-05-01T06:13:00.000Z</published>
     <updated>2022-05-01T06:13:00.000Z</updated>
     
@@ -4648,7 +4663,7 @@
 &lt;p&gt;给他取名叫米奇&lt;/p&gt;
 &lt;p&gt;为啥&lt;/p&gt;
 &lt;p&gt;因为老一辈的人相信贱名好养活。&lt;/p&gt;
-</summary>
+&lt;link rel=&quot;stylesheet&quot;</summary>
         
       
     
@@ -4710,7 +4725,7 @@
 &lt;p&gt;让我开心，欢喜，喜不自胜&lt;/p&gt;
 &lt;p&gt;我还在等&lt;/p&gt;
 &lt;p&gt;等一一个心如死灰，等一个不再希望&lt;/p&gt;
-</summary>
+&lt;link rel=&quot;stylesheet&quot;</summary>
         
       
     
@@ -4739,7 +4754,7 @@
 &lt;p&gt;但是其实不是&lt;/p&gt;
 &lt;p&gt;是为她而发的&lt;/p&gt;
 &lt;p&gt;就像我的朋友圈一样&lt;/p&gt;
-</summary>
+&lt;link rel=&quot;stylesheet&quot;</summary>
         
       
     
@@ -4769,7 +4784,7 @@
 &lt;p&gt;然而你却轻轻的转身，离去&lt;/p&gt;
 &lt;p&gt;留下我一个人傻傻在那喵喵叫～&lt;/p&gt;
 &lt;p&gt;我想养只猫&lt;/p&gt;
-</summary>
+&lt;link rel=&quot;stylesheet&quot;</summary>
         
       
     
@@ -4804,7 +4819,7 @@
 &lt;p&gt;我用它平静&lt;/p&gt;
 &lt;p&gt;用它观察&lt;/p&gt;
 &lt;p&gt;也用它去追求爱情&lt;/p&gt;
-</summary>
+&lt;link rel=&quot;stylesheet&quot;</summary>
         
       
     

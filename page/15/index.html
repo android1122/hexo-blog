@@ -18,9 +18,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"minsummer.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"minsummer.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="经常会忘记一些东西，用这里来记录我们曾经来过">
 <meta property="og:type" content="blog">
@@ -43,13 +43,43 @@
 <title>我是豆豆 - 吃饭，睡觉，打豆豆</title>
   
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-189642379-1","only_pageview":true,"measure_protocol_api_secret":null}</script>
-  <script src="/js/third-party/analytics/google-analytics.js"></script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
 
 
   <script data-pjax defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{&quot;token&quot;: &quot;2c44721ef211470c8cb156f38ca476ea&quot;}'></script>
 
 
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.5.0/mermaid.min.js","integrity":"sha256-2obLuIPcceEhkE3G09G33hBdmE55ivVcZUlcKcGNHjU="}}</script>
+  <script src="/js/third-party/tags/mermaid.js" defer></script>
+
+
+
+  <script src="/js/third-party/pace.js" defer></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
 
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3599006834125162"
@@ -94,7 +124,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">360</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">197</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">361</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">198</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -157,7 +187,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">197</span>
+          <span class="site-state-item-count">198</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -168,7 +198,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">360</span>
+        <span class="site-state-item-count">361</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -213,6 +243,129 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://minsummer.com/2022/04/30/v2ray%E7%9A%84%E4%B8%80%E4%BA%9BTips/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="张大爆">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我是豆豆">
+      <meta itemprop="description" content="经常会忘记一些东西，用这里来记录我们曾经来过">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 我是豆豆">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/04/30/v2ray%E7%9A%84%E4%B8%80%E4%BA%9BTips/" class="post-title-link" itemprop="url">v2ray的一些Tips</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-04-30 21:50:00" itemprop="dateCreated datePublished" datetime="2022-04-30T21:50:00+08:00">2022-04-30</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>7 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>1，使用脚本安装V2，这个脚本内容放在GIT上，理论上是不会消失的，脚本里面覆盖了大多数的常用配置</p>
+<blockquote>
+<p>bash &lt;(curl -s -L <a target="_blank" rel="noopener" href="https://git.io/v2ray.sh">https://git.io/v2ray.sh</a>)</p>
+</blockquote>
+<p>2，配置推荐Websocket+tls，这是目前可以使你的日常博客网站和v2共存的方案，域名可以推荐用子域名（tls使用泛域名解析），或者直接用主域名的特定路径。这个配置并不是简单的模拟，是完全正式的Https链接，所以和实际浏览网站没有任何区别，不会被认为是翻墙，所以一些人喜欢拿一个正常网站当掩盖，特定路径做V2代理。只要网站正常，一般不会有被封的风险。</p>
+<p>3，Websocket+tls端口可以随便选择，也没必要开放，直接在宝塔面板里面使用对应的反向代理，如果是子域名直接反向代理写上<a href="http://127.0.0.1:特定端口。如果是博客特定路径，则需要填写上路径，然后对应的配置文件下：">http://127.0.0.1:特定端口。如果是博客特定路径，则需要填写上路径，然后对应的配置文件下：</a></p>
+<blockquote>
+<p>“streamSettings”: {   “network”: “ws”,   “wsSettings”: {   “path”:</p>
+</blockquote>
+<blockquote>
+<p>“&#x2F;ray”————这里为你需要填写的特定路径，客户端上也要写上</p>
+</blockquote>
+<p>根据：<a target="_blank" rel="noopener" href="https://www.bookset.io/read/v2ray-guide/c6fb1ced8cb4e5d5.md">https://www.bookset.io/read/v2ray-guide/c6fb1ced8cb4e5d5.md</a> 中的Nginx配置，我们需要增加两条在宝塔的反向代理中：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220602131723.png" alt="20220602131723"></p>
+<p>4，脚本安装的目录路径：</p>
+<blockquote>
+<p>V2Ray 配置文件路径：&#x2F;etc&#x2F;v2ray&#x2F;config.json——服务端配置文件，上面需要修改的就是这个地方 Caddy</p>
+</blockquote>
+<blockquote>
+<p>配置文件路径：&#x2F;etc&#x2F;caddy&#x2F;Caddyfile——宝塔面板一般使用nginx，不用这个可以忽略 脚本配置文件路径:</p>
+</blockquote>
+<blockquote>
+<p>&#x2F;etc&#x2F;v2ray&#x2F;233blog_v2ray_backup.conf——不用看，没有用</p>
+</blockquote>
+<p>这边再增加一个：&#x2F;bin&#x2F;v2ray——这是v2的主要运行文件，其中有个：config.json，是用来配置一些默认参数的，用来优化V2，比如：bufferSize这个参数：每个连接的内部缓存大小。单位为 kB。用来均衡，服务器和你本地的网络之间速度不一样，简单说就是服务器速度快，提前下载好东西，然后再慢慢的传给你本地，内存越大，速度越快（提升有限），至少不用多次访问。还有其他参数可以看官方网站的本地策略，可以自己调整。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603152959.png" alt="20220603152959"></p>
+<p>5，CDN可以隐藏真实的IP地址，通过这个策略来实现恢复锁住的IP，有免费的Cloudfare，但是访问速度看你的运营商。但是平时不打开，等到需要的时候，将DNS的状态改为代理，可以应急，访问自己被封住的IP。需注意，使用自动代理，1是有上传文件100M的限制，2是不是所有的端口他都会代理，如果你开放其他特殊端口，需要服务，请将这些端口:443&#x2F;2053&#x2F;2083&#x2F;2087&#x2F;2096&#x2F;8443&#x2F;80&#x2F;8080&#x2F;8880&#x2F;2052&#x2F;2082&#x2F;2086&#x2F;2095给那些你想要访问的服务，访问时就是http:&#x2F;&#x2F;域名：以上特定端口，就可以打开对应的服务，一般拿来做宝塔面板的后台。这样哪怕你IP被封了，也能正常操作。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603153024.png" alt="20220603153024"></p>
+<p>6，宝塔面板是好东西，但是占用也大，推荐用，新版本需要绑定手机，但是可以下老版本，Github上有老的压缩包，毕竟这东西开源。</p>
+<p>7，mckp协议可以解决一些运营商的掉包问题（比如移动），原理是多发，每次请求我发2遍甚至3遍回复，总有一条回复到的了你，缺点就是流量消耗大，是原来的2倍（理论值，算法优化下应该到不了），但是一样，提升有限，运营商的问题软件就算再努力，也是杯水车薪。</p>
+<p>8，服务器建议买cn线路，线路是重中之重。好的线路可以极大的加快你的速度，现在流行的是香港和日本这些靠近的国家，但是香港的线路染上 国内的恶习，要么带宽限制1m，5m啥的，要么就是流量100g收费，这边建议使用搬瓦工的CN，线路，运营商历史悠久，而且速度还不错。主要是带宽1G，流量1000G&#x2F;月起，带宽主要是服务器和你之间的最大速度，由于服务器一般线路优化，访问大多数网站速度都很快，曾经将谷歌硬盘内容下载下来，达到满载，被系统以为是受到攻击了，流量就是你用这个服务器上传和下载的流量，一般来说一个人100g &#x2F;月算是很充足。配置建议1G内存以上，512M是便宜，但是无法安装Docker容器管理器，这是个神器，方便简单的管理你的docker，现在很多服务都是直接一个docker解决，方便管理，而且搭建一些网站也需要一定的负载能力。至于最后的硬盘容量，没必要太较真，因为你不可能在上面存放大量的资料，10g就足够大部分的需求，主要是一些软件，至于想在上面放电影的同志，不是很建议，主要因为电影有可能会触发盗版提示（毕竟你服务器在美国）。很多时候我们哪来当中转站，一些文件可以先下载到服务器，然后再从服务器下载到本地。这速度和你直接拿V2做代理是不一样的。</p>
+<p>9，wordpress是个好东西，但是如果你是拿来玩玩，做个简单博客，可以搭建在服务器上，其他用途，请找一个wordpress的托管商。wordpress相当于是一个框架，里面有几千款的插件可以选择，所以对系统要求很大，而且她要求有对应的数据库，其中Mysql数据库要求1G内存，所以很多时候这个东西会占用你很多的资源，个人轻量博客可以，复杂的电商最好用专业的托管网站更合适，至少不会卡。</p>
+<p>10，有时候配置好后，无法访问，请按照：客户端——cloudfare——服务端  顺序排查问题，客户端配置有没有问题？请去cloudfare看下是不是打开了underattack模式，这个模式下，会把所有的链接都拒绝一下，防火墙可以看到拒绝的日志，看下是不是被系统拒绝了，最后再去确认下IP是不是被封：随便找个ping IP的网站，国内ping你的IP能不能访问就可以。确定被封了，打开cloudfare提供的cdn，继续happy。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603153047.png" alt="20220603153047"></p>
+<p>11，windows客户端v2使用速度测试的时候会发生服务端无法访问，直接打开网页访问谷歌最合适。</p>
+<p>12，有时候访问不了，仅仅是证书验证的问题，可以试试在客户端里打开跳过证书验证，或者放空。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -304,6 +457,10 @@
 <p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603151825.png" alt="20220603151825"></p>
 <p>如果有时候没有出现，可以使用crtl+shift+p，输入<strong>select interpreter：选择解释器</strong>。选择虚拟环境下Scropts下的python。或者重启一下Vscode。让系统再次寻找到解释器即可。</p>
 <p>7，vscode是好东西，机器学习也不难，实现不难，就是要知道它为何这么实现需要很多数学知识，而且由于对其原理不是很清楚，很多时候没办法将其应用在一些自己有需求的方面，所以如果不是以此为生，更多的是兴趣和了解</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
 
       
     </div>
@@ -393,6 +550,10 @@
 <p>但是如果是为了存在所发生的所有事情都是正常的,合规的.那么这个社会就会乱套,所以又提出了一个何为心理健康的概念.健康对于人类来说并不陌生,但是如果有人要求给出一个定义,或者说一个现象,却并没有一个符合大众的想法.毕竟每个人的健康状态都是不尽相同的.所以,当个体陷入神经症时候我们并没有一个标准判断.作者也没法给出一个正确的判断标志.</p>
 <p>作者同时也提出了现在心理治疗上的一些情况,很多时候病人和医生属于一种不平等的情况,甚至会发生病人迎合医生的病情,归其根本的是病人对医生的过分崇拜,很多病人对自己本身并没有一个充分的了解,尤其在心理上,一些症状或者一些情况,如果医生不加以诱导就会沉默.同样的也存在医生将自己置于上帝的角色,毕竟,对于心理治疗来说,治疗目标并没有一个明确的对象,所以往往需要医生自己主观去确定,但是个体之间环境不同,目标设立的也不尽相同.</p>
 <p>综合来看,这本书属于晦涩难懂,毕竟不是一本正经的科普书籍,更多的是大师对存在心理学的一些想法和理念,总结归纳下是有一些东西,但是主管性质太强,不适合新手.</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
 
       
     </div>
@@ -510,6 +671,10 @@
 <p>没有什么能够意味着什么,尤其在那种情况</p>
 <p>那么下次,希望可以不要浪费你我的时间吧</p>
 <p>一个毫无用处的希望</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
 
       
     </div>
@@ -634,6 +799,10 @@
 <p>民房建筑群的路，因为周围房子的占道，早就变得扭扭曲曲，加上人多，不注意保护，路上早已坑坑洼洼，虽然经过中午的太阳，但是依旧能在路面的坑洼出见到早上的雨水，而且由于路面狭窄，阳光照射时间短，地面还是有点潮湿。从小爆住处到达最近的商场需要五分钟，在走过一条条小路之后，转过一个角，豁然间，出现一条柏油马路，高楼耸立，绿树阴阴，干净的街道，整齐的路灯，甚至不远处就是一个标准的高端写字楼，这就是城市，真正的城市。与小爆身后的形成鲜明的对比。在小爆还没来到民房之前，他对城市的见解，更多的是，高楼，大厦，柏油马路，单身公寓。而在真正的找到这个住处之后，他才明白，那些，都有，只不过不是他的。他第一次见到原来如此美丽的城市里面有着如此肮脏不堪的地方，犹如皮藓一般，在这个美丽的都市中显得如此的格格不入，一开始他是拒绝的，甚至觉得这里是一些闲杂无业游民的聚居地。然而命运却与他开了个玩笑，最后他看中了这里低廉的房租，住了进来。电视上光鲜亮丽的高楼与他无关，他的公司是附近工业园内的厂房，嘈杂且充满灰尘。白领干净整洁的制服也与他无缘，他们公司根本就不发制服，最后，那舒适的单身公寓也是遥不可及，最便宜的一个月经1500的房租，对于3000+工资的他根本承担不起。最后，在同事的介绍下，他找到了这边的民房，便宜，齐全。</p>
 <p>进来居住之后，小爆才发现，这里的住户其实并不是都是些社会闲杂人员，相反，更多的是和他一样的白领，从每天早上去上班就能发现，一个个穿的光鲜亮丽，跟这里的环境格格不入，更有甚者穿着笔挺的西装制服，匆忙的上公交去。至此，张小爆就不在排挤这个地方，他甚至设身处地的为这些人想：也许他们和我一样，工资承担不起，只能居住在这。</p>
 <p>去商场的路上，能遇见很多人，他们有些很眼熟，好像是早上上班的照面，有些很开心，一看就是刚刚happy回来，也有一些和小爆一样，急不可耐的想出去拥抱那个花花世界。路很短，人很多，他们或并行，或前后脚，总之，能感觉到对方和我的目的是一样的。虽然已经是下午四点了，但是太阳依旧很热。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
 
       
     </div>
@@ -725,6 +894,10 @@
 <p>虽然最后的结局告诉我们这一切都是演戏，但是这个让女主深信不疑的世界，同时也让我深信不疑，我甚至一度怀疑这是一部对未来设想。但是结局就是这么反转，这也是我最喜欢它的地方，我总是猜不到他们的结局，就像我也猜不到这句说的是什么一样，一开始我 以为他们是准备讲人性在无法律的世界可能会出现的事情，表达人性的恶，然而他表达的是人类的冷漠，是在罪与罚的沉思。</p>
 <p>我们来回到女主本身，作为一个冷眼旁观的同谋者，我承认他确实应该受到的惩罚，但是片中的那些拍摄者不也是一个冷眼旁观者，他们在消费他们的正义，他们对罪恶想要的那种冷眼旁观，他们想要参与到这种对他人的惩罚中，然而事实上他们都没有那个资格，会看我们人类现在的罪罚体系，是法院有审你是否有罪的，而警察是罚的。他们是采用赋权的形式给予某些人拥有惩罚他人的罪权力，而剧中，这种权力则变成了一个你只要缴费就可以得到机会，这也许是在未来人类找不到自己的需求后再开发出来的需求吧。</p>
 <p>剧中的惩罚方式有点类似中国的无间地狱，在中国无间地狱是最深的地狱，在此地狱永世不得超生，一日千亿死生，不断重复。这样的处罚最为可怕，死亡给予生命意义，而在无间之中将这个意义剥夺，将一切剥夺，只有罪，纯粹的罪，到最后你的人生只有罪。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
 
       
     </div>
@@ -812,6 +985,10 @@
 <p>正如故事中的那个女主一样，我们不知道我们想要啥，在失去以后感到世界崩塌，然后想去找回来，却发现失去的永远都回不来。</p>
 <p>黑镜的每一集都是找一个当代社会的饱受争议的问题来探讨，利用虚构的未来技术将其实现，无论是一开始舆论，后面的广告，还是活在过去，每一个话题都是一个值得探讨的，值得人类深思的问题。人类对于现状的共识是：我们不知道我们现在发展的方向是不是对的，我们甚至不知道这样发展下去我们会不会灭亡或者继续存活，而黑镜似乎就是在探讨这个问题，我们发明大容量存储，用来记录过去发生的种种，但是这个是对的吗？黑镜给我们一个可能的结论。而在这一集内，他们将目光定在了复活，或者说是人工智能的复活。</p>
 <p>但是也许并不悲惨的结局，给予我们更多的深思，黑镜的所有结局都是出于一种欲拒还迎的态度，他并没有反乌托邦那样极端，推翻一切，也不是那种合家欢乐，他的结局更是那种两人之间的暧昧不清，就如第三集，他的结局并没有说明妻子的去向，死亡还是分离，男主最后的作为只是将记忆体拔下来，没有自杀的悔恨解决，也没有抛弃科技后的救赎，他的结局更多样，也更暧昧不清，正如人类对于目前自己发展的方向，前路迷茫。这集的结局也是这么一种，她并没有将复制者推下悬崖结束，也没有和他 愉快的生活在一起，他将他放置在阁楼中，很久很久。或许我能从中读取对于这个技术我们应该将它束之高楼，但是正如我前文所讲，我们正处于探索的流程中，所以，不要妄下判断。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
 
       
     </div>
@@ -933,6 +1110,10 @@
 <p>5，酒醉的主角过分的行为，ps：情敌的女友没有记忆粒无法报警</p>
 <p>6，酒醒的男主继续挖掘，将女主（杀死？离婚？或者？）</p>
 <p>7，孤独的男主，回忆，场景，一个人的落寞，最后将自己的记忆粒挖出来</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
 
       
     </div>
@@ -1020,6 +1201,10 @@
 <p>这集是我觉得最符合“黑镜”这个标题的，全片充满了压抑，满怀欣喜的等待，以为可以出现最后酣汗淋漓的爆发，没想到等到的是更深层的黑暗。我眼里所见的是，无尽的黑暗。</p>
 <p>开头，为我们描述了一个充满营销，广告，的异世界。他们强迫你看广告，并因此收取里程，而这本来就是我们应有的拒绝权利，让我不禁联想到真实的社会，广告商无孔不入，劫持路由，网页，公交，一切的一切都充满了广告，如今的广告已经差不多做到眼之所见，广告之所及，未来的发展路线也许真的如片中所 描述，也许还会检测你眼珠是否观看，然而这一切正如主角最后爆发所讲的，都是虚伪的，都是虚无，都是空的，没有一点点的真实感。唯一让他感到真实的是那份“爱”，但是，最后也被摧之殆尽，没有一点点的剩余。</p>
 <p>当剧情走到了那唯一的真实感被毁灭之后，我一时也猜不到接下来的剧情，我甚至怀疑会以主角的自杀结束，甚至黑暗的我想着主角的死亡才会使得这一集得到升华，然而，我错了，编剧采用另一种方式为这一集得到了升华，只不过是黑暗的升华，我们的主角开始攒钱，努力的攒钱，为了第二张的门票，他吃剩饭，少用牙刷，减少不必要的花销，与一开始那个无所顾虑消音形成反差，在我看到他拿起那个玻璃的刀时，我以为他是准备搞点大事，比如杀了那三个主持人，为摧毁自己真实进行复仇。然而，他只是将刀指向了自己，是的，指向了自己，并且爆发了，一场看似淋漓的爆发，最后却也在三个主持人的唆使下，陷入了更加无尽的黑暗，讽刺的是最后那把本以为用来结束一切的玻璃刀，最后却成为了他吃饭的工具，看到他轻轻的将其放在盒子内，我觉得这是本集的另一种提升吧。看完后，我眼里所剩的也只有黑暗。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
 
       
     </div>
@@ -1115,98 +1300,10 @@
 <p>这就好像将自己完完全全的剥开，没有留下一点点和隐私，没有任何的借口和其他可以隐藏，有的只有对这件事情最真实的看法</p>
 <p>好多事情真的好悲伤，悲伤的我好想结束自己，因为这样，我就不会存在，也没有存在过。</p>
 <p>我往往追求的是一件事物最正确的答案，这样是对的，也是正确的，但是一千个正确的重复之后，我总是有种错误的想法，为何，也许仅仅是因为想吧，那突如其来的想法总是让人着迷而且迫不及待，比如此刻，想要细腻而且真挚的描绘自己的内心。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
 
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://minsummer.com/2022/04/30/%E7%BB%93%E5%B0%BE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="张大爆">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我是豆豆">
-      <meta itemprop="description" content="经常会忘记一些东西，用这里来记录我们曾经来过">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 我是豆豆">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/30/%E7%BB%93%E5%B0%BE/" class="post-title-link" itemprop="url">结尾</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-04-30 21:45:12" itemprop="dateCreated datePublished" datetime="2022-04-30T21:45:12+08:00">2022-04-30</time>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>7 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>我好像还在写一本书，这本书在我心中，我曾经很久以前就想着，将这本书写出来吧，但是过了好久，经历过好多事情，我却依旧没有写完这本书。</p>
-<p>不知是何原因，好像很多人喜欢将我当作他们的倾听者，将他们的故事记录下来，而我在心中也一直有这样一个想法，自古都是胜利者来作史书的。那样的史书不是真实的，今天我愿将自己所见所闻写下来。</p>
-<p>首先，我想写刑长玉，在上份工作中，由于我是一个安静，或者说是一个闲人，所以并没有接触到太多人，我一直坐在自己的位置上无聊的刷着我的股票，我曾以为就准备就这样过完我在这个公司的工作时间，但是，不知出于何种原因的考虑，我们公司最后搬家了，搬到了一个偏远的地界，也正是这个契机让我认识到了刑小姐，刑小姐是我们公司的进出口专员，简单的说就是做出口单据面单的，我们正好被分配到一个办公室，就这样，我们至少有了一个初步的见识。正如所以城市的女孩一样，刑小姐也喜欢化妆，好看的衣服，还有美食。在社会舆论，尤其是舌尖上的中国的流行，人们似乎认为可以去吃一顿好吃的是一件十分有面子和值得宣传的事情，所以，我们的刑小姐就这样，将他的工资花费在各种好看的衣服，美食，还有旅行。</p>
-<p>由此可见刑小姐是个热爱美食，衣服和旅行的人，至于生活，我想没有人会去热爱它。我映像中刑小姐在跟我忽然间熟悉的时机是在我准备离职的时候，在那之前，我与他并没有太多的交集，有的只是，一些同事之间的玩笑。但是在我提交完后离职申请后，也许是即将分开，触动了人性的弱点，就这样，在我在哪公司的最后一天，她邀请我加入他的美食圈子，去吃了一次旋转寿司。</p>
-<p>我想要说的是，我想写的是普通人的史书，没有他们的生平，没有丰功伟绩，更多的只有日常，流水帐。而接下来发生的事情，也有点像流水帐，我们在那次吃饭之后，我并不想AA，本着反正都要离开了，算是吃个散伙饭的心思，我并没有收他们的钱，这时候，有人提议，下次他请我们去唱歌，就这样有了第二次的接触。</p>
-<p>其实在第一次接触后，我们便进行了不少次的聊天，我并不擅长维护关系，我对于朋友更多的散养，也许某一天能在微信上聊会就可以了，所以，一开始，我们也只是出于对公司的吐槽进行了一些交流。就这样，出于对某一个事物的共同讨厌，我们至少不会有冷场，就这样熟络的聊着，等到了第二次聚会，那时我正想看电影，我对电影有着一种特别热爱，我觉得在短时间内将一个故事讲完，在每个场景内采取旋转，黑白，色调，和打光各种的配合之下，有时候会给人一种莫明的美观，如同求境不求意，唯美而已。于是我选择约她一起去，其实当初，她要求我请他看电影还得去接她，当时我并不喜欢这种一方完全出力的感觉，我觉得两个人要成为朋友，至少在钱这方面上划分的清楚点，并不想受人恩惠，也不想大方的施舍他人。所以，我要求他要请我吃午餐，在经过好几个小时的商讨之后，他终于答应了。</p>
-<p>其实当时我根本不知道她为何要这么无理的要求我做这样那样的事情，但是我仅仅觉得我应该遵守我的原则，我并不喜欢太多的朋友，很多都是萍水相逢，也许这次熟络之后以后再次就没办法一起聊天，我并不喜欢这种感觉，所以，我一般是不加这些人。出于对他人的尊重，我选择加了他们美食圈的几个人微信，事实上，这几个人就这样安静的躺在我的好友列表中。也许他们知道，也许他们不知道，但是等到某一天他想要删除掉这个多年未联系的好友时，那时的纠结就是当日的冲动所致，我看透了，也想透了，所以我并不想为难未来的自己。就这样，我们看了一场电影，疯狂动物园，我很享受，我很开心，我本身喜欢电影，也喜欢这种气氛，然而就在电影结束之后，我们被他的好友圈发现我们一起去看电影，额，如同大多数人一样，他们的想法还是在小学时候，认为我们之间有什么特殊的关系，事实上，孤单的我仅仅是想找一个跟我一样喜欢电影的人一起看个电影，我想和他人一起评价电影的背景音乐，画面，手法，和心思，甚至于导演的想法。这些至宝，可以让我为之津津乐道一整天。然而他们更多的是关注我和她的一个过程，我似乎已经习惯这些事，尤其最近发生的比较频繁，人们不知道是仅仅是想找一个聊资而已，还是真的是像小学生一样，认为男女之间就应该发生什么。作为一个成熟的人，我觉得对自己的行为言行负责是最基本的，如果这都做不到的话，那我也不知道如何拯救这个世界，我们看到的电视剧似乎一直在给我们传输一个奇怪的想法，男女之间必有问题，所以这好像间接的导致我们对自己的伴侣不信任。</p>
-<p>有人说进化是人类得以在世界生活千万年的关键，但是如今的进化已经从以前多样和不确定性，变至由人类自己选择，比如对美的公认，对财富的追求，就好像是一个从根基就开始设定错误的进化。将原有的强大多项性进化变至种内选择，这样有一定他的优势，但是一旦进化的方向与人类生存的方式出现巨大的差异，就会导致人类灭亡，这也许就是人类为何一直都在观测和预测未来。但是懂的这个潜浅的知识的人又有多少呢？</p>
-<p>我有时候不禁想，从相对论的发明到被所有人简单理解花费了很长的时间，但是如今一个简单的理论从发现到被大多数人所理解却花费了比以前更多时间，人类对其他事物的好奇心似乎被某些其他的事物所改变，我们对一辆新车的发布感到痴迷，却对一个改变研究进程的理论却无动于衷。作为一个科普的浅入门者，有时候不禁求问，什么时候人才能灭绝，因为我看到的都是他们在自寻死路。</p>
+<script src="/js/markmap.js"></script>
 
       
     </div>
@@ -1254,7 +1351,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">18:54</span>
+    <span title="站点阅读时长">18:56</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -1299,41 +1396,10 @@
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
-<script src="/js/third-party/search/local-search.js"></script>
-
-
-  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.min.js","integrity":"sha256-G8ouPAnw4zzMbnAenHnVz6h9XpKbNdOkrqTh7AadyHs="}}</script>
-  <script src="/js/third-party/tags/mermaid.js"></script>
-
-
-
-  <script src="/js/third-party/pace.js"></script>
-
-
-  
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-
-  
-
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js"></script>
-
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
 <script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"android1122","repo":"hexo-blog","client_id":"6950c9229796295b9867","client_secret":"9af4438d89e7a09669ec33d632ba554589a1f7d7","admin_user":"android1122","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"a91b75002b73131314339dcffe92e412"}</script>
-<script src="/js/third-party/comments/gitalk.js"></script>
+<script src="/js/third-party/comments/gitalk.js" defer></script>
 
 </body>
 </html>

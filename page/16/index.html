@@ -18,9 +18,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"minsummer.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"minsummer.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="经常会忘记一些东西，用这里来记录我们曾经来过">
 <meta property="og:type" content="blog">
@@ -43,13 +43,43 @@
 <title>我是豆豆 - 吃饭，睡觉，打豆豆</title>
   
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-189642379-1","only_pageview":true,"measure_protocol_api_secret":null}</script>
-  <script src="/js/third-party/analytics/google-analytics.js"></script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
 
 
   <script data-pjax defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{&quot;token&quot;: &quot;2c44721ef211470c8cb156f38ca476ea&quot;}'></script>
 
 
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.5.0/mermaid.min.js","integrity":"sha256-2obLuIPcceEhkE3G09G33hBdmE55ivVcZUlcKcGNHjU="}}</script>
+  <script src="/js/third-party/tags/mermaid.js" defer></script>
+
+
+
+  <script src="/js/third-party/pace.js" defer></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
 
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3599006834125162"
@@ -94,7 +124,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">360</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">197</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">361</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">198</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -157,7 +187,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">197</span>
+          <span class="site-state-item-count">198</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -168,7 +198,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">360</span>
+        <span class="site-state-item-count">361</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -213,6 +243,102 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://minsummer.com/2022/04/30/%E7%BB%93%E5%B0%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="张大爆">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我是豆豆">
+      <meta itemprop="description" content="经常会忘记一些东西，用这里来记录我们曾经来过">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 我是豆豆">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/04/30/%E7%BB%93%E5%B0%BE/" class="post-title-link" itemprop="url">结尾</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-04-30 21:45:12" itemprop="dateCreated datePublished" datetime="2022-04-30T21:45:12+08:00">2022-04-30</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>7 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>我好像还在写一本书，这本书在我心中，我曾经很久以前就想着，将这本书写出来吧，但是过了好久，经历过好多事情，我却依旧没有写完这本书。</p>
+<p>不知是何原因，好像很多人喜欢将我当作他们的倾听者，将他们的故事记录下来，而我在心中也一直有这样一个想法，自古都是胜利者来作史书的。那样的史书不是真实的，今天我愿将自己所见所闻写下来。</p>
+<p>首先，我想写刑长玉，在上份工作中，由于我是一个安静，或者说是一个闲人，所以并没有接触到太多人，我一直坐在自己的位置上无聊的刷着我的股票，我曾以为就准备就这样过完我在这个公司的工作时间，但是，不知出于何种原因的考虑，我们公司最后搬家了，搬到了一个偏远的地界，也正是这个契机让我认识到了刑小姐，刑小姐是我们公司的进出口专员，简单的说就是做出口单据面单的，我们正好被分配到一个办公室，就这样，我们至少有了一个初步的见识。正如所以城市的女孩一样，刑小姐也喜欢化妆，好看的衣服，还有美食。在社会舆论，尤其是舌尖上的中国的流行，人们似乎认为可以去吃一顿好吃的是一件十分有面子和值得宣传的事情，所以，我们的刑小姐就这样，将他的工资花费在各种好看的衣服，美食，还有旅行。</p>
+<p>由此可见刑小姐是个热爱美食，衣服和旅行的人，至于生活，我想没有人会去热爱它。我映像中刑小姐在跟我忽然间熟悉的时机是在我准备离职的时候，在那之前，我与他并没有太多的交集，有的只是，一些同事之间的玩笑。但是在我提交完后离职申请后，也许是即将分开，触动了人性的弱点，就这样，在我在哪公司的最后一天，她邀请我加入他的美食圈子，去吃了一次旋转寿司。</p>
+<p>我想要说的是，我想写的是普通人的史书，没有他们的生平，没有丰功伟绩，更多的只有日常，流水帐。而接下来发生的事情，也有点像流水帐，我们在那次吃饭之后，我并不想AA，本着反正都要离开了，算是吃个散伙饭的心思，我并没有收他们的钱，这时候，有人提议，下次他请我们去唱歌，就这样有了第二次的接触。</p>
+<p>其实在第一次接触后，我们便进行了不少次的聊天，我并不擅长维护关系，我对于朋友更多的散养，也许某一天能在微信上聊会就可以了，所以，一开始，我们也只是出于对公司的吐槽进行了一些交流。就这样，出于对某一个事物的共同讨厌，我们至少不会有冷场，就这样熟络的聊着，等到了第二次聚会，那时我正想看电影，我对电影有着一种特别热爱，我觉得在短时间内将一个故事讲完，在每个场景内采取旋转，黑白，色调，和打光各种的配合之下，有时候会给人一种莫明的美观，如同求境不求意，唯美而已。于是我选择约她一起去，其实当初，她要求我请他看电影还得去接她，当时我并不喜欢这种一方完全出力的感觉，我觉得两个人要成为朋友，至少在钱这方面上划分的清楚点，并不想受人恩惠，也不想大方的施舍他人。所以，我要求他要请我吃午餐，在经过好几个小时的商讨之后，他终于答应了。</p>
+<p>其实当时我根本不知道她为何要这么无理的要求我做这样那样的事情，但是我仅仅觉得我应该遵守我的原则，我并不喜欢太多的朋友，很多都是萍水相逢，也许这次熟络之后以后再次就没办法一起聊天，我并不喜欢这种感觉，所以，我一般是不加这些人。出于对他人的尊重，我选择加了他们美食圈的几个人微信，事实上，这几个人就这样安静的躺在我的好友列表中。也许他们知道，也许他们不知道，但是等到某一天他想要删除掉这个多年未联系的好友时，那时的纠结就是当日的冲动所致，我看透了，也想透了，所以我并不想为难未来的自己。就这样，我们看了一场电影，疯狂动物园，我很享受，我很开心，我本身喜欢电影，也喜欢这种气氛，然而就在电影结束之后，我们被他的好友圈发现我们一起去看电影，额，如同大多数人一样，他们的想法还是在小学时候，认为我们之间有什么特殊的关系，事实上，孤单的我仅仅是想找一个跟我一样喜欢电影的人一起看个电影，我想和他人一起评价电影的背景音乐，画面，手法，和心思，甚至于导演的想法。这些至宝，可以让我为之津津乐道一整天。然而他们更多的是关注我和她的一个过程，我似乎已经习惯这些事，尤其最近发生的比较频繁，人们不知道是仅仅是想找一个聊资而已，还是真的是像小学生一样，认为男女之间就应该发生什么。作为一个成熟的人，我觉得对自己的行为言行负责是最基本的，如果这都做不到的话，那我也不知道如何拯救这个世界，我们看到的电视剧似乎一直在给我们传输一个奇怪的想法，男女之间必有问题，所以这好像间接的导致我们对自己的伴侣不信任。</p>
+<p>有人说进化是人类得以在世界生活千万年的关键，但是如今的进化已经从以前多样和不确定性，变至由人类自己选择，比如对美的公认，对财富的追求，就好像是一个从根基就开始设定错误的进化。将原有的强大多项性进化变至种内选择，这样有一定他的优势，但是一旦进化的方向与人类生存的方式出现巨大的差异，就会导致人类灭亡，这也许就是人类为何一直都在观测和预测未来。但是懂的这个潜浅的知识的人又有多少呢？</p>
+<p>我有时候不禁想，从相对论的发明到被所有人简单理解花费了很长的时间，但是如今一个简单的理论从发现到被大多数人所理解却花费了比以前更多时间，人类对其他事物的好奇心似乎被某些其他的事物所改变，我们对一辆新车的发布感到痴迷，却对一个改变研究进程的理论却无动于衷。作为一个科普的浅入门者，有时候不禁求问，什么时候人才能灭绝，因为我看到的都是他们在自寻死路。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -285,6 +411,10 @@
 <p>随着替身的被发现，然后断指的出现，舆论的方向开始变化，人们对他一开始的同情，变成了责难，愤怒，以及不满。好像在他们的心里，出现了一个无法接受的事物，本来这会是一个名流千古的真人秀，但是你却想着搞砸他，这是无法容忍的，首相也因此被自己的幕僚坑的不知所以，疯狂，愤怒占据了他的心，他开始不顾一切，只要能找到该死的公主，他可以付出一切，他冲进疑似的隐藏处，这是他最后的机会，然后结果却是成为压死骆驼的最后一根稻草。</p>
 <p>其实，剧情中出现很多耐人寻味的东西，包括一开头的群众的镜头，更多的人将这件事当中一件热闹来看，然后，首相妻子的愤怒，女王的电话，还有，不断的泄密，首相办公室和拍摄现场。而最后万人空巷的场景更是表现力，群众们对于这场真人秀的期待。</p>
 <p>整集都是一场秀，前面的预告，中场爆出的噱头，最后万人空巷的观看，台前和幕后，一步步的为我们展现，一个人是如何表演的，这也许是最真实也是最普通的一场秀，主角的想法一直都是不重要的，重点是我们想要看到啥</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
 
       
     </div>
@@ -380,6 +510,10 @@
 <p>找到组织架构生成的事务并将其发布后，为以防万一，我们应该让其执行一次，以生成新的组织架构，进入系统平台——后台事物——事务定义——后台事务定义报表</p>
 <p>手动启动下。</p>
 <p>这样，就重新生成新的组织架构，这样就可以使预算汇总表内的数据汇总正确。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
 
       
     </div>
@@ -473,6 +607,10 @@
 <p>成长的话题会很长，很多，但是我却不想谈论，就好像是拿着自己的悲惨遭遇在博取他人的同情，然后我并不需要，所以我就此结束。除了成长，我的人生还是有许多上的了这个页面的东西的，比如：爱。</p>
 <p>我的爱情，从未开始过，所以没有结束。所以相对于我的爱情，如同这一段一样简短。</p>
 <p>但是我喜欢喜欢人，小学，初中，高中，乃至都是男生的理工大学，我都找到了喜欢的对象，虽然没有过爱情，甚至没有过恋情。这也许就是你们所说的暗恋吧。也许是生来孤独的原因，没到一个新的地方，即使我对爱情没有什么需求，但是我的内心都会让我找到一个目标，然后将这个目标变成我喜欢的人，然后幻想风花雪月。小学喜欢自己的同桌，初中喜欢14班的一个女生，高中喜欢的是5班的，而到了大学，由于理工科的女生数量和质量，你们懂得，但是即使这样，我还是被迫选择了一个同班的来当做幻想对象，即使工作后，我这个优良的传统还在保持，也许这是种心理疾病吧。就像我的另一篇文章所写的一样，我的爱很简短，无声无迹，并不需要回应，只需要自己的想象就可以，也许在未来的某一天，心平气和的告诉她，我曾经喜欢过你，然后和他一起欢快的讨论当初为了你所干的傻事，那样就足够了。我喜欢平静，即使多么波涛汹涌，最后还是会归于平静，这是我对爱情，或者喜欢的想法，我愿意将最美好的时间给最美好的你。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
 
       
     </div>
@@ -561,6 +699,10 @@
 <p>我们总是在追求着永远，渴望着永远，但是我们知道这是不可能的。我们心中藏着一个永远不可能实现的梦想，也许这个梦想是我们与永远最近的距离吧。我在此并不想分享我们的往事，那是我们的记忆，同样，你们也有你们的。我觉得，也许石头沉入了水中，但是在多年后，有人问起来：沉下去的那块石头是什么样的石头。然后这时候我就会回答：一颗普通，但是给人很舒适的石头。我觉得这是对石头最大的赞誉了，石头的沉没让人再也见不到他，但是却能通过别人对他的了解，让更多的人知道曾经有过这么一块让人感受到温暖的石头。也许石头在水里再也浮不上来了，但是知道他的人会越来越多，从一个石头，变成人们口头相传的石头。</p>
 <p>自古，人过留名，雁过留声。我们在一个个景点上写下到此一游的字样就是为了告诉世人，告诉世界，我曾来过这个世界。也许在未来的某一日我会跟别人提到有这么一块石头，告诉世人，他曾经来过。</p>
 <p>致 水中的石头</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
 
       
     </div>
@@ -651,6 +793,10 @@
 <p>对于时间，这个你甚至说不出他的最基本的组成部分，因为他既像实体，但又不是实体，是力但却找不到发生点，好似一个无源无终的物品。因为无源，我们无法知道我们已经过去多久，因为无终，我们不知道自己还有多久。这就是小时候一直缠绕着我的噩梦，我甚至为这个想法入迷，我不知何时结束，也不知何时开始，我一想到，在我之后，还有好长好长的时间，或者以后永远不会有我，我就害怕，我害怕的无法入睡，直至今日，我依旧将其当作我的一个无法进行深思的想法。</p>
 <p>或许这在他人看来有点杞人忧天，但是对于我来说，这是一个接受和不接受的行为，我不允许我不是永恒的存在，我希望自己永久的活着。虽然这看来就是一场梦，但是我的内心依旧追求的是永恒，而不是永生。我可以死去，但是我的意识希望还能继续，能像此时一样思考，即使是一件不值得思考的事情。如此的想法也许会给我未来带来很大的麻烦，也许未来的某一天，我可能加入今日我嘲笑的不切实际的宗教团体，并为之疯狂。人老后总是会干出一些奇怪的事情，我希望那时的如此时一般明智，而不是跟此时一样自信。</p>
 <p>对于时间，我是又爱又恨，如同大多数人一样，我在小时候渴望长大，我希望时间过得快些，我甚至发呆，祈求时间就这样飞速的过去吧，但是到了25岁，我发现，时间并不是达成我愿望的最好途径，你要知道，在15岁的年龄里，我幻想着自己18岁以后可以跟女人上床，于是我希望三年的时间快点过去，然而到了18岁，我发现原来上床和书上所说的并不一样，不是你进入女人的房间，然后发生，过程充满的艰辛。于是，我只能不停的等待，等待一个愿意让我进入他房间的女人，然后。。。，就这样，七年过去了，当初的三年等的我急不可耐，而如今的七年，对我来说恍如昨日。我就不吐槽时间的善变了，如今的我只能一天一天的过去，对它却毫无办法，我永远不知道时间是什么，什么时候快，什么时候慢，就如同女人的喜怒一样。时间和女人，我这辈子最大的伤悲。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
 
       
     </div>
@@ -741,6 +887,10 @@
 <p>而现在的舆论则更多的利用我们这种想法，我们并不想成为异类，或者独立的一份子，这并不好受，甚至在某些不成熟的人眼里你这是在排挤他们。所以，在如今的社会通讯中，我更多的看到的是一种满是威胁的邀请。这种顺我者生，逆我者喷的行为模式成为了很多人秀其优越感的工具。我们可以看到很多人通过网络的骂战可以从中寻找到优越和自信，而对方则通过打击他的优越和自信来获得满足。我并不知道这两者谁更恶劣。但是更多的时候我选择作为一个旁观者来看待这些事物。也许我是在逃避，恩，这的确可以成为他们攻击我的理由和借口。我认为最开始的战争更多源于冲动，而到了开化的时代，争斗和战争才需要那么多冠冕堂皇的理由。也许我们脱离了它的本质，但是这至少是一种进步。不至于一言不合就动手。然而这种进步也延续到了我们的网络骂战中，我们会对那些想骂的人找到一个借口，或者他的一个失误进行开喷。但我们似乎忽略了我们为何要找借口的本源了，正是为了阻止这些不必要的战争。古人尚且知道不义的战争注定会是失败的，因为得不到民心，所以在起义时他们或寻求天象来迷惑民众。如今的人已经聪明到不被天象这些虚的所蒙蔽，改被道德所欺骗。</p>
 <p>本人并不评论道德的好与坏，我只知道无论本质是多么纯洁的东西，在一个邪恶的人手里都可以变成危害。所以重点在人不在物。人民需要安静，但是有的人就希望激起激浪，无论是出于金钱还是别的原因，有时候仅仅是因为无聊。额，信息的流通使得激起激浪的成本和手段都变的相对简单，他只要发个微博，就自动会有那些喜欢激浪的媒体来为他推波助澜，最后在演变成一场社会关注的新闻，然后以道德绑群众，促使他们这些两面派做出选择，剧情或许会反转，或许不会。但是都不重要了，浪已经激起，钱已经收到，无聊已经解决了。始作者的所有欲望得到满足，推动者也从中获得利益，而平静的人群也从这场激浪中得到了道德上的满足。看来这是一场无害反而满足大多数人的浪，这也许是为啥现在这么多人会激起浪了。即使在我眼里看来这是一场闹剧。</p>
 <p>我一直在寻找人要怎么活在这个世上，或者说一直在思考。我过着符合他人的生活，但是心里却想着如何才能走出自己的人生道路。我并不对目前的生活感到不满，毕竟作为键盘侠我与事件远隔千山万水，但是我还是有时候不禁想问，如何才能那样悠然自得的表达自己的意愿，然后过着自己想过的生活。也许结果是让人失望，甚至于没有结果。但人之所以为人，更多的时候就是对某一件事物的坚持吧。我没找到答案，也给予不了答案，但是并不影响我现在的生活，我享受着这份精神出轨给我带来的快感和满足，也只有在精神上我们可以如此的自由自在</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
 
       
     </div>
@@ -829,6 +979,10 @@
 <p>面试，我一直觉得找工作和找老婆有点像，都是在寻找一个自以为可以干一辈子的事情，而面试则更接近于相亲。都是在一段短暂的交流之后，就要决定是否愿与你过一生。然而，大多数人总是会发现，当你真正进去以后才发现这里的世界并没有更加美好。这并不是我作为一个单身狗的嘲讽。婚姻和工作一样，更多的是作为一份我们存活在这个世上的必须品，或者说是体面的存活在这个世上的必须品。我们并不是没有就不能生存，而是没有，我们的人生会受人指责非议。对于面试，我并没有过多的建议，即使我拥有多年的相亲经验。它们千变万化即使是我现在也没有搞清楚，这个过程的意义在哪里。面试的本意是给双方一个认识了解对方的过程，额，多么伟大的过程。然而，实际中，一般是你方吹罢，我上场。双方都对自己有所隐瞒，然后将自己好的一面展现出来。这里更像是一场辩论，而不是一个坦诚的会面。双方都试图拿自己好的一面来说服对方，我是你最好的选择。很多时候，我在寻找一种完美的解决方案，一种你我双方各取所需的方案，但是这是一种美梦。正如美好的婚姻总是能成为经典案例流传千古一样，这种美好的方案，也只能在书上看见。</p>
 <p>在经历过寻找就业城市，面试，我们到达了一个十分尴尬的环节了，薪资。钱是万恶之源，这句话说的对，但是不知从何时开始，我们既然将这话当作行为准则了，谈钱伤感情，不要跟我提钱，你这是见外等等一系列的话语往往能在金钱交易上出现。我在想，在过不久也许钱就会变得跟性一样让人脸红耳赤了。然而，我们工作就是为了这万恶之源，所以即使再怎么难堪，我们也不得不将这个难登大雅之堂的东西提出来。曾经有人对我平凡的跳槽提出意见，所为何前几家公司留不住你，我很想回答：他们钱没给够。但是我不能，我费尽心思找各种看似合理的理由，然后对方以一种原来如此的姿势点头。我不知他是否接受，但是我知道这个尴尬的问题过去了，然而随着他又表示希望我能干的久点如果公司接受我。每当到这时，我都不免感叹希腊人的伟大，他们发明了辩论，他们让一句话不再是一个意思，而是有多种可能性，就以上这句话在我听来，这是一种威胁，而且在我看来这个问题跟问我为何在上份公司离职一样，我为何离开你也好是我为何离开上家一样。其实在很多问题上，我们都会有一个共同的结果，我成为答案，我想在这类问题上，我们应该有一个共识：人为何离开上份公司：钱没给够。但是他们还是会问，因为钱是一种上不得台面的东西，连他相关答案的问题也是。</p>
 <p>入职，入职的感觉给我更多的是第一次的激动吧，就像我们第一次进入学校，或者说在长达两个月后再次来到自己的办公室，有点陌生，但是熟悉了之后，发现这边还是这样，他们并没有什么太大的差别。所以我更愿意相信，入职只不过是你还不熟悉罢了，而不是恐惧或者讨厌工作</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
 
       
     </div>
@@ -916,6 +1070,10 @@
 <p>所以，我只能在人类的理解范畴之内写下这本书。</p>
 <p>书的开头是本篇，而我的开头是源于一次情感交流。猪哥在被老家落后的相亲习俗困扰时，找到了我这个有多年相亲经验的我。我倾囊相授，末了。猪哥来句，你该将这些写下来，流传成书，好让后来人吸取经验。至此写书，或者书写些东西的想法应运而生。经验是不敢说，至少是一些个人的见解。来到这个世上二十余载，虽说每日浑浑噩噩不知自己过得日子。但是偶尔忽有感慨却找不到人倾诉，唯有写下来或者记下来，有生之年不敢想，只求在时间的长河里有人能看见就行了，共鸣是一种奢望，以此为鉴更是一种莫大的荣誉。</p>
 <p>早在我小学的时候我就知道时间的残酷，我知道人类不是永恒的，会死去，地球不是永远的，会爆炸。年少的我为此感到莫大的担忧，常常心神不宁，又无所适从。我只能默默的看着却学不会接受这个事实，即使到现在，在夜深人静的时候回想起这个事实，心头还是一紧。我早已经忘记我当初是怎么解决这个忧虑的，但是我至今还记得当初的感受。从此，我开始学会接受事实，我所无力改变的事实。但是我并不因此而觉得自己的渺小，相反我反而觉得自己的重要。正如一朵花，商人看利，智者看理，我从中看到的是我宝贵的时间。至此以后我试图珍惜每一分钟，虽然事与愿违。在认识了时间的重要性之后，对于很多事情都看开了，世上没有一百年解决不了的事情，如果有，那就再来一百年。时间可以说的上是万用良药，而这本书正是我吃了这么多年药开出来的成分列表。生活百味，各自体会。或忧伤或欢乐，自知便可。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
 
       
     </div>
@@ -1017,100 +1175,10 @@
 <p>当然这是我的想法，最重要的是张杰的想法，改变一个人的想法很难，得去经历然后才能改变，希望你能在大学四年中找到适合自己的想法，更希望那时候还不算太晚。</p>
 <p>祝</p>
 <p>找到自己</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
 
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://minsummer.com/2022/04/30/%E4%BB%8A%E5%A4%A9%E5%8F%91%E5%B7%A5%E8%B5%84%E4%BA%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="张大爆">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我是豆豆">
-      <meta itemprop="description" content="经常会忘记一些东西，用这里来记录我们曾经来过">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 我是豆豆">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/30/%E4%BB%8A%E5%A4%A9%E5%8F%91%E5%B7%A5%E8%B5%84%E4%BA%86/" class="post-title-link" itemprop="url">今天发工资了</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-04-30 21:41:25" itemprop="dateCreated datePublished" datetime="2022-04-30T21:41:25+08:00">2022-04-30</time>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>我更喜欢写一篇流水帐，今天早上上班，然后，依旧上周的节奏，一整天没有事情，然后，到了下午四点，查下账户，哦发工资了，然后今天一天就结束了。</p>
-<p>多么简单明了，没有任何的废话，好像我们的过去一样。</p>
-<p>但是现在的我有不能这么简单明了的过去了，我依旧在这边行动</p>
-<p>其实工资的多寡我早就知晓，只是知道个大概，我喜欢掌控一切可以掌控的，包括信息，我喜欢这种知道未来，或者说是早已决定在未来的某一天就会兑现的行为。但是实际到来时，心中的感觉跟幻想还是有点差距的，事实证明，幻想永远比现实来的真实，或者说符合你的口味。</p>
-<p>在我的幻想中，我对这笔钱有着一大步的规划，但是当这笔钱到达我的眼前时，我又忽然不舍得使用率，我喜欢看着数字的增长，但是一旦使用这笔钱，这种感觉就没有了，同时带来的是我对不确定的未来的忧虑。我喜欢掌控一切，但是往往现实不按照计划进行，所以我需要不断的幻想可能出现的事情，所以我也就相对应的要准备一笔对付这可能出现的事情的钱了，事实上，我好想没有几次猜对，所以这笔钱一般就是被我放着放着然后遗忘。</p>
-<p>但即便如此我还是喜欢保留点余量为未来做准备。好吧，我如此居安思危但也没见我的人生多么成功，或许鸡汤这东西，没有想象中的那么有效。</p>
-<p>好吧，说了这么多，我想要说的是什么，我在写的过程中，我忽然发现，我得需要张信用卡了。以前我对信用卡的态度是，有多少钱花多少钱，借的钱总要还的。同时有那么一种穷人才用信用卡，我这种富豪才不用的骄傲。额，事实上，我这个穷逼仅仅是为了上面的骄傲所以一直没去办张信用卡的。</p>
-<p>如今我改变想法，或者说是不得不变，因为穷。</p>
-<p>其实，信用卡，不仅仅是借钱的工具，其实他是一个很好的蓄水池，或者说是水坝以你的钱数决定。每个人对信用卡最原始的想法是我用下个月的工资在这个月买东西。的确如此，这个只是它的一种用法，你可以用这个月的钱进行投资，然后下个月获得收益后在还钱。两者的原理相同，都是将钱进行透支。不同的是，前者用的是下个月的钱，后者则是这个月的钱。前者是没钱借钱，后者是有钱不还。事实上除了信用卡意外好像还真的有这种有钱不还的生意啊。而且还这么光明正大。同样的效果，但是使用得当的话，信用卡会是一个很好的理财工具的，事实上，在余额宝出来之前或者其他大众高收益理财出来之前，第二种方法的适用面很窄，毕竟随时取钱还款不是简单的事情，而且还有按天计算收益，每一天都是收入。</p>
-<p>我好像精算与这些细胳膊小腿的。但是事实上，除非你有上百万的存款，或者说是随时可以使用的钱，否则的话你也就只能在这边扒拉蚊子腿。资金的大小和收益是呈指数的，若有上百亿，那么百分五十的收益甚至百分百以上也是可能的。这就是资本市场为什么穷的越穷，富的越富。</p>
-<p>好吧，归根结底你为何要办理信用卡，因为你穷。</p>
+<script src="/js/markmap.js"></script>
 
       
     </div>
@@ -1158,7 +1226,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">18:54</span>
+    <span title="站点阅读时长">18:56</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -1203,41 +1271,10 @@
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
-<script src="/js/third-party/search/local-search.js"></script>
-
-
-  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.min.js","integrity":"sha256-G8ouPAnw4zzMbnAenHnVz6h9XpKbNdOkrqTh7AadyHs="}}</script>
-  <script src="/js/third-party/tags/mermaid.js"></script>
-
-
-
-  <script src="/js/third-party/pace.js"></script>
-
-
-  
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-
-  
-
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js"></script>
-
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
 <script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"android1122","repo":"hexo-blog","client_id":"6950c9229796295b9867","client_secret":"9af4438d89e7a09669ec33d632ba554589a1f7d7","admin_user":"android1122","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"deb82927b094fec176c3da14b72e1551"}</script>
-<script src="/js/third-party/comments/gitalk.js"></script>
+<script src="/js/third-party/comments/gitalk.js" defer></script>
 
 </body>
 </html>
