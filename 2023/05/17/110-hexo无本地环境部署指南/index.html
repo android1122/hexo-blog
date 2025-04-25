@@ -22,12 +22,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"minsummer.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="折腾啊折腾之前使用的是typecho博客，简单，轻量。满足需求，唯一的问题是不是很好看，好看的主题需要付费，如handsome，而且很多时候速度不快。最让我不能忍的是更新慢，而且对一些数学公式的支持并不是那么有效果。所以从很早以前就衍生出了想要换一个博客的想法，归根揭底就是闲了，想折腾了。">
+    <meta name="description" content="折腾啊折腾 之前使用的是typecho博客，简单，轻量。满足需求，唯一的问题是不是很好看，好看的主题需要付费，如handsome，而且很多时候速度不快。最让我不能忍的是更新慢，而且对一些数学公式的支持并不是那么有效果。所以从很早以前就衍生出了想要换一个博客的想法，归根揭底就是闲了，想折腾了。">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Hexo部署指南-基于GitHub">
 <meta property="og:url" content="https://minsummer.com/2023/05/17/110-hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
 <meta property="og:site_name" content="我是豆豆">
-<meta property="og:description" content="折腾啊折腾之前使用的是typecho博客，简单，轻量。满足需求，唯一的问题是不是很好看，好看的主题需要付费，如handsome，而且很多时候速度不快。最让我不能忍的是更新慢，而且对一些数学公式的支持并不是那么有效果。所以从很早以前就衍生出了想要换一个博客的想法，归根揭底就是闲了，想折腾了。">
+<meta property="og:description" content="折腾啊折腾 之前使用的是typecho博客，简单，轻量。满足需求，唯一的问题是不是很好看，好看的主题需要付费，如handsome，而且很多时候速度不快。最让我不能忍的是更新慢，而且对一些数学公式的支持并不是那么有效果。所以从很早以前就衍生出了想要换一个博客的想法，归根揭底就是闲了，想折腾了。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-05-18-10-21-47.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-05-18-10-46-58.png">
@@ -87,8 +87,9 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js" defer></script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
+  <script class="next-config" data-name="katex" type="application/json">{"copy_tex_js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js","integrity":"sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs="}}</script>
+  <script src="/js/third-party/math/katex.js" defer></script>
 
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3599006834125162"
@@ -133,7 +134,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">363</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">199</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">367</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">200</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -184,7 +185,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%98%E8%85%BE%E5%95%8A%E6%8A%98%E8%85%BE"><span class="nav-number">1.</span> <span class="nav-text">折腾啊折腾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.</span> <span class="nav-text">部署步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%98%E8%85%BE%E5%95%8A%E6%8A%98%E8%85%BE"><span class="nav-number">1.</span> <span class="nav-text"> 折腾啊折腾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.</span> <span class="nav-text"> 部署步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text"> 总结</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -197,7 +198,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -208,7 +209,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">363</span>
+        <span class="site-state-item-count">367</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -350,37 +351,54 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="折腾啊折腾"><a href="#折腾啊折腾" class="headerlink" title="折腾啊折腾"></a>折腾啊折腾</h2><p>之前使用的是typecho博客，简单，轻量。满足需求，唯一的问题是不是很好看，好看的主题需要付费，如handsome，而且很多时候速度不快。最让我不能忍的是更新慢，而且对一些数学公式的支持并不是那么有效果。所以从很早以前就衍生出了想要换一个博客的想法，归根揭底就是闲了，想折腾了。</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="折腾啊折腾"><a class="markdownIt-Anchor" href="#折腾啊折腾"></a> 折腾啊折腾</h2>
+<p>之前使用的是typecho博客，简单，轻量。满足需求，唯一的问题是不是很好看，好看的主题需要付费，如handsome，而且很多时候速度不快。最让我不能忍的是更新慢，而且对一些数学公式的支持并不是那么有效果。所以从很早以前就衍生出了想要换一个博客的想法，归根揭底就是闲了，想折腾了。</p>
 <span id="more"></span>
-<p>之前考虑的博客有两种Hexo，Hugo。两者都是静态博客，简单说就是你在本地都生成了网页，然后放上去就行，不需要任何的框架。能打开就能看到。这点的好处就是完全不用担心被攻击。犹记得当年使用typecho+MySQL，然后数据库被黑，对面要求我支付比特币解锁，最后只能忍痛重建。博客的框架千千万，最后归属大概率就是静态。毕竟博客作为一种展示的平台，好看，速度快是最重要的。<br>在Hexo和Hugo之间，我最后选择了Hexo，主要是因为Hugo也好久没有更新了，虽然静态博客不需要太多更新，但是随着技术和审美的改变，我还是希望有一个可以长久支持的系统来更新我得博客，我并不希望像typecho那样五年才一个更新，然后更新完之后还是有bug。所以再三思量之后就想着使用Hexo作为我的下一个博客框架。其实也和我现在的写作习惯有关系，平时写作时在电脑上，然后再复制到博客发布，电脑端用vscode编写好了markdown文件，也是有留底的，主要是之前太多次的博客重建，导致我习惯性本地一份，电脑一份。如果这次换成静态文件，那么就不需要再拷贝，直接git上传就可以。<br>我看了网上好多的教程都是安装Git，node，hexo然后在写，再发布。我并不喜欢这种做法，毕竟乱七八糟的，还要在电脑端安装这个环境那个环境，搞不好哪天环境冲突，就傻眼了，我这边就自己看了下，感觉可以利用GitHub实现无本地环境的部署：</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-05-18-10-21-47.png" alt="hexo无本地环境部署指南-2023-05-18-10-21-47"></p>
+<p>之前考虑的博客有两种Hexo，Hugo。两者都是静态博客，简单说就是你在本地都生成了网页，然后放上去就行，不需要任何的框架。能打开就能看到。这点的好处就是完全不用担心被攻击。犹记得当年使用typecho+MySQL，然后数据库被黑，对面要求我支付比特币解锁，最后只能忍痛重建。博客的框架千千万，最后归属大概率就是静态。毕竟博客作为一种展示的平台，好看，速度快是最重要的。<br />
+在Hexo和Hugo之间，我最后选择了Hexo，主要是因为Hugo也好久没有更新了，虽然静态博客不需要太多更新，但是随着技术和审美的改变，我还是希望有一个可以长久支持的系统来更新我得博客，我并不希望像typecho那样五年才一个更新，然后更新完之后还是有bug。所以再三思量之后就想着使用Hexo作为我的下一个博客框架。其实也和我现在的写作习惯有关系，平时写作时在电脑上，然后再复制到博客发布，电脑端用vscode编写好了markdown文件，也是有留底的，主要是之前太多次的博客重建，导致我习惯性本地一份，电脑一份。如果这次换成静态文件，那么就不需要再拷贝，直接git上传就可以。<br />
+我看了网上好多的教程都是安装Git，node，hexo然后在写，再发布。我并不喜欢这种做法，毕竟乱七八糟的，还要在电脑端安装这个环境那个环境，搞不好哪天环境冲突，就傻眼了，我这边就自己看了下，感觉可以利用GitHub实现无本地环境的部署：</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-05-18-10-21-47.png" alt="hexo无本地环境部署指南-2023-05-18-10-21-47" /></p>
 <p>通过流程涂我们可以看到，本地环境的的作用其实就是用来渲染的，所以如果有一个机器能帮我们随时渲染的话，那么就不需要搭建本地环境。</p>
-<h2 id="部署步骤"><a href="#部署步骤" class="headerlink" title="部署步骤"></a>部署步骤</h2><ol>
-<li><p>复制基本文件</p>
+<h2 id="部署步骤"><a class="markdownIt-Anchor" href="#部署步骤"></a> 部署步骤</h2>
+<ol>
+<li>
+<p>复制基本文件</p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-starter.git">https://github.com/hexojs/hexo-starter.git</a></p>
 </blockquote>
-<p> 该文件是官方的初始文件，你可以选择下载，或者直接fork到你的GitHub库。具体文件夹可以查看官方<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/setup">文档说明</a>，对于我们来说，只需要知道，发布的放在&#x2F;source&#x2F;_posts，而相对应的主题放在themes文件夹下即可。</p>
+<p>该文件是官方的初始文件，你可以选择下载，或者直接fork到你的GitHub库。具体文件夹可以查看官方<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/setup">文档说明</a>，对于我们来说，只需要知道，发布的放在/source/_posts，而相对应的主题放在themes文件夹下即可。</p>
 </li>
-<li><p>渲染<br>有了文件之后，你就可以写自己的博客，就是这么简单，写完之后就是渲染的问题，渲染这边使用的是GitHub的action来渲染：官方推荐了一个action脚本，在自己文件夹下创建.github&#x2F;workflows&#x2F;xxx.yaml，然后输入官方的代码</p>
+<li>
+<p>渲染<br />
+有了文件之后，你就可以写自己的博客，就是这么简单，写完之后就是渲染的问题，渲染这边使用的是GitHub的action来渲染：官方推荐了一个action脚本，在自己文件夹下创建.github/workflows/xxx.yaml，然后输入官方的代码</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">name: Pages #名称，随便写</span><br><span class="line"> on:</span><br><span class="line"> push:</span><br><span class="line">     branches:</span><br><span class="line">     - master # 默认路径</span><br><span class="line"></span><br><span class="line"> jobs:</span><br><span class="line"> pages:</span><br><span class="line">     runs-on: ubuntu-latest #选定使用的系统</span><br><span class="line">     permissions:</span><br><span class="line">     contents: write</span><br><span class="line">     steps:</span><br><span class="line">     - uses: actions/checkout@v3 #调用官方的脚本，直接复制我们的项目文件到虚拟系统 </span><br><span class="line">     - name: 安装node</span><br><span class="line">         uses: actions/setup-node@v2 #调用前人写好的脚本，安装node环境</span><br><span class="line">         with:</span><br><span class="line">         node-version: &quot;18&quot;</span><br><span class="line">     - name: Cache NPM dependencies #加载缓存，增加速度</span><br><span class="line">         uses: actions/cache@v2</span><br><span class="line">         with:</span><br><span class="line">         path: node_modules</span><br><span class="line">         key: $&#123;&#123; runner.OS &#125;&#125;-npm-cache</span><br><span class="line">         restore-keys: |</span><br><span class="line">             $&#123;&#123; runner.OS &#125;&#125;-npm-cache</span><br><span class="line">     - name: Install Dependencies #这里很重要，官方脚本如果缺少插件，可以使用这里进行增加</span><br><span class="line">         run: |</span><br><span class="line">         npm install</span><br><span class="line">         npm install hexo-markmap #如果还需要插件就回车，然后输入npm install 你要的插件名称</span><br><span class="line">     - name: Build</span><br><span class="line">         run: npm run build</span><br><span class="line">     - name: Deploy</span><br><span class="line">         uses: peaceiris/actions-gh-pages@v3 #他会创建分支，然后将分支发布到GitHub Pages上</span><br><span class="line">         with:</span><br><span class="line">         github_token: $&#123;&#123; secrets.GITHUB_TOKEN &#125;&#125;</span><br><span class="line">         publish_dir: ./public</span><br></pre></td></tr></table></figure>
 <p>这样之后，每次你修改文件，都会重新渲染所有的文件，然后发布到对应的GitHub Pages上</p>
-<p> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-05-18-10-46-58.png" alt="hexo无本地环境部署指南-2023-05-18-10-46-58"></p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-05-18-10-46-58.png" alt="hexo无本地环境部署指南-2023-05-18-10-46-58" /></p>
 </li>
-<li><p>发布<br>进入GitHub的settings，然后选择发布的分支，选择gh-pages，然后选择发布即可。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-05-18-10-34-15.png" alt="hexo无本地环境部署指南-2023-05-18-10-34-15"></p>
+<li>
+<p>发布<br />
+进入GitHub的settings，然后选择发布的分支，选择gh-pages，然后选择发布即可。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-05-18-10-34-15.png" alt="hexo无本地环境部署指南-2023-05-18-10-34-15" /></p>
 </li>
-<li><p>浏览<br>打开分配的域名，你就可以看到对应的网页。</p>
+<li>
+<p>浏览<br />
+打开分配的域名，你就可以看到对应的网页。</p>
 </li>
-<li><p>分配自己的域名<br>如果你有一个自己的域名想要分配的话，那么你就要在DNS管理中加上A记录</p>
+<li>
+<p>分配自己的域名<br />
+如果你有一个自己的域名想要分配的话，那么你就要在DNS管理中加上A记录</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">185.199.108.153</span><br><span class="line">185.199.109.153</span><br><span class="line">185.199.110.153</span><br><span class="line">185.199.111.153</span><br></pre></td></tr></table></figure>
-<p>然后在增加一个CNAME记录，使用www，目标定位<code>&lt;user&gt;.github.io</code>，然后再page页面输入customsite：<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-05-20-19-53-18.png" alt="hexo无本地环境部署指南-2023-05-20-19-53-18"></p>
+<p>然后在增加一个CNAME记录，使用www，目标定位<code>&lt;user&gt;.github.io</code>，然后再page页面输入customsite：<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-05-20-19-53-18.png" alt="hexo无本地环境部署指南-2023-05-20-19-53-18" /></p>
 <p>系统会检查DNS配置。</p>
 </li>
 </ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这个方法的好处是，不需要在本地搭建环境，而渲染的node环境你可以随时使用最新版的，所以极大的简化了自己搭建环境的问题。至于写作流程问题就更加的方便，可以简单的使用GitHub，也可以在本地写好之后，使用git上传上去，反正你的每次更改都会触发，让我更加专注于写作，而不需要去关注其他问题。<br>如果说唯一的缺点，那么就是无法实时预览你写的文章吧。</p>
-<hr>
-<p>参考文章：<br><a target="_blank" rel="noopener" href="https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">域名配置</a></p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>这个方法的好处是，不需要在本地搭建环境，而渲染的node环境你可以随时使用最新版的，所以极大的简化了自己搭建环境的问题。至于写作流程问题就更加的方便，可以简单的使用GitHub，也可以在本地写好之后，使用git上传上去，反正你的每次更改都会触发，让我更加专注于写作，而不需要去关注其他问题。<br />
+如果说唯一的缺点，那么就是无法实时预览你写的文章吧。</p>
+<hr />
+<p>参考文章：<br />
+<a target="_blank" rel="noopener" href="https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">域名配置</a></p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
 
@@ -459,13 +477,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">313k</span>
+    <span title="站点总字数">314k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">18:59</span>
+    <span title="站点阅读时长">19:02</span>
   </span>
 </div>
 <div class="busuanzi-count">

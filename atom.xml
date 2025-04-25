@@ -6,7 +6,7 @@
   <link href="https://minsummer.com/atom.xml" rel="self"/>
   
   <link href="https://minsummer.com/"/>
-  <updated>2025-04-11T16:00:00.000Z</updated>
+  <updated>2025-04-24T16:00:00.000Z</updated>
   <id>https://minsummer.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo博客NEXT主题开启数学公式</title>
+    <link href="https://minsummer.com/2025/04/24/203-hexo%E5%8D%9A%E5%AE%A2NEXT%E4%B8%BB%E9%A2%98%E5%BC%80%E5%90%AF%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"/>
+    <id>https://minsummer.com/2025/04/24/203-hexo%E5%8D%9A%E5%AE%A2NEXT%E4%B8%BB%E9%A2%98%E5%BC%80%E5%90%AF%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</id>
+    <published>2025-04-24T16:00:00.000Z</published>
+    <updated>2025-04-24T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;之前写过&lt;a href=&quot;https://minsummer.com/2022/07/30/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%AF%BC%E8%AE%BA-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/?highlight=%E6%A6%82%E7%8E%87&quot;&gt;《概率论导论》&lt;/a&gt;，最近翻看，发现数学公式渲染好像没有成功，于是就花了一些时间研究一下。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="MathJax" scheme="https://minsummer.com/tags/MathJax/"/>
+    
+    <category term="KaTeX" scheme="https://minsummer.com/tags/KaTeX/"/>
+    
+    <category term="hexo博客" scheme="https://minsummer.com/tags/hexo%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="NEXT主题" scheme="https://minsummer.com/tags/NEXT%E4%B8%BB%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>浅谈最近贸易战</title>
@@ -68,10 +93,10 @@
     
     <summary type="html">&lt;p&gt;不知不觉传家宝系列已经来到了第三个年头，依旧还是和之前一样要求：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;del&gt;持有价格够低，年付200人民币以下算好，100以下算神机，年付300以下算好机子，年付200算是神机&lt;/del&gt;价格合适，一分钱一分货，低价的话好多野鸡厂商也能进来。&lt;/li&gt;
+&lt;li&gt;&lt;s&gt;持有价格够低，年付200人民币以下算好，100以下算神机，年付300以下算好机子，年付200算是神机&lt;/s&gt;价格合适，一分钱一分货，低价的话好多野鸡厂商也能进来。&lt;/li&gt;
 &lt;li&gt;够稀有，一般都是下架了，买不到目前&lt;/li&gt;
 &lt;li&gt;线路好，毕竟富强是第一需求&lt;/li&gt;
-&lt;li&gt;配置合格，&lt;del&gt;至少能翻墙&lt;/del&gt;没有明细的短板&lt;/li&gt;
+&lt;li&gt;配置合格，&lt;s&gt;至少能翻墙&lt;/s&gt;没有明细的短板&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;这次按照厂家进行分类，时间进行排序。一个是方便知道哪些厂家今年出现了神机，一个也能看出来厂家的态度如何。&lt;/p&gt;</summary>
     
@@ -87,6 +112,25 @@
     <category term="DMIT" scheme="https://minsummer.com/tags/DMIT/"/>
     
     <category term="POWERBOX" scheme="https://minsummer.com/tags/POWERBOX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>哪吒探针部署指南</title>
+    <link href="https://minsummer.com/2025/02/11/198-%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/"/>
+    <id>https://minsummer.com/2025/02/11/198-%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/</id>
+    <published>2025-02-11T16:00:00.000Z</published>
+    <updated>2025-02-11T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;我之前用的是serverstatus，服务端直接docker部署，客户端python命令文件。好处是部署简单，功能够用，但是不如哪吒面板好看，而且客户端需要python对一些性能比较差的机器就无法监控，比如openwrt路由器，这次的想法就是将所有的设备进行监控。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="哪吒探针" scheme="https://minsummer.com/tags/%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88/"/>
     
   </entry>
   
@@ -116,25 +160,6 @@
   </entry>
   
   <entry>
-    <title>哪吒探针部署指南</title>
-    <link href="https://minsummer.com/2025/02/11/198-%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/"/>
-    <id>https://minsummer.com/2025/02/11/198-%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/</id>
-    <published>2025-02-11T16:00:00.000Z</published>
-    <updated>2025-02-11T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;我之前用的是serverstatus，服务端直接docker部署，客户端python命令文件。好处是部署简单，功能够用，但是不如哪吒面板好看，而且客户端需要python对一些性能比较差的机器就无法监控，比如openwrt路由器，这次的想法就是将所有的设备进行监控。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
-    
-    
-    <category term="哪吒探针" scheme="https://minsummer.com/tags/%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88/"/>
-    
-  </entry>
-  
-  <entry>
     <title>ADguardHome部署指北</title>
     <link href="https://minsummer.com/2025/02/10/196-ADguardHome%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8C%97/"/>
     <id>https://minsummer.com/2025/02/10/196-ADguardHome%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8C%97/</id>
@@ -142,7 +167,7 @@
     <updated>2025-02-10T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt; ADguardHome是一个大名鼎鼎的广告拦截工具，之前也想过部署，但是需求不大，所以一直没有认真研究。网络上好多都是教你怎么部署的，但是没有人说清楚你需不需要一个 ADguardHome。&lt;br&gt;</summary>
+    <summary type="html">&lt;p&gt;ADguardHome是一个大名鼎鼎的广告拦截工具，之前也想过部署，但是需求不大，所以一直没有认真研究。网络上好多都是教你怎么部署的，但是没有人说清楚你需不需要一个 ADguardHome。&lt;/p&gt;</summary>
     
     
     
@@ -184,7 +209,9 @@
     <updated>2025-01-06T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;我的服务器最终配置清单出炉：&lt;br&gt;&lt;img src=&quot;https://raw.githubusercontent.com/android1122/typecho_img/master/192-%E6%9C%8D%E5%8A%A1%E5%99%A8NAS%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5-2025-01-07-09-15-28.png&quot; alt=&quot;192-服务器NAS的最佳实践-2025-01-07-09-15-28&quot;&gt;&lt;br&gt;浪潮这台服务器是前面12加上后面4合计16个硬盘位，我目前只是安装了9个，而且都是小容量的，就这样已经占据目前成本的3分之一。可见硬盘才是成本的大头。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;我的服务器最终配置清单出炉：&lt;br /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/android1122/typecho_img/master/192-%E6%9C%8D%E5%8A%A1%E5%99%A8NAS%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5-2025-01-07-09-15-28.png&quot; alt=&quot;192-服务器NAS的最佳实践-2025-01-07-09-15-28&quot; /&gt;&lt;br /&gt;
+浪潮这台服务器是前面12加上后面4合计16个硬盘位，我目前只是安装了9个，而且都是小容量的，就这样已经占据目前成本的3分之一。可见硬盘才是成本的大头。&lt;/p&gt;</summary>
     
     
     
@@ -207,7 +234,8 @@
     <updated>2025-01-06T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;我家里有一台小米的空气净化器，还有小米得几个空调遥控器，定时器。虽然可以使用官方得app控制，但是总归是不方便，还是希望可以更加得智能化，尤其我这人对空调吹多了冷，吹少了热。&lt;br&gt;其实之前我使用过一阵子，但是那时候官方没有支持，导致我使用HA进行控制之后就不能使用官方app控制。正好这次官方宣布支持，我就想着再试试。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;我家里有一台小米的空气净化器，还有小米得几个空调遥控器，定时器。虽然可以使用官方得app控制，但是总归是不方便，还是希望可以更加得智能化，尤其我这人对空调吹多了冷，吹少了热。&lt;br /&gt;
+其实之前我使用过一阵子，但是那时候官方没有支持，导致我使用HA进行控制之后就不能使用官方app控制。正好这次官方宣布支持，我就想着再试试。&lt;/p&gt;</summary>
     
     
     
@@ -278,7 +306,16 @@
     <updated>2025-01-03T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;瓦工2025年新年第一弹，很具有作为传家宝的优质服务器。&lt;br&gt;套餐配置：&lt;br&gt;SSD：30 GB RAID-10&lt;br&gt;内存：1536 MB&lt;br&gt;CPU：1x Intel Xeon&lt;br&gt;传输：1500 GB&amp;#x2F;月&lt;br&gt;链接速度：2.5 Gigabit&lt;br&gt;位置：洛杉矶，DC99&lt;br&gt;(6.77%)循环优惠码：BWHCGLUKKB&lt;br&gt;折后价：$41.95 &amp;#x2F;年：&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;瓦工2025年新年第一弹，很具有作为传家宝的优质服务器。&lt;br /&gt;
+套餐配置：&lt;br /&gt;
+SSD：30 GB RAID-10&lt;br /&gt;
+内存：1536 MB&lt;br /&gt;
+CPU：1x Intel Xeon&lt;br /&gt;
+传输：1500 GB/月&lt;br /&gt;
+链接速度：2.5 Gigabit&lt;br /&gt;
+位置：洛杉矶，DC99&lt;br /&gt;
+(6.77%)循环优惠码：BWHCGLUKKB&lt;br /&gt;
+折后价：$41.95 /年：&lt;/p&gt;</summary>
     
     
     
@@ -301,12 +338,14 @@
     <updated>2024-12-29T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;先说说现状：我目前有一台机顶盒CM311-1A，性能来说勉强是够用得。后面给我刷成了Armbian，用来挂青龙docker。外挂了一个U盘当作存储池。&lt;br&gt;它的缺点很明显：&lt;/p&gt;
+    <summary type="html">&lt;p&gt;先说说现状：我目前有一台机顶盒CM311-1A，性能来说勉强是够用得。后面给我刷成了Armbian，用来挂青龙docker。外挂了一个U盘当作存储池。&lt;br /&gt;
+它的缺点很明显：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;硬盘容量少，外接U盘也只能是usb2.0的&lt;/li&gt;
 &lt;li&gt;网口是百兆网口，如果操作过多会卡顿&lt;/li&gt;
 &lt;li&gt;ARM系统，性能偏弱，太复杂的复制粘贴有时候会卡死，不知道是usb2.0的问题还行机器问题&lt;/li&gt;
-&lt;li&gt;没有WiFi&lt;br&gt;优点也有：&lt;/li&gt;
+&lt;li&gt;没有WiFi&lt;br /&gt;
+优点也有：&lt;/li&gt;
 &lt;li&gt;显卡性能可以&lt;/li&gt;
 &lt;li&gt;价格便宜，是真便宜，我当初买的时候只要60，内存2G，硬盘8G&lt;/li&gt;
 &lt;li&gt;可玩性强，可以刷成服务器，也可以刷成机顶盒，后续准备刷成机顶盒试试。&lt;/li&gt;
@@ -396,7 +435,8 @@
     <updated>2024-12-24T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;缘由&quot;&gt;&lt;a href=&quot;#缘由&quot; class=&quot;headerlink&quot; title=&quot;缘由&quot;&gt;&lt;/a&gt;缘由&lt;/h2&gt;&lt;p&gt;由于我是一个非专业的程序员，所以我一直不用git来管理我得代码，我的代码只有ctrl+z，没有版本管理。这次强上git的缘由是我决定不再使用Typecho了，转型为静态博客。&lt;/p&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;缘由&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#缘由&quot;&gt;&lt;/a&gt; 缘由&lt;/h2&gt;
+&lt;p&gt;由于我是一个非专业的程序员，所以我一直不用git来管理我得代码，我的代码只有ctrl+z，没有版本管理。这次强上git的缘由是我决定不再使用Typecho了，转型为静态博客。&lt;/p&gt;</summary>
     
     
     
@@ -546,7 +586,7 @@
     
     
     <summary type="html">&lt;p&gt;最近由于电商需要，就新配置了一台电脑，主要是一些PS，PR需要，也顺带着想着自己玩玩游戏。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/android1122/typecho_img/master/178-%E5%85%B3%E4%BA%8E%E6%96%B0%E8%A3%85%E7%94%B5%E8%84%91%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83-2024-07-04-11-48-48.png&quot; alt=&quot;178-关于新装电脑的一些思考-2024-07-04-11-48-48&quot;&gt;&lt;/p&gt;</summary>
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/android1122/typecho_img/master/178-%E5%85%B3%E4%BA%8E%E6%96%B0%E8%A3%85%E7%94%B5%E8%84%91%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83-2024-07-04-11-48-48.png&quot; alt=&quot;178-关于新装电脑的一些思考-2024-07-04-11-48-48&quot; /&gt;&lt;/p&gt;</summary>
     
     
     
@@ -586,8 +626,9 @@
     
     <summary type="html">&lt;p&gt;套餐内容：&lt;/p&gt;
 &lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;SPECIAL 10G KVM PROMO V5 - LOS ANGELES - CN2 GIA LIMITED EDITION VPS&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 vCPU&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;512M RAM&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10G SSD Storage&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;500GB Transfer&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1Gbps VirtIO Interface&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 IPv4 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49.9 USD/Year &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;瓦工46刀套餐增加了一个机房-新加坡&lt;br&gt;&lt;img src=&quot;https://raw.githubusercontent.com/android1122/typecho_img/master/176-%E7%93%A6%E5%B7%A546%E5%88%80%E6%96%B0%E5%A2%9E%E6%96%B0%E5%8A%A0%E5%9D%A1%E6%9C%BA%E6%88%BF-2024-06-21-12-13-42.png&quot; alt=&quot;176-瓦工46刀新增新加坡机房-2024-06-21-
-12-13-42&quot;&gt;&lt;/p&gt;
+&lt;p&gt;瓦工46刀套餐增加了一个机房-新加坡&lt;br /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/android1122/typecho_img/master/176-%E7%93%A6%E5%B7%A546%E5%88%80%E6%96%B0%E5%A2%9E%E6%96%B0%E5%8A%A0%E5%9D%A1%E6%9C%BA%E6%88%BF-2024-06-21-12-13-42.png&quot; alt=&quot;176-瓦工46刀新增新加坡机房-2024-06-21-
+12-13-42&quot; /&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;SG: Singapore (CN2GIA, early access, very limited capacity) [SG_1] (current) – Premium bandwidth multiplier: 0.33x&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;流量变为原来的三分之一，换算下来165G每个月，现在已经关闭通道了。可以说的上是限时限量了。&lt;/p&gt;
 &lt;p&gt;测试了下数据，直接上结论：&lt;/p&gt;
@@ -621,12 +662,13 @@
     <updated>2024-06-06T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;真是活久见，瓦工的香港GIA线路，补货。这个线路都绝版几年了。&lt;br&gt;套餐内容：&lt;/p&gt;
+    <summary type="html">&lt;p&gt;真是活久见，瓦工的香港GIA线路，补货。这个线路都绝版几年了。&lt;br /&gt;
+套餐内容：&lt;/p&gt;
 &lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Basic VPS - Self-managed - SPECIAL 40G KVM PROMO V5 - HONG KONG CN2 GIA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;SSD: 40 GB RAID-10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;RAM: 2048 MB&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;CPU: 2x Intel Xeon&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Transfer: 500 GB/mo&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Link speed: 1 Gigabit&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Location: Hong Kong MEGA2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Direct route via China Telecom (CN2 GIA), China Unicom, China Mobile&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Free automatic backups&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Free snapshots&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;VPS technology: KVM/KiwiVM&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;OS: 32 or 64 bit Centos, Debian, Ubuntu&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Instant OS reload&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;IPv4: 1 dedicated address&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Secondary private network interface&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;IPv6 support: **No**&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Full root access&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Instant RDNS update from control panel&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;No contract, anytime cancellation&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Strictly self-managed, no support&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;99.9% uptime guarantee&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;899.99 USD/Year&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
 &lt;p&gt;没钱测试，直接上结论：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;不缺钱的主上，炒作的主自己掂量着点</summary>
+&lt;li&gt;不缺钱的主上，炒作的主自己掂量着点&lt;/li&gt;
+&lt;/ol&gt;</summary>
     
     
     
@@ -654,7 +696,7 @@
     <summary type="html">&lt;p&gt;套餐内容：&lt;/p&gt;
 &lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;SPECIAL 10G KVM PROMO V5 - LOS ANGELES - CN2 GIA LIMITED EDITION VPS&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 vCPU&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;512M RAM&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10G SSD Storage&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;500GB Transfer&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1Gbps VirtIO Interface&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 IPv4 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49.9 USD/Year &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;瓦工46刀套餐增加了一个机房，圣何塞。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/android1122/typecho_img/master/174-%E6%90%AC%E7%93%A6%E5%B7%A546%E5%88%80%E6%96%B0%E5%A2%9E%E5%9C%A3%E4%BD%95%E5%A1%9E%E6%9C%BA%E6%88%BF-2024-06-06-10-19-26.png&quot; alt=&quot;174-搬瓦工46刀新增圣何塞机房-2024-06-06-10-19-26&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/android1122/typecho_img/master/174-%E6%90%AC%E7%93%A6%E5%B7%A546%E5%88%80%E6%96%B0%E5%A2%9E%E5%9C%A3%E4%BD%95%E5%A1%9E%E6%9C%BA%E6%88%BF-2024-06-06-10-19-26.png&quot; alt=&quot;174-搬瓦工46刀新增圣何塞机房-2024-06-06-10-19-26&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;测试了下数据，直接上结论：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;三网线路GIA，中规中矩&lt;/li&gt;
@@ -686,12 +728,14 @@
     
     <summary type="html">&lt;p&gt;套餐内容：&lt;/p&gt;
 &lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;V.PS 2023年黑五款-HK &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 vCPU&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 GB RAM&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20G SSD Storage&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;400GB Transfer&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;500Mbps VirtIO Interface&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 IPv4 &amp;amp; 1 IPv6 /64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Premium Network Profile&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29.9 Euro/Year &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;结论&quot;&gt;&lt;a href=&quot;#结论&quot; class=&quot;headerlink&quot; title=&quot;结论&quot;&gt;&lt;/a&gt;结论&lt;/h2&gt;&lt;p&gt;上来先说结论：&lt;br&gt;  优点：&lt;/p&gt;
+&lt;h2 id=&quot;结论&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#结论&quot;&gt;&lt;/a&gt; 结论&lt;/h2&gt;
+&lt;p&gt;上来先说结论：&lt;br /&gt;
+优点：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;香港线路，延迟特别低，移动快乐机，联通电信也能用&lt;/li&gt;
 &lt;li&gt;价格便宜，一年240人民币左右，一个月20&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;   缺点：&lt;/p&gt;
+&lt;p&gt;缺点：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;流量双向的，翻墙可以直接默认200G,适合一个人用，而且还得少看YouTube，有一个月刷YouTube过多，直接给我关机了。&lt;/li&gt;
 &lt;li&gt;经常被打，尤其是电信，建议绕道&lt;/li&gt;
@@ -721,17 +765,20 @@
     
     <summary type="html">&lt;p&gt;套餐内容：&lt;/p&gt;
 &lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;V.PS 2024款猫彦祖-圣塞何&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 vCPU&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 GB RAM&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15G SSD Storage&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;500GB Transfer&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;600Mbps VirtIO Interface&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 IPv4 &amp;amp; 1 IPv6 /64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Premium Network Profile&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32.95 Euro/Year &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;结论&quot;&gt;&lt;a href=&quot;#结论&quot; class=&quot;headerlink&quot; title=&quot;结论&quot;&gt;&lt;/a&gt;结论&lt;/h2&gt;&lt;p&gt;上来先说结论：&lt;br&gt;  优点：&lt;/p&gt;
+&lt;h2 id=&quot;结论&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#结论&quot;&gt;&lt;/a&gt; 结论&lt;/h2&gt;
+&lt;p&gt;上来先说结论：&lt;br /&gt;
+优点：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;三网优化线路，都是各网络最好的线路&lt;/li&gt;
 &lt;li&gt;价格便宜，260人民币一年&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;   缺点：&lt;/p&gt;
+&lt;p&gt;缺点：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;流量双向的，翻墙可以直接默认250G,适合1-2人用，是的多50g就只够再加一个人。&lt;/li&gt;
 &lt;li&gt;这家后续更新服务说明，已经不保证线路了&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;总结：推荐1-2人使用，而且可以分享给别人用，好机，目前主力，三网延迟稳定，价格合适，但是唯一的问题是后续的更新服务内容已经不保证线路了。&lt;br&gt;现在美西已经特别卷，线路好的机器不少，如果你说三网CN2GIA和三网单独优化的选哪个？我得建议是哪个便宜选哪个，哪个流量适合你的选哪个，再根据你网络状况选择。如果完全一样，我得建议就是三网优化稍稍大于一点三网CN2GIA，当然如果是大厂肯定选大厂。&lt;/p&gt;</summary>
+&lt;p&gt;总结：推荐1-2人使用，而且可以分享给别人用，好机，目前主力，三网延迟稳定，价格合适，但是唯一的问题是后续的更新服务内容已经不保证线路了。&lt;br /&gt;
+现在美西已经特别卷，线路好的机器不少，如果你说三网CN2GIA和三网单独优化的选哪个？我得建议是哪个便宜选哪个，哪个流量适合你的选哪个，再根据你网络状况选择。如果完全一样，我得建议就是三网优化稍稍大于一点三网CN2GIA，当然如果是大厂肯定选大厂。&lt;/p&gt;</summary>
     
     
     
@@ -758,7 +805,8 @@
     
     <summary type="html">&lt;p&gt;套餐内容：&lt;/p&gt;
 &lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;LAX.Pro.MALIBU&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 vCPU&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 GB RAM&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10G SSD Storage&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1000GB Transfer&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1Gbps VirtIO Interface&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 IPv4 &amp;amp; 1 IPv6 /64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Premium Network Profile&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49.9 USD/Year &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;结论&quot;&gt;&lt;a href=&quot;#结论&quot; class=&quot;headerlink&quot; title=&quot;结论&quot;&gt;&lt;/a&gt;结论&lt;/h2&gt;&lt;p&gt;上来先说结论：&lt;/p&gt;
+&lt;h2 id=&quot;结论&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#结论&quot;&gt;&lt;/a&gt; 结论&lt;/h2&gt;
+&lt;p&gt;上来先说结论：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;三网精品线路，延迟都是150ms+，优秀&lt;/li&gt;
 &lt;li&gt;带宽高1Gbps，流量多&lt;/li&gt;
@@ -852,7 +900,8 @@
     <updated>2024-05-02T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;这次杭州之行获益良多，写下来防止自己忘记。&lt;br&gt;这次的是为了参观一个电商公司而过去的，公司的一个负责人是我亲戚，在我大伯听到他们的规模和盈利之后，就想着派我过去考察考察。其实之前我就了解了电商，但是从别人的模式或者口中。我并没有对着行业有个比较清晰的认识，在外行人看来，这就是个买卖东西的平台。但是这次通过金洪的介绍之后，我补齐了这块拼图，对电商，对整个商业模式都有所了解。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;这次杭州之行获益良多，写下来防止自己忘记。&lt;br /&gt;
+这次的是为了参观一个电商公司而过去的，公司的一个负责人是我亲戚，在我大伯听到他们的规模和盈利之后，就想着派我过去考察考察。其实之前我就了解了电商，但是从别人的模式或者口中。我并没有对着行业有个比较清晰的认识，在外行人看来，这就是个买卖东西的平台。但是这次通过金洪的介绍之后，我补齐了这块拼图，对电商，对整个商业模式都有所了解。&lt;/p&gt;</summary>
     
     
     
@@ -879,10 +928,11 @@
     
     <summary type="html">&lt;p&gt;去年写过一份2023年的VPS传家宝指南，今年一季度刚刚过去，让我们总结一下一季度出现的几款神机，还是老要求：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;持有价格够低，&lt;del&gt;年付200人民币以下算好，100以下算神机&lt;/del&gt;，年付300以下算好机子，年付200算是神机，没办法，通货膨胀。&lt;/li&gt;
+&lt;li&gt;持有价格够低，&lt;s&gt;年付200人民币以下算好，100以下算神机&lt;/s&gt;，年付300以下算好机子，年付200算是神机，没办法，通货膨胀。&lt;/li&gt;
 &lt;li&gt;够稀有，一般都是下架了，买不到目前&lt;/li&gt;
 &lt;li&gt;线路好，毕竟富强是第一需求&lt;/li&gt;
-&lt;li&gt;配置合格，至少能翻墙</summary>
+&lt;li&gt;配置合格，至少能翻墙&lt;/li&gt;
+&lt;/ol&gt;</summary>
     
     
     
@@ -907,7 +957,9 @@
     <updated>2024-04-14T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;最近闲来无事,也看了不少书,无论是网上找书单,还是自己根据推荐找的一些书.总是会遇见一些雷,不是说这书不好,只是他不适合我.&lt;br&gt;我是奉行鲁迅得写作得,用尽量少得文字说清楚你得观点.我读书主要是为了扩宽视野,增加学识,不是这个领域专业人士,所以我一般也就阅读一些简单的入门科普读物即可或者一些学识观点.我认为一本书的关键在于它的阅读难度,有些书读下来,简单轻松,不需要太多记忆,你读完能感受到作者的思想,作者想要表达的内容.&lt;br&gt;我主要阅读的是一些入门或者观点类型的书籍,找专业书籍的请绕道,我主要针对的是书的阅读难易进行判断,如果一本书逻辑不清或者挂羊头卖狗肉,在我看来是大罪.&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;最近闲来无事,也看了不少书,无论是网上找书单,还是自己根据推荐找的一些书.总是会遇见一些雷,不是说这书不好,只是他不适合我.&lt;br /&gt;
+我是奉行鲁迅得写作得,用尽量少得文字说清楚你得观点.我读书主要是为了扩宽视野,增加学识,不是这个领域专业人士,所以我一般也就阅读一些简单的入门科普读物即可或者一些学识观点.我认为一本书的关键在于它的阅读难度,有些书读下来,简单轻松,不需要太多记忆,你读完能感受到作者的思想,作者想要表达的内容.&lt;br /&gt;
+我主要阅读的是一些入门或者观点类型的书籍,找专业书籍的请绕道,我主要针对的是书的阅读难易进行判断,如果一本书逻辑不清或者挂羊头卖狗肉,在我看来是大罪.&lt;/p&gt;</summary>
     
     
     
@@ -1061,7 +1113,9 @@
 &lt;li&gt;2023年确实还是以地产为主要驱动-结果：不尽如人意。&lt;/li&gt;
 &lt;li&gt;比亚迪确实带来了新一代的电动车狂潮。&lt;/li&gt;
 &lt;li&gt;大基金由于A股表现不好，大基金销声匿迹&lt;/li&gt;
-&lt;li&gt;消费券大发特发，确实带来了一波又一波的旅游热潮，官方有意向的宣传&lt;br&gt;如果硬要说的话，一半对一半不对</summary>
+&lt;li&gt;消费券大发特发，确实带来了一波又一波的旅游热潮，官方有意向的宣传&lt;br /&gt;
+如果硬要说的话，一半对一半不对&lt;/li&gt;
+&lt;/ol&gt;</summary>
     
     
     
@@ -1286,7 +1340,8 @@
     <summary type="html">&lt;p&gt;上文说到这次买了一个浪潮的老旧服务器，那么接下来就要讨论我这台服务器需要安装什么系统。还是说下我的需求：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;安装飞牛的nas系统&lt;/li&gt;
-&lt;li&gt;可以让我使用一个Windows系统来测试一些东西</summary>
+&lt;li&gt;可以让我使用一个Windows系统来测试一些东西&lt;/li&gt;
+&lt;/ol&gt;</summary>
     
     
     
@@ -1307,12 +1362,14 @@
     <updated>2023-12-24T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;每年11，12两个月份，由于黑五，圣诞等节日，会出现好多传家宝神机。在商家刻意冲年末销量的情况下，会出现一些特别低的价格，特别好的配置。趁着这个机会我就来统计下今年出现的传家宝套餐。&lt;br&gt;我得传家宝要求：&lt;/p&gt;
+    <summary type="html">&lt;p&gt;每年11，12两个月份，由于黑五，圣诞等节日，会出现好多传家宝神机。在商家刻意冲年末销量的情况下，会出现一些特别低的价格，特别好的配置。趁着这个机会我就来统计下今年出现的传家宝套餐。&lt;br /&gt;
+我得传家宝要求：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;持有价格够低，年付200人民币以下算好，100以下算神机。&lt;/li&gt;
 &lt;li&gt;够稀有，一般都是下架了，买不到目前&lt;/li&gt;
 &lt;li&gt;线路好，毕竟富强是第一需求&lt;/li&gt;
-&lt;li&gt;配置合格，至少能翻墙</summary>
+&lt;li&gt;配置合格，至少能翻墙&lt;/li&gt;
+&lt;/ol&gt;</summary>
     
     
     
@@ -1422,11 +1479,11 @@
     
     <summary type="html">&lt;p&gt;古希腊哲学&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;苏格拉底：&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;柏拉图-苏格拉底的学生&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;亚里士多德-柏拉图学生&lt;br&gt;折叠一下&lt;/p&gt;</summary>
+&lt;li&gt;苏格拉底：&lt;/li&gt;
+&lt;li&gt;柏拉图-苏格拉底的学生&lt;/li&gt;
+&lt;li&gt;亚里士多德-柏拉图学生&lt;br /&gt;
+折叠一下&lt;/li&gt;
+&lt;/ol&gt;</summary>
     
     
     
@@ -1476,7 +1533,8 @@
     <updated>2023-11-28T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;现在网上充斥着各种线路：GIA，CMI，9929等等，但是很多时候线路并不代表全部，线路还需要服务器商对其进行优化，否则有可能会绕到天南地北的情况。&lt;br&gt;而作为富强的使用者，我们最关心的就是速度。一般推荐使用iperf3进行测速。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;现在网上充斥着各种线路：GIA，CMI，9929等等，但是很多时候线路并不代表全部，线路还需要服务器商对其进行优化，否则有可能会绕到天南地北的情况。&lt;br /&gt;
+而作为富强的使用者，我们最关心的就是速度。一般推荐使用iperf3进行测速。&lt;/p&gt;</summary>
     
     
     
@@ -1530,7 +1588,8 @@
     <updated>2023-11-11T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;上次我说过我准备去做近视手术，在做了一些简单的功课之后，我最终在市里的眼科医院做了这次手术，之前一直听到的概念是激光，但是确实没有花心思去了解，也没有想法去做，毕竟没有对我的生活带来太多的麻烦。事情的起因我侄子要去参军，做了全飞秒。人有时候就是这么奇妙，平时没有经历就没有概念，但是身边的人经历过之后，忽然就觉得这个我也可以。他在我们老家做的，挺草率就是，从做到结束一共就两三天，价格是23800。&lt;br&gt;&lt;img src=&quot;https://raw.githubusercontent.com/android1122/typecho_img/master/136-%E5%85%A8%E9%A3%9E%E7%A7%92%E8%BF%91%E8%A7%86%E6%89%8B%E6%9C%AF%E7%BA%AA%E5%BD%95-2023-11-15-20-17-14.png&quot; alt=&quot;136-全飞秒近视手术纪录-2023-11-15-20-17-14&quot;&gt;&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;上次我说过我准备去做近视手术，在做了一些简单的功课之后，我最终在市里的眼科医院做了这次手术，之前一直听到的概念是激光，但是确实没有花心思去了解，也没有想法去做，毕竟没有对我的生活带来太多的麻烦。事情的起因我侄子要去参军，做了全飞秒。人有时候就是这么奇妙，平时没有经历就没有概念，但是身边的人经历过之后，忽然就觉得这个我也可以。他在我们老家做的，挺草率就是，从做到结束一共就两三天，价格是23800。&lt;br /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/android1122/typecho_img/master/136-%E5%85%A8%E9%A3%9E%E7%A7%92%E8%BF%91%E8%A7%86%E6%89%8B%E6%9C%AF%E7%BA%AA%E5%BD%95-2023-11-15-20-17-14.png&quot; alt=&quot;136-全飞秒近视手术纪录-2023-11-15-20-17-14&quot; /&gt;&lt;/p&gt;</summary>
     
     
     
@@ -1557,10 +1616,11 @@
     <updated>2023-11-09T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;最近想要做个隐形代理-人话就是：路由器翻墙，所有连接路由器的设备都可以翻墙。然后研究了半天，听到的最多是软路由，旁路由。这边就简单的说明下两者区别：&lt;br&gt;软路由器：一般是性能强劲，&lt;strong&gt;且有多个网口的&lt;/strong&gt;，网上卖的最多的就是这种。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/android1122/typecho_img/master/135-%E5%85%B3%E4%BA%8E%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E9%97%A8%E9%97%A8%E9%81%93%E9%81%93-2023-11-10-09-24-41.png&quot; alt=&quot;135-关于路由器的门门道道-2023-11-10-09-24-41&quot;&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;最近想要做个隐形代理-人话就是：路由器翻墙，所有连接路由器的设备都可以翻墙。然后研究了半天，听到的最多是软路由，旁路由。这边就简单的说明下两者区别：&lt;br /&gt;
+软路由器：一般是性能强劲，&lt;strong&gt;且有多个网口的&lt;/strong&gt;，网上卖的最多的就是这种。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/android1122/typecho_img/master/135-%E5%85%B3%E4%BA%8E%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E9%97%A8%E9%97%A8%E9%81%93%E9%81%93-2023-11-10-09-24-41.png&quot; alt=&quot;135-关于路由器的门门道道-2023-11-10-09-24-41&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;旁路由：一般是性能强劲，&lt;strong&gt;但是只有一个网口的&lt;/strong&gt;，通常是由电脑设备刷机导致的，使用比较麻烦，需要配置。&lt;/p&gt;
-&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;img src=&quot;https://raw.githubusercontent.com/android1122/typecho_img/master/135-%E5%85%B3%E4%BA%8E%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E9%97%A8%E9%97%A8%E9%81%93%E9%81%93-2023-11-10-09-29-21.png&quot; alt=&quot;135-关于路由器的门门道道-2023-11-10-09-29-21&quot;&gt;&lt;br&gt;</summary>
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/android1122/typecho_img/master/135-%E5%85%B3%E4%BA%8E%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E9%97%A8%E9%97%A8%E9%81%93%E9%81%93-2023-11-10-09-29-21.png&quot; alt=&quot;135-关于路由器的门门道道-2023-11-10-09-29-21&quot; /&gt;&lt;/p&gt;</summary>
     
     
     
@@ -1589,11 +1649,14 @@
     <updated>2023-11-06T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;今年再次独立搬出去住了，好消息是离公司近了，坏消息就是又是一个人需要为一日三餐所苦恼。&lt;br&gt;我相信我面对的情况和大多数上班族是一样的：需要一个快速简单而且灵活的早晚餐解决方案。午餐一般在公司；早餐或者晚餐需要在家，我希望可以速度快，因为下班回来很累，或者上班时间不足。同时需要灵活性，需要能存储的东西，因为晚餐有时候会临时有饭局或者应酬，有时候连续好几天不能自己做饭，所以不要那种早上离家就提前准备好的东西，最后就是希望兼顾减肥。&lt;br&gt;综上所述我总结了这个解决方案所需要的特点：&lt;/p&gt;
+    <summary type="html">&lt;p&gt;今年再次独立搬出去住了，好消息是离公司近了，坏消息就是又是一个人需要为一日三餐所苦恼。&lt;br /&gt;
+我相信我面对的情况和大多数上班族是一样的：需要一个快速简单而且灵活的早晚餐解决方案。午餐一般在公司；早餐或者晚餐需要在家，我希望可以速度快，因为下班回来很累，或者上班时间不足。同时需要灵活性，需要能存储的东西，因为晚餐有时候会临时有饭局或者应酬，有时候连续好几天不能自己做饭，所以不要那种早上离家就提前准备好的东西，最后就是希望兼顾减肥。&lt;br /&gt;
+综上所述我总结了这个解决方案所需要的特点：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;快速-不需要大量的准备工作，也不需要提前准备。&lt;/li&gt;
 &lt;li&gt;耐存储-所涉及的食物都是可以存一个礼拜的。&lt;/li&gt;
-&lt;li&gt;营养均衡和减脂吧。</summary>
+&lt;li&gt;营养均衡和减脂吧。&lt;/li&gt;
+&lt;/ol&gt;</summary>
     
     
     
@@ -1747,7 +1810,8 @@
     <updated>2023-08-28T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;最近闲来无事看完了去年大热得电视剧改编原著《庆余年》和《雪中悍刀行》。好看么？&lt;br&gt;好看，但是这两个的好看是不一样得。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;最近闲来无事看完了去年大热得电视剧改编原著《庆余年》和《雪中悍刀行》。好看么？&lt;br /&gt;
+好看，但是这两个的好看是不一样得。&lt;/p&gt;</summary>
     
     
     
@@ -1770,12 +1834,15 @@
     <updated>2023-07-21T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;最近一则消息引爆了大多数人的神经：&lt;br&gt;&lt;img src=&quot;https://raw.githubusercontent.com/android1122/typecho_img/master/126-%E6%B5%85%E8%B0%88%E4%B8%8B%E7%BB%8F%E6%B5%8E-2023-07-05-15-09-43.png&quot; alt=&quot;126-浅谈下经济-2023-07-05-15-09-43&quot;&gt;&lt;br&gt;借着这个机会，我浅谈下我对经济的了解。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;最近一则消息引爆了大多数人的神经：&lt;br /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/android1122/typecho_img/master/126-%E6%B5%85%E8%B0%88%E4%B8%8B%E7%BB%8F%E6%B5%8E-2023-07-05-15-09-43.png&quot; alt=&quot;126-浅谈下经济-2023-07-05-15-09-43&quot; /&gt;&lt;br /&gt;
+借着这个机会，我浅谈下我对经济的了解。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;现有经济模式下，资本永不倒。&lt;/li&gt;
 &lt;li&gt;资本对利息的认可&lt;/li&gt;
 &lt;li&gt;资本的流动趋向固定&lt;/li&gt;
-&lt;li&gt;新时代的世袭制</summary>
+&lt;li&gt;新时代的世袭制&lt;/li&gt;
+&lt;/ol&gt;</summary>
     
     
     
@@ -1802,7 +1869,8 @@
     <updated>2023-07-21T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;最近几年不知道是因为啥，好莱坞的爆米花大片连配爆米花都不行了。一个字，烂，特别的烂。&lt;br&gt;《变形金刚——超能勇士崛起》一听这名字，我就知道，是在搞情怀，我的期望很低，剧情可以，打架场面好就行了。然后，——&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;最近几年不知道是因为啥，好莱坞的爆米花大片连配爆米花都不行了。一个字，烂，特别的烂。&lt;br /&gt;
+《变形金刚——超能勇士崛起》一听这名字，我就知道，是在搞情怀，我的期望很低，剧情可以，打架场面好就行了。然后，——&lt;/p&gt;</summary>
     
     
     
@@ -1827,7 +1895,8 @@
     <updated>2023-07-21T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;那就像是一颗石头在我的心脏之中，嵌在那，每次泵动的时候我就会想到：&lt;br&gt;人，世界，宇宙，时间的长河，在我看庆余年的时候，我更多的是：这一切都是虚假的，一旦死亡之后，就一切归于无。而无并不是无法想象的，是有理有据，可以思考，可以模拟的，我似乎看到了未来的千万，亿万，甚至更长的时间之中，没有我。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;那就像是一颗石头在我的心脏之中，嵌在那，每次泵动的时候我就会想到：&lt;br /&gt;
+人，世界，宇宙，时间的长河，在我看庆余年的时候，我更多的是：这一切都是虚假的，一旦死亡之后，就一切归于无。而无并不是无法想象的，是有理有据，可以思考，可以模拟的，我似乎看到了未来的千万，亿万，甚至更长的时间之中，没有我。&lt;/p&gt;</summary>
     
     
     
@@ -1854,7 +1923,8 @@
     <updated>2023-07-04T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;我们时常会遇见一些需要拷贝资料的情况，这时候如果手头上正好没有U盘，那么就很麻烦。当然，你说你也可以使用微信的文件助手。&lt;br&gt;唯一的问题是这一点都不优雅，现在让我们提供一个优雅的工具给你：&lt;a href=&quot;https://filebox.minsummer.com/&quot;&gt;[FileCodeBox]&lt;/a&gt;&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;我们时常会遇见一些需要拷贝资料的情况，这时候如果手头上正好没有U盘，那么就很麻烦。当然，你说你也可以使用微信的文件助手。&lt;br /&gt;
+唯一的问题是这一点都不优雅，现在让我们提供一个优雅的工具给你：&lt;a href=&quot;https://filebox.minsummer.com/&quot;&gt;[FileCodeBox]&lt;/a&gt;&lt;/p&gt;</summary>
     
     
     
@@ -1877,7 +1947,8 @@
     <updated>2023-06-30T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;今天遇见一个十分无语得事情：进入Windows得安全模式，提示：pin码无法使用，需要重新设置，点击重新设置却又没有任何效果。安全模式下照相机驱动都没有，无法使用hello world得脸部登陆，于是就陷入了一个尴尬得界面。&lt;br&gt;安全模式下甚至无法使用网络，这就意味着，如果你选择重新安装系统保留程序，它会提示你登陆你的微软账号，但是由于没有网络，所以它无法验证你的密码。最后我深思了一下，总结了一下发生得原因和解决方案。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;今天遇见一个十分无语得事情：进入Windows得安全模式，提示：pin码无法使用，需要重新设置，点击重新设置却又没有任何效果。安全模式下照相机驱动都没有，无法使用hello world得脸部登陆，于是就陷入了一个尴尬得界面。&lt;br /&gt;
+安全模式下甚至无法使用网络，这就意味着，如果你选择重新安装系统保留程序，它会提示你登陆你的微软账号，但是由于没有网络，所以它无法验证你的密码。最后我深思了一下，总结了一下发生得原因和解决方案。&lt;/p&gt;</summary>
     
     
     
@@ -1902,7 +1973,7 @@
     <updated>2023-06-26T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;在时隔6个月之后，搬瓦工又推出了新的The Plan计划：&lt;a href=&quot;https://bandwagonhost.com/aff.php?aff=71828&amp;pid=131&quot;&gt;The Plan V2&lt;/a&gt; or &lt;a href=&quot;https://bwh81.net/aff.php?aff=71828&amp;pid=131&quot;&gt;境内地址&lt;/a&gt;&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;在时隔6个月之后，搬瓦工又推出了新的The Plan计划：&lt;a href=&quot;https://bandwagonhost.com/aff.php?aff=71828&amp;amp;pid=131&quot;&gt;The Plan V2&lt;/a&gt; or &lt;a href=&quot;https://bwh81.net/aff.php?aff=71828&amp;amp;pid=131&quot;&gt;境内地址&lt;/a&gt;&lt;/p&gt;</summary>
     
     
     
@@ -1969,7 +2040,8 @@
     <updated>2023-06-22T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;闲来无事，想起来KK大神的一些言论。天底下没有新鲜事，于是就看了下白话的史书——《明朝那些事儿》。看完之后只能感叹，天底下果真没有啥新鲜事，其次就是，当年鲁迅说的狂人日记，原来就在我身边。&lt;br&gt;我是推荐读史书的，如果你最近闲来无事，手边又没有合适的书，那么我推荐你看一看过去发生的事情。无论是白话还是文言。有些人说文言史是正统，我不否认。但是每个人读书想法不同，有人用来打发时间，有人用来求知学新。我读史更多的是拿来当闲书看的，与其去追求小说剧情跌宕起伏，还不如看看我们过去发生的一些事。然后知道，太阳底下没啥新鲜事，都是发生过的。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;闲来无事，想起来KK大神的一些言论。天底下没有新鲜事，于是就看了下白话的史书——《明朝那些事儿》。看完之后只能感叹，天底下果真没有啥新鲜事，其次就是，当年鲁迅说的狂人日记，原来就在我身边。&lt;br /&gt;
+我是推荐读史书的，如果你最近闲来无事，手边又没有合适的书，那么我推荐你看一看过去发生的事情。无论是白话还是文言。有些人说文言史是正统，我不否认。但是每个人读书想法不同，有人用来打发时间，有人用来求知学新。我读史更多的是拿来当闲书看的，与其去追求小说剧情跌宕起伏，还不如看看我们过去发生的一些事。然后知道，太阳底下没啥新鲜事，都是发生过的。&lt;/p&gt;</summary>
     
     
     
@@ -1992,7 +2064,8 @@
     <updated>2023-06-15T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;免责声明&quot;&gt;&lt;a href=&quot;#免责声明&quot; class=&quot;headerlink&quot; title=&quot;免责声明&quot;&gt;&lt;/a&gt;免责声明&lt;/h2&gt;&lt;p&gt;房地产跟我的生活息息相关，所以我总会思考它的一些事情。我不是一个专业的研究员，而且也没有详实的数据支持。我更喜欢简单的因果论，所以我大致建立了一套完整的，简单的因果模型来描述现在我对地产的一个认知。以及经常提到的着陆的一个想法。&lt;/p&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;免责声明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#免责声明&quot;&gt;&lt;/a&gt; 免责声明&lt;/h2&gt;
+&lt;p&gt;房地产跟我的生活息息相关，所以我总会思考它的一些事情。我不是一个专业的研究员，而且也没有详实的数据支持。我更喜欢简单的因果论，所以我大致建立了一套完整的，简单的因果模型来描述现在我对地产的一个认知。以及经常提到的着陆的一个想法。&lt;/p&gt;</summary>
     
     
     
@@ -2040,7 +2113,9 @@
     <updated>2023-05-30T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;代理链&quot;&gt;&lt;a href=&quot;#代理链&quot; class=&quot;headerlink&quot; title=&quot;代理链&quot;&gt;&lt;/a&gt;代理链&lt;/h2&gt;&lt;p&gt;之前在部署那边有个配置&lt;code&gt;upstream &lt;/code&gt;可以配置上游代理链条，使用方法很简单，直接配置好上游的服务器然后在&lt;code&gt;upstram https://&amp;lt;用户名&amp;gt;:&amp;lt;密码&amp;gt;@&amp;lt;上游网址&amp;gt;&lt;/code&gt;。&lt;br&gt;代理链的优势：&lt;/p&gt;
+    <summary type="html">&lt;h2 id=&quot;代理链&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#代理链&quot;&gt;&lt;/a&gt; 代理链&lt;/h2&gt;
+&lt;p&gt;之前在部署那边有个配置&lt;code&gt;upstream &lt;/code&gt;可以配置上游代理链条，使用方法很简单，直接配置好上游的服务器然后在&lt;code&gt;upstram https://&amp;lt;用户名&amp;gt;:&amp;lt;密码&amp;gt;@&amp;lt;上游网址&amp;gt;&lt;/code&gt;。&lt;br /&gt;
+代理链的优势：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;拯救被墙的服务器&lt;/li&gt;
 &lt;li&gt;优化线路速度&lt;/li&gt;
@@ -2071,7 +2146,8 @@
     <updated>2023-05-29T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;小心使得万年船&quot;&gt;&lt;a href=&quot;#小心使得万年船&quot; class=&quot;headerlink&quot; title=&quot;小心使得万年船&quot;&gt;&lt;/a&gt;小心使得万年船&lt;/h2&gt;&lt;p&gt;最近又要进入敏感时期了，所以安全得包装，22年10月份封禁了一大批。随着Xray作者提出的&lt;a href=&quot;https://github.com/XTLS/Trojan-killer&quot;&gt;TLS in TLS可以被探测到&lt;/a&gt;。可见目前协议不是安全的，Xray提出了一个解决方案：XTLS。但是XTLS会占用服务器得443端口，需要接手服务器所有流量。对于目前得我来说并不是很方便，而且我推崇服务器只开放常规端口，做到像普通服务器一样。&lt;/p&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;小心使得万年船&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#小心使得万年船&quot;&gt;&lt;/a&gt; 小心使得万年船&lt;/h2&gt;
+&lt;p&gt;最近又要进入敏感时期了，所以安全得包装，22年10月份封禁了一大批。随着Xray作者提出的&lt;a href=&quot;https://github.com/XTLS/Trojan-killer&quot;&gt;TLS in TLS可以被探测到&lt;/a&gt;。可见目前协议不是安全的，Xray提出了一个解决方案：XTLS。但是XTLS会占用服务器得443端口，需要接手服务器所有流量。对于目前得我来说并不是很方便，而且我推崇服务器只开放常规端口，做到像普通服务器一样。&lt;/p&gt;</summary>
     
     
     
@@ -2094,7 +2170,8 @@
     <updated>2023-05-27T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;毒舌大状，好看，这算是这些年为数不多的好片，在如今爆米花电影为主流的时代下，有这么一部可以调动人的情绪，可以让人热血上头的电影，确实不可多得。&lt;br&gt;这部片的定位是剧情片，不是侦探类型的电影。从内容上来看，确实也不是侦探电影，本片主要讲的是单亲妈妈曾洁儿的女儿在家被发现受伤倒地，然后由检方提起公诉，起诉曾洁儿误伤儿童，后面女儿去世，误伤改为了误杀。黄之华饰演的律师一开始把这件案件当作简单的案件，在取得情夫钟子颐的口供后手续不全，对方法庭上翻供，导致曾洁儿被判17年，入狱2年后，黄子华日日煎熬，终于在一位证人去世时的遗书上发现上起诉的可能性，最后成功打赢官司。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;毒舌大状，好看，这算是这些年为数不多的好片，在如今爆米花电影为主流的时代下，有这么一部可以调动人的情绪，可以让人热血上头的电影，确实不可多得。&lt;br /&gt;
+这部片的定位是剧情片，不是侦探类型的电影。从内容上来看，确实也不是侦探电影，本片主要讲的是单亲妈妈曾洁儿的女儿在家被发现受伤倒地，然后由检方提起公诉，起诉曾洁儿误伤儿童，后面女儿去世，误伤改为了误杀。黄之华饰演的律师一开始把这件案件当作简单的案件，在取得情夫钟子颐的口供后手续不全，对方法庭上翻供，导致曾洁儿被判17年，入狱2年后，黄子华日日煎熬，终于在一位证人去世时的遗书上发现上起诉的可能性，最后成功打赢官司。&lt;/p&gt;</summary>
     
     
     
@@ -2159,7 +2236,8 @@
     <updated>2023-05-19T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;中文的弯路&quot;&gt;&lt;a href=&quot;#中文的弯路&quot; class=&quot;headerlink&quot; title=&quot;中文的弯路&quot;&gt;&lt;/a&gt;中文的弯路&lt;/h2&gt;&lt;p&gt;Hexo搭建是完成了，后面就是选择主题，我选择的是NexT主题，但是网络上的文档，说实话：很乱。NexT主题经过多次升级，最新版的NexT主题已经是8.16，更新强度差不多1个月一次。所有这边就总结一下自己走过的弯路，还有&lt;a href=&quot;https://theme-next.js.org/&quot;&gt;主题文档&lt;/a&gt;是这个，但是如果你用中文搜索出来，大概率是&lt;a href=&quot;https://theme-next.iissnan.com/getting-started.html&quot;&gt;这个&lt;/a&gt;，其实两个都是对的，一个是GitHub官网给出的，一个是历史版本好像是5.0时代的中文文档。最新版好像没有人维护中文，两者差距还是有的，如果用最新的版本照着中文文档配置，那是会走弯路。&lt;/p&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;中文的弯路&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#中文的弯路&quot;&gt;&lt;/a&gt; 中文的弯路&lt;/h2&gt;
+&lt;p&gt;Hexo搭建是完成了，后面就是选择主题，我选择的是NexT主题，但是网络上的文档，说实话：很乱。NexT主题经过多次升级，最新版的NexT主题已经是8.16，更新强度差不多1个月一次。所有这边就总结一下自己走过的弯路，还有&lt;a href=&quot;https://theme-next.js.org/&quot;&gt;主题文档&lt;/a&gt;是这个，但是如果你用中文搜索出来，大概率是&lt;a href=&quot;https://theme-next.iissnan.com/getting-started.html&quot;&gt;这个&lt;/a&gt;，其实两个都是对的，一个是GitHub官网给出的，一个是历史版本好像是5.0时代的中文文档。最新版好像没有人维护中文，两者差距还是有的，如果用最新的版本照着中文文档配置，那是会走弯路。&lt;/p&gt;</summary>
     
     
     
@@ -2180,7 +2258,8 @@
     <updated>2023-05-17T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;折腾啊折腾&quot;&gt;&lt;a href=&quot;#折腾啊折腾&quot; class=&quot;headerlink&quot; title=&quot;折腾啊折腾&quot;&gt;&lt;/a&gt;折腾啊折腾&lt;/h2&gt;&lt;p&gt;之前使用的是typecho博客，简单，轻量。满足需求，唯一的问题是不是很好看，好看的主题需要付费，如handsome，而且很多时候速度不快。最让我不能忍的是更新慢，而且对一些数学公式的支持并不是那么有效果。所以从很早以前就衍生出了想要换一个博客的想法，归根揭底就是闲了，想折腾了。&lt;/p&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;折腾啊折腾&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#折腾啊折腾&quot;&gt;&lt;/a&gt; 折腾啊折腾&lt;/h2&gt;
+&lt;p&gt;之前使用的是typecho博客，简单，轻量。满足需求，唯一的问题是不是很好看，好看的主题需要付费，如handsome，而且很多时候速度不快。最让我不能忍的是更新慢，而且对一些数学公式的支持并不是那么有效果。所以从很早以前就衍生出了想要换一个博客的想法，归根揭底就是闲了，想折腾了。&lt;/p&gt;</summary>
     
     
     
@@ -2203,7 +2282,9 @@
     <updated>2023-12-26T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;初衷&quot;&gt;&lt;a href=&quot;#初衷&quot; class=&quot;headerlink&quot; title=&quot;初衷&quot;&gt;&lt;/a&gt;初衷&lt;/h1&gt;&lt;p&gt;青龙面板的用处很多，其中之一就是用来签到的，我现在已经稳定签到100多天。我用的是&lt;a href=&quot;https://github.com/6dylan6/jdpro&quot;&gt;6dylan6&amp;#x2F;jdpro&lt;/a&gt;，GitHub上星星3000+，而且作者还不定时更新，但是作者编写的文档不是很清楚，这边本着学习和记录的原则，来写一个指南吧。&lt;br&gt;这个库优势：&lt;/p&gt;
+    <summary type="html">&lt;h1 id=&quot;初衷&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#初衷&quot;&gt;&lt;/a&gt; 初衷&lt;/h1&gt;
+&lt;p&gt;青龙面板的用处很多，其中之一就是用来签到的，我现在已经稳定签到100多天。我用的是&lt;a href=&quot;https://github.com/6dylan6/jdpro&quot;&gt;6dylan6/jdpro&lt;/a&gt;，GitHub上星星3000+，而且作者还不定时更新，但是作者编写的文档不是很清楚，这边本着学习和记录的原则，来写一个指南吧。&lt;br /&gt;
+这个库优势：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;有人维护&lt;/li&gt;
 &lt;li&gt;更新有保障&lt;/li&gt;
@@ -2212,7 +2293,8 @@
 &lt;p&gt;缺点：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;缝合怪，很多东西都是直接拉取别人库&lt;/li&gt;
-&lt;li&gt;有些任务无法执行</summary>
+&lt;li&gt;有些任务无法执行&lt;/li&gt;
+&lt;/ol&gt;</summary>
     
     
     
@@ -2239,7 +2321,8 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;微软程序无法连接&quot;&gt;&lt;a href=&quot;#微软程序无法连接&quot; class=&quot;headerlink&quot; title=&quot;微软程序无法连接&quot;&gt;&lt;/a&gt;微软程序无法连接&lt;/h1&gt;&lt;h2 id=&quot;原因&quot;&gt;&lt;a href=&quot;#原因&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;微软程序无法连接&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#微软程序无法连接&quot;&gt;&lt;/a&gt; 微软程序无法连接&lt;/h1&gt;
+&lt;h2 id=&quot;原因&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#原因&quot;&gt;&lt;/a&gt;</summary>
         
       
     
@@ -2266,11 +2349,12 @@
     <updated>2023-04-20T01:51:16.000Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;搬瓦工&quot;&gt;&lt;a href=&quot;#搬瓦工&quot; class=&quot;headerlink&quot; title=&quot;搬瓦工&quot;&gt;&lt;/a&gt;搬瓦工&lt;/h1&gt;&lt;p&gt;搬瓦工是老牌VPS厂商，具有速度快，多机房，服务器稳定等特点。偶尔也会放出一些神价格的服务器,比如：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://bwh81.net/aff.php?aff=71828&amp;pid=129&quot;&gt;92刀&amp;#x2F;年，2c2g40g-1t,多机房换&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://bwh81.net/aff.php?aff=71828&amp;pid=112&quot;&gt;74刀&amp;#x2F;年，1c1g20g-500g cn2 GIA&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://bwh81.net/aff.php?aff=71828&amp;pid=121&quot;&gt;74刀&amp;#x2F;年，1c1g20g-500g 香港特价&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;但是每个人的情况不一样，有些人想要一台建立网站，比如我就很想要&lt;a href=&quot;https://bwh81.net/aff.php?aff=71828&amp;pid=129&quot;&gt;92刀&amp;#x2F;年，2c2g40g-1t,多机房换&lt;/a&gt;，这个性能强劲而且可以换到香港机房，可以说得上是最近的神车。但是我之前查找搬瓦工服务器的时候，就没有找到一个比较完整的搬瓦工目前的套餐。于是花了点时间，爬了所有的服务器套餐，大家可以看看有米有自己喜欢的。&lt;/p&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;搬瓦工&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#搬瓦工&quot;&gt;&lt;/a&gt; 搬瓦工&lt;/h1&gt;
+&lt;p&gt;搬瓦工是老牌VPS厂商，具有速度快，多机房，服务器稳定等特点。偶尔也会放出一些神价格的服务器,比如：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://bwh81.net/aff.php?aff=71828&amp;amp;pid=129&quot;&gt;92刀/年，2c2g40g-1t,多机房换&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://bwh81.net/aff.php?aff=71828&amp;amp;pid=112&quot;&gt;74刀/年，1c1g20g-500g cn2 GIA&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://bwh81.net/aff.php?aff=71828&amp;amp;pid=121&quot;&gt;74刀/年，1c1g20g-500g 香港特价&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;但是每个人的情况不一样，有些人想要一台建立网站，比如我就很想要&lt;a href=&quot;https://bwh81.net/aff.php?aff=71828&amp;amp;pid=129&quot;&gt;92刀/年，2c2g40g-1t,多机房换&lt;/a&gt;，这个性能强劲而且可以换到香港机房，可以说得上是最近的神车。但是我之前查找搬瓦工服务器的时候，就没有找到一个比较完整的搬瓦工目前的套餐。于是花了点时间，爬了所有的服务器套餐，大家可以看看有米有自己喜欢的。&lt;/p&gt;</summary>
     
     
     
@@ -2295,8 +2379,9 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;常用vps工具&quot;&gt;&lt;a href=&quot;#常用vps工具&quot; class=&quot;headerlink&quot; title=&quot;常用vps工具&quot;&gt;&lt;/a&gt;常用vps工具&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;a</summary>
+    <summary type="html">&lt;h2 id=&quot;常用vps工具&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#常用vps工具&quot;&gt;&lt;/a&gt; 常用vps工具&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://ipdata.co/&quot;&gt;IP信息查看工具&lt;/a&gt;&lt;br</summary>
         
       
     
@@ -2358,7 +2443,8 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;时间不是万能的&quot;&gt;&lt;a href=&quot;#时间不是万能的&quot; class=&quot;headerlink&quot; title=&quot;时间不是万能的&quot;&gt;&lt;/a&gt;时间不是万能的&lt;/h1&gt;&lt;h2 id=&quot;他不是玫瑰&quot;&gt;&lt;a href=&quot;#他不是玫瑰&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;时间不是万能的&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#时间不是万能的&quot;&gt;&lt;/a&gt; 时间不是万能的&lt;/h1&gt;
+&lt;h2 id=&quot;他不是玫瑰&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
         
       
     
@@ -2387,7 +2473,8 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;v2rayN的路由设置&quot;&gt;&lt;a href=&quot;#v2rayN的路由设置&quot; class=&quot;headerlink&quot; title=&quot;v2rayN的路由设置&quot;&gt;&lt;/a&gt;v2rayN的路由设置&lt;/h1&gt;&lt;h2 id=&quot;新版本变化&quot;&gt;&lt;a href=&quot;#新版本变化&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;v2rayn的路由设置&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#v2rayn的路由设置&quot;&gt;&lt;/a&gt; v2rayN的路由设置&lt;/h1&gt;
+&lt;h2 id=&quot;新版本变化&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
         
       
     
@@ -2416,7 +2503,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;FreshRSS定时规则的坑&quot;&gt;&lt;a href=&quot;#FreshRSS定时规则的坑&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;freshrss定时规则的坑&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#freshrss定时规则的坑&quot;&gt;&lt;/a&gt;</summary>
         
       
     
@@ -2447,7 +2534,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;青龙面板定时规则&quot;&gt;&lt;a href=&quot;#青龙面板定时规则&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;青龙面板定时规则&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#青龙面板定时规则&quot;&gt;&lt;/a&gt;</summary>
         
       
     
@@ -2476,7 +2563,8 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;v2ray配置文件&quot;&gt;&lt;a href=&quot;#v2ray配置文件&quot; class=&quot;headerlink&quot; title=&quot;v2ray配置文件&quot;&gt;&lt;/a&gt;v2ray配置文件&lt;/h1&gt;&lt;p&gt;config基本配置：&lt;/p&gt;
+    <summary type="html">&lt;h1 id=&quot;v2ray配置文件&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#v2ray配置文件&quot;&gt;&lt;/a&gt; v2ray配置文件&lt;/h1&gt;
+&lt;p&gt;config基本配置：&lt;/p&gt;
 &lt;figure class=&quot;highlight</summary>
         
       
@@ -2587,8 +2675,9 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;《菜单》——困境&quot;&gt;&lt;a href=&quot;#《菜单》——困境&quot; class=&quot;headerlink&quot; title=&quot;《菜单》——困境&quot;&gt;&lt;/a&gt;《菜单》——困境&lt;/h1&gt;&lt;p&gt;总有一天，我们不用吃饭也能饱腹——————牛顿表弟&lt;/p&gt;
-&lt;hr&gt;
+    <summary type="html">&lt;h1 id=&quot;菜单困境&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#菜单困境&quot;&gt;&lt;/a&gt; 《菜单》——困境&lt;/h1&gt;
+&lt;p&gt;总有一天，我们不用吃饭也能饱腹——————牛顿表弟&lt;/p&gt;
+&lt;hr /&gt;
 &lt;p&gt;&lt;img</summary>
         
       
@@ -2621,9 +2710,11 @@
     <summary type="html">&lt;p&gt;先订个基调：2023年还是以房地产为主要驱动。这是毋庸置疑的，也是不得已的。&lt;/p&gt;
 &lt;p&gt;主要原因在于：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;各地财务状况没有好转，反而下跌，如果少了地产这个空缺，全国都有可能出现问题。&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;各地财务状况没有好转，反而下跌，如果少了地产这个空缺，全国都有可能出现问题。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;房企暴雷的太多了，不管</summary>
+&lt;li&gt;
+&lt;p&gt;房企暴雷的太多了，</summary>
         
       
     
@@ -2652,7 +2743,8 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;python-线性回归-最小二乘法&quot;&gt;&lt;a href=&quot;#python-线性回归-最小二乘法&quot; class=&quot;headerlink&quot; title=&quot;python 线性回归-最小二乘法&quot;&gt;&lt;/a&gt;python 线性回归-最小二乘法&lt;/h1&gt;&lt;h2</summary>
+    <summary type="html">&lt;h1 id=&quot;python-线性回归-最小二乘法&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#python-线性回归-最小二乘法&quot;&gt;&lt;/a&gt; python 线性回归-最小二乘法&lt;/h1&gt;
+&lt;h2 id=&quot;数学基础&quot;&gt;&lt;a</summary>
         
       
     
@@ -2681,7 +2773,12 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;遇见的问题&quot;&gt;&lt;a href=&quot;#遇见的问题&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;遇见的问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#遇见的问题&quot;&gt;&lt;/a&gt; 遇见的问题&lt;/h1&gt;
+&lt;p&gt;之前docker化遇见的问题：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;caddy配置如图&#92;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img</summary>
         
       
     
@@ -2708,7 +2805,10 @@
     <updated>2023-06-09T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;tachidesk部署指南&quot;&gt;&lt;a href=&quot;#tachidesk部署指南&quot; class=&quot;headerlink&quot; title=&quot;tachidesk部署指南&quot;&gt;&lt;/a&gt;tachidesk部署指南&lt;/h1&gt;&lt;p&gt;在线漫画的完美终结者：&lt;a href=&quot;https://github.com/Suwayomi/Tachidesk-Server&quot;&gt;Tachidesk&lt;/a&gt;。Tachidesk是一个免费的、开源的漫画阅读器服务器。&lt;br&gt;&lt;a href=&quot;https://github.com/Suwayomi/Tachidesk-Server&quot;&gt;Tachidesk&lt;/a&gt;是一个通过插件查看第三方漫画网站的工具，和之前大火的的多多猫类似的功能，不过区别在于它更加稳定，而且目前开源有人维护，支持windows，Linux，macOS等主流系统。如果你喜欢使用手机端看漫画的话这边推荐：&lt;a href=&quot;https://tachiyomi.org/&quot;&gt;Tachiyomi&lt;/a&gt;&lt;br&gt;优势：&lt;/p&gt;
+    <summary type="html">&lt;h1 id=&quot;tachidesk部署指南&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#tachidesk部署指南&quot;&gt;&lt;/a&gt; tachidesk部署指南&lt;/h1&gt;
+&lt;p&gt;在线漫画的完美终结者：&lt;a href=&quot;https://github.com/Suwayomi/Tachidesk-Server&quot;&gt;Tachidesk&lt;/a&gt;。Tachidesk是一个免费的、开源的漫画阅读器服务器。&lt;br /&gt;
+&lt;a href=&quot;https://github.com/Suwayomi/Tachidesk-Server&quot;&gt;Tachidesk&lt;/a&gt;是一个通过插件查看第三方漫画网站的工具，和之前大火的的多多猫类似的功能，不过区别在于它更加稳定，而且目前开源有人维护，支持windows，Linux，macOS等主流系统。如果你喜欢使用手机端看漫画的话这边推荐：&lt;a href=&quot;https://tachiyomi.org/&quot;&gt;Tachiyomi&lt;/a&gt;&lt;br /&gt;
+优势：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;开源且更新&lt;/li&gt;
 &lt;li&gt;可以查看主流和非主流的漫画网站&lt;/li&gt;
@@ -2743,7 +2843,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;VPS网赚：peer2profit和traffmonetizer挂机网赚&quot;&gt;&lt;a href=&quot;#VPS网赚：peer2profit和traffmonetizer挂机网赚&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;vps网赚peer2profit和traffmonetizer挂机网赚&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#vps网赚peer2profit和traffmonetizer挂机网赚&quot;&gt;&lt;/a&gt;</summary>
         
       
     
@@ -2772,7 +2872,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;FinalShell跳板配置&quot;&gt;&lt;a href=&quot;#FinalShell跳板配置&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;finalshell跳板配置&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#finalshell跳板配置&quot;&gt;&lt;/a&gt;</summary>
         
       
     
@@ -2803,7 +2903,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;新一代的VPS管理工具VScode&quot;&gt;&lt;a href=&quot;#新一代的VPS管理工具VScode&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;新一代的vps管理工具vscode&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#新一代的vps管理工具vscode&quot;&gt;&lt;/a&gt;</summary>
         
       
     
@@ -2832,7 +2932,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;服务器docker化管理&quot;&gt;&lt;a href=&quot;#服务器docker化管理&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;服务器docker化管理&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#服务器docker化管理&quot;&gt;&lt;/a&gt;</summary>
         
       
     
@@ -2865,7 +2965,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;Vscode配置明细&quot;&gt;&lt;a href=&quot;#Vscode配置明细&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;vscode配置明细&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#vscode配置明细&quot;&gt;&lt;/a&gt;</summary>
         
       
     
@@ -2896,7 +2996,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;瞎眼吱吱&quot;&gt;&lt;a href=&quot;#瞎眼吱吱&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;瞎眼吱吱&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#瞎眼吱吱&quot;&gt;&lt;/a&gt;</summary>
         
       
     
@@ -2921,7 +3021,8 @@
       
         
         
-    <summary type="html">&lt;h2</summary>
+    <summary type="html">&lt;p&gt;元宵是一个大节。&lt;br /&gt;
+我们村很多人都出去做生意，但是他们一般都会等到元宵结束之后再出去。对他们来说，元宵是个大节。&lt;br</summary>
         
       
     
@@ -2950,7 +3051,7 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;YT300型吊秤打印&quot;&gt;&lt;a href=&quot;#YT300型吊秤打印&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h3 id=&quot;yt300型吊秤打印&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#yt300型吊秤打印&quot;&gt;&lt;/a&gt;</summary>
         
       
     
@@ -3140,8 +3241,8 @@
   
   <entry>
     <title>概率论导论-思维导图</title>
-    <link href="https://minsummer.com/2022/07/30/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%AF%BC%E8%AE%BA-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
-    <id>https://minsummer.com/2022/07/30/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%AF%BC%E8%AE%BA-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</id>
+    <link href="https://minsummer.com/2022/07/30/104-%E6%A6%82%E7%8E%87%E8%AE%BA%E5%AF%BC%E8%AE%BA-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
+    <id>https://minsummer.com/2022/07/30/104-%E6%A6%82%E7%8E%87%E8%AE%BA%E5%AF%BC%E8%AE%BA-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</id>
     <published>2022-07-30T07:09:00.000Z</published>
     <updated>2022-07-30T07:09:00.000Z</updated>
     
@@ -3150,7 +3251,8 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;数据概率导论&quot;&gt;&lt;a href=&quot;#数据概率导论&quot; class=&quot;headerlink&quot; title=&quot;数据概率导论&quot;&gt;&lt;/a&gt;数据概率导论&lt;/h1&gt;&lt;h2 id=&quot;基础知识&quot;&gt;&lt;a href=&quot;#基础知识&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;数据概率导论&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#数据概率导论&quot;&gt;&lt;/a&gt; 数据概率导论&lt;/h1&gt;
+&lt;h2 id=&quot;基础知识&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#基础知识&quot;&gt;&lt;/a&gt;</summary>
         
       
     
@@ -3159,9 +3261,9 @@
     <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
     
     
-    <category term="思维导图" scheme="https://minsummer.com/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
-    
     <category term="概率论导论" scheme="https://minsummer.com/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%AF%BC%E8%AE%BA/"/>
+    
+    <category term="思维导图" scheme="https://minsummer.com/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
     
   </entry>
   
@@ -3237,9 +3339,11 @@
         
     <summary type="html">&lt;p&gt;写在前面：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;翻译很重要，这本作者是德国，然后被人翻译成英文，再翻译成中文，所以翻译很重要，不仅如此，以后所有的外文书籍都要关注下翻译质量，不行多下几本电子书对比。我一开始看的完全是狗屁不通的机器直翻。&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;翻译很重要，这本作者是德国，然后被人翻译成英文，再翻译成中文，所以翻译很重要，不仅如此，以后所有的外文书籍都要关注下翻译质量，不行多下几本电子书对比。我一开始看的完全是狗屁不通的机器直翻。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;这本书</summary>
+&lt;li&gt;
+&lt;p&gt;这</summary>
         
       
     
@@ -3268,7 +3372,7 @@
       
         
         
-    <summary type="html">&lt;p&gt; </summary>
+    <summary type="html">&lt;p&gt;我似乎对机器有着别样的迷恋，就像一个中年大叔一样，不断的折腾着自己手上仅有的电子产品，哪怕它没有问题，哪怕它已经符合你的需求。似乎要在它身上夺回自己对生活的控制力。最近的一次折腾是上周末花费了两天不断的折腾我的红米RM2100路由器，从一开始的毛子固件刷到C大的固件，再刷牛</summary>
         
       
     
@@ -3295,7 +3399,7 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;炉石传说&quot;&gt;&lt;a href=&quot;#炉石传说&quot; class=&quot;headerlink&quot; title=&quot;炉石传说&quot;&gt;&lt;/a&gt;炉石传说&lt;/h2&gt;&lt;p&gt; </summary>
+    <summary type="html">&lt;h2 id=&quot;炉石传说&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#炉石传说&quot;&gt;&lt;/a&gt;</summary>
         
       
     
@@ -3328,7 +3432,20 @@
         
     <summary type="html">&lt;p&gt;贴一下服务器配置：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;cpu：1核</summary>
+&lt;li&gt;
+&lt;p&gt;cpu：1核&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;内存：512M&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;硬盘：10G&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;带宽：1G&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;流量：1000G/月</summary>
         
       
     
@@ -3359,7 +3476,7 @@
       
         
         
-    <summary type="html">&lt;p&gt; </summary>
+    <summary type="html">&lt;p&gt;其实本来是只剩下在细雨中呼唤还没写对应的读后感，现在接着这个机会，我也来说说前面几本书吧。我很久没看过小说了，很多时候我看的都是科普文章，冷静，真实且富有背后逻辑。所以，我在看这本小说的时候，我总是不由自主的想象它是真实的，它是真实发生在我们的过去和身边的。一想到这，我就不</summary>
         
       
     
@@ -3390,8 +3507,12 @@
       
         
         
-    <summary type="html">&lt;p&gt;  最近由于疫情和隔离在家的关系，对博客和服务器友联更多的时间和想法，同时最近也写了不少相关的博客，今天就来一个阶段性的总结吧。&lt;/p&gt;
-&lt;p&gt; </summary>
+    <summary type="html">&lt;p&gt;最近由于疫情和隔离在家的关系，对博客和服务器友联更多的时间和想法，同时最近也写了不少相关的博客，今天就来一个阶段性的总结吧。&lt;/p&gt;
+&lt;p&gt;首先，总结下最近的对服务器和博客做的一些改变：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;从Centos7更换到Debain9&lt;/p&gt;
+&lt;/l</summary>
         
       
     
@@ -3479,7 +3600,7 @@
       
         
         
-    <summary type="html">&lt;p&gt; </summary>
+    <summary type="html">&lt;p&gt;卖血记得内核还是没变，依旧是父母，家庭。相较于之前不同的，许三观里面采用了大量的对话来描述他故事，而不是正常的叙事。这相较于之前的两本可以说的上市一番创新。卖血记的感受相较于兄弟的荒诞，无聊，活着的无助，旁观。更多的是诙谐，自由。许三观知道卖血的坏，也知道卖血对身体的伤害。</summary>
         
       
     
@@ -3508,7 +3629,7 @@
       
         
         
-    <summary type="html">&lt;p&gt; </summary>
+    <summary type="html">&lt;p&gt;《活着》是一本好书，真的好，好在没有废话，没有任何的技巧，就是简单的叙事，随着时间的流逝，让你看到富贵身上发生的大事。中间没有大费笔墨的去描写日常的琐事，也没有描写那些人际关系。富贵的一生就是被历史洪流裹挟而进，而不是夫妻，家庭，邻里这些烦恼。他让我明白了，也许不需要那么多</summary>
         
       
     
@@ -3537,7 +3658,7 @@
       
         
         
-    <summary type="html">&lt;p&gt; </summary>
+    <summary type="html">&lt;p&gt;我必须承认的《人类简史》相较于《枪炮，病菌和钢铁》是更适合我的一本人类史读物，它并不侧重于在历史遗迹的发现。它相反，指出了了解那个时代最准确的人，只有那个时代的人。我们最多只是能从中发现结果，但是事情的起因是什么，并不是简单的因果律能推断出来的。也没有必然性。而这点《枪炮，</summary>
         
       
     
@@ -3564,8 +3685,8 @@
       
         
         
-    <summary type="html">&lt;p&gt;  最近对博客的进行了一些修复,首先是对pinghsu主题进行了小更改,删除掉了页脚的信息,然后修改了一下归档页面.更喜欢这种线性的时间排列.&lt;/p&gt;
-&lt;p&gt;  &lt;img</summary>
+    <summary type="html">&lt;p&gt;最近对博客的进行了一些修复,首先是对pinghsu主题进行了小更改,删除掉了页脚的信息,然后修改了一下归档页面.更喜欢这种线性的时间排列.&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
         
       
     
@@ -3596,8 +3717,8 @@
       
         
         
-    <summary type="html">&lt;p&gt;  我的本职工作并不是机器学习，甚至连数据都没有太多的接触.我并没有大量的数据需要挖掘，更没有一个良好的模型需要模拟．我想要的仅仅市一个有趣的，可以给我无聊的工作带来一丝乐趣的AI．至少我是这么认为的．&lt;/p&gt;
-&lt;p&gt; </summary>
+    <summary type="html">&lt;p&gt;我的本职工作并不是机器学习，甚至连数据都没有太多的接触.我并没有大量的数据需要挖掘，更没有一个良好的模型需要模拟．我想要的仅仅市一个有趣的，可以给我无聊的工作带来一丝乐趣的AI．至少我是这么认为的．&lt;/p&gt;
+&lt;p&gt;机器学习的道路道阻且长.毕竟我的大学专业并不是这个，但是至少</summary>
         
       
     
@@ -3624,7 +3745,7 @@
       
         
         
-    <summary type="html">&lt;p&gt; </summary>
+    <summary type="html">&lt;p&gt;关于同事，之前我有一个页面专门是来描述当初我遇见得这些同事的．后来感情淡了，看开了．就删除了页面，改写成了茫茫多的文章一篇．对于同事，我们其实是很矛盾的，作为一个社会人，我们其实相处最多的不是自己的家人，而是这一天8小时，一周5天一直合作无间的同事．相较于家人，有时候我们和</summary>
         
       
     
@@ -3651,9 +3772,22 @@
       
         
         
-    <summary type="html">&lt;p&gt;  首先，描述一下我的服务器配置&lt;/p&gt;
+    <summary type="html">&lt;p&gt;首先，描述一下我的服务器配置&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;cpu：1核</summary>
+&lt;li&gt;
+&lt;p&gt;cpu：1核&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;内存：512M&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;硬盘：10G&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;带宽：1G&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;流量：10</summary>
         
       
     
@@ -3715,6 +3849,35 @@
   </entry>
   
   <entry>
+    <title>v2ray的一些Tips</title>
+    <link href="https://minsummer.com/2022/04/30/v2ray%E7%9A%84%E4%B8%80%E4%BA%9BTips/"/>
+    <id>https://minsummer.com/2022/04/30/v2ray%E7%9A%84%E4%B8%80%E4%BA%9BTips/</id>
+    <published>2022-04-30T13:50:00.000Z</published>
+    <updated>2022-04-30T13:50:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1，使用脚本安装V2，这个脚本内容放在GIT上，理论上是不会消失的，脚本里面覆盖了大多数的常用配置&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;bash &amp;lt;(curl -s -L &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="v2ray" scheme="https://minsummer.com/tags/v2ray/"/>
+    
+    <category term="websocket+tls" scheme="https://minsummer.com/tags/websocket-tls/"/>
+    
+  </entry>
+  
+  <entry>
     <title>vscode搭建虚拟环境</title>
     <link href="https://minsummer.com/2022/04/30/vscode%E6%90%AD%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/"/>
     <id>https://minsummer.com/2022/04/30/vscode%E6%90%AD%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</id>
@@ -3741,35 +3904,6 @@
     <category term="jupyter" scheme="https://minsummer.com/tags/jupyter/"/>
     
     <category term="python" scheme="https://minsummer.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>v2ray的一些Tips</title>
-    <link href="https://minsummer.com/2022/04/30/v2ray%E7%9A%84%E4%B8%80%E4%BA%9BTips/"/>
-    <id>https://minsummer.com/2022/04/30/v2ray%E7%9A%84%E4%B8%80%E4%BA%9BTips/</id>
-    <published>2022-04-30T13:50:00.000Z</published>
-    <updated>2022-04-30T13:50:00.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;1，使用脚本安装V2，这个脚本内容放在GIT上，理论上是不会消失的，脚本里面覆盖了大多数的常用配置&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;bash &amp;lt;(curl -s -L &lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
-    
-    
-    <category term="v2ray" scheme="https://minsummer.com/tags/v2ray/"/>
-    
-    <category term="websocket+tls" scheme="https://minsummer.com/tags/websocket-tls/"/>
     
   </entry>
   
@@ -4655,7 +4789,7 @@
         
         
     <summary type="html">&lt;p&gt;利刃出鞘，这是我最近看过的一场酣畅淋漓的侦探佳作&lt;/p&gt;
-&lt;p&gt;在如今这个超级英雄辈出的电影市场，一部非超级&amp;#x2F;科幻的爆米花电影本身就非常少见，更少见的是，它既然是一部名副其实的侦探剧，甚至有点本格的味道，观众和里面的侦探都处于同一起跑线，上一步让我大呼过瘾的应该是</summary>
+&lt;p&gt;在如今这个超级英雄辈出的电影市场，一部非超级/科幻的爆米花电影本身就非常少见，更少见的是，它既然是一部名副其实的侦探剧，甚至有点本格的味道，观众和里面的侦探都处于同一起跑线，上一步让我大呼过瘾的应该是几年前看的</summary>
         
       
     
@@ -4892,8 +5026,8 @@
       
         
         
-    <summary type="html">&lt;p&gt;我一面佯装平静，一面想把卡片揣进兜里，然而不凑巧，我喜欢的围裙，上下没有一个兜—–岩井俊二《情书》&lt;/p&gt;
-&lt;p&gt;我不知道如何和女孩子交往，就像我不会写情书一样。很多时候话到嘴边，但是写不出来。我想表达我的温文尔雅，但是写下来不过是一些让人厌烦的话语。我想礼貌的问候，却变成</summary>
+    <summary type="html">&lt;p&gt;我一面佯装平静，一面想把卡片揣进兜里，然而不凑巧，我喜欢的围裙，上下没有一个兜-----岩井俊二《情书》&lt;/p&gt;
+&lt;p&gt;我不知道如何和女孩子交往，就像我不会写情书一样。很多时候话到嘴边，但是写不出来。我想表达我的温文尔雅，但是写下来不过是一些让人厌烦的话语。我想礼貌的问候，</summary>
         
       
     

@@ -22,12 +22,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"minsummer.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="最近对博客的进行了一些修复,首先是对pinghsu主题进行了小更改,删除掉了页脚的信息,然后修改了一下归档页面.更喜欢这种线性的时间排列.      在修整完了博客页面之后,我开始对写文章的过程进行一些思考和改进.之前的写作方式是,直接在typecho后台,进行编辑写作.其他还好,只有图片这一块,在网站上编写确实不够方便.我希望能够达成的效果是一键截图,压缩,上传,再粘贴.多方搜索之后[^1]">
+    <meta name="description" content="最近对博客的进行了一些修复,首先是对pinghsu主题进行了小更改,删除掉了页脚的信息,然后修改了一下归档页面.更喜欢这种线性的时间排列.  在修整完了博客页面之后,我开始对写文章的过程进行一些思考和改进.之前的写作方式是,直接在typecho后台,进行编辑写作.其他还好,只有图片这一块,在网站上编写确实不够方便.我希望能够达成的效果是一键截图,压缩,上传,再粘贴.多方搜索之后[^1],最终,确定">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="图床和cdn代理">
 <meta property="og:url" content="https://minsummer.com/2022/05/14/%E5%9B%BE%E5%BA%8A%E5%92%8Ccdn%E4%BB%A3%E7%90%86/">
 <meta property="og:site_name" content="我是豆豆">
-<meta property="og:description" content="最近对博客的进行了一些修复,首先是对pinghsu主题进行了小更改,删除掉了页脚的信息,然后修改了一下归档页面.更喜欢这种线性的时间排列.      在修整完了博客页面之后,我开始对写文章的过程进行一些思考和改进.之前的写作方式是,直接在typecho后台,进行编辑写作.其他还好,只有图片这一块,在网站上编写确实不够方便.我希望能够达成的效果是一键截图,压缩,上传,再粘贴.多方搜索之后[^1]">
+<meta property="og:description" content="最近对博客的进行了一些修复,首先是对pinghsu主题进行了小更改,删除掉了页脚的信息,然后修改了一下归档页面.更喜欢这种线性的时间排列.  在修整完了博客页面之后,我开始对写文章的过程进行一些思考和改进.之前的写作方式是,直接在typecho后台,进行编辑写作.其他还好,只有图片这一块,在网站上编写确实不够方便.我希望能够达成的效果是一键截图,压缩,上传,再粘贴.多方搜索之后[^1],最终,确定">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220514103409.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220514111153.png">
@@ -91,8 +91,9 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js" defer></script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
+  <script class="next-config" data-name="katex" type="application/json">{"copy_tex_js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js","integrity":"sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs="}}</script>
+  <script src="/js/third-party/math/katex.js" defer></script>
 
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3599006834125162"
@@ -137,7 +138,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">363</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">199</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">367</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">200</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -188,7 +189,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-VScode"><span class="nav-number">1.</span> <span class="nav-text">markdown+VScode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#snipaste"><span class="nav-number">2.</span> <span class="nav-text">snipaste</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PicGo-GitHub%E8%87%AA%E5%BB%BA%E5%9B%BE%E5%BA%8A"><span class="nav-number">3.</span> <span class="nav-text">PicGo+GitHub自建图床</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsdelivr%E7%9A%84cdn%E5%8A%A0%E9%80%9F"><span class="nav-number">4.</span> <span class="nav-text">jsdelivr的cdn加速</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E7%9A%84%E5%86%99%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">5.</span> <span class="nav-text">完整的写作流程</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#markdownvscode"><span class="nav-number">1.</span> <span class="nav-text"> markdown+VScode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#snipaste"><span class="nav-number">2.</span> <span class="nav-text"> snipaste</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#picgogithub%E8%87%AA%E5%BB%BA%E5%9B%BE%E5%BA%8A"><span class="nav-number">3.</span> <span class="nav-text"> PicGo+GitHub自建图床</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsdelivr%E7%9A%84cdn%E5%8A%A0%E9%80%9F"><span class="nav-number">4.</span> <span class="nav-text"> jsdelivr的cdn加速</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E7%9A%84%E5%86%99%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">5.</span> <span class="nav-text"> 完整的写作流程</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -201,7 +202,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -212,7 +213,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">363</span>
+        <span class="site-state-item-count">367</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -330,42 +331,49 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>  最近对博客的进行了一些修复,首先是对pinghsu主题进行了小更改,删除掉了页脚的信息,然后修改了一下归档页面.更喜欢这种线性的时间排列.</p>
-<p>  <img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220514103409.png" alt="20220514103409"></p>
-<p>  在修整完了博客页面之后,我开始对写文章的过程进行一些思考和改进.之前的写作方式是,直接在typecho后台,进行编辑写作.其他还好,只有图片这一块,在网站上编写确实不够方便.我希望能够达成的效果是一键截图,压缩,上传,再粘贴.多方搜索之后[^1],最终,确定了:VScode+PicGo+snipaste的完美组合.</p>
-<h2 id="markdown-VScode"><a href="#markdown-VScode" class="headerlink" title="markdown+VScode"></a>markdown+VScode</h2><p>  首先,typecho是支持markdown的,而什么是markdown呢.</p>
+    <div class="post-body" itemprop="articleBody"><p>最近对博客的进行了一些修复,首先是对pinghsu主题进行了小更改,删除掉了页脚的信息,然后修改了一下归档页面.更喜欢这种线性的时间排列.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220514103409.png" alt="20220514103409" /></p>
+<p>在修整完了博客页面之后,我开始对写文章的过程进行一些思考和改进.之前的写作方式是,直接在typecho后台,进行编辑写作.其他还好,只有图片这一块,在网站上编写确实不够方便.我希望能够达成的效果是一键截图,压缩,上传,再粘贴.多方搜索之后[^1],最终,确定了:VScode+PicGo+snipaste的完美组合.</p>
+<h2 id="markdownvscode"><a class="markdownIt-Anchor" href="#markdownvscode"></a> markdown+VScode</h2>
+<p>首先,typecho是支持markdown的,而什么是markdown呢.</p>
 <blockquote>
 <p>Markdown是一种轻量级标记语言,创始人为约翰·格鲁伯。它允许人们使用易读易写的纯文本格式编写文档,然后转换成有效的XHTML文档。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性</p>
 </blockquote>
-<p>  简单而言就是通过一些#!符号将文章的呈现初一些段落,标题,而之前实现这个需要用word才能实现.而为了满足截图,上传一体化的操作,我选择了传说中的All in one 的VScode.</p>
-<p>  VScode作为一个IDE,他不仅可以用来编程,也可以用来编写markdown语句,只要下载一个插件:markdown All in One</p>
-<p>  <img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220514111153.png" alt="20220514111153"></p>
-<p>  然后创建文档的时候,把后缀名改为.md即可.系统自动识别为markdown文档.而且由于我不喜欢大小写转换,所以一般都是直接全部小写,等到了写完,再使用VScode自带的更改匹配项,直接全部改正.方便轻松.</p>
-<h2 id="snipaste"><a href="#snipaste" class="headerlink" title="snipaste"></a>snipaste</h2><p>  在解决完写作平台之后,我们就要实现一个截图,压缩的问题.一般而言我的图片都是直接当场截图的,所以这边推荐一个神器:snipaste[^2].这是一款桌面截图软件,而且支持特定格式输出,同时自带压缩.所以我们可以直接截图之后再让它自动压缩,达到我们压缩图片的目的.</p>
-<p>  <img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220514112053.png" alt="20220514112053"></p>
-<p>  这边几个参数仅供参考,图片质量测试过:让系统自动选择和自己手动设置到压缩80%是一样的.然后后缀格式建议使用.jpg,同一个截图界面.png会比.jpg高一半以上.至于其他的格式并没有测试过.</p>
-<h2 id="PicGo-GitHub自建图床"><a href="#PicGo-GitHub自建图床" class="headerlink" title="PicGo+GitHub自建图床"></a>PicGo+GitHub自建图床</h2><p>  在图片截图之后,我们就要上传图床然后插入链接.图床服务简单而言就是将图片存储在别的地方,然后通过网络加载.这样做有两个好处:</p>
+<p>简单而言就是通过一些#!符号将文章的呈现初一些段落,标题,而之前实现这个需要用word才能实现.而为了满足截图,上传一体化的操作,我选择了传说中的All in one 的VScode.</p>
+<p>VScode作为一个IDE,他不仅可以用来编程,也可以用来编写markdown语句,只要下载一个插件:markdown All in One</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220514111153.png" alt="20220514111153" /></p>
+<p>然后创建文档的时候,把后缀名改为.md即可.系统自动识别为markdown文档.而且由于我不喜欢大小写转换,所以一般都是直接全部小写,等到了写完,再使用VScode自带的更改匹配项,直接全部改正.方便轻松.</p>
+<h2 id="snipaste"><a class="markdownIt-Anchor" href="#snipaste"></a> snipaste</h2>
+<p>在解决完写作平台之后,我们就要实现一个截图,压缩的问题.一般而言我的图片都是直接当场截图的,所以这边推荐一个神器:snipaste[^2].这是一款桌面截图软件,而且支持特定格式输出,同时自带压缩.所以我们可以直接截图之后再让它自动压缩,达到我们压缩图片的目的.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220514112053.png" alt="20220514112053" /></p>
+<p>这边几个参数仅供参考,图片质量测试过:让系统自动选择和自己手动设置到压缩80%是一样的.然后后缀格式建议使用.jpg,同一个截图界面.png会比.jpg高一半以上.至于其他的格式并没有测试过.</p>
+<h2 id="picgogithub自建图床"><a class="markdownIt-Anchor" href="#picgogithub自建图床"></a> PicGo+GitHub自建图床</h2>
+<p>在图片截图之后,我们就要上传图床然后插入链接.图床服务简单而言就是将图片存储在别的地方,然后通过网络加载.这样做有两个好处:</p>
 <ol>
-<li><p>我们无需将图片保存在本地服务器,减轻了存储的压力</p>
+<li>
+<p>我们无需将图片保存在本地服务器,减轻了存储的压力</p>
 </li>
-<li><p>后续维护方便,图片和文章不在同一个地方,哪怕后续更换图床,只需要打包下载,再上传到别的图床即可.</p>
+<li>
+<p>后续维护方便,图片和文章不在同一个地方,哪怕后续更换图床,只需要打包下载,再上传到别的图床即可.</p>
 </li>
 </ol>
-<p>   而PicGo就是这么一个将你的图片上传然后再返回对应链接得一个过程.这边推荐使用得是GitHub图床.国内的直接不考虑,需要域名备案.国外得有<a target="_blank" rel="noopener" href="https://sm.ms/login">SMMS</a>,<a target="_blank" rel="noopener" href="https://www.imgurl.org/">ImgURL</a>,两者都有容量和大小的限制.而<a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>本质上是一个代码仓库,所以没有容量和大小的限制.唯一得问题也许就是国内访问不能.但是我们可以使用cdn加速解决.</p>
-<p>   首先注册一个GitHub账号,然后创建一个仓库,私有和开放得都可以.</p>
-<p>   <img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220514121435.png" alt="20220514121435"></p>
-<p>   获取<a target="_blank" rel="noopener" href="https://github.com/settings/tokens">tokens</a>,这是一串代码,运行使用这串代码得人操作你的仓库数据,我们需要给PicGo申请一个,让它可以将图片上传到我们仓库内.</p>
-<p>   <img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220514121815.png" alt="20220514121815"></p>
-<p>   生成后你会获得一串代码,请记住,这串代码只显示一次.</p>
-<p>   然后进入VScode下载拓展PicGo:官方出品,保质保量.</p>
-<p>   <img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220514121920.png" alt="20220514121920"></p>
-<p>   进入拓展设置:</p>
-<p>   <img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220514122135.png" alt="20220514122135"></p>
-<p>   这样配置之后,你可以使用Ctrl+Alt+u把剪贴板内得图片上传,或者使用Ctrl+Alt+e打开文件管理器,选择图片上传.前者搭配snipaste,可以快速得将我们得截图上传到仓库.</p>
-<h2 id="jsdelivr的cdn加速"><a href="#jsdelivr的cdn加速" class="headerlink" title="jsdelivr的cdn加速"></a>jsdelivr的cdn加速</h2><p>  GitHub好用但是有时候国内访问艰难,所以我们需要给他cdn加速,操作方法很简单,直接再PicGo得custom url下填入:</p>
+<p>而PicGo就是这么一个将你的图片上传然后再返回对应链接得一个过程.这边推荐使用得是GitHub图床.国内的直接不考虑,需要域名备案.国外得有<a target="_blank" rel="noopener" href="https://sm.ms/login">SMMS</a>,<a target="_blank" rel="noopener" href="https://www.imgurl.org/">ImgURL</a>,两者都有容量和大小的限制.而<a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>本质上是一个代码仓库,所以没有容量和大小的限制.唯一得问题也许就是国内访问不能.但是我们可以使用cdn加速解决.</p>
+<p>首先注册一个GitHub账号,然后创建一个仓库,私有和开放得都可以.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220514121435.png" alt="20220514121435" /></p>
+<p>获取<a target="_blank" rel="noopener" href="https://github.com/settings/tokens">tokens</a>,这是一串代码,运行使用这串代码得人操作你的仓库数据,我们需要给PicGo申请一个,让它可以将图片上传到我们仓库内.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220514121815.png" alt="20220514121815" /></p>
+<p>生成后你会获得一串代码,请记住,这串代码只显示一次.</p>
+<p>然后进入VScode下载拓展PicGo:官方出品,保质保量.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220514121920.png" alt="20220514121920" /></p>
+<p>进入拓展设置:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220514122135.png" alt="20220514122135" /></p>
+<p>这样配置之后,你可以使用Ctrl+Alt+u把剪贴板内得图片上传,或者使用Ctrl+Alt+e打开文件管理器,选择图片上传.前者搭配snipaste,可以快速得将我们得截图上传到仓库.</p>
+<h2 id="jsdelivr的cdn加速"><a class="markdownIt-Anchor" href="#jsdelivr的cdn加速"></a> jsdelivr的cdn加速</h2>
+<p>GitHub好用但是有时候国内访问艰难,所以我们需要给他cdn加速,操作方法很简单,直接再PicGo得custom url下填入:</p>
 <p><code>https://cdn.jsdelivr.net/gh/用户名/仓库@master/</code></p>
 <p>即可.其中master代表得是branch分支,你配置写master得话,这里也要.然后你就会发现你插入得图片链接变为了cdn加速后得链接.</p>
-<h2 id="完整的写作流程"><a href="#完整的写作流程" class="headerlink" title="完整的写作流程"></a>完整的写作流程</h2><p>  经过以上一系列得配置,后续写作流程就变成再VScode上写,然后再复制粘贴到网页后台.其中图片会保存再GitHub仓库,而且内部得图片链接都是无需再进行修改,方便后续迁移.</p>
+<h2 id="完整的写作流程"><a class="markdownIt-Anchor" href="#完整的写作流程"></a> 完整的写作流程</h2>
+<p>经过以上一系列得配置,后续写作流程就变成再VScode上写,然后再复制粘贴到网页后台.其中图片会保存再GitHub仓库,而且内部得图片链接都是无需再进行修改,方便后续迁移.</p>
 <p>[^1]<a target="_blank" rel="noopener" href="https://sspai.com/post/65716">https://sspai.com/post/65716</a></p>
 <p>[^2]<a target="_blank" rel="noopener" href="https://zh.snipaste.com/">https://zh.snipaste.com/</a></p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
@@ -447,13 +455,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">313k</span>
+    <span title="站点总字数">314k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">18:59</span>
+    <span title="站点阅读时长">19:02</span>
   </span>
 </div>
 <div class="busuanzi-count">

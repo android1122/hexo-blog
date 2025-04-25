@@ -84,8 +84,9 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js" defer></script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
+  <script class="next-config" data-name="katex" type="application/json">{"copy_tex_js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js","integrity":"sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs="}}</script>
+  <script src="/js/third-party/math/katex.js" defer></script>
 
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3599006834125162"
@@ -130,7 +131,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">363</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">199</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">367</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">200</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -193,7 +194,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -204,7 +205,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">363</span>
+        <span class="site-state-item-count">367</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -324,13 +325,21 @@
     
     <div class="post-body" itemprop="articleBody"><p>好久不见得《黑镜》又更新了，我怀着激动的心情前来膜拜。黑镜一直都是科幻剧的巅峰，很多故事从立意上就硬核科幻。这一季一开始我就满怀着期待前来观看。</p>
 <span id="more"></span>
-<p>第一集的开始有点平淡，到了后面虽然看出来它是一部剧中剧，却依旧觉得一般。也许是我对黑镜的期待过高了吧。一想到黑镜系列，我就想到了：科幻，新颖，未来等等词汇，黑镜很大程度上是体现：在技术的支持下，我们要建立一个咋样的未来：是依靠他人评价来决定社会地位，还是用自己的克隆体来协助自己。科技的外表下是人的内核，是人要用科技来实现什么？技术是无罪的，重点是使用的人。<br>这一季开始也涉及了一些技术，但是总觉得无味。无论是应用的使用协议，还是不近人情的法律条款。如果你说你要描绘一个垄断大企业创造的压迫普通人的世界，这，可以，但是还不够。这个题材已经烂大街了。<br>所以知道最后结局的反转，我才觉得这有点意思。当我们发现女主原来也是通过量子计算演算出来的时候，也许还有点小惊喜。直到女主的砸计算机前的最后一句：“因为我站在这里这个事实表示，原版的琼已经在现实站在这里，我想怎样都不要紧，因为这一切所基于的原事件已经发生，这不是我得决定，是琼的决定。”<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/121-%E9%BB%91%E9%95%9C%E7%AC%AC6%E5%AD%A3%E7%AC%AC%E4%B8%80%E9%9B%86-2023-06-23-12-45-45.png" alt="121-黑镜第6季第一集-2023-06-23-12-45-45"></p>
-<p>这就很有意思了：<br>从电影中我们可以看出，其实剧中的人是可以有点偏差的，无论是行为还是言语，说明她们有一定的自主性。所以在不断的迭代和偏差，我相信在某一层级的剧里面，是可以出现不同的选择的的；而剧中的琼这句话就可以让人意味深长，首先这话肯定不是原版的琼说的，是她自己说的。因为原版的琼肯定不需要也不用说这些话。那么这句话就是剧版的琼自己的发言，他的发言就有两种解读了：</p>
+<p>第一集的开始有点平淡，到了后面虽然看出来它是一部剧中剧，却依旧觉得一般。也许是我对黑镜的期待过高了吧。一想到黑镜系列，我就想到了：科幻，新颖，未来等等词汇，黑镜很大程度上是体现：在技术的支持下，我们要建立一个咋样的未来：是依靠他人评价来决定社会地位，还是用自己的克隆体来协助自己。科技的外表下是人的内核，是人要用科技来实现什么？技术是无罪的，重点是使用的人。<br />
+这一季开始也涉及了一些技术，但是总觉得无味。无论是应用的使用协议，还是不近人情的法律条款。如果你说你要描绘一个垄断大企业创造的压迫普通人的世界，这，可以，但是还不够。这个题材已经烂大街了。<br />
+所以知道最后结局的反转，我才觉得这有点意思。当我们发现女主原来也是通过量子计算演算出来的时候，也许还有点小惊喜。直到女主的砸计算机前的最后一句：“因为我站在这里这个事实表示，原版的琼已经在现实站在这里，我想怎样都不要紧，因为这一切所基于的原事件已经发生，这不是我得决定，是琼的决定。”<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/121-%E9%BB%91%E9%95%9C%E7%AC%AC6%E5%AD%A3%E7%AC%AC%E4%B8%80%E9%9B%86-2023-06-23-12-45-45.png" alt="121-黑镜第6季第一集-2023-06-23-12-45-45" /></p>
+<p>这就很有意思了：<br />
+从电影中我们可以看出，其实剧中的人是可以有点偏差的，无论是行为还是言语，说明她们有一定的自主性。所以在不断的迭代和偏差，我相信在某一层级的剧里面，是可以出现不同的选择的的；而剧中的琼这句话就可以让人意味深长，首先这话肯定不是原版的琼说的，是她自己说的。因为原版的琼肯定不需要也不用说这些话。那么这句话就是剧版的琼自己的发言，他的发言就有两种解读了：</p>
 <ol>
 <li>我知道我得宿命，所以我无法选择，只能破坏这一切</li>
 <li>我知道我的宿命，所以我选择了，坦然接受我得命运。</li>
 </ol>
-<p>宿命一直是探讨人性中不可或缺的一点，在我们对我们的来一无所知之后，又有人提出了，我们对我们的去也不甚了解。然而人类讨厌一无所知，他们就给自己定下了去的理由，无论是转生来世，还是去往极乐。总归是界定了一个去的目标。然而一些人不界定满足一个大的，不可实现的目标，提出了宿命，提出了命运，这一具体到每个人头上的目标。当人类为一个集体时，可以忽略一些利益，荣辱。但是具体到每个人身上就变得让人恐惧，当一个算命先生告诉你，你的一辈子将碌碌无为时，你会如何做想，尤其再具体到你的工作，你的妻子，你的家庭。当他告诉你的细节越多，你就将越加的失望，人类有种自我实现的意愿，当一个人被告知你将会失败，他的内心会将这个念想实现。诚然，不少过往的经典都是在告诉我们人定胜天，让我们逃出这一自我实现的悲剧，感叹人类的伟大。<br>而黑镜中的剧版琼的发言正是对宿命存在的肯定，那么接下来是打破，还是接受；或者说你连选择的权力都没有，只能接受。<br>宿命就像是一个牢笼，禁锢着我们。我并不是要赞颂人类的伟大，但是正如剧中探讨的，如果我们仅仅是别人的投影呢？我们自认为自己做的一切选择都是自己的，其实不过是别人的投影。别人做了选择，然后你复制而已。当中间夹杂着你的意志之后，你会迷茫。我砸下去是我想，还是别人的投影。也许有人说：重要么？<br>我觉得重要，弗洛伊德将我分成自我，本我就是为了探清人的意志，当一切都是投影的时候，我们的来去都已经知晓，那么还剩下什么？——缸中之脑么？<br>这就是我喜欢黑镜的地方，这种技术上的进步，有时候会带来更多人性的思考，有些是道德方面，有些则是人本身。技术只是外在，人才是经久不衰的主题。</p>
+<p>宿命一直是探讨人性中不可或缺的一点，在我们对我们的来一无所知之后，又有人提出了，我们对我们的去也不甚了解。然而人类讨厌一无所知，他们就给自己定下了去的理由，无论是转生来世，还是去往极乐。总归是界定了一个去的目标。然而一些人不界定满足一个大的，不可实现的目标，提出了宿命，提出了命运，这一具体到每个人头上的目标。当人类为一个集体时，可以忽略一些利益，荣辱。但是具体到每个人身上就变得让人恐惧，当一个算命先生告诉你，你的一辈子将碌碌无为时，你会如何做想，尤其再具体到你的工作，你的妻子，你的家庭。当他告诉你的细节越多，你就将越加的失望，人类有种自我实现的意愿，当一个人被告知你将会失败，他的内心会将这个念想实现。诚然，不少过往的经典都是在告诉我们人定胜天，让我们逃出这一自我实现的悲剧，感叹人类的伟大。<br />
+而黑镜中的剧版琼的发言正是对宿命存在的肯定，那么接下来是打破，还是接受；或者说你连选择的权力都没有，只能接受。<br />
+宿命就像是一个牢笼，禁锢着我们。我并不是要赞颂人类的伟大，但是正如剧中探讨的，如果我们仅仅是别人的投影呢？我们自认为自己做的一切选择都是自己的，其实不过是别人的投影。别人做了选择，然后你复制而已。当中间夹杂着你的意志之后，你会迷茫。我砸下去是我想，还是别人的投影。也许有人说：重要么？<br />
+我觉得重要，弗洛伊德将我分成自我，本我就是为了探清人的意志，当一切都是投影的时候，我们的来去都已经知晓，那么还剩下什么？——缸中之脑么？<br />
+这就是我喜欢黑镜的地方，这种技术上的进步，有时候会带来更多人性的思考，有些是道德方面，有些则是人本身。技术只是外在，人才是经久不衰的主题。</p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
 
@@ -409,13 +418,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">313k</span>
+    <span title="站点总字数">314k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">18:59</span>
+    <span title="站点阅读时长">19:02</span>
   </span>
 </div>
 <div class="busuanzi-count">

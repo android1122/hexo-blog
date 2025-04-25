@@ -81,8 +81,9 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js" defer></script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
+  <script class="next-config" data-name="katex" type="application/json">{"copy_tex_js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js","integrity":"sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs="}}</script>
+  <script src="/js/third-party/math/katex.js" defer></script>
 
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3599006834125162"
@@ -127,7 +128,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">363</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">199</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">367</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">200</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -190,7 +191,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -201,7 +202,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">363</span>
+        <span class="site-state-item-count">367</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -323,30 +324,46 @@
 <span id="more"></span>
 <p>相较于侃大山，数据推演有着两大重大的特征：</p>
 <ol>
-<li>全面<br>我们侃大山往往拿着最近的一个数据，比如进出口量。单一的数据无法推演比较精确的结果。例如以8月份钢材进出口量增多为例，原因有很多：8月份国内台风频发，有些公司提前发货。也有可能是欧洲关税，导致国内公司多发货在国外囤货，防止后续关税提升带来的成本上涨。所以，数据的变换原因需要全面的数据，而不是片面的涨跌幅。</li>
-<li>假设<br>我们推演基于的是一个行业公认，或者大多数认可的前提。比如：这次国内环境变化的原因：1. 境外产能迁移导致出口乏力；2. 人口红利降低，导致房价出现拐点；3. 居民消费信心不足。就这三点也可以引起不同的争议：房价拐点是因为干预，而不是人口。所以推演假设的前提决定了推演结果的接受程度，而往往侃大山之类，连最基本的假设都没有共识，更遑论接受结论。</li>
+<li>全面<br />
+我们侃大山往往拿着最近的一个数据，比如进出口量。单一的数据无法推演比较精确的结果。例如以8月份钢材进出口量增多为例，原因有很多：8月份国内台风频发，有些公司提前发货。也有可能是欧洲关税，导致国内公司多发货在国外囤货，防止后续关税提升带来的成本上涨。所以，数据的变换原因需要全面的数据，而不是片面的涨跌幅。</li>
+<li>假设<br />
+我们推演基于的是一个行业公认，或者大多数认可的前提。比如：这次国内环境变化的原因：1. 境外产能迁移导致出口乏力；2. 人口红利降低，导致房价出现拐点；3. 居民消费信心不足。就这三点也可以引起不同的争议：房价拐点是因为干预，而不是人口。所以推演假设的前提决定了推演结果的接受程度，而往往侃大山之类，连最基本的假设都没有共识，更遑论接受结论。</li>
 </ol>
-<p>基于以上原则，我们来试试推演一下：<br>假设或者说前提：</p>
+<p>基于以上原则，我们来试试推演一下：<br />
+假设或者说前提：</p>
 <ul>
 <li>中国的三架马车是：出口，消费，投资</li>
 </ul>
-<p>首先说消费，消费一般具体到普通人群CPI，工业PPI。而投资，由于国内体制和政策原因，很多时候投资我们看中的是地方债务，地方发债，这是由政府牵头的投资，然后就是社会融资数据。最后是出口，这个可以直接查看海关出口数据进行分析。<br>从三驾马车的情况，我们可以分析出目前国内经济情况从宏观上来说好和坏，仅此而已。<br>推演的是需要目标的，尤其是宏观推演，在确定完总体环境之后，我们还需要对一些细类数据进行二次分析，这很多时候需要wind的数据库细节，但是你可以从别人的宏观研报中获取相关数据，但不需要甄别。<br>最后是分析国际环境或者形势时，我们有几个比较明显的判断：</p>
+<p>首先说消费，消费一般具体到普通人群CPI，工业PPI。而投资，由于国内体制和政策原因，很多时候投资我们看中的是地方债务，地方发债，这是由政府牵头的投资，然后就是社会融资数据。最后是出口，这个可以直接查看海关出口数据进行分析。<br />
+从三驾马车的情况，我们可以分析出目前国内经济情况从宏观上来说好和坏，仅此而已。<br />
+推演的是需要目标的，尤其是宏观推演，在确定完总体环境之后，我们还需要对一些细类数据进行二次分析，这很多时候需要wind的数据库细节，但是你可以从别人的宏观研报中获取相关数据，但不需要甄别。<br />
+最后是分析国际环境或者形势时，我们有几个比较明显的判断：</p>
 <ol>
 <li>德国还算原则意义上的制造业国家，所以国家的生产经理指数对他们来说很重要</li>
 <li>英国和美国的服务业占比很高，这里的服务很多指向的是金融，IT等高附加值的行业</li>
 <li>美国的股票和中国的地产一样囤积着居民大量财富</li>
 </ol>
 <p>最后，需要注意的是，很多时候宏观数据是用来判断好坏的，并没有具体到行业或者领域，更多的是一种基本面的判断。更多时候我们用来解释某个政策的行为。</p>
-<hr>
-<p>各大指数：<br>消费：</p>
+<hr />
+<p>各大指数：<br />
+消费：</p>
 <ol>
-<li>CPI-消费者物价指数<br>数据来源：<a target="_blank" rel="noopener" href="https://www.stats.gov.cn/sj/">国家统计局</a><br> 公布日期：每月9号<br> 逻辑依据：通胀表现，一般关注同比和环比，同比数据会趋于稳定，后续需要看环比数据。<br> 使用方法：<br> 1. 维度很多，首先重要的是同比环比<br> 2. 需要第二维度，可以看出价格上限。<br> 3. 更多明细数据，要么可以查看券商的分析报告，要么需要自己买wind的数据库。<br> 4. <a target="_blank" rel="noopener" href="https://data.eastmoney.com/report/macresearch.jshtml">东方财富数据中心</a></li>
+<li>CPI-消费者物价指数<br />
+数据来源：<a target="_blank" rel="noopener" href="https://www.stats.gov.cn/sj/">国家统计局</a><br />
+公布日期：每月9号<br />
+逻辑依据：通胀表现，一般关注同比和环比，同比数据会趋于稳定，后续需要看环比数据。<br />
+使用方法：<br />
+1. 维度很多，首先重要的是同比环比<br />
+2. 需要第二维度，可以看出价格上限。<br />
+3. 更多明细数据，要么可以查看券商的分析报告，要么需要自己买wind的数据库。<br />
+4. <a target="_blank" rel="noopener" href="https://data.eastmoney.com/report/macresearch.jshtml">东方财富数据中心</a></li>
 </ol>
 <p>投资</p>
 <ol>
 <li>政府端发债-地方债</li>
 <li>广义政府债</li>
-<li>房价-地产<ol>
+<li>房价-地产
+<ol>
 <li>冰山70房价指数</li>
 <li>一线城市冰山指数</li>
 </ol>
@@ -434,13 +451,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">313k</span>
+    <span title="站点总字数">314k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">18:59</span>
+    <span title="站点阅读时长">19:02</span>
   </span>
 </div>
 <div class="busuanzi-count">

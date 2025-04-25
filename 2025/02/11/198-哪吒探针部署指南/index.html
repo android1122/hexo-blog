@@ -80,8 +80,9 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js" defer></script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
+  <script class="next-config" data-name="katex" type="application/json">{"copy_tex_js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js","integrity":"sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs="}}</script>
+  <script src="/js/third-party/math/katex.js" defer></script>
 
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3599006834125162"
@@ -126,7 +127,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">363</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">199</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">367</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">200</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -177,7 +178,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%83%A8%E7%BD%B2"><span class="nav-number">1.</span> <span class="nav-text">服务端部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%83%A8%E7%BD%B2"><span class="nav-number">2.</span> <span class="nav-text">客户端部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%83%A8%E7%BD%B2"><span class="nav-number">1.</span> <span class="nav-text"> 服务端部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%83%A8%E7%BD%B2"><span class="nav-number">2.</span> <span class="nav-text"> 客户端部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text"> 总结</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -190,7 +191,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -201,7 +202,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">363</span>
+        <span class="site-state-item-count">367</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -338,16 +339,30 @@
     
     <div class="post-body" itemprop="articleBody"><p>我之前用的是serverstatus，服务端直接docker部署，客户端python命令文件。好处是部署简单，功能够用，但是不如哪吒面板好看，而且客户端需要python对一些性能比较差的机器就无法监控，比如openwrt路由器，这次的想法就是将所有的设备进行监控。</p>
 <span id="more"></span>
-<h2 id="服务端部署"><a href="#服务端部署" class="headerlink" title="服务端部署"></a>服务端部署</h2><p>哪吒提供了自己的一键安装脚本，包含管理功能，但是我希望可以直接部署到我自己的docker compose里面，于是我看来下<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/nezhahq/scripts/main/install.sh">官方的安装脚本</a>，从中看了下docker地址，修改成自己版本</p>
+<h2 id="服务端部署"><a class="markdownIt-Anchor" href="#服务端部署"></a> 服务端部署</h2>
+<p>哪吒提供了自己的一键安装脚本，包含管理功能，但是我希望可以直接部署到我自己的docker compose里面，于是我看来下<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/nezhahq/scripts/main/install.sh">官方的安装脚本</a>，从中看了下docker地址，修改成自己版本</p>
 <blockquote>
-<p>services:<br>  dashboard:<br>    image:ghcr.io&#x2F;nezhahq&#x2F;nezha:latest<br>    container_name: nezha-dashboard<br>    restart: always<br>    volumes:<br>      - 【你的存储路径】:&#x2F;dashboard&#x2F;data<br>    ports:<br>      - 8008:8008</p>
+<p>services:<br />
+dashboard:<br />
+image:ghcr.io/nezhahq/nezha:latest<br />
+container_name: nezha-dashboard<br />
+restart: always<br />
+volumes:<br />
+- 【你的存储路径】:/dashboard/data<br />
+ports:<br />
+- 8008:8008</p>
 </blockquote>
 <p>我后续是准备使用caddy2进行代理的，根据<a target="_blank" rel="noopener" href="https://nezha.wiki/guide/q3.html">官方</a>的配置：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">dashboard.example.com &#123;</span><br><span class="line">    @grpcProto &#123;</span><br><span class="line">        path /proto.NezhaService/*</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    reverse_proxy @grpcProto &#123;</span><br><span class="line">        header_up Host &#123;host&#125;</span><br><span class="line">        header_up nz-realip &#123;http.CF-Connecting-IP&#125; # 替换为你的 CDN 提供的私有 header，此处为 CloudFlare 默认</span><br><span class="line">        # header_up nz-realip &#123;remote_host&#125; # 如果你使用caddy作为最外层，就把上面一行注释掉，启用此行</span><br><span class="line">        transport http &#123;</span><br><span class="line">            versions h2c</span><br><span class="line">            read_buffer 4096</span><br><span class="line">        &#125;</span><br><span class="line">        to localhost:8008</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    reverse_proxy &#123;</span><br><span class="line">        header_up Host &#123;host&#125;</span><br><span class="line">        header_up Origin https://&#123;host&#125;</span><br><span class="line">        header_up nz-realip &#123;http.CF-Connecting-IP&#125; # 替换为你的 CDN 提供的私有 header，此处为 CloudFlare 默认</span><br><span class="line">        # header_up nz-realip &#123;remote_host&#125; # 如果你使用caddy作为最外层，就把上面一行注释掉，启用此行</span><br><span class="line">        transport http &#123;</span><br><span class="line">            read_buffer 16384</span><br><span class="line">        &#125;</span><br><span class="line">        to localhost:8008</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>PS:官方没有说明这个caddy配置文件是v1的还是v2的，但是我根据reverse_proxy判断这个应该是v2的。</p>
 <p>这样即可部署完成。</p>
-<h2 id="客户端部署"><a href="#客户端部署" class="headerlink" title="客户端部署"></a>客户端部署</h2><p>哪吒的客户端是我选择它的重要因素，除开普通的Linux，连比较特殊群晖；openwrt都有对应的客户端。<br>部署客户端根据一键命令部署，但是完成之后并没有效果，根据官方的一些排查也没有个结果，重点是脚本安装，我找不到对应的输出日志信息。最后不得已放弃。<br>PS:<br>一键脚本不要乱使用啊，我安装完成之后，系统负载长期100%，导致服务器被关机，一开始以为是docker问题，但是docker我都删除了，还是占用高，估计是后台定时发送或者我脚本执行多次导致进程占用，但是我也按照提示卸载了对应的脚本安装。最后只能以重装系统解决。还好数据都在。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>虽然是开源，但是好多步骤都是一键脚本安装，没有提供自我部署的步骤。而且安装完服务端docker之后，系统cpu占用长期为100%。最后我不得已放弃了，有些说是版本问题，我现在用的是V1最新版，换个旧版就行。实在是无力折腾，于是想着还是搞好我的serverstatus吧。</p>
+<h2 id="客户端部署"><a class="markdownIt-Anchor" href="#客户端部署"></a> 客户端部署</h2>
+<p>哪吒的客户端是我选择它的重要因素，除开普通的Linux，连比较特殊群晖；openwrt都有对应的客户端。<br />
+部署客户端根据一键命令部署，但是完成之后并没有效果，根据官方的一些排查也没有个结果，重点是脚本安装，我找不到对应的输出日志信息。最后不得已放弃。<br />
+PS:<br />
+一键脚本不要乱使用啊，我安装完成之后，系统负载长期100%，导致服务器被关机，一开始以为是docker问题，但是docker我都删除了，还是占用高，估计是后台定时发送或者我脚本执行多次导致进程占用，但是我也按照提示卸载了对应的脚本安装。最后只能以重装系统解决。还好数据都在。</p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>虽然是开源，但是好多步骤都是一键脚本安装，没有提供自我部署的步骤。而且安装完服务端docker之后，系统cpu占用长期为100%。最后我不得已放弃了，有些说是版本问题，我现在用的是V1最新版，换个旧版就行。实在是无力折腾，于是想着还是搞好我的serverstatus吧。</p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
 
@@ -385,13 +400,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2025/02/10/196-ADguardHome%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8C%97/" rel="prev" title="ADguardHome部署指北">
-                  <i class="fa fa-angle-left"></i> ADguardHome部署指北
+                <a href="/2025/02/11/197-%E9%A3%9E%E7%89%9BOS%E4%BA%91%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%92%8C%E5%8F%96%E5%9B%9E/" rel="prev" title="飞牛OS云端数据备份和取回">
+                  <i class="fa fa-angle-left"></i> 飞牛OS云端数据备份和取回
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2025/02/11/197-%E9%A3%9E%E7%89%9BOS%E4%BA%91%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%92%8C%E5%8F%96%E5%9B%9E/" rel="next" title="飞牛OS云端数据备份和取回">
-                  飞牛OS云端数据备份和取回 <i class="fa fa-angle-right"></i>
+                <a href="/2025/03/16/199-2025%E4%BC%A0%E5%AE%B6%E5%AE%9D%E6%8C%87%E5%8C%97/" rel="next" title="2025传家宝指北">
+                  2025传家宝指北 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -424,13 +439,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">313k</span>
+    <span title="站点总字数">314k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">18:59</span>
+    <span title="站点阅读时长">19:02</span>
   </span>
 </div>
 <div class="busuanzi-count">

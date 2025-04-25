@@ -22,12 +22,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"minsummer.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="今天遇见一个十分无语得事情：进入Windows得安全模式，提示：pin码无法使用，需要重新设置，点击重新设置却又没有任何效果。安全模式下照相机驱动都没有，无法使用hello world得脸部登陆，于是就陷入了一个尴尬得界面。安全模式下甚至无法使用网络，这就意味着，如果你选择重新安装系统保留程序，它会提示你登陆你的微软账号，但是由于没有网络，所以它无法验证你的密码。最后我深思了一下，总结了一下发生得">
+    <meta name="description" content="今天遇见一个十分无语得事情：进入Windows得安全模式，提示：pin码无法使用，需要重新设置，点击重新设置却又没有任何效果。安全模式下照相机驱动都没有，无法使用hello world得脸部登陆，于是就陷入了一个尴尬得界面。 安全模式下甚至无法使用网络，这就意味着，如果你选择重新安装系统保留程序，它会提示你登陆你的微软账号，但是由于没有网络，所以它无法验证你的密码。最后我深思了一下，总结了一下发生">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="windows 无法使用pin码登陆">
 <meta property="og:url" content="https://minsummer.com/2023/06/30/124-windows%E7%99%BB%E9%99%86pin%E7%A0%81%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8/">
 <meta property="og:site_name" content="我是豆豆">
-<meta property="og:description" content="今天遇见一个十分无语得事情：进入Windows得安全模式，提示：pin码无法使用，需要重新设置，点击重新设置却又没有任何效果。安全模式下照相机驱动都没有，无法使用hello world得脸部登陆，于是就陷入了一个尴尬得界面。安全模式下甚至无法使用网络，这就意味着，如果你选择重新安装系统保留程序，它会提示你登陆你的微软账号，但是由于没有网络，所以它无法验证你的密码。最后我深思了一下，总结了一下发生得">
+<meta property="og:description" content="今天遇见一个十分无语得事情：进入Windows得安全模式，提示：pin码无法使用，需要重新设置，点击重新设置却又没有任何效果。安全模式下照相机驱动都没有，无法使用hello world得脸部登陆，于是就陷入了一个尴尬得界面。 安全模式下甚至无法使用网络，这就意味着，如果你选择重新安装系统保留程序，它会提示你登陆你的微软账号，但是由于没有网络，所以它无法验证你的密码。最后我深思了一下，总结了一下发生">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/124-windows%E7%99%BB%E9%99%86pin%E7%A0%81%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8-2023-07-01-19-54-03.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/124-windows%E7%99%BB%E9%99%86pin%E7%A0%81%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8-2023-07-01-19-51-19.png">
@@ -88,8 +88,9 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js" defer></script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
+  <script class="next-config" data-name="katex" type="application/json">{"copy_tex_js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js","integrity":"sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs="}}</script>
+  <script src="/js/third-party/math/katex.js" defer></script>
 
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3599006834125162"
@@ -134,7 +135,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">363</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">199</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">367</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">200</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -185,7 +186,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%9B%A0"><span class="nav-number">1.</span> <span class="nav-text">原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3"><span class="nav-number">2.</span> <span class="nav-text">解决</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%9B%A0"><span class="nav-number">1.</span> <span class="nav-text"> 原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3"><span class="nav-number">2.</span> <span class="nav-text"> 解决</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text"> 总结</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -198,7 +199,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -209,7 +210,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">363</span>
+        <span class="site-state-item-count">367</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -327,13 +328,31 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>今天遇见一个十分无语得事情：进入Windows得安全模式，提示：pin码无法使用，需要重新设置，点击重新设置却又没有任何效果。安全模式下照相机驱动都没有，无法使用hello world得脸部登陆，于是就陷入了一个尴尬得界面。<br>安全模式下甚至无法使用网络，这就意味着，如果你选择重新安装系统保留程序，它会提示你登陆你的微软账号，但是由于没有网络，所以它无法验证你的密码。最后我深思了一下，总结了一下发生得原因和解决方案。</p>
+    <div class="post-body" itemprop="articleBody"><p>今天遇见一个十分无语得事情：进入Windows得安全模式，提示：pin码无法使用，需要重新设置，点击重新设置却又没有任何效果。安全模式下照相机驱动都没有，无法使用hello world得脸部登陆，于是就陷入了一个尴尬得界面。<br />
+安全模式下甚至无法使用网络，这就意味着，如果你选择重新安装系统保留程序，它会提示你登陆你的微软账号，但是由于没有网络，所以它无法验证你的密码。最后我深思了一下，总结了一下发生得原因和解决方案。</p>
 <span id="more"></span>
-<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>如果你恰好有个微软账号，且买电脑时候没有进入本地账号，或者长期是用微软账号作为自己日常使用得电脑得用户，那么一旦进入安全模式就会出现这个问题。<br>我得电脑是yoga 14s AMD锐龙版本，最近遇见得问题是重启。于是在微软社区查找了一番之后，找到<a target="_blank" rel="noopener" href="https://answers.microsoft.com/zh-hans/windows/forum/all/windows%E7%BB%8F%E5%B8%B8%E6%97%A0%E6%95%85/201ba6a7-c54b-4bb1-aa8f-1fa17bd16af6">这么一个问题</a>和我得情况很像。<br>根据建议，我选择了干净启动：<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/124-windows%E7%99%BB%E9%99%86pin%E7%A0%81%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8-2023-07-01-19-54-03.png" alt="124-windows登陆pin码无法使用-2023-07-01-19-54-03"><br>打开CMD，输入</p>
+<h2 id="原因"><a class="markdownIt-Anchor" href="#原因"></a> 原因</h2>
+<p>如果你恰好有个微软账号，且买电脑时候没有进入本地账号，或者长期是用微软账号作为自己日常使用得电脑得用户，那么一旦进入安全模式就会出现这个问题。<br />
+我得电脑是yoga 14s AMD锐龙版本，最近遇见得问题是重启。于是在微软社区查找了一番之后，找到<a target="_blank" rel="noopener" href="https://answers.microsoft.com/zh-hans/windows/forum/all/windows%E7%BB%8F%E5%B8%B8%E6%97%A0%E6%95%85/201ba6a7-c54b-4bb1-aa8f-1fa17bd16af6">这么一个问题</a>和我得情况很像。<br />
+根据建议，我选择了干净启动：<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/124-windows%E7%99%BB%E9%99%86pin%E7%A0%81%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8-2023-07-01-19-54-03.png" alt="124-windows登陆pin码无法使用-2023-07-01-19-54-03" /><br />
+打开CMD，输入</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msconfig</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/124-windows%E7%99%BB%E9%99%86pin%E7%A0%81%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8-2023-07-01-19-51-19.png" alt="124-windows登陆pin码无法使用-2023-07-01-19-51-19"><br>打开启动控制，选择基本启动，或者诊断启动。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/124-windows%E7%99%BB%E9%99%86pin%E7%A0%81%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8-2023-07-01-19-51-50.png" alt="124-windows登陆pin码无法使用-2023-07-01-19-51-50"><br>本意是为了排除系统其他程序对我的影响，确定重启的原因。<br>但是重启之后就陷入了一个死循环，系统没有启用摄像头和网络服务，由于我这台电脑当初直接登陆的是微软账号，所以系统提示我得pin码无法使用，但是我点击设置pin码却没有任何反应，因为大多数网络账号相关服务并没有启动，所以我就很尴尬的卡在那里，无法设置，也无法进入Windows。</p>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>首先你需要找到一个U盘，安装一个PE系统。<br>然后修改BIOS设置，进入PE系统。然后使用Dism ++ 打开一个本地账号，再重启电脑即可。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/124-windows%E7%99%BB%E9%99%86pin%E7%A0%81%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8-2023-07-01-20-07-22.png" alt="124-windows登陆pin码无法使用-2023-07-01-20-07-22"><br>进入系统之后，按照之前操作，把所有的服务都启动起来，再重启，切换到你日常使用的微软账号即可。后续如果害怕麻烦可以关闭本地账号。<br>本质是一些网络和账号登陆的服务没有被打开，导致无法进入Windows，所以我先通过本地无密码的账号进入系统，修改掉启动项就解决了。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总结下来就是这个问题好坑，我按照社区的教程进行操作没想到进入另一个循环，而且一开始我还想一个个服务启动，后面发现太多了，于是就直接选择新建本地账号进行操作。<br>而且最后我还是没有解决网银导致的重启问题，我于是卸载掉所有的网银助手看看后续如何，那个致使系统关机的文件还在那里。<br>Windows作为一个系统来说，现在越来越复杂，而且对于国内网银的支持真的是一言难尽，一个劲的推崇自己的Edeg浏览器，然而大家还是以ie为主。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/124-windows%E7%99%BB%E9%99%86pin%E7%A0%81%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8-2023-07-01-19-51-19.png" alt="124-windows登陆pin码无法使用-2023-07-01-19-51-19" /><br />
+打开启动控制，选择基本启动，或者诊断启动。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/124-windows%E7%99%BB%E9%99%86pin%E7%A0%81%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8-2023-07-01-19-51-50.png" alt="124-windows登陆pin码无法使用-2023-07-01-19-51-50" /><br />
+本意是为了排除系统其他程序对我的影响，确定重启的原因。<br />
+但是重启之后就陷入了一个死循环，系统没有启用摄像头和网络服务，由于我这台电脑当初直接登陆的是微软账号，所以系统提示我得pin码无法使用，但是我点击设置pin码却没有任何反应，因为大多数网络账号相关服务并没有启动，所以我就很尴尬的卡在那里，无法设置，也无法进入Windows。</p>
+<h2 id="解决"><a class="markdownIt-Anchor" href="#解决"></a> 解决</h2>
+<p>首先你需要找到一个U盘，安装一个PE系统。<br />
+然后修改BIOS设置，进入PE系统。然后使用Dism ++ 打开一个本地账号，再重启电脑即可。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/124-windows%E7%99%BB%E9%99%86pin%E7%A0%81%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8-2023-07-01-20-07-22.png" alt="124-windows登陆pin码无法使用-2023-07-01-20-07-22" /><br />
+进入系统之后，按照之前操作，把所有的服务都启动起来，再重启，切换到你日常使用的微软账号即可。后续如果害怕麻烦可以关闭本地账号。<br />
+本质是一些网络和账号登陆的服务没有被打开，导致无法进入Windows，所以我先通过本地无密码的账号进入系统，修改掉启动项就解决了。</p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>总结下来就是这个问题好坑，我按照社区的教程进行操作没想到进入另一个循环，而且一开始我还想一个个服务启动，后面发现太多了，于是就直接选择新建本地账号进行操作。<br />
+而且最后我还是没有解决网银导致的重启问题，我于是卸载掉所有的网银助手看看后续如何，那个致使系统关机的文件还在那里。<br />
+Windows作为一个系统来说，现在越来越复杂，而且对于国内网银的支持真的是一言难尽，一个劲的推崇自己的Edeg浏览器，然而大家还是以ie为主。</p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
 
@@ -413,13 +432,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">313k</span>
+    <span title="站点总字数">314k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">18:59</span>
+    <span title="站点阅读时长">19:02</span>
   </span>
 </div>
 <div class="busuanzi-count">

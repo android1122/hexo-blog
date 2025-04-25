@@ -81,8 +81,9 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js" defer></script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
+  <script class="next-config" data-name="katex" type="application/json">{"copy_tex_js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js","integrity":"sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs="}}</script>
+  <script src="/js/third-party/math/katex.js" defer></script>
 
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3599006834125162"
@@ -127,7 +128,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">363</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">199</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">367</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">200</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -178,7 +179,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#dockers%E9%83%A8%E7%BD%B2"><span class="nav-number">1.</span> <span class="nav-text">dockers部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">使用教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%80%BC%E5%BE%97%E6%B3%A8%E6%84%8F%E7%9A%84%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">值得注意的设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#dockers%E9%83%A8%E7%BD%B2"><span class="nav-number">1.</span> <span class="nav-text"> dockers部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text"> 使用教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%80%BC%E5%BE%97%E6%B3%A8%E6%84%8F%E7%9A%84%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text"> 值得注意的设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text"> 总结</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -191,7 +192,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -202,7 +203,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">363</span>
+        <span class="site-state-item-count">367</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -339,13 +340,21 @@
     
     <div class="post-body" itemprop="articleBody"><p><a target="_blank" rel="noopener" href="https://github.com/janeczku/calibre-web">Calibre-Web</a>一款知名的电子书阅读器，支持格式转换和OPDS。我个人有时候需要一个可以随时随地看书的地方，所以就部署了一下，之前出过一个教程，但是由于那时候官方没有推出docker只能用玩家自己编译得，所以那时候选择使用宝塔面板部署，这次趁机更新一下。</p>
 <span id="more"></span>
-<h2 id="dockers部署"><a href="#dockers部署" class="headerlink" title="dockers部署"></a>dockers部署</h2><p>compose 文件部署：<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">services:</span><br><span class="line">calibre-web:</span><br><span class="line">    image: lscr.io/linuxserver/calibre-web:latest</span><br><span class="line">    container_name: calibre-web</span><br><span class="line">    environment:</span><br><span class="line">    - PUID=1000</span><br><span class="line">    - PGID=1000</span><br><span class="line">    - TZ=CN/UTC</span><br><span class="line">    - DOCKER_MODS=linuxserver/mods:universal-calibre #x86-64电脑可选用来提供电子书格式转换得</span><br><span class="line">    volumes:</span><br><span class="line">    - /path/to/calibre-web/data:/config</span><br><span class="line">    - /path/to/calibre/library:/books</span><br><span class="line">    ports:</span><br><span class="line">    - 8083:8083</span><br><span class="line">    restart: unless-stopped</span><br></pre></td></tr></table></figure><br>命令行部署：</p>
+<h2 id="dockers部署"><a class="markdownIt-Anchor" href="#dockers部署"></a> dockers部署</h2>
+<p>compose 文件部署：</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">services:</span><br><span class="line">calibre-web:</span><br><span class="line">    image: lscr.io/linuxserver/calibre-web:latest</span><br><span class="line">    container_name: calibre-web</span><br><span class="line">    environment:</span><br><span class="line">    - PUID=1000</span><br><span class="line">    - PGID=1000</span><br><span class="line">    - TZ=CN/UTC</span><br><span class="line">    - DOCKER_MODS=linuxserver/mods:universal-calibre #x86-64电脑可选用来提供电子书格式转换得</span><br><span class="line">    volumes:</span><br><span class="line">    - /path/to/calibre-web/data:/config</span><br><span class="line">    - /path/to/calibre/library:/books</span><br><span class="line">    ports:</span><br><span class="line">    - 8083:8083</span><br><span class="line">    restart: unless-stopped</span><br></pre></td></tr></table></figure>
+<p>命令行部署：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">--name=calibre-web \</span><br><span class="line">-e PUID=1000 \</span><br><span class="line">-e PGID=1000 \</span><br><span class="line">-e TZ=CN/UTC \</span><br><span class="line">-e DOCKER_MODS=linuxserver/mods:universal-calibre `#x86-64电脑可选用来提供电子书格式转换得` \</span><br><span class="line">-p 8083:8083 \</span><br><span class="line">-v /path/to/calibre-web/data:/config \</span><br><span class="line">-v /path/to/calibre/library:/books \</span><br><span class="line">--restart unless-stopped \</span><br><span class="line">lscr.io/linuxserver/calibre-web:latest</span><br></pre></td></tr></table></figure>
 <p>其中得DOCKER_MODS参数可以删除，如果你得服务器是ARM或者不想用它的电子书格式转换功能。</p>
-<h2 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h2><p>登录得网址：<a href="http://localhost:8083，默认用户名：admin">http://localhost:8083，默认用户名：admin</a> 密码：admin123<br>第一次登录需要关联metadata数据库，则可以使用你之前得数据库，也可以<a target="_blank" rel="noopener" href="https://github.com/janeczku/calibre-web/raw/master/library/metadata.db">下载一个</a>。上传到你存放docker内，选择即可。<br>系统还提供Google Drive得api，即将你的数据库放在云端，后期随便你更换位置数据都不会丢失，但是个人建议还是保存metadata文件即可。<a target="_blank" rel="noopener" href="https://github.com/janeczku/calibre-web/wiki/G-Drive-Setup#using-google-drive-integration">官方提供教程</a></p>
-<h2 id="值得注意的设置"><a href="#值得注意的设置" class="headerlink" title="值得注意的设置"></a>值得注意的设置</h2><p>上面说的是直接用IP进行访问，如果你有需要将它发布到网络，可以查看<a target="_blank" rel="noopener" href="https://github.com/janeczku/calibre-web/wiki/Configuration#ui-configuration">官方教程</a>，十分详细。我这边再添加一个caddy 2的配置指南。</p>
+<h2 id="使用教程"><a class="markdownIt-Anchor" href="#使用教程"></a> 使用教程</h2>
+<p>登录得网址：<a target="_blank" rel="noopener" href="http://localhost:8083">http://localhost:8083</a>，默认用户名：admin 密码：admin123<br />
+第一次登录需要关联metadata数据库，则可以使用你之前得数据库，也可以<a target="_blank" rel="noopener" href="https://github.com/janeczku/calibre-web/raw/master/library/metadata.db">下载一个</a>。上传到你存放docker内，选择即可。<br />
+系统还提供Google Drive得api，即将你的数据库放在云端，后期随便你更换位置数据都不会丢失，但是个人建议还是保存metadata文件即可。<a target="_blank" rel="noopener" href="https://github.com/janeczku/calibre-web/wiki/G-Drive-Setup#using-google-drive-integration">官方提供教程</a></p>
+<h2 id="值得注意的设置"><a class="markdownIt-Anchor" href="#值得注意的设置"></a> 值得注意的设置</h2>
+<p>上面说的是直接用IP进行访问，如果你有需要将它发布到网络，可以查看<a target="_blank" rel="noopener" href="https://github.com/janeczku/calibre-web/wiki/Configuration#ui-configuration">官方教程</a>，十分详细。我这边再添加一个caddy 2的配置指南。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 阅读</span><br><span class="line">网址.com &#123;</span><br><span class="line">    encode zstd gzip</span><br><span class="line">    root * /usr/share/caddy</span><br><span class="line">    reverse_proxy  172.0..0.1:8083</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>现在docker部署已经十分简单，而且官方文档齐全，很多比较大的项目都已经开始注重文档了。如果有遇见问题可以评论交流，前提是你要查看log，百分之九十九的问题都是可以通过log查找到的。可以使用下面的命令进行查看，这个命令是实时的，可以通过刷新页面来查看对应的log。</p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>现在docker部署已经十分简单，而且官方文档齐全，很多比较大的项目都已经开始注重文档了。如果有遇见问题可以评论交流，前提是你要查看log，百分之九十九的问题都是可以通过log查找到的。可以使用下面的命令进行查看，这个命令是实时的，可以通过刷新页面来查看对应的log。</p>
 <blockquote>
 <p>docker logs  -f calibre-web</p>
 </blockquote>
@@ -427,13 +436,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">313k</span>
+    <span title="站点总字数">314k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">18:59</span>
+    <span title="站点阅读时长">19:02</span>
   </span>
 </div>
 <div class="busuanzi-count">

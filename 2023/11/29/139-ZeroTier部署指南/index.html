@@ -93,8 +93,9 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js" defer></script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
+  <script class="next-config" data-name="katex" type="application/json">{"copy_tex_js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js","integrity":"sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs="}}</script>
+  <script src="/js/third-party/math/katex.js" defer></script>
 
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3599006834125162"
@@ -139,7 +140,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">363</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">199</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">367</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">200</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -190,7 +191,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ZeroTier"><span class="nav-number">1.</span> <span class="nav-text">ZeroTier</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2"><span class="nav-number">2.</span> <span class="nav-text">部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%B3%A8%E5%86%8C"><span class="nav-number">2.1.</span> <span class="nav-text">1. 注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Openwrt%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="nav-number">2.2.</span> <span class="nav-text">2. Openwrt插件配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#zerotier"><span class="nav-number">1.</span> <span class="nav-text"> ZeroTier</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2"><span class="nav-number">2.</span> <span class="nav-text"> 部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%B3%A8%E5%86%8C"><span class="nav-number">2.1.</span> <span class="nav-text"> 1. 注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-openwrt%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="nav-number">2.2.</span> <span class="nav-text"> 2. Openwrt插件配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text"> 总结</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -203,7 +204,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -214,7 +215,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">363</span>
+        <span class="site-state-item-count">367</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -334,25 +335,34 @@
     
     <div class="post-body" itemprop="articleBody"><p>最近买了两个红米AX 5 JDC版本，分别放在公司和家里。很多时候需要访问家里的一些服务，比如摸鱼时候，想要提前下载东西，回家就能看。或者看到自己青龙京东的COOKIE过期，直接公司更新COOKIE。其实我得场景更多不需要将内网服务开放到公网去。我只是需要我可以在外面访问到内网服务即可。</p>
 <span id="more"></span>
-<h2 id="ZeroTier"><a href="#ZeroTier" class="headerlink" title="ZeroTier"></a><a target="_blank" rel="noopener" href="https://my.zerotier.com/network">ZeroTier</a></h2><p>国外的一个服务，可以帮助异地组网。简而言之就是将A地和B地的网络组合成一个局域网。支持Linux，Windows系统，也支持Openwrt插件部署。我这边两台路由器都是Openwrt系统，于是就使用插件部署，部署之后的效果就是：输入异地的内网任何地址，我这边都可以访问到。</p>
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="1-注册"><a href="#1-注册" class="headerlink" title="1. 注册"></a>1. 注册</h3><p>注册一个<a target="_blank" rel="noopener" href="https://my.zerotier.com/network">ZeroTier</a>，获取到NETWORK ID</p>
-<h3 id="2-Openwrt插件配置"><a href="#2-Openwrt插件配置" class="headerlink" title="2. Openwrt插件配置"></a>2. Openwrt插件配置</h3><p>进入路由器系统，找到ZeroTier的配置项，输入获取到的INETWORK ID</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-44-39.png" alt="139-ZeroTier部署指南-2023-11-30-10-44-39"></p>
+<h2 id="zerotier"><a class="markdownIt-Anchor" href="#zerotier"></a> <a target="_blank" rel="noopener" href="https://my.zerotier.com/network">ZeroTier</a></h2>
+<p>国外的一个服务，可以帮助异地组网。简而言之就是将A地和B地的网络组合成一个局域网。支持Linux，Windows系统，也支持Openwrt插件部署。我这边两台路由器都是Openwrt系统，于是就使用插件部署，部署之后的效果就是：输入异地的内网任何地址，我这边都可以访问到。</p>
+<h2 id="部署"><a class="markdownIt-Anchor" href="#部署"></a> 部署</h2>
+<h3 id="1-注册"><a class="markdownIt-Anchor" href="#1-注册"></a> 1. 注册</h3>
+<p>注册一个<a target="_blank" rel="noopener" href="https://my.zerotier.com/network">ZeroTier</a>，获取到NETWORK ID</p>
+<h3 id="2-openwrt插件配置"><a class="markdownIt-Anchor" href="#2-openwrt插件配置"></a> 2. Openwrt插件配置</h3>
+<p>进入路由器系统，找到ZeroTier的配置项，输入获取到的INETWORK ID</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-44-39.png" alt="139-ZeroTier部署指南-2023-11-30-10-44-39" /></p>
 <p>这是加入了ZeroTier，去网站那勾选前面的复选框，允许其接入。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-46-31.png" alt="139-ZeroTier部署指南-2023-11-30-10-46-31"></p>
-<p>成功的现象是Managed IPs会回去到一个地址，记住这个地址。回到路由器，打开接口配置，新建一个接口：协议静态，地址就是网站上的地址，子网掩码就是255.255.255.0.<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-48-54.png" alt="139-ZeroTier部署指南-2023-11-30-10-48-54"></p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-46-31.png" alt="139-ZeroTier部署指南-2023-11-30-10-46-31" /></p>
+<p>成功的现象是Managed IPs会回去到一个地址，记住这个地址。回到路由器，打开接口配置，新建一个接口：协议静态，地址就是网站上的地址，子网掩码就是255.255.255.0.<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-48-54.png" alt="139-ZeroTier部署指南-2023-11-30-10-48-54" /></p>
 <p>这是加入了ZeroTier，去网站那勾选前面的复选框，允许其接入。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-46-31.png" alt="139-ZeroTier部署指南-2023-11-30-10-46-31"></p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-46-31.png" alt="139-ZeroTier部署指南-2023-11-30-10-46-31" /></p>
 <p>然后进入接口-物理设置，插件会生成一个虚拟网卡，将这个网卡接入，网卡一般是zt开头，：</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-52-38.png" alt="139-ZeroTier部署指南-2023-11-30-10-52-38"></p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-52-38.png" alt="139-ZeroTier部署指南-2023-11-30-10-52-38" /></p>
 <p>如果不知道，可以去ZeroTier下的接口信息查看</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-53-32.png" alt="139-ZeroTier部署指南-2023-11-30-10-53-32"></p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-53-32.png" alt="139-ZeroTier部署指南-2023-11-30-10-53-32" /></p>
 <p>最后是将防火墙打开，允许转发，进出站：</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-55-16.png" alt="139-ZeroTier部署指南-2023-11-30-10-55-16"></p>
-<p>至此，路由器配置完成了，后续你直接加入这个INETWORK ID就可以访问到这个路由器，接下来配置允许访问路由器网段内的其他地址，这时候就需要到ZeroTier配置下，在设置里面输入网段，比如你公司网段时192.168.1.0<del>199，那么你就可以配置192.168.1.0&#x2F;24，右边的就是你刚才配置的静态地址。这样的效果就是你加入这个网络之后，可以访问192.168.1.0</del>199内的所有设备。如果你想要两个网段互相访问，需要注意，两个网段的地址不要重复，公司时192.168.1网段那么家里只能时192.168.2网段，否则会冲突。我这边是家里网段开放，但是公司网段不开放，所以公司任意一台都可以通过输入对应地址访问家里设备，家里的不行，只能访问到配置插件的路由器，其他的不行。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-57-23.png" alt="139-ZeroTier部署指南-2023-11-30-10-57-23"></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>相比较DDNS这些将服务开放到公网，我更加需要这种异地组网，更适合我。而且也不用担心网络攻击的问题。适合自己的才是最重要，至于搭建自己的moon服务器，目前还不需要，毕竟我只是更新信息或者提前下载，两边网速慢点也是可以的，至少目前体验下来，没有网速瓶颈。</p>
-<hr>
-<p>参考文章：<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1hT4y1E78k/?spm_id_from=333.337.search-card.all.click&vd_source=004ea20ecc05f6fa780db2013e61781b">Openwrt的Zerotier插件玩法</a><br><a target="_blank" rel="noopener" href="https://my.zerotier.com/network"> ZeroTier官网地址</a></p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-55-16.png" alt="139-ZeroTier部署指南-2023-11-30-10-55-16" /></p>
+<p>至此，路由器配置完成了，后续你直接加入这个INETWORK ID就可以访问到这个路由器，接下来配置允许访问路由器网段内的其他地址，这时候就需要到ZeroTier配置下，在设置里面输入网段，比如你公司网段时192.168.1.0<sub>199，那么你就可以配置192.168.1.0/24，右边的就是你刚才配置的静态地址。这样的效果就是你加入这个网络之后，可以访问192.168.1.0</sub>199内的所有设备。如果你想要两个网段互相访问，需要注意，两个网段的地址不要重复，公司时192.168.1网段那么家里只能时192.168.2网段，否则会冲突。我这边是家里网段开放，但是公司网段不开放，所以公司任意一台都可以通过输入对应地址访问家里设备，家里的不行，只能访问到配置插件的路由器，其他的不行。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/139-ZeroTier%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-11-30-10-57-23.png" alt="139-ZeroTier部署指南-2023-11-30-10-57-23" /></p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>相比较DDNS这些将服务开放到公网，我更加需要这种异地组网，更适合我。而且也不用担心网络攻击的问题。适合自己的才是最重要，至于搭建自己的moon服务器，目前还不需要，毕竟我只是更新信息或者提前下载，两边网速慢点也是可以的，至少目前体验下来，没有网速瓶颈。</p>
+<hr />
+<p>参考文章：<br />
+<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1hT4y1E78k/?spm_id_from=333.337.search-card.all.click&amp;vd_source=004ea20ecc05f6fa780db2013e61781b">Openwrt的Zerotier插件玩法</a><br />
+<a target="_blank" rel="noopener" href="https://my.zerotier.com/network"> ZeroTier官网地址</a></p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
 
@@ -433,13 +443,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">313k</span>
+    <span title="站点总字数">314k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">18:59</span>
+    <span title="站点阅读时长">19:02</span>
   </span>
 </div>
 <div class="busuanzi-count">
