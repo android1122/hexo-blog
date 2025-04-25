@@ -17,6 +17,27 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>浅谈最近贸易战</title>
+    <link href="https://minsummer.com/2025/04/11/200-%E6%B5%85%E8%B0%88%E6%9C%80%E8%BF%91%E8%B4%B8%E6%98%93%E6%88%98/"/>
+    <id>https://minsummer.com/2025/04/11/200-%E6%B5%85%E8%B0%88%E6%9C%80%E8%BF%91%E8%B4%B8%E6%98%93%E6%88%98/</id>
+    <published>2025-04-11T16:00:00.000Z</published>
+    <updated>2025-04-11T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;最近贸易战打的火热，但是在我看来，重要的不是关税增加的幅度，重要的是这波川普的骚操作会不会导致一轮新的经济危机。我是一个半把刀的经济学爱好者，我试图建立起一套完整的逻辑来解释当前发生的一些现象。需要注意我这边完全从宏观角度，而且是从某个角度来印证某些事情的发生，肯定不够全面。但是算是自我知识一种验证吧。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想，技术顾问，那些年遇见的人，那本书" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3%EF%BC%8C%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE%EF%BC%8C%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA%EF%BC%8C%E9%82%A3%E6%9C%AC%E4%B9%A6/"/>
+    
+    
+    <category term="贸易战" scheme="https://minsummer.com/tags/%E8%B4%B8%E6%98%93%E6%88%98/"/>
+    
+    <category term="宏观经济" scheme="https://minsummer.com/tags/%E5%AE%8F%E8%A7%82%E7%BB%8F%E6%B5%8E/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Calibre-Web搭建docker</title>
     <link href="https://minsummer.com/2025/04/11/201-cralibre-web%E6%90%AD%E5%BB%BA/"/>
     <id>https://minsummer.com/2025/04/11/201-cralibre-web%E6%90%AD%E5%BB%BA/</id>
@@ -34,6 +55,38 @@
     <category term="电子书" scheme="https://minsummer.com/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/"/>
     
     <category term="Calibre-Web" scheme="https://minsummer.com/tags/Calibre-Web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2025传家宝指北</title>
+    <link href="https://minsummer.com/2025/03/16/199-2025%E4%BC%A0%E5%AE%B6%E5%AE%9D%E6%8C%87%E5%8C%97/"/>
+    <id>https://minsummer.com/2025/03/16/199-2025%E4%BC%A0%E5%AE%B6%E5%AE%9D%E6%8C%87%E5%8C%97/</id>
+    <published>2025-03-16T16:00:00.000Z</published>
+    <updated>2025-01-03T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;不知不觉传家宝系列已经来到了第三个年头，依旧还是和之前一样要求：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;del&gt;持有价格够低，年付200人民币以下算好，100以下算神机，年付300以下算好机子，年付200算是神机&lt;/del&gt;价格合适，一分钱一分货，低价的话好多野鸡厂商也能进来。&lt;/li&gt;
+&lt;li&gt;够稀有，一般都是下架了，买不到目前&lt;/li&gt;
+&lt;li&gt;线路好，毕竟富强是第一需求&lt;/li&gt;
+&lt;li&gt;配置合格，&lt;del&gt;至少能翻墙&lt;/del&gt;没有明细的短板&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这次按照厂家进行分类，时间进行排序。一个是方便知道哪些厂家今年出现了神机，一个也能看出来厂家的态度如何。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="搬瓦工" scheme="https://minsummer.com/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/"/>
+    
+    <category term="VPS" scheme="https://minsummer.com/tags/VPS/"/>
+    
+    <category term="DMIT" scheme="https://minsummer.com/tags/DMIT/"/>
+    
+    <category term="POWERBOX" scheme="https://minsummer.com/tags/POWERBOX/"/>
     
   </entry>
   
@@ -1070,25 +1123,6 @@
   </entry>
   
   <entry>
-    <title>二哥3</title>
-    <link href="https://minsummer.com/2024/02/24/150-%E4%BA%8C%E5%93%A53/"/>
-    <id>https://minsummer.com/2024/02/24/150-%E4%BA%8C%E5%93%A53/</id>
-    <published>2024-02-24T16:00:00.000Z</published>
-    <updated>2024-02-24T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;24年的第一顿饭是和二哥吃的，年前吃过一次；年后想着再聚聚。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="那些年遇见的人" scheme="https://minsummer.com/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/"/>
-    
-    
-    <category term="二哥3" scheme="https://minsummer.com/tags/%E4%BA%8C%E5%93%A53/"/>
-    
-  </entry>
-  
-  <entry>
     <title>相亲</title>
     <link href="https://minsummer.com/2024/02/24/151-%E7%9B%B8%E4%BA%B2%E6%97%A5%E8%AE%B0/"/>
     <id>https://minsummer.com/2024/02/24/151-%E7%9B%B8%E4%BA%B2%E6%97%A5%E8%AE%B0/</id>
@@ -1106,6 +1140,25 @@
     <category term="心理分析" scheme="https://minsummer.com/tags/%E5%BF%83%E7%90%86%E5%88%86%E6%9E%90/"/>
     
     <category term="相亲" scheme="https://minsummer.com/tags/%E7%9B%B8%E4%BA%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>二哥3</title>
+    <link href="https://minsummer.com/2024/02/24/150-%E4%BA%8C%E5%93%A53/"/>
+    <id>https://minsummer.com/2024/02/24/150-%E4%BA%8C%E5%93%A53/</id>
+    <published>2024-02-24T16:00:00.000Z</published>
+    <updated>2024-02-24T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;24年的第一顿饭是和二哥吃的，年前吃过一次；年后想着再聚聚。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="那些年遇见的人" scheme="https://minsummer.com/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/"/>
+    
+    
+    <category term="二哥3" scheme="https://minsummer.com/tags/%E4%BA%8C%E5%93%A53/"/>
     
   </entry>
   
@@ -1156,6 +1209,25 @@
   </entry>
   
   <entry>
+    <title>因果与时间</title>
+    <link href="https://minsummer.com/2024/01/16/147-%E5%9B%A0%E6%9E%9C%E4%B8%8E%E6%97%B6%E9%97%B4/"/>
+    <id>https://minsummer.com/2024/01/16/147-%E5%9B%A0%E6%9E%9C%E4%B8%8E%E6%97%B6%E9%97%B4/</id>
+    <published>2024-01-16T16:00:00.000Z</published>
+    <updated>2024-01-16T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这是一篇我早就该写的文章了，但是我迟迟没有下笔，仅仅是因为懒。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+    
+    <category term="哲学家们都干了什么 - 读后感" scheme="https://minsummer.com/tags/%E5%93%B2%E5%AD%A6%E5%AE%B6%E4%BB%AC%E9%83%BD%E5%B9%B2%E4%BA%86%E4%BB%80%E4%B9%88-%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>兵哥2</title>
     <link href="https://minsummer.com/2024/01/16/146-%E5%85%B5%E5%93%A52/"/>
     <id>https://minsummer.com/2024/01/16/146-%E5%85%B5%E5%93%A52/</id>
@@ -1173,25 +1245,6 @@
     <category term="兵哥" scheme="https://minsummer.com/tags/%E5%85%B5%E5%93%A5/"/>
     
     <category term="大伯" scheme="https://minsummer.com/tags/%E5%A4%A7%E4%BC%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>因果与时间</title>
-    <link href="https://minsummer.com/2024/01/16/147-%E5%9B%A0%E6%9E%9C%E4%B8%8E%E6%97%B6%E9%97%B4/"/>
-    <id>https://minsummer.com/2024/01/16/147-%E5%9B%A0%E6%9E%9C%E4%B8%8E%E6%97%B6%E9%97%B4/</id>
-    <published>2024-01-16T16:00:00.000Z</published>
-    <updated>2024-01-16T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;这是一篇我早就该写的文章了，但是我迟迟没有下笔，仅仅是因为懒。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
-    
-    
-    <category term="哲学家们都干了什么 - 读后感" scheme="https://minsummer.com/tags/%E5%93%B2%E5%AD%A6%E5%AE%B6%E4%BB%AC%E9%83%BD%E5%B9%B2%E4%BA%86%E4%BB%80%E4%B9%88-%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
     
   </entry>
   
