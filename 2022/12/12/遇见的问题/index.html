@@ -22,12 +22,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"minsummer.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="遇见的问题 之前docker化遇见的问题：  caddy配置如图\    v2ray配置config文件其中listen需要使用当前IP地址,使用127.0.0.1会发生&quot;dial tcp 172.0.2:8888: connect:connnection refuse&quot;de 问题.   这个是v2ray得config配置里面得listen使用“127.0.0.1”监听导致得">
+    <meta name="description" content="遇见的问题之前docker化遇见的问题：  caddy配置如图\    v2ray配置config文件其中listen需要使用当前IP地址,使用127.0.0.1会发生”dial tcp 172.0.2:8888: connect:connnection refuse”de 问题.   这个是v2ray得config配置里面得listen使用“127.0.0.1”监听导致得，将其改为对应得容器IP">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="遇见的问题">
 <meta property="og:url" content="https://minsummer.com/2022/12/12/%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98/">
 <meta property="og:site_name" content="我是豆豆">
-<meta property="og:description" content="遇见的问题 之前docker化遇见的问题：  caddy配置如图\    v2ray配置config文件其中listen需要使用当前IP地址,使用127.0.0.1会发生&quot;dial tcp 172.0.2:8888: connect:connnection refuse&quot;de 问题.   这个是v2ray得config配置里面得listen使用“127.0.0.1”监听导致得">
+<meta property="og:description" content="遇见的问题之前docker化遇见的问题：  caddy配置如图\    v2ray配置config文件其中listen需要使用当前IP地址,使用127.0.0.1会发生”dial tcp 172.0.2:8888: connect:connnection refuse”de 问题.   这个是v2ray得config配置里面得listen使用“127.0.0.1”监听导致得，将其改为对应得容器IP">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//2022_11_29_12_28_26.jpg">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//2022_11_29_13_57_47.jpg">
@@ -135,7 +135,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">367</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">200</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">367</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">203</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -186,7 +186,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text"> 遇见的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="nav-number">1.1.</span> <span class="nav-text"> 参考文档</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">遇见的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="nav-number">1.1.</span> <span class="nav-text">参考文档</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -199,7 +199,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">200</span>
+          <span class="site-state-item-count">203</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -366,29 +366,27 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="遇见的问题"><a class="markdownIt-Anchor" href="#遇见的问题"></a> 遇见的问题</h1>
-<p>之前docker化遇见的问题：</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="遇见的问题"><a href="#遇见的问题" class="headerlink" title="遇见的问题"></a>遇见的问题</h1><p>之前docker化遇见的问题：</p>
 <ol>
 <li>caddy配置如图\</li>
 </ol>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//2022_11_29_12_28_26.jpg" alt="2022_11_29_12_28_26" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//2022_11_29_12_28_26.jpg" alt="2022_11_29_12_28_26"></p>
 <ol start="2">
-<li>v2ray配置config文件其中listen需要使用当前IP地址,使用127.0.0.1会发生&quot;dial tcp 172.0.2:8888: connect:connnection refuse&quot;de 问题.</li>
+<li>v2ray配置config文件其中listen需要使用当前IP地址,使用127.0.0.1会发生”dial tcp 172.0.2:8888: connect:connnection refuse”de 问题.</li>
 </ol>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//2022_11_29_13_57_47.jpg" alt="2022_11_29_13_57_47" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//2022_11_29_13_57_47.jpg" alt="2022_11_29_13_57_47"></p>
 <p>这个是v2ray得config配置里面得listen使用“127.0.0.1”监听导致得，将其改为对应得容器IP地址即可：</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221130093652.png" alt="20221130093652" /></p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221130093652.png" alt="20221130093652"></p>
 <ol start="3">
-<li>在连接之后，会出现：“rejected  common/drain: common/drain: drained connection &gt; proxy/vmess/encoding: invalid user: VMessAEAD is enforced and a non VMessAEAD connection is received. You can still disable this security feature with environment variable v2ray.vmess.aead.forced = false . You will not be able to enable legacy header workaround in the future.”</li>
+<li>在连接之后，会出现：“rejected  common&#x2F;drain: common&#x2F;drain: drained connection &gt; proxy&#x2F;vmess&#x2F;encoding: invalid user: VMessAEAD is enforced and a non VMessAEAD connection is received. You can still disable this security feature with environment variable v2ray.vmess.aead.forced &#x3D; false . You will not be able to enable legacy header workaround in the future.”</li>
 </ol>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//2022_11_29_21_33_49.jpg" alt="2022_11_29_21_33_49" /></p>
-<p>如果你跟我一样使用docker的话，直接增加“command: /usr/bin/env v2ray.vmess.aead.forced=false /usr/bin/v2ray run -config /etc/v2ray/config.json” 覆盖容器原有得命令，简单粗暴，其他的可以看<a target="_blank" rel="noopener" href="https://github.com/v2fly/v2ray-core/discussions/1514">v2ray配置环境变量</a>的GitHub方法，我就不班门弄斧了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//2022_11_29_21_33_49.jpg" alt="2022_11_29_21_33_49"></p>
+<p>如果你跟我一样使用docker的话，直接增加“command: &#x2F;usr&#x2F;bin&#x2F;env v2ray.vmess.aead.forced&#x3D;false &#x2F;usr&#x2F;bin&#x2F;v2ray run -config &#x2F;etc&#x2F;v2ray&#x2F;config.json” 覆盖容器原有得命令，简单粗暴，其他的可以看<a target="_blank" rel="noopener" href="https://github.com/v2fly/v2ray-core/discussions/1514">v2ray配置环境变量</a>的GitHub方法，我就不班门弄斧了。</p>
 <p>直接使用上面的docker-composer文件就可以解决所有问题。</p>
 <ol start="4">
 <li>typecho的博客建议使用博客内部的备份还原来备份数据，不需要复制整个文档，复制完成后，直接解压新的typecho重新安装一遍之后再还原，这样可以节省很多时间，而且不会出现一些数据库读取的bug,我这边图片用的是GitHub的图床，所以不会出现文件问题，如果你文件需要备份的话，建议也要复制对应的文件夹。</li>
 </ol>
-<h2 id="参考文档"><a class="markdownIt-Anchor" href="#参考文档"></a> 参考文档</h2>
-<p><a target="_blank" rel="noopener" href="https://lulin.org/451.html">v2rayMD5验证问题</a></p>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a target="_blank" rel="noopener" href="https://lulin.org/451.html">v2rayMD5验证问题</a></p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
 
@@ -468,13 +466,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">314k</span>
+    <span title="站点总字数">318k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">19:02</span>
+    <span title="站点阅读时长">19:18</span>
   </span>
 </div>
 <div class="busuanzi-count">
