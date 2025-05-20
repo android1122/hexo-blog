@@ -180,7 +180,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.</span> <span class="nav-text"> 总结</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -325,10 +325,15 @@
     <div class="post-body" itemprop="articleBody"><p>买的服务器终于到货了，在安装ESXI系统中吃了不少的坑，在此特别记录一下。</p>
 <span id="more"></span>
 <ol>
-<li>系统安装<br>服务器的话有专用系统，可以去<a target="_blank" rel="noopener" href="https://sysin.org/blog/vmware-vsphere-7-u3/#2023-06-22-vSphere-7-0-U3m">官网论坛</a>，找到对应品牌的服务器版本，需要注意的是，你需要下载一个ISO转U盘引导的工具，我推荐用<a target="_blank" rel="noopener" href="https://rufus.ie/zh/">Rufus</a>开源简单。然后设置系统BIOS的U盘启动即可，这点之前没有说，导致我一度以为服务器可以自动引导ISO文件。</li>
-<li>硬件直通<br>这个是目前遇见的最大的坑，由于浪潮服务自带一个阵列卡，所以我想着直通阵列卡到虚拟机去。最后遇见了这个坑。sata直通了，esxi会映射到内存中，此时任何变动都无效了。一旦重启所有保存的东西都会消失。<br>只有一种情况下可以直通sata，那就是你的系统安装在，不在这个sata控制系的硬盘里面才可以。比如U盘，比如直接从主板连接出来的硬盘，没有经过这个控制器的都可以。所以这个千万要注意。<br>如果你不小心直通了，那么要么去BIOS关闭VTD，虚拟硬件，然后再进系统修改为不被被直通，要么就直接干脆的重装系统即可。</li>
+<li>系统安装<br />
+服务器的话有专用系统，可以去<a target="_blank" rel="noopener" href="https://sysin.org/blog/vmware-vsphere-7-u3/#2023-06-22-vSphere-7-0-U3m">官网论坛</a>，找到对应品牌的服务器版本，需要注意的是，你需要下载一个ISO转U盘引导的工具，我推荐用<a target="_blank" rel="noopener" href="https://rufus.ie/zh/">Rufus</a>开源简单。然后设置系统BIOS的U盘启动即可，这点之前没有说，导致我一度以为服务器可以自动引导ISO文件。</li>
+<li>硬件直通<br />
+这个是目前遇见的最大的坑，由于浪潮服务自带一个阵列卡，所以我想着直通阵列卡到虚拟机去。最后遇见了这个坑。sata直通了，esxi会映射到内存中，此时任何变动都无效了。一旦重启所有保存的东西都会消失。<br />
+只有一种情况下可以直通sata，那就是你的系统安装在，不在这个sata控制系的硬盘里面才可以。比如U盘，比如直接从主板连接出来的硬盘，没有经过这个控制器的都可以。所以这个千万要注意。<br />
+如果你不小心直通了，那么要么去BIOS关闭VTD，虚拟硬件，然后再进系统修改为不被被直通，要么就直接干脆的重装系统即可。</li>
 </ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>最后，ESXI系统确实满足我的需求，目前用1个500G的硬盘当作系统盘，和虚拟机系统盘，剩下11个盘位的硬盘直接直通到飞牛OS里面去。下载，共享都在这几个盘里面，后续11个盘要是任何一个坏掉直接更换即可。</p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>最后，ESXI系统确实满足我的需求，目前用1个500G的硬盘当作系统盘，和虚拟机系统盘，剩下11个盘位的硬盘直接直通到飞牛OS里面去。下载，共享都在这几个盘里面，后续11个盘要是任何一个坏掉直接更换即可。</p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
 
@@ -373,8 +378,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2025/01/06/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" rel="next" title="openwrt使用指南">
-                  openwrt使用指南 <i class="fa fa-angle-right"></i>
+                <a href="/2025/01/06/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS/" rel="next" title="ESXI安装HomeAsistantOS">
+                  ESXI安装HomeAsistantOS <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>

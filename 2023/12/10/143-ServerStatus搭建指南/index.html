@@ -187,7 +187,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">服务端安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="nav-number">2.</span> <span class="nav-text">客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%BB%AD%E6%9B%B4%E6%96%B0"><span class="nav-number">4.</span> <span class="nav-text">后续更新</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text"> 服务端安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="nav-number">2.</span> <span class="nav-text"> 客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text"> 总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%BB%AD%E6%9B%B4%E6%96%B0"><span class="nav-number">4.</span> <span class="nav-text"> 后续更新</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -356,53 +356,70 @@
     <div class="post-body" itemprop="articleBody"><p>ServerStatus，云监控，即我们一般说的探针。用来监控远端服务器的状态。可以实现实时查看系统负载，同时如果服务器超载可以自动报警。如果你服务器很多，那么安装一个这个可以方便快捷的查看实用的流量负载，不必每次都登陆后台面板进行跟踪。</p>
 <span id="more"></span>
 <p>分为服务端和客户端，服务端即网页用来展示的，客户端即为一个python文件，查询信息之后发送给服务端。</p>
-<h2 id="服务端安装"><a href="#服务端安装" class="headerlink" title="服务端安装"></a>服务端安装</h2><p>我使用的是docker安装，简单快捷。根据官网的命令。</p>
+<h2 id="服务端安装"><a class="markdownIt-Anchor" href="#服务端安装"></a> 服务端安装</h2>
+<p>我使用的是docker安装，简单快捷。根据官网的命令。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 创建文件夹下载默认的配置文件</span><br><span class="line"></span><br><span class="line">wget --no-check-certificate -qO ~/serverstatus-config.json https://raw.githubusercontent.com/cppla/ServerStatus/master/server/config.json &amp;&amp; mkdir ~/serverstatus-monthtraffic   </span><br><span class="line"></span><br><span class="line">2. docker允许，开放80和35601端口进行通信，需要注意35601必须开启，80端口还可以进行映射</span><br><span class="line"></span><br><span class="line">docker run -d --restart=always --name=serverstatus -v ~/serverstatus-config.json:/ServerStatus/server/config.json -v ~/serverstatus-monthtraffic:/usr/share/nginx/html/json -p 80:80 -p 35601:35601 cppla/serverstatus:latest     </span><br></pre></td></tr></table></figure>
-
-<p>直接执行即可，然后在<code> ~/serverstatus-config.json</code>进行配置。这里如果你用root登陆，命令会创建文件夹<code>/root//serverstatus-config.json</code>，需要注意如果你修改了文件夹，需要将dockers命令的映射一同修改<br>配置文件：</p>
+<p>直接执行即可，然后在<code> ~/serverstatus-config.json</code>进行配置。这里如果你用root登陆，命令会创建文件夹<code>/root//serverstatus-config.json</code>，需要注意如果你修改了文件夹，需要将dockers命令的映射一同修改<br />
+配置文件：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">        &quot;servers&quot;:</span><br><span class="line">	[</span><br><span class="line">		&#123;</span><br><span class="line">			&quot;username&quot;: &quot;s01&quot;,——用户名，登陆有用</span><br><span class="line">			&quot;name&quot;: &quot;vps-1&quot;,——显示名称</span><br><span class="line">			&quot;type&quot;: &quot;kvm&quot;,——显示虚拟化</span><br><span class="line">			&quot;host&quot;: &quot;chengdu&quot;,——不会显示，内部用来去别的</span><br><span class="line">			&quot;location&quot;: &quot;🇨🇳&quot;,——位置</span><br><span class="line">			&quot;password&quot;: &quot;USER_DEFAULT_PASSWORD&quot;,——密码，和上面用户名用来登陆</span><br><span class="line">			&quot;monthstart&quot;: 1——月流量清零，一般vps的清零时间不是1号，所以需要变化</span><br><span class="line">		&#125;,</span><br><span class="line">	],</span><br><span class="line">	&quot;watchdog&quot;:</span><br><span class="line">	[</span><br><span class="line">	        &#123;</span><br><span class="line">			&quot;name&quot;: &quot;服务器负载高监控，排除内存大于32G物理机，同时排除俄勒冈机器&quot;,</span><br><span class="line">			&quot;rule&quot;: &quot;cpu&gt;90&amp;load_1&gt;4&amp;memory_total&lt;33554432&amp;name!=&#x27;俄勒冈&#x27;&quot;,</span><br><span class="line">			&quot;interval&quot;: 600,</span><br><span class="line">			&quot;callback&quot;: &quot;https://yourSMSurl&quot;</span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">                        &quot;name&quot;: &quot;服务器内存使用率过高监控&quot;,</span><br><span class="line">                        &quot;rule&quot;: &quot;(memory_used/memory_total)*100&gt;90&quot;,</span><br><span class="line">                        &quot;interval&quot;: 600,</span><br><span class="line">                        &quot;callback&quot;: &quot;https://yourSMSurl&quot;</span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                        &quot;name&quot;: &quot;服务器宕机告警，排出俄勒冈，排除s02&quot;,</span><br><span class="line">                        &quot;rule&quot;: &quot;online4=0&amp;online6=0&amp;name!=&#x27;俄勒冈&#x27;&amp;username!=&#x27;s02&#x27;&quot;,</span><br><span class="line">                        &quot;interval&quot;: 600,</span><br><span class="line">                        &quot;callback&quot;: &quot;https://yourSMSurl&quot;</span><br><span class="line">                &#125;,</span><br><span class="line">		&#123;</span><br><span class="line">                        &quot;name&quot;: &quot;DDOS和CC攻击监控&quot;,</span><br><span class="line">                        &quot;rule&quot;: &quot;tcp_count&gt;600&quot;,</span><br><span class="line">                        &quot;interval&quot;: 300,</span><br><span class="line">                        &quot;callback&quot;: &quot;https://yourSMSurl&quot;</span><br><span class="line">                &#125;,</span><br><span class="line">		&#123;</span><br><span class="line">			&quot;name&quot;: &quot;服务器月出口流量999GB告警&quot;,</span><br><span class="line">			&quot;rule&quot;: &quot;(network_out-last_network_out)/1024/1024/1024&gt;999&quot;,</span><br><span class="line">			&quot;interval&quot;: 3600,</span><br><span class="line">			&quot;callback&quot;: &quot;https://yourSMSurl&quot;</span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">			&quot;name&quot;: &quot;你可以组合任何已知字段的表达式&quot;,</span><br><span class="line">			&quot;rule&quot;: &quot;(hdd_used/hdd_total)*100&gt;95&quot;,</span><br><span class="line">			&quot;interval&quot;: 1800,</span><br><span class="line">			&quot;callback&quot;: &quot;https://yourSMSurl&quot;</span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;       </span><br></pre></td></tr></table></figure>
-<h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><p>客户端很简单，但是需要至此python3</p>
+<h2 id="客户端"><a class="markdownIt-Anchor" href="#客户端"></a> 客户端</h2>
+<p>客户端很简单，但是需要至此python3</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate -qO client-linux.py &#x27;https://raw.githubusercontent.com/cppla/ServerStatus/master/clients/client-linux.py&#x27; &amp;&amp; nohup python3 client-linux.py SERVER=&#123;$SERVER&#125; USER=&#123;$USER&#125; PASSWORD=&#123;$PASSWORD&#125; &gt;/dev/null 2&gt;&amp;1 &amp;</span><br><span class="line"></span><br><span class="line">eg:</span><br><span class="line">wget --no-check-certificate -qO client-linux.py &#x27;https://raw.githubusercontent.com/cppla/ServerStatus/master/clients/client-linux.py&#x27; &amp;&amp; nohup python3 client-linux.py SERVER=45.79.67.132 USER=s04  &gt;/dev/null 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
 <p><code>&gt;/dev/null 2&gt;&amp;1</code> 这块命令建议改成具体文件夹下的路径，这是用来记载日志的，方便后续可以查看相关日志。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>安装之后确实美观，让人有种想把它填满的冲动，怪不得一些人买卖机器不停，确实让人难以抗拒。最后实现的效果如图：<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/143-ServerStatus%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97-2023-12-11-15-21-40.png" alt="143-ServerStatus搭建指南-2023-12-11-15-21-40"></p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>安装之后确实美观，让人有种想把它填满的冲动，怪不得一些人买卖机器不停，确实让人难以抗拒。最后实现的效果如图：<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/143-ServerStatus%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97-2023-12-11-15-21-40.png" alt="143-ServerStatus搭建指南-2023-12-11-15-21-40" /></p>
 <p>你想知道的信息都有，可以方便追踪目前的机器情况。</p>
-<h2 id="后续更新"><a href="#后续更新" class="headerlink" title="后续更新"></a>后续更新</h2><p>在更换哪吒无果之后，我还是选择继续换回ServerStatus，现在着重解决几个问题：</p>
+<h2 id="后续更新"><a class="markdownIt-Anchor" href="#后续更新"></a> 后续更新</h2>
+<p>在更换哪吒无果之后，我还是选择继续换回ServerStatus，现在着重解决几个问题：</p>
 <ol>
-<li><p>主题<br>主题的话，官方提供了三个主题搬运，之前用简洁模式图标会有问题，主要是我的location参数用的是中文，系统识别不到对应正确的svg图标，我将location改成cn之后，系统就能显示正确的图标</p>
+<li>
+<p>主题<br />
+主题的话，官方提供了三个主题搬运，之前用简洁模式图标会有问题，主要是我的location参数用的是中文，系统识别不到对应正确的svg图标，我将location改成cn之后，系统就能显示正确的图标</p>
 </li>
-<li><p>定制延迟测试<br>程序自带的三网延迟测试只是测试到对应网站的，但是由于我们地区不同，所有很多时候需要一个vps到我们地区的延迟来做参考，修改起来也很简单:<br>搜索下全国三网IP，找到自己省份的，然后复制下来。<br>直接下载：<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/cppla/ServerStatus/master/clients/client-linux.py">https://raw.githubusercontent.com/cppla/ServerStatus/master/clients/client-linux.py</a> 这个就是客户端文件。<br>用文档打开，修改CU，CT，CM三个参数即可。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/143-ServerStatus%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97-2025-02-14-15-18-16.png" alt="143-ServerStatus搭建指南-2025-02-14-15-18-16"></p>
+<li>
+<p>定制延迟测试<br />
+程序自带的三网延迟测试只是测试到对应网站的，但是由于我们地区不同，所有很多时候需要一个vps到我们地区的延迟来做参考，修改起来也很简单:<br />
+搜索下全国三网IP，找到自己省份的，然后复制下来。<br />
+直接下载：<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/cppla/ServerStatus/master/clients/client-linux.py">https://raw.githubusercontent.com/cppla/ServerStatus/master/clients/client-linux.py</a> 这个就是客户端文件。<br />
+用文档打开，修改CU，CT，CM三个参数即可。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/143-ServerStatus%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97-2025-02-14-15-18-16.png" alt="143-ServerStatus搭建指南-2025-02-14-15-18-16" /></p>
 </li>
-<li><p>开机启动<br> 之前配置开机启动，不知道为啥，老是失败，这次使用deepseek辅助试试<br> 这边参照方法<br> 创建一个新的 .service 文件，例如 <code>my_script.service</code>，然后放到<code>/etc/systemd/system/my_script.service</code>，里面的内容是</p>
+<li>
+<p>开机启动<br />
+之前配置开机启动，不知道为啥，老是失败，这次使用deepseek辅助试试<br />
+这边参照方法<br />
+创建一个新的 .service 文件，例如 <code>my_script.service</code>，然后放到<code>/etc/systemd/system/my_script.service</code>，里面的内容是</p>
  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=My Python Script</span><br><span class="line">After=network.target #如果需要网络，请加上这个</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">ExecStart=python3 /root/client-linux.py  #直接输入命令即可</span><br><span class="line">WorkingDirectory=/root/  #可选</span><br><span class="line">User=root #可选</span><br><span class="line">Restart=always #失败会重试试</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target #别动</span><br></pre></td></tr></table></figure>
-
-<p> 确保你的脚本有执行权限，用<code>chmod +x 你的脚本</code>，然后重载，设置开机启动，直接手动开始服务</p>
-<p>  重新加载 systemd 配置</p>
+<p>确保你的脚本有执行权限，用<code>chmod +x 你的脚本</code>，然后重载，设置开机启动，直接手动开始服务</p>
+<p>重新加载 systemd 配置</p>
 <blockquote>
 <p>sudo systemctl daemon-reload</p>
 </blockquote>
-<p>  启用开机启动</p>
+<p>启用开机启动</p>
 <blockquote>
 <p>sudo systemctl enable my_script.service</p>
 </blockquote>
-<p> 立即启动服务试试，如果成功启动，那么一般就不会有问题</p>
+<p>立即启动服务试试，如果成功启动，那么一般就不会有问题</p>
 <blockquote>
 <p>sudo systemctl start my_script.service</p>
 </blockquote>
-<p> 启动服务之后，输入命令查看输出，成功一般返回一个后台PID，</p>
+<p>启动服务之后，输入命令查看输出，成功一般返回一个后台PID，</p>
 <blockquote>
 <p>sudo systemctl status my_script.service</p>
 </blockquote>
-<p> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/143-ServerStatus%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97-2025-02-14-16-31-14.png" alt="143-ServerStatus搭建指南-2025-02-14-16-31-14"></p>
-<p> 失败的话需要自己调整，查看对应的日志</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/143-ServerStatus%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97-2025-02-14-16-31-14.png" alt="143-ServerStatus搭建指南-2025-02-14-16-31-14" /></p>
+<p>失败的话需要自己调整，查看对应的日志</p>
 <blockquote>
 <p>journalctl -u my_script.service -b</p>
 </blockquote>
-<p> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/143-ServerStatus%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97-2025-02-14-16-34-36.png" alt="143-ServerStatus搭建指南-2025-02-14-16-34-36"></p>
-<p> 这是类似一种进程守护的实现方法，算是解决了我一直困扰的问题。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/143-ServerStatus%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97-2025-02-14-16-34-36.png" alt="143-ServerStatus搭建指南-2025-02-14-16-34-36" /></p>
+<p>这是类似一种进程守护的实现方法，算是解决了我一直困扰的问题。</p>
 </li>
 </ol>
-<hr>
-<p>参考文章：<br><a target="_blank" rel="noopener" href="https://github.com/cppla/ServerStatus?tab=readme-ov-file">ServerStatus</a></p>
+<hr />
+<p>参考文章：<br />
+<a target="_blank" rel="noopener" href="https://github.com/cppla/ServerStatus?tab=readme-ov-file">ServerStatus</a></p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
 

@@ -22,12 +22,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"minsummer.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="初衷青龙面板的用处很多，其中之一就是用来签到的，我现在已经稳定签到100多天。我用的是6dylan6&#x2F;jdpro，GitHub上星星3000+，而且作者还不定时更新，但是作者编写的文档不是很清楚，这边本着学习和记录的原则，来写一个指南吧。这个库优势：  有人维护 更新有保障 包括但不限于签到，618任务，以及其他实时的活动。  缺点：  缝合怪，很多东西都是直接拉取别人库 有些任务无法执">
+    <meta name="description" content="初衷 青龙面板的用处很多，其中之一就是用来签到的，我现在已经稳定签到100多天。我用的是6dylan6&#x2F;jdpro，GitHub上星星3000+，而且作者还不定时更新，但是作者编写的文档不是很清楚，这边本着学习和记录的原则，来写一个指南吧。 这个库优势：  有人维护 更新有保障 包括但不限于签到，618任务，以及其他实时的活动。  缺点：  缝合怪，很多东西都是直接拉取别人库 有些任务无法执行">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="青龙面板-京东库使用指南">
 <meta property="og:url" content="https://minsummer.com/2023/04/22/108-%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF-%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
 <meta property="og:site_name" content="我是豆豆">
-<meta property="og:description" content="初衷青龙面板的用处很多，其中之一就是用来签到的，我现在已经稳定签到100多天。我用的是6dylan6&#x2F;jdpro，GitHub上星星3000+，而且作者还不定时更新，但是作者编写的文档不是很清楚，这边本着学习和记录的原则，来写一个指南吧。这个库优势：  有人维护 更新有保障 包括但不限于签到，618任务，以及其他实时的活动。  缺点：  缝合怪，很多东西都是直接拉取别人库 有些任务无法执">
+<meta property="og:description" content="初衷 青龙面板的用处很多，其中之一就是用来签到的，我现在已经稳定签到100多天。我用的是6dylan6&#x2F;jdpro，GitHub上星星3000+，而且作者还不定时更新，但是作者编写的文档不是很清楚，这边本着学习和记录的原则，来写一个指南吧。 这个库优势：  有人维护 更新有保障 包括但不限于签到，618任务，以及其他实时的活动。  缺点：  缝合怪，很多东西都是直接拉取别人库 有些任务无法执行">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E2%80%94%E2%80%94%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-06-09-21-00-20.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-40-49.png">
@@ -190,7 +190,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9D%E8%A1%B7"><span class="nav-number">1.</span> <span class="nav-text">初衷</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.</span> <span class="nav-text">使用步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%8B%89%E5%BA%93"><span class="nav-number">2.1.</span> <span class="nav-text">1. 拉库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%BF%AE%E6%94%B9%E9%9D%92%E9%BE%99%E7%9A%84config-sh%E9%85%8D%E7%BD%AE"><span class="nav-number">2.2.</span> <span class="nav-text">2. 修改青龙的config.sh配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E8%8E%B7%E5%8F%96%E4%BA%AC%E4%B8%9C%E7%9A%84COOKIE"><span class="nav-number">2.3.</span> <span class="nav-text">3. 获取京东的COOKIE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%8A%8A%E9%80%9A%E7%9F%A5key%E5%8F%98%E9%87%8F%E6%B7%BB%E5%8A%A0%E5%88%80%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86config-sh"><span class="nav-number">2.4.</span> <span class="nav-text">4. 把通知key变量添加刀配置管理config.sh</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%A8%E8%8D%90%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">推荐配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.1.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9D%E8%A1%B7"><span class="nav-number">1.</span> <span class="nav-text"> 初衷</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.</span> <span class="nav-text"> 使用步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%8B%89%E5%BA%93"><span class="nav-number">2.1.</span> <span class="nav-text"> 1. 拉库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%BF%AE%E6%94%B9%E9%9D%92%E9%BE%99%E7%9A%84configsh%E9%85%8D%E7%BD%AE"><span class="nav-number">2.2.</span> <span class="nav-text"> 2. 修改青龙的config.sh配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E8%8E%B7%E5%8F%96%E4%BA%AC%E4%B8%9C%E7%9A%84cookie"><span class="nav-number">2.3.</span> <span class="nav-text"> 3. 获取京东的COOKIE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%8A%8A%E9%80%9A%E7%9F%A5key%E5%8F%98%E9%87%8F%E6%B7%BB%E5%8A%A0%E5%88%80%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86configsh"><span class="nav-number">2.4.</span> <span class="nav-text"> 4. 把通知key变量添加刀配置管理config.sh</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%A8%E8%8D%90%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text"> 推荐配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.1.</span> <span class="nav-text"> 总结</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -339,7 +339,9 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h1><p>青龙面板的用处很多，其中之一就是用来签到的，我现在已经稳定签到100多天。我用的是<a target="_blank" rel="noopener" href="https://github.com/6dylan6/jdpro">6dylan6&#x2F;jdpro</a>，GitHub上星星3000+，而且作者还不定时更新，但是作者编写的文档不是很清楚，这边本着学习和记录的原则，来写一个指南吧。<br>这个库优势：</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="初衷"><a class="markdownIt-Anchor" href="#初衷"></a> 初衷</h1>
+<p>青龙面板的用处很多，其中之一就是用来签到的，我现在已经稳定签到100多天。我用的是<a target="_blank" rel="noopener" href="https://github.com/6dylan6/jdpro">6dylan6/jdpro</a>，GitHub上星星3000+，而且作者还不定时更新，但是作者编写的文档不是很清楚，这边本着学习和记录的原则，来写一个指南吧。<br />
+这个库优势：</p>
 <ol>
 <li>有人维护</li>
 <li>更新有保障</li>
@@ -348,47 +350,74 @@
 <p>缺点：</p>
 <ol>
 <li>缝合怪，很多东西都是直接拉取别人库</li>
-<li>有些任务无法执行<span id="more"></span></li>
+<li>有些任务无法执行</li>
 </ol>
-<hr>
-<h1 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h1><h2 id="1-拉库"><a href="#1-拉库" class="headerlink" title="1. 拉库"></a>1. 拉库</h2>   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ql repo https://github.com/6dylan6/jdpro.git &quot;jd_|jx_|jddj_&quot; &quot;backUp&quot; &quot;^jd[^_]|USER|JD|function|sendNotify&quot;</span><br></pre></td></tr></table></figure>
-<p>   这块看下ql的官方命令说明：<br>   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ql repo &lt;地址&gt; &lt;拉取的文件&gt; &lt;不拉取的文件&gt; &lt;依赖文件&gt; &lt;分支&gt;</span><br></pre></td></tr></table></figure><br>   可以使用正则表达，所以可以配置一些你不需要的任务，当然这边建议直接全部拉取。<br>   需要注意：<br>   2.11.1<code>前</code>版本青龙config.sh配置把GithubProxyUrl&#x3D;”<a target="_blank" rel="noopener" href="https://ghproxy.com/">https://ghproxy.com/</a> （差不在多19行）” 修改为GithubProxyUrl&#x3D;””，否则拉取失败，以上版本无需配置:</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E2%80%94%E2%80%94%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-06-09-21-00-20.png" alt="青龙面板——京东库使用指南-2023-06-09-21-00-20"></p>
-<h2 id="2-修改青龙的config-sh配置"><a href="#2-修改青龙的config-sh配置" class="headerlink" title="2. 修改青龙的config.sh配置"></a>2. 修改青龙的config.sh配置</h2><pre><code>  &gt; RepoFileExtensions=&quot;js py&quot;修改为 RepoFileExtensions=&quot;js py sh ts&quot; 保存
+<span id="more"></span>
+<hr />
+<h1 id="使用步骤"><a class="markdownIt-Anchor" href="#使用步骤"></a> 使用步骤</h1>
+<h2 id="1-拉库"><a class="markdownIt-Anchor" href="#1-拉库"></a> 1. 拉库</h2>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ql repo https://github.com/6dylan6/jdpro.git &quot;jd_|jx_|jddj_&quot; &quot;backUp&quot; &quot;^jd[^_]|USER|JD|function|sendNotify&quot;</span><br></pre></td></tr></table></figure>
+<p>这块看下ql的官方命令说明：</p>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ql repo &lt;地址&gt; &lt;拉取的文件&gt; &lt;不拉取的文件&gt; &lt;依赖文件&gt; &lt;分支&gt;</span><br></pre></td></tr></table></figure>
+<p>可以使用正则表达，所以可以配置一些你不需要的任务，当然这边建议直接全部拉取。<br />
+需要注意：<br />
+2.11.1<code>前</code>版本青龙config.sh配置把GithubProxyUrl=“<a target="_blank" rel="noopener" href="https://ghproxy.com/">https://ghproxy.com/</a> （差不在多19行）” 修改为GithubProxyUrl=“”，否则拉取失败，以上版本无需配置:</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E2%80%94%E2%80%94%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-06-09-21-00-20.png" alt="青龙面板——京东库使用指南-2023-06-09-21-00-20" /></p>
+<h2 id="2-修改青龙的configsh配置"><a class="markdownIt-Anchor" href="#2-修改青龙的configsh配置"></a> 2. 修改青龙的config.sh配置</h2>
+<pre><code>  &gt; RepoFileExtensions=&quot;js py&quot;修改为 RepoFileExtensions=&quot;js py sh ts&quot; 保存
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-40-49.png" alt="青龙面板_京东库使用指南-2023-04-21-21-40-49"></p>
-<p>   这块是因为你的库依赖有一些没有安装，所以需要sh脚本来把它安装上去，实现一个自动化，建议修改。<br>   需要注意：<br>   修改完后切记点击右上角&lt;保存&gt;按钮，否则修改不会生效。</p>
-<h2 id="3-获取京东的COOKIE"><a href="#3-获取京东的COOKIE" class="headerlink" title="3. 获取京东的COOKIE"></a>3. 获取京东的COOKIE</h2><p>   获取的方法多样，我这边使用的是F12，打开&lt;Network按钮&gt;，然后点击筛选<strong>log.gif</strong>，获取到对应的cookie，在环境变量中增加JD_COOKIE变量。<br>   <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E2%80%94%E2%80%94%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-06-09-21-07-00.png" alt="青龙面板——京东库使用指南-2023-06-09-21-07-00"></p>
-<p>   一般来说，这个时效是30天左右，建议后面配置cookie失效通知。失效之后再次获取一次。</p>
-<h2 id="4-把通知key变量添加刀配置管理config-sh"><a href="#4-把通知key变量添加刀配置管理config-sh" class="headerlink" title="4. 把通知key变量添加刀配置管理config.sh"></a>4. 把通知key变量添加刀配置管理config.sh</h2><p>   通知key有很多种，看你具体使用哪种，对应都有配置说明，我用的是gotify，直接输出对应的api就可以，需要注意，这里配置完之后，还需要去系统设置界面内设置，具体见后续的更新。<br>   <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E2%80%94%E2%80%94%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-06-09-21-11-45.png" alt="青龙面板——京东库使用指南-2023-06-09-21-11-45"></p>
-<hr>
-<h1 id="推荐配置"><a href="#推荐配置" class="headerlink" title="推荐配置"></a>推荐配置</h1><p>以上配置是官方针对大众的使用，接下来有一些配置推荐你修改：</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-40-49.png" alt="青龙面板_京东库使用指南-2023-04-21-21-40-49" /></p>
+<p>这块是因为你的库依赖有一些没有安装，所以需要sh脚本来把它安装上去，实现一个自动化，建议修改。<br />
+需要注意：<br />
+修改完后切记点击右上角&lt;保存&gt;按钮，否则修改不会生效。</p>
+<h2 id="3-获取京东的cookie"><a class="markdownIt-Anchor" href="#3-获取京东的cookie"></a> 3. 获取京东的COOKIE</h2>
+<p>获取的方法多样，我这边使用的是F12，打开&lt;Network按钮&gt;，然后点击筛选<strong>log.gif</strong>，获取到对应的cookie，在环境变量中增加JD_COOKIE变量。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E2%80%94%E2%80%94%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-06-09-21-07-00.png" alt="青龙面板——京东库使用指南-2023-06-09-21-07-00" /></p>
+<p>一般来说，这个时效是30天左右，建议后面配置cookie失效通知。失效之后再次获取一次。</p>
+<h2 id="4-把通知key变量添加刀配置管理configsh"><a class="markdownIt-Anchor" href="#4-把通知key变量添加刀配置管理configsh"></a> 4. <a target="_blank" rel="noopener" href="http://xn--keyconfig-il4o58c7wgh69dzq7ac7s2eot4on9pxw8ex9e51c.sh">把通知key变量添加刀配置管理config.sh</a></h2>
+<p>通知key有很多种，看你具体使用哪种，对应都有配置说明，我用的是gotify，直接输出对应的api就可以，需要注意，这里配置完之后，还需要去系统设置界面内设置，具体见后续的更新。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E2%80%94%E2%80%94%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-06-09-21-11-45.png" alt="青龙面板——京东库使用指南-2023-06-09-21-11-45" /></p>
+<hr />
+<h1 id="推荐配置"><a class="markdownIt-Anchor" href="#推荐配置"></a> 推荐配置</h1>
+<p>以上配置是官方针对大众的使用，接下来有一些配置推荐你修改：</p>
 <ol>
-<li><p>任务是有随机延迟的，所以有一些准点运行的任务推荐修改命令，最后加上now</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-56-28.png" alt="青龙面板_京东库使用指南-2023-04-21-21-56-28"></p>
+<li>
+<p>任务是有随机延迟的，所以有一些准点运行的任务推荐修改命令，最后加上now</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-56-28.png" alt="青龙面板_京东库使用指南-2023-04-21-21-56-28" /></p>
 </li>
 </ol>
-<p> 或者修改延迟的秒数，在config文件中修改时间配置。<br> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/108-%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF-%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-11-29-14-12-08.png" alt="108-青龙面板-京东库使用指南-2023-11-29-14-12-08"></p>
+<p>或者修改延迟的秒数，在config文件中修改时间配置。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/108-%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF-%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-11-29-14-12-08.png" alt="108-青龙面板-京东库使用指南-2023-11-29-14-12-08" /></p>
 <ol start="2">
-<li><p>建议调整任务运行超时时间，青龙默认1小时有些跑不完就被强制结束，config.sh里配置。CommandTimeoutTime&#x3D;”3h”  即改为3小时，根据自己ck数量调整。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-41-32.png" alt="青龙面板_京东库使用指南-2023-04-21-21-41-32"></p>
+<li>
+<p>建议调整任务运行超时时间，青龙默认1小时有些跑不完就被强制结束，config.sh里配置。CommandTimeoutTime=“3h”  即改为3小时，根据自己ck数量调整。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF_%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-04-21-21-41-32.png" alt="青龙面板_京东库使用指南-2023-04-21-21-41-32" /></p>
 </li>
-<li><p>JD_CART_REMOVE：清空购物车默认是不清空的，可以添加环境变量true，这个很多时候跑任务的时候会增加对应的商品到购物车，所以可以使用这个每日清空购物车。</p>
+<li>
+<p>JD_CART_REMOVE：清空购物车默认是不清空的，可以添加环境变量true，这个很多时候跑任务的时候会增加对应的商品到购物车，所以可以使用这个每日清空购物车。</p>
 </li>
-<li><p>NOTIFY_AUTOCHECKCK 自动禁用失效CK开关 有CK失效自动禁用并通知，true为自动禁用，false不自动禁用，默认false 需用本库sendnotify文件，sendnotify文件功能很强大，针对CK，有以下几种：</p>
+<li>
+<p>NOTIFY_AUTOCHECKCK 自动禁用失效CK开关 有CK失效自动禁用并通知，true为自动禁用，false不自动禁用，默认false 需用本库sendnotify文件，sendnotify文件功能很强大，针对CK，有以下几种：</p>
+</li>
+</ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">显示正常CK:  export CHECKCK_SHOWSUCCESSCK=&quot;true&quot;</span><br><span class="line">永远通知CK状态:  export CHECKCK_CKALWAYSNOTIFY=&quot;true&quot;</span><br><span class="line">停用自动启用CK:  export CHECKCK_CKAUTOENABLE=&quot;false&quot;	</span><br><span class="line">服务器空数据等错误不触发通知:  export CHECKCK_CKNOWARNERROR=&quot;true&quot;</span><br></pre></td></tr></table></figure>
 <p>如果你账号很多的话，可以改变通知的形式，比如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;1&quot;    不做任何变动</span><br><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;2&quot;    效果是 :  账号名称：别名(备注)	</span><br><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;3&quot;    效果是 :  账号名称：pin(备注)</span><br><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;4&quot;    效果是 :  账号名称：备注</span><br></pre></td></tr></table></figure></li>
-</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;1&quot;    不做任何变动</span><br><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;2&quot;    效果是 :  账号名称：别名(备注)	</span><br><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;3&quot;    效果是 :  账号名称：pin(备注)</span><br><span class="line">export NOTIFY_SHOWNAMETYPE=&quot;4&quot;    效果是 :  账号名称：备注</span><br></pre></td></tr></table></figure>
 <p>当然，如果你还有其他别的需求可以看<a target="_blank" rel="noopener" href="https://github.com/ccwav/QLScript2">这个GitHub</a>，包括但不仅限于所有任务的CK有效通知，所有任务的运行情况，已经有时候某些任务的CK任务失效等等。</p>
-<p>2023-11-29更新<br>依赖：可以在任务中搜索依赖进行安装，多安装几次即可：<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/108-%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF-%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-12-27-18-49-42.png" alt="108-青龙面板-京东库使用指南-2023-12-27-18-49-42"><br>PS: 首次下载有可能没有，多执行几次订阅即可。</p>
+<p>2023-11-29更新<br />
+依赖：可以在任务中搜索依赖进行安装，多安装几次即可：<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/108-%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF-%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-12-27-18-49-42.png" alt="108-青龙面板-京东库使用指南-2023-12-27-18-49-42" /><br />
+PS: 首次下载有可能没有，多执行几次订阅即可。</p>
 <p>使用gotify时候会报错：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HTTPError: Response code 404 (Not Found)</span><br><span class="line">at Request. (/ql/scripts/node_modules/.pnpm/registry.npmmirror.com+got@11.8.5/node_modules/got/dist/source/as-promise/index.js:118:42)</span><br></pre></td></tr></table></figure>
-<p>这个是你直接在配置文件中设置了，没有在系统设置内设置：<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/108-%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF-%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-12-27-18-52-02.png" alt="108-青龙面板-京东库使用指南-2023-12-27-18-52-02"></p>
-<hr>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>青龙面板是好东西，极大的省略了我们一些需要定时的重复性操作，<a target="_blank" rel="noopener" href="https://github.com/6dylan6/jdpro">6dylan6&#x2F;jdpro</a>这个库好么？好，但是它也是一个缝合怪。好处在于目前他有人维护。很多GitHub上的库都已经缺少人维护，在动不动就某个活动的今天，有一个与时俱进的脚本是一件很重要的事。</p>
-<hr>
-<p>参考：<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv24472970/">青龙面板集合仓库</a></p>
+<p>这个是你直接在配置文件中设置了，没有在系统设置内设置：<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/108-%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF-%E4%BA%AC%E4%B8%9C%E5%BA%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-2023-12-27-18-52-02.png" alt="108-青龙面板-京东库使用指南-2023-12-27-18-52-02" /></p>
+<hr />
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>青龙面板是好东西，极大的省略了我们一些需要定时的重复性操作，<a target="_blank" rel="noopener" href="https://github.com/6dylan6/jdpro">6dylan6/jdpro</a>这个库好么？好，但是它也是一个缝合怪。好处在于目前他有人维护。很多GitHub上的库都已经缺少人维护，在动不动就某个活动的今天，有一个与时俱进的脚本是一件很重要的事。</p>
+<hr />
+<p>参考：<br />
+<a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv24472970/">青龙面板集合仓库</a></p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
 

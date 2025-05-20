@@ -22,12 +22,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"minsummer.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="clibre是一个在线书籍管理工具，可以在线阅读PDF，EPUB等格式的图书，配合z-library，可以搭建一个属于自己的在线学习，阅读中心，而且还能管理每本书的状态，很适合在自己的服务器上部署一个。 clibre有两种搭建方式，python部署和docker搭建，根据个人情况选择。   python部署我使用的是官方搭建教程：https:&#x2F;&#x2F;github.com&#x2F;janeczku&#x2F;cali">
+    <meta name="description" content="clibre是一个在线书籍管理工具，可以在线阅读PDF，EPUB等格式的图书，配合z-library，可以搭建一个属于自己的在线学习，阅读中心，而且还能管理每本书的状态，很适合在自己的服务器上部署一个。 clibre有两种搭建方式，python部署和docker搭建，根据个人情况选择。 python部署我使用的是官方搭建教程：https:&#x2F;&#x2F;github.com&#x2F;janeczku&#x2F;calibre-">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="私人图书馆搭建-clibre">
 <meta property="og:url" content="https://minsummer.com/2022/05/01/%E7%A7%81%E4%BA%BA%E5%9B%BE%E4%B9%A6%E9%A6%86%E6%90%AD%E5%BB%BA-Clibre/">
 <meta property="og:site_name" content="我是豆豆">
-<meta property="og:description" content="clibre是一个在线书籍管理工具，可以在线阅读PDF，EPUB等格式的图书，配合z-library，可以搭建一个属于自己的在线学习，阅读中心，而且还能管理每本书的状态，很适合在自己的服务器上部署一个。 clibre有两种搭建方式，python部署和docker搭建，根据个人情况选择。   python部署我使用的是官方搭建教程：https:&#x2F;&#x2F;github.com&#x2F;janeczku&#x2F;cali">
+<meta property="og:description" content="clibre是一个在线书籍管理工具，可以在线阅读PDF，EPUB等格式的图书，配合z-library，可以搭建一个属于自己的在线学习，阅读中心，而且还能管理每本书的状态，很适合在自己的服务器上部署一个。 clibre有两种搭建方式，python部署和docker搭建，根据个人情况选择。 python部署我使用的是官方搭建教程：https:&#x2F;&#x2F;github.com&#x2F;janeczku&#x2F;calibre-">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603152838.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603152801.png">
@@ -358,27 +358,27 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>  clibre是一个在线书籍管理工具，可以在线阅读PDF，EPUB等格式的图书，配合z-library，可以搭建一个属于自己的在线学习，阅读中心，而且还能管理每本书的状态，很适合在自己的服务器上部署一个。</p>
+    <div class="post-body" itemprop="articleBody"><p>clibre是一个在线书籍管理工具，可以在线阅读PDF，EPUB等格式的图书，配合z-library，可以搭建一个属于自己的在线学习，阅读中心，而且还能管理每本书的状态，很适合在自己的服务器上部署一个。</p>
 <p>clibre有两种搭建方式，python部署和docker搭建，根据个人情况选择。</p>
-<p>  python部署我使用的是官方搭建教程：<a target="_blank" rel="noopener" href="https://github.com/janeczku/calibre-web%EF%BC%8C%E7%AE%80%E5%8D%95%E6%96%B9%E4%BE%BF%EF%BC%8C%E7%84%B6%E5%90%8E%E9%85%8D%E5%90%88%E5%AE%9D%E5%A1%94%EF%BC%8C%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%AE%BF%E9%97%AE%E3%80%82%E4%BD%86%E6%98%AF%E5%AE%98%E6%96%B9%E7%9A%84%E6%98%AF%E6%B2%A1%E6%9C%89%E5%AF%B9%E5%BA%94%E7%9A%84%E6%96%87%E6%A1%A3%E8%BD%AC%E6%8D%A2%EF%BC%8C%E6%AF%94%E5%A6%82pdf%E8%BD%ACmobi%E7%AD%89%E5%8A%9F%E8%83%BD%EF%BC%8C%E9%9C%80%E8%A6%81%E8%87%AA%E5%B7%B1%E5%AE%89%E8%A3%85%E8%BD%AC%E6%8D%A2%E5%99%A8%E3%80%82">https://github.com/janeczku/calibre-web，简单方便，然后配合宝塔，反向代理访问。但是官方的是没有对应的文档转换，比如pdf转mobi等功能，需要自己安装转换器。</a></p>
-<p>  docker部署的话，推荐使用<a target="_blank" rel="noopener" href="https://github.com/lyy289065406/calibre-docker%E7%9A%84docker%EF%BC%8Cdocker%E5%86%85%E9%83%A8%E8%87%AA%E5%B8%A6calibre%E7%9A%84%E6%9C%AC%E5%9C%B0%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%EF%BC%8C%E8%BF%98%E5%B8%A6%E5%AE%98%E6%96%B9%E7%9A%84calibre-web%E7%9A%84%E6%89%80%E6%9C%89%E5%8A%9F%E8%83%BD%EF%BC%8C%E4%BD%9C%E8%80%85%E8%BF%98%E5%86%85%E5%BB%BA%E4%BA%86%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7%E3%80%82%E5%85%B7%E4%BD%93%E5%8F%AF%E4%BB%A5%E7%9C%8B%E4%BD%9C%E8%80%85%E5%86%99%E7%9A%84%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3%EF%BC%8C%E5%BE%88%E6%B8%85%E6%A5%9A%E3%80%82">https://github.com/lyy289065406/calibre-docker的docker，docker内部自带calibre的本地管理工具，还带官方的calibre-web的所有功能，作者还内建了转换工具。具体可以看作者写的部署文档，很清楚。</a></p>
+<p>python部署我使用的是官方搭建教程：<a target="_blank" rel="noopener" href="https://github.com/janeczku/calibre-web%EF%BC%8C%E7%AE%80%E5%8D%95%E6%96%B9%E4%BE%BF%EF%BC%8C%E7%84%B6%E5%90%8E%E9%85%8D%E5%90%88%E5%AE%9D%E5%A1%94%EF%BC%8C%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%AE%BF%E9%97%AE%E3%80%82%E4%BD%86%E6%98%AF%E5%AE%98%E6%96%B9%E7%9A%84%E6%98%AF%E6%B2%A1%E6%9C%89%E5%AF%B9%E5%BA%94%E7%9A%84%E6%96%87%E6%A1%A3%E8%BD%AC%E6%8D%A2%EF%BC%8C%E6%AF%94%E5%A6%82pdf%E8%BD%ACmobi%E7%AD%89%E5%8A%9F%E8%83%BD%EF%BC%8C%E9%9C%80%E8%A6%81%E8%87%AA%E5%B7%B1%E5%AE%89%E8%A3%85%E8%BD%AC%E6%8D%A2%E5%99%A8%E3%80%82">https://github.com/janeczku/calibre-web，简单方便，然后配合宝塔，反向代理访问。但是官方的是没有对应的文档转换，比如pdf转mobi等功能，需要自己安装转换器。</a></p>
+<p>docker部署的话，推荐使用<a target="_blank" rel="noopener" href="https://github.com/lyy289065406/calibre-docker%E7%9A%84docker%EF%BC%8Cdocker%E5%86%85%E9%83%A8%E8%87%AA%E5%B8%A6calibre%E7%9A%84%E6%9C%AC%E5%9C%B0%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%EF%BC%8C%E8%BF%98%E5%B8%A6%E5%AE%98%E6%96%B9%E7%9A%84calibre-web%E7%9A%84%E6%89%80%E6%9C%89%E5%8A%9F%E8%83%BD%EF%BC%8C%E4%BD%9C%E8%80%85%E8%BF%98%E5%86%85%E5%BB%BA%E4%BA%86%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7%E3%80%82%E5%85%B7%E4%BD%93%E5%8F%AF%E4%BB%A5%E7%9C%8B%E4%BD%9C%E8%80%85%E5%86%99%E7%9A%84%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3%EF%BC%8C%E5%BE%88%E6%B8%85%E6%A5%9A%E3%80%82">https://github.com/lyy289065406/calibre-docker的docker，docker内部自带calibre的本地管理工具，还带官方的calibre-web的所有功能，作者还内建了转换工具。具体可以看作者写的部署文档，很清楚。</a></p>
 <p>这边着重讲解使用宝塔的python管理工具搭建官方calire-web。</p>
 <p>首先，下载对应的官方包</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603152838.png" alt="20220603152838"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603152838.png" alt="20220603152838" /></p>
 <p>上传到服务器端，解压，记下文档路径。</p>
-<p>  下一步，在宝塔面板的软件商店里面查找python项目管理器，官方出品，但是只支持centos7.x。可以方便快捷的管理python版本。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603152801.png" alt="20220603152801"></p>
-<p>  安装完成进入程序之后，选择python版本，官方要求3.5+，这边我选择3.8。</p>
-<p>  路径选择上传到服务器后解压的路径，名称随意，框架选择python，启动方式选择python，启动的文件选择对应目录下cps.py</p>
+<p>下一步，在宝塔面板的软件商店里面查找python项目管理器，官方出品，但是只支持centos7.x。可以方便快捷的管理python版本。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603152801.png" alt="20220603152801" /></p>
+<p>安装完成进入程序之后，选择python版本，官方要求3.5+，这边我选择3.8。</p>
+<p>路径选择上传到服务器后解压的路径，名称随意，框架选择python，启动方式选择python，<a target="_blank" rel="noopener" href="http://xn--cps-y28d05bf4lg2c3sxsqff4b26rx7hlw3dthbly4s.py">启动的文件选择对应目录下cps.py</a></p>
 <p>端口随意，记住就行，剩下勾选起来，安装模块+开机启动。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603152650.png" alt="20220603152650"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603152650.png" alt="20220603152650" /></p>
 <p>点击确定之后，系统就会在后台运行，你可以直接用域名+端口，或者IP+端口的形式访问。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603152729.png" alt="20220603152729"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603152729.png" alt="20220603152729" /></p>
 <p>初始用户名：admin 密码：admin123.</p>
 <p>如果不想要后面的端口，可以使用域名的反向代理。正常创建域名之后，然后将域名反向代理到你的端口，这样就实现了完全的域名访问。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603152555.png" alt="20220603152555"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603152555.png" alt="20220603152555" /></p>
 <p>具体效果可以见<a target="_blank" rel="noopener" href="https://book.minsummer.com/">https://book.minsummer.com/</a></p>
-<p>  使用下来，还是有点小问题：</p>
+<p>使用下来，还是有点小问题：</p>
 <p>1，是epub的文件如果太大，打开会太慢，然后每次放大缩小都会卡一会，因为屏幕大小变了，系统需要重新排版。这样导致有时候书签保存的位置也会乱。</p>
 <p>PS:如果python项目管理器启动失败，有可能是因为系统安装模块错误，可以手动进入虚拟系统安装：</p>
 <pre><code>source 项目路径/项目名_venv/bin/activate
@@ -388,7 +388,7 @@ pip install requirements.txt
 <p>确保requirements.txt在你执行命令的目录下，否则你就要搬运过来。</p>
 <p>python管理器默认会在你选择文件夹下创建一个虚拟环境，然后再在这里运行你的程序，对python虚拟环境感兴趣的话，可以看<a href="https://minsummer.com/IT/63.html%E8%BF%99%E7%AF%87%E3%80%82">https://minsummer.com/IT/63.html这篇。</a></p>
 <p>官方系统的部署是没有安装kpubify，这个工具用来转换电子书的格式，我们需要安装kpubify这个工具，然后再配置：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603151947.png" alt="20220603151947"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603151947.png" alt="20220603151947" /></p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
 

@@ -181,7 +181,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.</span> <span class="nav-text"> 总结</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -326,21 +326,41 @@
     <div class="post-body" itemprop="articleBody"><p>上文说到这次买了一个浪潮的老旧服务器，那么接下来就要讨论我这台服务器需要安装什么系统。还是说下我的需求：</p>
 <ol>
 <li>安装飞牛的nas系统</li>
-<li>可以让我使用一个Windows系统来测试一些东西<span id="more"></span>
-我目前使用的服务器是debain，里面的很多服务我都是通过dockers进行部署，现在的问题是我偶尔需要在Linux里面部署一个Windows或者Windows下部署docker。目前主流可实现的方案：</li>
-<li>winserver+KVM：<br>这套方案没有具体实施，但是理论上是可行的，毕竟现在Windows11下都可以直接使用docker。让我犹豫的点就是winserver下的稳定性。</li>
-<li>debain+docker：<br>这套方案是理论可行，系统使用debain，然后docker下安装windows。具体见<a target="_blank" rel="noopener" href="https://soulteary.com/2024/03/11/install-windows-into-a-docker-container.html">网络上的博客</a>。这套我没有条件实验，这也是我为啥要上这台服务器，有时候看到有兴趣的项目，但是苦于身边没有设备，导致无法实施。</li>
+<li>可以让我使用一个Windows系统来测试一些东西</li>
+</ol>
+<span id="more"></span>
+<p>我目前使用的服务器是debain，里面的很多服务我都是通过dockers进行部署，现在的问题是我偶尔需要在Linux里面部署一个Windows或者Windows下部署docker。目前主流可实现的方案：</p>
+<ol>
+<li>winserver+KVM：<br />
+这套方案没有具体实施，但是理论上是可行的，毕竟现在Windows11下都可以直接使用docker。让我犹豫的点就是winserver下的稳定性。</li>
+<li>debain+docker：<br />
+这套方案是理论可行，系统使用debain，然后docker下安装windows。具体见<a target="_blank" rel="noopener" href="https://soulteary.com/2024/03/11/install-windows-into-a-docker-container.html">网络上的博客</a>。这套我没有条件实验，这也是我为啥要上这台服务器，有时候看到有兴趣的项目，但是苦于身边没有设备，导致无法实施。</li>
 </ol>
 <p>以上都是软件层面的解决方案，现在来讨论几个硬件层面的解决方案，这种的一般都是做ALL IN ONE的基础：</p>
 <ol>
-<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/VMware_ESXi">ESXi</a><br>VMware ESXi是VMware开发的企业级类型 I（type-1）Hypervisor，用于硬件虚拟化。作为类型 I（type-1）Hypervisor，ESXi不是安装在操作系统上的软件应用程序，而是直接安装在硬件上并且集成了重要的操作系统组件，如内核。VMware ESXi原名ESX，2010年ESX4.1版本发布后，VMware将ESX更名为ESXi。<br>网络上有具体的安装<a target="_blank" rel="noopener" href="https://nuotian.furry.pro/blog/archives/618">实例</a>，还有对应的安装<a target="_blank" rel="noopener" href="https://filesever.minsummer.com/%E6%B5%AA%E6%BD%AESA5212M4/vsphere-esxi-701-installation-setup-guide.pdf">PDF</a>可以参考，由于我使用的是E5 2670 V3的CPU经过查询只能使用到ESXi 7.0 U3版本，如果是V4可以使用8.0。我简单看了下8.0的发行文件，没有什么太大的特性，所以我也不准备换个CPU了。<br> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/189-NAS%E7%B3%BB%E7%BB%9F%E9%80%89%E5%9E%8B%E8%AE%A8%E8%AE%BA-2025-01-03-10-45-57.png" alt="189-NAS系统选型讨论-2025-01-03-10-45-57"><br> 同时根据<a target="_blank" rel="noopener" href="https://www.v2ex.com/t/826802">V2</a>上的讨论，总结一下就是：ESXi闭源，下载到对应的服务器版本硬件一般不会有什么问题，毕竟人家靠这个吃饭，但是需要注意，ESXi需要激活码，虽然很容易找到。<br> 但是PVE在个人，家用，非商用环境下是比ESXi好的存在，因为他开源，而且底层是debain，对我来说很熟悉。</li>
-<li>unraid<br>逃不过去的，只要说到硬件虚拟化，那么就肯定逃不过unraid。unraid本质上是一个nas系统，系统需要安装到u盘上。然后也是需要激活码的，当然网络上有一些开心版本。作为一个想要长久使用，甚至当作生产环境的想法，我觉得还是远离，所以我只是简单了解一下就没再继续，其实几年前下载过好几个开心版本，但是一致没有成功安装，所以不想继续。<br>教程可以考虑看下b站司波图的视频教程。</li>
-<li>pve<br>开源项目，底层基于debain，所以和一台普通的Linux服务器没有任何区别，唯一要说的话就是多了一些界面操作配置。<br>开源，而且硬件兼容性更多。</li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/VMware_ESXi">ESXi</a><br />
+VMware ESXi是VMware开发的企业级类型 I（type-1）Hypervisor，用于硬件虚拟化。作为类型 I（type-1）Hypervisor，ESXi不是安装在操作系统上的软件应用程序，而是直接安装在硬件上并且集成了重要的操作系统组件，如内核。VMware ESXi原名ESX，2010年ESX4.1版本发布后，VMware将ESX更名为ESXi。<br />
+网络上有具体的安装<a target="_blank" rel="noopener" href="https://nuotian.furry.pro/blog/archives/618">实例</a>，还有对应的安装<a target="_blank" rel="noopener" href="https://filesever.minsummer.com/%E6%B5%AA%E6%BD%AESA5212M4/vsphere-esxi-701-installation-setup-guide.pdf">PDF</a>可以参考，由于我使用的是E5 2670 V3的CPU经过查询只能使用到ESXi 7.0 U3版本，如果是V4可以使用8.0。我简单看了下8.0的发行文件，没有什么太大的特性，所以我也不准备换个CPU了。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/189-NAS%E7%B3%BB%E7%BB%9F%E9%80%89%E5%9E%8B%E8%AE%A8%E8%AE%BA-2025-01-03-10-45-57.png" alt="189-NAS系统选型讨论-2025-01-03-10-45-57" /><br />
+同时根据<a target="_blank" rel="noopener" href="https://www.v2ex.com/t/826802">V2</a>上的讨论，总结一下就是：ESXi闭源，下载到对应的服务器版本硬件一般不会有什么问题，毕竟人家靠这个吃饭，但是需要注意，ESXi需要激活码，虽然很容易找到。<br />
+但是PVE在个人，家用，非商用环境下是比ESXi好的存在，因为他开源，而且底层是debain，对我来说很熟悉。</li>
+<li>unraid<br />
+逃不过去的，只要说到硬件虚拟化，那么就肯定逃不过unraid。unraid本质上是一个nas系统，系统需要安装到u盘上。然后也是需要激活码的，当然网络上有一些开心版本。作为一个想要长久使用，甚至当作生产环境的想法，我觉得还是远离，所以我只是简单了解一下就没再继续，其实几年前下载过好几个开心版本，但是一致没有成功安装，所以不想继续。<br />
+教程可以考虑看下b站司波图的视频教程。</li>
+<li>pve<br />
+开源项目，底层基于debain，所以和一台普通的Linux服务器没有任何区别，唯一要说的话就是多了一些界面操作配置。<br />
+开源，而且硬件兼容性更多。</li>
 </ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>如果你和我一样是购买二手服务器，那么我建议你直接选择EXSi，不二之选，尤其是能够找到对应服务器的安装文件，稳定性肯定比较好。而且官方文件多，只要你的需求不是太奇怪，一般都没问题。<br>PVE的话，适合你自己组装的服务器，硬件上兼容性比较好，而且个人使用的功能齐全，拓展性和文档比较好。<br>至于unraid，本质是台NAS系统，这块我了解不多，见仁见智吧</p>
-<p>EXSi，PVE本质上的用途是服务器集群的虚拟化，他和k8s之类的类似，不过前者是硬件上的虚拟化，后者则是软件上的。<br>一般使用硬件虚拟化的玩玩是要ALL IN ONE，我的初衷比较简单，就是希望可以隔离各个环境，防止互相配置冲突，但是基础打得好，后续要是玩玩ALL IN ONE也不是不行。</p>
-<hr>
-<p>参考文章：<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lcword/p/16996542.html">三系统对比</a><br><a target="_blank" rel="noopener" href="https://docs.vmware.com/cn/VMware-vSphere/8.0/rn/vmware-vsphere-80-release-notes/index.html">EXSi官方文档-8.0发行说明</a></p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>如果你和我一样是购买二手服务器，那么我建议你直接选择EXSi，不二之选，尤其是能够找到对应服务器的安装文件，稳定性肯定比较好。而且官方文件多，只要你的需求不是太奇怪，一般都没问题。<br />
+PVE的话，适合你自己组装的服务器，硬件上兼容性比较好，而且个人使用的功能齐全，拓展性和文档比较好。<br />
+至于unraid，本质是台NAS系统，这块我了解不多，见仁见智吧</p>
+<p>EXSi，PVE本质上的用途是服务器集群的虚拟化，他和k8s之类的类似，不过前者是硬件上的虚拟化，后者则是软件上的。<br />
+一般使用硬件虚拟化的玩玩是要ALL IN ONE，我的初衷比较简单，就是希望可以隔离各个环境，防止互相配置冲突，但是基础打得好，后续要是玩玩ALL IN ONE也不是不行。</p>
+<hr />
+<p>参考文章：<br />
+<a target="_blank" rel="noopener" href="https://www.cnblogs.com/lcword/p/16996542.html">三系统对比</a><br />
+<a target="_blank" rel="noopener" href="https://docs.vmware.com/cn/VMware-vSphere/8.0/rn/vmware-vsphere-80-release-notes/index.html">EXSi官方文档-8.0发行说明</a></p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
 

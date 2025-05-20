@@ -22,12 +22,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"minsummer.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="新一代的VPS管理工具VScode最近正在调整我的vps，发现了一个新颖的docker管理工具，可以替代掉那些复杂的面板工具，对于个人用户来说十分的友好。 首先你的vscode需要安装2个插件：Remote-SSH，Docker，这两个是官方插件，用来连接远程的服务器的，如果你的远程服务器安装了docker，那么vscode就可以直接找到而且建立连接。 首先是Remote-SSH： 安装完成之后，">
+    <meta name="description" content="新一代的VPS管理工具VScode 最近正在调整我的vps，发现了一个新颖的docker管理工具，可以替代掉那些复杂的面板工具，对于个人用户来说十分的友好。 首先你的vscode需要安装2个插件：Remote-SSH，Docker，这两个是官方插件，用来连接远程的服务器的，如果你的远程服务器安装了docker，那么vscode就可以直接找到而且建立连接。  首先是Remote-SSH：  安装完">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="新一代的VPS管理工具VScode">
 <meta property="og:url" content="https://minsummer.com/2022/12/05/%E6%96%B0%E4%B8%80%E4%BB%A3%E7%9A%84VPS%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7VScode/">
 <meta property="og:site_name" content="我是豆豆">
-<meta property="og:description" content="新一代的VPS管理工具VScode最近正在调整我的vps，发现了一个新颖的docker管理工具，可以替代掉那些复杂的面板工具，对于个人用户来说十分的友好。 首先你的vscode需要安装2个插件：Remote-SSH，Docker，这两个是官方插件，用来连接远程的服务器的，如果你的远程服务器安装了docker，那么vscode就可以直接找到而且建立连接。 首先是Remote-SSH： 安装完成之后，">
+<meta property="og:description" content="新一代的VPS管理工具VScode 最近正在调整我的vps，发现了一个新颖的docker管理工具，可以替代掉那些复杂的面板工具，对于个人用户来说十分的友好。 首先你的vscode需要安装2个插件：Remote-SSH，Docker，这两个是官方插件，用来连接远程的服务器的，如果你的远程服务器安装了docker，那么vscode就可以直接找到而且建立连接。  首先是Remote-SSH：  安装完">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/20221203135451.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/20221203135538.png">
@@ -189,7 +189,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B0%E4%B8%80%E4%BB%A3%E7%9A%84VPS%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7VScode"><span class="nav-number">1.</span> <span class="nav-text">新一代的VPS管理工具VScode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A6%96%E5%85%88%E6%98%AFRemote-SSH%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">首先是Remote-SSH：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker"><span class="nav-number">1.2.</span> <span class="nav-text">Docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.3.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B0%E4%B8%80%E4%BB%A3%E7%9A%84vps%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7vscode"><span class="nav-number">1.</span> <span class="nav-text"> 新一代的VPS管理工具VScode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A6%96%E5%85%88%E6%98%AFremote-ssh"><span class="nav-number">1.1.</span> <span class="nav-text"> 首先是Remote-SSH：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker"><span class="nav-number">1.2.</span> <span class="nav-text"> Docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.3.</span> <span class="nav-text"> 总结</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -348,35 +348,38 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="新一代的VPS管理工具VScode"><a href="#新一代的VPS管理工具VScode" class="headerlink" title="新一代的VPS管理工具VScode"></a>新一代的VPS管理工具VScode</h1><p>最近正在调整我的vps，发现了一个新颖的docker管理工具，可以替代掉那些复杂的面板工具，对于个人用户来说十分的友好。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="新一代的vps管理工具vscode"><a class="markdownIt-Anchor" href="#新一代的vps管理工具vscode"></a> 新一代的VPS管理工具VScode</h1>
+<p>最近正在调整我的vps，发现了一个新颖的docker管理工具，可以替代掉那些复杂的面板工具，对于个人用户来说十分的友好。</p>
 <p>首先你的vscode需要安装2个插件：Remote-SSH，Docker，这两个是官方插件，用来连接远程的服务器的，如果你的远程服务器安装了docker，那么vscode就可以直接找到而且建立连接。</p>
-<h2 id="首先是Remote-SSH："><a href="#首先是Remote-SSH：" class="headerlink" title="首先是Remote-SSH："></a>首先是Remote-SSH：</h2><p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221203135451.png" alt="20221203135451"></p>
+<h2 id="首先是remote-ssh"><a class="markdownIt-Anchor" href="#首先是remote-ssh"></a> 首先是Remote-SSH：</h2>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221203135451.png" alt="20221203135451" /></p>
 <p>安装完成之后，点击新建按钮</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221203135538.png" alt="20221203135538"></p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221203135538.png" alt="20221203135538" /></p>
 <p>系统会弹出命令行：</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221203135601.png" alt="20221203135601"></p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221203135601.png" alt="20221203135601" /></p>
 <p>这里的输入命令是ssh 用户@你服务器的地址：特殊端口，端口空则为22端口，之后会要求你输入对应的服务器密码，确定服务器种类之后就可以登陆进去。</p>
 <p>这里要说明2点：</p>
 <ol>
 <li>后续的配置修改在新建旁边的齿轮里面，可以修改的包括端口，用户名，名称等等。</li>
 </ol>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221203140001.png" alt="20221203140001"></p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221203140001.png" alt="20221203140001" /></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Host 显示名称1</span><br><span class="line"></span><br><span class="line">  HostName 服务器的IP地址</span><br><span class="line"></span><br><span class="line">  User root#用户名</span><br><span class="line"></span><br><span class="line">  Port 22#端口，默认22</span><br><span class="line"></span><br><span class="line">  IdentityFile &quot;你存放的rsa文件路径&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Host 显示名称1-跳板方式</span><br><span class="line"></span><br><span class="line">  HostName 被墙的服务器的IP地址</span><br><span class="line"></span><br><span class="line">  User root#用户名</span><br><span class="line"></span><br><span class="line">  Port 22#端口，默认22</span><br><span class="line"></span><br><span class="line">  ProxyCommand ssh -W %h:%p 显示名称1</span><br><span class="line"></span><br><span class="line">  IdentityFile &quot;你存放的rsa文件路径&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <p>如果你的服务器被封了，无法直接访问，那么你可以在Vultr里面再买一台以时间计费的服务器，然后通过跳板的方式访问被封的那台，跳板的命令是<code>ProxyCommand ssh -W %h:%p 跳板的机器</code>，你可以直接在Remote-SSH内配置好，后续就可以直接访问。</p>
 <ol start="2">
 <li>大多数时候我们用的是服务器需要不停的验证密码，这边提供了一种可以无密码访问的方式，首先打开cmd，输入<code>ssh-keygen</code>，会提示你保存的位置+名称。</li>
 </ol>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221203140812.png" alt="20221203140812"></p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221203140812.png" alt="20221203140812" /></p>
 <p>确定之后会提示你输入一个密钥的密码，可以为空。【建议为空，这个密码是使用这个密钥时候的密码，和服务器密码是两回事】</p>
-<p>确定之后，会在对应位置下生成2个文件，名字.pub和（名字，无任何后缀名）这两文件，接下来，我们只需要将pub后缀的文件内容写入到远程服务器内的~&#x2F;.ssh&#x2F;authorized_keys里面即可。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221203141236.png" alt="20221203141236"></p>
+<p>确定之后，会在对应位置下生成2个文件，名字.pub和（名字，无任何后缀名）这两文件，接下来，我们只需要将pub后缀的文件内容写入到远程服务器内的~/.ssh/authorized_keys里面即可。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221203141236.png" alt="20221203141236" /></p>
 <p>登陆服务器，然后将pub后缀名的文件放到<code>~/.ssh/</code>下即可，然后输入命令<code>cat ~/.ssh/你的文件.pub &gt;&gt; ~/.ssh/authorized_keys </code>即可，在vscode里面配置的文件路径，就可以实现无密码访问远程服务器。</p>
-<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><p>在连接远程服务器之后，在vscode安装完一些基本拓展之后，就可以看到对应的docker</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221203142006.png" alt="20221203142006"></p>
+<h2 id="docker"><a class="markdownIt-Anchor" href="#docker"></a> Docker</h2>
+<p>在连接远程服务器之后，在vscode安装完一些基本拓展之后，就可以看到对应的docker</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221203142006.png" alt="20221203142006" /></p>
 <p>方便简单的显示出目前运行的docker，可以右键进入容器内部，查看容器log，也可以下拉打开查看容器内部的文件，如果你还安装Dev Containers的话，你还可以进入容器内部，再安装一个vscode。这在以后搭建开发环境市很有帮助的。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221203142147.png" alt="20221203142147"></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总结来说，vscode功能很强大，如果我们后续直接使用vscode来管理服务器的文件和一些简单的操作，相较于庞大且复杂的宝塔面板之类，我觉得更合适，我们只需要专注于docker的安装，其他的全部可以交给vcode处理。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221203142147.png" alt="20221203142147" /></p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>总结来说，vscode功能很强大，如果我们后续直接使用vscode来管理服务器的文件和一些简单的操作，相较于庞大且复杂的宝塔面板之类，我觉得更合适，我们只需要专注于docker的安装，其他的全部可以交给vcode处理。</p>
 <p>当然，我对面板的需求在于：一些简单的命令，界面化的操作，已经文件的移动之类。这些我都能在vscode里面找到。</p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">

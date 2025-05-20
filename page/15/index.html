@@ -310,68 +310,79 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>  首先，描述一下我的服务器配置</p>
+          <p>首先，描述一下我的服务器配置</p>
 <ul>
-<li><p>cpu：1核 </p>
+<li>
+<p>cpu：1核</p>
 </li>
-<li><p>内存：512M</p>
+<li>
+<p>内存：512M</p>
 </li>
-<li><p>硬盘：10G</p>
+<li>
+<p>硬盘：10G</p>
 </li>
-<li><p>带宽：1G</p>
+<li>
+<p>带宽：1G</p>
 </li>
-<li><p>流量：1000G&#x2F;月</p>
+<li>
+<p>流量：1000G/月</p>
 </li>
 </ul>
-<p>这个是搬瓦工的512M的洛杉矶CN2线路，访问国内速度很快，电信联通尤其好，移动差劲。现在这款已经下架，目前最便宜的要<a target="_blank" rel="noopener" href="https://bandwagonhost.com/aff.php?aff=71828">1G内存20G硬盘-49.99美元&#x2F;年</a>，这个只能说当初年少无知，没想到捡了一块宝。</p>
-<p>  但是相对的也存在问题：我们服务器内核不足，而且内存不足，所以很多大型的服务我们是运行不起来的，尤其不建议运行Mysql服务，虽然通过虚拟化内存可以增加内存容量，但是1核心的cpu始终是系统短板。所以系统搭载以轻快+低负载为主。曾经想过将其变为一个网上影院，后面折腾来折腾去，发现不仅仅是硬盘不足，还有由于cn2网络的不稳定，有时候还不如挂代理直接访问一些视频网站舒服，毕竟人家有优化，有线路。那么综合下来，目前服务器上仅仅搭载3个服务：</p>
+<p>这个是搬瓦工的512M的洛杉矶CN2线路，访问国内速度很快，电信联通尤其好，移动差劲。现在这款已经下架，目前最便宜的要<a target="_blank" rel="noopener" href="https://bandwagonhost.com/aff.php?aff=71828">1G内存20G硬盘-49.99美元/年</a>，这个只能说当初年少无知，没想到捡了一块宝。</p>
+<p>但是相对的也存在问题：我们服务器内核不足，而且内存不足，所以很多大型的服务我们是运行不起来的，尤其不建议运行Mysql服务，虽然通过虚拟化内存可以增加内存容量，但是1核心的cpu始终是系统短板。所以系统搭载以轻快+低负载为主。曾经想过将其变为一个网上影院，后面折腾来折腾去，发现不仅仅是硬盘不足，还有由于cn2网络的不稳定，有时候还不如挂代理直接访问一些视频网站舒服，毕竟人家有优化，有线路。那么综合下来，目前服务器上仅仅搭载3个服务：</p>
 <ul>
-<li><p>V2ray：翻墙工具，用来访问一些无法访问的东西。</p>
+<li>
+<p>V2ray：翻墙工具，用来访问一些无法访问的东西。</p>
 </li>
-<li><p>typecho博客：轻量级博客，很适合这种低内存的小主机，主要是不需要安装数据库。</p>
+<li>
+<p>typecho博客：轻量级博客，很适合这种低内存的小主机，主要是不需要安装数据库。</p>
 </li>
-<li><p>clibre-web电子书：在线阅读工具，更新迅速还开源。</p>
+<li>
+<p>clibre-web电子书：在线阅读工具，更新迅速还开源。</p>
 </li>
 </ul>
 <p>其中v2使用脚本安装，安装在系统内部。typecho使用宝塔面板。clibre-web使用python项目管理部署。</p>
 <p>现在想重新整理这些服务，毕竟当初安装的时候试错和其他服务，所以导致整个系统的文件有点混乱，包括当初为了独立出一个python，也试过python共存。还有就是宝塔面板更新需要手机绑定等问题，导致一直使用旧的宝塔面板。所以现在想要从头梳理一下自己需求，从系统层面重新搭建一个干净的服务器。</p>
 <p>1.系统选择</p>
-<hr>
-<p>  目前是使用centos系统，当时搬瓦工可以安装的系统中自带BBR加速的</p>
+<hr />
+<p>目前是使用centos系统，当时搬瓦工可以安装的系统中自带BBR加速的</p>
 <blockquote>
 <p>BBR是 Google 在2016 年发布的一套拥塞控制算法。它尤其适合在存在一定丢包率的弱网环境下使用，在这类环境下，BBR 的性能远超 CUBIC 等传统的拥塞控制算法。</p>
 </blockquote>
-<p>  目前主流加速方式有2种：BBR和锐速。加速效果相近，对于海外的机器我是建议使用加速算法的，流量损耗大概在5%，但是效果提升巨大，目前已经成为大多数服务器自带的一个服务，自带的内核版本是Linux 4.9及以上的系统已经内置BBR但默认为关闭状态。目前CentOS 8.0+, Debian 9.5+都是这个内核以上版本，可以使用以下命令打开：</p>
+<p>目前主流加速方式有2种：BBR和锐速。加速效果相近，对于海外的机器我是建议使用加速算法的，流量损耗大概在5%，但是效果提升巨大，目前已经成为大多数服务器自带的一个服务，自带的内核版本是Linux 4.9及以上的系统已经内置BBR但默认为关闭状态。目前CentOS 8.0+, Debian 9.5+都是这个内核以上版本，可以使用以下命令打开：</p>
 <pre><code>echo &quot;net.core.default_qdisc=fq&quot; &gt;&gt; /etc/sysctl.conf
 
 echo &quot;net.ipv4.tcp_congestion_control=bbr&quot; &gt;&gt; /etc/sysctl.conf
 
 sysctl -p
 </code></pre>
-<p>  如果还嫌弃不够可以再打开TCP Fast Open：</p>
+<p>如果还嫌弃不够可以再打开TCP Fast Open：</p>
 <pre><code>echo &quot;net.ipv4.tcp_fastopen=3&quot; &gt;&gt; /etc/sysctl.conf &amp;&amp; sysctl -p
 </code></pre>
-<p>  所以大多数Linux系统都是我们的选择。搬瓦工提供的安装系统：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220519195612.png" alt="20220519195612"></p>
-<p>  除了centos，debain，Ubuntu，还有一个AlmaLinux和rocky。这边不是很推荐最后两个系统，说是centos系统的后续接班人，但是相对来说文档不多，而且太小众，出现问题都找不到解决方案。然后在centos，debain，Ubuntu之间，我是会比较推荐debain系统，因为centos8系统生命周期2021年已经结束。虽然centos7还存续着，到2024年，但是系统毕竟属于后期维护，团队主力在centos stream。而且debain系统和centos系统相似（其实大多数Linux系统都是相似的，差别在一些包管理。最重要的是debain系统相较于centos系统，占用更小，系统更加稳定，128M的系统都可以完美运行debain系统。debain系统主打稳定性，建议一旦完美运行之后就别去再升级。文档来说相对于centos少，但是还是可以找到大多数的问题解决方案。其次如果是网站服务器，很多时候我们会使用控制面板，由它们来输入和执行命令，所以底层系统的差距对我们影响不大。</p>
+<p>所以大多数Linux系统都是我们的选择。搬瓦工提供的安装系统：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220519195612.png" alt="20220519195612" /></p>
+<p>除了centos，debain，Ubuntu，还有一个AlmaLinux和rocky。这边不是很推荐最后两个系统，说是centos系统的后续接班人，但是相对来说文档不多，而且太小众，出现问题都找不到解决方案。然后在centos，debain，Ubuntu之间，我是会比较推荐debain系统，因为centos8系统生命周期2021年已经结束。虽然centos7还存续着，到2024年，但是系统毕竟属于后期维护，团队主力在centos stream。而且debain系统和centos系统相似（其实大多数Linux系统都是相似的，差别在一些包管理。最重要的是debain系统相较于centos系统，占用更小，系统更加稳定，128M的系统都可以完美运行debain系统。debain系统主打稳定性，建议一旦完美运行之后就别去再升级。文档来说相对于centos少，但是还是可以找到大多数的问题解决方案。其次如果是网站服务器，很多时候我们会使用控制面板，由它们来输入和执行命令，所以底层系统的差距对我们影响不大。</p>
 <blockquote>
 <p>总结：如果你是新手（不折腾），使用centos，如果你有一定的排查问题能力且是追求性能极致的（生命不止，折腾不休），那么建议你使用debain。</p>
 </blockquote>
 <p>2，控制面板选择</p>
-<hr>
-<p>  控制面板相当于我们和操作系统之间的一个中间媒介，用来控制服务器的文件读写，权限配置，php等其他程序的安装，让我们没必要修改一个文件需要打一大堆的命令行。面板能够提供：</p>
+<hr />
+<p>控制面板相当于我们和操作系统之间的一个中间媒介，用来控制服务器的文件读写，权限配置，php等其他程序的安装，让我们没必要修改一个文件需要打一大堆的命令行。面板能够提供：</p>
 <ul>
-<li><p>1，直观的文件操作和文档</p>
+<li>
+<p>1，直观的文件操作和文档</p>
 </li>
-<li><p>2，傻瓜化网站部署，反向代理和ssl证书申请等</p>
+<li>
+<p>2，傻瓜化网站部署，反向代理和ssl证书申请等</p>
 </li>
-<li><p>3，php状态查询还有一些插件的安装和卸载。</p>
+<li>
+<p>3，php状态查询还有一些插件的安装和卸载。</p>
 </li>
 </ul>
-<p>  主流的控制面板程序有很多，但是都大差不离。这边主要推荐两个：AMH，宝塔。</p>
-<p>  宝塔：大概占用200M左右，国内版本需要绑定手机号，虽说有办法可以绕过去，但总归不方便。每次升级还需要操作一次，这边推荐国际版，内容一样，但是是英文的。可以满足大多数需求：提供一键安装望着那个环境，支持nignx的各种操作，提供软件源，可以让你安装其他一些适配的程序，安装好之后可以直接界面操作，而无需输入命令行。</p>
-<p>  AMH：之前是特定版本免费，现在已经是直接有免费版本了，根据官网的<a target="_blank" rel="noopener" href="http://8.129.124.177:8888/index.php?c=index&a=index_csrf">演示版本</a>，他是更偏向于自定义的，很多东西不会默认给你安装，你需要一点点的去软件商店安装你需要的软件。自定义化程度高，但是相对的很多东西需要有一定的基础，软件商店提供的产品很多，很多都是知名的软件。上手成本高，但是最后成效是要好于宝塔，毕竟宝塔是自己开发，很多功能需要后面增加。这个直接采用主流软件挂载，基本可以实现所有操作。</p>
-<p>  推荐这两款主要是中文+有自己的文档社区。毕竟出问题好解决。</p>
+<p>主流的控制面板程序有很多，但是都大差不离。这边主要推荐两个：AMH，宝塔。</p>
+<p>宝塔：大概占用200M左右，国内版本需要绑定手机号，虽说有办法可以绕过去，但总归不方便。每次升级还需要操作一次，这边推荐国际版，内容一样，但是是英文的。可以满足大多数需求：提供一键安装望着那个环境，支持nignx的各种操作，提供软件源，可以让你安装其他一些适配的程序，安装好之后可以直接界面操作，而无需输入命令行。</p>
+<p>AMH：之前是特定版本免费，现在已经是直接有免费版本了，根据官网的<a target="_blank" rel="noopener" href="http://8.129.124.177:8888/index.php?c=index&amp;a=index_csrf">演示版本</a>，他是更偏向于自定义的，很多东西不会默认给你安装，你需要一点点的去软件商店安装你需要的软件。自定义化程度高，但是相对的很多东西需要有一定的基础，软件商店提供的产品很多，很多都是知名的软件。上手成本高，但是最后成效是要好于宝塔，毕竟宝塔是自己开发，很多功能需要后面增加。这个直接采用主流软件挂载，基本可以实现所有操作。</p>
+<p>推荐这两款主要是中文+有自己的文档社区。毕竟出问题好解决。</p>
 <blockquote>
 <p>总结：如果你是新手请直接选择宝塔。该有的都有，该配的都给你配好了，即开即用</p>
 </blockquote>
@@ -379,16 +390,20 @@ sysctl -p
 <p>如果你是强迫症或者享受折腾的过程，那么请用AMH。</p>
 </blockquote>
 <p>3，服务器程序</p>
-<hr>
-<p>  服务器内存和核心都是短板，所以一般我不会在服务器运行一些大型程序，基本上关于数据库的操作我都不会部署。目前几个程序几乎都是采用sqllite进行数据操作。人们购买服务器的想法多样：有些是想要部署自己的博客，有些仅仅是为了看YouTube，还有就是自己学习需要一台24小时不间断的电脑，侧重稳定性。但是我想说的是服务器能做到的不仅仅如此：基本上只要是采用python的服务，我们都可以部署，同样基于PHP的我们也可以做到。如果你需要，你可以在服务器上部署jupyter来进行远端程序开发，或者部署一个爬虫抓取对应的资料。这边举例几个：</p>
+<hr />
+<p>服务器内存和核心都是短板，所以一般我不会在服务器运行一些大型程序，基本上关于数据库的操作我都不会部署。目前几个程序几乎都是采用sqllite进行数据操作。人们购买服务器的想法多样：有些是想要部署自己的博客，有些仅仅是为了看YouTube，还有就是自己学习需要一台24小时不间断的电脑，侧重稳定性。但是我想说的是服务器能做到的不仅仅如此：基本上只要是采用python的服务，我们都可以部署，同样基于PHP的我们也可以做到。如果你需要，你可以在服务器上部署jupyter来进行远端程序开发，或者部署一个爬虫抓取对应的资料。这边举例几个：</p>
 <ul>
-<li><p>jupyter：python开发工具，可以满足数据学习和爬虫开发，网页端运行。</p>
+<li>
+<p>jupyter：python开发工具，可以满足数据学习和爬虫开发，网页端运行。</p>
 </li>
-<li><p>爬虫：基于python的自动爬虫工具，数据可以直接保存成json。</p>
+<li>
+<p>爬虫：基于python的自动爬虫工具，数据可以直接保存成json。</p>
 </li>
-<li><p>frp：一款反向代理工具，可以将你内网的服务发布到外网，让别人可以通过域名或者公网IP进行访问。</p>
+<li>
+<p>frp：一款反向代理工具，可以将你内网的服务发布到外网，让别人可以通过域名或者公网IP进行访问。</p>
 </li>
-<li><p>博客：typecho或者其他基于python开发的博客。</p>
+<li>
+<p>博客：typecho或者其他基于python开发的博客。</p>
 </li>
 </ul>
 <p>当然，你如果喜欢也可以在上面安装docker，然后利用docker部署全部程序，实现完全独立的操作。</p>
@@ -396,7 +411,7 @@ sysctl -p
 <p>结局：在一段时间后，我选择了重装系统，将系统换到Debain，面板采用宝塔国际版，英文界面，但是不影响使用，服务程序的重装比想象顺利，其中V2ray也进行了更新配置。</p>
 <p>参考文档：</p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/32274264">CentOS、Ubuntu、Debian三个linux比较异同</a></p>
-<p><a target="_blank" rel="noopener" href="https://suiyuanjian.com/474.html#toc-2">Debian&#x2F;Ubuntu&#x2F;CentOS等Linux开启BBR加速AWS&#x2F;GCP等云服务器访问</a></p>
+<p><a target="_blank" rel="noopener" href="https://suiyuanjian.com/474.html#toc-2">Debian/Ubuntu/CentOS等Linux开启BBR加速AWS/GCP等云服务器访问</a></p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
 
@@ -575,27 +590,27 @@ sysctl -p
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>  clibre是一个在线书籍管理工具，可以在线阅读PDF，EPUB等格式的图书，配合z-library，可以搭建一个属于自己的在线学习，阅读中心，而且还能管理每本书的状态，很适合在自己的服务器上部署一个。</p>
+          <p>clibre是一个在线书籍管理工具，可以在线阅读PDF，EPUB等格式的图书，配合z-library，可以搭建一个属于自己的在线学习，阅读中心，而且还能管理每本书的状态，很适合在自己的服务器上部署一个。</p>
 <p>clibre有两种搭建方式，python部署和docker搭建，根据个人情况选择。</p>
-<p>  python部署我使用的是官方搭建教程：<a target="_blank" rel="noopener" href="https://github.com/janeczku/calibre-web%EF%BC%8C%E7%AE%80%E5%8D%95%E6%96%B9%E4%BE%BF%EF%BC%8C%E7%84%B6%E5%90%8E%E9%85%8D%E5%90%88%E5%AE%9D%E5%A1%94%EF%BC%8C%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%AE%BF%E9%97%AE%E3%80%82%E4%BD%86%E6%98%AF%E5%AE%98%E6%96%B9%E7%9A%84%E6%98%AF%E6%B2%A1%E6%9C%89%E5%AF%B9%E5%BA%94%E7%9A%84%E6%96%87%E6%A1%A3%E8%BD%AC%E6%8D%A2%EF%BC%8C%E6%AF%94%E5%A6%82pdf%E8%BD%ACmobi%E7%AD%89%E5%8A%9F%E8%83%BD%EF%BC%8C%E9%9C%80%E8%A6%81%E8%87%AA%E5%B7%B1%E5%AE%89%E8%A3%85%E8%BD%AC%E6%8D%A2%E5%99%A8%E3%80%82">https://github.com/janeczku/calibre-web，简单方便，然后配合宝塔，反向代理访问。但是官方的是没有对应的文档转换，比如pdf转mobi等功能，需要自己安装转换器。</a></p>
-<p>  docker部署的话，推荐使用<a target="_blank" rel="noopener" href="https://github.com/lyy289065406/calibre-docker%E7%9A%84docker%EF%BC%8Cdocker%E5%86%85%E9%83%A8%E8%87%AA%E5%B8%A6calibre%E7%9A%84%E6%9C%AC%E5%9C%B0%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%EF%BC%8C%E8%BF%98%E5%B8%A6%E5%AE%98%E6%96%B9%E7%9A%84calibre-web%E7%9A%84%E6%89%80%E6%9C%89%E5%8A%9F%E8%83%BD%EF%BC%8C%E4%BD%9C%E8%80%85%E8%BF%98%E5%86%85%E5%BB%BA%E4%BA%86%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7%E3%80%82%E5%85%B7%E4%BD%93%E5%8F%AF%E4%BB%A5%E7%9C%8B%E4%BD%9C%E8%80%85%E5%86%99%E7%9A%84%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3%EF%BC%8C%E5%BE%88%E6%B8%85%E6%A5%9A%E3%80%82">https://github.com/lyy289065406/calibre-docker的docker，docker内部自带calibre的本地管理工具，还带官方的calibre-web的所有功能，作者还内建了转换工具。具体可以看作者写的部署文档，很清楚。</a></p>
+<p>python部署我使用的是官方搭建教程：<a target="_blank" rel="noopener" href="https://github.com/janeczku/calibre-web%EF%BC%8C%E7%AE%80%E5%8D%95%E6%96%B9%E4%BE%BF%EF%BC%8C%E7%84%B6%E5%90%8E%E9%85%8D%E5%90%88%E5%AE%9D%E5%A1%94%EF%BC%8C%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%AE%BF%E9%97%AE%E3%80%82%E4%BD%86%E6%98%AF%E5%AE%98%E6%96%B9%E7%9A%84%E6%98%AF%E6%B2%A1%E6%9C%89%E5%AF%B9%E5%BA%94%E7%9A%84%E6%96%87%E6%A1%A3%E8%BD%AC%E6%8D%A2%EF%BC%8C%E6%AF%94%E5%A6%82pdf%E8%BD%ACmobi%E7%AD%89%E5%8A%9F%E8%83%BD%EF%BC%8C%E9%9C%80%E8%A6%81%E8%87%AA%E5%B7%B1%E5%AE%89%E8%A3%85%E8%BD%AC%E6%8D%A2%E5%99%A8%E3%80%82">https://github.com/janeczku/calibre-web，简单方便，然后配合宝塔，反向代理访问。但是官方的是没有对应的文档转换，比如pdf转mobi等功能，需要自己安装转换器。</a></p>
+<p>docker部署的话，推荐使用<a target="_blank" rel="noopener" href="https://github.com/lyy289065406/calibre-docker%E7%9A%84docker%EF%BC%8Cdocker%E5%86%85%E9%83%A8%E8%87%AA%E5%B8%A6calibre%E7%9A%84%E6%9C%AC%E5%9C%B0%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%EF%BC%8C%E8%BF%98%E5%B8%A6%E5%AE%98%E6%96%B9%E7%9A%84calibre-web%E7%9A%84%E6%89%80%E6%9C%89%E5%8A%9F%E8%83%BD%EF%BC%8C%E4%BD%9C%E8%80%85%E8%BF%98%E5%86%85%E5%BB%BA%E4%BA%86%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7%E3%80%82%E5%85%B7%E4%BD%93%E5%8F%AF%E4%BB%A5%E7%9C%8B%E4%BD%9C%E8%80%85%E5%86%99%E7%9A%84%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3%EF%BC%8C%E5%BE%88%E6%B8%85%E6%A5%9A%E3%80%82">https://github.com/lyy289065406/calibre-docker的docker，docker内部自带calibre的本地管理工具，还带官方的calibre-web的所有功能，作者还内建了转换工具。具体可以看作者写的部署文档，很清楚。</a></p>
 <p>这边着重讲解使用宝塔的python管理工具搭建官方calire-web。</p>
 <p>首先，下载对应的官方包</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603152838.png" alt="20220603152838"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603152838.png" alt="20220603152838" /></p>
 <p>上传到服务器端，解压，记下文档路径。</p>
-<p>  下一步，在宝塔面板的软件商店里面查找python项目管理器，官方出品，但是只支持centos7.x。可以方便快捷的管理python版本。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603152801.png" alt="20220603152801"></p>
-<p>  安装完成进入程序之后，选择python版本，官方要求3.5+，这边我选择3.8。</p>
-<p>  路径选择上传到服务器后解压的路径，名称随意，框架选择python，启动方式选择python，启动的文件选择对应目录下cps.py</p>
+<p>下一步，在宝塔面板的软件商店里面查找python项目管理器，官方出品，但是只支持centos7.x。可以方便快捷的管理python版本。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603152801.png" alt="20220603152801" /></p>
+<p>安装完成进入程序之后，选择python版本，官方要求3.5+，这边我选择3.8。</p>
+<p>路径选择上传到服务器后解压的路径，名称随意，框架选择python，启动方式选择python，<a target="_blank" rel="noopener" href="http://xn--cps-y28d05bf4lg2c3sxsqff4b26rx7hlw3dthbly4s.py">启动的文件选择对应目录下cps.py</a></p>
 <p>端口随意，记住就行，剩下勾选起来，安装模块+开机启动。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603152650.png" alt="20220603152650"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603152650.png" alt="20220603152650" /></p>
 <p>点击确定之后，系统就会在后台运行，你可以直接用域名+端口，或者IP+端口的形式访问。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603152729.png" alt="20220603152729"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603152729.png" alt="20220603152729" /></p>
 <p>初始用户名：admin 密码：admin123.</p>
 <p>如果不想要后面的端口，可以使用域名的反向代理。正常创建域名之后，然后将域名反向代理到你的端口，这样就实现了完全的域名访问。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603152555.png" alt="20220603152555"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603152555.png" alt="20220603152555" /></p>
 <p>具体效果可以见<a target="_blank" rel="noopener" href="https://book.minsummer.com/">https://book.minsummer.com/</a></p>
-<p>  使用下来，还是有点小问题：</p>
+<p>使用下来，还是有点小问题：</p>
 <p>1，是epub的文件如果太大，打开会太慢，然后每次放大缩小都会卡一会，因为屏幕大小变了，系统需要重新排版。这样导致有时候书签保存的位置也会乱。</p>
 <p>PS:如果python项目管理器启动失败，有可能是因为系统安装模块错误，可以手动进入虚拟系统安装：</p>
 <pre><code>source 项目路径/项目名_venv/bin/activate
@@ -605,7 +620,7 @@ pip install requirements.txt
 <p>确保requirements.txt在你执行命令的目录下，否则你就要搬运过来。</p>
 <p>python管理器默认会在你选择文件夹下创建一个虚拟环境，然后再在这里运行你的程序，对python虚拟环境感兴趣的话，可以看<a href="https://minsummer.com/IT/63.html%E8%BF%99%E7%AF%87%E3%80%82">https://minsummer.com/IT/63.html这篇。</a></p>
 <p>官方系统的部署是没有安装kpubify，这个工具用来转换电子书的格式，我们需要安装kpubify这个工具，然后再配置：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603151947.png" alt="20220603151947"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603151947.png" alt="20220603151947" /></p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
 
@@ -697,23 +712,32 @@ pip install requirements.txt
 <p>图书资源不定时更新，如果有想看的可以留言-已经重构</p>
 <p>目前目录：</p>
 <ul>
-<li><p>机器学习-入门必备西瓜书</p>
+<li>
+<p>机器学习-入门必备西瓜书</p>
 </li>
-<li><p>机器学习公式详解-西瓜书的解释，南瓜书</p>
+<li>
+<p>机器学习公式详解-西瓜书的解释，南瓜书</p>
 </li>
-<li><p>概率论基础教程-入门概率论</p>
+<li>
+<p>概率论基础教程-入门概率论</p>
 </li>
-<li><p>概率论及其应用第二卷-不再枯燥的学习概率论，讲的很实际</p>
+<li>
+<p>概率论及其应用第二卷-不再枯燥的学习概率论，讲的很实际</p>
 </li>
-<li><p>概率论机器应用第三卷-如题</p>
+<li>
+<p>概率论机器应用第三卷-如题</p>
 </li>
-<li><p>概率论导论-目前正在看，教材吧，反正挺枯燥的 数学之美-大佬写的书，确实好看，不涉及很深的数学计算，简单的提一嘴，让你自己零五   </p>
+<li>
+<p>概率论导论-目前正在看，教材吧，反正挺枯燥的 数学之美-大佬写的书，确实好看，不涉及很深的数学计算，简单的提一嘴，让你自己零五</p>
 </li>
-<li><p>数据科学导论python语言实现-数据科学入门吧，单纯的看肯定学不会，很多东西都被程序包装进去，背后原理需要自己另外找书 什么是数学</p>
+<li>
+<p>数据科学导论python语言实现-数据科学入门吧，单纯的看肯定学不会，很多东西都被程序包装进去，背后原理需要自己另外找书 什么是数学</p>
 </li>
-<li><p>女士品茶 人类简史-别看什么枪炮病菌了，看这个，内容一样，还不枯燥。</p>
+<li>
+<p>女士品茶 人类简史-别看什么枪炮病菌了，看这个，内容一样，还不枯燥。</p>
 </li>
-<li><p>置身事内-推荐看，通过大量的实例来解释一些政策的内在因素，在里面可以看到这几年大家都关注的事件，但是你不知道这些事件的背后因素。</p>
+<li>
+<p>置身事内-推荐看，通过大量的实例来解释一些政策的内在因素，在里面可以看到这几年大家都关注的事件，但是你不知道这些事件的背后因素。</p>
 </li>
 </ul>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
@@ -807,23 +831,32 @@ pip install requirements.txt
 <p>图书资源不定时更新，如果有想看的可以留言</p>
 <p>目前目录：</p>
 <ul>
-<li><p>机器学习-入门必备西瓜书</p>
+<li>
+<p>机器学习-入门必备西瓜书</p>
 </li>
-<li><p>机器学习公式详解-西瓜书的解释，南瓜书</p>
+<li>
+<p>机器学习公式详解-西瓜书的解释，南瓜书</p>
 </li>
-<li><p>概率论基础教程-入门概率论</p>
+<li>
+<p>概率论基础教程-入门概率论</p>
 </li>
-<li><p>概率论及其应用第二卷-不再枯燥的学习概率论，讲的很实际</p>
+<li>
+<p>概率论及其应用第二卷-不再枯燥的学习概率论，讲的很实际</p>
 </li>
-<li><p>概率论机器应用第三卷-如题</p>
+<li>
+<p>概率论机器应用第三卷-如题</p>
 </li>
-<li><p>概率论导论-目前正在看，教材吧，反正挺枯燥的 数学之美-大佬写的书，确实好看，不涉及很深的数学计算，简单的提一嘴，让你自己零五   </p>
+<li>
+<p>概率论导论-目前正在看，教材吧，反正挺枯燥的 数学之美-大佬写的书，确实好看，不涉及很深的数学计算，简单的提一嘴，让你自己零五</p>
 </li>
-<li><p>数据科学导论python语言实现-数据科学入门吧，单纯的看肯定学不会，很多东西都被程序包装进去，背后原理需要自己另外找书 什么是数学</p>
+<li>
+<p>数据科学导论python语言实现-数据科学入门吧，单纯的看肯定学不会，很多东西都被程序包装进去，背后原理需要自己另外找书 什么是数学</p>
 </li>
-<li><p>女士品茶 人类简史-别看什么枪炮病菌了，看这个，内容一样，还不枯燥。</p>
+<li>
+<p>女士品茶 人类简史-别看什么枪炮病菌了，看这个，内容一样，还不枯燥。</p>
 </li>
-<li><p>置身事内-推荐看，通过大量的实例来解释一些政策的内在因素，在里面可以看到这几年大家都关注的事件，但是你不知道这些事件的背后因素。</p>
+<li>
+<p>置身事内-推荐看，通过大量的实例来解释一些政策的内在因素，在里面可以看到这几年大家都关注的事件，但是你不知道这些事件的背后因素。</p>
 </li>
 </ul>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
@@ -918,35 +951,35 @@ pip install requirements.txt
 <p>bash &lt;(curl -s -L <a target="_blank" rel="noopener" href="https://git.io/v2ray.sh">https://git.io/v2ray.sh</a>)</p>
 </blockquote>
 <p>2，配置推荐Websocket+tls，这是目前可以使你的日常博客网站和v2共存的方案，域名可以推荐用子域名（tls使用泛域名解析），或者直接用主域名的特定路径。这个配置并不是简单的模拟，是完全正式的Https链接，所以和实际浏览网站没有任何区别，不会被认为是翻墙，所以一些人喜欢拿一个正常网站当掩盖，特定路径做V2代理。只要网站正常，一般不会有被封的风险。</p>
-<p>3，Websocket+tls端口可以随便选择，也没必要开放，直接在宝塔面板里面使用对应的反向代理，如果是子域名直接反向代理写上<a href="http://127.0.0.1:特定端口。如果是博客特定路径，则需要填写上路径，然后对应的配置文件下：">http://127.0.0.1:特定端口。如果是博客特定路径，则需要填写上路径，然后对应的配置文件下：</a></p>
+<p>3，Websocket+tls端口可以随便选择，也没必要开放，直接在宝塔面板里面使用对应的反向代理，如果是子域名直接反向代理写上<a target="_blank" rel="noopener" href="http://127.0.0.1">http://127.0.0.1</a>:特定端口。如果是博客特定路径，则需要填写上路径，然后对应的配置文件下：</p>
 <blockquote>
 <p>“streamSettings”: {   “network”: “ws”,   “wsSettings”: {   “path”:</p>
 </blockquote>
 <blockquote>
-<p>“&#x2F;ray”————这里为你需要填写的特定路径，客户端上也要写上</p>
+<p>“/ray”————这里为你需要填写的特定路径，客户端上也要写上</p>
 </blockquote>
 <p>根据：<a target="_blank" rel="noopener" href="https://www.bookset.io/read/v2ray-guide/c6fb1ced8cb4e5d5.md">https://www.bookset.io/read/v2ray-guide/c6fb1ced8cb4e5d5.md</a> 中的Nginx配置，我们需要增加两条在宝塔的反向代理中：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220602131723.png" alt="20220602131723"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220602131723.png" alt="20220602131723" /></p>
 <p>4，脚本安装的目录路径：</p>
 <blockquote>
-<p>V2Ray 配置文件路径：&#x2F;etc&#x2F;v2ray&#x2F;config.json——服务端配置文件，上面需要修改的就是这个地方 Caddy</p>
+<p>V2Ray 配置文件路径：/etc/v2ray/config.json——服务端配置文件，上面需要修改的就是这个地方 Caddy</p>
 </blockquote>
 <blockquote>
-<p>配置文件路径：&#x2F;etc&#x2F;caddy&#x2F;Caddyfile——宝塔面板一般使用nginx，不用这个可以忽略 脚本配置文件路径:</p>
+<p>配置文件路径：/etc/caddy/Caddyfile——宝塔面板一般使用nginx，不用这个可以忽略 脚本配置文件路径:</p>
 </blockquote>
 <blockquote>
-<p>&#x2F;etc&#x2F;v2ray&#x2F;233blog_v2ray_backup.conf——不用看，没有用</p>
+<p>/etc/v2ray/233blog_v2ray_backup.conf——不用看，没有用</p>
 </blockquote>
-<p>这边再增加一个：&#x2F;bin&#x2F;v2ray——这是v2的主要运行文件，其中有个：config.json，是用来配置一些默认参数的，用来优化V2，比如：bufferSize这个参数：每个连接的内部缓存大小。单位为 kB。用来均衡，服务器和你本地的网络之间速度不一样，简单说就是服务器速度快，提前下载好东西，然后再慢慢的传给你本地，内存越大，速度越快（提升有限），至少不用多次访问。还有其他参数可以看官方网站的本地策略，可以自己调整。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603152959.png" alt="20220603152959"></p>
-<p>5，CDN可以隐藏真实的IP地址，通过这个策略来实现恢复锁住的IP，有免费的Cloudfare，但是访问速度看你的运营商。但是平时不打开，等到需要的时候，将DNS的状态改为代理，可以应急，访问自己被封住的IP。需注意，使用自动代理，1是有上传文件100M的限制，2是不是所有的端口他都会代理，如果你开放其他特殊端口，需要服务，请将这些端口:443&#x2F;2053&#x2F;2083&#x2F;2087&#x2F;2096&#x2F;8443&#x2F;80&#x2F;8080&#x2F;8880&#x2F;2052&#x2F;2082&#x2F;2086&#x2F;2095给那些你想要访问的服务，访问时就是http:&#x2F;&#x2F;域名：以上特定端口，就可以打开对应的服务，一般拿来做宝塔面板的后台。这样哪怕你IP被封了，也能正常操作。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603153024.png" alt="20220603153024"></p>
+<p>这边再增加一个：/bin/v2ray——这是v2的主要运行文件，其中有个：config.json，是用来配置一些默认参数的，用来优化V2，比如：bufferSize这个参数：每个连接的内部缓存大小。单位为 kB。用来均衡，服务器和你本地的网络之间速度不一样，简单说就是服务器速度快，提前下载好东西，然后再慢慢的传给你本地，内存越大，速度越快（提升有限），至少不用多次访问。还有其他参数可以看官方网站的本地策略，可以自己调整。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603152959.png" alt="20220603152959" /></p>
+<p>5，CDN可以隐藏真实的IP地址，通过这个策略来实现恢复锁住的IP，有免费的Cloudfare，但是访问速度看你的运营商。但是平时不打开，等到需要的时候，将DNS的状态改为代理，可以应急，访问自己被封住的IP。需注意，使用自动代理，1是有上传文件100M的限制，2是不是所有的端口他都会代理，如果你开放其他特殊端口，需要服务，请将这些端口:443/2053/2083/2087/2096/8443/80/8080/8880/2052/2082/2086/2095给那些你想要访问的服务，访问时就是<a target="_blank" rel="noopener" href="http://xn--eqrt2g">http://域名</a>：以上特定端口，就可以打开对应的服务，一般拿来做宝塔面板的后台。这样哪怕你IP被封了，也能正常操作。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603153024.png" alt="20220603153024" /></p>
 <p>6，宝塔面板是好东西，但是占用也大，推荐用，新版本需要绑定手机，但是可以下老版本，Github上有老的压缩包，毕竟这东西开源。</p>
 <p>7，mckp协议可以解决一些运营商的掉包问题（比如移动），原理是多发，每次请求我发2遍甚至3遍回复，总有一条回复到的了你，缺点就是流量消耗大，是原来的2倍（理论值，算法优化下应该到不了），但是一样，提升有限，运营商的问题软件就算再努力，也是杯水车薪。</p>
-<p>8，服务器建议买cn线路，线路是重中之重。好的线路可以极大的加快你的速度，现在流行的是香港和日本这些靠近的国家，但是香港的线路染上 国内的恶习，要么带宽限制1m，5m啥的，要么就是流量100g收费，这边建议使用搬瓦工的CN，线路，运营商历史悠久，而且速度还不错。主要是带宽1G，流量1000G&#x2F;月起，带宽主要是服务器和你之间的最大速度，由于服务器一般线路优化，访问大多数网站速度都很快，曾经将谷歌硬盘内容下载下来，达到满载，被系统以为是受到攻击了，流量就是你用这个服务器上传和下载的流量，一般来说一个人100g &#x2F;月算是很充足。配置建议1G内存以上，512M是便宜，但是无法安装Docker容器管理器，这是个神器，方便简单的管理你的docker，现在很多服务都是直接一个docker解决，方便管理，而且搭建一些网站也需要一定的负载能力。至于最后的硬盘容量，没必要太较真，因为你不可能在上面存放大量的资料，10g就足够大部分的需求，主要是一些软件，至于想在上面放电影的同志，不是很建议，主要因为电影有可能会触发盗版提示（毕竟你服务器在美国）。很多时候我们哪来当中转站，一些文件可以先下载到服务器，然后再从服务器下载到本地。这速度和你直接拿V2做代理是不一样的。</p>
+<p>8，服务器建议买cn线路，线路是重中之重。好的线路可以极大的加快你的速度，现在流行的是香港和日本这些靠近的国家，但是香港的线路染上 国内的恶习，要么带宽限制1m，5m啥的，要么就是流量100g收费，这边建议使用搬瓦工的CN，线路，运营商历史悠久，而且速度还不错。主要是带宽1G，流量1000G/月起，带宽主要是服务器和你之间的最大速度，由于服务器一般线路优化，访问大多数网站速度都很快，曾经将谷歌硬盘内容下载下来，达到满载，被系统以为是受到攻击了，流量就是你用这个服务器上传和下载的流量，一般来说一个人100g /月算是很充足。配置建议1G内存以上，512M是便宜，但是无法安装Docker容器管理器，这是个神器，方便简单的管理你的docker，现在很多服务都是直接一个docker解决，方便管理，而且搭建一些网站也需要一定的负载能力。至于最后的硬盘容量，没必要太较真，因为你不可能在上面存放大量的资料，10g就足够大部分的需求，主要是一些软件，至于想在上面放电影的同志，不是很建议，主要因为电影有可能会触发盗版提示（毕竟你服务器在美国）。很多时候我们哪来当中转站，一些文件可以先下载到服务器，然后再从服务器下载到本地。这速度和你直接拿V2做代理是不一样的。</p>
 <p>9，wordpress是个好东西，但是如果你是拿来玩玩，做个简单博客，可以搭建在服务器上，其他用途，请找一个wordpress的托管商。wordpress相当于是一个框架，里面有几千款的插件可以选择，所以对系统要求很大，而且她要求有对应的数据库，其中Mysql数据库要求1G内存，所以很多时候这个东西会占用你很多的资源，个人轻量博客可以，复杂的电商最好用专业的托管网站更合适，至少不会卡。</p>
 <p>10，有时候配置好后，无法访问，请按照：客户端——cloudfare——服务端  顺序排查问题，客户端配置有没有问题？请去cloudfare看下是不是打开了underattack模式，这个模式下，会把所有的链接都拒绝一下，防火墙可以看到拒绝的日志，看下是不是被系统拒绝了，最后再去确认下IP是不是被封：随便找个ping IP的网站，国内ping你的IP能不能访问就可以。确定被封了，打开cloudfare提供的cdn，继续happy。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603153047.png" alt="20220603153047"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603153047.png" alt="20220603153047" /></p>
 <p>11，windows客户端v2使用速度测试的时候会发生服务端无法访问，直接打开网页访问谷歌最合适。</p>
 <p>12，有时候访问不了，仅仅是证书验证的问题，可以试试在客户端里打开跳过证书验证，或者放空。</p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
@@ -1058,7 +1091,7 @@ pip install requirements.txt
 </code></pre>
 <p>然后选择Y即可。</p>
 <p>6，进去之后，在左下角的解释器里面选择对应虚拟环境下的python.exe即可，如果是jupyter notebook的话，需要提前安装ipython包和jupyter包，然后创建1.ipynb的文件，右键选择：重新打开编辑器的方式。即可选择jupyter notebook。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603151825.png" alt="20220603151825"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603151825.png" alt="20220603151825" /></p>
 <p>如果有时候没有出现，可以使用crtl+shift+p，输入<strong>select interpreter：选择解释器</strong>。选择虚拟环境下Scropts下的python。或者重启一下Vscode。让系统再次寻找到解释器即可。</p>
 <p>7，vscode是好东西，机器学习也不难，实现不难，就是要知道它为何这么实现需要很多数学知识，而且由于对其原理不是很清楚，很多时候没办法将其应用在一些自己有需求的方面，所以如果不是以此为生，更多的是兴趣和了解</p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>

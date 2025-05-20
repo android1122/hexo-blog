@@ -22,12 +22,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"minsummer.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="我们时常会遇见一些需要拷贝资料的情况，这时候如果手头上正好没有U盘，那么就很麻烦。当然，你说你也可以使用微信的文件助手。唯一的问题是这一点都不优雅，现在让我们提供一个优雅的工具给你：[FileCodeBox]">
+    <meta name="description" content="我们时常会遇见一些需要拷贝资料的情况，这时候如果手头上正好没有U盘，那么就很麻烦。当然，你说你也可以使用微信的文件助手。 唯一的问题是这一点都不优雅，现在让我们提供一个优雅的工具给你：[FileCodeBox]">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="FileCodeBox部署指南">
 <meta property="og:url" content="https://minsummer.com/2023/07/04/125-FileCodeBox%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
 <meta property="og:site_name" content="我是豆豆">
-<meta property="og:description" content="我们时常会遇见一些需要拷贝资料的情况，这时候如果手头上正好没有U盘，那么就很麻烦。当然，你说你也可以使用微信的文件助手。唯一的问题是这一点都不优雅，现在让我们提供一个优雅的工具给你：[FileCodeBox]">
+<meta property="og:description" content="我们时常会遇见一些需要拷贝资料的情况，这时候如果手头上正好没有U盘，那么就很麻烦。当然，你说你也可以使用微信的文件助手。 唯一的问题是这一点都不优雅，现在让我们提供一个优雅的工具给你：[FileCodeBox]">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/125-FileCodeBox%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-07-05-15-02-08.png">
 <meta property="article:published_time" content="2023-07-04T16:00:00.000Z">
@@ -182,7 +182,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2"><span class="nav-number">1.</span> <span class="nav-text">部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%90%8E"><span class="nav-number">2.</span> <span class="nav-text">最后</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2"><span class="nav-number">1.</span> <span class="nav-text"> 部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%90%8E"><span class="nav-number">2.</span> <span class="nav-text"> 最后</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -324,20 +324,29 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>我们时常会遇见一些需要拷贝资料的情况，这时候如果手头上正好没有U盘，那么就很麻烦。当然，你说你也可以使用微信的文件助手。<br>唯一的问题是这一点都不优雅，现在让我们提供一个优雅的工具给你：<a target="_blank" rel="noopener" href="https://filebox.minsummer.com/">[FileCodeBox]</a></p>
+    <div class="post-body" itemprop="articleBody"><p>我们时常会遇见一些需要拷贝资料的情况，这时候如果手头上正好没有U盘，那么就很麻烦。当然，你说你也可以使用微信的文件助手。<br />
+唯一的问题是这一点都不优雅，现在让我们提供一个优雅的工具给你：<a target="_blank" rel="noopener" href="https://filebox.minsummer.com/">[FileCodeBox]</a></p>
 <span id="more"></span>
-<p>临时的文件夹网上有很多，比如之前我一直是用的奶牛快传，但是不知道是因为盈利还是啥，现在奶牛要求你必须登陆才可以上传。额，这就违背了我得初衷，我就是因为不想麻烦才使用你的，你现在让我这么麻烦？<br>我这边使用的是FileCodeBox，国人开发，<a target="_blank" rel="noopener" href="https://github.com/vastsa/FileCodeBox">Github分享</a>，简单轻松。而且还支持ARM设备。</p>
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>一键部署：</p>
+<p>临时的文件夹网上有很多，比如之前我一直是用的奶牛快传，但是不知道是因为盈利还是啥，现在奶牛要求你必须登陆才可以上传。额，这就违背了我得初衷，我就是因为不想麻烦才使用你的，你现在让我这么麻烦？<br />
+我这边使用的是FileCodeBox，国人开发，<a target="_blank" rel="noopener" href="https://github.com/vastsa/FileCodeBox">Github分享</a>，简单轻松。而且还支持ARM设备。</p>
+<h2 id="部署"><a class="markdownIt-Anchor" href="#部署"></a> 部署</h2>
+<p>一键部署：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --restart=always -p 12345:12345 -v /opt/FileCodeBox/:/app/data --name filecodebox lanol/filecodebox:latest</span><br></pre></td></tr></table></figure>
 <p>如果是ARM设备使用</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --restart=always -p 12345:12345 -v /opt/FileCodeBox/:/app/data --name filecodebox lanol/filecodebox:arm</span><br></pre></td></tr></table></figure>
-<p>打开对应的端口即可使用，如果你想要用caddy反向代理也可以。<br>需要注意的是，按照官方说法，需要使用<code>.env</code>文件放置到 &#x2F;opt&#x2F;FileCodeBox&#x2F;下才可以开启客制化定制和后台管理，但是我配置了发现没法使用。</p>
+<p>打开对应的端口即可使用，如果你想要用caddy反向代理也可以。<br />
+需要注意的是，按照官方说法，需要使用<code>.env</code>文件放置到 /opt/FileCodeBox/下才可以开启客制化定制和后台管理，但是我配置了发现没法使用。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"># 端口</span><br><span class="line">PORT=12345</span><br><span class="line"># Sqlite数据库文件</span><br><span class="line">DATABASE_URL=sqlite+aiosqlite:///database.db</span><br><span class="line"># 静态文件夹</span><br><span class="line">DATA_ROOT=./static</span><br><span class="line"># 静态文件夹URL</span><br><span class="line">STATIC_URL=/static</span><br><span class="line"># 开启上传</span><br><span class="line">ENABLE_UPLOAD=True</span><br><span class="line"># 错误次数</span><br><span class="line">ERROR_COUNT=5</span><br><span class="line"># 错误限制分钟数</span><br><span class="line">ERROR_MINUTE=10</span><br><span class="line"># 上传次数</span><br><span class="line">UPLOAD_COUNT=60</span><br><span class="line"># 上传限制分钟数</span><br><span class="line">UPLOAD_MINUTE=1</span><br><span class="line"># 删除过期文件的间隔（分钟）</span><br><span class="line">DELETE_EXPIRE_FILES_INTERVAL=10</span><br><span class="line"># 管理地址</span><br><span class="line">ADMIN_ADDRESS=admin</span><br><span class="line"># 管理密码</span><br><span class="line">ADMIN_PASSWORD=admin</span><br><span class="line"># 文件大小限制，默认10MB</span><br><span class="line">FILE_SIZE_LIMIT=10</span><br><span class="line"># 网站标题</span><br><span class="line">TITLE=文件快递柜</span><br><span class="line"># 网站描述</span><br><span class="line">DESCRIPTION=FileCodeBox，文件快递柜，口令传送箱，匿名口令分享文本，文件，图片，视频，音频，压缩包等文件</span><br><span class="line"># 网站关键词</span><br><span class="line">KEYWORDS=FileCodeBox，文件快递柜，口令传送箱，匿名口令分享文本，文件，图片，视频，音频，压缩包等文件</span><br><span class="line"># 存储引擎</span><br><span class="line">STORAGE_ENGINE=filesystem</span><br><span class="line"># 如果使用阿里云OSS服务的话需要额外创建如下参数：</span><br><span class="line"># 阿里云账号AccessKey</span><br><span class="line">KeyId=阿里云账号AccessKey</span><br><span class="line"># 阿里云账号AccessKeySecret</span><br><span class="line">KeySecret=阿里云账号AccessKeySecret</span><br><span class="line"># 阿里云OSS Bucket的地域节点</span><br><span class="line">OSS_ENDPOINT=阿里云OSS Bucket的地域节点</span><br><span class="line"># 阿里云OSS Bucket的BucketName</span><br><span class="line">BUCKET_NAME=阿里云OSS Bucket的BucketName</span><br></pre></td></tr></table></figure>
 <p>后面根据<a target="_blank" rel="noopener" href="https://github.com/vastsa/FileCodeBox/issues/8">issue</a>，发现是以环境变量优先级最高，所以我就修改了下运行命令</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --restart=always -p 12345:12345 -env # 管理地址 ADMIN_ADDRESS=admin # 管理密码 ADMIN_PASSWORD=admin -v /opt/FileCodeBox/:/app/data --name filecodebox lanol/filecodebox:latest</span><br></pre></td></tr></table></figure>
-<p>打开后台之后，就可以修改<code>.env</code>文件里面所有的内容了：<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/125-FileCodeBox%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-07-05-15-02-08.png" alt="125-FileCodeBox部署指南-2023-07-05-15-02-08"></p>
+<p>打开后台之后，就可以修改<code>.env</code>文件里面所有的内容了：<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/125-FileCodeBox%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-07-05-15-02-08.png" alt="125-FileCodeBox部署指南-2023-07-05-15-02-08" /></p>
 <p>当然如果你直接使用它原来的配置也是可以的</p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>这几年，随着互联网越来越兴起，很多以前免费的，或者以分享为主旨的网站越来越少。大家都想成为下一个百度，腾讯。但是我上网这么多年，无论是论坛，还是搜索内容。这几年优质的内容越来越少，好用的工具也越来越少。<br>其实在这些服务占用的资源很小，很小。我用的搬瓦工的92刀，2核2g内存1Tb的流量，每月最多使用100g的流量，多出来的也是浪费，所以我一直希望在力所能及的范围内，帮助下有需要的人。让别人知道，网络是一个好地方。<br>最后附上我部署的地址：<a target="_blank" rel="noopener" href="https://filebox.minsummer.com/">https://filebox.minsummer.com/</a><br>功能简单，没有广告，7天内有效，不要暴力破解。</p>
+<h2 id="最后"><a class="markdownIt-Anchor" href="#最后"></a> 最后</h2>
+<p>这几年，随着互联网越来越兴起，很多以前免费的，或者以分享为主旨的网站越来越少。大家都想成为下一个百度，腾讯。但是我上网这么多年，无论是论坛，还是搜索内容。这几年优质的内容越来越少，好用的工具也越来越少。<br />
+其实在这些服务占用的资源很小，很小。我用的搬瓦工的92刀，2核2g内存1Tb的流量，每月最多使用100g的流量，多出来的也是浪费，所以我一直希望在力所能及的范围内，帮助下有需要的人。让别人知道，网络是一个好地方。<br />
+最后附上我部署的地址：<a target="_blank" rel="noopener" href="https://filebox.minsummer.com/">https://filebox.minsummer.com/</a><br />
+功能简单，没有广告，7天内有效，不要暴力破解。</p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
 

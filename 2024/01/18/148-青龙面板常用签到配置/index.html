@@ -185,7 +185,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BE%8E%E5%9B%A2"><span class="nav-number">1.</span> <span class="nav-text">美团</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BE%8E%E5%9B%A2"><span class="nav-number">1.</span> <span class="nav-text"> 美团</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -330,17 +330,21 @@
     <div class="post-body" itemprop="articleBody"><p>青龙面板最大的问题就找不到一个合适的，及时更新，技术要求低库。最近又发现一个<a target="_blank" rel="noopener" href="https://github.com/linbailo/zyqinglong">库</a>，更新频率可以，但是还是需要在手机中安装乱七八糟的软件来抓包，如果你专门有一台手机搞可以，但是如果只是一个人账号，那么确实有点浪费。其实所有的签到，领券都没有什么技术难题，主要是看对方如何防御，比如将token隐藏起来。</p>
 <span id="more"></span>
 <p>库里面有好多程序，每个程序的开头会写明如何获取和设置变量，我这边姑且算是来个图文版给自己后续用。</p>
-<h1 id="美团"><a href="#美团" class="headerlink" title="美团"></a>美团</h1><p>最近阿姨放假了，点外卖的次数上来了，所以需要用到美团了。</p>
+<h1 id="美团"><a class="markdownIt-Anchor" href="#美团"></a> 美团</h1>
+<p>最近阿姨放假了，点外卖的次数上来了，所以需要用到美团了。</p>
 <ol>
-<li>打开浏览器，按住F12 进入开发者模式，然后在左上角选择手机比如：iPhone SE<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/148-%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%B8%B8%E7%94%A8%E7%AD%BE%E5%88%B0%E9%85%8D%E7%BD%AE-2024-01-19-12-09-36.png" alt="148-青龙面板常用签到配置-2024-01-19-12-09-36"></li>
-<li>输入网址<blockquote>
+<li>打开浏览器，按住F12 进入开发者模式，然后在左上角选择手机比如：iPhone SE<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/148-%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%B8%B8%E7%94%A8%E7%AD%BE%E5%88%B0%E9%85%8D%E7%BD%AE-2024-01-19-12-09-36.png" alt="148-青龙面板常用签到配置-2024-01-19-12-09-36" /></li>
+<li>输入网址
+<blockquote>
 <p><a target="_blank" rel="noopener" href="https://i.meituan.com/mttouch/page/home">https://i.meituan.com/mttouch/page/home</a></p>
 </blockquote>
 </li>
 </ol>
-<p>会自动进入手机端的美团，剩下就是，登陆，使用手机验证码，账号密码也行。记得在登陆之前清楚下网络日志，防止一会太多记录找不到。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/148-%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%B8%B8%E7%94%A8%E7%AD%BE%E5%88%B0%E9%85%8D%E7%BD%AE-2024-01-19-12-12-13.png" alt="148-青龙面板常用签到配置-2024-01-19-12-12-13"></p>
+<p>会自动进入手机端的美团，剩下就是，登陆，使用手机验证码，账号密码也行。记得在登陆之前清楚下网络日志，防止一会太多记录找不到。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/148-%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%B8%B8%E7%94%A8%E7%AD%BE%E5%88%B0%E9%85%8D%E7%BD%AE-2024-01-19-12-12-13.png" alt="148-青龙面板常用签到配置-2024-01-19-12-12-13" /></p>
 <ol start="3">
-<li>登陆之后，去查看对应的日志，会发现有个网址：“AgGZIgsYHyxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx”，复制下来，然后去青龙面板内设置环境变量<code>meituanCookie=&quot;AgGZIgsYHyxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</code>即可。</li>
+<li>登陆之后，去查看对应的日志，会发现有个网址：“AgGZIgsYHyxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;，复制下来，然后去青龙面板内设置环境变量<code>meituanCookie=&quot;AgGZIgsYHyxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</code>即可。</li>
 </ol>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">

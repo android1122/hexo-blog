@@ -186,7 +186,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MathJax%E5%92%8CKaTeX"><span class="nav-number">1.</span> <span class="nav-text">MathJax和KaTeX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KaTeX%E6%8F%92%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">KaTeX插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%B2%E7%9F%A5%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">已知的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MathJax"><span class="nav-number">4.</span> <span class="nav-text">MathJax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#mathjax%E5%92%8Ckatex"><span class="nav-number">1.</span> <span class="nav-text"> MathJax和KaTeX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#katex%E6%8F%92%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text"> KaTeX插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%B2%E7%9F%A5%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text"> 已知的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mathjax"><span class="nav-number">4.</span> <span class="nav-text"> MathJax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text"> 总结</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -330,29 +330,43 @@
     
     <div class="post-body" itemprop="articleBody"><p>之前写过<a href="https://minsummer.com/2022/07/30/104-%E6%A6%82%E7%8E%87%E8%AE%BA%E5%AF%BC%E8%AE%BA-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">《概率论导论》</a>，最近翻看，发现数学公式渲染好像没有成功，于是就花了一些时间研究一下。</p>
 <span id="more"></span>
-<h2 id="MathJax和KaTeX"><a href="#MathJax和KaTeX" class="headerlink" title="MathJax和KaTeX"></a>MathJax和KaTeX</h2><p>首先确定一下你用的是 MathJax还是KaTeX，以我个人写作为例，我一般先是在VScode上写完，然后git到服务器，服务器会进行渲染。我在写的时候，我会使用VScode的插件进行预览，这里我用的是markdown-all-in-one，我翻看它的配置，它调用的是KaTex<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/203-hexo%E5%8D%9A%E5%AE%A2NEXT%E4%B8%BB%E9%A2%98%E5%BC%80%E5%90%AF%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F-2025-04-25-15-16-30.png" alt="203-hexo博客NEXT主题开启数学公式-2025-04-25-15-16-30"><br>至于这两个语法的差距，我们并不是专业的，所以不需要知道太多，你只需要知道，想要在网页上达到你在VScode里面达到的效果你需要使用KaTex即可。</p>
-<h2 id="KaTeX插件"><a href="#KaTeX插件" class="headerlink" title="KaTeX插件"></a>KaTeX插件</h2><p>根据<a target="_blank" rel="noopener" href="https://theme-next.js.org/muse/docs/third-party-services/math-equations.html?highlight=math">官方文档</a>，Next主题两个是都支持的，我们先看下配置：</p>
+<h2 id="mathjax和katex"><a class="markdownIt-Anchor" href="#mathjax和katex"></a> MathJax和KaTeX</h2>
+<p>首先确定一下你用的是 MathJax还是KaTeX，以我个人写作为例，我一般先是在VScode上写完，然后git到服务器，服务器会进行渲染。我在写的时候，我会使用VScode的插件进行预览，这里我用的是markdown-all-in-one，我翻看它的配置，它调用的是KaTex<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/203-hexo%E5%8D%9A%E5%AE%A2NEXT%E4%B8%BB%E9%A2%98%E5%BC%80%E5%90%AF%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F-2025-04-25-15-16-30.png" alt="203-hexo博客NEXT主题开启数学公式-2025-04-25-15-16-30" /><br />
+至于这两个语法的差距，我们并不是专业的，所以不需要知道太多，你只需要知道，想要在网页上达到你在VScode里面达到的效果你需要使用KaTex即可。</p>
+<h2 id="katex插件"><a class="markdownIt-Anchor" href="#katex插件"></a> KaTeX插件</h2>
+<p>根据<a target="_blank" rel="noopener" href="https://theme-next.js.org/muse/docs/third-party-services/math-equations.html?highlight=math">官方文档</a>，Next主题两个是都支持的，我们先看下配置：</p>
 <ol>
-<li>在Next config file 下打开katex：<br> <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/203-hexo%E5%8D%9A%E5%AE%A2NEXT%E4%B8%BB%E9%A2%98%E5%BC%80%E5%90%AF%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F-2025-04-25-15-38-07.png" alt="203-hexo博客NEXT主题开启数学公式-2025-04-25-15-38-07"><br>将enable后的值改为true，然后copy_text也可以改为true，这个是复制的时候要不要带上数学符号，因为带上之后，可以让读的人直接复制粘贴到markdown文档里面，轻松复现公式。不打开的话，复制下来是乱码。<br>every_page可以打开，打开的话就是每页我都渲染，我是嫌弃麻烦的人，我直接每页都渲染。<br>tags这个参数建议为ams，可以打开自动编号的功能，方便使用。</li>
+<li>在Next config file 下打开katex：<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/203-hexo%E5%8D%9A%E5%AE%A2NEXT%E4%B8%BB%E9%A2%98%E5%BC%80%E5%90%AF%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F-2025-04-25-15-38-07.png" alt="203-hexo博客NEXT主题开启数学公式-2025-04-25-15-38-07" /><br />
+将enable后的值改为true，然后copy_text也可以改为true，这个是复制的时候要不要带上数学符号，因为带上之后，可以让读的人直接复制粘贴到markdown文档里面，轻松复现公式。不打开的话，复制下来是乱码。<br />
+every_page可以打开，打开的话就是每页我都渲染，我是嫌弃麻烦的人，我直接每页都渲染。<br />
+tags这个参数建议为ams，可以打开自动编号的功能，方便使用。</li>
 <li>安装插件hexo-renderer-markdown-it-plus：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm un hexo-renderer-marked</span><br><span class="line">npm i hexo-renderer-markdown-it-plus</span><br></pre></td></tr></table></figure>
 或者hexo-renderer-markdown-it：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm un hexo-renderer-marked</span><br><span class="line">npm i hexo-renderer-markdown-it</span><br></pre></td></tr></table></figure>
 需要注意，如果使用hexo-renderer-markdown-it的话，需要安装markdown-it-katex：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i markdown-it-katex</span><br></pre></td></tr></table></figure>
 然后你需要修改Hexo config文件：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># config of hexo-renderer-markdown-it</span><br><span class="line">markdown:</span><br><span class="line">render:</span><br><span class="line">   html: true</span><br><span class="line">   xhtmlOut: false</span><br><span class="line">   breaks: true</span><br><span class="line">   linkify: true</span><br><span class="line">   typographer: true</span><br><span class="line">   quotes: &#x27;“”‘’&#x27;</span><br><span class="line">plugins:</span><br><span class="line">   - markdown-it-katex</span><br></pre></td></tr></table></figure>
-这样才可以，比较麻烦。我这边由于用的是GitHub自己的云端渲染，我修改下action的步骤即可。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/203-hexo%E5%8D%9A%E5%AE%A2NEXT%E4%B8%BB%E9%A2%98%E5%BC%80%E5%90%AF%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F-2025-04-25-15-31-03.png" alt="203-hexo博客NEXT主题开启数学公式-2025-04-25-15-31-03"></li>
+这样才可以，比较麻烦。我这边由于用的是GitHub自己的云端渲染，我修改下action的步骤即可。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/203-hexo%E5%8D%9A%E5%AE%A2NEXT%E4%B8%BB%E9%A2%98%E5%BC%80%E5%90%AF%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F-2025-04-25-15-31-03.png" alt="203-hexo博客NEXT主题开启数学公式-2025-04-25-15-31-03" /></li>
 </ol>
-<h2 id="已知的问题"><a href="#已知的问题" class="headerlink" title="已知的问题"></a>已知的问题</h2><ol>
+<h2 id="已知的问题"><a class="markdownIt-Anchor" href="#已知的问题"></a> 已知的问题</h2>
+<ol>
 <li>使用$$…$$这个需要新的空行才可以，这个我之前就遇见过。</li>
 <li>开头和结尾之间$…$不能有空格</li>
 <li>如果你在文章标题中使用语法，它将不会显示。</li>
 <li>如果在文章中的小标题使用即（## heading），它会在页面后台的table里面重复显示三次</li>
 </ol>
-<h2 id="MathJax"><a href="#MathJax" class="headerlink" title="MathJax"></a>MathJax</h2><p>我个人是推荐使用KaTex的，渲染速度更快，但是如果你是用的是MathJax的话，也可以毕竟KaTex支持的语法比较少一点对于一些大拿不够用。</p>
+<h2 id="mathjax"><a class="markdownIt-Anchor" href="#mathjax"></a> MathJax</h2>
+<p>我个人是推荐使用KaTex的，渲染速度更快，但是如果你是用的是MathJax的话，也可以毕竟KaTex支持的语法比较少一点对于一些大拿不够用。</p>
 <ol>
-<li>配置：还是config文件，将mathjax的enable改为true。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/203-hexo%E5%8D%9A%E5%AE%A2NEXT%E4%B8%BB%E9%A2%98%E5%BC%80%E5%90%AF%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F-2025-04-25-15-40-29.png" alt="203-hexo博客NEXT主题开启数学公式-2025-04-25-15-40-29"></li>
+<li>配置：还是config文件，将mathjax的enable改为true。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/203-hexo%E5%8D%9A%E5%AE%A2NEXT%E4%B8%BB%E9%A2%98%E5%BC%80%E5%90%AF%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F-2025-04-25-15-40-29.png" alt="203-hexo博客NEXT主题开启数学公式-2025-04-25-15-40-29" /></li>
 <li>安装插件hexo-renderer-pandoc<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm un hexo-renderer-marked</span><br><span class="line">npm i hexo-renderer-pandoc</span><br></pre></td></tr></table></figure>
-如果你使用的hexo-renderer-pandoc版本高于 5.0.0，则需要pandoc.args设置Hexo 配置文件：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pandoc:</span><br><span class="line">args:</span><br><span class="line">   - --mathjax</span><br></pre></td></tr></table></figure></li>
+如果你使用的hexo-renderer-pandoc版本高于 5.0.0，则需要pandoc.args设置Hexo 配置文件：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pandoc:</span><br><span class="line">args:</span><br><span class="line">   - --mathjax</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>数学公式在我的日常使用的还是挺多的，尤其是涉及到机器学习几乎是绕不开的，在之前我还真心没发现自己的math渲染既然没有开。</p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>数学公式在我的日常使用的还是挺多的，尤其是涉及到机器学习几乎是绕不开的，在之前我还真心没发现自己的math渲染既然没有开。</p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
 
@@ -393,8 +407,8 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2025/04/11/201-cralibre-web%E6%90%AD%E5%BB%BA/" rel="prev" title="Calibre-Web搭建docker">
-                  <i class="fa fa-angle-left"></i> Calibre-Web搭建docker
+                <a href="/2025/04/11/200-%E6%B5%85%E8%B0%88%E6%9C%80%E8%BF%91%E8%B4%B8%E6%98%93%E6%88%98/" rel="prev" title="浅谈最近贸易战">
+                  <i class="fa fa-angle-left"></i> 浅谈最近贸易战
                 </a>
             </div>
             <div class="post-nav-item">

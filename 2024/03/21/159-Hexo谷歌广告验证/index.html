@@ -184,7 +184,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-ads-txt"><span class="nav-number">1.</span> <span class="nav-text">1. ads.txt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Next%E4%B8%BB%E9%A2%98%E9%AA%8C%E8%AF%81"><span class="nav-number">2.</span> <span class="nav-text">2.Next主题验证</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-adstxt"><span class="nav-number">1.</span> <span class="nav-text"> 1. ads.txt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2next%E4%B8%BB%E9%A2%98%E9%AA%8C%E8%AF%81"><span class="nav-number">2.</span> <span class="nav-text"> 2.Next主题验证</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -328,14 +328,22 @@
     
     <div class="post-body" itemprop="articleBody"><p>谷歌广告算是一种不错的博客收益，所以花点时间配置一下谷歌网站所有权验证；方便自己增加一些收益也是可以的。需要注意：谷歌广告对个人博客的好感度不高，反正我是没有成功过。</p>
 <span id="more"></span>
-<h2 id="1-ads-txt"><a href="#1-ads-txt" class="headerlink" title="1. ads.txt"></a>1. ads.txt</h2><p>谷歌支持3种网站所有权验证方式：1.增加代码短；2.用ads.txt；3.元标记<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/159-Hexo%E8%B0%B7%E6%AD%8C%E5%B9%BF%E5%91%8A%E9%AA%8C%E8%AF%81-2024-03-22-10-32-19.png" alt="159-Hexo谷歌广告验证-2024-03-22-10-32-19"></p>
-<p>其中最简单的就是使用ads.txt，你只需要在source文件夹下面增加一个ads.txt即可<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/159-Hexo%E8%B0%B7%E6%AD%8C%E5%B9%BF%E5%91%8A%E9%AA%8C%E8%AF%81-2024-03-22-10-34-08.png" alt="159-Hexo谷歌广告验证-2024-03-22-10-34-08"></p>
+<h2 id="1-adstxt"><a class="markdownIt-Anchor" href="#1-adstxt"></a> 1. ads.txt</h2>
+<p>谷歌支持3种网站所有权验证方式：1.增加代码短；2.用ads.txt；3.元标记<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/159-Hexo%E8%B0%B7%E6%AD%8C%E5%B9%BF%E5%91%8A%E9%AA%8C%E8%AF%81-2024-03-22-10-32-19.png" alt="159-Hexo谷歌广告验证-2024-03-22-10-32-19" /></p>
+<p>其中最简单的就是使用ads.txt，你只需要在source文件夹下面增加一个ads.txt即可<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/159-Hexo%E8%B0%B7%E6%AD%8C%E5%B9%BF%E5%91%8A%E9%AA%8C%E8%AF%81-2024-03-22-10-34-08.png" alt="159-Hexo谷歌广告验证-2024-03-22-10-34-08" /></p>
 <p>后续Hexo部署额时候就可以部署到网站的文件呈中，谷歌就可以以此来验证网站所有权。</p>
-<h2 id="2-Next主题验证"><a href="#2-Next主题验证" class="headerlink" title="2.Next主题验证"></a>2.Next主题验证</h2><p>如果你恰巧和我一样，使用的是Next主题，那么可以使用主题自带的客制化功能将代码段插入到head里面：</p>
+<h2 id="2next主题验证"><a class="markdownIt-Anchor" href="#2next主题验证"></a> 2.Next主题验证</h2>
+<p>如果你恰巧和我一样，使用的是Next主题，那么可以使用主题自带的客制化功能将代码段插入到head里面：</p>
 <ol>
-<li><p>在source下创建_data文件夹，然后创建head.swig，里面复制上谷歌的head代码。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/159-Hexo%E8%B0%B7%E6%AD%8C%E5%B9%BF%E5%91%8A%E9%AA%8C%E8%AF%81-2024-03-22-10-36-17.png" alt="159-Hexo谷歌广告验证-2024-03-22-10-36-17"></p>
+<li>
+<p>在source下创建_data文件夹，然后创建head.swig，里面复制上谷歌的head代码。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/159-Hexo%E8%B0%B7%E6%AD%8C%E5%B9%BF%E5%91%8A%E9%AA%8C%E8%AF%81-2024-03-22-10-36-17.png" alt="159-Hexo谷歌广告验证-2024-03-22-10-36-17" /></p>
 </li>
-<li><p>到配置文件_config.next.yml里面找到对应的custom_file_path参数，配置下head即可。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/159-Hexo%E8%B0%B7%E6%AD%8C%E5%B9%BF%E5%91%8A%E9%AA%8C%E8%AF%81-2024-03-22-10-37-34.png" alt="159-Hexo谷歌广告验证-2024-03-22-10-37-34"></p>
+<li>
+<p>到配置文件_config.next.yml里面找到对应的custom_file_path参数，配置下head即可。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/159-Hexo%E8%B0%B7%E6%AD%8C%E5%B9%BF%E5%91%8A%E9%AA%8C%E8%AF%81-2024-03-22-10-37-34.png" alt="159-Hexo谷歌广告验证-2024-03-22-10-37-34" /></p>
 </li>
 </ol>
 <p>上传以后，新生成的页面的head就有对应的代码，需要注意：这个功能不仅仅可以增加谷歌验证代码，如果你有别的需求，比如付费阅读等，也可以通过这个方法配置。</p>

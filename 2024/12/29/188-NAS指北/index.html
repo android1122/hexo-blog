@@ -22,12 +22,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"minsummer.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="先说说现状：我目前有一台机顶盒CM311-1A，性能来说勉强是够用得。后面给我刷成了Armbian，用来挂青龙docker。外挂了一个U盘当作存储池。它的缺点很明显：  硬盘容量少，外接U盘也只能是usb2.0的 网口是百兆网口，如果操作过多会卡顿 ARM系统，性能偏弱，太复杂的复制粘贴有时候会卡死，不知道是usb2.0的问题还行机器问题 没有WiFi优点也有： 显卡性能可以 价格便宜，是真便宜，">
+    <meta name="description" content="先说说现状：我目前有一台机顶盒CM311-1A，性能来说勉强是够用得。后面给我刷成了Armbian，用来挂青龙docker。外挂了一个U盘当作存储池。 它的缺点很明显：  硬盘容量少，外接U盘也只能是usb2.0的 网口是百兆网口，如果操作过多会卡顿 ARM系统，性能偏弱，太复杂的复制粘贴有时候会卡死，不知道是usb2.0的问题还行机器问题 没有WiFi 优点也有： 显卡性能可以 价格便宜，是真便">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="NAS指北">
 <meta property="og:url" content="https://minsummer.com/2024/12/29/188-NAS%E6%8C%87%E5%8C%97/">
 <meta property="og:site_name" content="我是豆豆">
-<meta property="og:description" content="先说说现状：我目前有一台机顶盒CM311-1A，性能来说勉强是够用得。后面给我刷成了Armbian，用来挂青龙docker。外挂了一个U盘当作存储池。它的缺点很明显：  硬盘容量少，外接U盘也只能是usb2.0的 网口是百兆网口，如果操作过多会卡顿 ARM系统，性能偏弱，太复杂的复制粘贴有时候会卡死，不知道是usb2.0的问题还行机器问题 没有WiFi优点也有： 显卡性能可以 价格便宜，是真便宜，">
+<meta property="og:description" content="先说说现状：我目前有一台机顶盒CM311-1A，性能来说勉强是够用得。后面给我刷成了Armbian，用来挂青龙docker。外挂了一个U盘当作存储池。 它的缺点很明显：  硬盘容量少，外接U盘也只能是usb2.0的 网口是百兆网口，如果操作过多会卡顿 ARM系统，性能偏弱，太复杂的复制粘贴有时候会卡死，不知道是usb2.0的问题还行机器问题 没有WiFi 优点也有： 显卡性能可以 价格便宜，是真便">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-13-48-03.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-14-40-36.png">
@@ -184,7 +184,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%83%A0%E6%99%AE%E5%B7%A5%E4%BD%9C%E7%AB%99"><span class="nav-number">1.</span> <span class="nav-text">惠普工作站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%BA%E6%88%BF%E9%80%80%E4%BC%8D%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">机房退伍服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E9%80%89%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">机器选型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%AD%E4%B9%B0%E8%BF%87%E7%A8%8B"><span class="nav-number">4.</span> <span class="nav-text">购买过程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number"></span> <span class="nav-text">总结</span></a></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%83%A0%E6%99%AE%E5%B7%A5%E4%BD%9C%E7%AB%99"><span class="nav-number">1.</span> <span class="nav-text"> 惠普工作站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%BA%E6%88%BF%E9%80%80%E4%BC%8D%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text"> 机房退伍服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E9%80%89%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text"> 机器选型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%AD%E4%B9%B0%E8%BF%87%E7%A8%8B"><span class="nav-number">4.</span> <span class="nav-text"> 购买过程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number"></span> <span class="nav-text"> 总结</span></a></div>
         </div>
         <!--/noindex-->
 
@@ -326,12 +326,14 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>先说说现状：我目前有一台机顶盒CM311-1A，性能来说勉强是够用得。后面给我刷成了Armbian，用来挂青龙docker。外挂了一个U盘当作存储池。<br>它的缺点很明显：</p>
+    <div class="post-body" itemprop="articleBody"><p>先说说现状：我目前有一台机顶盒CM311-1A，性能来说勉强是够用得。后面给我刷成了Armbian，用来挂青龙docker。外挂了一个U盘当作存储池。<br />
+它的缺点很明显：</p>
 <ol>
 <li>硬盘容量少，外接U盘也只能是usb2.0的</li>
 <li>网口是百兆网口，如果操作过多会卡顿</li>
 <li>ARM系统，性能偏弱，太复杂的复制粘贴有时候会卡死，不知道是usb2.0的问题还行机器问题</li>
-<li>没有WiFi<br>优点也有：</li>
+<li>没有WiFi<br />
+优点也有：</li>
 <li>显卡性能可以</li>
 <li>价格便宜，是真便宜，我当初买的时候只要60，内存2G，硬盘8G</li>
 <li>可玩性强，可以刷成服务器，也可以刷成机顶盒，后续准备刷成机顶盒试试。</li>
@@ -357,20 +359,31 @@
 <li>成品NAS：硬盘数量多的，价格高，而且性能一般般。成品NAS是最不推荐的一款，毕竟成品NAS是出了名的买系统，送硬件。</li>
 </ol>
 <p>现在主流的平台一般就是X99平台，其中C612平台和X99平台可以混用，主要是BIOS需要魔改。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-13-48-03.png" alt="188-NAS指北-2024-12-31-13-48-03"></p>
-<p>以上图为例，很多X99平台经过魔改BIOS，也可以用上C612芯片组的CPU，这点在鱼龙混杂的山寨寨板里面是十分正常的。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-14-40-36.png" alt="188-NAS指北-2024-12-31-14-40-36"></p>
-<h2 id="惠普工作站"><a href="#惠普工作站" class="headerlink" title="惠普工作站"></a>惠普工作站</h2><p>工作站：为专业领域设计的，所以硬件上会相较于普通的电脑会有更多优势，比如适配更好的CPU，更多的的通道等。<br>现在主流的工作站有，Z220,Z440,Z2g4，20，40，代表代数越往上，越高。然后前面的Z2,Z4,Z8分别代表着E3,E5,E5双路。需要知道，虽然接口都一致，但是由于BIOS问题，很多时候无法使用民用的CPU，所以购买时候需要问清楚有没有魔改BIOS。<br>品牌机的话有：800g2，800g3，800g4，前面的800代表机型外貌，g2，g3，g4分别对应4-5代，6-7代，8-9代CPU。后缀sff是半高机箱，twr是全高机型。<br><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-14-34-42.png" alt="188-NAS指北-2024-12-31-14-34-42"></p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-13-48-03.png" alt="188-NAS指北-2024-12-31-13-48-03" /></p>
+<p>以上图为例，很多X99平台经过魔改BIOS，也可以用上C612芯片组的CPU，这点在鱼龙混杂的山寨寨板里面是十分正常的。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-14-40-36.png" alt="188-NAS指北-2024-12-31-14-40-36" /></p>
+<h2 id="惠普工作站"><a class="markdownIt-Anchor" href="#惠普工作站"></a> 惠普工作站</h2>
+<p>工作站：为专业领域设计的，所以硬件上会相较于普通的电脑会有更多优势，比如适配更好的CPU，更多的的通道等。<br />
+现在主流的工作站有，Z220,Z440,Z2g4，20，40，代表代数越往上，越高。然后前面的Z2,Z4,Z8分别代表着E3,E5,E5双路。需要知道，虽然接口都一致，但是由于BIOS问题，很多时候无法使用民用的CPU，所以购买时候需要问清楚有没有魔改BIOS。<br />
+品牌机的话有：800g2，800g3，800g4，前面的800代表机型外貌，g2，g3，g4分别对应4-5代，6-7代，8-9代CPU。后缀sff是半高机箱，twr是全高机型。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-14-34-42.png" alt="188-NAS指北-2024-12-31-14-34-42" /></p>
 <p>以z220为例，咸鱼只要169包邮，而最高级的Z2g4支持8-9代cpu和E-21系列的，只要438.缺点是硬盘位少。800g4也是8-9代cpu支持，但是只有330左右。需要注意，很多机器是经过BIOS魔改的，让他可以支持服务器的，这点需要注意。</p>
-<h2 id="机房退伍服务器"><a href="#机房退伍服务器" class="headerlink" title="机房退伍服务器"></a>机房退伍服务器</h2><p>服务器目前主流的是三款产品：戴尔PowerEdge R730XD，浪潮SA5212M4，华为 RH2285 v2机架式服务器等。具体可以参考<a target="_blank" rel="noopener" href="https://www.bilibili.com/opus/808391022366162966?spm_id_from=333.1387.0.0">b站网友写的文章</a>，里面进行了分析，我觉得很合理，通过参考盘位，拓展性，综合分析，之后得出结论。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-15-04-56.png" alt="188-NAS指北-2024-12-31-15-04-56"></p>
-<p>其中戴尔有R730，和R730xd，xd后缀是有12个3.5英寸盘位。<br>其实，同样的Z440和服务器准系统价格是一样的，但是服务器的拓展性，还可以双路E5，是吊打工作站。唯一的问题是功耗和噪音。噪音的问题已经解决，功耗的问题，只能说见仁见智了。</p>
-<h2 id="机器选型"><a href="#机器选型" class="headerlink" title="机器选型"></a>机器选型</h2><p>我看了下，网络上大多数选择的是DELL R730XD，作为一个垃圾佬，我选择浪潮5212M4，网络上选择戴尔的原因很多一般是由于：戴尔的管理网口比较好和戴尔的拓展性。但是我由于并没有太多的拓展需求，最多后续增加PCIE万兆网卡。至于管理网口的功能，我的需求也不大，所以也不需要太好。<br>这边需要注意两点，服务器也分版本，我们需要注意优先选择带3008阵列和82599双万兆网卡(sfp+接口)的，前者阵列卡由于是板载的，所以一旦没有那么就不会</p>
-<h2 id="购买过程"><a href="#购买过程" class="headerlink" title="购买过程"></a>购买过程</h2><ol>
+<h2 id="机房退伍服务器"><a class="markdownIt-Anchor" href="#机房退伍服务器"></a> 机房退伍服务器</h2>
+<p>服务器目前主流的是三款产品：戴尔PowerEdge R730XD，浪潮SA5212M4，华为 RH2285 v2机架式服务器等。具体可以参考<a target="_blank" rel="noopener" href="https://www.bilibili.com/opus/808391022366162966?spm_id_from=333.1387.0.0">b站网友写的文章</a>，里面进行了分析，我觉得很合理，通过参考盘位，拓展性，综合分析，之后得出结论。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/188-NAS%E6%8C%87%E5%8C%97-2024-12-31-15-04-56.png" alt="188-NAS指北-2024-12-31-15-04-56" /></p>
+<p>其中戴尔有R730，和R730xd，xd后缀是有12个3.5英寸盘位。<br />
+其实，同样的Z440和服务器准系统价格是一样的，但是服务器的拓展性，还可以双路E5，是吊打工作站。唯一的问题是功耗和噪音。噪音的问题已经解决，功耗的问题，只能说见仁见智了。</p>
+<h2 id="机器选型"><a class="markdownIt-Anchor" href="#机器选型"></a> 机器选型</h2>
+<p>我看了下，网络上大多数选择的是DELL R730XD，作为一个垃圾佬，我选择浪潮5212M4，网络上选择戴尔的原因很多一般是由于：戴尔的管理网口比较好和戴尔的拓展性。但是我由于并没有太多的拓展需求，最多后续增加PCIE万兆网卡。至于管理网口的功能，我的需求也不大，所以也不需要太好。<br />
+这边需要注意两点，服务器也分版本，我们需要注意优先选择带3008阵列和82599双万兆网卡(sfp+接口)的，前者阵列卡由于是板载的，所以一旦没有那么就不会</p>
+<h2 id="购买过程"><a class="markdownIt-Anchor" href="#购买过程"></a> 购买过程</h2>
+<ol>
 <li>咸鱼上很多都是鱼龙混杂，需要多问问，现在问下来准系统：戴尔R730 XD最低要600不包邮，邮费给你50，也得650+。浪潮5212M4准系统随便问几家都要330+，有些夸张的，箱子加邮费要你100，到400+，所以这两者差价就100到200之间。</li>
 <li>最后240准系统+50块钱2块E5 2650 v4 +120块钱2条镁光16g内存，运费50 ，合计460一套齐全。</li>
 <li>整体购买下来的感受就是要多问：一个是因为鱼龙混杂，一个是因为确实一分钱一分货。同样是C610芯片组的，戴尔的相较于浪潮贵的原因是浪潮的产品是2015年左右的，但是戴尔的是2019年左右，其次是戴尔的系统易用性比浪潮的好，如果你动手能力比较差的话，最好还是买戴尔的，尤其是系统配置。</li>
 </ol>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>我购买次服务器的原因很简单，我有需求，现在好多看到Github上比较有兴趣的项目我都苦于手上美有一台性能强劲的服务器可以让我测试一下。这是我的兴趣爱好之一；更何况这次整体成本大头是在硬盘，服务器反而是怎么垃圾怎么来。性能也绝对是够用的。剩下的问题是电费，但是实际上我是无所谓的，电这东西是幸福感必须花费的东西，无论是电脑，电视，空调，热水器。我们不能因为害怕电费，而去放弃这些东西。电已经和水，空气成为了一个现代人生活的必需品了。</p>
+<h1 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h1>
+<p>我购买次服务器的原因很简单，我有需求，现在好多看到Github上比较有兴趣的项目我都苦于手上美有一台性能强劲的服务器可以让我测试一下。这是我的兴趣爱好之一；更何况这次整体成本大头是在硬盘，服务器反而是怎么垃圾怎么来。性能也绝对是够用的。剩下的问题是电费，但是实际上我是无所谓的，电这东西是幸福感必须花费的东西，无论是电脑，电视，空调，热水器。我们不能因为害怕电费，而去放弃这些东西。电已经和水，空气成为了一个现代人生活的必需品了。</p>
 <p>后续我会撰写相对应的服务器的搭建，毕竟我也是第一次使用服务器系统。</p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
