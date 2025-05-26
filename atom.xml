@@ -6,7 +6,7 @@
   <link href="https://minsummer.com/atom.xml" rel="self"/>
   
   <link href="https://minsummer.com/"/>
-  <updated>2025-04-24T16:00:00.000Z</updated>
+  <updated>2025-05-25T16:00:00.000Z</updated>
   <id>https://minsummer.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OPENWRT的samba配置.md</title>
+    <link href="https://minsummer.com/2025/05/25/204-OPENWRT%E7%9A%84samba%E9%85%8D%E7%BD%AE/"/>
+    <id>https://minsummer.com/2025/05/25/204-OPENWRT%E7%9A%84samba%E9%85%8D%E7%BD%AE/</id>
+    <published>2025-05-25T16:00:00.000Z</published>
+    <updated>2025-05-25T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;废话不多说，直接来，OPENWRT自带的网络共享，但是有时候我用Windows连接无法连接，于是就做个教程。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="OPENWRT" scheme="https://minsummer.com/tags/OPENWRT/"/>
+    
+    <category term="samba" scheme="https://minsummer.com/tags/samba/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo博客NEXT主题开启数学公式</title>
