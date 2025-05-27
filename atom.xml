@@ -6,7 +6,7 @@
   <link href="https://minsummer.com/atom.xml" rel="self"/>
   
   <link href="https://minsummer.com/"/>
-  <updated>2025-05-25T16:00:00.000Z</updated>
+  <updated>2025-05-26T16:00:00.000Z</updated>
   <id>https://minsummer.com/</id>
   
   <author>
@@ -17,7 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>OPENWRT的samba配置.md</title>
+    <title>DMIT LAX.EB.CORONA和瓦工NODESEEK-MEGABOX-PRO测试结果</title>
+    <link href="https://minsummer.com/2025/05/26/205-DMIT%20LAX.EB.CORONA%E5%92%8C%E7%93%A6%E5%B7%A5NODESEEK-MEGABOX-PRO/"/>
+    <id>https://minsummer.com/2025/05/26/205-DMIT%20LAX.EB.CORONA%E5%92%8C%E7%93%A6%E5%B7%A5NODESEEK-MEGABOX-PRO/</id>
+    <published>2025-05-26T16:00:00.000Z</published>
+    <updated>2025-05-26T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;套餐内容：&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;LAX.EB.CORONA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 vCPU&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 GB RAM&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10G SSD Storage&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1000GB Transfer&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1Gbps VirtIO Interface&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 IPv4 &amp;amp; 1 IPv6 /64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Premium Network Profile&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49.9 USD/Year &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;NODESEEK-MEGABOX-PRO&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;SSD: 40 GB RAID-10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;RAM: 2048 MB&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;CPU: 2x AMD&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Transfer: 2000 GB/mo&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Link speed: 2.5 Gigabit&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;洛杉矶DC1，线路是电信回城gia，移动联通cmin2。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$49.00/yr（折扣前，折扣后45刀）&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;两者价格差不多，实际上瓦工的更加便宜，性能和硬盘更大，但是需要注意，瓦工的线路偏向电信，如果没有电信的用户可以考虑LAX.EB.CORONA。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="搬瓦工" scheme="https://minsummer.com/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/"/>
+    
+    <category term="DMIT" scheme="https://minsummer.com/tags/DMIT/"/>
+    
+    <category term="NODESEEK-MEGABOX-PRO" scheme="https://minsummer.com/tags/NODESEEK-MEGABOX-PRO/"/>
+    
+    <category term="LAX.EB.CORONA" scheme="https://minsummer.com/tags/LAX-EB-CORONA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OPENWRT的samba配置</title>
     <link href="https://minsummer.com/2025/05/25/204-OPENWRT%E7%9A%84samba%E9%85%8D%E7%BD%AE/"/>
     <id>https://minsummer.com/2025/05/25/204-OPENWRT%E7%9A%84samba%E9%85%8D%E7%BD%AE/</id>
     <published>2025-05-25T16:00:00.000Z</published>
@@ -971,27 +998,6 @@ CPU：1x Intel Xeon&lt;br /&gt;
   </entry>
   
   <entry>
-    <title>如何阅读一本书</title>
-    <link href="https://minsummer.com/2024/04/14/162-%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/"/>
-    <id>https://minsummer.com/2024/04/14/162-%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/</id>
-    <published>2024-04-14T16:00:00.000Z</published>
-    <updated>2024-04-14T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;要是多年前的我，看到这个标题肯定转头就关闭页面，但是今天轮到我自己，我觉得我还是花点时间来描述一下我得读书观点吧。首先我觉得一本书，要简洁清楚说明自己观点，然后例证；重点是简洁。当然不同得书籍会有不同得描写方法，针对我阅读最多得科普和观点类书籍来说，我总结了几个暴论：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
-    
-    
-    <category term="读书指南" scheme="https://minsummer.com/tags/%E8%AF%BB%E4%B9%A6%E6%8C%87%E5%8D%97/"/>
-    
-    <category term="放弃一些读不懂的书" scheme="https://minsummer.com/tags/%E6%94%BE%E5%BC%83%E4%B8%80%E4%BA%9B%E8%AF%BB%E4%B8%8D%E6%87%82%E7%9A%84%E4%B9%A6/"/>
-    
-  </entry>
-  
-  <entry>
     <title>2024推荐书单-1</title>
     <link href="https://minsummer.com/2024/04/14/161-2024%E6%8E%A8%E8%8D%90%E4%B9%A6%E5%8D%951/"/>
     <id>https://minsummer.com/2024/04/14/161-2024%E6%8E%A8%E8%8D%90%E4%B9%A6%E5%8D%951/</id>
@@ -1011,6 +1017,27 @@ CPU：1x Intel Xeon&lt;br /&gt;
     <category term="读书" scheme="https://minsummer.com/tags/%E8%AF%BB%E4%B9%A6/"/>
     
     <category term="书单" scheme="https://minsummer.com/tags/%E4%B9%A6%E5%8D%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何阅读一本书</title>
+    <link href="https://minsummer.com/2024/04/14/162-%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/"/>
+    <id>https://minsummer.com/2024/04/14/162-%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/</id>
+    <published>2024-04-14T16:00:00.000Z</published>
+    <updated>2024-04-14T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;要是多年前的我，看到这个标题肯定转头就关闭页面，但是今天轮到我自己，我觉得我还是花点时间来描述一下我得读书观点吧。首先我觉得一本书，要简洁清楚说明自己观点，然后例证；重点是简洁。当然不同得书籍会有不同得描写方法，针对我阅读最多得科普和观点类书籍来说，我总结了几个暴论：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+    
+    <category term="读书指南" scheme="https://minsummer.com/tags/%E8%AF%BB%E4%B9%A6%E6%8C%87%E5%8D%97/"/>
+    
+    <category term="放弃一些读不懂的书" scheme="https://minsummer.com/tags/%E6%94%BE%E5%BC%83%E4%B8%80%E4%BA%9B%E8%AF%BB%E4%B8%8D%E6%87%82%E7%9A%84%E4%B9%A6/"/>
     
   </entry>
   

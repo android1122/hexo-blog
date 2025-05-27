@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"minsummer.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="套餐内容： 123456789101112131415161718LAX.EB.CORONA1 vCPU1 GB RAM10G SSD Storage1000GB Transfer1Gbps VirtIO Interface1 IPv4 &amp; 1 IPv6 &#x2F;64Premium Network Profile49.9 USD&#x2F;Year NODESEEK-MEGABOX-PROSSD: 40">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="DMIT LAX.EB.CORONA和瓦工NODESEEK-MEGABOX-PRO测试结果">
+<meta property="og:url" content="https://minsummer.com/2025/05/26/205-DMIT%20LAX.EB.CORONA%E5%92%8C%E7%93%A6%E5%B7%A5NODESEEK-MEGABOX-PRO/">
+<meta property="og:site_name" content="我是豆豆">
+<meta property="og:description" content="套餐内容： 123456789101112131415161718LAX.EB.CORONA1 vCPU1 GB RAM10G SSD Storage1000GB Transfer1Gbps VirtIO Interface1 IPv4 &amp; 1 IPv6 &#x2F;64Premium Network Profile49.9 USD&#x2F;Year NODESEEK-MEGABOX-PROSSD: 40">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.111666.best/image/lnAb5Jct42mI09vnwnuSdc.webp">
+<meta property="og:image" content="https://i.111666.best/image/0019ekfHPK0ohDgKbjR2rS.webp">
+<meta property="og:image" content="https://i.111666.best/image/CTQlyPz5yuAdvG48Lq7Ney.webp">
+<meta property="og:image" content="https://i.111666.best/image/sKrCMQssgNiURG3Ykv1Dcn.webp">
+<meta property="og:image" content="https://i.111666.best/image/981T3MOjaC82uywzyOZSK2.webp">
+<meta property="og:image" content="https://i.111666.best/image/KaUwZS2pwo6Mrfp97bEyF0.webp">
+<meta property="article:published_time" content="2025-05-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-05-26T16:00:00.000Z">
+<meta property="article:author" content="张大爆">
+<meta property="article:tag" content="搬瓦工">
+<meta property="article:tag" content="DMIT">
+<meta property="article:tag" content="NODESEEK-MEGABOX-PRO">
+<meta property="article:tag" content="LAX.EB.CORONA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.111666.best/image/lnAb5Jct42mI09vnwnuSdc.webp">
+
+
+<link rel="canonical" href="https://minsummer.com/2025/05/26/205-DMIT%20LAX.EB.CORONA%E5%92%8C%E7%93%A6%E5%B7%A5NODESEEK-MEGABOX-PRO/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://minsummer.com/2025/05/26/205-DMIT%20LAX.EB.CORONA%E5%92%8C%E7%93%A6%E5%B7%A5NODESEEK-MEGABOX-PRO/","path":"2025/05/26/205-DMIT LAX.EB.CORONA和瓦工NODESEEK-MEGABOX-PRO/","title":"DMIT LAX.EB.CORONA和瓦工NODESEEK-MEGABOX-PRO测试结果"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>DMIT LAX.EB.CORONA和瓦工NODESEEK-MEGABOX-PRO测试结果 | 我是豆豆</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-189642379-1","only_pageview":true,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+
+
+
+  <script data-pjax defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{&quot;token&quot;: &quot;2c44721ef211470c8cb156f38ca476ea&quot;}'></script>
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.5.0/mermaid.min.js","integrity":"sha256-2obLuIPcceEhkE3G09G33hBdmE55ivVcZUlcKcGNHjU="}}</script>
+  <script src="/js/third-party/tags/mermaid.js" defer></script>
+
+
+
+  <script src="/js/third-party/pace.js" defer></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
+  <script class="next-config" data-name="katex" type="application/json">{"copy_tex_js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js","integrity":"sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs="}}</script>
+  <script src="/js/third-party/math/katex.js" defer></script>
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3599006834125162"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="我是豆豆" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">我是豆豆</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">吃饭，睡觉，打豆豆</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">370</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">205</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E5%85%B7"><span class="nav-number">1.</span> <span class="nav-text"> 工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#laxebcorona"><span class="nav-number">2.</span> <span class="nav-text"> LAX.EB.CORONA</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="nav-number">2.1.</span> <span class="nav-text"> 💻基本信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ip%E8%B4%A8%E9%87%8F"><span class="nav-number">2.2.</span> <span class="nav-text"> 🎬IP质量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E8%B4%A8%E9%87%8F"><span class="nav-number">2.3.</span> <span class="nav-text"> 🌐网络质量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E7%A8%8B%E8%B7%AF%E7%94%B1"><span class="nav-number">2.4.</span> <span class="nav-text"> 📍回程路由</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nodeseek-megabox-pro"><span class="nav-number">3.</span> <span class="nav-text"> NODESEEK-MEGABOX-PRO</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF-2"><span class="nav-number">3.1.</span> <span class="nav-text"> 💻基本信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ip%E8%B4%A8%E9%87%8F-2"><span class="nav-number">3.2.</span> <span class="nav-text"> 🎬IP质量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E8%B4%A8%E9%87%8F-2"><span class="nav-number">3.3.</span> <span class="nav-text"> 🌐网络质量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E7%A8%8B%E8%B7%AF%E7%94%B1-2"><span class="nav-number">3.4.</span> <span class="nav-text"> 📍回程路由</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text"> 总结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">张大爆</p>
+  <div class="site-description" itemprop="description">经常会忘记一些东西，用这里来记录我们曾经来过</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">205</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">370</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/android1122" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;android1122" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:noway@minsummer.com" title="E-Mail → mailto:noway@minsummer.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://speedtt.minsummer.com/" title="https:&#x2F;&#x2F;speedtt.minsummer.com&#x2F;" rel="noopener" target="_blank">共享机场-移动</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://speedttsjc.minsummer.com/" title="https:&#x2F;&#x2F;speedttsjc.minsummer.com&#x2F;" rel="noopener" target="_blank">共享机场-三网</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wangergoudebaobaodian.taobao.com/" title="https:&#x2F;&#x2F;wangergoudebaobaodian.taobao.com&#x2F;" rel="noopener" target="_blank">淘宝店</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相关文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/2025/02/11/198-%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/" rel="bookmark">
+        <time class="popular-posts-time">2025-02-12</time>
+        <br>
+      哪吒探针部署指南
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/2025/03/16/199-2025%E4%BC%A0%E5%AE%B6%E5%AE%9D%E6%8C%87%E5%8C%97/" rel="bookmark">
+        <time class="popular-posts-time">2025-03-17</time>
+        <br>
+      2025传家宝指北
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://minsummer.com/2025/05/26/205-DMIT%20LAX.EB.CORONA%E5%92%8C%E7%93%A6%E5%B7%A5NODESEEK-MEGABOX-PRO/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="张大爆">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我是豆豆">
+      <meta itemprop="description" content="经常会忘记一些东西，用这里来记录我们曾经来过">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="DMIT LAX.EB.CORONA和瓦工NODESEEK-MEGABOX-PRO测试结果 | 我是豆豆">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          DMIT LAX.EB.CORONA和瓦工NODESEEK-MEGABOX-PRO测试结果
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-05-27 00:00:00" itemprop="dateCreated datePublished" datetime="2025-05-27T00:00:00+08:00">2025-05-27</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>858</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>套餐内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">LAX.EB.CORONA</span><br><span class="line">1 vCPU</span><br><span class="line">1 GB RAM</span><br><span class="line">10G SSD Storage</span><br><span class="line">1000GB Transfer</span><br><span class="line">1Gbps VirtIO Interface</span><br><span class="line">1 IPv4 &amp; 1 IPv6 /64</span><br><span class="line">Premium Network Profile</span><br><span class="line">49.9 USD/Year </span><br><span class="line"></span><br><span class="line">NODESEEK-MEGABOX-PRO</span><br><span class="line">SSD: 40 GB RAID-10</span><br><span class="line">RAM: 2048 MB</span><br><span class="line">CPU: 2x AMD</span><br><span class="line">Transfer: 2000 GB/mo</span><br><span class="line">Link speed: 2.5 Gigabit</span><br><span class="line">洛杉矶DC1，线路是电信回城gia，移动联通cmin2。</span><br><span class="line">$49.00/yr（折扣前，折扣后45刀）</span><br></pre></td></tr></table></figure>
+<p>两者价格差不多，实际上瓦工的更加便宜，性能和硬盘更大，但是需要注意，瓦工的线路偏向电信，如果没有电信的用户可以考虑LAX.EB.CORONA。</p>
+<span id="more"></span>
+<h2 id="工具"><a class="markdownIt-Anchor" href="#工具"></a> 工具</h2>
+<p><a target="_blank" rel="noopener" href="https://nodequality.com/">NodeQuality</a>一种可以在沙箱内进行测试的工具。平常的测试工具会下载大量的工具，这个测试完之后干净无残留。后续不出意外的话都是用这个工具进行测试。工具是开源的，也是nodeseek论坛自己开发的，所以可以信任。</p>
+<blockquote>
+<p>bash &lt;(curl -sL <a target="_blank" rel="noopener" href="https://run.NodeQuality.com">https://run.NodeQuality.com</a>)</p>
+</blockquote>
+<h2 id="laxebcorona"><a class="markdownIt-Anchor" href="#laxebcorona"></a> LAX.EB.CORONA</h2>
+<h3 id="基本信息"><a class="markdownIt-Anchor" href="#基本信息"></a> 💻基本信息</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">Basic System Information:</span><br><span class="line">---------------------------------</span><br><span class="line">Uptime     : 20 days, 1 hours, 46 minutes</span><br><span class="line">Processor  : AMD EPYC 9654 96-Core Processor</span><br><span class="line">CPU cores  : 1 @ 2396.398 MHz</span><br><span class="line">AES-NI     : ✔ Enabled</span><br><span class="line">VM-x/AMD-V : ✔ Enabled</span><br><span class="line">RAM        : 958.7 MiB</span><br><span class="line">Swap       : 1024.0 MiB</span><br><span class="line">Disk       : 21.0 GiB</span><br><span class="line">Distro     : Debian GNU/Linux 12 (bookworm)</span><br><span class="line">Kernel     : 6.1.0-29-amd64</span><br><span class="line">VM Type    : STANDARD PC (Q35 + ICH9, 2009)</span><br><span class="line">IPv4/IPv6  : ✔ Online / ✔ Online</span><br><span class="line"></span><br><span class="line">IPv6 Network Information:</span><br><span class="line">---------------------------------</span><br><span class="line">ISP        : DMIT Cloud Services</span><br><span class="line">ASN        : AS906 DMIT Cloud Services</span><br><span class="line">Host       : DMIT Cloud Services</span><br><span class="line">Location   : Los Angeles, California (CA)</span><br><span class="line">Country    : United States</span><br><span class="line"></span><br><span class="line">fio Disk Speed Tests (Mixed R/W 50/50) (Partition -):</span><br><span class="line">---------------------------------</span><br><span class="line">Block Size | 4k            (IOPS) | 64k           (IOPS)</span><br><span class="line">  ------   | ---            ----  | ----           ---- </span><br><span class="line">Read       | 62.52 MB/s   (15.6k) | 1.06 GB/s    (16.6k)</span><br><span class="line">Write      | 62.63 MB/s   (15.6k) | 1.07 GB/s    (16.7k)</span><br><span class="line">Total      | 125.15 MB/s  (31.2k) | 2.13 GB/s    (33.4k)</span><br><span class="line">           |                      |                     </span><br><span class="line">Block Size | 512k          (IOPS) | 1m            (IOPS)</span><br><span class="line">  ------   | ---            ----  | ----           ---- </span><br><span class="line">Read       | 1.01 GB/s     (1.9k) | 923.37 MB/s    (901)</span><br><span class="line">Write      | 1.07 GB/s     (2.0k) | 984.86 MB/s    (961)</span><br><span class="line">Total      | 2.09 GB/s     (4.0k) | 1.90 GB/s     (1.8k)</span><br><span class="line"></span><br><span class="line">Geekbench 5 Benchmark Test:</span><br><span class="line">---------------------------------</span><br><span class="line">Test            | Value                         </span><br><span class="line">                |                               </span><br><span class="line">Single Core     | 1049                          </span><br><span class="line">Multi Core      | 1108                          </span><br><span class="line">Full Test       | https://browser.geekbench.com/v5/cpu/23568871</span><br><span class="line"></span><br><span class="line"> SysBench CPU 测试 (Fast Mode, 1-Pass @ 5sec)</span><br><span class="line">---------------------------------</span><br><span class="line"> 1 线程测试(单核)得分:          4017 Scores</span><br><span class="line"> SysBench 内存测试 (Fast Mode, 1-Pass @ 5sec)</span><br><span class="line">---------------------------------</span><br><span class="line"> 单线程读测试:          44224.67 MB/s</span><br><span class="line"> 单线程写测试:          26433.48 MB/s</span><br></pre></td></tr></table></figure>
+<h3 id="ip质量"><a class="markdownIt-Anchor" href="#ip质量"></a> 🎬IP质量</h3>
+<p><img src="https://i.111666.best/image/lnAb5Jct42mI09vnwnuSdc.webp" alt="image" /></p>
+<h3 id="网络质量"><a class="markdownIt-Anchor" href="#网络质量"></a> 🌐网络质量</h3>
+<p><img src="https://i.111666.best/image/0019ekfHPK0ohDgKbjR2rS.webp" alt="image" /></p>
+<h3 id="回程路由"><a class="markdownIt-Anchor" href="#回程路由"></a> 📍回程路由</h3>
+<p><img src="https://i.111666.best/image/CTQlyPz5yuAdvG48Lq7Ney.webp" alt="image" /></p>
+<p><a target="_blank" rel="noopener" href="https://nodequality.com/r/btJ28mxzyAQtDATDBTFQ0PziI7vFB7XT">NodeQuality链接</a></p>
+<h2 id="nodeseek-megabox-pro"><a class="markdownIt-Anchor" href="#nodeseek-megabox-pro"></a> NODESEEK-MEGABOX-PRO</h2>
+<h3 id="基本信息-2"><a class="markdownIt-Anchor" href="#基本信息-2"></a> 💻基本信息</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">Basic System Information:</span><br><span class="line">---------------------------------</span><br><span class="line">Uptime     : 0 days, 0 hours, 2 minutes</span><br><span class="line">Processor  : AMD EPYC-Genoa Processor</span><br><span class="line">CPU cores  : 2 @ 2794.750 MHz</span><br><span class="line">AES-NI     : ✔ Enabled</span><br><span class="line">VM-x/AMD-V : ❌ Disabled</span><br><span class="line">RAM        : 2.0 GiB</span><br><span class="line">Swap       : 1024.0 MiB</span><br><span class="line">Disk       : 41.0 GiB</span><br><span class="line">Distro     : Debian GNU/Linux 12 (bookworm)</span><br><span class="line">Kernel     : 6.1.0-9-amd64</span><br><span class="line">VM Type    : KVM</span><br><span class="line">IPv4/IPv6  : ✔ Online / ✔ Online</span><br><span class="line"></span><br><span class="line">IPv6 Network Information:</span><br><span class="line">---------------------------------</span><br><span class="line">ISP        : IT7 Networks Inc</span><br><span class="line">ASN        : AS25820 IT7 Networks Inc</span><br><span class="line">Host       : IT7 Networks Inc</span><br><span class="line">Location   : Los Angeles, California (CA)</span><br><span class="line">Country    : United States</span><br><span class="line"></span><br><span class="line">fio Disk Speed Tests (Mixed R/W 50/50) (Partition -):</span><br><span class="line">---------------------------------</span><br><span class="line">Block Size | 4k            (IOPS) | 64k           (IOPS)</span><br><span class="line">  ------   | ---            ----  | ----           ---- </span><br><span class="line">Read       | 179.74 MB/s  (44.9k) | 1.12 GB/s    (17.5k)</span><br><span class="line">Write      | 180.21 MB/s  (45.0k) | 1.12 GB/s    (17.5k)</span><br><span class="line">Total      | 359.96 MB/s  (89.9k) | 2.24 GB/s    (35.1k)</span><br><span class="line">           |                      |                     </span><br><span class="line">Block Size | 512k          (IOPS) | 1m            (IOPS)</span><br><span class="line">  ------   | ---            ----  | ----           ---- </span><br><span class="line">Read       | 1.39 GB/s     (2.7k) | 1.55 GB/s     (1.5k)</span><br><span class="line">Write      | 1.46 GB/s     (2.8k) | 1.65 GB/s     (1.6k)</span><br><span class="line">Total      | 2.85 GB/s     (5.5k) | 3.20 GB/s     (3.1k)</span><br><span class="line"></span><br><span class="line">Geekbench 5 Benchmark Test:</span><br><span class="line">---------------------------------</span><br><span class="line">Test            | Value                         </span><br><span class="line">                |                               </span><br><span class="line">Single Core     | 945                           </span><br><span class="line">Multi Core      | 1840                          </span><br><span class="line">Full Test       | https://browser.geekbench.com/v5/cpu/23568758</span><br><span class="line"></span><br><span class="line"> SysBench CPU 测试 (Fast Mode, 1-Pass @ 5sec)</span><br><span class="line">---------------------------------</span><br><span class="line"> 1 线程测试(单核)得分:          1615 Scores</span><br><span class="line"> 2 线程测试(多核)得分:          3230 Scores</span><br><span class="line"> SysBench 内存测试 (Fast Mode, 1-Pass @ 5sec)</span><br><span class="line">---------------------------------</span><br><span class="line"> 单线程读测试:          42687.28 MB/s</span><br><span class="line"> 单线程写测试:          19139.61 MB/s</span><br></pre></td></tr></table></figure>
+<h3 id="ip质量-2"><a class="markdownIt-Anchor" href="#ip质量-2"></a> 🎬IP质量</h3>
+<p><img src="https://i.111666.best/image/sKrCMQssgNiURG3Ykv1Dcn.webp" alt="image" /></p>
+<h3 id="网络质量-2"><a class="markdownIt-Anchor" href="#网络质量-2"></a> 🌐网络质量</h3>
+<p><img src="https://i.111666.best/image/981T3MOjaC82uywzyOZSK2.webp" alt="image" /></p>
+<h3 id="回程路由-2"><a class="markdownIt-Anchor" href="#回程路由-2"></a> 📍回程路由</h3>
+<p><img src="https://i.111666.best/image/KaUwZS2pwo6Mrfp97bEyF0.webp" alt="image" /></p>
+<p><a target="_blank" rel="noopener" href="https://nodequality.com/r/rdGvyobUkI9v0xOiazvhD0d63Fmjv71v">NodeQuality链接</a></p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>两者大多数数据都相同，但是唯一区别在于，联通的话，如果是LAX他是走9929，瓦工走的是CN2GIA，IPv6走的就更差了。如果是电信用户，那么直接瓦工，移动两者一样，但是还是DMIT好点，因为他的IPv6走的线路是正确的。联通的则推荐DMIT，因为联通坑爹的跨网会限制速率，所以除非是联通内部网，否则无论多快的速率都会被限制的。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/" rel="tag"># 搬瓦工</a>
+              <a href="/tags/DMIT/" rel="tag"># DMIT</a>
+              <a href="/tags/NODESEEK-MEGABOX-PRO/" rel="tag"># NODESEEK-MEGABOX-PRO</a>
+              <a href="/tags/LAX-EB-CORONA/" rel="tag"># LAX.EB.CORONA</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/05/25/204-OPENWRT%E7%9A%84samba%E9%85%8D%E7%BD%AE/" rel="prev" title="OPENWRT的samba配置">
+                  <i class="fa fa-angle-left"></i> OPENWRT的samba配置
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 国窖1573 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">张大爆</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">320k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">19:25</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/android1122" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"android1122","repo":"hexo-blog","client_id":"6950c9229796295b9867","client_secret":"9af4438d89e7a09669ec33d632ba554589a1f7d7","admin_user":"android1122","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"2f61ff90e43a82cb1f83127440a95dde"}</script>
+<script src="/js/third-party/comments/gitalk.js" defer></script>
+
+</body>
+</html>
