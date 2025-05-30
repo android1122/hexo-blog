@@ -29,12 +29,16 @@
 <meta property="og:site_name" content="我是豆豆">
 <meta property="og:description" content="之前我一直使用的是vless和NaiveProxy 两种方式进行翻墙，这几年一直没有什么问题，但是犹豫xray升级之后，不再支持vless，这就导致了我只能使用NaiveProxy 进行翻墙，但是NaiveProxy 得手机客户端没几个好用的，很多都是需要使用插件外置的，于是就产生了升级和重新配置得想法。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/206-caddy%E4%B8%8B%E7%9A%84Trojan%E5%92%8CNaiveProxy%E9%85%8D%E7%BD%AE-2025-05-30-16-10-29.svg">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/206-caddy%E4%B8%8B%E7%9A%84Trojan%E5%92%8CNaiveProxy%E9%85%8D%E7%BD%AE-2025-05-30-16-51-41.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/206-caddy%E4%B8%8B%E7%9A%84Trojan%E5%92%8CNaiveProxy%E9%85%8D%E7%BD%AE-2025-05-30-16-53-53.png">
 <meta property="article:published_time" content="2025-05-29T16:00:00.000Z">
 <meta property="article:modified_time" content="2025-05-29T16:00:00.000Z">
 <meta property="article:author" content="张大爆">
 <meta property="article:tag" content="NaiveProxy">
 <meta property="article:tag" content="Caddy">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/206-caddy%E4%B8%8B%E7%9A%84Trojan%E5%92%8CNaiveProxy%E9%85%8D%E7%BD%AE-2025-05-30-16-10-29.svg">
 
 
 <link rel="canonical" href="https://minsummer.com/2025/05/29/206-caddy%E4%B8%8B%E7%9A%84Trojan%E5%92%8CNaiveProxy%E9%85%8D%E7%BD%AE/">
@@ -179,7 +183,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9dockerfile"><span class="nav-number">1.</span> <span class="nav-text"> 修改dockerfile</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9dockerfile"><span class="nav-number">1.</span> <span class="nav-text"> 修改dockerfile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8json%E6%96%87%E4%BB%B6%E6%9B%BF%E6%8D%A2%E5%8E%9F%E6%9D%A5%E7%9A%84caddyfile"><span class="nav-number">2.</span> <span class="nav-text"> 使用json文件替换原来的Caddyfile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E5%8F%8A%E4%BC%98%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text"> 客户端配置及优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#naiveproxy"><span class="nav-number">3.1.</span> <span class="nav-text"> NaiveProxy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#trojan"><span class="nav-number">3.2.</span> <span class="nav-text"> Trojan</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text"> 总结</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -327,244 +331,39 @@
 于是我的选型方案就是优先能够实现这些功能，正好在<a target="_blank" rel="noopener" href="https://github.com/lxhao61/integrated-examples">GitHub</a>找到对应的案例应用，所以就开始了升级之路。</p>
 <h2 id="修改dockerfile"><a class="markdownIt-Anchor" href="#修改dockerfile"></a> 修改dockerfile</h2>
 <p>之前我的caddy是直接使用官方推荐的方式，自己编译插件，毕竟要实现Trojan和NaiveProxy还需要两个特定的插件forwardproxy和Trojan-Go。这个导致的问题是每次编译都需要很长时间，有时候长达10分钟和处理器能力相关。如果是瓦工的机器，早就给我封锁了。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">FROM caddy:builder-alpine AS builder</span><br><span class="line"></span><br><span class="line">RUN xcaddy build \</span><br><span class="line">    --with github.com/caddy-dns/cloudflare \</span><br><span class="line">    --with github.com/caddyserver/forwardproxy@caddy2</span><br><span class="line"></span><br><span class="line">FROM caddy:alpine</span><br><span class="line"></span><br><span class="line">COPY --from=builder /usr/bin/caddy /usr/bin/caddy</span><br><span class="line">````</span><br><span class="line"></span><br><span class="line">正好[GitHub](https://github.com/lxhao61/integrated-examples)它会每次拉取最新的Caddy版本并进行编译，加上实现案例必须的插件。而且我看了，对方应该设置了git action，更新的很及时，跟官方同步。于是我修改了下官方的dockerfile文件：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>FROM alpine:latest # 使用最新版本</p>
-<p>RUN apk add --no-cache <br />
-ca-certificates <br />
-libcap <br />
-mailcap</p>
-<p>RUN set -eux; <br />
-mkdir -p <br />
-/config/caddy <br />
-/data/caddy <br />
-/etc/caddy <br />
-/usr/share/caddy <br />
-; <br />
-wget -O /etc/caddy/Caddyfile “<a target="_blank" rel="noopener" href="https://github.com/caddyserver/dist/raw/33ae08ff08d168572df2956ed14fbc4949880d94/config/Caddyfile">https://github.com/caddyserver/dist/raw/33ae08ff08d168572df2956ed14fbc4949880d94/config/Caddyfile</a>”; <br />
-wget -O /usr/share/caddy/index.html “<a target="_blank" rel="noopener" href="https://github.com/caddyserver/dist/raw/33ae08ff08d168572df2956ed14fbc4949880d94/welcome/index.html">https://github.com/caddyserver/dist/raw/33ae08ff08d168572df2956ed14fbc4949880d94/welcome/index.html</a>”</p>
-<p>RUN set -eux; <br />
-apkArch=“<span class='katex-error' title='ParseError: KaTeX parse error: Undefined control sequence: \
- at position 22: …-print-arch)&quot;; \̲
-̲	case &quot;'>(apk --print-arch)&quot;; \
-	case &quot;</span>apkArch” in <br />
-x86_64)  binArch=‘amd64’; checksum=‘626682d623ca04356ab3c9a93a82386cfde6d8243b11f2d0eea9e97ba630c7ada62373401e96b72c6690c98ae8dd004d61fafe477f5249690d5cb251ebbfd2d9’ ;; <br />
-armhf)   binArch=‘armv6’; checksum=‘c4647ed1b5407bd61d55f357af62d3935f2972bb5b03472a2747c4c19610376174bdb573f10b936cbc81acd8a103a0b961118d360cebe2b60693161f83e7f046’ ;; <br />
-armv7)   binArch=‘armv7’; checksum=‘e6794aef179ec3319c5d692fedbb424532a47d7caf19a67ad2a4317c5f2776baaf47658f9e1f7fd37d6f3447a18285cd1d7cb91d0088f5cd01d73874a43aa9c2’ ;; <br />
-aarch64) binArch=‘arm64’; checksum=‘6d100bfd609e8cfe6a51afe1b86066ac68f53ac56670c74a7d7537d93c643aa7f0e82b9f3083218eee1d369a427bfcdafcb445c7a730f9fc0ddf546401d95484’ ;; <br />
-ppc64el|ppc64le) binArch=‘ppc64le’; checksum=‘9559d544b8f919837f66623955fd95b03511d85c56455f43d9cc6d0010c00bb1e81fc3b7b5e5a2f8d1d0f65d9571c80cb8b706ea94e2baaaeffec5ae52f68a34’ ;; <br />
-riscv64) binArch=‘riscv64’; checksum=‘9633d6f6c2bf1911d5887a5d0ea885413785e0968550875b995eecc3bb5fbd1267edec0add94a0286349273e4df0dc1f1067d5639c2393019e235536c1b7c477’ ;; <br />
-s390x)   binArch=‘s390x’; checksum=‘5b29b377409abb9b8d241b95a11f1dd5d709759760b1514c9fbf616c3975048cf384441527fdc179bb8b08dc6189afe9df33499b46509e5d0e3bd6da8bb293b1’ ;; <br />
-*) echo &gt;&amp;2 “error: unsupported architecture ($apkArch)”; exit 1 ;;<br />
-esac; \</p>
-<pre><code>wget -O /tmp/caddy.tar.gz &quot;https://github.com/lxhao61/integrated-examples/releases/latest/download/caddy-linux-$&#123;binArch&#125;.tar.gz&quot;; \ ## 替换掉下载地址
-tar x -z -f /tmp/caddy.tar.gz -C /usr/bin caddy; \
-rm -f /tmp/caddy.tar.gz; \
-setcap cap_net_bind_service=+ep /usr/bin/caddy; \
-chmod +x /usr/bin/caddy; \
-caddy version
-</code></pre>
-<p>ENV XDG_CONFIG_HOME /config<br />
-ENV XDG_DATA_HOME /data</p>
-<p>LABEL org.opencontainers.image.title=Caddy<br />
-LABEL org.opencontainers.image.description=“a powerful, enterprise-ready, open source web server with automatic HTTPS written in Go”<br />
-LABEL org.opencontainers.image.url=<a target="_blank" rel="noopener" href="https://caddyserver.com">https://caddyserver.com</a><br />
-LABEL org.opencontainers.image.documentation=<a target="_blank" rel="noopener" href="https://caddyserver.com/docs">https://caddyserver.com/docs</a><br />
-LABEL org.opencontainers.image.vendor=“Light Code Labs”<br />
-LABEL org.opencontainers.image.licenses=Apache-2.0<br />
-LABEL org.opencontainers.image.source=“<a target="_blank" rel="noopener" href="https://github.com/caddyserver/caddy-docker">https://github.com/caddyserver/caddy-docker</a>”</p>
-<p>EXPOSE 80<br />
-EXPOSE 443<br />
-EXPOSE 443/udp<br />
-EXPOSE 2019</p>
-<p>WORKDIR /srv</p>
-<p>CMD [“caddy”, “run”, “–config”, “/etc/caddy/Caddyfile.json”] ##修改命令不再使用caddyfile，这点后文会解释。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">如果你有需要直接复制粘贴即可。需要注意这个是Linux版本的，他会测试系统型号，然后下载对应的包。这个执行起来就快多了，不用再次编译。</span><br><span class="line"></span><br><span class="line">## 使用json文件替换原来的Caddyfile</span><br><span class="line">之前使用的是Caddyfile文件进行配置，好处是简单，但是现在涉及一些比较精细的操作Caddyfile文件就比较难以实现，比如</span><br><span class="line">![206-caddy下的Trojan和NaiveProxy配置-2025-05-30-16-10-29](https://raw.githubusercontent.com/android1122/typecho_img/master/206-caddy下的Trojan和NaiveProxy配置-2025-05-30-16-10-29.svg)</span><br><span class="line">这种复杂的功能在握手之前就要判断出是否正确的HTTPS协议，这样可以避免一些主动探测，增强安全性。而这个功能Caddyfile就无法实现。其次是json文件Caddy v2的升级必备，你使用的Caddyfile文件其实是[系统后台转换成json文件](https://caddy2.dengxiaolong.com/docs/getting-started)后执行的。</span><br><span class="line">Caddy也提供了一个转换命令</span><br><span class="line">&gt; docker exec 容器 caddy caddy adapt --config /etc/caddy/Caddyfile --adapter caddyfile</span><br><span class="line"></span><br><span class="line">复制下来之后，格式化一下就行，会有一些小瑕疵，但是保证可以运行。</span><br><span class="line">这边提供一个json文件并且解释一下对应：</span><br><span class="line">PS：json文件无法注释，所以如果要用，复制后删除掉注释部分。</span><br></pre></td></tr></table></figure>
-<p>{<br />
-“admin”: {<br />
-“disabled”: true,<br />
-“config”: {<br />
-“persist”: false<br />
-}<br />
-},# 禁用后台管理，造抄就行<br />
-“logging”: {<br />
-“logs”: {<br />
-“default”: {<br />
-“writer”: {<br />
-“output”: “file”,<br />
-“filename”: “/usr/share/caddy/log/error.log”<br />
-},<br />
-“encoder”: {<br />
-“format”: “console”<br />
-},<br />
-“level”: “ERROR”,<br />
-“exclude”: [<br />
-“http.log.access.log0”<br />
-]<br />
-},<br />
-“log0”: {<br />
-“writer”: {<br />
-“output”: “file”,<br />
-“filename”: “/usr/share/caddy/log/access.log”<br />
-},<br />
-“encoder”: {<br />
-“format”: “console”<br />
-},<br />
-“include”: [<br />
-“http.log.access.log0”<br />
-]<br />
-}<br />
-}<br />
-},# 日志配置，自己决定要不要<br />
-“apps”: {<br />
-“http”: {<br />
-“servers”: {<br />
-“srv0”: { #这个名字随意命名<br />
-“listen”: [<br />
-“:443”<br />
-],<br />
-“listener_wrappers”: [<br />
-{<br />
-“wrapper”: “trojan”<br />
-}<br />
-],#根据上面流程图，监听443，和trojan协议<br />
-“routes”: [ # 这个是路由，如果你有多个域名需要在这里进行匹配风流，我这边就一个，所以没有用match<br />
-{ #第一个处理NaiveProxy的代理，验证用户名密码，没问题就直接代理<br />
-“handle”: [<br />
-{<br />
-“auth_credentials”: [<br />
-“#用户名：密码然后使用其字符串使用后面 base64 编码2次命令生成：echo -n “user:pass” | base64 | tr -d ‘\n’ | base64#”<br />
-],<br />
-“handler”: “forward_proxy”,<br />
-“hide_ip”: true,<br />
-“hide_via”: true,<br />
-“probe_resistance”: {}<br />
-}<br />
-]<br />
-},<br />
-{ #第二个处理是直接强制HTTPS，然后再反向代理到docker的端口去<br />
-“handle”: [<br />
-{<br />
-“handler”: “headers”,<br />
-“response”: {<br />
-“set”: {<br />
-“Strict-Transport-Security”: [<br />
-“max-age=31536000; includeSubDomains; preload”<br />
-]<br />
-}<br />
-}<br />
-},<br />
-{<br />
-“handler”: “reverse_proxy”,<br />
-“upstreams”: [<br />
-{<br />
-“dial”: “172.18.0.3:4567”<br />
-}<br />
-]<br />
-}<br />
-]<br />
-}<br />
-],<br />
-“tls_connection_policies”: [#配置对应域名的协议，造抄就行<br />
-{<br />
-“match”: {<br />
-“sni”: [<br />
-“<a target="_blank" rel="noopener" href="http://xxx.xxxr.com">xxx.xxxr.com</a>”<br />
-]<br />
-},<br />
-“cipher_suites”: [<br />
-“TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384”,<br />
-“TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256”,<br />
-“TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256”<br />
-],<br />
-“alpn”: [<br />
-“h3”,<br />
-“h2”,<br />
-“http/1.1”<br />
-]<br />
-}<br />
-],<br />
-“logs”: {<br />
-“default_logger_name”: “log0”<br />
-},<br />
-“protocols”: [<br />
-“h1”,<br />
-“h2”,<br />
-“h3”<br />
-]<br />
-}<br />
-}<br />
-},<br />
-“trojan”: {<br />
-“proxy”: {<br />
-“proxy”: “no_proxy”<br />
-},<br />
-“upstream”: {<br />
-“upstream”: “caddy”<br />
-},<br />
-“users”: [<br />
-“diy6443” #trojan的密码，后续客户端要用<br />
-]<br />
-},<br />
-“tls”: { #下面这块是TLS证书申请的，这边提供把域名写上之后，系统自动会申请，这边用了Cloudflare的DNS解析，可以换成自己的还有他们官方的<br />
-“certificates”: {<br />
-“automate”: [<br />
-“<a target="_blank" rel="noopener" href="http://xxxxx.xxxx.com">xxxxx.xxxx.com</a>”<br />
-]<br />
-},<br />
-“automation”: {<br />
-“policies”: [<br />
-{<br />
-“subjects”: [<br />
-“<a target="_blank" rel="noopener" href="http://manhua.minsummer.com">manhua.minsummer.com</a>”<br />
-],<br />
-“issuers”: [<br />
-{<br />
-“challenges”: {<br />
-“dns”: {<br />
-“provider”: {<br />
-“api_token”: “xxxx”,<br />
-“name”: “cloudflare”<br />
-}<br />
-}<br />
-},<br />
-“email”: “Email邮箱”,<br />
-“module”: “acme”<br />
-},<br />
-{<br />
-“ca”: “<a target="_blank" rel="noopener" href="https://acme.zerossl.com/v2/DV90">https://acme.zerossl.com/v2/DV90</a>”,<br />
-“challenges”: {<br />
-“dns”: {<br />
-“provider”: {<br />
-“api_token”: “xxxx”,<br />
-“name”: “cloudflare”<br />
-}<br />
-}<br />
-},<br />
-“email”: “Email邮箱”,<br />
-“module”: “acme”<br />
-}<br />
-]<br />
-}<br />
-]<br />
-}<br />
-}<br />
-}<br />
-}</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">从json文件可以看出，它可以实现十分细致的协议判断。这边由于我只有一个网站，所以比较简便，如果多个网站共存，需要在routes里面增加match匹配让它根据进来的不同域名分别方向代理到不同的docker端口去。</span><br><span class="line"></span><br><span class="line">## 客户端配置及优化</span><br><span class="line">### NaiveProxy</span><br><span class="line">NaiveProxy官方有几种[调优方式](https://github.com/klzgrad/naiveproxy/wiki/Performance-Tuning)这块可以看对应的服务器优化，这里主要说的是使用Quic协议进行访问。具体可以查看两者区别：</span><br><span class="line">&gt; quic://user:pass@example.com</span><br><span class="line"></span><br><span class="line">简单说这个协议握手次数更短，建议使用，另外还有一些[参数](https://github.com/klzgrad/naiveproxy/blob/master/USAGE.txt)，可以自行进行调整。NaiveProxy的配置文件是JSON格式的</span><br></pre></td></tr></table></figure>
-<p>{<br />
-“listen”: “socks://127.0.0.1:1080”,<br />
-“proxy”: “<a target="_blank" rel="noopener" href="https://user:pass@example.com">https://user:pass@example.com</a>”<br />
-}</p>
-<pre class="highlight"><code class="">写好之后，在V2rayNG里面调用即可
-![206-caddy下的Trojan和NaiveProxy配置-2025-05-30-16-51-41](https://raw.githubusercontent.com/android1122/typecho_img/master/206-caddy下的Trojan和NaiveProxy配置-2025-05-30-16-51-41.png)
-
-### Trojan
-这个就要简单了，直接新增配置即可。
-![206-caddy下的Trojan和NaiveProxy配置-2025-05-30-16-53-53](https://raw.githubusercontent.com/android1122/typecho_img/master/206-caddy下的Trojan和NaiveProxy配置-2025-05-30-16-53-53.png)
-
-## 总结
-至此，所有的配置结束。总结下就是在研究的过程中，发现现在内核都在不断更新，无论是协议还是客户端。这次也算是完成了自己一直想要做的一件事吧。每次手机上网翻墙都不是很方便。
-而且这么更新之后，后续对服务器的占用会更少，只需要一个Trojan和NaiveProxy即可满足大部分需求，至于安全性，一个是因为DMIT支持免费换IP，还有就是NaiveProxy这么多年用下来没有任何问题。</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">FROM caddy:builder-alpine AS builder</span><br><span class="line"></span><br><span class="line">RUN xcaddy build \</span><br><span class="line">    --with github.com/caddy-dns/cloudflare \</span><br><span class="line">    --with github.com/caddyserver/forwardproxy@caddy2</span><br><span class="line"></span><br><span class="line">FROM caddy:alpine</span><br><span class="line"></span><br><span class="line">COPY --from=builder /usr/bin/caddy /usr/bin/caddy</span><br></pre></td></tr></table></figure>
+<p>正好<a target="_blank" rel="noopener" href="https://github.com/lxhao61/integrated-examples">GitHub</a>它会每次拉取最新的Caddy版本并进行编译，加上实现案例必须的插件。而且我看了，对方应该设置了git action，更新的很及时，跟官方同步。于是我修改了下官方的dockerfile文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">FROM alpine:latest # 使用最新版本</span><br><span class="line"></span><br><span class="line">RUN apk add --no-cache \</span><br><span class="line">	ca-certificates \</span><br><span class="line">	libcap \</span><br><span class="line">	mailcap</span><br><span class="line"></span><br><span class="line">RUN set -eux; \</span><br><span class="line">	mkdir -p \</span><br><span class="line">		/config/caddy \</span><br><span class="line">		/data/caddy \</span><br><span class="line">		/etc/caddy \</span><br><span class="line">		/usr/share/caddy \</span><br><span class="line">	; \</span><br><span class="line">	wget -O /etc/caddy/Caddyfile &quot;https://github.com/caddyserver/dist/raw/33ae08ff08d168572df2956ed14fbc4949880d94/config/Caddyfile&quot;; \</span><br><span class="line">	wget -O /usr/share/caddy/index.html &quot;https://github.com/caddyserver/dist/raw/33ae08ff08d168572df2956ed14fbc4949880d94/welcome/index.html&quot;</span><br><span class="line"></span><br><span class="line">RUN set -eux; \</span><br><span class="line">	apkArch=&quot;$(apk --print-arch)&quot;; \</span><br><span class="line">	case &quot;$apkArch&quot; in \</span><br><span class="line">		x86_64)  binArch=&#x27;amd64&#x27;; checksum=&#x27;626682d623ca04356ab3c9a93a82386cfde6d8243b11f2d0eea9e97ba630c7ada62373401e96b72c6690c98ae8dd004d61fafe477f5249690d5cb251ebbfd2d9&#x27; ;; \</span><br><span class="line">		armhf)   binArch=&#x27;armv6&#x27;; checksum=&#x27;c4647ed1b5407bd61d55f357af62d3935f2972bb5b03472a2747c4c19610376174bdb573f10b936cbc81acd8a103a0b961118d360cebe2b60693161f83e7f046&#x27; ;; \</span><br><span class="line">		armv7)   binArch=&#x27;armv7&#x27;; checksum=&#x27;e6794aef179ec3319c5d692fedbb424532a47d7caf19a67ad2a4317c5f2776baaf47658f9e1f7fd37d6f3447a18285cd1d7cb91d0088f5cd01d73874a43aa9c2&#x27; ;; \</span><br><span class="line">		aarch64) binArch=&#x27;arm64&#x27;; checksum=&#x27;6d100bfd609e8cfe6a51afe1b86066ac68f53ac56670c74a7d7537d93c643aa7f0e82b9f3083218eee1d369a427bfcdafcb445c7a730f9fc0ddf546401d95484&#x27; ;; \</span><br><span class="line">		ppc64el|ppc64le) binArch=&#x27;ppc64le&#x27;; checksum=&#x27;9559d544b8f919837f66623955fd95b03511d85c56455f43d9cc6d0010c00bb1e81fc3b7b5e5a2f8d1d0f65d9571c80cb8b706ea94e2baaaeffec5ae52f68a34&#x27; ;; \</span><br><span class="line">		riscv64) binArch=&#x27;riscv64&#x27;; checksum=&#x27;9633d6f6c2bf1911d5887a5d0ea885413785e0968550875b995eecc3bb5fbd1267edec0add94a0286349273e4df0dc1f1067d5639c2393019e235536c1b7c477&#x27; ;; \</span><br><span class="line">		s390x)   binArch=&#x27;s390x&#x27;; checksum=&#x27;5b29b377409abb9b8d241b95a11f1dd5d709759760b1514c9fbf616c3975048cf384441527fdc179bb8b08dc6189afe9df33499b46509e5d0e3bd6da8bb293b1&#x27; ;; \</span><br><span class="line">		*) echo &gt;&amp;2 &quot;error: unsupported architecture ($apkArch)&quot;; exit 1 ;;\</span><br><span class="line">	esac; \</span><br><span class="line"></span><br><span class="line">	wget -O /tmp/caddy.tar.gz &quot;https://github.com/lxhao61/integrated-examples/releases/latest/download/caddy-linux-$&#123;binArch&#125;.tar.gz&quot;; \ ## 替换掉下载地址</span><br><span class="line">	tar x -z -f /tmp/caddy.tar.gz -C /usr/bin caddy; \</span><br><span class="line">	rm -f /tmp/caddy.tar.gz; \</span><br><span class="line">	setcap cap_net_bind_service=+ep /usr/bin/caddy; \</span><br><span class="line">	chmod +x /usr/bin/caddy; \</span><br><span class="line">	caddy version</span><br><span class="line"></span><br><span class="line">ENV XDG_CONFIG_HOME /config</span><br><span class="line">ENV XDG_DATA_HOME /data</span><br><span class="line"></span><br><span class="line">LABEL org.opencontainers.image.title=Caddy</span><br><span class="line">LABEL org.opencontainers.image.description=&quot;a powerful, enterprise-ready, open source web server with automatic HTTPS written in Go&quot;</span><br><span class="line">LABEL org.opencontainers.image.url=https://caddyserver.com</span><br><span class="line">LABEL org.opencontainers.image.documentation=https://caddyserver.com/docs</span><br><span class="line">LABEL org.opencontainers.image.vendor=&quot;Light Code Labs&quot;</span><br><span class="line">LABEL org.opencontainers.image.licenses=Apache-2.0</span><br><span class="line">LABEL org.opencontainers.image.source=&quot;https://github.com/caddyserver/caddy-docker&quot;</span><br><span class="line"></span><br><span class="line">EXPOSE 80</span><br><span class="line">EXPOSE 443</span><br><span class="line">EXPOSE 443/udp</span><br><span class="line">EXPOSE 2019</span><br><span class="line"></span><br><span class="line">WORKDIR /srv</span><br><span class="line"></span><br><span class="line">CMD [&quot;caddy&quot;, &quot;run&quot;, &quot;--config&quot;, &quot;/etc/caddy/Caddyfile.json&quot;] ##修改命令不再使用caddyfile，这点后文会解释。</span><br></pre></td></tr></table></figure>
+<p>如果你有需要直接复制粘贴即可。需要注意这个是Linux版本的，他会测试系统型号，然后下载对应的包。这个执行起来就快多了，不用再次编译。</p>
+<h2 id="使用json文件替换原来的caddyfile"><a class="markdownIt-Anchor" href="#使用json文件替换原来的caddyfile"></a> 使用json文件替换原来的Caddyfile</h2>
+<p>之前使用的是Caddyfile文件进行配置，好处是简单，但是现在涉及一些比较精细的操作Caddyfile文件就比较难以实现，比如<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/206-caddy%E4%B8%8B%E7%9A%84Trojan%E5%92%8CNaiveProxy%E9%85%8D%E7%BD%AE-2025-05-30-16-10-29.svg" alt="206-caddy下的Trojan和NaiveProxy配置-2025-05-30-16-10-29" /><br />
+这种复杂的功能在握手之前就要判断出是否正确的HTTPS协议，这样可以避免一些主动探测，增强安全性。而这个功能Caddyfile就无法实现。其次是json文件Caddy v2的升级必备，你使用的Caddyfile文件其实是<a target="_blank" rel="noopener" href="https://caddy2.dengxiaolong.com/docs/getting-started">系统后台转换成json文件</a>后执行的。<br />
+Caddy也提供了一个转换命令</p>
+<blockquote>
+<p>docker exec 容器 caddy caddy adapt --config /etc/caddy/Caddyfile --adapter caddyfile</p>
+</blockquote>
+<p>复制下来之后，格式化一下就行，会有一些小瑕疵，但是保证可以运行。<br />
+这边提供一个json文件并且解释一下对应：<br />
+PS：json文件无法注释，所以如果要用，复制后删除掉注释部分。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;admin&quot;: &#123;</span><br><span class="line">        &quot;disabled&quot;: true,</span><br><span class="line">        &quot;config&quot;: &#123;</span><br><span class="line">            &quot;persist&quot;: false</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,# 禁用后台管理，造抄就行</span><br><span class="line">    &quot;logging&quot;: &#123;</span><br><span class="line">        &quot;logs&quot;: &#123;</span><br><span class="line">            &quot;default&quot;: &#123;</span><br><span class="line">                &quot;writer&quot;: &#123;</span><br><span class="line">                    &quot;output&quot;: &quot;file&quot;,</span><br><span class="line">                    &quot;filename&quot;: &quot;/usr/share/caddy/log/error.log&quot;</span><br><span class="line">                &#125;,</span><br><span class="line">                &quot;encoder&quot;: &#123;</span><br><span class="line">                    &quot;format&quot;: &quot;console&quot;</span><br><span class="line">                &#125;,</span><br><span class="line">                &quot;level&quot;: &quot;ERROR&quot;,</span><br><span class="line">                &quot;exclude&quot;: [</span><br><span class="line">                    &quot;http.log.access.log0&quot;</span><br><span class="line">                ]</span><br><span class="line">            &#125;,</span><br><span class="line">            &quot;log0&quot;: &#123;</span><br><span class="line">                &quot;writer&quot;: &#123;</span><br><span class="line">                    &quot;output&quot;: &quot;file&quot;,</span><br><span class="line">                    &quot;filename&quot;: &quot;/usr/share/caddy/log/access.log&quot;</span><br><span class="line">                &#125;,</span><br><span class="line">                &quot;encoder&quot;: &#123;</span><br><span class="line">                    &quot;format&quot;: &quot;console&quot;</span><br><span class="line">                &#125;,</span><br><span class="line">                &quot;include&quot;: [</span><br><span class="line">                    &quot;http.log.access.log0&quot;</span><br><span class="line">                ]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,# 日志配置，自己决定要不要</span><br><span class="line">    &quot;apps&quot;: &#123;</span><br><span class="line">        &quot;http&quot;: &#123;</span><br><span class="line">            &quot;servers&quot;: &#123;</span><br><span class="line">                &quot;srv0&quot;: &#123; #这个名字随意命名 </span><br><span class="line">                    &quot;listen&quot;: [</span><br><span class="line">                        &quot;:443&quot;</span><br><span class="line">                    ],</span><br><span class="line">                    &quot;listener_wrappers&quot;: [</span><br><span class="line">                        &#123;</span><br><span class="line">                            &quot;wrapper&quot;: &quot;trojan&quot;</span><br><span class="line">                        &#125;</span><br><span class="line">                    ],#根据上面流程图，监听443，和trojan协议</span><br><span class="line">                    &quot;routes&quot;: [ # 这个是路由，如果你有多个域名需要在这里进行匹配风流，我这边就一个，所以没有用match</span><br><span class="line">                        &#123; #第一个处理NaiveProxy的代理，验证用户名密码，没问题就直接代理</span><br><span class="line">                            &quot;handle&quot;: [</span><br><span class="line">                                &#123;</span><br><span class="line">                                    &quot;auth_credentials&quot;: [</span><br><span class="line">                                        &quot;#用户名：密码然后使用其字符串使用后面 base64 编码2次命令生成：echo -n &quot;user:pass&quot; | base64 | tr -d &#x27;\n&#x27; | base64#&quot;</span><br><span class="line">                                    ],</span><br><span class="line">                                    &quot;handler&quot;: &quot;forward_proxy&quot;,</span><br><span class="line">                                    &quot;hide_ip&quot;: true,</span><br><span class="line">                                    &quot;hide_via&quot;: true,</span><br><span class="line">                                    &quot;probe_resistance&quot;: &#123;&#125;</span><br><span class="line">                                &#125;</span><br><span class="line">                            ]</span><br><span class="line">                        &#125;,</span><br><span class="line">                        &#123; #第二个处理是直接强制HTTPS，然后再反向代理到docker的端口去</span><br><span class="line">                            &quot;handle&quot;: [</span><br><span class="line">                                &#123;</span><br><span class="line">                                    &quot;handler&quot;: &quot;headers&quot;,</span><br><span class="line">                                    &quot;response&quot;: &#123;</span><br><span class="line">                                        &quot;set&quot;: &#123;</span><br><span class="line">                                            &quot;Strict-Transport-Security&quot;: [</span><br><span class="line">                                                &quot;max-age=31536000; includeSubDomains; preload&quot;</span><br><span class="line">                                            ]</span><br><span class="line">                                        &#125;</span><br><span class="line">                                    &#125;</span><br><span class="line">                                &#125;,</span><br><span class="line">                                &#123;</span><br><span class="line">                                    &quot;handler&quot;: &quot;reverse_proxy&quot;,</span><br><span class="line">                                    &quot;upstreams&quot;: [</span><br><span class="line">                                        &#123;</span><br><span class="line">                                            &quot;dial&quot;: &quot;172.18.0.3:4567&quot;</span><br><span class="line">                                        &#125;</span><br><span class="line">                                    ]</span><br><span class="line">                                &#125;</span><br><span class="line">                            ]</span><br><span class="line">                        &#125;</span><br><span class="line">                    ],</span><br><span class="line">                    &quot;tls_connection_policies&quot;: [#配置对应域名的协议，造抄就行</span><br><span class="line">                        &#123;</span><br><span class="line">                            &quot;match&quot;: &#123;</span><br><span class="line">                                &quot;sni&quot;: [</span><br><span class="line">                                    &quot;xxx.xxxr.com&quot;</span><br><span class="line">                                ]</span><br><span class="line">                            &#125;,</span><br><span class="line">                            &quot;cipher_suites&quot;: [</span><br><span class="line">                                &quot;TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384&quot;,</span><br><span class="line">                                &quot;TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256&quot;,</span><br><span class="line">                                &quot;TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256&quot;</span><br><span class="line">                            ],</span><br><span class="line">                            &quot;alpn&quot;: [</span><br><span class="line">                                &quot;h3&quot;,</span><br><span class="line">                                &quot;h2&quot;,</span><br><span class="line">                                &quot;http/1.1&quot;</span><br><span class="line">                            ]</span><br><span class="line">                        &#125;</span><br><span class="line">                    ],</span><br><span class="line">                    &quot;logs&quot;: &#123;</span><br><span class="line">                        &quot;default_logger_name&quot;: &quot;log0&quot;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &quot;protocols&quot;: [</span><br><span class="line">                        &quot;h1&quot;,</span><br><span class="line">                        &quot;h2&quot;,</span><br><span class="line">                        &quot;h3&quot;</span><br><span class="line">                    ]</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;trojan&quot;: &#123;</span><br><span class="line">            &quot;proxy&quot;: &#123;</span><br><span class="line">                &quot;proxy&quot;: &quot;no_proxy&quot;</span><br><span class="line">            &#125;,</span><br><span class="line">            &quot;upstream&quot;: &#123;</span><br><span class="line">                &quot;upstream&quot;: &quot;caddy&quot;</span><br><span class="line">            &#125;,</span><br><span class="line">            &quot;users&quot;: [</span><br><span class="line">                &quot;diy6443&quot; #trojan的密码，后续客户端要用</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;tls&quot;: &#123; #下面这块是TLS证书申请的，这边提供把域名写上之后，系统自动会申请，这边用了Cloudflare的DNS解析，可以换成自己的还有他们官方的</span><br><span class="line">            &quot;certificates&quot;: &#123;</span><br><span class="line">                &quot;automate&quot;: [</span><br><span class="line">                    &quot;xxxxx.xxxx.com&quot;</span><br><span class="line">                ]</span><br><span class="line">            &#125;,</span><br><span class="line">            &quot;automation&quot;: &#123;</span><br><span class="line">                &quot;policies&quot;: [</span><br><span class="line">                    &#123;</span><br><span class="line">                        &quot;subjects&quot;: [</span><br><span class="line">                            &quot;manhua.minsummer.com&quot;</span><br><span class="line">                        ],</span><br><span class="line">                        &quot;issuers&quot;: [</span><br><span class="line">                            &#123;</span><br><span class="line">                                &quot;challenges&quot;: &#123;</span><br><span class="line">                                    &quot;dns&quot;: &#123;</span><br><span class="line">                                        &quot;provider&quot;: &#123;</span><br><span class="line">                                            &quot;api_token&quot;: &quot;xxxx&quot;,</span><br><span class="line">                                            &quot;name&quot;: &quot;cloudflare&quot;</span><br><span class="line">                                        &#125;</span><br><span class="line">                                    &#125;</span><br><span class="line">                                &#125;,</span><br><span class="line">                                &quot;email&quot;: &quot;Email邮箱&quot;,</span><br><span class="line">                                &quot;module&quot;: &quot;acme&quot;</span><br><span class="line">                            &#125;,</span><br><span class="line">                            &#123;</span><br><span class="line">                                &quot;ca&quot;: &quot;https://acme.zerossl.com/v2/DV90&quot;,</span><br><span class="line">                                &quot;challenges&quot;: &#123;</span><br><span class="line">                                    &quot;dns&quot;: &#123;</span><br><span class="line">                                        &quot;provider&quot;: &#123;</span><br><span class="line">                                            &quot;api_token&quot;: &quot;xxxx&quot;,</span><br><span class="line">                                            &quot;name&quot;: &quot;cloudflare&quot;</span><br><span class="line">                                        &#125;</span><br><span class="line">                                    &#125;</span><br><span class="line">                                &#125;,</span><br><span class="line">                                &quot;email&quot;: &quot;Email邮箱&quot;,</span><br><span class="line">                                &quot;module&quot;: &quot;acme&quot;</span><br><span class="line">                            &#125;</span><br><span class="line">                        ]</span><br><span class="line">                    &#125;</span><br><span class="line">                ]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从json文件可以看出，它可以实现十分细致的协议判断。这边由于我只有一个网站，所以比较简便，如果多个网站共存，需要在routes里面增加match匹配让它根据进来的不同域名分别方向代理到不同的docker端口去。</p>
+<h2 id="客户端配置及优化"><a class="markdownIt-Anchor" href="#客户端配置及优化"></a> 客户端配置及优化</h2>
+<h3 id="naiveproxy"><a class="markdownIt-Anchor" href="#naiveproxy"></a> NaiveProxy</h3>
+<p>NaiveProxy官方有几种<a target="_blank" rel="noopener" href="https://github.com/klzgrad/naiveproxy/wiki/Performance-Tuning">调优方式</a>这块可以看对应的服务器优化，这里主要说的是使用Quic协议进行访问。具体可以查看两者区别：</p>
+<blockquote>
+<p>quic://user:pass@example.com</p>
+</blockquote>
+<p>简单说这个协议握手次数更短，建议使用，另外还有一些<a target="_blank" rel="noopener" href="https://github.com/klzgrad/naiveproxy/blob/master/USAGE.txt">参数</a>，可以自行进行调整。NaiveProxy的配置文件是JSON格式的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;listen&quot;: &quot;socks://127.0.0.1:1080&quot;,</span><br><span class="line">  &quot;proxy&quot;: &quot;https://user:pass@example.com&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>写好之后，在V2rayNG里面调用即可<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/206-caddy%E4%B8%8B%E7%9A%84Trojan%E5%92%8CNaiveProxy%E9%85%8D%E7%BD%AE-2025-05-30-16-51-41.png" alt="206-caddy下的Trojan和NaiveProxy配置-2025-05-30-16-51-41" /></p>
+<h3 id="trojan"><a class="markdownIt-Anchor" href="#trojan"></a> Trojan</h3>
+<p>这个就要简单了，直接新增配置即可。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/206-caddy%E4%B8%8B%E7%9A%84Trojan%E5%92%8CNaiveProxy%E9%85%8D%E7%BD%AE-2025-05-30-16-53-53.png" alt="206-caddy下的Trojan和NaiveProxy配置-2025-05-30-16-53-53" /></p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>至此，所有的配置结束。总结下就是在研究的过程中，发现现在内核都在不断更新，无论是协议还是客户端。这次也算是完成了自己一直想要做的一件事吧。每次手机上网翻墙都不是很方便。<br />
+而且这么更新之后，后续对服务器的占用会更少，只需要一个Trojan和NaiveProxy即可满足大部分需求，至于安全性，一个是因为DMIT支持免费换IP，还有就是NaiveProxy这么多年用下来没有任何问题。</p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
 
