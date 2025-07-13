@@ -6,7 +6,7 @@
   <link href="https://minsummer.com/atom.xml" rel="self"/>
   
   <link href="https://minsummer.com/"/>
-  <updated>2025-07-11T16:00:00.000Z</updated>
+  <updated>2025-07-12T16:00:00.000Z</updated>
   <id>https://minsummer.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>硬盘位拓展指北</title>
+    <link href="https://minsummer.com/2025/07/12/209-%E7%A1%AC%E7%9B%98%E4%BD%8D%E6%8B%93%E5%B1%95%E6%8C%87%E5%8C%97/"/>
+    <id>https://minsummer.com/2025/07/12/209-%E7%A1%AC%E7%9B%98%E4%BD%8D%E6%8B%93%E5%B1%95%E6%8C%87%E5%8C%97/</id>
+    <published>2025-07-12T16:00:00.000Z</published>
+    <updated>2025-07-12T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;现在的ITX版型的硬盘位都是比较少的，很多时候如果你要组装NAS则需要使用硬盘位拓展卡，而主流的解决方案就是M2拓展5盘位的。本着追根究底的节奏我就来个简单的指北。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="ITX主板" scheme="https://minsummer.com/tags/ITX%E4%B8%BB%E6%9D%BF/"/>
+    
+    <category term="SATA和SAS" scheme="https://minsummer.com/tags/SATA%E5%92%8CSAS/"/>
+    
+  </entry>
   
   <entry>
     <title>常见ITX版型</title>
@@ -346,30 +367,6 @@
   </entry>
   
   <entry>
-    <title>ESXI安装HomeAsistantOS</title>
-    <link href="https://minsummer.com/2025/01/06/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS/"/>
-    <id>https://minsummer.com/2025/01/06/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS/</id>
-    <published>2025-01-06T16:00:00.000Z</published>
-    <updated>2025-01-06T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;我家里有一台小米的空气净化器，还有小米得几个空调遥控器，定时器。虽然可以使用官方得app控制，但是总归是不方便，还是希望可以更加得智能化，尤其我这人对空调吹多了冷，吹少了热。&lt;br /&gt;
-其实之前我使用过一阵子，但是那时候官方没有支持，导致我使用HA进行控制之后就不能使用官方app控制。正好这次官方宣布支持，我就想着再试试。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
-    
-    
-    <category term="NAS" scheme="https://minsummer.com/tags/NAS/"/>
-    
-    <category term="浪潮SA5112M4" scheme="https://minsummer.com/tags/%E6%B5%AA%E6%BD%AESA5112M4/"/>
-    
-    <category term="服务器" scheme="https://minsummer.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
     <title>openwrt使用指南</title>
     <link href="https://minsummer.com/2025/01/06/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
     <id>https://minsummer.com/2025/01/06/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
@@ -395,6 +392,30 @@
   </entry>
   
   <entry>
+    <title>ESXI安装HomeAsistantOS</title>
+    <link href="https://minsummer.com/2025/01/06/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS/"/>
+    <id>https://minsummer.com/2025/01/06/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS/</id>
+    <published>2025-01-06T16:00:00.000Z</published>
+    <updated>2025-01-06T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;我家里有一台小米的空气净化器，还有小米得几个空调遥控器，定时器。虽然可以使用官方得app控制，但是总归是不方便，还是希望可以更加得智能化，尤其我这人对空调吹多了冷，吹少了热。&lt;br /&gt;
+其实之前我使用过一阵子，但是那时候官方没有支持，导致我使用HA进行控制之后就不能使用官方app控制。正好这次官方宣布支持，我就想着再试试。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="NAS" scheme="https://minsummer.com/tags/NAS/"/>
+    
+    <category term="浪潮SA5112M4" scheme="https://minsummer.com/tags/%E6%B5%AA%E6%BD%AESA5112M4/"/>
+    
+    <category term="服务器" scheme="https://minsummer.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>浪潮SA5112M4安装ESXI</title>
     <link href="https://minsummer.com/2025/01/04/191-%E6%B5%AA%E6%BD%AESA5112M4%E5%AE%89%E8%A3%85ESXI/"/>
     <id>https://minsummer.com/2025/01/04/191-%E6%B5%AA%E6%BD%AESA5112M4%E5%AE%89%E8%A3%85ESXI/</id>
@@ -411,9 +432,9 @@
     
     <category term="NAS" scheme="https://minsummer.com/tags/NAS/"/>
     
-    <category term="家用服务器" scheme="https://minsummer.com/tags/%E5%AE%B6%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
     <category term="浪潮SA5112M4" scheme="https://minsummer.com/tags/%E6%B5%AA%E6%BD%AESA5112M4/"/>
+    
+    <category term="家用服务器" scheme="https://minsummer.com/tags/%E5%AE%B6%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
   </entry>
   
@@ -503,6 +524,27 @@ CPU：1x Intel Xeon&lt;br /&gt;
   </entry>
   
   <entry>
+    <title>2024VPS厂商优惠回顾</title>
+    <link href="https://minsummer.com/2024/12/13/186-2024VPS%E5%9B%9E%E9%A1%BE/"/>
+    <id>https://minsummer.com/2024/12/13/186-2024VPS%E5%9B%9E%E9%A1%BE/</id>
+    <published>2024-12-13T16:00:00.000Z</published>
+    <updated>2024-12-13T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;今年的VPS厂商可以说是安静如鸟，无论是黑五还是双十一，无论是国行还是国际，都没有什么比较优惠或者好的VPS。目前比较值得注意的只有2个：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="搬瓦工" scheme="https://minsummer.com/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/"/>
+    
+    <category term="VPS" scheme="https://minsummer.com/tags/VPS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>关于2025的一些展望</title>
     <link href="https://minsummer.com/2024/12/13/185-%E5%85%B3%E4%BA%8E2025%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B1%95%E6%9C%9B/"/>
     <id>https://minsummer.com/2024/12/13/185-%E5%85%B3%E4%BA%8E2025%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B1%95%E6%9C%9B/</id>
@@ -522,27 +564,6 @@ CPU：1x Intel Xeon&lt;br /&gt;
     <category term="2025" scheme="https://minsummer.com/tags/2025/"/>
     
     <category term="一些想法" scheme="https://minsummer.com/tags/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2024VPS厂商优惠回顾</title>
-    <link href="https://minsummer.com/2024/12/13/186-2024VPS%E5%9B%9E%E9%A1%BE/"/>
-    <id>https://minsummer.com/2024/12/13/186-2024VPS%E5%9B%9E%E9%A1%BE/</id>
-    <published>2024-12-13T16:00:00.000Z</published>
-    <updated>2024-12-13T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;今年的VPS厂商可以说是安静如鸟，无论是黑五还是双十一，无论是国行还是国际，都没有什么比较优惠或者好的VPS。目前比较值得注意的只有2个：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
-    
-    
-    <category term="搬瓦工" scheme="https://minsummer.com/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/"/>
-    
-    <category term="VPS" scheme="https://minsummer.com/tags/VPS/"/>
     
   </entry>
   
@@ -838,6 +859,43 @@ CPU：1x Intel Xeon&lt;br /&gt;
   </entry>
   
   <entry>
+    <title>V.PS2023款黑五香港测试</title>
+    <link href="https://minsummer.com/2024/05/30/171-V.PS2023%E6%AC%BE%E9%BB%91%E4%BA%94%E9%A6%99%E6%B8%AF%E6%B5%8B%E8%AF%95/"/>
+    <id>https://minsummer.com/2024/05/30/171-V.PS2023%E6%AC%BE%E9%BB%91%E4%BA%94%E9%A6%99%E6%B8%AF%E6%B5%8B%E8%AF%95/</id>
+    <published>2024-05-30T16:00:00.000Z</published>
+    <updated>2024-05-30T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;套餐内容：&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;V.PS 2023年黑五款-HK &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 vCPU&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 GB RAM&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20G SSD Storage&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;400GB Transfer&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;500Mbps VirtIO Interface&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 IPv4 &amp;amp; 1 IPv6 /64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Premium Network Profile&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29.9 Euro/Year &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;结论&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#结论&quot;&gt;&lt;/a&gt; 结论&lt;/h2&gt;
+&lt;p&gt;上来先说结论：&lt;br /&gt;
+优点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;香港线路，延迟特别低，移动快乐机，联通电信也能用&lt;/li&gt;
+&lt;li&gt;价格便宜，一年240人民币左右，一个月20&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;缺点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;流量双向的，翻墙可以直接默认200G,适合一个人用，而且还得少看YouTube，有一个月刷YouTube过多，直接给我关机了。&lt;/li&gt;
+&lt;li&gt;经常被打，尤其是电信，建议绕道&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;总结：推荐一个人使用，多一个人就马上捉急，然后就是这家后续更新服务说明，已经不保证线路了，唯一的优势是香港延迟低，但是除移动外其他线路丢包厉害，经常被打。今年到期我会放生它或者转卖出去。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="融合怪" scheme="https://minsummer.com/tags/%E8%9E%8D%E5%90%88%E6%80%AA/"/>
+    
+    <category term="V.PS 黑五HK" scheme="https://minsummer.com/tags/V-PS-%E9%BB%91%E4%BA%94HK/"/>
+    
+    <category term="香港线路" scheme="https://minsummer.com/tags/%E9%A6%99%E6%B8%AF%E7%BA%BF%E8%B7%AF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>V.PS2024款猫彦祖圣塞何测试</title>
     <link href="https://minsummer.com/2024/05/30/172-V.PS2024%E6%AC%BE%E7%8C%AB%E5%BD%A6%E7%A5%96%E6%AC%BE%E6%B5%8B%E8%AF%95/"/>
     <id>https://minsummer.com/2024/05/30/172-V.PS2024%E6%AC%BE%E7%8C%AB%E5%BD%A6%E7%A5%96%E6%AC%BE%E6%B5%8B%E8%AF%95/</id>
@@ -874,43 +932,6 @@ CPU：1x Intel Xeon&lt;br /&gt;
     <category term="美西线路" scheme="https://minsummer.com/tags/%E7%BE%8E%E8%A5%BF%E7%BA%BF%E8%B7%AF/"/>
     
     <category term="三网优化" scheme="https://minsummer.com/tags/%E4%B8%89%E7%BD%91%E4%BC%98%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>V.PS2023款黑五香港测试</title>
-    <link href="https://minsummer.com/2024/05/30/171-V.PS2023%E6%AC%BE%E9%BB%91%E4%BA%94%E9%A6%99%E6%B8%AF%E6%B5%8B%E8%AF%95/"/>
-    <id>https://minsummer.com/2024/05/30/171-V.PS2023%E6%AC%BE%E9%BB%91%E4%BA%94%E9%A6%99%E6%B8%AF%E6%B5%8B%E8%AF%95/</id>
-    <published>2024-05-30T16:00:00.000Z</published>
-    <updated>2024-05-30T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;套餐内容：&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;V.PS 2023年黑五款-HK &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 vCPU&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 GB RAM&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20G SSD Storage&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;400GB Transfer&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;500Mbps VirtIO Interface&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 IPv4 &amp;amp; 1 IPv6 /64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Premium Network Profile&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29.9 Euro/Year &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;结论&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#结论&quot;&gt;&lt;/a&gt; 结论&lt;/h2&gt;
-&lt;p&gt;上来先说结论：&lt;br /&gt;
-优点：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;香港线路，延迟特别低，移动快乐机，联通电信也能用&lt;/li&gt;
-&lt;li&gt;价格便宜，一年240人民币左右，一个月20&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;缺点：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;流量双向的，翻墙可以直接默认200G,适合一个人用，而且还得少看YouTube，有一个月刷YouTube过多，直接给我关机了。&lt;/li&gt;
-&lt;li&gt;经常被打，尤其是电信，建议绕道&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;总结：推荐一个人使用，多一个人就马上捉急，然后就是这家后续更新服务说明，已经不保证线路了，唯一的优势是香港延迟低，但是除移动外其他线路丢包厉害，经常被打。今年到期我会放生它或者转卖出去。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
-    
-    
-    <category term="融合怪" scheme="https://minsummer.com/tags/%E8%9E%8D%E5%90%88%E6%80%AA/"/>
-    
-    <category term="V.PS 黑五HK" scheme="https://minsummer.com/tags/V-PS-%E9%BB%91%E4%BA%94HK/"/>
-    
-    <category term="香港线路" scheme="https://minsummer.com/tags/%E9%A6%99%E6%B8%AF%E7%BA%BF%E8%B7%AF/"/>
     
   </entry>
   
