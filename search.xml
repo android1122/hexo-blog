@@ -978,6 +978,70 @@ NexT不仅支持markdown，而且还在它的上层拓展了不少，例如突�
       </tags>
   </entry>
   <entry>
+    <title>git工具的安装和使用</title>
+    <url>/2024/12/04/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h2 id="缘由"><a class="markdownIt-Anchor" href="#缘由"></a> 缘由</h2>
+<p>由于我是一个非专业的程序员，所以我一直不用git来管理我得代码，我的代码只有ctrl+z，没有版本管理。这次强上git的缘由是我决定不再使用Typecho了，转型为静态博客。</p>
+<span id="more"></span>
+<h2 id="安装步骤"><a class="markdownIt-Anchor" href="#安装步骤"></a> 安装步骤</h2>
+<ol>
+<li>下载使用<br />
+<a href="https://git-scm.com/">Git官网</a>下载，然后按着下一步从头按到尾就行。git作为程序员的工具，很多东西是需要自己配置的。</li>
+<li>生成公钥<br />
+生成公钥和密钥，用来连接GitHub，你可以简单的把GitHub作为一台远程服务器，现在两者需要生成密钥进行连接： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</span><br></pre></td></tr></table></figure>
+下一步是输入存放地址，默认的即可，切记这里输入的是文件路径，不要输入文件夹路径。接着会要求你输入密码：<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85-2023-05-21-21-50-27.png" alt="112-git工具安装-2023-05-21-21-50-27" /><br />
+<code>这个密码不是你的GitHub登陆密码，是你使用这个密钥时候输入的密码</code>，是的，就是这么的严格，密钥还有密码验证的，所以我这边建议是不输入，直接回车即可。否则你每提交一次就要被输入一次。<br />
+如果一切顺利的话，那么会在目录<code>c/Users/你的电脑名字/.ssh/</code>下看到刚才生成的文件时（id_rsa、id_rsa.pub），表示生成成功。</li>
+<li>部署私钥<br />
+接下来就是告诉GitHub我得公钥即id_rsa.pub，然后使用id_rsa进行连接，打开GitHub：<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85-2023-05-21-21-56-17.png" alt="112-git工具安装-2023-05-21-21-56-17" /><br />
+Settings下面有个<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85-2023-05-21-21-57-06.png" alt="112-git工具安装-2023-05-21-21-57-06" /><br />
+然后用txt打开公钥，把里面的内容复制到即可。</li>
+<li>vscode与git使用<br />
+当你上面配置好之后，你打开vscode，就可以看到版本管理已经可使用，这边推荐打开设置：<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85-2023-05-21-22-02-36.png" alt="112-git工具安装-2023-05-21-22-02-36" /><br />
+打开之后就会以你本地的文件为主，如果遇见一次大版本的版本回退，你也可以直接覆盖掉之前的修改。<br />
+然后是Git History这个插件，装好之后可以看到自己提交的历史记录，还支持回退<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85-2023-05-21-22-04-28.png" alt="112-git工具安装-2023-05-21-22-04-28" /><br />
+回退有两种，即soft和hard，soft的话就是哪些动了，就恢复。hard就是把所有文件都删除了，重新来。但是切记，回退之后如果你没有重新推送，系统会显示几个更改要下载，如果你下载了，那么就又变成回退之前的版本，所以每次回退都得强行推送一次，让版本被覆盖掉。如果你返回了，你也可以通过历史记录回到任何一个提交版本。</li>
+<li>使用ssh连接github–现在已经不知此<br />
+使用ssh连接的好处就是稳定，因为GitHub域名有时候访问不上，所以这边建议直接改为ssh连接，在你创建仓库的文件夹下有一个<code>.git</code>的文件夹，这个就是配置，打开config，把url：<code>https://github.com/USERNAME/REPOSITORY.git</code>改成<code>git@github.com:USERNAME/REPOSITORY.git</code><br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85-2023-05-21-22-09-38.png" alt="112-git工具安装-2023-05-21-22-09-38" /></li>
+<li>ssh使用指定密钥连接<br />
+如果你的系统内有多个密钥，想要指定一个密钥来访问，那么打开刚才的 .ssh文件夹下面，然后config使用txt打开： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Host github.com #名字，随便写</span><br><span class="line">HostName github.com #连接的地址或域名</span><br><span class="line">User git #登陆的用户名</span><br><span class="line">IdentityFile &quot;存放私钥的路径&quot;</span><br><span class="line">IdentitiesOnly yes</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85-2023-05-21-22-13-16.png" alt="112-git工具安装-2023-05-21-22-13-16" /></p>
+<p>需要注意，不要使用中文路径，否则提交时候会出现乱码<br />
+如果说非要使用，那么需要修改Git的全局变量：打开Git的bash，输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global core.quotePath false</span><br></pre></td></tr></table></figure>
+<p>后续你就会发现中文名就可以正确识别。</p>
+<hr />
+<h2 id="ps"><a class="markdownIt-Anchor" href="#ps"></a> PS</h2>
+<p>最近登录发现，会提示：GitHub does not provide shell access。具体表现是不断出现指纹让你验证。<br />
+这是由于GitHub不在提供ssh登录验证。之前我们使用ssh是希望可以绕过网络封锁，但是由于GitHub不在支持，那么直接不要更改操作5即可。<br />
+这样就需要你的网络可以翻墙，否则还是会出现登录不了的情况。</p>
+<hr />
+<p>参考文章：<br />
+<a href="https://git-scm.com/">Git官网</a><br />
+<a href="https://www.huangziheng.com/docs/git/connecting-to-github-with-ssh/">使用SSH连接GitHub</a></p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>vscode</tag>
+        <tag>博客搬运</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>技能树梳理</title>
     <url>/2023/05/22/113-%E6%8A%80%E8%83%BD%E6%A0%91/</url>
     <content><![CDATA[<p>梳理一下自己的技能树</p>
@@ -1124,70 +1188,6 @@ NexT不仅支持markdown，而且还在它的上层拓展了不少，例如突�
       <tags>
         <tag>思维导图</tag>
         <tag>技能树</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git工具的安装和使用</title>
-    <url>/2024/12/04/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<h2 id="缘由"><a class="markdownIt-Anchor" href="#缘由"></a> 缘由</h2>
-<p>由于我是一个非专业的程序员，所以我一直不用git来管理我得代码，我的代码只有ctrl+z，没有版本管理。这次强上git的缘由是我决定不再使用Typecho了，转型为静态博客。</p>
-<span id="more"></span>
-<h2 id="安装步骤"><a class="markdownIt-Anchor" href="#安装步骤"></a> 安装步骤</h2>
-<ol>
-<li>下载使用<br />
-<a href="https://git-scm.com/">Git官网</a>下载，然后按着下一步从头按到尾就行。git作为程序员的工具，很多东西是需要自己配置的。</li>
-<li>生成公钥<br />
-生成公钥和密钥，用来连接GitHub，你可以简单的把GitHub作为一台远程服务器，现在两者需要生成密钥进行连接： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</span><br></pre></td></tr></table></figure>
-下一步是输入存放地址，默认的即可，切记这里输入的是文件路径，不要输入文件夹路径。接着会要求你输入密码：<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85-2023-05-21-21-50-27.png" alt="112-git工具安装-2023-05-21-21-50-27" /><br />
-<code>这个密码不是你的GitHub登陆密码，是你使用这个密钥时候输入的密码</code>，是的，就是这么的严格，密钥还有密码验证的，所以我这边建议是不输入，直接回车即可。否则你每提交一次就要被输入一次。<br />
-如果一切顺利的话，那么会在目录<code>c/Users/你的电脑名字/.ssh/</code>下看到刚才生成的文件时（id_rsa、id_rsa.pub），表示生成成功。</li>
-<li>部署私钥<br />
-接下来就是告诉GitHub我得公钥即id_rsa.pub，然后使用id_rsa进行连接，打开GitHub：<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85-2023-05-21-21-56-17.png" alt="112-git工具安装-2023-05-21-21-56-17" /><br />
-Settings下面有个<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85-2023-05-21-21-57-06.png" alt="112-git工具安装-2023-05-21-21-57-06" /><br />
-然后用txt打开公钥，把里面的内容复制到即可。</li>
-<li>vscode与git使用<br />
-当你上面配置好之后，你打开vscode，就可以看到版本管理已经可使用，这边推荐打开设置：<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85-2023-05-21-22-02-36.png" alt="112-git工具安装-2023-05-21-22-02-36" /><br />
-打开之后就会以你本地的文件为主，如果遇见一次大版本的版本回退，你也可以直接覆盖掉之前的修改。<br />
-然后是Git History这个插件，装好之后可以看到自己提交的历史记录，还支持回退<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85-2023-05-21-22-04-28.png" alt="112-git工具安装-2023-05-21-22-04-28" /><br />
-回退有两种，即soft和hard，soft的话就是哪些动了，就恢复。hard就是把所有文件都删除了，重新来。但是切记，回退之后如果你没有重新推送，系统会显示几个更改要下载，如果你下载了，那么就又变成回退之前的版本，所以每次回退都得强行推送一次，让版本被覆盖掉。如果你返回了，你也可以通过历史记录回到任何一个提交版本。</li>
-<li>使用ssh连接github–现在已经不知此<br />
-使用ssh连接的好处就是稳定，因为GitHub域名有时候访问不上，所以这边建议直接改为ssh连接，在你创建仓库的文件夹下有一个<code>.git</code>的文件夹，这个就是配置，打开config，把url：<code>https://github.com/USERNAME/REPOSITORY.git</code>改成<code>git@github.com:USERNAME/REPOSITORY.git</code><br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85-2023-05-21-22-09-38.png" alt="112-git工具安装-2023-05-21-22-09-38" /></li>
-<li>ssh使用指定密钥连接<br />
-如果你的系统内有多个密钥，想要指定一个密钥来访问，那么打开刚才的 .ssh文件夹下面，然后config使用txt打开： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Host github.com #名字，随便写</span><br><span class="line">HostName github.com #连接的地址或域名</span><br><span class="line">User git #登陆的用户名</span><br><span class="line">IdentityFile &quot;存放私钥的路径&quot;</span><br><span class="line">IdentitiesOnly yes</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/112-git%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85-2023-05-21-22-13-16.png" alt="112-git工具安装-2023-05-21-22-13-16" /></p>
-<p>需要注意，不要使用中文路径，否则提交时候会出现乱码<br />
-如果说非要使用，那么需要修改Git的全局变量：打开Git的bash，输入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global core.quotePath false</span><br></pre></td></tr></table></figure>
-<p>后续你就会发现中文名就可以正确识别。</p>
-<hr />
-<h2 id="ps"><a class="markdownIt-Anchor" href="#ps"></a> PS</h2>
-<p>最近登录发现，会提示：GitHub does not provide shell access。具体表现是不断出现指纹让你验证。<br />
-这是由于GitHub不在提供ssh登录验证。之前我们使用ssh是希望可以绕过网络封锁，但是由于GitHub不在支持，那么直接不要更改操作5即可。<br />
-这样就需要你的网络可以翻墙，否则还是会出现登录不了的情况。</p>
-<hr />
-<p>参考文章：<br />
-<a href="https://git-scm.com/">Git官网</a><br />
-<a href="https://www.huangziheng.com/docs/git/connecting-to-github-with-ssh/">使用SSH连接GitHub</a></p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-        <tag>vscode</tag>
-        <tag>博客搬运</tag>
       </tags>
   </entry>
   <entry>
@@ -3058,6 +3058,58 @@ Debain系统</p>
       </tags>
   </entry>
   <entry>
+    <title>我得读书观</title>
+    <url>/2023/12/09/142-%E8%AF%BB%E4%B9%A6%E8%AE%BA/</url>
+    <content><![CDATA[<p>随着书读的越多，很多时候相较于浑浑噩噩的读完一本书，思路清晰且认真的读完一本垃圾书，我竟不知到底是哪个更加恶心。现在书很多，但是哪本书值得或者能够让我看下去呢？</p>
+<span id="more"></span>
+<p>普波尔说过拿着你们的记事本，去观察吧。他的学生一脸茫然，不知道要观察什么。读书也是。我们何不大方的承认，我们读书是有目的的：为了文青，为了了解，为了装逼甚至为了谈资。无所谓，只要你明白，哪怕你是为了在自己的书单上+1也可以，我们不能抛弃目的。一个明确的目标才是我坚持读完一本小说的动力。<br />
+我思考了下我最近读过的小说：</p>
+<ul>
+<li>《庆余年》我读完，因为我看过电视剧，我想要重新慢慢感受下电视剧中的种种画面，所以前半部是脑袋配合着电视剧的画面，后半部就靠着这些画面延续下去。书是成功的读完，但是后来回过神来，觉得一般，作者并没有很好的收尾，电视剧的演绎给与了我动力。</li>
+<li>《将夜》也是猫腻写的小说，但是我看了开头就看不下去，投入不了，我不知道他想要写什么，也感受不到异世界的宏大，风采。所以看完开篇就抛弃了，它没有给我一个目的，连书名都没有。</li>
+<li>《雪中悍刀行》我也是和《庆余年》一样，看了电视，去看的小说，好看么？不好看，我写过书评，我觉得作者想法很伟大，也可以成就一番著作，但是最后写出来的确实平平无奇。</li>
+<li>最后是《剑来》，我看完了，很好看，我很喜欢。</li>
+<li>《丈量世界》豆瓣推荐的，我看了开头，就弃了。</li>
+</ul>
+<p>我综合想了想，《将夜》不吸引我的原因很简单，他没有在开篇就给我看下去的动力或者目的，而《剑来》不同，一开始悬念拉满，直接吸引我，然后每个篇章都给了我一个目的，我，陈平安，要成为天下第一的剑修。<br />
+这给我带来了什么呢？<br />
+我阅读的过程，我一直记着这件事，这件事给了我判断，给了我置身其中的机会，一个法宝，一个机遇，我会先考虑它能否满足我天下第一的目的么？我就牢牢的和主角绑定在了一起，我才愿意读完这本小说。很多畅销的小说，就是很简单的在开篇就告诉你，主角会天下第一，读者一下子就明白自己要见证一个天下第一的诞生过程，要和他一起走上成为王者的道路，这就是目的，这就是读书的目的。</p>
+<p>小说是个很奇怪的东西，有些人说它通俗，易懂，毫无用处，只会浪费你的光阴。但是初中高中很多文学名著，恰恰就是小说，比如四大名著。我读完四大名著是自己硬着头皮读完的，你要让我回忆起某个片段，早已忘记的一干二净，我读三国时还有目的，看看三方混战，读红楼梦时就觉得云里雾里，讲的也是家里的日常，西游记更是带着电视剧的画面看完的。你要让我说出它成为四大名著的原因，我是半点不知。但是如果你看了《易中天品三国》，《刘心武说红楼梦》，《西游记黑暗解读》等等，你又会发现，原来，当时里面又这么多的内容，让我错过。然后就是加缪的《局外人》作为加缪思想的体现，我读完也没有任何的感悟。</p>
+<p>看，小说只是一个载体，你可以简简单单的写个故事，也可以蕴含隐喻。所以有些书其实是有门槛的，不是简简单单的拿起来就能看懂的，我们需要研究，需要大量的历史积累。这些书算好书么？算，肯定算，人家都四大名著了，能不是好书？但是不妨碍我们看不懂。<br />
+有时候我会觉得没书可看，我会去畅销榜上找。比如：《丈量世界》这一部在豆瓣大受好评的书，我看了前两章，我不明白作者的意图，我一度无法继续读下去，我看到的只有作者狐臊的说这一件一件的事情，我串不起他们，也不知道他们有什么用处。然后在我去豆瓣搜索这是讲的一个什么故事时，我才明白。这是一个讲好奇心比雄走的更远的故事。哦，对不起，不感兴趣。再来看看书本的文摘：</p>
+<blockquote>
+<p>这既古怪又不公平，高斯说，生活充满了可鄙的专制，一个真实的例子就是，不管你愿不愿意，你都会在某个特定的时代出生，然后被束缚其中。它使你在面对过去时，有一种天然的优势，而在面对未来时，又与小丑无异。</p>
+</blockquote>
+<p>更加不感兴趣，这书不符合我，确实有时候会觉得自己生错了时代，晚点会更好，可以看见自己想要了解到东西得到答案，但是仅仅是一个念头。我是活在当下的人，每个时代的人都有其对应的困难，我并不觉得这是束缚，这是人生。所以这本好评如潮的小说在我手下没撑过2章。</p>
+<p>所以畅销榜上的书不好？怎么不好，人都上畅销榜了，能不好，这么多人读都读的下去就你有毛病。<br />
+我仔细想来，大概是我自己的问题吧。我不能将自己融入群众之中。后续我要是再看这种名人小说，我建议还是先看几篇解析，点评，或者好好看前序，这些东西一般会把书里的思想和意图给你分析透彻，然后你只要带着这些分析去套就可以，这样读下来不至于像我当初读红楼一样，看着家长里短却不知其中的隐喻。<br />
+接着就是另一种书了，比如《亚财政》。这种书防不胜防。我是抱着学习一些财政知识的目的，目的就是它的书名：财政，腐败，制度。我读之前以为这书会讲财政制度的困难，亚财政的作用，它的生成原因，他的弊端，等等全方位或者让我管中窥豹的了解一点。然而全书确实一个个不融洽的小篇章拼凑而成的，并没有系统的，全面解析。<br />
+这种打着科普或者研究的书，往往防不胜防。你找该领域的经典名著么？太深了，我只是个想看看，但是你又看不起那种《三分钟告诉你xxx》的科普书，更何况有些领域甚至没有经典名著，比如明清腐败这些。所以，很多时候你没法找到一本合适的书？这样只能靠自己的大量的阅读来判断咯，比如《哲学家们干了些什么》写的就是哲学史的，但是兼具趣味，里面会穿插一些哲学家的八卦，对于入门来说我就觉得十分合适，内容也是白话，没有术语。我十分推荐。<br />
+《亚财政》这种起名很唬人的，但是通篇其实没有什么内容的，我就只能说及时止损，看到一半觉得不对劲趁早弃书，我就是看到一半不对劲，怎么讲来讲去都是那些内容，但是又想着都看了这么多了，继续看下去吧，最后是捏着鼻子读完的。</p>
+<hr />
+<p>后来我想了想，后续我要判断每一本书是否读下去：</p>
+<ol>
+<li>不要迷恋大师推荐和畅销榜，适合大师和大众的，不一定适合你</li>
+<li>没有什么书是必须看的，同一个领域有千千万的书来入门，没必要走最难的那条路</li>
+<li>看一本书的内容概要和文摘，看看打动他人的东西能否打动你？或者有某个章节你觉得特别好，为了这碗醋包了这顿饺子。</li>
+<li>序言，一本书的序言很重要，尤其那种高深著作或者领域研究，有个好的序言可以告诉你书的内容，概要，主旨，你读完序言之后就是去书中印证一番，不要觉得你这是被牵着鼻子走，都是先牵着，后放手。</li>
+<li>读书是一个坚持的过程，很多人坚持不住，选择其他方式，但是我最推荐一个人慢慢看完一本书，读书可快可慢，可以记笔记，可以匆匆翻页，唯一留下心里的是读完之后的一番沉思，让你似有所得，又不会空荡荡。</li>
+</ol>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>畅销榜</tag>
+        <tag>读书</tag>
+        <tag>《亚财政》</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ServerStatus搭建指南</title>
     <url>/2023/12/10/143-ServerStatus%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<p>ServerStatus，云监控，即我们一般说的探针。用来监控远端服务器的状态。可以实现实时查看系统负载，同时如果服务器超载可以自动报警。如果你服务器很多，那么安装一个这个可以方便快捷的查看实用的流量负载，不必每次都登陆后台面板进行跟踪。</p>
@@ -3141,58 +3193,6 @@ Debain系统</p>
         <tag>docker</tag>
         <tag>探针</tag>
         <tag>以针会友</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我得读书观</title>
-    <url>/2023/12/09/142-%E8%AF%BB%E4%B9%A6%E8%AE%BA/</url>
-    <content><![CDATA[<p>随着书读的越多，很多时候相较于浑浑噩噩的读完一本书，思路清晰且认真的读完一本垃圾书，我竟不知到底是哪个更加恶心。现在书很多，但是哪本书值得或者能够让我看下去呢？</p>
-<span id="more"></span>
-<p>普波尔说过拿着你们的记事本，去观察吧。他的学生一脸茫然，不知道要观察什么。读书也是。我们何不大方的承认，我们读书是有目的的：为了文青，为了了解，为了装逼甚至为了谈资。无所谓，只要你明白，哪怕你是为了在自己的书单上+1也可以，我们不能抛弃目的。一个明确的目标才是我坚持读完一本小说的动力。<br />
-我思考了下我最近读过的小说：</p>
-<ul>
-<li>《庆余年》我读完，因为我看过电视剧，我想要重新慢慢感受下电视剧中的种种画面，所以前半部是脑袋配合着电视剧的画面，后半部就靠着这些画面延续下去。书是成功的读完，但是后来回过神来，觉得一般，作者并没有很好的收尾，电视剧的演绎给与了我动力。</li>
-<li>《将夜》也是猫腻写的小说，但是我看了开头就看不下去，投入不了，我不知道他想要写什么，也感受不到异世界的宏大，风采。所以看完开篇就抛弃了，它没有给我一个目的，连书名都没有。</li>
-<li>《雪中悍刀行》我也是和《庆余年》一样，看了电视，去看的小说，好看么？不好看，我写过书评，我觉得作者想法很伟大，也可以成就一番著作，但是最后写出来的确实平平无奇。</li>
-<li>最后是《剑来》，我看完了，很好看，我很喜欢。</li>
-<li>《丈量世界》豆瓣推荐的，我看了开头，就弃了。</li>
-</ul>
-<p>我综合想了想，《将夜》不吸引我的原因很简单，他没有在开篇就给我看下去的动力或者目的，而《剑来》不同，一开始悬念拉满，直接吸引我，然后每个篇章都给了我一个目的，我，陈平安，要成为天下第一的剑修。<br />
-这给我带来了什么呢？<br />
-我阅读的过程，我一直记着这件事，这件事给了我判断，给了我置身其中的机会，一个法宝，一个机遇，我会先考虑它能否满足我天下第一的目的么？我就牢牢的和主角绑定在了一起，我才愿意读完这本小说。很多畅销的小说，就是很简单的在开篇就告诉你，主角会天下第一，读者一下子就明白自己要见证一个天下第一的诞生过程，要和他一起走上成为王者的道路，这就是目的，这就是读书的目的。</p>
-<p>小说是个很奇怪的东西，有些人说它通俗，易懂，毫无用处，只会浪费你的光阴。但是初中高中很多文学名著，恰恰就是小说，比如四大名著。我读完四大名著是自己硬着头皮读完的，你要让我回忆起某个片段，早已忘记的一干二净，我读三国时还有目的，看看三方混战，读红楼梦时就觉得云里雾里，讲的也是家里的日常，西游记更是带着电视剧的画面看完的。你要让我说出它成为四大名著的原因，我是半点不知。但是如果你看了《易中天品三国》，《刘心武说红楼梦》，《西游记黑暗解读》等等，你又会发现，原来，当时里面又这么多的内容，让我错过。然后就是加缪的《局外人》作为加缪思想的体现，我读完也没有任何的感悟。</p>
-<p>看，小说只是一个载体，你可以简简单单的写个故事，也可以蕴含隐喻。所以有些书其实是有门槛的，不是简简单单的拿起来就能看懂的，我们需要研究，需要大量的历史积累。这些书算好书么？算，肯定算，人家都四大名著了，能不是好书？但是不妨碍我们看不懂。<br />
-有时候我会觉得没书可看，我会去畅销榜上找。比如：《丈量世界》这一部在豆瓣大受好评的书，我看了前两章，我不明白作者的意图，我一度无法继续读下去，我看到的只有作者狐臊的说这一件一件的事情，我串不起他们，也不知道他们有什么用处。然后在我去豆瓣搜索这是讲的一个什么故事时，我才明白。这是一个讲好奇心比雄走的更远的故事。哦，对不起，不感兴趣。再来看看书本的文摘：</p>
-<blockquote>
-<p>这既古怪又不公平，高斯说，生活充满了可鄙的专制，一个真实的例子就是，不管你愿不愿意，你都会在某个特定的时代出生，然后被束缚其中。它使你在面对过去时，有一种天然的优势，而在面对未来时，又与小丑无异。</p>
-</blockquote>
-<p>更加不感兴趣，这书不符合我，确实有时候会觉得自己生错了时代，晚点会更好，可以看见自己想要了解到东西得到答案，但是仅仅是一个念头。我是活在当下的人，每个时代的人都有其对应的困难，我并不觉得这是束缚，这是人生。所以这本好评如潮的小说在我手下没撑过2章。</p>
-<p>所以畅销榜上的书不好？怎么不好，人都上畅销榜了，能不好，这么多人读都读的下去就你有毛病。<br />
-我仔细想来，大概是我自己的问题吧。我不能将自己融入群众之中。后续我要是再看这种名人小说，我建议还是先看几篇解析，点评，或者好好看前序，这些东西一般会把书里的思想和意图给你分析透彻，然后你只要带着这些分析去套就可以，这样读下来不至于像我当初读红楼一样，看着家长里短却不知其中的隐喻。<br />
-接着就是另一种书了，比如《亚财政》。这种书防不胜防。我是抱着学习一些财政知识的目的，目的就是它的书名：财政，腐败，制度。我读之前以为这书会讲财政制度的困难，亚财政的作用，它的生成原因，他的弊端，等等全方位或者让我管中窥豹的了解一点。然而全书确实一个个不融洽的小篇章拼凑而成的，并没有系统的，全面解析。<br />
-这种打着科普或者研究的书，往往防不胜防。你找该领域的经典名著么？太深了，我只是个想看看，但是你又看不起那种《三分钟告诉你xxx》的科普书，更何况有些领域甚至没有经典名著，比如明清腐败这些。所以，很多时候你没法找到一本合适的书？这样只能靠自己的大量的阅读来判断咯，比如《哲学家们干了些什么》写的就是哲学史的，但是兼具趣味，里面会穿插一些哲学家的八卦，对于入门来说我就觉得十分合适，内容也是白话，没有术语。我十分推荐。<br />
-《亚财政》这种起名很唬人的，但是通篇其实没有什么内容的，我就只能说及时止损，看到一半觉得不对劲趁早弃书，我就是看到一半不对劲，怎么讲来讲去都是那些内容，但是又想着都看了这么多了，继续看下去吧，最后是捏着鼻子读完的。</p>
-<hr />
-<p>后来我想了想，后续我要判断每一本书是否读下去：</p>
-<ol>
-<li>不要迷恋大师推荐和畅销榜，适合大师和大众的，不一定适合你</li>
-<li>没有什么书是必须看的，同一个领域有千千万的书来入门，没必要走最难的那条路</li>
-<li>看一本书的内容概要和文摘，看看打动他人的东西能否打动你？或者有某个章节你觉得特别好，为了这碗醋包了这顿饺子。</li>
-<li>序言，一本书的序言很重要，尤其那种高深著作或者领域研究，有个好的序言可以告诉你书的内容，概要，主旨，你读完序言之后就是去书中印证一番，不要觉得你这是被牵着鼻子走，都是先牵着，后放手。</li>
-<li>读书是一个坚持的过程，很多人坚持不住，选择其他方式，但是我最推荐一个人慢慢看完一本书，读书可快可慢，可以记笔记，可以匆匆翻页，唯一留下心里的是读完之后的一番沉思，让你似有所得，又不会空荡荡。</li>
-</ol>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>畅销榜</tag>
-        <tag>读书</tag>
-        <tag>《亚财政》</tag>
       </tags>
   </entry>
   <entry>
@@ -3641,30 +3641,6 @@ Debain系统</p>
       </tags>
   </entry>
   <entry>
-    <title>相亲</title>
-    <url>/2024/02/24/151-%E7%9B%B8%E4%BA%B2%E6%97%A5%E8%AE%B0/</url>
-    <content><![CDATA[<p>这一篇是写着玩的，本来我一般是不会如此仔细的分析自己身边人，但是相亲的女孩子一般有一次没下次。而且主要是这一次的女孩子性格特征太过明显了，我在某个午睡时候玩的思维小游戏就分析出大概，在此就当作一个小练手把。</p>
-<span id="more"></span>
-<p>我和那个女孩子是同村，他们家在我们家后面走路10分钟左右吧，家很大，广场很宽，然后是最近几年建成的，看建筑风格可以知道。说明是最近几年有钱的，前后不会超过10年。算是一个new money。<br />
-家里3个孩子，上一代应该独生，没看到农村那种2个大厅的格局。3个孩子前两个女孩，最后一个男孩，还在上初中，年龄差距接近15岁吧，从此可以见到家风会比较传统-重男轻女。和女孩子聊天途中发现：父母对老大老二读书都没管，但是对老三男孩子读书专门请假在家租房子照顾。可以见到她是有怨言的，那么是反抗心理的，也许行为不会表现，但是内心的反抗，那么就有可能衍生出需求父亲的爱等等。<br />
-女孩父亲全程没有出现，两次上门都没有见到女孩子父亲。但是家庭和睦，我倾向于女孩子是恋父的，需求父爱的。<br />
-第二次媒婆过来传话是女孩子的奶奶传话，说明其爷爷辈还有话语权，那么注定家庭生活是压抑的。包括女孩子母亲也会是压抑的。我倾向女孩子会接受传统思想，父母之命，媒妁之言之类的，如果爷爷和奶奶能说出一些好话，会事半功倍。但是婚后的日子会比较古板且传统，而且爷爷辈会参与男方家庭太多，我倾向她最后会找一个也是爷爷主事的家庭。<br />
-还有就是学历崇拜，聊天过程为数不多的提高声调的地方，对学历有种崇拜，她自己也是大学，但是不够好，然而也足够她自己觉得这是好事了，她既是既得利益者，也是需求者。学历会是加分项，更高学历或者更好学校对她来说有致命吸引。<br />
-女孩的性格比较沉默寡言，也许是在家里透明习惯了，比较不活跃。不会太有自己的思想，会迷信，会尊重传统。最后我们没有成，因为她奶奶问过迷信，觉得年龄差6岁，不搭。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>那些年遇见的人</category>
-      </categories>
-      <tags>
-        <tag>心理分析</tag>
-        <tag>相亲</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>二哥3</title>
     <url>/2024/02/24/150-%E4%BA%8C%E5%93%A53/</url>
     <content><![CDATA[<p>24年的第一顿饭是和二哥吃的，年前吃过一次；年后想着再聚聚。</p>
@@ -3693,83 +3669,27 @@ Debain系统</p>
       </tags>
   </entry>
   <entry>
-    <title>Tachidesk插件安装</title>
-    <url>/2024/02/26/153-tachidesk%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<p>最近因为韩国Kakao公司法律威胁，1月14日，Tachiyomi 发布公告表示：由于特殊情况，决定清理扩展列表以确保 Tachiyomi 的长期可持续性。随后开发者发布公告表示不再维护软件并逐步关闭官方开发社区：具体见<a href="https://tachiyomi.org/news/2024-01-13-goodbye">社区公告</a></p>
+    <title>相亲</title>
+    <url>/2024/02/24/151-%E7%9B%B8%E4%BA%B2%E6%97%A5%E8%AE%B0/</url>
+    <content><![CDATA[<p>这一篇是写着玩的，本来我一般是不会如此仔细的分析自己身边人，但是相亲的女孩子一般有一次没下次。而且主要是这一次的女孩子性格特征太过明显了，我在某个午睡时候玩的思维小游戏就分析出大概，在此就当作一个小练手把。</p>
 <span id="more"></span>
-<p>其实之前就已经移除了<a href="https://tachiyomi.org/news/2024-01-09-extensions-removal">插件商店</a>，那段时间忽然安装不了插件，甚至已经下载得插件都失效了，但是还是可以手动安装插件：</p>
-<h2 id="手动安装插件"><a class="markdownIt-Anchor" href="#手动安装插件"></a> 手动安装插件</h2>
-<p>1.打开设置-浏览器<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/153-tachidesk%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85-2024-02-27-12-26-04.png" alt="153-tachidesk插件安装-2024-02-27-12-26-04" /><br />
-2. 输入插件订阅的地址</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.min.json</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/153-tachidesk%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85-2024-02-27-12-26-35.png" alt="153-tachidesk插件安装-2024-02-27-12-26-35" /><br />
-然后去前台刷新下即可<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/153-tachidesk%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85-2024-02-27-12-28-39.png" alt="153-tachidesk插件安装-2024-02-27-12-28-39" /></p>
-<p>这个方法只是解决了插件不能安装的问题，但是后续，慢慢的这个程序将不会更新，如果后续有更好的软件可以看漫画，我会逐步替换掉。</p>
-<h2 id="汉化"><a class="markdownIt-Anchor" href="#汉化"></a> 汉化</h2>
-<p>汉化我看了下，目前已经有人正在汉化，之前有非官方的汉化，但是随着版本更新已经失效了。</p>
-<hr />
-<p><a href="https://zhuanlan.zhihu.com/p/678017331">Tachiyomi替代方案</a><br />
-<a href="https://github.com/keiyoushi/extensions">插件安装教程</a></p>
+<p>我和那个女孩子是同村，他们家在我们家后面走路10分钟左右吧，家很大，广场很宽，然后是最近几年建成的，看建筑风格可以知道。说明是最近几年有钱的，前后不会超过10年。算是一个new money。<br />
+家里3个孩子，上一代应该独生，没看到农村那种2个大厅的格局。3个孩子前两个女孩，最后一个男孩，还在上初中，年龄差距接近15岁吧，从此可以见到家风会比较传统-重男轻女。和女孩子聊天途中发现：父母对老大老二读书都没管，但是对老三男孩子读书专门请假在家租房子照顾。可以见到她是有怨言的，那么是反抗心理的，也许行为不会表现，但是内心的反抗，那么就有可能衍生出需求父亲的爱等等。<br />
+女孩父亲全程没有出现，两次上门都没有见到女孩子父亲。但是家庭和睦，我倾向于女孩子是恋父的，需求父爱的。<br />
+第二次媒婆过来传话是女孩子的奶奶传话，说明其爷爷辈还有话语权，那么注定家庭生活是压抑的。包括女孩子母亲也会是压抑的。我倾向女孩子会接受传统思想，父母之命，媒妁之言之类的，如果爷爷和奶奶能说出一些好话，会事半功倍。但是婚后的日子会比较古板且传统，而且爷爷辈会参与男方家庭太多，我倾向她最后会找一个也是爷爷主事的家庭。<br />
+还有就是学历崇拜，聊天过程为数不多的提高声调的地方，对学历有种崇拜，她自己也是大学，但是不够好，然而也足够她自己觉得这是好事了，她既是既得利益者，也是需求者。学历会是加分项，更高学历或者更好学校对她来说有致命吸引。<br />
+女孩的性格比较沉默寡言，也许是在家里透明习惯了，比较不活跃。不会太有自己的思想，会迷信，会尊重传统。最后我们没有成，因为她奶奶问过迷信，觉得年龄差6岁，不搭。</p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
 
 <script src="/js/markmap.js"></script>
 ]]></content>
       <categories>
-        <category>技术顾问</category>
+        <category>那些年遇见的人</category>
       </categories>
       <tags>
-        <tag>Tachidesk</tag>
-        <tag>插件安装</tag>
-        <tag>Tachiyomi</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于2024年的一些展望</title>
-    <url>/2024/02/27/154-%E5%85%B3%E4%BA%8E2024%E5%B9%B4%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B1%95%E6%9C%9B/</url>
-    <content><![CDATA[<p>首先回顾下2023年的展望几点是否正确：</p>
-<ol>
-<li>2023年确实还是以地产为主要驱动-结果：不尽如人意。</li>
-<li>比亚迪确实带来了新一代的电动车狂潮。</li>
-<li>大基金由于A股表现不好，大基金销声匿迹</li>
-<li>消费券大发特发，确实带来了一波又一波的旅游热潮，官方有意向的宣传<br />
-如果硬要说的话，一半对一半不对</li>
-</ol>
-<span id="more"></span>
-<h2 id="地产行业"><a class="markdownIt-Anchor" href="#地产行业"></a> 地产行业</h2>
-<p>年初强令不允许资金进入地产，到了中期发现地产快不行了，开始出台地产白名单，后面甚至出现住建部推荐地产项目，进入项目的地产项目可以允许银行放款。<br />
-这算是精准调控，但是也算是国内一种正常现象，基层利益旁支错节，政令不出中南海的情况也是很正常，所以需要中央直接调控。中国目前暴露的问题，也许不在于经济，应该是在经济退潮情况下带来的权力踩踏问题。越是肉少，狼就越不在乎吃相。但是这块肉是目前或者说是最好吃的一块，无论是惯性还是懒惰，这块肉目前还是很多人盯着。但是中央看到了这个消息，从源头发布消息称：12个债务省份停止基建。<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/154-%E5%85%B3%E4%BA%8E2024%E5%B9%B4%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B1%95%E6%9C%9B-2024-02-28-14-43-09.png" alt="154-关于2024年的一些展望-2024-02-28-14-43-09" /><br />
-所以我对2024年的展望就更加悲观。地产和基建这块蛋糕已经成为了某些特权人的囊中物，不可能全民发展，所以：</p>
-<ol>
-<li>2024年会出现省市的分化，分化的标准不是实力，是和中央的关系。<br />
-中央控制，那么就是听话的孩子有肉吃，所以基建，投资等，会更多的仰仗中央的调控，变相算是权力集中的一种表现吧。</li>
-</ol>
-<h2 id="大基金"><a class="markdownIt-Anchor" href="#大基金"></a> 大基金</h2>
-<p>去年我不断的看好大基金，确实是一个搜刮百姓钱财的好手段。但问题是普通百姓确实没有钱，有钱的又都知道你打什么主意，所以基金估计今年还是会销声匿迹，同样A股这两年爆发出来的金融基金老鼠仓的问题，我觉得不算问题。金融圈太特殊了，所以掀不起风浪。</p>
-<h2 id="电动汽车"><a class="markdownIt-Anchor" href="#电动汽车"></a> 电动汽车</h2>
-<p>比亚迪我还是强力看好的，作为目前少数几个有噱头，有收益的行业，还是会大力发展。无论是固态电池，还是汽车降价。作为少数几个经济发动机，只能指望它了。</p>
-<h2 id="经济"><a class="markdownIt-Anchor" href="#经济"></a> 经济</h2>
-<p>今年看到了不少的旅游宣传，甚至官方媒体也下场，毕竟这东西花钱少，效果好。在我看来这是经济缺钱的表现。2023年年初还有各种投资，各种展望，到了2024年，平平淡淡的过完，没有什么震耳欲聋的大消息，也没有多大金额的投资。有的就是些社会新闻和旅游。23年年初的大放水要么是内部觉得不行了，要么是国内不想放了，要么就是没钱了。无论哪种，结论就是：我不会直接撒币了。那么就需要银行，政府，基层多方协调配合。但是就目前的基层工作能力，有可能会变成另一次基层圈钱的机会。就是不知道中央咋想？<br />
-如果今年继续促进基层投资，补贴，那么就是中央愿意让底下人拿点，然后办好事。但是目前没有这样的政策<br />
-目前似乎是想中央控制，加强中央能力的同时更加精准的投放资金，让钱用在更好的地方，那么带来两个问题，1，中央的人就一定会比基层的人更加廉洁么？2，项目的好坏全部由中央来决定，工作效率如何？<br />
-这是一个两难的问题，但是可以确定，无论是基层关系还是中央关系，都只会小范围，不会出现前几年那种经济大繁荣。有可能是某个行业，或者某个城市。定点定量的精准调控会是2024年的主旨。</p>
-<h1 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h1>
-<p>2024年我看法是悲观的，但是不是全面悲观。正如我上面所说，目前国内中央对基层的能力不足和不信任，很多事情都归中央处理。那么就中央那么一小撮人，人数是不够的。加上去年印钱之后发现效果一般，那么今年的基调就是：定点定量的发展某些城市和某些行业。<br />
-至于地点和行业，对不起，看不到。除开某些本来就经济强势的地方，剩下的看地方和中央的关系，这时候可以参考政治关系纽带。地产也是，看和中央关系，能不能上名单，关系成了2024年经济发展的重头戏。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>2024</tag>
-        <tag>经济展望</tag>
+        <tag>心理分析</tag>
+        <tag>相亲</tag>
       </tags>
   </entry>
   <entry>
@@ -3860,6 +3780,86 @@ Debain系统</p>
         <tag>摘要</tag>
         <tag>《佛祖说了些什么》</tag>
         <tag>林欣浩</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tachidesk插件安装</title>
+    <url>/2024/02/26/153-tachidesk%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<p>最近因为韩国Kakao公司法律威胁，1月14日，Tachiyomi 发布公告表示：由于特殊情况，决定清理扩展列表以确保 Tachiyomi 的长期可持续性。随后开发者发布公告表示不再维护软件并逐步关闭官方开发社区：具体见<a href="https://tachiyomi.org/news/2024-01-13-goodbye">社区公告</a></p>
+<span id="more"></span>
+<p>其实之前就已经移除了<a href="https://tachiyomi.org/news/2024-01-09-extensions-removal">插件商店</a>，那段时间忽然安装不了插件，甚至已经下载得插件都失效了，但是还是可以手动安装插件：</p>
+<h2 id="手动安装插件"><a class="markdownIt-Anchor" href="#手动安装插件"></a> 手动安装插件</h2>
+<p>1.打开设置-浏览器<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/153-tachidesk%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85-2024-02-27-12-26-04.png" alt="153-tachidesk插件安装-2024-02-27-12-26-04" /><br />
+2. 输入插件订阅的地址</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.min.json</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/153-tachidesk%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85-2024-02-27-12-26-35.png" alt="153-tachidesk插件安装-2024-02-27-12-26-35" /><br />
+然后去前台刷新下即可<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/153-tachidesk%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85-2024-02-27-12-28-39.png" alt="153-tachidesk插件安装-2024-02-27-12-28-39" /></p>
+<p>这个方法只是解决了插件不能安装的问题，但是后续，慢慢的这个程序将不会更新，如果后续有更好的软件可以看漫画，我会逐步替换掉。</p>
+<h2 id="汉化"><a class="markdownIt-Anchor" href="#汉化"></a> 汉化</h2>
+<p>汉化我看了下，目前已经有人正在汉化，之前有非官方的汉化，但是随着版本更新已经失效了。</p>
+<hr />
+<p><a href="https://zhuanlan.zhihu.com/p/678017331">Tachiyomi替代方案</a><br />
+<a href="https://github.com/keiyoushi/extensions">插件安装教程</a></p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>Tachidesk</tag>
+        <tag>插件安装</tag>
+        <tag>Tachiyomi</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于2024年的一些展望</title>
+    <url>/2024/02/27/154-%E5%85%B3%E4%BA%8E2024%E5%B9%B4%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B1%95%E6%9C%9B/</url>
+    <content><![CDATA[<p>首先回顾下2023年的展望几点是否正确：</p>
+<ol>
+<li>2023年确实还是以地产为主要驱动-结果：不尽如人意。</li>
+<li>比亚迪确实带来了新一代的电动车狂潮。</li>
+<li>大基金由于A股表现不好，大基金销声匿迹</li>
+<li>消费券大发特发，确实带来了一波又一波的旅游热潮，官方有意向的宣传<br />
+如果硬要说的话，一半对一半不对</li>
+</ol>
+<span id="more"></span>
+<h2 id="地产行业"><a class="markdownIt-Anchor" href="#地产行业"></a> 地产行业</h2>
+<p>年初强令不允许资金进入地产，到了中期发现地产快不行了，开始出台地产白名单，后面甚至出现住建部推荐地产项目，进入项目的地产项目可以允许银行放款。<br />
+这算是精准调控，但是也算是国内一种正常现象，基层利益旁支错节，政令不出中南海的情况也是很正常，所以需要中央直接调控。中国目前暴露的问题，也许不在于经济，应该是在经济退潮情况下带来的权力踩踏问题。越是肉少，狼就越不在乎吃相。但是这块肉是目前或者说是最好吃的一块，无论是惯性还是懒惰，这块肉目前还是很多人盯着。但是中央看到了这个消息，从源头发布消息称：12个债务省份停止基建。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/154-%E5%85%B3%E4%BA%8E2024%E5%B9%B4%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B1%95%E6%9C%9B-2024-02-28-14-43-09.png" alt="154-关于2024年的一些展望-2024-02-28-14-43-09" /><br />
+所以我对2024年的展望就更加悲观。地产和基建这块蛋糕已经成为了某些特权人的囊中物，不可能全民发展，所以：</p>
+<ol>
+<li>2024年会出现省市的分化，分化的标准不是实力，是和中央的关系。<br />
+中央控制，那么就是听话的孩子有肉吃，所以基建，投资等，会更多的仰仗中央的调控，变相算是权力集中的一种表现吧。</li>
+</ol>
+<h2 id="大基金"><a class="markdownIt-Anchor" href="#大基金"></a> 大基金</h2>
+<p>去年我不断的看好大基金，确实是一个搜刮百姓钱财的好手段。但问题是普通百姓确实没有钱，有钱的又都知道你打什么主意，所以基金估计今年还是会销声匿迹，同样A股这两年爆发出来的金融基金老鼠仓的问题，我觉得不算问题。金融圈太特殊了，所以掀不起风浪。</p>
+<h2 id="电动汽车"><a class="markdownIt-Anchor" href="#电动汽车"></a> 电动汽车</h2>
+<p>比亚迪我还是强力看好的，作为目前少数几个有噱头，有收益的行业，还是会大力发展。无论是固态电池，还是汽车降价。作为少数几个经济发动机，只能指望它了。</p>
+<h2 id="经济"><a class="markdownIt-Anchor" href="#经济"></a> 经济</h2>
+<p>今年看到了不少的旅游宣传，甚至官方媒体也下场，毕竟这东西花钱少，效果好。在我看来这是经济缺钱的表现。2023年年初还有各种投资，各种展望，到了2024年，平平淡淡的过完，没有什么震耳欲聋的大消息，也没有多大金额的投资。有的就是些社会新闻和旅游。23年年初的大放水要么是内部觉得不行了，要么是国内不想放了，要么就是没钱了。无论哪种，结论就是：我不会直接撒币了。那么就需要银行，政府，基层多方协调配合。但是就目前的基层工作能力，有可能会变成另一次基层圈钱的机会。就是不知道中央咋想？<br />
+如果今年继续促进基层投资，补贴，那么就是中央愿意让底下人拿点，然后办好事。但是目前没有这样的政策<br />
+目前似乎是想中央控制，加强中央能力的同时更加精准的投放资金，让钱用在更好的地方，那么带来两个问题，1，中央的人就一定会比基层的人更加廉洁么？2，项目的好坏全部由中央来决定，工作效率如何？<br />
+这是一个两难的问题，但是可以确定，无论是基层关系还是中央关系，都只会小范围，不会出现前几年那种经济大繁荣。有可能是某个行业，或者某个城市。定点定量的精准调控会是2024年的主旨。</p>
+<h1 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h1>
+<p>2024年我看法是悲观的，但是不是全面悲观。正如我上面所说，目前国内中央对基层的能力不足和不信任，很多事情都归中央处理。那么就中央那么一小撮人，人数是不够的。加上去年印钱之后发现效果一般，那么今年的基调就是：定点定量的发展某些城市和某些行业。<br />
+至于地点和行业，对不起，看不到。除开某些本来就经济强势的地方，剩下的看地方和中央的关系，这时候可以参考政治关系纽带。地产也是，看和中央关系，能不能上名单，关系成了2024年经济发展的重头戏。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>2024</tag>
+        <tag>经济展望</tag>
       </tags>
   </entry>
   <entry>
@@ -3979,6 +3979,57 @@ Debain系统</p>
       <tags>
         <tag>我在北京送快递</tag>
         <tag>胡安焉</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>也许这就是生活</title>
+    <url>/2024/03/09/158-%E4%B9%9F%E8%AE%B8%E8%BF%99%E5%B0%B1%E6%98%AF%E7%94%9F%E6%B4%BB/</url>
+    <content><![CDATA[<p>《我在北京送快递》这本书是我同学推荐给我的，他说让我看看什么是底层生活。于是我在回家的动车上看完了它。</p>
+<span id="more"></span>
+<p>看完了感触很多，和我生活中遇见的形形色色的人都很像，到此时我才发现，我也不过是底层的一人。我们在工作中进行着无用的社交，只是因为这些同事抬头不见低头见，我们重复着那些轱辘话，谈论着并不喜欢的政治，以及办公室的八卦。</p>
+<blockquote>
+<p>并不是说我们心里有多么不满，只是这些话能拉近我们的距离，赢得彼此的好感和信任，建立一种同仇敌忾的阶级情谊。说白了那就是些场面话，和北京人见面互相问一句“吃了吗”差不多。</p>
+</blockquote>
+<p>也是那之后，我切切实实的明白了，也许工作仅仅是工作，不要把同事当成朋友，也不要把公司当自己家，我们只不过是员工罢了：</p>
+<blockquote>
+<p>我很理解他的苦处，但并不同情他，因为我的处境和他一样，甚至比他还不如。我当然不想成为下一个他。</p>
+</blockquote>
+<p>后面，慢慢的我就不在工作中投入太多，毕竟这是个糊口的东西，我们花费大量的时间，仅仅是为了生活；</p>
+<blockquote>
+<p>从头到尾，我们所有人只是在旁观，静静地看着事态发展，没有人出来教训他，也没有人伸手援助孕妇，顶多只是安慰她几句。我们也各有各的压力，各有各家里不顺心的事，谁也没有余力顾别人。在那种工作场所里，每个人都被生活压榨着，同情心因此透支，然后不知不觉地变得麻木、冷漠。</p>
+</blockquote>
+<p>我并没有什么宏图伟业想着在工作中实现，工作无法满足我得梦想。在工作中我没有梦想。</p>
+<blockquote>
+<p>我是一个怎样的人，很大程度上是由我所处的环境，而不是由我的所谓本性决定的</p>
+</blockquote>
+<p>我后面回想了我当初的一些工作，从初出茅庐觉得工资破万，到后面去当一个电话销售。但是没有当太久我就辞职了，我不愿意放下我得自尊。</p>
+<blockquote>
+<p>我想我可以被解雇，但不能被羞辱。</p>
+</blockquote>
+<p>我慢慢的受不了一遍遍的电话，一遍遍的被拒绝。作为一个机器而不是人在哪里站着。我其实之前面试过保险的电话销售，那里的环境更加糟糕，我以为换个好点的环境会让我更舒服，但终归，我不愿意成为一个“粗人”，放下自己自尊。</p>
+<blockquote>
+<p>其实更喜欢性格“粗”点儿的快递员，因为“粗人”身上没有多余的自尊心。后来在工作中我亲身体会到，自尊心确实是一种妨碍。</p>
+</blockquote>
+<p>我的第二份工作，老板对我报以希望；我甚至是他为数不多的救命稻草。手底下的业务员只剩下两个，业务也在萎缩。他给了我一个方向，希望我可以自学java开发，他很喜欢画饼，夸大自己，然后觉得这业务马上就要成了。但是当时的我学不下去，我想赚钱，而不是学习。他给的工资太低，让我只想接业务拿提成。</p>
+<blockquote>
+<p>我想一个人得有多么空虚或自卑，才会这样吹牛啊。可是现在回过头看，我对他当时的做法多了一些理解</p>
+</blockquote>
+<p>我在他手底下没有做成一单。到了年底，我提辞职；他很不解。他甚至在我离职前花了大钱请我们几个业务员出去吃饭。</p>
+<blockquote>
+<p>她大概认为自己待我不薄，我哪怕不能鞠躬尽瘁死而后已，起码也该知恩图报，留下来充当她可以信任的助手，和她同甘共苦，一起创业。</p>
+</blockquote>
+<p>然而领导和员工的看法是不一样的，我只是觉得在他手底下没有希望，我想更高的工资，更好的机会。后面我离开了天津，我把天津能投的企业都投了一遍，但是没有一个面试。我那时候想当然的觉得，也许换个城市会更好。于是我走到了厦门。那时的我还不明白，其实工作，在哪都一样。<br />
+我又重复了之前的事情，工作，然后慢慢的厌烦；好处是工资够高，所以我没有频繁跳槽。在一份三年的疲倦期之后，我忽然明白，这份饿不死但也发不了财的工作不适合我。我日复一日的上班，进行着无用的社交，然后看似满满当当的完成了一天的事情，最后拖着疲惫的身躯回去，等待明天的到来。工资很多，但是没有多到我可以随意的花费，我精打细算的计算着开销，周末也只是在家呆着。即便如此，我一年也只不过存下七八万。我曾经幻想着自己买房娶妻远远的看不到希望。在这座城市了我没有房子，没有家。我要拿出20%的工资给房东。我甚至幻想，如果房子是我自己的，我每个月2000块钱花掉会是多么舒服的事情，我越想越开心。我看到了房子的重要性，但是我却无能为力。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>我在北京送快递</tag>
       </tags>
   </entry>
   <entry>
@@ -4229,57 +4280,6 @@ Debain系统</p>
         <tag>减肥</tag>
         <tag>本能减脂</tag>
         <tag>训练计划</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>也许这就是生活</title>
-    <url>/2024/03/09/158-%E4%B9%9F%E8%AE%B8%E8%BF%99%E5%B0%B1%E6%98%AF%E7%94%9F%E6%B4%BB/</url>
-    <content><![CDATA[<p>《我在北京送快递》这本书是我同学推荐给我的，他说让我看看什么是底层生活。于是我在回家的动车上看完了它。</p>
-<span id="more"></span>
-<p>看完了感触很多，和我生活中遇见的形形色色的人都很像，到此时我才发现，我也不过是底层的一人。我们在工作中进行着无用的社交，只是因为这些同事抬头不见低头见，我们重复着那些轱辘话，谈论着并不喜欢的政治，以及办公室的八卦。</p>
-<blockquote>
-<p>并不是说我们心里有多么不满，只是这些话能拉近我们的距离，赢得彼此的好感和信任，建立一种同仇敌忾的阶级情谊。说白了那就是些场面话，和北京人见面互相问一句“吃了吗”差不多。</p>
-</blockquote>
-<p>也是那之后，我切切实实的明白了，也许工作仅仅是工作，不要把同事当成朋友，也不要把公司当自己家，我们只不过是员工罢了：</p>
-<blockquote>
-<p>我很理解他的苦处，但并不同情他，因为我的处境和他一样，甚至比他还不如。我当然不想成为下一个他。</p>
-</blockquote>
-<p>后面，慢慢的我就不在工作中投入太多，毕竟这是个糊口的东西，我们花费大量的时间，仅仅是为了生活；</p>
-<blockquote>
-<p>从头到尾，我们所有人只是在旁观，静静地看着事态发展，没有人出来教训他，也没有人伸手援助孕妇，顶多只是安慰她几句。我们也各有各的压力，各有各家里不顺心的事，谁也没有余力顾别人。在那种工作场所里，每个人都被生活压榨着，同情心因此透支，然后不知不觉地变得麻木、冷漠。</p>
-</blockquote>
-<p>我并没有什么宏图伟业想着在工作中实现，工作无法满足我得梦想。在工作中我没有梦想。</p>
-<blockquote>
-<p>我是一个怎样的人，很大程度上是由我所处的环境，而不是由我的所谓本性决定的</p>
-</blockquote>
-<p>我后面回想了我当初的一些工作，从初出茅庐觉得工资破万，到后面去当一个电话销售。但是没有当太久我就辞职了，我不愿意放下我得自尊。</p>
-<blockquote>
-<p>我想我可以被解雇，但不能被羞辱。</p>
-</blockquote>
-<p>我慢慢的受不了一遍遍的电话，一遍遍的被拒绝。作为一个机器而不是人在哪里站着。我其实之前面试过保险的电话销售，那里的环境更加糟糕，我以为换个好点的环境会让我更舒服，但终归，我不愿意成为一个“粗人”，放下自己自尊。</p>
-<blockquote>
-<p>其实更喜欢性格“粗”点儿的快递员，因为“粗人”身上没有多余的自尊心。后来在工作中我亲身体会到，自尊心确实是一种妨碍。</p>
-</blockquote>
-<p>我的第二份工作，老板对我报以希望；我甚至是他为数不多的救命稻草。手底下的业务员只剩下两个，业务也在萎缩。他给了我一个方向，希望我可以自学java开发，他很喜欢画饼，夸大自己，然后觉得这业务马上就要成了。但是当时的我学不下去，我想赚钱，而不是学习。他给的工资太低，让我只想接业务拿提成。</p>
-<blockquote>
-<p>我想一个人得有多么空虚或自卑，才会这样吹牛啊。可是现在回过头看，我对他当时的做法多了一些理解</p>
-</blockquote>
-<p>我在他手底下没有做成一单。到了年底，我提辞职；他很不解。他甚至在我离职前花了大钱请我们几个业务员出去吃饭。</p>
-<blockquote>
-<p>她大概认为自己待我不薄，我哪怕不能鞠躬尽瘁死而后已，起码也该知恩图报，留下来充当她可以信任的助手，和她同甘共苦，一起创业。</p>
-</blockquote>
-<p>然而领导和员工的看法是不一样的，我只是觉得在他手底下没有希望，我想更高的工资，更好的机会。后面我离开了天津，我把天津能投的企业都投了一遍，但是没有一个面试。我那时候想当然的觉得，也许换个城市会更好。于是我走到了厦门。那时的我还不明白，其实工作，在哪都一样。<br />
-我又重复了之前的事情，工作，然后慢慢的厌烦；好处是工资够高，所以我没有频繁跳槽。在一份三年的疲倦期之后，我忽然明白，这份饿不死但也发不了财的工作不适合我。我日复一日的上班，进行着无用的社交，然后看似满满当当的完成了一天的事情，最后拖着疲惫的身躯回去，等待明天的到来。工资很多，但是没有多到我可以随意的花费，我精打细算的计算着开销，周末也只是在家呆着。即便如此，我一年也只不过存下七八万。我曾经幻想着自己买房娶妻远远的看不到希望。在这座城市了我没有房子，没有家。我要拿出20%的工资给房东。我甚至幻想，如果房子是我自己的，我每个月2000块钱花掉会是多么舒服的事情，我越想越开心。我看到了房子的重要性，但是我却无能为力。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>我在北京送快递</tag>
       </tags>
   </entry>
   <entry>
@@ -4598,29 +4598,6 @@ Debain系统</p>
       </tags>
   </entry>
   <entry>
-    <title>政治和经济</title>
-    <url>/2024/05/10/165-%E6%94%BF%E6%B2%BB%E5%92%8C%E7%BB%8F%E6%B5%8E/</url>
-    <content><![CDATA[<p>我不可否认的是政治和经济有很强关联性，尤其是在国内这种政策经济市场下。但是我不喜欢动不动就说国内是集权国家，不是市场经济。经济就是经济，我谈论经济的时候，那就很简单的是经济，是一个根据市场自行反馈的一种相对应的机制。你可以讨论政策，因为这是国内环境所致，确实是政策指导经济。但是不要臆想，我谈论的政策是政策的本意，是政策想要达成的效果，而不是政策落地后的畸变，那是完全靠人来实施的东西，肯定会有变形，但这并不是攻击国家政体的理由。我们仅仅是讨论政策背后的想法和风向。如果不能抛弃对基层实施的主观想法，会影响你对经济走向的判断，经济就是经济。政策的落地是政策落地的问题，我们可以讨论这个政策落地的可能性，可行性，可操作性。这和这个政策本身是两回事。讨论它的操作性这是中层领导的工作。</p>
-<span id="more"></span>
-<p>你可以说他发布了一个空中楼阁的政策，然而你换个方向看，这个政策是带来风向指标的。一个国家层级的政策不是过家家，不会朝令夕改，至少也是经过一番思考才下达的。<br />
-就拿如今的以旧换新的政策来说，它的本意还是促进消费，包括但是不限于房地产行业。所以各地政策落地依旧套用这个壳，将房地产的以旧换新套上。它的本意是复制当年家电下乡的一波消费热潮，促进国内循环。然而现在是想要促进一波国内房地产的以旧换新。我们要了解政策的作用，政策是从上到下的，上面说要以旧换新，下面要负责具体细节。各地政府作为一个权力机构，是可以拥有很大的市场调节能力的，主要是要给予他们一个政策，让他们师出有名。以旧换新的政策就是这个名，他们需要一个理由和借口，来干预和参与地产的交易，地方政府可以适当性的拓宽权力的手脚，包括那些交易过程的资金，产权这些。这个名给了他们权力操作这些，当然其中产生的腐败也是有可能的，这可以说是必然的。<br />
-以旧换新的政策给我最大的信心就是：下面的人你们放手干，我给你们撑腰。官吏官吏，官做出决策，现在要吏去实行，吏现在有了批条，就可以大展拳脚。不要小瞧基层的力量，他们可以上门做思想工作，可以劝说，可以慰问。只要你愿意将你二环的老房子换到偏僻的大房子即可。名是以旧换新，还可以作为民生政绩，改善居民居住环境。这是一个体现政绩符合民生的好想法。剩下就看吏有没有足够的动力去执行，看各地官员的御人之道了。<br />
-那么这些和之前那些的地产政策有什么区别么？区别最大的就是，之前是就是空中阁楼，说救，说稳，是各地自己探索。这次可以说是直接告诉你怎么做，剩下的就是靠各地自己的执行能力。在我看来这是一个很明显的信号，就是拿老房子换新房子，剩下就看各地怎么做，怎么推，好地段的老房子换坏地段？还是贴钱换同一地段？地产的价值是可以通政府规划改变的，无论是老房子拆除卖地，还是给新地段增加设施。当地政府可以有很大的决定权的，地铁，商圈，服务，医院都是当地可以拿来利用的资源，通过这波资源调配，重新激活一下市场，将地产市场的库存消除，刺激经济流转。现在政策有了，指导方法也有了，剩下的就看当地的灵活性，这是一个很考验施政水平的政策，我可以说，这次做得好的人未来前途不可限量。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>经济</tag>
-        <tag>政治</tag>
-        <tag>以旧换新</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>杭州游记</title>
     <url>/2024/05/02/164-%E6%9D%AD%E5%B7%9E%E6%B8%B8%E8%AE%B0/</url>
     <content><![CDATA[<p>这次杭州之行获益良多，写下来防止自己忘记。<br />
@@ -4680,6 +4657,29 @@ Debain系统</p>
       </tags>
   </entry>
   <entry>
+    <title>政治和经济</title>
+    <url>/2024/05/10/165-%E6%94%BF%E6%B2%BB%E5%92%8C%E7%BB%8F%E6%B5%8E/</url>
+    <content><![CDATA[<p>我不可否认的是政治和经济有很强关联性，尤其是在国内这种政策经济市场下。但是我不喜欢动不动就说国内是集权国家，不是市场经济。经济就是经济，我谈论经济的时候，那就很简单的是经济，是一个根据市场自行反馈的一种相对应的机制。你可以讨论政策，因为这是国内环境所致，确实是政策指导经济。但是不要臆想，我谈论的政策是政策的本意，是政策想要达成的效果，而不是政策落地后的畸变，那是完全靠人来实施的东西，肯定会有变形，但这并不是攻击国家政体的理由。我们仅仅是讨论政策背后的想法和风向。如果不能抛弃对基层实施的主观想法，会影响你对经济走向的判断，经济就是经济。政策的落地是政策落地的问题，我们可以讨论这个政策落地的可能性，可行性，可操作性。这和这个政策本身是两回事。讨论它的操作性这是中层领导的工作。</p>
+<span id="more"></span>
+<p>你可以说他发布了一个空中楼阁的政策，然而你换个方向看，这个政策是带来风向指标的。一个国家层级的政策不是过家家，不会朝令夕改，至少也是经过一番思考才下达的。<br />
+就拿如今的以旧换新的政策来说，它的本意还是促进消费，包括但是不限于房地产行业。所以各地政策落地依旧套用这个壳，将房地产的以旧换新套上。它的本意是复制当年家电下乡的一波消费热潮，促进国内循环。然而现在是想要促进一波国内房地产的以旧换新。我们要了解政策的作用，政策是从上到下的，上面说要以旧换新，下面要负责具体细节。各地政府作为一个权力机构，是可以拥有很大的市场调节能力的，主要是要给予他们一个政策，让他们师出有名。以旧换新的政策就是这个名，他们需要一个理由和借口，来干预和参与地产的交易，地方政府可以适当性的拓宽权力的手脚，包括那些交易过程的资金，产权这些。这个名给了他们权力操作这些，当然其中产生的腐败也是有可能的，这可以说是必然的。<br />
+以旧换新的政策给我最大的信心就是：下面的人你们放手干，我给你们撑腰。官吏官吏，官做出决策，现在要吏去实行，吏现在有了批条，就可以大展拳脚。不要小瞧基层的力量，他们可以上门做思想工作，可以劝说，可以慰问。只要你愿意将你二环的老房子换到偏僻的大房子即可。名是以旧换新，还可以作为民生政绩，改善居民居住环境。这是一个体现政绩符合民生的好想法。剩下就看吏有没有足够的动力去执行，看各地官员的御人之道了。<br />
+那么这些和之前那些的地产政策有什么区别么？区别最大的就是，之前是就是空中阁楼，说救，说稳，是各地自己探索。这次可以说是直接告诉你怎么做，剩下的就是靠各地自己的执行能力。在我看来这是一个很明显的信号，就是拿老房子换新房子，剩下就看各地怎么做，怎么推，好地段的老房子换坏地段？还是贴钱换同一地段？地产的价值是可以通政府规划改变的，无论是老房子拆除卖地，还是给新地段增加设施。当地政府可以有很大的决定权的，地铁，商圈，服务，医院都是当地可以拿来利用的资源，通过这波资源调配，重新激活一下市场，将地产市场的库存消除，刺激经济流转。现在政策有了，指导方法也有了，剩下的就看当地的灵活性，这是一个很考验施政水平的政策，我可以说，这次做得好的人未来前途不可限量。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>经济</tag>
+        <tag>政治</tag>
+        <tag>以旧换新</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>奶奶</title>
     <url>/2022/05/30/166-%E5%A5%B6%E5%A5%B6/</url>
     <content><![CDATA[<p>奶奶的病大概发现在八九月份。那时候大家都在外地营生。一开始是家里说，奶奶晕倒了，大家以为是贫血或者营养不良，毕竟奶奶自从牙齿坏了之后天天都是白粥加豆腐乳，肉的硬的一律不碰。家里没当回事，毕竟奶奶身体好的很，还能下地干活。但是为了保险起见，就让张兵带着去市里的医院检查一下。然后查出来是：胃癌，晚期。几个大姑，小姨都来到了医院，大伯也从天津回去。倒是我爸没回去，也许觉得不是大事吧，或者他现在有大事要忙。自从我爸破产了之后，嘴里天天念叨着我马上有个赚钱的大活要下来，我要去协调。也正是那时候我大伯管起了家里大大小小的事，奶奶这事，他管。他回来了，当天就请了医生去吃饭，找了关系，安排了手术。不可谓不快，但是现在看来总归是毛躁了点。也许是饭的作用，也许是病情确实比较急，奶奶手术安排很快，几天后。这些天没人告诉奶奶他的病，不知道是谁起的头，还是觉得没文化的奶奶也许没办法理解什么叫癌症，所以没人告诉她实情，没有那种客观的分析，没有人告诉她手术的生存几率，没有，什么都没有。他们就说：你胃里长了一块东西，要手术，取出来。奶奶知道或者说算知道吧。手术的前夜：我大伯和奶奶彻夜长谈。我大娘说看见两个人都在抹眼泪。我爸还在天津，忙他的大事。<br />
@@ -4730,6 +4730,66 @@ Debain系统</p>
       <tags>
         <tag>奶奶</tag>
         <tag>一些往事</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>元宵</title>
+    <url>/2022/10/26/167-%E5%85%83%E5%AE%B5/</url>
+    <content><![CDATA[<p>元宵是一个大节。<br />
+我们村很多人都出去做生意，但是他们一般都会等到元宵结束之后再出去。对他们来说，元宵是个大节。<br />
+我们村的元宵节是在正月十五，有的村在十四，也有初六就开始了。元宵只是一个节日名，具体日期由各个村自己决定。元宵的习俗一般是游村，福寿，祈福这些组成的。游村就是村里男女老少将庙里的菩萨，妈祖一个个请出来，游行。分两次，一次在十五的早上，游内围，就是村里面，有住处的地方。第二次到十六的早上，游外围，这次是把村里在外面的田地都围一圈游行。而福寿就是按照族谱排序，一年一个，按族谱登记顺序。轮到你，你今年就是福寿，十五游行完后，妈祖像不回庙里，在你家呆一晚，那天晚上要让村里众人到你家给妈祖上香，还要请天师过来举办祈福仪式。这还没完，以后的一年内，妈祖的香炉要放在你家，一年大小节日，村里都得备着你家的这一份贡品。<br />
+由此可见，这算是件大事。不仅要接神，还要招待一村的善男信女，是个劳力伤财的事情。一开始村里穷，大家都简单置办，有点茶，有点水果就是招待的极好了。那些年大家伙赚了钱，就开始摆阔。一开始只是来的烧香有茶水，后面变成了，得摆几桌。慢慢得就变成了，要请全村吃饭。再后面，有个福寿起了头，改了规矩：一年一个轮着到你家，估计你就七八十了，那时候村里出生的人多，一家都是两三个以上。于是大家一合计就同意了。于是仪式过程不变，福寿变成两个，一个接神，一个举办祈福仪式。这样，福寿就有了正副之分。<br />
+那时候得元宵是一个家庭财力得象征，毕竟富贵不归故乡，如衣锦夜行，谁知之者。所以每年得元宵，大家都满怀期待。尤其到了大家都知道得富贵人家。今年他家立了一个气球拱门，明年那家就请迎宾小姐夹道欢迎。当然不是所有村里得都是那么有钱得，但是总归在招待上不会落得下风，否则到了晚上祈福环节，村里的人会不来，气氛比往年冷淡，那就真是丢了面子。而且村中迷信：这菩萨得香炉在我家，我办得浩大，办的隆重，心里想的事就越容易成。其实村里想的不外乎就是钱财和子孙，恰好那年福寿家发了大财，于是大家就越传越神乎，仪式也越发得繁琐，越复杂说明我越虔诚。<br />
+祈福和接神是抽签决定得，大家一般希望抽到祈福：祈福在晚上，8点左右开始，那时候正值大家晚饭消食。所以村里人一般都会前去观察。然而结束要到十一二点，  这就不是所有人都能撑得住。所以主人家就各凭本事留人；茶水，果点。怕客人渴或饿。但并不是所有人都是善男信女，这时候就得有别的玩意给人解闷。这个一般就是赌博。赌博有三公，有牌九，有麻将。看主人家得本事了。这东西一般主人家起头，带动气氛，主人家坐庄。<br />
+前几年风头正劲的时候，一晚上几百万的输赢，一晚上倾家荡产的也有，一晚上翻身做地主的也有，但是赌这东西，可轻可重，遇见见好就收的，打个折，让人家留点翻身的底就过去了，但是也有那种斤斤两两都要算清楚的，人家可就是奔着赚钱来赌钱的。所以每年过完年，倾家荡产的也有，夫妻吵架离婚得也不少，一年打白工的也不少，但是那几年钱好赚，一年就翻几番，所以大家也就不当回事。你说这几百万输赢下来总得有几个笑得吧，但是赌桌这东西，十赌九输，哭的人多，笑得人少，更何况有些人是专门来赌博得。一般在福寿家都是本村里的人，毕竟村村习俗不同，村里得人虽说不是熟悉，但也是一问就清楚。然而那时候往往会有一些没见过的，一问就说是谁谁家得亲戚，至于是不是亲戚？谁知道呢，本村人玩牌，输赢差不多就行，输多了还会有人劝，毕竟大家知根知底，但是外来得这些就不一样，不仅赌资大，而且有时候看对方上头，还一个劲得叫嚣，一来二去的，大家也就猜到了。心明得，一眼就知道这是专门赌钱得，但是总有眼瞎得。后面慢慢得，每年得元宵不仅本村来，也有外面得来凑热闹，大家就见怪不怪了。不仅这个村得参加，别的村元宵也参加。由于大家得元宵日子都不在一起，于是一到年后，就有几个人在那一村村得跑，一村村得赌。<br />
+村里得赌，体现得野蛮和简陋，牌桌上没有什么避讳，就一个八仙桌，四面站人，围得水泄不通，看的人，有一起合资，有光看不赌得，也有专门得会计在一边帮忙记账，而且其中还有专门叫好得，也有混合作的，一看牌好，嘴上一喊，赢了分钱，输了均摊，更有等着收盘，分点彩头钱，几百万得大局，一般不会带太多现金，而且很多时候也没想着往大几百万上输赢，大家最多带个50万得现金。现金拆散，有几个专门帮忙点钱捆扎，这是个肥差，抽个几张也无人知晓。<br />
+所以，元宵节得赌博是个赚钱的好机会，主人家也乐于这些人过来，毕竟这些人一赌起来不到凌晨是不会走的，显得主人家人脉广泛。这几年经济不好，大家也就赌的小了，不赌是不可能的。以前是大几百万，现在一晚上有个十来万就算是大的，大家也就几千几千的赌。但也比那些上班的一年赚得多。<br />
+村里也并不是都是有钱人，有普通的，也有穷的揭不开锅的。普通人家办一场，虽不能说伤筋动骨，但是十几万进去也就跟打水漂似的。穷的呢，也能办，只不过到处尽显凄凉。在我们村，有一户人家，现在还是一层小砖房，房子的主人，小时候伤了脑袋，到现在大脑门上还能看到一块凹进去的。户主伤病，也就没有趁着那股淘金的热潮出去，没赚到什么钱，在家务农种地，日子虽不能说清贫，但是毕竟光靠地，是赚不到什么钱，那人还爱喝酒，那就更坏菜了。但是再咋样，族谱上还是有他的名字，还是有轮到他做福寿的时候。<br />
+我特别记得那年，那年的祈福，分外的安静，连牌桌都没有。但是到了天师过来祈福仪式得时候，砖瓦房内也是坐满了人，虽然不如往年多，对他们家来说，算是很多了，主人家摆了四桌，用来给人闲坐，还有几箱啤酒。我做了一会，觉得无聊就走了。那家得女主人满怀希望得觉得他们家要翻身了。多年以后，他们家还是一层得瓦楼，这时候就有人怪他那年得仪式不够隆重，不够虔诚。<br />
+村里得迷信没有尽头，有拼香火得，有拼贡银得，有拼捐钱得，也有拼跪拜得时间，更有甚至，我另请一座神像到我家中，另开炉灶。求神拜佛本没有什么过错，但是这攀比之间就产生种种矛盾，贡品要用斋得，要精致，只能给一个神供过，不能二次使用，贡品菜色要多，但是有几样是必须得。每每春节，我看到他们不厌其烦得准备这一道又一道得贡品。而这些贡品大多数素菜，然后又赶上过年大鱼大肉，反正少有供完之后入了肚子，更多的是和其他得剩菜一起喂了鸭子。<br />
+轮到我爸做元宵得时候，正好赶上得是我奶奶生病，然后又遇上疫情。所以是不能大张旗鼓得，这给了我松了一大口气。那时候得财务状况不算好，但是辛苦一年，将一年收入扔到这上面，心中还是有点不舒服，更何况元宵福寿有点被架在上面得仪式，我要是办得小了，丢了面子，全村看笑话，办大了，自己又承受不住，毕竟那些年疫情导致大家都过得不好。所以那时候借着疫情得由头，我们减少了规模，然后还比普通得仪式少了很多程序，可以说又省钱又省力。没有客人参观，所以瓜果不用准备，也不必专门搞个地方给那些赌鬼。请村里吃饭，也被我们两个福寿合资在村里戏台办了几十桌，村里人自己过去吃，酒水各出各的，家里再办一顿，请自己得至亲好友。就这样，如果涵盖酒水得话，那年也是快20万得开销。对我家来说，也是一笔巨大得开销。</p>
+<hr />
+<p>PS:本来元宵篇是奶奶那边独择出来得一篇，里面本来是应该有元宵的热闹和已经被剥离这个世界的奶奶的一些情景，但是由于拖得太久忘记了，加上爷爷这边发生了微信大战，就先这么着吧。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>那些年遇见的人</category>
+      </categories>
+      <tags>
+        <tag>奶奶</tag>
+        <tag>元宵</tag>
+        <tag>习俗</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>爷爷</title>
+    <url>/2023/04/06/168-%E7%88%B7%E7%88%B7/</url>
+    <content><![CDATA[<h2 id="爷爷的病从中秋过了一个国庆在11月初就去世了整个过程可以说的上是短的但是却是我爸嘴里念叨的最多的-要不是老头子的病耽误的我早就早就怎么样经过了老头子的事我看不起他我大伯-确实爷爷最后一段时间我大伯做的确实平淡了些好像从一开始就在等那个日子好在这次没有像奶奶那样耗时日久-爷爷的病大伯早就知道全身扩散晚期-我大伯瞒住了没说老头子又喝酒了就这么乐呵乐呵的又过了半年最后因为在村医那里用药不当导致心脏不舒服送了趟急诊-好巧不巧出院哪天隔壁床的病人忽然就死了-爷爷一生信命觉得这是不祥就又住了一晚-这成了他心里得一个心结回来之后身体就垮了-爷爷是个老传统老古董信命信神最后也相信自己能熬过去-家中大小事情都是由爷爷说了算那是以前晚年却落得要配合自己大儿媳得脾气也算是一种轮回吧-我对爷爷的霸道最早的体验是我哥的初中伙食费那时候我哥在城里读书爷爷大手一挥每天10块每周50一周周给-这落后的给钱制度让我哥长大之后饱受胃疼的折磨-爷爷对钱是有强大的控制欲的-但是他还是念亲情的当初我爸破产我哥自己出来单干爷爷给了我哥5w-我哥在最后的那段时间还给了他他又找了借口把这钱给我了最后这钱又转回来了-做这事的时候我大伯知道他看着那天就只有我们4个人-但是他的老婆后面就开始追问爷爷的五万去哪里了又是求神又是问佛-爷爷走后钱划分的干净这次是我大伯分的20多万拿出一部分做丧事拿出一部分打几个金首饰给儿女剩下的几个孙子分了丧事不够的我大伯兜底了-我们对分法没什么意见-主要是我大伯分说的清清楚楚钱也有去处不要像奶奶那时候我大娘拿着然后也不说分也不说不分-有钱人都是占着理的-爷爷的病他自己到老去都不知道这叫临终关怀-我不懂但是也许我到了那个时候也就无能为力吧-爷爷可以说给我上了一课一个人到老了能有多么的卑微-奶奶走后开始分家-分家是我爸提出来的但是谁都知道分是必然的我爸是个傻逼他忍不住-分家男人这边很简单就一个茶水间搬一下没了-女人这就都是事了我们打电话给我妈意思很明确这两年我们兄弟在外面做生意都是我大伯帮衬要说钱厨房那些都给他们都不够-所以我大娘要啥你就给缺啥我们给你买-我妈听进去了厨房分的干脆-但是到了后面田地就不行了-我大娘要多-老家的地都是田地这两年搞了耕地红线更是只能种不能盖-我妈种不来我大娘也种不动-但是她就要她大女儿出生早之前分地时候她有份这份她要拿回去然后她儿子是长子长孙再多拿一块-本来也是没啥事你要愿意多要那就多给你点村里这些地我们都认不全-爷爷那时候还在看着这一切发生-分完地我哥回去-我爷爷对我哥说你妈这次做的很好-他也知道我妈这次真真的受欺负了-但是他已经没法说上话了-地分完了我大娘留了个心眼有块后院的地没拿出来然后家门口得两块菜地分完是一家一半她想全要-于是让我大伯找我哥说我哥问了我妈我妈忍了-就同意了我大娘就去种了-但我妈也是个傻逼几天后她反悔了-于是我们有理变成了无理-我哥也不想理这事了就放着他们闹-我爷爷从头到尾也说不上话任着她们闹还好没出现分完了又重新分得情况-分地这事也闹着全村皆知这分地本身就得请村里得老人过来见证一下-有时候我也不明白我大伯这么好面子的人就让他老婆这么折腾是不知道这事还是觉得这事小不想参与-然后就是照顾爷爷一家一个月的照顾-到了他们家我大娘还种着地有时候晚上晚回来点我爷爷吃饭准点但是也得迁就着-我妈有时候会过去问要不要在这边吃点他摆摆手不用-爷爷对我大娘是又疼又怕的我大娘从小来我们家是童养媳-爷爷奶奶第一个孩子夭折了去问了算命的算命的说让其领养一个-领养完我大娘之后爷爷奶奶的孩子就再也没出过事所以我大娘在我爷爷奶奶眼里不仅仅是童养媳这么简单甚至在我那些姑姑眼里也不是一个简单的妯娌她是和他们从小玩到大的而且还是他们最大的那个有点像小时候得孩子王一样但这份份感情在爷爷去世之后就变得荡然无存-爷爷好喝酒到了那个时候也没想着让他禁酒就劝少喝少喝-我大娘不让把酒藏起来我爷爷也无奈只能吃饭就睡-我问过爷爷咋老这么喝酒爷爷说全身疼喝点酒晚上好睡觉-我妈倒是没什么拦着还张罗着我们买酒倒不是她明事理主要是她傻-我爷爷就两个儿子所以我妈从进张家得门就不受我爷爷奶奶待见从小时候家中大大小小的事也是爷爷和我大娘商量了一下然后就决定了无论了种地买菜宴席请客-所以我妈就觉得她啥事都要比大娘小一头啥事都要超过大娘我大娘不让爷爷喝酒那我就让-我们也劝过我妈但是一个人一直活在别人得阴影下总归有点畸形得心理-奶奶去世之后大娘期间做的种种早就让几个姑姑侧目了姑姑们也就不怎么来家里-分家之后就更少了-以前好歹一家吃饭现在两家赶上饭点去谁那吃都不知道搞不好还落得埋怨-我堂哥大姑得儿子给我大伯打工那天就落得一个尴尬得境地回老家看望爷爷午餐没得吃我大娘没煮我妈也觉得不该来我们这边吃饭于是就落得一个无饭可吃的地步灰溜溜的回家-我大娘抠唆但也不是真的抠就是那种富人的抠唆-比如饭多煮了然后不舍得扔就吃剩下的菜有时候菜多了就热了又热这和我奶奶很像但不一样的是奶奶有时候就躲着偷偷一个人吃剩菜到了我大娘则是光明正大的让客人一起吃-我二姑两次回来都被拉着吃剩菜二姑受不了找我们说了好多次-爷爷在他们那吃好吃坏那就不清楚了谅不至于-这次爷爷病重又得人照顾大姑姑没办法还是辞去了工来到家里-大姑姑家里是多挫折这几年确实是我大伯帮衬着但是在老人这事上我觉得她也仅仅是想着让老人舒服一点走吧-但是我大娘不这么觉得这些女儿是回来抢家产的你以为是什么好东西-终于有一天晚上闹了一场-大娘喊着这些女儿回来干啥不就是回来抢财产的-我大伯听的受不了出手打了我大娘一巴掌-这事本来就这么了了毕竟谁家没有几本难念的经妯娌之间不和也不是什么大事-但是奇葩的是我的几个堂姐听说她妈被人打了就开始捉妖了-这要从我大伯和大娘说起我大娘是童养媳我大伯和我大娘虽然没有多少感情但是亲情是肯定有的-他们从小一起长大而且我大娘给我大伯生了6个孩子他们之间不一定有爱情但是肯定有亲情-以至于到了后面我爷爷向我大伯控诉大娘天天种地都不愿意照顾奶奶时我大伯一开始还是不相信的-反而觉得这老头子挑事-所以我大娘一直塑造的人设是为了这个家尽职尽责然后这些年为了照顾老人一直在老人身边-这你们几个姑姑不想着感谢还这么挑拨离间我们父母的感情让我爸打我妈这能得了这几个堂姐突出的就是一个没理也是有理-仗着就是现在家里靠着大伯你们这些姑姑侄子都是受过我爸帮衬的-今天我妈被打就是你们几个姑姑挑拨的我妈没做错就算错我妈这么多年的苦也可以受得了-整一个泼妇骂街当事人我大娘就哭着要回娘家-事情最后也是不了了之-我至今没明白我堂姐他们整这一出是为了啥人是她爸打的往大了说就是妯娌吵架往小了说是夫妻动手-哪个也轮不到你们堂姐说话-堂姐们在群里撒泼得画面我以后会专门开出一章讲究得就是一个有钱人就是没理也占着理-我以前一直觉得写东西没啥后面写多了发现确实有差距就像我现在将事情讲清楚可以但是要让读者领略到我当时的无语和愤怒那就需要大量得描述而大量细节得描述就又得靠写手得功力了-我大姑姑命惨儿子赌博欠了几百万-大姑丈看儿子这样那几年也心灰意冷过度劳累死命工作后面得了癌症走了几个姑丈里面走的最早得-所以我大伯帮衬着多给她儿子一份工也帮忙给家里盖几层楼-大姑姑之前跟我大娘走的也近我妈一直是家里排挤得那个但是奶奶事情之后我大姑姑心里就憋着一股气那天仅仅是大家得一个泄口罢了-我大娘一直在给自己立苦命得人设他的几个女儿一直觉得她妈在家里就是受欺负得-其实他妈在爷爷奶奶心里地位不同凡响从我小时候家里内事都是她做主得哪怕是我爸最风光得几年也是她做主得-他的苦来自她自己和她老公她生了6个孩子到最后一个才是男得从前就听过我妈生我哥得时候她自己委屈得跑到房间里哭生我得时候也是-他的第二个苦来自我大伯她老公-我大伯在外面有女人了而且大家早就公开了所以她觉得自己苦然后她女儿们也觉得她妈苦-但是说实话我大伯至今和她没有离婚外面得女人也从来不带回去家里得家用也给的足而且还按照她得要求在城里买了一套房-除开感情我大伯对她不薄再说感情我大伯对她可谓亲情满满家里得事也是互相商量得来甚至有时候还是以她为主-至于说把我大娘一个人扔在家里这倒不至于我大娘以前也在我大伯身边跟过两人在外面同住一套房不同房间也相安无事-但是我大娘就不愿意出去哪怕爷爷去世之后她现在也在老家守着那个房子看着那些地-从医院回来以后爷爷身体垮得很快到了后面就慢慢的连门都不愿意出-其实那时候他身体还好劝劝还能出去老人协会看看别人打麻将-但是心理上接受不了他觉得自己身体不行了开始求神念佛有时候觉得一天尿尿太多次都是问题爷爷在躺下之前是被自己活生生得吓死得-爷爷对神可以说是虔诚也可说是不虔诚-他很念古法也很要强-年底元宵全村进贡是有章法得他每年都得过去把关大家也给他面子让他把关-但是这几年思潮变了慢慢的大家就想简便着来于是爷爷就过来阻止过来拉着主人家说着古法不可变-但是到了晚年尤其最近这几年他倒是通透了多很多事都不理我妈求神贡品开销太大他倒是劝着穷有穷得贡法富有富得贡法心意到了就行-我妈觉得爷爷在骂她穷她不乐意-但是人到老了以前放下得现在又拿回来了爷爷哪怕到了最后几天也觉得自己是这么虔诚走不了走不了-到老去也不愿意自己穿上寿衣-爷爷走了但是没穿寿衣-一群人就满朝热火得开始给他换衣服-爷爷最后一个月都是在床上躺着还穿着尿不湿-就这样我看着他们拉出了一个满是屎尿得尿不湿-忙里忙外得给他穿上寿衣嘴上念叨着整整齐齐-过分的忙碌以至于没有了悲伤得气氛我就这么在那木讷得看着这一场换装脑袋里空空如也-那一刻我也死去了"><a class="markdownIt-Anchor" href="#爷爷的病从中秋过了一个国庆在11月初就去世了整个过程可以说的上是短的但是却是我爸嘴里念叨的最多的-要不是老头子的病耽误的我早就早就怎么样经过了老头子的事我看不起他我大伯-确实爷爷最后一段时间我大伯做的确实平淡了些好像从一开始就在等那个日子好在这次没有像奶奶那样耗时日久-爷爷的病大伯早就知道全身扩散晚期-我大伯瞒住了没说老头子又喝酒了就这么乐呵乐呵的又过了半年最后因为在村医那里用药不当导致心脏不舒服送了趟急诊-好巧不巧出院哪天隔壁床的病人忽然就死了-爷爷一生信命觉得这是不祥就又住了一晚-这成了他心里得一个心结回来之后身体就垮了-爷爷是个老传统老古董信命信神最后也相信自己能熬过去-家中大小事情都是由爷爷说了算那是以前晚年却落得要配合自己大儿媳得脾气也算是一种轮回吧-我对爷爷的霸道最早的体验是我哥的初中伙食费那时候我哥在城里读书爷爷大手一挥每天10块每周50一周周给-这落后的给钱制度让我哥长大之后饱受胃疼的折磨-爷爷对钱是有强大的控制欲的-但是他还是念亲情的当初我爸破产我哥自己出来单干爷爷给了我哥5w-我哥在最后的那段时间还给了他他又找了借口把这钱给我了最后这钱又转回来了-做这事的时候我大伯知道他看着那天就只有我们4个人-但是他的老婆后面就开始追问爷爷的五万去哪里了又是求神又是问佛-爷爷走后钱划分的干净这次是我大伯分的20多万拿出一部分做丧事拿出一部分打几个金首饰给儿女剩下的几个孙子分了丧事不够的我大伯兜底了-我们对分法没什么意见-主要是我大伯分说的清清楚楚钱也有去处不要像奶奶那时候我大娘拿着然后也不说分也不说不分-有钱人都是占着理的-爷爷的病他自己到老去都不知道这叫临终关怀-我不懂但是也许我到了那个时候也就无能为力吧-爷爷可以说给我上了一课一个人到老了能有多么的卑微-奶奶走后开始分家-分家是我爸提出来的但是谁都知道分是必然的我爸是个傻逼他忍不住-分家男人这边很简单就一个茶水间搬一下没了-女人这就都是事了我们打电话给我妈意思很明确这两年我们兄弟在外面做生意都是我大伯帮衬要说钱厨房那些都给他们都不够-所以我大娘要啥你就给缺啥我们给你买-我妈听进去了厨房分的干脆-但是到了后面田地就不行了-我大娘要多-老家的地都是田地这两年搞了耕地红线更是只能种不能盖-我妈种不来我大娘也种不动-但是她就要她大女儿出生早之前分地时候她有份这份她要拿回去然后她儿子是长子长孙再多拿一块-本来也是没啥事你要愿意多要那就多给你点村里这些地我们都认不全-爷爷那时候还在看着这一切发生-分完地我哥回去-我爷爷对我哥说你妈这次做的很好-他也知道我妈这次真真的受欺负了-但是他已经没法说上话了-地分完了我大娘留了个心眼有块后院的地没拿出来然后家门口得两块菜地分完是一家一半她想全要-于是让我大伯找我哥说我哥问了我妈我妈忍了-就同意了我大娘就去种了-但我妈也是个傻逼几天后她反悔了-于是我们有理变成了无理-我哥也不想理这事了就放着他们闹-我爷爷从头到尾也说不上话任着她们闹还好没出现分完了又重新分得情况-分地这事也闹着全村皆知这分地本身就得请村里得老人过来见证一下-有时候我也不明白我大伯这么好面子的人就让他老婆这么折腾是不知道这事还是觉得这事小不想参与-然后就是照顾爷爷一家一个月的照顾-到了他们家我大娘还种着地有时候晚上晚回来点我爷爷吃饭准点但是也得迁就着-我妈有时候会过去问要不要在这边吃点他摆摆手不用-爷爷对我大娘是又疼又怕的我大娘从小来我们家是童养媳-爷爷奶奶第一个孩子夭折了去问了算命的算命的说让其领养一个-领养完我大娘之后爷爷奶奶的孩子就再也没出过事所以我大娘在我爷爷奶奶眼里不仅仅是童养媳这么简单甚至在我那些姑姑眼里也不是一个简单的妯娌她是和他们从小玩到大的而且还是他们最大的那个有点像小时候得孩子王一样但这份份感情在爷爷去世之后就变得荡然无存-爷爷好喝酒到了那个时候也没想着让他禁酒就劝少喝少喝-我大娘不让把酒藏起来我爷爷也无奈只能吃饭就睡-我问过爷爷咋老这么喝酒爷爷说全身疼喝点酒晚上好睡觉-我妈倒是没什么拦着还张罗着我们买酒倒不是她明事理主要是她傻-我爷爷就两个儿子所以我妈从进张家得门就不受我爷爷奶奶待见从小时候家中大大小小的事也是爷爷和我大娘商量了一下然后就决定了无论了种地买菜宴席请客-所以我妈就觉得她啥事都要比大娘小一头啥事都要超过大娘我大娘不让爷爷喝酒那我就让-我们也劝过我妈但是一个人一直活在别人得阴影下总归有点畸形得心理-奶奶去世之后大娘期间做的种种早就让几个姑姑侧目了姑姑们也就不怎么来家里-分家之后就更少了-以前好歹一家吃饭现在两家赶上饭点去谁那吃都不知道搞不好还落得埋怨-我堂哥大姑得儿子给我大伯打工那天就落得一个尴尬得境地回老家看望爷爷午餐没得吃我大娘没煮我妈也觉得不该来我们这边吃饭于是就落得一个无饭可吃的地步灰溜溜的回家-我大娘抠唆但也不是真的抠就是那种富人的抠唆-比如饭多煮了然后不舍得扔就吃剩下的菜有时候菜多了就热了又热这和我奶奶很像但不一样的是奶奶有时候就躲着偷偷一个人吃剩菜到了我大娘则是光明正大的让客人一起吃-我二姑两次回来都被拉着吃剩菜二姑受不了找我们说了好多次-爷爷在他们那吃好吃坏那就不清楚了谅不至于-这次爷爷病重又得人照顾大姑姑没办法还是辞去了工来到家里-大姑姑家里是多挫折这几年确实是我大伯帮衬着但是在老人这事上我觉得她也仅仅是想着让老人舒服一点走吧-但是我大娘不这么觉得这些女儿是回来抢家产的你以为是什么好东西-终于有一天晚上闹了一场-大娘喊着这些女儿回来干啥不就是回来抢财产的-我大伯听的受不了出手打了我大娘一巴掌-这事本来就这么了了毕竟谁家没有几本难念的经妯娌之间不和也不是什么大事-但是奇葩的是我的几个堂姐听说她妈被人打了就开始捉妖了-这要从我大伯和大娘说起我大娘是童养媳我大伯和我大娘虽然没有多少感情但是亲情是肯定有的-他们从小一起长大而且我大娘给我大伯生了6个孩子他们之间不一定有爱情但是肯定有亲情-以至于到了后面我爷爷向我大伯控诉大娘天天种地都不愿意照顾奶奶时我大伯一开始还是不相信的-反而觉得这老头子挑事-所以我大娘一直塑造的人设是为了这个家尽职尽责然后这些年为了照顾老人一直在老人身边-这你们几个姑姑不想着感谢还这么挑拨离间我们父母的感情让我爸打我妈这能得了这几个堂姐突出的就是一个没理也是有理-仗着就是现在家里靠着大伯你们这些姑姑侄子都是受过我爸帮衬的-今天我妈被打就是你们几个姑姑挑拨的我妈没做错就算错我妈这么多年的苦也可以受得了-整一个泼妇骂街当事人我大娘就哭着要回娘家-事情最后也是不了了之-我至今没明白我堂姐他们整这一出是为了啥人是她爸打的往大了说就是妯娌吵架往小了说是夫妻动手-哪个也轮不到你们堂姐说话-堂姐们在群里撒泼得画面我以后会专门开出一章讲究得就是一个有钱人就是没理也占着理-我以前一直觉得写东西没啥后面写多了发现确实有差距就像我现在将事情讲清楚可以但是要让读者领略到我当时的无语和愤怒那就需要大量得描述而大量细节得描述就又得靠写手得功力了-我大姑姑命惨儿子赌博欠了几百万-大姑丈看儿子这样那几年也心灰意冷过度劳累死命工作后面得了癌症走了几个姑丈里面走的最早得-所以我大伯帮衬着多给她儿子一份工也帮忙给家里盖几层楼-大姑姑之前跟我大娘走的也近我妈一直是家里排挤得那个但是奶奶事情之后我大姑姑心里就憋着一股气那天仅仅是大家得一个泄口罢了-我大娘一直在给自己立苦命得人设他的几个女儿一直觉得她妈在家里就是受欺负得-其实他妈在爷爷奶奶心里地位不同凡响从我小时候家里内事都是她做主得哪怕是我爸最风光得几年也是她做主得-他的苦来自她自己和她老公她生了6个孩子到最后一个才是男得从前就听过我妈生我哥得时候她自己委屈得跑到房间里哭生我得时候也是-他的第二个苦来自我大伯她老公-我大伯在外面有女人了而且大家早就公开了所以她觉得自己苦然后她女儿们也觉得她妈苦-但是说实话我大伯至今和她没有离婚外面得女人也从来不带回去家里得家用也给的足而且还按照她得要求在城里买了一套房-除开感情我大伯对她不薄再说感情我大伯对她可谓亲情满满家里得事也是互相商量得来甚至有时候还是以她为主-至于说把我大娘一个人扔在家里这倒不至于我大娘以前也在我大伯身边跟过两人在外面同住一套房不同房间也相安无事-但是我大娘就不愿意出去哪怕爷爷去世之后她现在也在老家守着那个房子看着那些地-从医院回来以后爷爷身体垮得很快到了后面就慢慢的连门都不愿意出-其实那时候他身体还好劝劝还能出去老人协会看看别人打麻将-但是心理上接受不了他觉得自己身体不行了开始求神念佛有时候觉得一天尿尿太多次都是问题爷爷在躺下之前是被自己活生生得吓死得-爷爷对神可以说是虔诚也可说是不虔诚-他很念古法也很要强-年底元宵全村进贡是有章法得他每年都得过去把关大家也给他面子让他把关-但是这几年思潮变了慢慢的大家就想简便着来于是爷爷就过来阻止过来拉着主人家说着古法不可变-但是到了晚年尤其最近这几年他倒是通透了多很多事都不理我妈求神贡品开销太大他倒是劝着穷有穷得贡法富有富得贡法心意到了就行-我妈觉得爷爷在骂她穷她不乐意-但是人到老了以前放下得现在又拿回来了爷爷哪怕到了最后几天也觉得自己是这么虔诚走不了走不了-到老去也不愿意自己穿上寿衣-爷爷走了但是没穿寿衣-一群人就满朝热火得开始给他换衣服-爷爷最后一个月都是在床上躺着还穿着尿不湿-就这样我看着他们拉出了一个满是屎尿得尿不湿-忙里忙外得给他穿上寿衣嘴上念叨着整整齐齐-过分的忙碌以至于没有了悲伤得气氛我就这么在那木讷得看着这一场换装脑袋里空空如也-那一刻我也死去了"></a> 爷爷的病从中秋，过了一个国庆，在11月初就去世了，整个过程可以说的上是短的，但是却是我爸嘴里念叨的最多的。“要不是老头子的病耽误的，我早就早就怎么样”，“经过了老头子的事，我看不起他（我大伯）”。确实，爷爷最后一段时间，我大伯做的确实平淡了些，好像从一开始就在等那个日子，好在这次没有像奶奶那样，耗时日久。爷爷的病大伯早就知道，全身扩散，晚期。我大伯瞒住了，没说，老头子又喝酒了，就这么乐呵乐呵的又过了半年，最后因为在村医那里用药不当，导致心脏不舒服，送了趟急诊。好巧不巧，出院哪天，隔壁床的病人忽然就死了。爷爷一生信命，觉得这是不祥，就又住了一晚。这成了他心里得一个心结，回来之后身体就垮了。<br />
+爷爷是个老传统，老古董，信命信神，最后也相信自己能熬过去。家中大小事情都是由爷爷说了算，那是以前，晚年却落得要配合自己大儿媳得脾气，也算是一种轮回吧。我对爷爷的霸道最早的体验是我哥的初中伙食费，那时候我哥在城里读书，爷爷大手一挥，每天10块，每周50，一周周给。这落后的给钱制度让我哥长大之后饱受胃疼的折磨。爷爷对钱是有强大的控制欲的。但是他还是念亲情的，当初我爸破产，我哥自己出来单干，爷爷给了我哥5w。我哥在最后的那段时间还给了他，他又找了借口把这钱给我了，最后，这钱又转回来了。做这事的时候，我大伯知道，他看着，那天就只有我们4个人。但是他的老婆后面就开始追问：爷爷的五万去哪里了？又是求神，又是问佛。爷爷走后，钱划分的干净，这次是我大伯分的，20多万，拿出一部分做丧事，拿出一部分打几个金首饰给儿女，剩下的几个孙子分了，丧事不够的我大伯兜底了。我们对分法没什么意见。主要是我大伯分，说的清清楚楚，钱也有去处，不要像奶奶那时候，我大娘拿着然后也不说分，也不说不分。有钱人都是占着理的。<br />
+爷爷的病他自己到老去都不知道，这叫临终关怀。我不懂，但是也许我到了那个时候也就无能为力吧。爷爷可以说给我上了一课，一个人到老了，能有多么的卑微。奶奶走后，开始分家。分家是我爸提出来的，但是谁都知道分是必然的，我爸是个傻逼，他忍不住。分家男人这边很简单，就一个茶水间搬一下，没了。女人这就都是事了，我们打电话给我妈，意思很明确：这两年我们兄弟在外面做生意，都是我大伯帮衬，要说钱厨房那些都给他们都不够。所以，我大娘要啥，你就给，缺啥我们给你买。我妈听进去了，厨房分的干脆。但是到了后面田地就不行了。我大娘要多。老家的地，都是田地，这两年搞了耕地红线，更是只能种不能盖。我妈种不来，我大娘也种不动。但是她就要：她大女儿出生早，之前分地时候她有份，这份她要拿回去，然后她儿子是长子长孙，再多拿一块。本来也是没啥事，你要愿意多要，那就多给你点，村里这些地我们都认不全。爷爷那时候还在，看着这一切发生。分完地，我哥回去。我爷爷对我哥说：你妈这次做的很好。他也知道我妈这次真真的受欺负了。但是他已经没法说上话了。地分完了，我大娘留了个心眼，有块后院的地没拿出来，然后家门口得两块菜地分完是一家一半，她想全要。于是让我大伯找我哥说，我哥问了我妈，我妈忍了。就同意了，我大娘就去种了。但我妈也是个傻逼，几天后她反悔了。于是我们有理变成了无理。我哥也不想理这事了，就放着他们闹。我爷爷从头到尾也说不上话，任着她们闹，还好没出现分完了又重新分得情况。分地这事也闹着全村皆知，这分地本身就得请村里得老人过来见证一下。有时候我也不明白，我大伯这么好面子的人，就让他老婆这么折腾，是不知道这事，还是觉得这事小，不想参与。<br />
+然后就是照顾爷爷，一家一个月的照顾。到了他们家，我大娘还种着地，有时候晚上晚回来点，我爷爷吃饭准点，但是也得迁就着。我妈有时候会过去问，要不要在这边吃点，他摆摆手不用。爷爷对我大娘是又疼又怕的，我大娘从小来我们家，是童养媳。爷爷奶奶第一个孩子夭折了，去问了算命的，算命的说让其领养一个。领养完我大娘之后，爷爷奶奶的孩子就再也没出过事，所以我大娘在我爷爷奶奶眼里不仅仅是童养媳这么简单，甚至在我那些姑姑眼里也不是一个简单的妯娌，她是和他们从小玩到大的，而且还是他们最大的那个，有点像小时候得孩子王一样，但这份份感情在爷爷去世之后就变得荡然无存。爷爷好喝酒，到了那个时候，也没想着让他禁酒，就劝少喝，少喝。我大娘不让，把酒藏起来，我爷爷也无奈，只能吃饭就睡。我问过爷爷咋老这么喝酒，爷爷说：全身疼，喝点酒，晚上好睡觉。我妈倒是没什么拦着，还张罗着我们买酒，倒不是她明事理，主要是她傻。我爷爷就两个儿子，所以我妈从进张家得门就不受我爷爷奶奶待见，从小时候家中大大小小的事也是爷爷和我大娘商量了一下，然后就决定了，无论了种地，买菜，宴席，请客。所以我妈就觉得她啥事都要比大娘小一头，啥事都要超过大娘，我大娘不让爷爷喝酒，那我就让。我们也劝过我妈，但是一个人一直活在别人得阴影下，总归有点畸形得心理。<br />
+奶奶去世之后，大娘期间做的种种早就让几个姑姑侧目了，姑姑们也就不怎么来家里。分家之后，就更少了。以前好歹一家吃饭，现在两家赶上饭点，去谁那吃都不知道，搞不好还落得埋怨。我堂哥，大姑得儿子，给我大伯打工，那天就落得一个尴尬得境地，回老家看望爷爷，午餐没得吃，我大娘没煮，我妈也觉得不该来我们这边吃饭，于是就落得一个无饭可吃的地步，灰溜溜的回家。我大娘抠唆，但也不是真的抠，就是那种富人的抠唆。比如饭多煮了，然后不舍得扔，就吃剩下的菜，有时候菜多了，就热了又热，这和我奶奶很像，但不一样的是奶奶有时候就躲着偷偷一个人吃剩菜，到了我大娘则是光明正大的让客人一起吃。我二姑两次回来，都被拉着吃剩菜，二姑受不了，找我们说了好多次。爷爷在他们那吃好吃坏那就不清楚了，谅不至于。这次爷爷病重，又得人照顾，大姑姑没办法，还是辞去了工，来到家里。大姑姑家里是多挫折，这几年确实是我大伯帮衬着，但是在老人这事上，我觉得她也仅仅是想着让老人舒服一点走吧。但是我大娘不这么觉得：“这些女儿是回来抢家产的,你以为是什么好东西”。终于有一天晚上，闹了一场。大娘喊着这些女儿回来干啥，不就是回来抢财产的。我大伯听的受不了，出手打了我大娘一巴掌。这事本来就这么了了，毕竟谁家没有几本难念的经，妯娌之间不和也不是什么大事。但是奇葩的是我的几个堂姐，听说她妈被人打了就开始捉妖了。这要从我大伯和大娘说起，我大娘是童养媳，我大伯和我大娘虽然没有多少感情，但是亲情是肯定有的。他们从小一起长大，而且我大娘给我大伯生了6个孩子，他们之间不一定有爱情，但是肯定有亲情。以至于到了后面我爷爷向我大伯控诉大娘天天种地都不愿意照顾奶奶时，我大伯一开始还是不相信的。反而觉得这老头子挑事。所以我大娘一直塑造的人设是为了这个家尽职尽责，然后这些年为了照顾老人，一直在老人身边。这你们几个姑姑不想着感谢，还这么挑拨离间我们父母的感情，让我爸打我妈，这能得了？<br />
+这几个堂姐突出的就是一个：没理也是有理。仗着就是现在家里靠着大伯，你们这些姑姑，侄子都是受过我爸帮衬的。今天我妈被打，就是你们几个姑姑挑拨的，我妈没做错，就算错，我妈这么多年的苦也可以受得了。整一个泼妇骂街，当事人我大娘就哭着要回娘家。事情最后也是不了了之。我至今没明白我堂姐他们整这一出是为了啥，人是她爸打的，往大了说就是妯娌吵架，往小了说是夫妻动手。哪个也轮不到你们堂姐说话。————堂姐们在群里撒泼得画面我以后会专门开出一章，讲究得就是一个：有钱人就是没理也占着理。我以前一直觉得写东西没啥，后面写多了发现，确实有差距，就像我现在将事情讲清楚可以，但是要让读者领略到我当时的无语和愤怒，那就需要大量得描述，而大量，细节得描述就又得靠写手得功力了。<br />
+我大姑姑命惨，儿子赌博，欠了几百万。大姑丈看儿子这样，那几年也心灰意冷，过度劳累，死命工作，后面得了癌症走了，几个姑丈里面走的最早得。所以我大伯帮衬着多，给她儿子一份工，也帮忙给家里盖几层楼。大姑姑之前跟我大娘走的也近，我妈一直是家里排挤得那个，但是奶奶事情之后，我大姑姑心里就憋着一股气，那天仅仅是大家得一个泄口罢了。<br />
+我大娘一直在给自己立苦命得人设，他的几个女儿一直觉得她妈在家里就是受欺负得。其实他妈在爷爷奶奶心里地位不同凡响，从我小时候家里内事都是她做主得，哪怕是我爸最风光得几年也是她做主得。他的苦来自她自己和她老公：她生了6个孩子，到最后一个才是男得，从前就听过，我妈生我哥得时候，她自己委屈得跑到房间里哭，生我得时候也是。他的第二个苦来自我大伯，她老公。我大伯在外面有女人了，而且大家早就公开了，所以她觉得自己苦，然后她女儿们也觉得她妈苦。但是说实话，我大伯至今和她没有离婚，外面得女人也从来不带回去，家里得家用也给的足，而且还按照她得要求：在城里买了一套房。除开感情，我大伯对她不薄，再说感情，我大伯对她可谓亲情满满，家里得事也是互相商量得来，甚至有时候还是以她为主。至于说把我大娘一个人扔在家里，这倒不至于，我大娘以前也在我大伯身边跟过，两人在外面同住一套房，不同房间，也相安无事。但是我大娘就不愿意出去，哪怕爷爷去世之后，她现在也在老家守着那个房子，看着那些地。<br />
+从医院回来以后，爷爷身体垮得很快，到了后面就慢慢的连门都不愿意出。其实那时候他身体还好，劝劝还能出去老人协会看看别人打麻将。但是心理上接受不了，他觉得自己身体不行了，开始求神念佛，有时候觉得一天尿尿太多次都是问题，爷爷在躺下之前，是被自己活生生得吓死得。爷爷对神可以说是虔诚也可说是不虔诚。他很念古法，也很要强。年底元宵全村进贡是有章法得，他每年都得过去把关，大家也给他面子，让他把关。但是这几年，思潮变了，慢慢的大家就想简便着来，于是爷爷就过来阻止，过来拉着主人家说着古法不可变。但是到了晚年，尤其最近这几年，他倒是通透了多，很多事都不理，我妈求神贡品开销太大，他倒是劝着：穷有穷得贡法，富有富得贡法，心意到了就行。我妈觉得爷爷在骂她穷，她不乐意。但是人到老了，以前放下得，现在又拿回来了，爷爷哪怕到了最后几天，也觉得自己是这么虔诚，走不了，走不了。到老去也不愿意自己穿上寿衣。<br />
+爷爷走了，但是没穿寿衣。一群人就满朝热火得开始给他换衣服。爷爷最后一个月都是在床上躺着，还穿着尿不湿。就这样，我看着他们拉出了一个满是屎尿得尿不湿。忙里忙外得给他穿上寿衣，嘴上念叨着整整齐齐。过分的忙碌以至于没有了悲伤得气氛，我就这么在那木讷得看着这一场换装，脑袋里空空如也。<br />
+那一刻我也死去了</h2>
+<p>2022/11/1 张九掌去世，谨以此文纪念</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>那些年遇见的人</category>
+      </categories>
+      <tags>
+        <tag>奶奶</tag>
+        <tag>爷爷</tag>
       </tags>
   </entry>
   <entry>
@@ -4815,66 +4875,6 @@ Debain系统</p>
       </tags>
   </entry>
   <entry>
-    <title>爷爷</title>
-    <url>/2023/04/06/168-%E7%88%B7%E7%88%B7/</url>
-    <content><![CDATA[<h2 id="爷爷的病从中秋过了一个国庆在11月初就去世了整个过程可以说的上是短的但是却是我爸嘴里念叨的最多的-要不是老头子的病耽误的我早就早就怎么样经过了老头子的事我看不起他我大伯-确实爷爷最后一段时间我大伯做的确实平淡了些好像从一开始就在等那个日子好在这次没有像奶奶那样耗时日久-爷爷的病大伯早就知道全身扩散晚期-我大伯瞒住了没说老头子又喝酒了就这么乐呵乐呵的又过了半年最后因为在村医那里用药不当导致心脏不舒服送了趟急诊-好巧不巧出院哪天隔壁床的病人忽然就死了-爷爷一生信命觉得这是不祥就又住了一晚-这成了他心里得一个心结回来之后身体就垮了-爷爷是个老传统老古董信命信神最后也相信自己能熬过去-家中大小事情都是由爷爷说了算那是以前晚年却落得要配合自己大儿媳得脾气也算是一种轮回吧-我对爷爷的霸道最早的体验是我哥的初中伙食费那时候我哥在城里读书爷爷大手一挥每天10块每周50一周周给-这落后的给钱制度让我哥长大之后饱受胃疼的折磨-爷爷对钱是有强大的控制欲的-但是他还是念亲情的当初我爸破产我哥自己出来单干爷爷给了我哥5w-我哥在最后的那段时间还给了他他又找了借口把这钱给我了最后这钱又转回来了-做这事的时候我大伯知道他看着那天就只有我们4个人-但是他的老婆后面就开始追问爷爷的五万去哪里了又是求神又是问佛-爷爷走后钱划分的干净这次是我大伯分的20多万拿出一部分做丧事拿出一部分打几个金首饰给儿女剩下的几个孙子分了丧事不够的我大伯兜底了-我们对分法没什么意见-主要是我大伯分说的清清楚楚钱也有去处不要像奶奶那时候我大娘拿着然后也不说分也不说不分-有钱人都是占着理的-爷爷的病他自己到老去都不知道这叫临终关怀-我不懂但是也许我到了那个时候也就无能为力吧-爷爷可以说给我上了一课一个人到老了能有多么的卑微-奶奶走后开始分家-分家是我爸提出来的但是谁都知道分是必然的我爸是个傻逼他忍不住-分家男人这边很简单就一个茶水间搬一下没了-女人这就都是事了我们打电话给我妈意思很明确这两年我们兄弟在外面做生意都是我大伯帮衬要说钱厨房那些都给他们都不够-所以我大娘要啥你就给缺啥我们给你买-我妈听进去了厨房分的干脆-但是到了后面田地就不行了-我大娘要多-老家的地都是田地这两年搞了耕地红线更是只能种不能盖-我妈种不来我大娘也种不动-但是她就要她大女儿出生早之前分地时候她有份这份她要拿回去然后她儿子是长子长孙再多拿一块-本来也是没啥事你要愿意多要那就多给你点村里这些地我们都认不全-爷爷那时候还在看着这一切发生-分完地我哥回去-我爷爷对我哥说你妈这次做的很好-他也知道我妈这次真真的受欺负了-但是他已经没法说上话了-地分完了我大娘留了个心眼有块后院的地没拿出来然后家门口得两块菜地分完是一家一半她想全要-于是让我大伯找我哥说我哥问了我妈我妈忍了-就同意了我大娘就去种了-但我妈也是个傻逼几天后她反悔了-于是我们有理变成了无理-我哥也不想理这事了就放着他们闹-我爷爷从头到尾也说不上话任着她们闹还好没出现分完了又重新分得情况-分地这事也闹着全村皆知这分地本身就得请村里得老人过来见证一下-有时候我也不明白我大伯这么好面子的人就让他老婆这么折腾是不知道这事还是觉得这事小不想参与-然后就是照顾爷爷一家一个月的照顾-到了他们家我大娘还种着地有时候晚上晚回来点我爷爷吃饭准点但是也得迁就着-我妈有时候会过去问要不要在这边吃点他摆摆手不用-爷爷对我大娘是又疼又怕的我大娘从小来我们家是童养媳-爷爷奶奶第一个孩子夭折了去问了算命的算命的说让其领养一个-领养完我大娘之后爷爷奶奶的孩子就再也没出过事所以我大娘在我爷爷奶奶眼里不仅仅是童养媳这么简单甚至在我那些姑姑眼里也不是一个简单的妯娌她是和他们从小玩到大的而且还是他们最大的那个有点像小时候得孩子王一样但这份份感情在爷爷去世之后就变得荡然无存-爷爷好喝酒到了那个时候也没想着让他禁酒就劝少喝少喝-我大娘不让把酒藏起来我爷爷也无奈只能吃饭就睡-我问过爷爷咋老这么喝酒爷爷说全身疼喝点酒晚上好睡觉-我妈倒是没什么拦着还张罗着我们买酒倒不是她明事理主要是她傻-我爷爷就两个儿子所以我妈从进张家得门就不受我爷爷奶奶待见从小时候家中大大小小的事也是爷爷和我大娘商量了一下然后就决定了无论了种地买菜宴席请客-所以我妈就觉得她啥事都要比大娘小一头啥事都要超过大娘我大娘不让爷爷喝酒那我就让-我们也劝过我妈但是一个人一直活在别人得阴影下总归有点畸形得心理-奶奶去世之后大娘期间做的种种早就让几个姑姑侧目了姑姑们也就不怎么来家里-分家之后就更少了-以前好歹一家吃饭现在两家赶上饭点去谁那吃都不知道搞不好还落得埋怨-我堂哥大姑得儿子给我大伯打工那天就落得一个尴尬得境地回老家看望爷爷午餐没得吃我大娘没煮我妈也觉得不该来我们这边吃饭于是就落得一个无饭可吃的地步灰溜溜的回家-我大娘抠唆但也不是真的抠就是那种富人的抠唆-比如饭多煮了然后不舍得扔就吃剩下的菜有时候菜多了就热了又热这和我奶奶很像但不一样的是奶奶有时候就躲着偷偷一个人吃剩菜到了我大娘则是光明正大的让客人一起吃-我二姑两次回来都被拉着吃剩菜二姑受不了找我们说了好多次-爷爷在他们那吃好吃坏那就不清楚了谅不至于-这次爷爷病重又得人照顾大姑姑没办法还是辞去了工来到家里-大姑姑家里是多挫折这几年确实是我大伯帮衬着但是在老人这事上我觉得她也仅仅是想着让老人舒服一点走吧-但是我大娘不这么觉得这些女儿是回来抢家产的你以为是什么好东西-终于有一天晚上闹了一场-大娘喊着这些女儿回来干啥不就是回来抢财产的-我大伯听的受不了出手打了我大娘一巴掌-这事本来就这么了了毕竟谁家没有几本难念的经妯娌之间不和也不是什么大事-但是奇葩的是我的几个堂姐听说她妈被人打了就开始捉妖了-这要从我大伯和大娘说起我大娘是童养媳我大伯和我大娘虽然没有多少感情但是亲情是肯定有的-他们从小一起长大而且我大娘给我大伯生了6个孩子他们之间不一定有爱情但是肯定有亲情-以至于到了后面我爷爷向我大伯控诉大娘天天种地都不愿意照顾奶奶时我大伯一开始还是不相信的-反而觉得这老头子挑事-所以我大娘一直塑造的人设是为了这个家尽职尽责然后这些年为了照顾老人一直在老人身边-这你们几个姑姑不想着感谢还这么挑拨离间我们父母的感情让我爸打我妈这能得了这几个堂姐突出的就是一个没理也是有理-仗着就是现在家里靠着大伯你们这些姑姑侄子都是受过我爸帮衬的-今天我妈被打就是你们几个姑姑挑拨的我妈没做错就算错我妈这么多年的苦也可以受得了-整一个泼妇骂街当事人我大娘就哭着要回娘家-事情最后也是不了了之-我至今没明白我堂姐他们整这一出是为了啥人是她爸打的往大了说就是妯娌吵架往小了说是夫妻动手-哪个也轮不到你们堂姐说话-堂姐们在群里撒泼得画面我以后会专门开出一章讲究得就是一个有钱人就是没理也占着理-我以前一直觉得写东西没啥后面写多了发现确实有差距就像我现在将事情讲清楚可以但是要让读者领略到我当时的无语和愤怒那就需要大量得描述而大量细节得描述就又得靠写手得功力了-我大姑姑命惨儿子赌博欠了几百万-大姑丈看儿子这样那几年也心灰意冷过度劳累死命工作后面得了癌症走了几个姑丈里面走的最早得-所以我大伯帮衬着多给她儿子一份工也帮忙给家里盖几层楼-大姑姑之前跟我大娘走的也近我妈一直是家里排挤得那个但是奶奶事情之后我大姑姑心里就憋着一股气那天仅仅是大家得一个泄口罢了-我大娘一直在给自己立苦命得人设他的几个女儿一直觉得她妈在家里就是受欺负得-其实他妈在爷爷奶奶心里地位不同凡响从我小时候家里内事都是她做主得哪怕是我爸最风光得几年也是她做主得-他的苦来自她自己和她老公她生了6个孩子到最后一个才是男得从前就听过我妈生我哥得时候她自己委屈得跑到房间里哭生我得时候也是-他的第二个苦来自我大伯她老公-我大伯在外面有女人了而且大家早就公开了所以她觉得自己苦然后她女儿们也觉得她妈苦-但是说实话我大伯至今和她没有离婚外面得女人也从来不带回去家里得家用也给的足而且还按照她得要求在城里买了一套房-除开感情我大伯对她不薄再说感情我大伯对她可谓亲情满满家里得事也是互相商量得来甚至有时候还是以她为主-至于说把我大娘一个人扔在家里这倒不至于我大娘以前也在我大伯身边跟过两人在外面同住一套房不同房间也相安无事-但是我大娘就不愿意出去哪怕爷爷去世之后她现在也在老家守着那个房子看着那些地-从医院回来以后爷爷身体垮得很快到了后面就慢慢的连门都不愿意出-其实那时候他身体还好劝劝还能出去老人协会看看别人打麻将-但是心理上接受不了他觉得自己身体不行了开始求神念佛有时候觉得一天尿尿太多次都是问题爷爷在躺下之前是被自己活生生得吓死得-爷爷对神可以说是虔诚也可说是不虔诚-他很念古法也很要强-年底元宵全村进贡是有章法得他每年都得过去把关大家也给他面子让他把关-但是这几年思潮变了慢慢的大家就想简便着来于是爷爷就过来阻止过来拉着主人家说着古法不可变-但是到了晚年尤其最近这几年他倒是通透了多很多事都不理我妈求神贡品开销太大他倒是劝着穷有穷得贡法富有富得贡法心意到了就行-我妈觉得爷爷在骂她穷她不乐意-但是人到老了以前放下得现在又拿回来了爷爷哪怕到了最后几天也觉得自己是这么虔诚走不了走不了-到老去也不愿意自己穿上寿衣-爷爷走了但是没穿寿衣-一群人就满朝热火得开始给他换衣服-爷爷最后一个月都是在床上躺着还穿着尿不湿-就这样我看着他们拉出了一个满是屎尿得尿不湿-忙里忙外得给他穿上寿衣嘴上念叨着整整齐齐-过分的忙碌以至于没有了悲伤得气氛我就这么在那木讷得看着这一场换装脑袋里空空如也-那一刻我也死去了"><a class="markdownIt-Anchor" href="#爷爷的病从中秋过了一个国庆在11月初就去世了整个过程可以说的上是短的但是却是我爸嘴里念叨的最多的-要不是老头子的病耽误的我早就早就怎么样经过了老头子的事我看不起他我大伯-确实爷爷最后一段时间我大伯做的确实平淡了些好像从一开始就在等那个日子好在这次没有像奶奶那样耗时日久-爷爷的病大伯早就知道全身扩散晚期-我大伯瞒住了没说老头子又喝酒了就这么乐呵乐呵的又过了半年最后因为在村医那里用药不当导致心脏不舒服送了趟急诊-好巧不巧出院哪天隔壁床的病人忽然就死了-爷爷一生信命觉得这是不祥就又住了一晚-这成了他心里得一个心结回来之后身体就垮了-爷爷是个老传统老古董信命信神最后也相信自己能熬过去-家中大小事情都是由爷爷说了算那是以前晚年却落得要配合自己大儿媳得脾气也算是一种轮回吧-我对爷爷的霸道最早的体验是我哥的初中伙食费那时候我哥在城里读书爷爷大手一挥每天10块每周50一周周给-这落后的给钱制度让我哥长大之后饱受胃疼的折磨-爷爷对钱是有强大的控制欲的-但是他还是念亲情的当初我爸破产我哥自己出来单干爷爷给了我哥5w-我哥在最后的那段时间还给了他他又找了借口把这钱给我了最后这钱又转回来了-做这事的时候我大伯知道他看着那天就只有我们4个人-但是他的老婆后面就开始追问爷爷的五万去哪里了又是求神又是问佛-爷爷走后钱划分的干净这次是我大伯分的20多万拿出一部分做丧事拿出一部分打几个金首饰给儿女剩下的几个孙子分了丧事不够的我大伯兜底了-我们对分法没什么意见-主要是我大伯分说的清清楚楚钱也有去处不要像奶奶那时候我大娘拿着然后也不说分也不说不分-有钱人都是占着理的-爷爷的病他自己到老去都不知道这叫临终关怀-我不懂但是也许我到了那个时候也就无能为力吧-爷爷可以说给我上了一课一个人到老了能有多么的卑微-奶奶走后开始分家-分家是我爸提出来的但是谁都知道分是必然的我爸是个傻逼他忍不住-分家男人这边很简单就一个茶水间搬一下没了-女人这就都是事了我们打电话给我妈意思很明确这两年我们兄弟在外面做生意都是我大伯帮衬要说钱厨房那些都给他们都不够-所以我大娘要啥你就给缺啥我们给你买-我妈听进去了厨房分的干脆-但是到了后面田地就不行了-我大娘要多-老家的地都是田地这两年搞了耕地红线更是只能种不能盖-我妈种不来我大娘也种不动-但是她就要她大女儿出生早之前分地时候她有份这份她要拿回去然后她儿子是长子长孙再多拿一块-本来也是没啥事你要愿意多要那就多给你点村里这些地我们都认不全-爷爷那时候还在看着这一切发生-分完地我哥回去-我爷爷对我哥说你妈这次做的很好-他也知道我妈这次真真的受欺负了-但是他已经没法说上话了-地分完了我大娘留了个心眼有块后院的地没拿出来然后家门口得两块菜地分完是一家一半她想全要-于是让我大伯找我哥说我哥问了我妈我妈忍了-就同意了我大娘就去种了-但我妈也是个傻逼几天后她反悔了-于是我们有理变成了无理-我哥也不想理这事了就放着他们闹-我爷爷从头到尾也说不上话任着她们闹还好没出现分完了又重新分得情况-分地这事也闹着全村皆知这分地本身就得请村里得老人过来见证一下-有时候我也不明白我大伯这么好面子的人就让他老婆这么折腾是不知道这事还是觉得这事小不想参与-然后就是照顾爷爷一家一个月的照顾-到了他们家我大娘还种着地有时候晚上晚回来点我爷爷吃饭准点但是也得迁就着-我妈有时候会过去问要不要在这边吃点他摆摆手不用-爷爷对我大娘是又疼又怕的我大娘从小来我们家是童养媳-爷爷奶奶第一个孩子夭折了去问了算命的算命的说让其领养一个-领养完我大娘之后爷爷奶奶的孩子就再也没出过事所以我大娘在我爷爷奶奶眼里不仅仅是童养媳这么简单甚至在我那些姑姑眼里也不是一个简单的妯娌她是和他们从小玩到大的而且还是他们最大的那个有点像小时候得孩子王一样但这份份感情在爷爷去世之后就变得荡然无存-爷爷好喝酒到了那个时候也没想着让他禁酒就劝少喝少喝-我大娘不让把酒藏起来我爷爷也无奈只能吃饭就睡-我问过爷爷咋老这么喝酒爷爷说全身疼喝点酒晚上好睡觉-我妈倒是没什么拦着还张罗着我们买酒倒不是她明事理主要是她傻-我爷爷就两个儿子所以我妈从进张家得门就不受我爷爷奶奶待见从小时候家中大大小小的事也是爷爷和我大娘商量了一下然后就决定了无论了种地买菜宴席请客-所以我妈就觉得她啥事都要比大娘小一头啥事都要超过大娘我大娘不让爷爷喝酒那我就让-我们也劝过我妈但是一个人一直活在别人得阴影下总归有点畸形得心理-奶奶去世之后大娘期间做的种种早就让几个姑姑侧目了姑姑们也就不怎么来家里-分家之后就更少了-以前好歹一家吃饭现在两家赶上饭点去谁那吃都不知道搞不好还落得埋怨-我堂哥大姑得儿子给我大伯打工那天就落得一个尴尬得境地回老家看望爷爷午餐没得吃我大娘没煮我妈也觉得不该来我们这边吃饭于是就落得一个无饭可吃的地步灰溜溜的回家-我大娘抠唆但也不是真的抠就是那种富人的抠唆-比如饭多煮了然后不舍得扔就吃剩下的菜有时候菜多了就热了又热这和我奶奶很像但不一样的是奶奶有时候就躲着偷偷一个人吃剩菜到了我大娘则是光明正大的让客人一起吃-我二姑两次回来都被拉着吃剩菜二姑受不了找我们说了好多次-爷爷在他们那吃好吃坏那就不清楚了谅不至于-这次爷爷病重又得人照顾大姑姑没办法还是辞去了工来到家里-大姑姑家里是多挫折这几年确实是我大伯帮衬着但是在老人这事上我觉得她也仅仅是想着让老人舒服一点走吧-但是我大娘不这么觉得这些女儿是回来抢家产的你以为是什么好东西-终于有一天晚上闹了一场-大娘喊着这些女儿回来干啥不就是回来抢财产的-我大伯听的受不了出手打了我大娘一巴掌-这事本来就这么了了毕竟谁家没有几本难念的经妯娌之间不和也不是什么大事-但是奇葩的是我的几个堂姐听说她妈被人打了就开始捉妖了-这要从我大伯和大娘说起我大娘是童养媳我大伯和我大娘虽然没有多少感情但是亲情是肯定有的-他们从小一起长大而且我大娘给我大伯生了6个孩子他们之间不一定有爱情但是肯定有亲情-以至于到了后面我爷爷向我大伯控诉大娘天天种地都不愿意照顾奶奶时我大伯一开始还是不相信的-反而觉得这老头子挑事-所以我大娘一直塑造的人设是为了这个家尽职尽责然后这些年为了照顾老人一直在老人身边-这你们几个姑姑不想着感谢还这么挑拨离间我们父母的感情让我爸打我妈这能得了这几个堂姐突出的就是一个没理也是有理-仗着就是现在家里靠着大伯你们这些姑姑侄子都是受过我爸帮衬的-今天我妈被打就是你们几个姑姑挑拨的我妈没做错就算错我妈这么多年的苦也可以受得了-整一个泼妇骂街当事人我大娘就哭着要回娘家-事情最后也是不了了之-我至今没明白我堂姐他们整这一出是为了啥人是她爸打的往大了说就是妯娌吵架往小了说是夫妻动手-哪个也轮不到你们堂姐说话-堂姐们在群里撒泼得画面我以后会专门开出一章讲究得就是一个有钱人就是没理也占着理-我以前一直觉得写东西没啥后面写多了发现确实有差距就像我现在将事情讲清楚可以但是要让读者领略到我当时的无语和愤怒那就需要大量得描述而大量细节得描述就又得靠写手得功力了-我大姑姑命惨儿子赌博欠了几百万-大姑丈看儿子这样那几年也心灰意冷过度劳累死命工作后面得了癌症走了几个姑丈里面走的最早得-所以我大伯帮衬着多给她儿子一份工也帮忙给家里盖几层楼-大姑姑之前跟我大娘走的也近我妈一直是家里排挤得那个但是奶奶事情之后我大姑姑心里就憋着一股气那天仅仅是大家得一个泄口罢了-我大娘一直在给自己立苦命得人设他的几个女儿一直觉得她妈在家里就是受欺负得-其实他妈在爷爷奶奶心里地位不同凡响从我小时候家里内事都是她做主得哪怕是我爸最风光得几年也是她做主得-他的苦来自她自己和她老公她生了6个孩子到最后一个才是男得从前就听过我妈生我哥得时候她自己委屈得跑到房间里哭生我得时候也是-他的第二个苦来自我大伯她老公-我大伯在外面有女人了而且大家早就公开了所以她觉得自己苦然后她女儿们也觉得她妈苦-但是说实话我大伯至今和她没有离婚外面得女人也从来不带回去家里得家用也给的足而且还按照她得要求在城里买了一套房-除开感情我大伯对她不薄再说感情我大伯对她可谓亲情满满家里得事也是互相商量得来甚至有时候还是以她为主-至于说把我大娘一个人扔在家里这倒不至于我大娘以前也在我大伯身边跟过两人在外面同住一套房不同房间也相安无事-但是我大娘就不愿意出去哪怕爷爷去世之后她现在也在老家守着那个房子看着那些地-从医院回来以后爷爷身体垮得很快到了后面就慢慢的连门都不愿意出-其实那时候他身体还好劝劝还能出去老人协会看看别人打麻将-但是心理上接受不了他觉得自己身体不行了开始求神念佛有时候觉得一天尿尿太多次都是问题爷爷在躺下之前是被自己活生生得吓死得-爷爷对神可以说是虔诚也可说是不虔诚-他很念古法也很要强-年底元宵全村进贡是有章法得他每年都得过去把关大家也给他面子让他把关-但是这几年思潮变了慢慢的大家就想简便着来于是爷爷就过来阻止过来拉着主人家说着古法不可变-但是到了晚年尤其最近这几年他倒是通透了多很多事都不理我妈求神贡品开销太大他倒是劝着穷有穷得贡法富有富得贡法心意到了就行-我妈觉得爷爷在骂她穷她不乐意-但是人到老了以前放下得现在又拿回来了爷爷哪怕到了最后几天也觉得自己是这么虔诚走不了走不了-到老去也不愿意自己穿上寿衣-爷爷走了但是没穿寿衣-一群人就满朝热火得开始给他换衣服-爷爷最后一个月都是在床上躺着还穿着尿不湿-就这样我看着他们拉出了一个满是屎尿得尿不湿-忙里忙外得给他穿上寿衣嘴上念叨着整整齐齐-过分的忙碌以至于没有了悲伤得气氛我就这么在那木讷得看着这一场换装脑袋里空空如也-那一刻我也死去了"></a> 爷爷的病从中秋，过了一个国庆，在11月初就去世了，整个过程可以说的上是短的，但是却是我爸嘴里念叨的最多的。“要不是老头子的病耽误的，我早就早就怎么样”，“经过了老头子的事，我看不起他（我大伯）”。确实，爷爷最后一段时间，我大伯做的确实平淡了些，好像从一开始就在等那个日子，好在这次没有像奶奶那样，耗时日久。爷爷的病大伯早就知道，全身扩散，晚期。我大伯瞒住了，没说，老头子又喝酒了，就这么乐呵乐呵的又过了半年，最后因为在村医那里用药不当，导致心脏不舒服，送了趟急诊。好巧不巧，出院哪天，隔壁床的病人忽然就死了。爷爷一生信命，觉得这是不祥，就又住了一晚。这成了他心里得一个心结，回来之后身体就垮了。<br />
-爷爷是个老传统，老古董，信命信神，最后也相信自己能熬过去。家中大小事情都是由爷爷说了算，那是以前，晚年却落得要配合自己大儿媳得脾气，也算是一种轮回吧。我对爷爷的霸道最早的体验是我哥的初中伙食费，那时候我哥在城里读书，爷爷大手一挥，每天10块，每周50，一周周给。这落后的给钱制度让我哥长大之后饱受胃疼的折磨。爷爷对钱是有强大的控制欲的。但是他还是念亲情的，当初我爸破产，我哥自己出来单干，爷爷给了我哥5w。我哥在最后的那段时间还给了他，他又找了借口把这钱给我了，最后，这钱又转回来了。做这事的时候，我大伯知道，他看着，那天就只有我们4个人。但是他的老婆后面就开始追问：爷爷的五万去哪里了？又是求神，又是问佛。爷爷走后，钱划分的干净，这次是我大伯分的，20多万，拿出一部分做丧事，拿出一部分打几个金首饰给儿女，剩下的几个孙子分了，丧事不够的我大伯兜底了。我们对分法没什么意见。主要是我大伯分，说的清清楚楚，钱也有去处，不要像奶奶那时候，我大娘拿着然后也不说分，也不说不分。有钱人都是占着理的。<br />
-爷爷的病他自己到老去都不知道，这叫临终关怀。我不懂，但是也许我到了那个时候也就无能为力吧。爷爷可以说给我上了一课，一个人到老了，能有多么的卑微。奶奶走后，开始分家。分家是我爸提出来的，但是谁都知道分是必然的，我爸是个傻逼，他忍不住。分家男人这边很简单，就一个茶水间搬一下，没了。女人这就都是事了，我们打电话给我妈，意思很明确：这两年我们兄弟在外面做生意，都是我大伯帮衬，要说钱厨房那些都给他们都不够。所以，我大娘要啥，你就给，缺啥我们给你买。我妈听进去了，厨房分的干脆。但是到了后面田地就不行了。我大娘要多。老家的地，都是田地，这两年搞了耕地红线，更是只能种不能盖。我妈种不来，我大娘也种不动。但是她就要：她大女儿出生早，之前分地时候她有份，这份她要拿回去，然后她儿子是长子长孙，再多拿一块。本来也是没啥事，你要愿意多要，那就多给你点，村里这些地我们都认不全。爷爷那时候还在，看着这一切发生。分完地，我哥回去。我爷爷对我哥说：你妈这次做的很好。他也知道我妈这次真真的受欺负了。但是他已经没法说上话了。地分完了，我大娘留了个心眼，有块后院的地没拿出来，然后家门口得两块菜地分完是一家一半，她想全要。于是让我大伯找我哥说，我哥问了我妈，我妈忍了。就同意了，我大娘就去种了。但我妈也是个傻逼，几天后她反悔了。于是我们有理变成了无理。我哥也不想理这事了，就放着他们闹。我爷爷从头到尾也说不上话，任着她们闹，还好没出现分完了又重新分得情况。分地这事也闹着全村皆知，这分地本身就得请村里得老人过来见证一下。有时候我也不明白，我大伯这么好面子的人，就让他老婆这么折腾，是不知道这事，还是觉得这事小，不想参与。<br />
-然后就是照顾爷爷，一家一个月的照顾。到了他们家，我大娘还种着地，有时候晚上晚回来点，我爷爷吃饭准点，但是也得迁就着。我妈有时候会过去问，要不要在这边吃点，他摆摆手不用。爷爷对我大娘是又疼又怕的，我大娘从小来我们家，是童养媳。爷爷奶奶第一个孩子夭折了，去问了算命的，算命的说让其领养一个。领养完我大娘之后，爷爷奶奶的孩子就再也没出过事，所以我大娘在我爷爷奶奶眼里不仅仅是童养媳这么简单，甚至在我那些姑姑眼里也不是一个简单的妯娌，她是和他们从小玩到大的，而且还是他们最大的那个，有点像小时候得孩子王一样，但这份份感情在爷爷去世之后就变得荡然无存。爷爷好喝酒，到了那个时候，也没想着让他禁酒，就劝少喝，少喝。我大娘不让，把酒藏起来，我爷爷也无奈，只能吃饭就睡。我问过爷爷咋老这么喝酒，爷爷说：全身疼，喝点酒，晚上好睡觉。我妈倒是没什么拦着，还张罗着我们买酒，倒不是她明事理，主要是她傻。我爷爷就两个儿子，所以我妈从进张家得门就不受我爷爷奶奶待见，从小时候家中大大小小的事也是爷爷和我大娘商量了一下，然后就决定了，无论了种地，买菜，宴席，请客。所以我妈就觉得她啥事都要比大娘小一头，啥事都要超过大娘，我大娘不让爷爷喝酒，那我就让。我们也劝过我妈，但是一个人一直活在别人得阴影下，总归有点畸形得心理。<br />
-奶奶去世之后，大娘期间做的种种早就让几个姑姑侧目了，姑姑们也就不怎么来家里。分家之后，就更少了。以前好歹一家吃饭，现在两家赶上饭点，去谁那吃都不知道，搞不好还落得埋怨。我堂哥，大姑得儿子，给我大伯打工，那天就落得一个尴尬得境地，回老家看望爷爷，午餐没得吃，我大娘没煮，我妈也觉得不该来我们这边吃饭，于是就落得一个无饭可吃的地步，灰溜溜的回家。我大娘抠唆，但也不是真的抠，就是那种富人的抠唆。比如饭多煮了，然后不舍得扔，就吃剩下的菜，有时候菜多了，就热了又热，这和我奶奶很像，但不一样的是奶奶有时候就躲着偷偷一个人吃剩菜，到了我大娘则是光明正大的让客人一起吃。我二姑两次回来，都被拉着吃剩菜，二姑受不了，找我们说了好多次。爷爷在他们那吃好吃坏那就不清楚了，谅不至于。这次爷爷病重，又得人照顾，大姑姑没办法，还是辞去了工，来到家里。大姑姑家里是多挫折，这几年确实是我大伯帮衬着，但是在老人这事上，我觉得她也仅仅是想着让老人舒服一点走吧。但是我大娘不这么觉得：“这些女儿是回来抢家产的,你以为是什么好东西”。终于有一天晚上，闹了一场。大娘喊着这些女儿回来干啥，不就是回来抢财产的。我大伯听的受不了，出手打了我大娘一巴掌。这事本来就这么了了，毕竟谁家没有几本难念的经，妯娌之间不和也不是什么大事。但是奇葩的是我的几个堂姐，听说她妈被人打了就开始捉妖了。这要从我大伯和大娘说起，我大娘是童养媳，我大伯和我大娘虽然没有多少感情，但是亲情是肯定有的。他们从小一起长大，而且我大娘给我大伯生了6个孩子，他们之间不一定有爱情，但是肯定有亲情。以至于到了后面我爷爷向我大伯控诉大娘天天种地都不愿意照顾奶奶时，我大伯一开始还是不相信的。反而觉得这老头子挑事。所以我大娘一直塑造的人设是为了这个家尽职尽责，然后这些年为了照顾老人，一直在老人身边。这你们几个姑姑不想着感谢，还这么挑拨离间我们父母的感情，让我爸打我妈，这能得了？<br />
-这几个堂姐突出的就是一个：没理也是有理。仗着就是现在家里靠着大伯，你们这些姑姑，侄子都是受过我爸帮衬的。今天我妈被打，就是你们几个姑姑挑拨的，我妈没做错，就算错，我妈这么多年的苦也可以受得了。整一个泼妇骂街，当事人我大娘就哭着要回娘家。事情最后也是不了了之。我至今没明白我堂姐他们整这一出是为了啥，人是她爸打的，往大了说就是妯娌吵架，往小了说是夫妻动手。哪个也轮不到你们堂姐说话。————堂姐们在群里撒泼得画面我以后会专门开出一章，讲究得就是一个：有钱人就是没理也占着理。我以前一直觉得写东西没啥，后面写多了发现，确实有差距，就像我现在将事情讲清楚可以，但是要让读者领略到我当时的无语和愤怒，那就需要大量得描述，而大量，细节得描述就又得靠写手得功力了。<br />
-我大姑姑命惨，儿子赌博，欠了几百万。大姑丈看儿子这样，那几年也心灰意冷，过度劳累，死命工作，后面得了癌症走了，几个姑丈里面走的最早得。所以我大伯帮衬着多，给她儿子一份工，也帮忙给家里盖几层楼。大姑姑之前跟我大娘走的也近，我妈一直是家里排挤得那个，但是奶奶事情之后，我大姑姑心里就憋着一股气，那天仅仅是大家得一个泄口罢了。<br />
-我大娘一直在给自己立苦命得人设，他的几个女儿一直觉得她妈在家里就是受欺负得。其实他妈在爷爷奶奶心里地位不同凡响，从我小时候家里内事都是她做主得，哪怕是我爸最风光得几年也是她做主得。他的苦来自她自己和她老公：她生了6个孩子，到最后一个才是男得，从前就听过，我妈生我哥得时候，她自己委屈得跑到房间里哭，生我得时候也是。他的第二个苦来自我大伯，她老公。我大伯在外面有女人了，而且大家早就公开了，所以她觉得自己苦，然后她女儿们也觉得她妈苦。但是说实话，我大伯至今和她没有离婚，外面得女人也从来不带回去，家里得家用也给的足，而且还按照她得要求：在城里买了一套房。除开感情，我大伯对她不薄，再说感情，我大伯对她可谓亲情满满，家里得事也是互相商量得来，甚至有时候还是以她为主。至于说把我大娘一个人扔在家里，这倒不至于，我大娘以前也在我大伯身边跟过，两人在外面同住一套房，不同房间，也相安无事。但是我大娘就不愿意出去，哪怕爷爷去世之后，她现在也在老家守着那个房子，看着那些地。<br />
-从医院回来以后，爷爷身体垮得很快，到了后面就慢慢的连门都不愿意出。其实那时候他身体还好，劝劝还能出去老人协会看看别人打麻将。但是心理上接受不了，他觉得自己身体不行了，开始求神念佛，有时候觉得一天尿尿太多次都是问题，爷爷在躺下之前，是被自己活生生得吓死得。爷爷对神可以说是虔诚也可说是不虔诚。他很念古法，也很要强。年底元宵全村进贡是有章法得，他每年都得过去把关，大家也给他面子，让他把关。但是这几年，思潮变了，慢慢的大家就想简便着来，于是爷爷就过来阻止，过来拉着主人家说着古法不可变。但是到了晚年，尤其最近这几年，他倒是通透了多，很多事都不理，我妈求神贡品开销太大，他倒是劝着：穷有穷得贡法，富有富得贡法，心意到了就行。我妈觉得爷爷在骂她穷，她不乐意。但是人到老了，以前放下得，现在又拿回来了，爷爷哪怕到了最后几天，也觉得自己是这么虔诚，走不了，走不了。到老去也不愿意自己穿上寿衣。<br />
-爷爷走了，但是没穿寿衣。一群人就满朝热火得开始给他换衣服。爷爷最后一个月都是在床上躺着，还穿着尿不湿。就这样，我看着他们拉出了一个满是屎尿得尿不湿。忙里忙外得给他穿上寿衣，嘴上念叨着整整齐齐。过分的忙碌以至于没有了悲伤得气氛，我就这么在那木讷得看着这一场换装，脑袋里空空如也。<br />
-那一刻我也死去了</h2>
-<p>2022/11/1 张九掌去世，谨以此文纪念</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>那些年遇见的人</category>
-      </categories>
-      <tags>
-        <tag>奶奶</tag>
-        <tag>爷爷</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>元宵</title>
-    <url>/2022/10/26/167-%E5%85%83%E5%AE%B5/</url>
-    <content><![CDATA[<p>元宵是一个大节。<br />
-我们村很多人都出去做生意，但是他们一般都会等到元宵结束之后再出去。对他们来说，元宵是个大节。<br />
-我们村的元宵节是在正月十五，有的村在十四，也有初六就开始了。元宵只是一个节日名，具体日期由各个村自己决定。元宵的习俗一般是游村，福寿，祈福这些组成的。游村就是村里男女老少将庙里的菩萨，妈祖一个个请出来，游行。分两次，一次在十五的早上，游内围，就是村里面，有住处的地方。第二次到十六的早上，游外围，这次是把村里在外面的田地都围一圈游行。而福寿就是按照族谱排序，一年一个，按族谱登记顺序。轮到你，你今年就是福寿，十五游行完后，妈祖像不回庙里，在你家呆一晚，那天晚上要让村里众人到你家给妈祖上香，还要请天师过来举办祈福仪式。这还没完，以后的一年内，妈祖的香炉要放在你家，一年大小节日，村里都得备着你家的这一份贡品。<br />
-由此可见，这算是件大事。不仅要接神，还要招待一村的善男信女，是个劳力伤财的事情。一开始村里穷，大家都简单置办，有点茶，有点水果就是招待的极好了。那些年大家伙赚了钱，就开始摆阔。一开始只是来的烧香有茶水，后面变成了，得摆几桌。慢慢得就变成了，要请全村吃饭。再后面，有个福寿起了头，改了规矩：一年一个轮着到你家，估计你就七八十了，那时候村里出生的人多，一家都是两三个以上。于是大家一合计就同意了。于是仪式过程不变，福寿变成两个，一个接神，一个举办祈福仪式。这样，福寿就有了正副之分。<br />
-那时候得元宵是一个家庭财力得象征，毕竟富贵不归故乡，如衣锦夜行，谁知之者。所以每年得元宵，大家都满怀期待。尤其到了大家都知道得富贵人家。今年他家立了一个气球拱门，明年那家就请迎宾小姐夹道欢迎。当然不是所有村里得都是那么有钱得，但是总归在招待上不会落得下风，否则到了晚上祈福环节，村里的人会不来，气氛比往年冷淡，那就真是丢了面子。而且村中迷信：这菩萨得香炉在我家，我办得浩大，办的隆重，心里想的事就越容易成。其实村里想的不外乎就是钱财和子孙，恰好那年福寿家发了大财，于是大家就越传越神乎，仪式也越发得繁琐，越复杂说明我越虔诚。<br />
-祈福和接神是抽签决定得，大家一般希望抽到祈福：祈福在晚上，8点左右开始，那时候正值大家晚饭消食。所以村里人一般都会前去观察。然而结束要到十一二点，  这就不是所有人都能撑得住。所以主人家就各凭本事留人；茶水，果点。怕客人渴或饿。但并不是所有人都是善男信女，这时候就得有别的玩意给人解闷。这个一般就是赌博。赌博有三公，有牌九，有麻将。看主人家得本事了。这东西一般主人家起头，带动气氛，主人家坐庄。<br />
-前几年风头正劲的时候，一晚上几百万的输赢，一晚上倾家荡产的也有，一晚上翻身做地主的也有，但是赌这东西，可轻可重，遇见见好就收的，打个折，让人家留点翻身的底就过去了，但是也有那种斤斤两两都要算清楚的，人家可就是奔着赚钱来赌钱的。所以每年过完年，倾家荡产的也有，夫妻吵架离婚得也不少，一年打白工的也不少，但是那几年钱好赚，一年就翻几番，所以大家也就不当回事。你说这几百万输赢下来总得有几个笑得吧，但是赌桌这东西，十赌九输，哭的人多，笑得人少，更何况有些人是专门来赌博得。一般在福寿家都是本村里的人，毕竟村村习俗不同，村里得人虽说不是熟悉，但也是一问就清楚。然而那时候往往会有一些没见过的，一问就说是谁谁家得亲戚，至于是不是亲戚？谁知道呢，本村人玩牌，输赢差不多就行，输多了还会有人劝，毕竟大家知根知底，但是外来得这些就不一样，不仅赌资大，而且有时候看对方上头，还一个劲得叫嚣，一来二去的，大家也就猜到了。心明得，一眼就知道这是专门赌钱得，但是总有眼瞎得。后面慢慢得，每年得元宵不仅本村来，也有外面得来凑热闹，大家就见怪不怪了。不仅这个村得参加，别的村元宵也参加。由于大家得元宵日子都不在一起，于是一到年后，就有几个人在那一村村得跑，一村村得赌。<br />
-村里得赌，体现得野蛮和简陋，牌桌上没有什么避讳，就一个八仙桌，四面站人，围得水泄不通，看的人，有一起合资，有光看不赌得，也有专门得会计在一边帮忙记账，而且其中还有专门叫好得，也有混合作的，一看牌好，嘴上一喊，赢了分钱，输了均摊，更有等着收盘，分点彩头钱，几百万得大局，一般不会带太多现金，而且很多时候也没想着往大几百万上输赢，大家最多带个50万得现金。现金拆散，有几个专门帮忙点钱捆扎，这是个肥差，抽个几张也无人知晓。<br />
-所以，元宵节得赌博是个赚钱的好机会，主人家也乐于这些人过来，毕竟这些人一赌起来不到凌晨是不会走的，显得主人家人脉广泛。这几年经济不好，大家也就赌的小了，不赌是不可能的。以前是大几百万，现在一晚上有个十来万就算是大的，大家也就几千几千的赌。但也比那些上班的一年赚得多。<br />
-村里也并不是都是有钱人，有普通的，也有穷的揭不开锅的。普通人家办一场，虽不能说伤筋动骨，但是十几万进去也就跟打水漂似的。穷的呢，也能办，只不过到处尽显凄凉。在我们村，有一户人家，现在还是一层小砖房，房子的主人，小时候伤了脑袋，到现在大脑门上还能看到一块凹进去的。户主伤病，也就没有趁着那股淘金的热潮出去，没赚到什么钱，在家务农种地，日子虽不能说清贫，但是毕竟光靠地，是赚不到什么钱，那人还爱喝酒，那就更坏菜了。但是再咋样，族谱上还是有他的名字，还是有轮到他做福寿的时候。<br />
-我特别记得那年，那年的祈福，分外的安静，连牌桌都没有。但是到了天师过来祈福仪式得时候，砖瓦房内也是坐满了人，虽然不如往年多，对他们家来说，算是很多了，主人家摆了四桌，用来给人闲坐，还有几箱啤酒。我做了一会，觉得无聊就走了。那家得女主人满怀希望得觉得他们家要翻身了。多年以后，他们家还是一层得瓦楼，这时候就有人怪他那年得仪式不够隆重，不够虔诚。<br />
-村里得迷信没有尽头，有拼香火得，有拼贡银得，有拼捐钱得，也有拼跪拜得时间，更有甚至，我另请一座神像到我家中，另开炉灶。求神拜佛本没有什么过错，但是这攀比之间就产生种种矛盾，贡品要用斋得，要精致，只能给一个神供过，不能二次使用，贡品菜色要多，但是有几样是必须得。每每春节，我看到他们不厌其烦得准备这一道又一道得贡品。而这些贡品大多数素菜，然后又赶上过年大鱼大肉，反正少有供完之后入了肚子，更多的是和其他得剩菜一起喂了鸭子。<br />
-轮到我爸做元宵得时候，正好赶上得是我奶奶生病，然后又遇上疫情。所以是不能大张旗鼓得，这给了我松了一大口气。那时候得财务状况不算好，但是辛苦一年，将一年收入扔到这上面，心中还是有点不舒服，更何况元宵福寿有点被架在上面得仪式，我要是办得小了，丢了面子，全村看笑话，办大了，自己又承受不住，毕竟那些年疫情导致大家都过得不好。所以那时候借着疫情得由头，我们减少了规模，然后还比普通得仪式少了很多程序，可以说又省钱又省力。没有客人参观，所以瓜果不用准备，也不必专门搞个地方给那些赌鬼。请村里吃饭，也被我们两个福寿合资在村里戏台办了几十桌，村里人自己过去吃，酒水各出各的，家里再办一顿，请自己得至亲好友。就这样，如果涵盖酒水得话，那年也是快20万得开销。对我家来说，也是一笔巨大得开销。</p>
-<hr />
-<p>PS:本来元宵篇是奶奶那边独择出来得一篇，里面本来是应该有元宵的热闹和已经被剥离这个世界的奶奶的一些情景，但是由于拖得太久忘记了，加上爷爷这边发生了微信大战，就先这么着吧。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>那些年遇见的人</category>
-      </categories>
-      <tags>
-        <tag>奶奶</tag>
-        <tag>元宵</tag>
-        <tag>习俗</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>V.PS2023款黑五香港测试</title>
     <url>/2024/05/30/171-V.PS2023%E6%AC%BE%E9%BB%91%E4%BA%94%E9%A6%99%E6%B8%AF%E6%B5%8B%E8%AF%95/</url>
     <content><![CDATA[<p>套餐内容：</p>
@@ -4945,6 +4945,40 @@ Debain系统</p>
       </tags>
   </entry>
   <entry>
+    <title>智慧的终结</title>
+    <url>/2024/05/28/173-%E6%99%BA%E6%85%A7%E7%9A%84%E7%BB%88%E7%BB%93/</url>
+    <content><![CDATA[<p>一切的智慧生物终会明白，他们引以为傲的智慧正是他们的牢笼。</p>
+<span id="more"></span>
+<p>作为最后幸存的人，我有幸见证了人类的灭亡。对此我很荣幸<br />
+一切的开始是几年前吧。物理学的极致；，人们研究终于发现了无法再切割的夸克。这意味着，这个宇宙在人类面前的最后的遮羞布已经被撕开。随着文章的发表，人们先是迎来了一阵狂欢，毕竟这意味着他们是宇宙的主人，是这一切的主宰。路上的人谈论最多的就是夸克，好似这事就在他们眼皮底下发生，他们谈论着发现时的细节，谈论那些与之错失的科学家，然后为他们的错失痛心。全世界的人民都在这兴奋的气氛下欢欣鼓舞。那时候最火的专业就是物理，最热点的人物就是物理学家，春晚都得为他们留一桌，电视上都是物理的科普综艺，让学者，让教授上来为民众科普。你走在路上听到的都是物理学，甚至奶茶店也蹭上了热度，来个原子芋奶，夸克波波。全世界都是物理学的海洋。<br />
+在这欢欣鼓舞之下，一开始并没有人感觉到了不对，但是这热度慢慢得消退之后，慢慢得有不同得声音出来了：最小得夸克出来了，不仅仅意味着宇宙得极限在哪，也意味着人类得极限在哪。一个科学家用一种简单明了得方式解释这个问题：知道物质组成得最小成分，也明白了物质之间得能量，那么可以算出全地球现在总能量。通过计算，这些能量首先无法支持一个10kg得人类跨越星际，其次这些能量在如今得消耗下，最多只能够维持100亿人生存了10亿年，还得看能量循环，即那些被我们挥发到空气，宇宙得热能要被回收回来。否则如今算上太阳的补充加上地球本身的消耗，我们将无法坚持到1亿年之后。而且由于算的是全部物理之间的能量，所以实际上这些能量都是高估的，实际情况有可能会更加糟糕。<br />
+这个言论的出现，一开始就遭到互联网的嘲讽，首先，10亿年之后的事情，关我们现在什么事，我死后哪管洪水滔天。其次，后面的人会发掘新的技术，新的能源手段的，怕啥。反驳者则不断强调，这是根据全部夸克之间的能量算出来的。所以，哪怕你有新的技术，也突破不了这一上限，其次时间不是问题，问题是我们的人类上限已经被摆到了桌面前了，我们只能在这座星球上慢慢的消亡。<br />
+一开始是只是网络上的互骂，民众之间更多的只是将它当作一个谈资。后来，慢慢的有人对此感到了悲观，而且这群人都是高级智慧人员，先是不少学生在网上传出他们的物理学导师要么选择遁入空门，要么开始放弃学术，追求一些玄而又玄的理论。物理学的崩溃就此开始，物理学家不再在物理学上进行钻研，因为他们知道那个上限的存在，现在他们转而攻向多维空间，有些转向中世界的巫术，魔杖，塔罗牌，癞蛤蟆，甚至献祭。他们希望在那些神话传说中能够找到打开另一个维度的方法，一种之前被他们忽略的方法。教育界的恐慌，慢慢就影响到了民众，大家都开始相信人类的末日，也开始慢慢的想要在巫术，神学上闯出自己的一片天，毕竟这是一个全新的，没有人的赛道，大家都是同一起跑线。<br />
+有人宣称自己家的老宅闹鬼，马上宅子就被人买下，那些凶房也一时成为了市场的热门，我看到了几乎可以称之为神奇的一幕：中介开始在荒山野岭，在公安局门口找，甚至开发商以以前住宅地是墓地做宣传，后面偶尔传出有些人甚至开始故意制造凶宅了。后面就是国家力量的介入，新闻媒体不允许报道这类新闻，下达政策不允许开发商宣传，但是教育界的又没法阻止，毕竟它是一个事实，只能成立一个规范的委员会。有的专家试图将电能和那些巫术联系在一起，有些则完全的去寻找古籍，一时之间，物理学不再倚靠设备，而是那些古书，旧书，壁画之类的。官方主流媒体不再报道那些神学的新发现，于是论坛或者小道消息遍飞，有时候论坛会传出某某教授，成功打开地狱大门，并且拿到证据。要么就是自媒体上开始发出一些奇奇怪怪的视频。当然这其中也不乏一些骗子借着这些名义敛财，在爆发了一两次之后，官方也下场开始辟谣，宣传，甚至一度想要将最小夸克的论文进行封杀。但是民众们开始不干了，民科运动的兴起，让普通人也开始想要自己探索那些异空间，一开始官方是不允许出版相关书籍，但是随着整个市场对存量书的疯抢，以及大量盗版出版社的复刻，这一刻官方也只能开放相对应的书籍印刷。<br />
+我那时候还是学生，在最热门的物理学内，我在那里见到了人类的参差：我的教授勇敢且大胆的选择了地狱作为自己接下来的目标，我的父母一辈子相信妈祖的人则安安心心的种地，世界的变化对他们来说并没有什么影响，我那有钱的大伯则选择了到处投资那些神之又神的理论和设备，往往回来就是说这项目里面也有市长的身影，到时候成了就带着我一起。我们家乡妈祖的传说也吸引来了大批的专家，毕竟妈祖从人到神的故事丰富且有迹可循，于是吸引来大量的人来研究。你也许会问，政府或者官方难道不阻止这些行为么？没有，或者说他们也是其中的一员，他们对人类的灭亡更加忧心，也更加上心、这是摆在一个全世界人面前的机会，无论是求名还是求利，只要抓到了就是飞黄腾达，而且这个机会面前可以说得上是人人平等。<br />
+我出生在农村，所以对这种潮流并不敏感，我那时候只是觉得，10亿年，好远，跟我没任何关系。所以当毕业之后，我同学们有些进入公司进行相关理论研究，我也只是觉得他找到了一份工作而已，后面听说他年薪百万，但是我们已经就不联系了。我没有趁热进入这些神之又神得研究机构，只是找了一个公司，干起来服务器运营，俗称网管。主要是我对我大学学的东西并没有多大信心，尤其是后期教授几乎不管我们得课业。<br />
+事件一开始并没有那么癫狂，大家只是讨论，有那么一批人在为全人类寻找新的生机，大多数人，或者我所见到得大多数人是没有参与进这一伟大得事业，他们按部就班得上下班，生活。他们关心，但是无力参与，偶尔会看些报道或者一些书，剩下得就是琐碎的日常。他们时常会说你这大学学物理的，不去研究神学，怎么在这当网管。我笑笑不说，我也不知道为啥不去，现在这样也挺好的吧？在我工作了好几年之后，一开始是公司的订单量开始减少，大家猜测的理由是那些玄之又玄的神学，占据了普通人的消费欲望，所以不行。慢慢的我们发现别的行业也不行了。就是明面的不行，末日言论的影响下，社会资源倾斜到了神学研究。经常能看见哪哪公司发现了什么理论，然后获得了多少投资，哪哪公司的研究进入到某一个阶段。除开知名的，好多不知名的公司也在研究或者说是骗钱；我那有钱的大伯在经历了3次投资无果之后，幡然醒悟，但当他想要回到他的主业之时，他发现他的公司也没有了订单，那一年我过去拜年，大伯头发白了很多，很忧愁。<br />
+大家开始对末日言论很不满，从以前的讨论，到现在的声讨。我经常能在中午吃饭的时候听到有人在说：10亿年后的事，现在这么折腾别说10亿，就是明年都难过。当然也有支持的人，毕竟这是关乎人类未来存亡的大事。我对此的态度既不支持也不反对，我的感觉是这事在我的控制范围之外，我得支持和反对并不能影响这一切。也许我就是鲁迅笔下那个不为别人发声的人吧，只是不知道什么时候鞭子打到我身上。<br />
+后面随着订单减少，慢慢的我们公司也裁员了。所幸我的岗位就我一个，没有裁员。但是事情也变得多且杂了。大家谈论的事也变得当初工作的选择了，有人想着当初还不如去国企或者考个公啥的。我也后悔，虽然没有裁员，但是我工资没变，事情变得乱七八糟，比如去参加什么消防会，搬点东西啥的。我知道老板想撑到市场回转，但是不知道能不能撑到。政府也出台了很多政策，毕竟我去参加了那么多会议，但是大多数是只喊口号，没有什么实质性的。毕竟订单不是靠口号可以弥补的，之前有过一段时间少交税的政策，但也只是杯水车薪，毕竟我们连票都不需要开了。后面的结果是我被开了，我大伯也退回村里了，我回到了村里，开始跟着我父母种地，我大伯也回来了，上一辈分地的时候闹了点不愉快，大伯觉得地都是他赚钱买的，事实是一部分是买的，大部分是当初分的。大伯没种过地，也种不来这么多地。世界发生了很多事：包括女性的崛起，生育率的降低，结婚率的降低。我没有结婚，结不起，我们那里彩礼很贵，我以为经济不好的情况下彩礼会便宜点，没想到越来越贵。我们村里也有很多女没有对象，但是依旧不会结婚，他们不愿也不敢，彩礼是一个市场他们不敢破坏，女孩子也不愿意，都是种地，换个地方种地有啥区别，他们想要向以前一样嫁出去。城市的变化我知晓不多，不过大多数人都已经回到了自己的农村，剩下的只不过是在城市里混日子罢了。数量减少的程度很可怕，我们村已经好几年没有新生儿了。<br />
+我们家种的是花生和大豆，也想过种稻米，那个费水，费力，所以种的少，之前还能去镇里的粮商那边换换，这几年粮商也没有米了，我的年纪越来越大，但是依旧单身，我没有时间去想这些事，忙碌的农活让我想睡觉。偶尔的过节会提起，但是没人想要破坏那来之不易的快乐。我得爸妈走了，累死的，一天晚上回去睡觉，第二天就起不来了。我大伯也是，不过更早，他的地没人种都起草了。我种不来，也不想种。我从5亩，3亩，到现在只能1亩。我一年到头就靠这一亩地的两次收成过活，不是没有地，只是没有人。村里能走的都去了海南，那里是现在唯一的大城市，一年三熟，甚至四熟。我们走不动了，就在这村里了。村里的人不多，大多数都是和我一样走不动的人。电早就没了，之前有个大项目，需要用到大量的电，那次之后，就没再来过电。大家也都习惯了，毕竟电费也是一笔开支。河里的鱼变多了，这让我轻松了点，毕竟好久没吃过肉了。<br />
+从没电之后，外界的消息就慢慢不来了，偶尔有几个穿着黄衣道袍的过来，走着过来。说是来寻找妈祖神迹的。他们会跟我们说外界的发展：老君炉建立起来了，现在正在烧三味真火。国外的巫术有了进展，有人发现了九又四分之一的站台，现在正在寻找那火车。而妈祖羽化成仙的地方找到了一些化石，科学家试图复刻出里面的配方。他们从河里抓了几条鱼，吃了点豆子就走了。他们也不年轻，清一色的男的，没有女孩子。<br />
+我们村里我是最后一个人了，有比我年轻的，但是都累死了。隔壁村的老许，走之前几天，找到了我，让我给他埋了，他屋里的东西都给我了。东西我没要，村里多的是，用不完，我半个月之后过去，发现他走了，就花了一天给他埋了。他们都知道找我，老许是许村的，旁边还有财主村，东郭村，山潘还有好多，记不清了。他们有些是我埋得，有些是老许埋得，他埋完了告诉我的。我的那亩地我本来想换一块离我近点的地，然而地太久没种了，开荒是费力的事，我只能每天走1公里去自己的地，地上荒草不少，可幸运的是还能种庄稼。这几天我不再去地里了，我摘摘野果，吃吃河里的鱼就够了，我们村靠近海，盐一直不缺的。<br />
+吃饱喝足之后，我终于有时间来想想这一切是如何发生的。等我想要写下这些的时候，我发觉过了好久好久。刚上大学的时候，我并不觉得那个理论会对我的生活产生如此大的影响，我以为我按部就班的生活下去，一切都会好的，就好像我小时候看的那些电视剧一样，面包会有的，爱情也会有的。<br />
+我很开心，我能留下这些文字，也很开心能够见证到这一切的结束。<br />
+我找不到埋我得人了。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>智慧的终结</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>搬瓦工46刀新增圣何塞机房</title>
     <url>/2024/06/05/174-%E6%90%AC%E7%93%A6%E5%B7%A546%E5%88%80%E6%96%B0%E5%A2%9E%E5%9C%A3%E4%BD%95%E5%A1%9E%E6%9C%BA%E6%88%BF/</url>
     <content><![CDATA[<p>套餐内容：</p>
@@ -4996,40 +5030,6 @@ Debain系统</p>
         <tag>香港机房</tag>
         <tag>CN-GIA</tag>
         <tag>补货</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>智慧的终结</title>
-    <url>/2024/05/28/173-%E6%99%BA%E6%85%A7%E7%9A%84%E7%BB%88%E7%BB%93/</url>
-    <content><![CDATA[<p>一切的智慧生物终会明白，他们引以为傲的智慧正是他们的牢笼。</p>
-<span id="more"></span>
-<p>作为最后幸存的人，我有幸见证了人类的灭亡。对此我很荣幸<br />
-一切的开始是几年前吧。物理学的极致；，人们研究终于发现了无法再切割的夸克。这意味着，这个宇宙在人类面前的最后的遮羞布已经被撕开。随着文章的发表，人们先是迎来了一阵狂欢，毕竟这意味着他们是宇宙的主人，是这一切的主宰。路上的人谈论最多的就是夸克，好似这事就在他们眼皮底下发生，他们谈论着发现时的细节，谈论那些与之错失的科学家，然后为他们的错失痛心。全世界的人民都在这兴奋的气氛下欢欣鼓舞。那时候最火的专业就是物理，最热点的人物就是物理学家，春晚都得为他们留一桌，电视上都是物理的科普综艺，让学者，让教授上来为民众科普。你走在路上听到的都是物理学，甚至奶茶店也蹭上了热度，来个原子芋奶，夸克波波。全世界都是物理学的海洋。<br />
-在这欢欣鼓舞之下，一开始并没有人感觉到了不对，但是这热度慢慢得消退之后，慢慢得有不同得声音出来了：最小得夸克出来了，不仅仅意味着宇宙得极限在哪，也意味着人类得极限在哪。一个科学家用一种简单明了得方式解释这个问题：知道物质组成得最小成分，也明白了物质之间得能量，那么可以算出全地球现在总能量。通过计算，这些能量首先无法支持一个10kg得人类跨越星际，其次这些能量在如今得消耗下，最多只能够维持100亿人生存了10亿年，还得看能量循环，即那些被我们挥发到空气，宇宙得热能要被回收回来。否则如今算上太阳的补充加上地球本身的消耗，我们将无法坚持到1亿年之后。而且由于算的是全部物理之间的能量，所以实际上这些能量都是高估的，实际情况有可能会更加糟糕。<br />
-这个言论的出现，一开始就遭到互联网的嘲讽，首先，10亿年之后的事情，关我们现在什么事，我死后哪管洪水滔天。其次，后面的人会发掘新的技术，新的能源手段的，怕啥。反驳者则不断强调，这是根据全部夸克之间的能量算出来的。所以，哪怕你有新的技术，也突破不了这一上限，其次时间不是问题，问题是我们的人类上限已经被摆到了桌面前了，我们只能在这座星球上慢慢的消亡。<br />
-一开始是只是网络上的互骂，民众之间更多的只是将它当作一个谈资。后来，慢慢的有人对此感到了悲观，而且这群人都是高级智慧人员，先是不少学生在网上传出他们的物理学导师要么选择遁入空门，要么开始放弃学术，追求一些玄而又玄的理论。物理学的崩溃就此开始，物理学家不再在物理学上进行钻研，因为他们知道那个上限的存在，现在他们转而攻向多维空间，有些转向中世界的巫术，魔杖，塔罗牌，癞蛤蟆，甚至献祭。他们希望在那些神话传说中能够找到打开另一个维度的方法，一种之前被他们忽略的方法。教育界的恐慌，慢慢就影响到了民众，大家都开始相信人类的末日，也开始慢慢的想要在巫术，神学上闯出自己的一片天，毕竟这是一个全新的，没有人的赛道，大家都是同一起跑线。<br />
-有人宣称自己家的老宅闹鬼，马上宅子就被人买下，那些凶房也一时成为了市场的热门，我看到了几乎可以称之为神奇的一幕：中介开始在荒山野岭，在公安局门口找，甚至开发商以以前住宅地是墓地做宣传，后面偶尔传出有些人甚至开始故意制造凶宅了。后面就是国家力量的介入，新闻媒体不允许报道这类新闻，下达政策不允许开发商宣传，但是教育界的又没法阻止，毕竟它是一个事实，只能成立一个规范的委员会。有的专家试图将电能和那些巫术联系在一起，有些则完全的去寻找古籍，一时之间，物理学不再倚靠设备，而是那些古书，旧书，壁画之类的。官方主流媒体不再报道那些神学的新发现，于是论坛或者小道消息遍飞，有时候论坛会传出某某教授，成功打开地狱大门，并且拿到证据。要么就是自媒体上开始发出一些奇奇怪怪的视频。当然这其中也不乏一些骗子借着这些名义敛财，在爆发了一两次之后，官方也下场开始辟谣，宣传，甚至一度想要将最小夸克的论文进行封杀。但是民众们开始不干了，民科运动的兴起，让普通人也开始想要自己探索那些异空间，一开始官方是不允许出版相关书籍，但是随着整个市场对存量书的疯抢，以及大量盗版出版社的复刻，这一刻官方也只能开放相对应的书籍印刷。<br />
-我那时候还是学生，在最热门的物理学内，我在那里见到了人类的参差：我的教授勇敢且大胆的选择了地狱作为自己接下来的目标，我的父母一辈子相信妈祖的人则安安心心的种地，世界的变化对他们来说并没有什么影响，我那有钱的大伯则选择了到处投资那些神之又神的理论和设备，往往回来就是说这项目里面也有市长的身影，到时候成了就带着我一起。我们家乡妈祖的传说也吸引来了大批的专家，毕竟妈祖从人到神的故事丰富且有迹可循，于是吸引来大量的人来研究。你也许会问，政府或者官方难道不阻止这些行为么？没有，或者说他们也是其中的一员，他们对人类的灭亡更加忧心，也更加上心、这是摆在一个全世界人面前的机会，无论是求名还是求利，只要抓到了就是飞黄腾达，而且这个机会面前可以说得上是人人平等。<br />
-我出生在农村，所以对这种潮流并不敏感，我那时候只是觉得，10亿年，好远，跟我没任何关系。所以当毕业之后，我同学们有些进入公司进行相关理论研究，我也只是觉得他找到了一份工作而已，后面听说他年薪百万，但是我们已经就不联系了。我没有趁热进入这些神之又神得研究机构，只是找了一个公司，干起来服务器运营，俗称网管。主要是我对我大学学的东西并没有多大信心，尤其是后期教授几乎不管我们得课业。<br />
-事件一开始并没有那么癫狂，大家只是讨论，有那么一批人在为全人类寻找新的生机，大多数人，或者我所见到得大多数人是没有参与进这一伟大得事业，他们按部就班得上下班，生活。他们关心，但是无力参与，偶尔会看些报道或者一些书，剩下得就是琐碎的日常。他们时常会说你这大学学物理的，不去研究神学，怎么在这当网管。我笑笑不说，我也不知道为啥不去，现在这样也挺好的吧？在我工作了好几年之后，一开始是公司的订单量开始减少，大家猜测的理由是那些玄之又玄的神学，占据了普通人的消费欲望，所以不行。慢慢的我们发现别的行业也不行了。就是明面的不行，末日言论的影响下，社会资源倾斜到了神学研究。经常能看见哪哪公司发现了什么理论，然后获得了多少投资，哪哪公司的研究进入到某一个阶段。除开知名的，好多不知名的公司也在研究或者说是骗钱；我那有钱的大伯在经历了3次投资无果之后，幡然醒悟，但当他想要回到他的主业之时，他发现他的公司也没有了订单，那一年我过去拜年，大伯头发白了很多，很忧愁。<br />
-大家开始对末日言论很不满，从以前的讨论，到现在的声讨。我经常能在中午吃饭的时候听到有人在说：10亿年后的事，现在这么折腾别说10亿，就是明年都难过。当然也有支持的人，毕竟这是关乎人类未来存亡的大事。我对此的态度既不支持也不反对，我的感觉是这事在我的控制范围之外，我得支持和反对并不能影响这一切。也许我就是鲁迅笔下那个不为别人发声的人吧，只是不知道什么时候鞭子打到我身上。<br />
-后面随着订单减少，慢慢的我们公司也裁员了。所幸我的岗位就我一个，没有裁员。但是事情也变得多且杂了。大家谈论的事也变得当初工作的选择了，有人想着当初还不如去国企或者考个公啥的。我也后悔，虽然没有裁员，但是我工资没变，事情变得乱七八糟，比如去参加什么消防会，搬点东西啥的。我知道老板想撑到市场回转，但是不知道能不能撑到。政府也出台了很多政策，毕竟我去参加了那么多会议，但是大多数是只喊口号，没有什么实质性的。毕竟订单不是靠口号可以弥补的，之前有过一段时间少交税的政策，但也只是杯水车薪，毕竟我们连票都不需要开了。后面的结果是我被开了，我大伯也退回村里了，我回到了村里，开始跟着我父母种地，我大伯也回来了，上一辈分地的时候闹了点不愉快，大伯觉得地都是他赚钱买的，事实是一部分是买的，大部分是当初分的。大伯没种过地，也种不来这么多地。世界发生了很多事：包括女性的崛起，生育率的降低，结婚率的降低。我没有结婚，结不起，我们那里彩礼很贵，我以为经济不好的情况下彩礼会便宜点，没想到越来越贵。我们村里也有很多女没有对象，但是依旧不会结婚，他们不愿也不敢，彩礼是一个市场他们不敢破坏，女孩子也不愿意，都是种地，换个地方种地有啥区别，他们想要向以前一样嫁出去。城市的变化我知晓不多，不过大多数人都已经回到了自己的农村，剩下的只不过是在城市里混日子罢了。数量减少的程度很可怕，我们村已经好几年没有新生儿了。<br />
-我们家种的是花生和大豆，也想过种稻米，那个费水，费力，所以种的少，之前还能去镇里的粮商那边换换，这几年粮商也没有米了，我的年纪越来越大，但是依旧单身，我没有时间去想这些事，忙碌的农活让我想睡觉。偶尔的过节会提起，但是没人想要破坏那来之不易的快乐。我得爸妈走了，累死的，一天晚上回去睡觉，第二天就起不来了。我大伯也是，不过更早，他的地没人种都起草了。我种不来，也不想种。我从5亩，3亩，到现在只能1亩。我一年到头就靠这一亩地的两次收成过活，不是没有地，只是没有人。村里能走的都去了海南，那里是现在唯一的大城市，一年三熟，甚至四熟。我们走不动了，就在这村里了。村里的人不多，大多数都是和我一样走不动的人。电早就没了，之前有个大项目，需要用到大量的电，那次之后，就没再来过电。大家也都习惯了，毕竟电费也是一笔开支。河里的鱼变多了，这让我轻松了点，毕竟好久没吃过肉了。<br />
-从没电之后，外界的消息就慢慢不来了，偶尔有几个穿着黄衣道袍的过来，走着过来。说是来寻找妈祖神迹的。他们会跟我们说外界的发展：老君炉建立起来了，现在正在烧三味真火。国外的巫术有了进展，有人发现了九又四分之一的站台，现在正在寻找那火车。而妈祖羽化成仙的地方找到了一些化石，科学家试图复刻出里面的配方。他们从河里抓了几条鱼，吃了点豆子就走了。他们也不年轻，清一色的男的，没有女孩子。<br />
-我们村里我是最后一个人了，有比我年轻的，但是都累死了。隔壁村的老许，走之前几天，找到了我，让我给他埋了，他屋里的东西都给我了。东西我没要，村里多的是，用不完，我半个月之后过去，发现他走了，就花了一天给他埋了。他们都知道找我，老许是许村的，旁边还有财主村，东郭村，山潘还有好多，记不清了。他们有些是我埋得，有些是老许埋得，他埋完了告诉我的。我的那亩地我本来想换一块离我近点的地，然而地太久没种了，开荒是费力的事，我只能每天走1公里去自己的地，地上荒草不少，可幸运的是还能种庄稼。这几天我不再去地里了，我摘摘野果，吃吃河里的鱼就够了，我们村靠近海，盐一直不缺的。<br />
-吃饱喝足之后，我终于有时间来想想这一切是如何发生的。等我想要写下这些的时候，我发觉过了好久好久。刚上大学的时候，我并不觉得那个理论会对我的生活产生如此大的影响，我以为我按部就班的生活下去，一切都会好的，就好像我小时候看的那些电视剧一样，面包会有的，爱情也会有的。<br />
-我很开心，我能留下这些文字，也很开心能够见证到这一切的结束。<br />
-我找不到埋我得人了。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>智慧的终结</tag>
       </tags>
   </entry>
   <entry>
@@ -5904,63 +5904,6 @@ CPU：1x Intel Xeon<br />
       </tags>
   </entry>
   <entry>
-    <title>ESXI安装HomeAsistantOS</title>
-    <url>/2025/01/06/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS/</url>
-    <content><![CDATA[<p>我家里有一台小米的空气净化器，还有小米得几个空调遥控器，定时器。虽然可以使用官方得app控制，但是总归是不方便，还是希望可以更加得智能化，尤其我这人对空调吹多了冷，吹少了热。<br />
-其实之前我使用过一阵子，但是那时候官方没有支持，导致我使用HA进行控制之后就不能使用官方app控制。正好这次官方宣布支持，我就想着再试试。</p>
-<span id="more"></span>
-<h2 id="安装ha-os"><a class="markdownIt-Anchor" href="#安装ha-os"></a> 安装HA OS</h2>
-<p>这边我用得是HA OS，根据官网上得<a href="https://www.home-assistant.io/installation/">描述</a>，不同得安装方式各有千秋，当然首推得就是完整得HA OS，可以升级，可以自动加载，备份。安装也特别简单。<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS-2025-01-07-15-33-19.png" alt="193-ESXI安装HomeAsistantOS-2025-01-07-15-33-19" /></p>
-<p>官网教程十分详尽，我使用的是虚拟机ESXI来装，那么直接点击引导里面得Other systems，里面直接给你带好了链接，以及操作步骤，还有对应得硬件要求，我下载了OVA文件。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS-2025-01-07-15-36-09.png" alt="193-ESXI安装HomeAsistantOS-2025-01-07-15-36-09" /></p>
-<p>在ESXI里面点击新增虚拟机，自动出现“从OVA文件部署虚拟机”。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS-2025-01-07-15-27-44.png" alt="193-ESXI安装HomeAsistantOS-2025-01-07-15-27-44" /></p>
-<p>直接将你下载的文件拖拉进去即可，剩下得只要命名虚拟机名字即可，点击确认，下一步，直到完成。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS-2025-01-07-15-27-54.png" alt="193-ESXI安装HomeAsistantOS-2025-01-07-15-27-54" /></p>
-<p>我们甚至没有被要求设置CPU，内存这些信息，都在OVA文件，虚拟机完成之后我打开看下配置，发现一切都是按照官方推荐得配置设置。唯一需要注意的是，官方设定的ESXi 5.5的虚拟机，但是现在已经7.0了，后续会有报警，但是直接升级到7.0版本的虚拟机即可。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS-2025-01-07-15-27-28.png" alt="193-ESXI安装HomeAsistantOS-2025-01-07-15-27-28" /></p>
-<p>开启电源一段时间后直接可以访问，可以使用给定的域名加端口号，也可以使用IP地址。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS-2025-01-07-15-26-59.png" alt="193-ESXI安装HomeAsistantOS-2025-01-07-15-26-59" /></p>
-<h2 id="安装hacs"><a class="markdownIt-Anchor" href="#安装hacs"></a> 安装<a href="https://www.hacs.xyz/">HACS</a></h2>
-<p>HACS（Home Assistant Community Store） 是 Home Assistant 的一个第三方扩展商店，用于方便地安装和管理社区开发的自定义集成、前端插件、自动化蓝图和主题，帮助我们扩展 Home Assistant 的功能和外观。例如，米家集成就可以通过 HACS 到 Home Assistant 中。<br />
-安装的过程也特别简单，打开HACS官网的<a href="https://www.hacs.xyz/docs/use/download/download/#to-download-hacs-ossupervised">下载界面</a>，然后选择OS那栏，他会给你一个链接，点击链接，直接就可以安装，你只需要对面提示时候点击确定即可。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS-2025-01-07-15-51-35.png" alt="193-ESXI安装HomeAsistantOS-2025-01-07-15-51-35" /></p>
-<p>重启下HA OS即可，剩下就是虚拟化配置，还是在那个网页上，点击网页上的链接，他会自动和HAOS进行联动，帮助你关联GitHub。<br />
-我看了这两个程序的官方文档，只能说，真细心。而且十分简单，极大的简便化操作，相比较其他一些我接触的程序部署，我都要找很久的文档，很多时候找到的都是别人复制来复制去的东西。这个的官方文档真心好，有了它完全不需要什么乱七八糟的博客，我希望这种官方越来越多。</p>
-<p>后面的操作就是：设置-设备与服务-点击右小角的添加集成：HACS，搜索一下，勾选全部，然后提交，后续会给你链接让你去GitHub上进行确认授权，你一步步操作下去即可。这些在<a href="https://www.hacs.xyz/docs/use/configuration/basic/">官方初始化指南</a>内都有，我最多就是翻译一下。</p>
-<h2 id="安装小米集成"><a class="markdownIt-Anchor" href="#安装小米集成"></a> 安装<a href="https://github.com/XiaoMi/ha_xiaomi_home/blob/main/doc/README_zh.md">小米集成</a></h2>
-<p>这个也是有官方文档，直接一步步走即可，这边我补充几个不清楚的地方：</p>
-<ol>
-<li>在上门安装完HACS后，这个会出现在侧边栏里面：<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS-2025-01-07-16-20-27.png" alt="193-ESXI安装HomeAsistantOS-2025-01-07-16-20-27" /></li>
-<li>在HACS侧边栏打开后，在上面的三个点内打开，输入Repository: <a href="https://github.com/XiaoMi/ha_xiaomi_home.git">https://github.com/XiaoMi/ha_xiaomi_home.git</a> &amp; Category or Type: Integration ，添加完成之后，你还需要去下载，然后重启服务之后，这个小米集成才算是真正的安装成功。<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS-2025-01-07-16-23-00.png" alt="193-ESXI安装HomeAsistantOS-2025-01-07-16-23-00" /><br />
-下载之后，你可以去小米界面上的那个按钮进行关联账号，也可以去GitHub上的那个链接。<br />
-最后就是一步步验证即可，输入你的用户名和账号，会把所有米家的设备都给你同步过来。</li>
-</ol>
-<h2 id="后话"><a class="markdownIt-Anchor" href="#后话"></a> 后话</h2>
-<p>我看了下官方的文档，其实是做了一个类似订阅的集成，一切的命令还是会经过云端服务器或者米家中枢网关，然后向设备发送。所以，之前大面积发生的，小米只能设备网络损坏的是情况还是会发生。不过想来也确实，毕竟小米自己卖的中枢网关的，不可能让自己的产品和开源的竞争。<br />
-官方支持的集成和之前大佬的差距就在此，之前大佬的是接替了云端，直接让你的homeassitant设备给局域网内的设备发送信息，让他开关。官方的集成则是，所有的消息都要经过云端中枢，然后再下发。只能说看后续能不能再支持吧，技术已经有了，毕竟米家智能中枢都已经上市了，就看愿不愿意开了。</p>
-<hr />
-<p>参考文档：<br />
-<a href="https://sspai.com/post/95117">正是入坑好时节：在米家官方支持之际，再聊新人 Home Assistant 入门</a><br />
-<a href="https://www.home-assistant.io/installation/alternative">官方系统下载地址</a></p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>NAS</tag>
-        <tag>浪潮SA5112M4</tag>
-        <tag>服务器</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>openwrt使用指南</title>
     <url>/2025/01/06/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<p>之前买了3个小米AX5京东云版本的路由器，刷了openwrt，最近趁着空闲，想着给它升级下固件，顺带记录下中间遇见的坑</p>
@@ -6026,6 +5969,63 @@ PS:如果你中间中断了，记得清理下make clean。否则你的硬盘容�
         <tag>openwrt</tag>
         <tag>lede</tag>
         <tag>IPQ60XX</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ESXI安装HomeAsistantOS</title>
+    <url>/2025/01/06/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS/</url>
+    <content><![CDATA[<p>我家里有一台小米的空气净化器，还有小米得几个空调遥控器，定时器。虽然可以使用官方得app控制，但是总归是不方便，还是希望可以更加得智能化，尤其我这人对空调吹多了冷，吹少了热。<br />
+其实之前我使用过一阵子，但是那时候官方没有支持，导致我使用HA进行控制之后就不能使用官方app控制。正好这次官方宣布支持，我就想着再试试。</p>
+<span id="more"></span>
+<h2 id="安装ha-os"><a class="markdownIt-Anchor" href="#安装ha-os"></a> 安装HA OS</h2>
+<p>这边我用得是HA OS，根据官网上得<a href="https://www.home-assistant.io/installation/">描述</a>，不同得安装方式各有千秋，当然首推得就是完整得HA OS，可以升级，可以自动加载，备份。安装也特别简单。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS-2025-01-07-15-33-19.png" alt="193-ESXI安装HomeAsistantOS-2025-01-07-15-33-19" /></p>
+<p>官网教程十分详尽，我使用的是虚拟机ESXI来装，那么直接点击引导里面得Other systems，里面直接给你带好了链接，以及操作步骤，还有对应得硬件要求，我下载了OVA文件。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS-2025-01-07-15-36-09.png" alt="193-ESXI安装HomeAsistantOS-2025-01-07-15-36-09" /></p>
+<p>在ESXI里面点击新增虚拟机，自动出现“从OVA文件部署虚拟机”。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS-2025-01-07-15-27-44.png" alt="193-ESXI安装HomeAsistantOS-2025-01-07-15-27-44" /></p>
+<p>直接将你下载的文件拖拉进去即可，剩下得只要命名虚拟机名字即可，点击确认，下一步，直到完成。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS-2025-01-07-15-27-54.png" alt="193-ESXI安装HomeAsistantOS-2025-01-07-15-27-54" /></p>
+<p>我们甚至没有被要求设置CPU，内存这些信息，都在OVA文件，虚拟机完成之后我打开看下配置，发现一切都是按照官方推荐得配置设置。唯一需要注意的是，官方设定的ESXi 5.5的虚拟机，但是现在已经7.0了，后续会有报警，但是直接升级到7.0版本的虚拟机即可。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS-2025-01-07-15-27-28.png" alt="193-ESXI安装HomeAsistantOS-2025-01-07-15-27-28" /></p>
+<p>开启电源一段时间后直接可以访问，可以使用给定的域名加端口号，也可以使用IP地址。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS-2025-01-07-15-26-59.png" alt="193-ESXI安装HomeAsistantOS-2025-01-07-15-26-59" /></p>
+<h2 id="安装hacs"><a class="markdownIt-Anchor" href="#安装hacs"></a> 安装<a href="https://www.hacs.xyz/">HACS</a></h2>
+<p>HACS（Home Assistant Community Store） 是 Home Assistant 的一个第三方扩展商店，用于方便地安装和管理社区开发的自定义集成、前端插件、自动化蓝图和主题，帮助我们扩展 Home Assistant 的功能和外观。例如，米家集成就可以通过 HACS 到 Home Assistant 中。<br />
+安装的过程也特别简单，打开HACS官网的<a href="https://www.hacs.xyz/docs/use/download/download/#to-download-hacs-ossupervised">下载界面</a>，然后选择OS那栏，他会给你一个链接，点击链接，直接就可以安装，你只需要对面提示时候点击确定即可。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS-2025-01-07-15-51-35.png" alt="193-ESXI安装HomeAsistantOS-2025-01-07-15-51-35" /></p>
+<p>重启下HA OS即可，剩下就是虚拟化配置，还是在那个网页上，点击网页上的链接，他会自动和HAOS进行联动，帮助你关联GitHub。<br />
+我看了这两个程序的官方文档，只能说，真细心。而且十分简单，极大的简便化操作，相比较其他一些我接触的程序部署，我都要找很久的文档，很多时候找到的都是别人复制来复制去的东西。这个的官方文档真心好，有了它完全不需要什么乱七八糟的博客，我希望这种官方越来越多。</p>
+<p>后面的操作就是：设置-设备与服务-点击右小角的添加集成：HACS，搜索一下，勾选全部，然后提交，后续会给你链接让你去GitHub上进行确认授权，你一步步操作下去即可。这些在<a href="https://www.hacs.xyz/docs/use/configuration/basic/">官方初始化指南</a>内都有，我最多就是翻译一下。</p>
+<h2 id="安装小米集成"><a class="markdownIt-Anchor" href="#安装小米集成"></a> 安装<a href="https://github.com/XiaoMi/ha_xiaomi_home/blob/main/doc/README_zh.md">小米集成</a></h2>
+<p>这个也是有官方文档，直接一步步走即可，这边我补充几个不清楚的地方：</p>
+<ol>
+<li>在上门安装完HACS后，这个会出现在侧边栏里面：<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS-2025-01-07-16-20-27.png" alt="193-ESXI安装HomeAsistantOS-2025-01-07-16-20-27" /></li>
+<li>在HACS侧边栏打开后，在上面的三个点内打开，输入Repository: <a href="https://github.com/XiaoMi/ha_xiaomi_home.git">https://github.com/XiaoMi/ha_xiaomi_home.git</a> &amp; Category or Type: Integration ，添加完成之后，你还需要去下载，然后重启服务之后，这个小米集成才算是真正的安装成功。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS-2025-01-07-16-23-00.png" alt="193-ESXI安装HomeAsistantOS-2025-01-07-16-23-00" /><br />
+下载之后，你可以去小米界面上的那个按钮进行关联账号，也可以去GitHub上的那个链接。<br />
+最后就是一步步验证即可，输入你的用户名和账号，会把所有米家的设备都给你同步过来。</li>
+</ol>
+<h2 id="后话"><a class="markdownIt-Anchor" href="#后话"></a> 后话</h2>
+<p>我看了下官方的文档，其实是做了一个类似订阅的集成，一切的命令还是会经过云端服务器或者米家中枢网关，然后向设备发送。所以，之前大面积发生的，小米只能设备网络损坏的是情况还是会发生。不过想来也确实，毕竟小米自己卖的中枢网关的，不可能让自己的产品和开源的竞争。<br />
+官方支持的集成和之前大佬的差距就在此，之前大佬的是接替了云端，直接让你的homeassitant设备给局域网内的设备发送信息，让他开关。官方的集成则是，所有的消息都要经过云端中枢，然后再下发。只能说看后续能不能再支持吧，技术已经有了，毕竟米家智能中枢都已经上市了，就看愿不愿意开了。</p>
+<hr />
+<p>参考文档：<br />
+<a href="https://sspai.com/post/95117">正是入坑好时节：在米家官方支持之际，再聊新人 Home Assistant 入门</a><br />
+<a href="https://www.home-assistant.io/installation/alternative">官方系统下载地址</a></p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>NAS</tag>
+        <tag>浪潮SA5112M4</tag>
+        <tag>服务器</tag>
       </tags>
   </entry>
   <entry>
@@ -7297,7 +7297,7 @@ HBA卡就是一个通道卡，它的作用是让计算机能够对硬盘进行�
 <ol>
 <li><a href="https://www.asmedia.com.tw/products-list/8a2YQ99xzaUH2qg5/58dYQ8bxZ4UR9wG5">ASM1166</a>芯片，asmedia兼容性要好于Marvell 。这款芯片拓展6个SATA接口。所以大多数六口都是用它。还有就是ASM1164和ASM1064这两款都是4口拓展，前者是PCIE 3.0x2后者是x1。</li>
 <li><a href="https://www.jmicron.com/products/list/15">JMB585</a>，最高支持5个Sata口，他的兄弟JMB582一般用在网卡拓展上，它可以拓展2个sata口。</li>
-<li>Marvell 92XX或者91XX，需要注意的是芯片只支持PCIe 2.0 x1/x2。具体可以看<a href="https://cn.marvell.com/products/system-solutions.html">官网</a>，但是功耗低1W。而且6G速度满足你的需求。<br />
+<li>Marvell 92XX或者91XX，需要注意的是只支持PCIe 2.0 x1/x2。具体可以看<a href="https://cn.marvell.com/products/system-solutions.html">官网</a>，但是功耗低1W。而且6G速度满足你的需求。14xx是运行在PCIE 3.0下，但是他的功耗更高唯9w。我个人是不推荐Marvell的拓展卡。<br />
 <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/209-%E7%A1%AC%E7%9B%98%E4%BD%8D%E6%8B%93%E5%B1%95%E6%8C%87%E5%8C%97-2025-07-13-15-15-43.png" alt="209-硬盘位拓展指北-2025-07-13-15-15-43" /></li>
 </ol>
 <p>芯片的能力代表的是拓展硬盘的上限，现在主流的芯片就上面这三种。一般拓展3-5个口之间。除开ASM和Marvell这两款其他的你大致都可以从拓展的接口判断出对应的芯片。</p>
@@ -8236,6 +8236,77 @@ Y=(y_1,y_2,\cdots,y_N)^T=\begin{pmatrix}
       </tags>
   </entry>
   <entry>
+    <title>关于同事</title>
+    <url>/2022/05/08/%E5%85%B3%E4%BA%8E%E5%90%8C%E4%BA%8B/</url>
+    <content><![CDATA[<p>关于同事，之前我有一个页面专门是来描述当初我遇见得这些同事的．后来感情淡了，看开了．就删除了页面，改写成了茫茫多的文章一篇．对于同事，我们其实是很矛盾的，作为一个社会人，我们其实相处最多的不是自己的家人，而是这一天8小时，一周5天一直合作无间的同事．相较于家人，有时候我们和同事相处的时间反而更多．所以很多人，就慢慢的觉得，自己的同事像自己的家人一样，甚至与其交心，互相倾诉．</p>
+<p>我不否认，有些同事慢慢的会成为好友．但是相比于遇见志趣相同的同事，我们更多的时候遇见的正如我当初所遇见的:对你没有规划的上司，不干活的同僚，然后甚至烦人的客户．进入职场之后，其实我们对于自己的前进之路没有多少的决定权．别以为电视上那种干好活就会升职，大多数的工作其实都是简单的复制粘贴，我们以为学好数理化，走遍天下都不怕．但是现实中，你的技能再好，也终究不过是一个技工，他们更看重沟通能力，换而言之，就是你说不屑的拍马屁，吹嘘奉承．很多时候领导并不需要自己做事，甚至底下的人做的事也是可以有替代性的，哪怕这种技能就你一个人会，也没有用．</p>
+<p>我曾经亲身体验:一个项目由我从头接触到尾，领导对其中细节操作并不知情，在后面与我发生矛盾之后，叫我教会另一个完全没有基础的同事．美其名曰:交接．至于这个同事学有几成，反正最后勉强够对付就行．这件事我明白了，你的技能并不是不可替代的的，所以你说你技术牛逼，全公司除了你谁都不会这个．但是生活中很多时候用到的都是加减乘除，而不是微分积分．所以，不要拥技能自重，清华北大也不过是价格的问题．这就导致了，很多刚进社会的青年觉得我可以拿低工资，学本事，或者积累经验．但是我个人觉得没有必要，大厂和小企业无论薪资，都应该去大厂．第一点是晋升:小企业晋升不明确，更多看人际关系．好的大厂是由导师制度，只要你导师靠谱，你至少还有条明确的晋升导入．第二点就是技能:小企业啥都干，给人的感觉是锻炼人，但是你所有的都学，但都是入门，往深处学习动力不足，而且太杂太乱，你自己无法将其融会贯通．而大厂很多时候不会要求你学习那些乱七八糟的，专人专事．你只需要专注于你那一块，然后开发出一些相对于你来说可以提升工作效率的工具就可以．我相信很多工作多年的老鸟都会有一个工具箱，里面或许是经常用到的代码段，或者是一些文档格式方便自己快速编写对应文档．这些才是你需要学习的本领．而不是明明是个开发，确要去选购机型，或者创建数据库．诚然多学一点是好的，如果你有兴趣可以多看两眼，如果没有，那么还是专精于你眼下的工作．然后大厂还有一个优势就是，人员数量庞大，所以会更加的需要和锻炼你的沟通能力，这是小企业不能带来的．小企业最多百来人，自己部门就几个，几个人几句话说清楚，但是大厂上千人，很多时候需要多部门协作，而且还需要整理开会资料，上下层级沟通，这些就更加锻炼你的处事和文档．</p>
+<p>说完大厂小厂，我们回到开头，很多能将部门同事当作朋友知心人的往往是小企业的人，在那里环境轻松，有更多的时间和别人聊家常，慢慢的融入别人的生活里，大厂一般大家聊天都是工作上的，很少深入到别人家庭，所以人人之间都是有点隔阂的，毕竟对对方家庭不是很了解．而我吐槽的也正是这些人．往往我并不知道他的家庭，也不了解是什么样的为人．更多时候是吐槽他们在工作上的方式和我认知的有所不同．比如好不负责的组长，或者几乎没考虑功能实现可能性的项目经理．这些在我看来是管理者必备的技能，在他们那缺失，导致我认为自己技能上强过他们．但正如我所说的，上位者往往不是技能的高手，更多的是沟通和人际关系上有</p>
+<p>一定的强项．后面才发现项目经理和部门经理认识多年，而我们组长更是与部门经理经常外出夜宵．</p>
+<p>你问我为何不与他们同流，但是一般刚出社会的大学生很难与他们同流．首先是经济:经理，组长有车有房，可以开车就出去吃个饭，回家就办顿家庭聚餐，刚毕业的大学生车没有，可以举办家庭的场所更是难．然后是话题:休息时候除了工作，他们往往能谈些别的，或是家庭或是爱好，毕竟三十岁中年男人就那几样．但是刚毕业的大学生生活艰辛，爱好不多，家庭也没有和自己的父母都聊不来几句．哪来的和上司相投甚欢．大家都喜欢下班就忘记工作，沉浸在自己的小世界中，哪有人喜欢天天出去．</p>
+<p>那你说，这样病态的社会下，不是所有人刚毕业的大学生都升不上去．其实不然，很多人在学生的时候就喜欢这套，比如大学时期的干部，学生会等人，他们精于此道．所以进入工作之后也就顺理成章，只要有心，还是能找到上下级共同话题的．其次就是项目制度下小团队，表现出众，项目领导觉得你能力可以，用的舒服，而且省去重新熟悉的麻烦，会将你长久的留在自己的项目下．随着项目经理的升迁，或者项目规模的增大，你有机会可以顶替经理的位置．</p>
+<p>综合来讲:毕业生升迁一般靠2条路:公司成熟的晋升制度和靠谱的导师．前者常见但是终有尽头，后者则是可遇不可求啊．</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>那些年遇见的人</category>
+      </categories>
+      <tags>
+        <tag>同事</tag>
+        <tag>升迁</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于吃饭</title>
+    <url>/2022/04/30/%E5%85%B3%E4%BA%8E%E5%90%83%E9%A5%AD/</url>
+    <content><![CDATA[<p>有一段时间，我们学校要求打卡，所以我们宿舍有时候会结伴一起早起打卡，忽然有一天，打完卡后，有人提议出去吃早餐，不去食堂了，于是乎，浩浩荡荡的大军就踩着霜冻向向门口出去。</p>
+<p>我们学校在高速公路旁，而且周围没有什么基础建设，连店都很少。但是，有人的地方就会有生意，附近的村民看见这里建了一座大学，就都过来做大学生的生意了。所以，在我们的校门口就出现很多小摊小贩，而这家早餐店算是其中比较气派的一种，用了一个货运的集装箱作餐厅，然后又搭了一个棚子，当作厨房，做一些豆腐脑，油条。</p>
+<p>学校地属北方，又远离市区在高速公路旁，所以一到冬天，高速两边的树都赤裸裸的，落叶四处洒落，加上偶尔袭来的沙尘暴，宛若一股末日的风貌，而这土黄之间忽然出现了一个墨绿集装箱，可以说的上是沙漠中的绿洲啊。小店很小，但是人不少，毕竟一整个大学的人在这，小棚里搭着一个大油锅，里面炸着油条，旁边是老板两人在那边擀面做油条坯子。旁边有个小点的锅，煮着卤汁，锅旁边就是装着豆腐脑的桶，有人要，直接从桶里舀出豆腐脑，然后浇上热喷喷的卤汁，一碗北方早点必备的豆腐脑就出炉了，当然，旁边还有锅巴菜，和豆浆供你选择。最后在靠近门口的桌子，放着的是餐具和自助的咸菜。我还记得豆腐脑的咸香，也还留念油条的酥软，但是多年后，悄然爬上我心头的却是这酸酸的咸菜。咸菜用的是北方常见的大白菜做的，用刀切碎，然后加醋腌制，简单的在吃下第一口，你就可以猜到做法。可以看出，这个自助的小菜只是老板的饶头，并不准备用来吸引客户，所以做的也很随意，白菜大小不均，而且腌制的也不是均匀，所以你偶尔会吃到一口特别劲爽的，偶尔也会吃到一口寡然无味的。但是就是这样的咸菜却让我欲罢不能，可以配着他喝下大半碗豆浆或者豆腐脑。也许是这粗旷的做法意外的适合这末日的情境吧。</p>
+<p>现在想来，我们的学校虽然偏远，但是却不乏好吃的，毕竟周围的村民听说这里有个大学，都过来做起了小吃生意。小一点的来个摊子：鸡蛋灌饼，大饼卷一切，煎饼果子。大一点的盖个小砖房：做个小炒，盖饭。更有甚者，建了一个超市和ktv。就这样，我们学校就自成一个商业圈，每到晚上，人来人往，络绎不绝。</p>
+<p>至今还会想起当时如果晚上有课，就早点去教室，然后等到饭点的时候去校外，买两个鸡蛋灌饼，加个大饼夹菜，就能当晚餐。有段时间特别喜欢大饼夹熏肉：先把面头擀成圆形，然后放煎锅里面油炸，油不多，火也不大，就是将面饼慢慢炸至膨胀，然后取出，放点黄瓜丝，小葱丝，最后是切成很薄很薄的熏肉,薄的可以透光，卷起来，就是一份美味的大饼夹熏肉。一份比普通的大饼夹肉贵，而且每次看到他才放那么一点点熏肉就想着下次不来吃。但是身体还是诚实的每次来排队，因为无法抗拒，一口咬下去，酥脆的口感和葱花的香气，还有被面皮加热的熏肉，薄薄的但是却异常香。还有就是大饼夹鸡蛋，脆脆的面皮夹着新鲜的生菜，中间还有鸡蛋，美味至极，还有一种土豪的吃法，买两个灌饼，然后像汉堡一样中间夹着生菜，鸡柳，香肠。每每看到这个，我都恨自己的肚子已经吃不下这么多东西了。现在看来，当初大学我快200的体重也不是没有道理的。即使我每次都很克制，只买一到两个。但是由于要求自己只能买一到两个小吃，所以每次我都是买量比较多的小吃，导致最后一段时间我都没买大饼熏肉，因为量少。</p>
+<p>到如今，一碗稀饭，一道凉菜，一个炒菜就可以当自己的晚餐，看来确实是口味变得清淡了不少。那段时间时候永远吃不饱，感觉可以吃很多，而且到了晚上也不觉得肚子胀睡不着。不像如今一吃多晚上就胀肚。有时候宿舍还会备着小浣熊，我们的二哥，总是怕自己肚子饿，常备小浣熊。后来闷骚给我算了一笔账，晚上6点吃饭到第二天9点多，看都快15个小时了，所以晚饭要多吃，恩，我觉得很有道理，要多吃.所以有段时间晚饭我都是加饭的。现在想来，看来这是他的阴谋，因为和他一样吃，我到了200斤，他还是70kg没变。</p>
+<p>后来，毕业了，吃饭不方便，午饭要楼下买外卖，又贵，而且味道还不好，晚餐虽然在家吃，但是吃的晚，早就没食欲，到了后来搬出去了，吃饭更麻烦了，就愈发的不想吃饭，只要吃过就可以。吃更多的像个任务，而不再是享受。好像很多事都是这样，慢慢的变得不再重要，然后变得麻木，平淡了，就好象生活。</p>
+<p>好想再回去吃饭.</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>吃</tag>
+        <tag>喝</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于未来</title>
+    <url>/2022/04/30/%E5%85%B3%E4%BA%8E%E6%9C%AA%E6%9D%A5/</url>
+    <content><![CDATA[<p>有时候，我忽然感到莫名的恐惧，好似背后有人袭来一般，全身紧张。然后，就陷入了一股莫名的情绪不定中。</p>
+<p>在多次经历之后，我忽然发现这一切的原因既然来自未来。</p>
+<p>有时候会想到未来的某一天自己会怎么样，然后陷入开心或者恐惧之中，最后就导致上述事件的发生。在此我不禁想知道未来到底是什么。我知道这又是一个没有答案的问题，而我接下来的内容你完全可以参考你当初的八百文。</p>
+<p>好吧，在一切的开始，我们有过去，然后现在，幻想着未来。然后我们不止一次被人拿未来欺骗我们，而我们也一次次的为了这个不存在的东西努力，希望它实现。但事实是未来不存在。你想的只是你想的，未来是未来，不要拿自己的想法然后强加在一个不存在的事物，然后对我们宣布，看这就是未来，这就是当初我对你们说的未来。</p>
+<p>姑且不论唯物观点来说，未来根本连唯心主义概念都扯不上。他不想过去一样，有事情，有物体，有痕迹。也不像现在这样，只至少有人在感受和运动，但是未来有什么，物体？感受？没有，事实是没有。所以根本不存在预言未来这么一回事。至少在目前的体系内这事情是不存在的。有人说时间如同河流，奔流不息。这体现的是时间的流动，我更觉得时间就像一只笔，写下的都成事实无法更改，只有存在，而还没写的，就什么都没，我不能说接下来的字是存在的，事实上，到目前为止是存在的，但是以后，你没办法证明以后的事。</p>
+<p>当然你会在现在说上一段文字是存在的，但是你现在证明的是过去。额，这不是一个文字游戏，也不是人类对过去未来的定义错误，事实上，人们已经发现这个世界远比我们想象的复杂，两件事情最大的相关性也就才百分三十到四十，什么意思呢，就是说你叫你手下去买包烟，也才最大百分三十的可能性导致你手下去买烟。当然你也会在事后说，因为你是他老板所以他会去买，事实上这就跟我上面说的一样，你证明的是两件有已经发生的事情，当然是百分百。</p>
+<p>当然不必悲观，事实上，我们的世界的确很复杂，但是我们人类其实很简单，在大量的统计下，我们的事物其实有个趋近区间，简单说就是你这个老板叫下属买东西，下属去买的趋势靠近这个区间，依据人类的判断来说这个概率应该是很高的，但结果是我不知道，这个十分难统计，而且数量越大，结果越正确。以上只不过是我想说不是所有你想的事情都是百分百实现的，哪怕他多符合你的想法，话说，我好像讲理一大堆墨菲定律。</p>
+<p>好了，综上来看，似乎我们的未来处于一片混沌之中，现在的事情对他的影响可以说是有限的。于是乎未来这东西根本在我们如今的体系内是不存在的，因为他无法被证明，也无法被探知，更无法掌握规律。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>未来</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于vps的一些设想</title>
     <url>/2022/05/02/%E5%85%B3%E4%BA%8Evps%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%BE%E6%83%B3/</url>
     <content><![CDATA[<p>首先，描述一下我的服务器配置</p>
@@ -8354,77 +8425,6 @@ sysctl -p
       </tags>
   </entry>
   <entry>
-    <title>关于吃饭</title>
-    <url>/2022/04/30/%E5%85%B3%E4%BA%8E%E5%90%83%E9%A5%AD/</url>
-    <content><![CDATA[<p>有一段时间，我们学校要求打卡，所以我们宿舍有时候会结伴一起早起打卡，忽然有一天，打完卡后，有人提议出去吃早餐，不去食堂了，于是乎，浩浩荡荡的大军就踩着霜冻向向门口出去。</p>
-<p>我们学校在高速公路旁，而且周围没有什么基础建设，连店都很少。但是，有人的地方就会有生意，附近的村民看见这里建了一座大学，就都过来做大学生的生意了。所以，在我们的校门口就出现很多小摊小贩，而这家早餐店算是其中比较气派的一种，用了一个货运的集装箱作餐厅，然后又搭了一个棚子，当作厨房，做一些豆腐脑，油条。</p>
-<p>学校地属北方，又远离市区在高速公路旁，所以一到冬天，高速两边的树都赤裸裸的，落叶四处洒落，加上偶尔袭来的沙尘暴，宛若一股末日的风貌，而这土黄之间忽然出现了一个墨绿集装箱，可以说的上是沙漠中的绿洲啊。小店很小，但是人不少，毕竟一整个大学的人在这，小棚里搭着一个大油锅，里面炸着油条，旁边是老板两人在那边擀面做油条坯子。旁边有个小点的锅，煮着卤汁，锅旁边就是装着豆腐脑的桶，有人要，直接从桶里舀出豆腐脑，然后浇上热喷喷的卤汁，一碗北方早点必备的豆腐脑就出炉了，当然，旁边还有锅巴菜，和豆浆供你选择。最后在靠近门口的桌子，放着的是餐具和自助的咸菜。我还记得豆腐脑的咸香，也还留念油条的酥软，但是多年后，悄然爬上我心头的却是这酸酸的咸菜。咸菜用的是北方常见的大白菜做的，用刀切碎，然后加醋腌制，简单的在吃下第一口，你就可以猜到做法。可以看出，这个自助的小菜只是老板的饶头，并不准备用来吸引客户，所以做的也很随意，白菜大小不均，而且腌制的也不是均匀，所以你偶尔会吃到一口特别劲爽的，偶尔也会吃到一口寡然无味的。但是就是这样的咸菜却让我欲罢不能，可以配着他喝下大半碗豆浆或者豆腐脑。也许是这粗旷的做法意外的适合这末日的情境吧。</p>
-<p>现在想来，我们的学校虽然偏远，但是却不乏好吃的，毕竟周围的村民听说这里有个大学，都过来做起了小吃生意。小一点的来个摊子：鸡蛋灌饼，大饼卷一切，煎饼果子。大一点的盖个小砖房：做个小炒，盖饭。更有甚者，建了一个超市和ktv。就这样，我们学校就自成一个商业圈，每到晚上，人来人往，络绎不绝。</p>
-<p>至今还会想起当时如果晚上有课，就早点去教室，然后等到饭点的时候去校外，买两个鸡蛋灌饼，加个大饼夹菜，就能当晚餐。有段时间特别喜欢大饼夹熏肉：先把面头擀成圆形，然后放煎锅里面油炸，油不多，火也不大，就是将面饼慢慢炸至膨胀，然后取出，放点黄瓜丝，小葱丝，最后是切成很薄很薄的熏肉,薄的可以透光，卷起来，就是一份美味的大饼夹熏肉。一份比普通的大饼夹肉贵，而且每次看到他才放那么一点点熏肉就想着下次不来吃。但是身体还是诚实的每次来排队，因为无法抗拒，一口咬下去，酥脆的口感和葱花的香气，还有被面皮加热的熏肉，薄薄的但是却异常香。还有就是大饼夹鸡蛋，脆脆的面皮夹着新鲜的生菜，中间还有鸡蛋，美味至极，还有一种土豪的吃法，买两个灌饼，然后像汉堡一样中间夹着生菜，鸡柳，香肠。每每看到这个，我都恨自己的肚子已经吃不下这么多东西了。现在看来，当初大学我快200的体重也不是没有道理的。即使我每次都很克制，只买一到两个。但是由于要求自己只能买一到两个小吃，所以每次我都是买量比较多的小吃，导致最后一段时间我都没买大饼熏肉，因为量少。</p>
-<p>到如今，一碗稀饭，一道凉菜，一个炒菜就可以当自己的晚餐，看来确实是口味变得清淡了不少。那段时间时候永远吃不饱，感觉可以吃很多，而且到了晚上也不觉得肚子胀睡不着。不像如今一吃多晚上就胀肚。有时候宿舍还会备着小浣熊，我们的二哥，总是怕自己肚子饿，常备小浣熊。后来闷骚给我算了一笔账，晚上6点吃饭到第二天9点多，看都快15个小时了，所以晚饭要多吃，恩，我觉得很有道理，要多吃.所以有段时间晚饭我都是加饭的。现在想来，看来这是他的阴谋，因为和他一样吃，我到了200斤，他还是70kg没变。</p>
-<p>后来，毕业了，吃饭不方便，午饭要楼下买外卖，又贵，而且味道还不好，晚餐虽然在家吃，但是吃的晚，早就没食欲，到了后来搬出去了，吃饭更麻烦了，就愈发的不想吃饭，只要吃过就可以。吃更多的像个任务，而不再是享受。好像很多事都是这样，慢慢的变得不再重要，然后变得麻木，平淡了，就好象生活。</p>
-<p>好想再回去吃饭.</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>吃</tag>
-        <tag>喝</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于同事</title>
-    <url>/2022/05/08/%E5%85%B3%E4%BA%8E%E5%90%8C%E4%BA%8B/</url>
-    <content><![CDATA[<p>关于同事，之前我有一个页面专门是来描述当初我遇见得这些同事的．后来感情淡了，看开了．就删除了页面，改写成了茫茫多的文章一篇．对于同事，我们其实是很矛盾的，作为一个社会人，我们其实相处最多的不是自己的家人，而是这一天8小时，一周5天一直合作无间的同事．相较于家人，有时候我们和同事相处的时间反而更多．所以很多人，就慢慢的觉得，自己的同事像自己的家人一样，甚至与其交心，互相倾诉．</p>
-<p>我不否认，有些同事慢慢的会成为好友．但是相比于遇见志趣相同的同事，我们更多的时候遇见的正如我当初所遇见的:对你没有规划的上司，不干活的同僚，然后甚至烦人的客户．进入职场之后，其实我们对于自己的前进之路没有多少的决定权．别以为电视上那种干好活就会升职，大多数的工作其实都是简单的复制粘贴，我们以为学好数理化，走遍天下都不怕．但是现实中，你的技能再好，也终究不过是一个技工，他们更看重沟通能力，换而言之，就是你说不屑的拍马屁，吹嘘奉承．很多时候领导并不需要自己做事，甚至底下的人做的事也是可以有替代性的，哪怕这种技能就你一个人会，也没有用．</p>
-<p>我曾经亲身体验:一个项目由我从头接触到尾，领导对其中细节操作并不知情，在后面与我发生矛盾之后，叫我教会另一个完全没有基础的同事．美其名曰:交接．至于这个同事学有几成，反正最后勉强够对付就行．这件事我明白了，你的技能并不是不可替代的的，所以你说你技术牛逼，全公司除了你谁都不会这个．但是生活中很多时候用到的都是加减乘除，而不是微分积分．所以，不要拥技能自重，清华北大也不过是价格的问题．这就导致了，很多刚进社会的青年觉得我可以拿低工资，学本事，或者积累经验．但是我个人觉得没有必要，大厂和小企业无论薪资，都应该去大厂．第一点是晋升:小企业晋升不明确，更多看人际关系．好的大厂是由导师制度，只要你导师靠谱，你至少还有条明确的晋升导入．第二点就是技能:小企业啥都干，给人的感觉是锻炼人，但是你所有的都学，但都是入门，往深处学习动力不足，而且太杂太乱，你自己无法将其融会贯通．而大厂很多时候不会要求你学习那些乱七八糟的，专人专事．你只需要专注于你那一块，然后开发出一些相对于你来说可以提升工作效率的工具就可以．我相信很多工作多年的老鸟都会有一个工具箱，里面或许是经常用到的代码段，或者是一些文档格式方便自己快速编写对应文档．这些才是你需要学习的本领．而不是明明是个开发，确要去选购机型，或者创建数据库．诚然多学一点是好的，如果你有兴趣可以多看两眼，如果没有，那么还是专精于你眼下的工作．然后大厂还有一个优势就是，人员数量庞大，所以会更加的需要和锻炼你的沟通能力，这是小企业不能带来的．小企业最多百来人，自己部门就几个，几个人几句话说清楚，但是大厂上千人，很多时候需要多部门协作，而且还需要整理开会资料，上下层级沟通，这些就更加锻炼你的处事和文档．</p>
-<p>说完大厂小厂，我们回到开头，很多能将部门同事当作朋友知心人的往往是小企业的人，在那里环境轻松，有更多的时间和别人聊家常，慢慢的融入别人的生活里，大厂一般大家聊天都是工作上的，很少深入到别人家庭，所以人人之间都是有点隔阂的，毕竟对对方家庭不是很了解．而我吐槽的也正是这些人．往往我并不知道他的家庭，也不了解是什么样的为人．更多时候是吐槽他们在工作上的方式和我认知的有所不同．比如好不负责的组长，或者几乎没考虑功能实现可能性的项目经理．这些在我看来是管理者必备的技能，在他们那缺失，导致我认为自己技能上强过他们．但正如我所说的，上位者往往不是技能的高手，更多的是沟通和人际关系上有</p>
-<p>一定的强项．后面才发现项目经理和部门经理认识多年，而我们组长更是与部门经理经常外出夜宵．</p>
-<p>你问我为何不与他们同流，但是一般刚出社会的大学生很难与他们同流．首先是经济:经理，组长有车有房，可以开车就出去吃个饭，回家就办顿家庭聚餐，刚毕业的大学生车没有，可以举办家庭的场所更是难．然后是话题:休息时候除了工作，他们往往能谈些别的，或是家庭或是爱好，毕竟三十岁中年男人就那几样．但是刚毕业的大学生生活艰辛，爱好不多，家庭也没有和自己的父母都聊不来几句．哪来的和上司相投甚欢．大家都喜欢下班就忘记工作，沉浸在自己的小世界中，哪有人喜欢天天出去．</p>
-<p>那你说，这样病态的社会下，不是所有人刚毕业的大学生都升不上去．其实不然，很多人在学生的时候就喜欢这套，比如大学时期的干部，学生会等人，他们精于此道．所以进入工作之后也就顺理成章，只要有心，还是能找到上下级共同话题的．其次就是项目制度下小团队，表现出众，项目领导觉得你能力可以，用的舒服，而且省去重新熟悉的麻烦，会将你长久的留在自己的项目下．随着项目经理的升迁，或者项目规模的增大，你有机会可以顶替经理的位置．</p>
-<p>综合来讲:毕业生升迁一般靠2条路:公司成熟的晋升制度和靠谱的导师．前者常见但是终有尽头，后者则是可遇不可求啊．</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>那些年遇见的人</category>
-      </categories>
-      <tags>
-        <tag>同事</tag>
-        <tag>升迁</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于未来</title>
-    <url>/2022/04/30/%E5%85%B3%E4%BA%8E%E6%9C%AA%E6%9D%A5/</url>
-    <content><![CDATA[<p>有时候，我忽然感到莫名的恐惧，好似背后有人袭来一般，全身紧张。然后，就陷入了一股莫名的情绪不定中。</p>
-<p>在多次经历之后，我忽然发现这一切的原因既然来自未来。</p>
-<p>有时候会想到未来的某一天自己会怎么样，然后陷入开心或者恐惧之中，最后就导致上述事件的发生。在此我不禁想知道未来到底是什么。我知道这又是一个没有答案的问题，而我接下来的内容你完全可以参考你当初的八百文。</p>
-<p>好吧，在一切的开始，我们有过去，然后现在，幻想着未来。然后我们不止一次被人拿未来欺骗我们，而我们也一次次的为了这个不存在的东西努力，希望它实现。但事实是未来不存在。你想的只是你想的，未来是未来，不要拿自己的想法然后强加在一个不存在的事物，然后对我们宣布，看这就是未来，这就是当初我对你们说的未来。</p>
-<p>姑且不论唯物观点来说，未来根本连唯心主义概念都扯不上。他不想过去一样，有事情，有物体，有痕迹。也不像现在这样，只至少有人在感受和运动，但是未来有什么，物体？感受？没有，事实是没有。所以根本不存在预言未来这么一回事。至少在目前的体系内这事情是不存在的。有人说时间如同河流，奔流不息。这体现的是时间的流动，我更觉得时间就像一只笔，写下的都成事实无法更改，只有存在，而还没写的，就什么都没，我不能说接下来的字是存在的，事实上，到目前为止是存在的，但是以后，你没办法证明以后的事。</p>
-<p>当然你会在现在说上一段文字是存在的，但是你现在证明的是过去。额，这不是一个文字游戏，也不是人类对过去未来的定义错误，事实上，人们已经发现这个世界远比我们想象的复杂，两件事情最大的相关性也就才百分三十到四十，什么意思呢，就是说你叫你手下去买包烟，也才最大百分三十的可能性导致你手下去买烟。当然你也会在事后说，因为你是他老板所以他会去买，事实上这就跟我上面说的一样，你证明的是两件有已经发生的事情，当然是百分百。</p>
-<p>当然不必悲观，事实上，我们的世界的确很复杂，但是我们人类其实很简单，在大量的统计下，我们的事物其实有个趋近区间，简单说就是你这个老板叫下属买东西，下属去买的趋势靠近这个区间，依据人类的判断来说这个概率应该是很高的，但结果是我不知道，这个十分难统计，而且数量越大，结果越正确。以上只不过是我想说不是所有你想的事情都是百分百实现的，哪怕他多符合你的想法，话说，我好像讲理一大堆墨菲定律。</p>
-<p>好了，综上来看，似乎我们的未来处于一片混沌之中，现在的事情对他的影响可以说是有限的。于是乎未来这东西根本在我们如今的体系内是不存在的，因为他无法被证明，也无法被探知，更无法掌握规律。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>未来</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>利刃出鞘</title>
     <url>/2022/04/30/%E5%88%A9%E5%88%83%E5%87%BA%E9%9E%98/</url>
     <content><![CDATA[<p>利刃出鞘，这是我最近看过的一场酣畅淋漓的侦探佳作</p>
@@ -8515,6 +8515,52 @@ sysctl -p
       </tags>
   </entry>
   <entry>
+    <title>图式的三层理论</title>
+    <url>/2022/10/12/%E5%9B%BE%E5%BC%8F%E7%9A%84%E4%B8%89%E5%B1%82%E7%90%86%E8%AE%BA/</url>
+    <content><![CDATA[<p>相较于认知理论盘根错节的基础，这是一个更加具有操作性和实践性的理论，主要是用来解决我在日常生活工作中遇见的一些行为前后矛盾，因为根据认知相同，在同一件事情或者大差不离的环境下应该产生一样的结果，所以我认为在认知的上层是图式——一种对事务的具体操作流程，是一种记录在脑中的场景推演。随着人类社会的复杂程度增加，我认为人们在处理一些复杂的场景下，使用的是记忆中对应或者类似场景的记忆来处理当前复杂场景的，更多的体现在行为和话语，而对基本的认知和心理不做太多评判。图式是一个学习的过程然后通过记忆进行保存，而当前场景处理即图式实践的一个过程。我认为，一个人除了最基础的认知，他们在社会之中，更多的是图式的一种学习方式来学习社会关系和人际交往。不同于基础学科知识，没有一个恰当的理论帮助人从幼年开始学习人际，交往等其他学校内没有教的东西，所以我认为，人的成长过程就是图式不断积累的过程。和学习过程大差不离，通过不断的对试错和对损失的厌恶，我们会在脑中形成某些场景下的认知理论，来代替复杂繁多的图式帮助人交往交流。</p>
+<h3 id="图式和认知"><a class="markdownIt-Anchor" href="#图式和认知"></a> 图式和认知</h3>
+<p>当我们小的时候，叔叔阿姨过来了，我们并不知道要问好。父母会叫我们问好，这就是一个简单的图式。我们就学会了最基础的交际。明白了相似甚至新出现的场景下，我们的正确行为和言语。图式和认知最大的区别就是，认知是一种理论基础，它可以发展出图式，知道图式的边界和范围，使其不做出超过认知的事情。这就像我们小学的义务教育的内容一样，理论知识和习题同时给予你，是一个从理论发展到习题，在从习题这种图式反过来验证加强理论的一个过程，后续你使用的时候更多的是一个从认知到发展图式的方式。从理论发展出图式，我称之为认知过程。</p>
+<p>如果你小时候看过一些电视剧，你可以发现，电视剧里面总是会宣言主角通过诚实守信，通过真材实料打败使用虚假材料的对手，从此不断的赚钱，成为人生赢家。虽然不敢百分百确定，但是可以肯定的是，如果你做生意的话，你有可能也会选择诚实守信，真材实料。这里并不是宣言偷奸耍滑，我们可以看到这就是图式的作用。在我们涉及到的一个新的领域，如果我们没有对应领域的基础知识，无法从认知理论出发，那么就只能从我们记忆中的影像，来推演我们即将踏入的行业。但是实际上，如果你做生意，更加看重的应该是利润，只有利润能够帮你实现人生赢家，真材实料和诚实并不能。所以我们可以看到，这就是图式和认知的区别，在没有认知的情况下，我们用图式来做出行为，而有认知理论就能更加明白如何去做，已经为何这么做。</p>
+<p>我们默认会用图式来解决我们生活中遇见的问题，因为图式更加的便捷且易操作，如果未经过特殊训练或者理论知识，那么一个人表现出来的行为会和他内心最接近的图式相同。这也解释了为何一些人会表现出手足无措的想象，很多时候他的心里没有图式或者认知来帮他了解现在的情况，一时之间不明白如何操作也是正常的。而图式的另一个作用就是帮助我们提前预演未来可能发生的情况，让我们的内心更好的为未来的挑战做准备。</p>
+<p>图式和认知是可以简单的概括成一个学习的过程，我们通过学习例子来加深给出的理论，通过不断的试错和反复，来达到最终的答案，这个过程就好像神经网络学习的过程。所以如果图式够丰富，是会形成自己一套认知，从而在在某个领域内融会贯通。但是并不是所有人都能通过图式来达到建立认知的过程。现在很多人看到海底捞火，就觉得我也行。于是模仿海底捞的服务，但是作为一个餐饮业来说，味道和干净才是重中之重，我曾经说过，海底捞可以达到肯德基，麦当劳的地位。为啥？并不是因为服务，是标准化的味道和强大的供应链。你在任何地方吃到的海底捞的味道肯定是一样的，这满足了人们对它的期望，我过去吃饭是为了吃到我之前想吃的味道，而不是过去碰运气去看看今天厨师或者供应链好不好，海底捞取巧的解决了厨师的问题，就像肯德基和麦当劳没有厨师一样，海底捞也没有，然后就是供应链，和肯德基麦当劳一样，海底捞有强大的供应链公司，可以保证他食材的同步，这至关重要。很多时候有人说我在四川吃到了xxx火锅比海底捞好吃多了，四川人根本不吃海底捞。没错，天底下比海底捞好的火锅店多了，但是他只能盘踞四川，出了四川有些食材没地搞，四川运出去由太贵。所以现在很多模仿海底捞的服务，有一说一都是只是模仿人家的图式，却没有学习认知理论。总归是照猫画虎。</p>
+<h3 id="图式的显像"><a class="markdownIt-Anchor" href="#图式的显像"></a> 图式的显像</h3>
+<p>但是社会交际中，我们更多的是从图式来学习认知过程的，因为没有一个可以让我们明白的理论给予我们，而且由于不是书本上固定的内容，所以认知过程是千变万化的，是千人千面的。我觉得见面得点头问好，他觉得见面不是什么要紧的事情，所以在没有事得情况下无需交流。这就是图式的显像，虽然我们知道了应该怎么做，但是有时候根据情绪根据认知程度的问题，每个人对待同一个情景不会有相似的行为。</p>
+<p>我会对某个叔叔问好，但是我哥不会，因为他知道整个叔叔外面赌博欠钱还欠我家一大笔钱，所以他遇见时更多有那种高高在上的感觉，这就是简单的信息加工后，导致我哥对这个人的认知和我产生差异。所以认知的构建是一个包含图式和其他信息加工的复杂过程，我们无法通过同一场景下的一个简单行为来判断他的情绪和认知，但是在某些特殊场景下，我们可以通过情绪来判断他的认知，比如相亲的时候，你可以观察相亲对象的情绪，因为在信息都不明朗的情况下，我们都会默认按照自己内心的图式进行流程，但是如果有情绪反抗的话，就会出现我明知道该这么做，但是我不想这么做的一些矛盾。</p>
+<p>大多数相亲是有一个大致流程：媒婆带着男孩到女孩子家中，然后女孩需要倒水沏茶给众人喝，算是给众人看下相貌和礼仪。这就是一个简单的图式或者说场景处理，不涉及到更深的认知过程，就好像时一个习俗一样的行为，如果这时女孩不愿意，或者装不知，那么大概率就是情绪在阻挠。</p>
+<p>图式的显像是个复杂的过程，但是在没有特定认知差异的情况下，我们可以判断一个人的主管意愿，这仅仅是该理论的一个简单应用。认知——图式——情绪，三者是顺序控制的，最后体现在行为之上。一个人的行为可以通过逆向推演这三者关系来判断是哪一步出现问题。</p>
+<h3 id="图式的应用"><a class="markdownIt-Anchor" href="#图式的应用"></a> 图式的应用</h3>
+<p>图式的一个简单应用就好像是营销一样，通过不断的宣传某一美好品德，在内心接受然后影响你的行为。这就是现在大多数广告的意义，也是目前德育宣传的手段。图式本质是一个学习的过程，所以我们可以看到，抖音，快手等短视频，通过一个个场景给予了我们一个个我们尚未遇见或者有可能遇见场景的图式，这就是一个简单的学习图式的过程，我们会在下一次对应场景或者下一个饭桌上将说听到的事或物再说出来。但是这只是一个图式的显现。我们会参照或者尽量使用我们内心熟悉的图式。同时图式是一个记忆的显像，所以不是所有人都会在抖音的影响下使用同样的一个图式，也许在某一次别的宴席上，觉得别人的图式更好于是就将其记入脑中学习。所以大多数人是可以在同一个场景下达到同步共识的。</p>
+<h3 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h3>
+<p>1，图式是我们踏入新领域的第一步，我们会按照心里的图式对其进行推演然后实践，这往往会给我们带来一些错误的方向，所以踏入新领域请学习其基础知识理论，目前的所有图式都有可能将我们带歪，只有建立了自己的认知理论才能防止这种行为。</p>
+<ol start="2">
+<li>
+<p>网络或者电视，任何传播手段都可以成为我们建立图式的手段</p>
+</li>
+<li>
+<p>三层理论是互相影响的，图式确定的情况下，无认知过程，那么就是主观情绪在影响，情绪有问题说明是认知不同。</p>
+</li>
+<li>
+<p>并不是所有人都可以从图式中总结出认知的，这与学习能力，图式的数量有所关联，所以我们需要判断一些未建立认知的过程的可能。</p>
+</li>
+<li>
+<p>这个理论更加贴近生活，我们可以根据每个人在图式中扮演的角色来判断他的心境。</p>
+</li>
+</ol>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>图式</tag>
+        <tag>认知</tag>
+        <tag>情绪</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>在线图书</title>
     <url>/2022/05/01/%E5%9C%A8%E7%BA%BF%E5%9B%BE%E4%B9%A6/</url>
     <content><![CDATA[<p>图书馆地址：<a href="https://clibre.minsummer.com/">https://clibre.minsummer.com/</a></p>
@@ -8559,52 +8605,6 @@ sysctl -p
       </categories>
       <tags>
         <tag>clibre</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图式的三层理论</title>
-    <url>/2022/10/12/%E5%9B%BE%E5%BC%8F%E7%9A%84%E4%B8%89%E5%B1%82%E7%90%86%E8%AE%BA/</url>
-    <content><![CDATA[<p>相较于认知理论盘根错节的基础，这是一个更加具有操作性和实践性的理论，主要是用来解决我在日常生活工作中遇见的一些行为前后矛盾，因为根据认知相同，在同一件事情或者大差不离的环境下应该产生一样的结果，所以我认为在认知的上层是图式——一种对事务的具体操作流程，是一种记录在脑中的场景推演。随着人类社会的复杂程度增加，我认为人们在处理一些复杂的场景下，使用的是记忆中对应或者类似场景的记忆来处理当前复杂场景的，更多的体现在行为和话语，而对基本的认知和心理不做太多评判。图式是一个学习的过程然后通过记忆进行保存，而当前场景处理即图式实践的一个过程。我认为，一个人除了最基础的认知，他们在社会之中，更多的是图式的一种学习方式来学习社会关系和人际交往。不同于基础学科知识，没有一个恰当的理论帮助人从幼年开始学习人际，交往等其他学校内没有教的东西，所以我认为，人的成长过程就是图式不断积累的过程。和学习过程大差不离，通过不断的对试错和对损失的厌恶，我们会在脑中形成某些场景下的认知理论，来代替复杂繁多的图式帮助人交往交流。</p>
-<h3 id="图式和认知"><a class="markdownIt-Anchor" href="#图式和认知"></a> 图式和认知</h3>
-<p>当我们小的时候，叔叔阿姨过来了，我们并不知道要问好。父母会叫我们问好，这就是一个简单的图式。我们就学会了最基础的交际。明白了相似甚至新出现的场景下，我们的正确行为和言语。图式和认知最大的区别就是，认知是一种理论基础，它可以发展出图式，知道图式的边界和范围，使其不做出超过认知的事情。这就像我们小学的义务教育的内容一样，理论知识和习题同时给予你，是一个从理论发展到习题，在从习题这种图式反过来验证加强理论的一个过程，后续你使用的时候更多的是一个从认知到发展图式的方式。从理论发展出图式，我称之为认知过程。</p>
-<p>如果你小时候看过一些电视剧，你可以发现，电视剧里面总是会宣言主角通过诚实守信，通过真材实料打败使用虚假材料的对手，从此不断的赚钱，成为人生赢家。虽然不敢百分百确定，但是可以肯定的是，如果你做生意的话，你有可能也会选择诚实守信，真材实料。这里并不是宣言偷奸耍滑，我们可以看到这就是图式的作用。在我们涉及到的一个新的领域，如果我们没有对应领域的基础知识，无法从认知理论出发，那么就只能从我们记忆中的影像，来推演我们即将踏入的行业。但是实际上，如果你做生意，更加看重的应该是利润，只有利润能够帮你实现人生赢家，真材实料和诚实并不能。所以我们可以看到，这就是图式和认知的区别，在没有认知的情况下，我们用图式来做出行为，而有认知理论就能更加明白如何去做，已经为何这么做。</p>
-<p>我们默认会用图式来解决我们生活中遇见的问题，因为图式更加的便捷且易操作，如果未经过特殊训练或者理论知识，那么一个人表现出来的行为会和他内心最接近的图式相同。这也解释了为何一些人会表现出手足无措的想象，很多时候他的心里没有图式或者认知来帮他了解现在的情况，一时之间不明白如何操作也是正常的。而图式的另一个作用就是帮助我们提前预演未来可能发生的情况，让我们的内心更好的为未来的挑战做准备。</p>
-<p>图式和认知是可以简单的概括成一个学习的过程，我们通过学习例子来加深给出的理论，通过不断的试错和反复，来达到最终的答案，这个过程就好像神经网络学习的过程。所以如果图式够丰富，是会形成自己一套认知，从而在在某个领域内融会贯通。但是并不是所有人都能通过图式来达到建立认知的过程。现在很多人看到海底捞火，就觉得我也行。于是模仿海底捞的服务，但是作为一个餐饮业来说，味道和干净才是重中之重，我曾经说过，海底捞可以达到肯德基，麦当劳的地位。为啥？并不是因为服务，是标准化的味道和强大的供应链。你在任何地方吃到的海底捞的味道肯定是一样的，这满足了人们对它的期望，我过去吃饭是为了吃到我之前想吃的味道，而不是过去碰运气去看看今天厨师或者供应链好不好，海底捞取巧的解决了厨师的问题，就像肯德基和麦当劳没有厨师一样，海底捞也没有，然后就是供应链，和肯德基麦当劳一样，海底捞有强大的供应链公司，可以保证他食材的同步，这至关重要。很多时候有人说我在四川吃到了xxx火锅比海底捞好吃多了，四川人根本不吃海底捞。没错，天底下比海底捞好的火锅店多了，但是他只能盘踞四川，出了四川有些食材没地搞，四川运出去由太贵。所以现在很多模仿海底捞的服务，有一说一都是只是模仿人家的图式，却没有学习认知理论。总归是照猫画虎。</p>
-<h3 id="图式的显像"><a class="markdownIt-Anchor" href="#图式的显像"></a> 图式的显像</h3>
-<p>但是社会交际中，我们更多的是从图式来学习认知过程的，因为没有一个可以让我们明白的理论给予我们，而且由于不是书本上固定的内容，所以认知过程是千变万化的，是千人千面的。我觉得见面得点头问好，他觉得见面不是什么要紧的事情，所以在没有事得情况下无需交流。这就是图式的显像，虽然我们知道了应该怎么做，但是有时候根据情绪根据认知程度的问题，每个人对待同一个情景不会有相似的行为。</p>
-<p>我会对某个叔叔问好，但是我哥不会，因为他知道整个叔叔外面赌博欠钱还欠我家一大笔钱，所以他遇见时更多有那种高高在上的感觉，这就是简单的信息加工后，导致我哥对这个人的认知和我产生差异。所以认知的构建是一个包含图式和其他信息加工的复杂过程，我们无法通过同一场景下的一个简单行为来判断他的情绪和认知，但是在某些特殊场景下，我们可以通过情绪来判断他的认知，比如相亲的时候，你可以观察相亲对象的情绪，因为在信息都不明朗的情况下，我们都会默认按照自己内心的图式进行流程，但是如果有情绪反抗的话，就会出现我明知道该这么做，但是我不想这么做的一些矛盾。</p>
-<p>大多数相亲是有一个大致流程：媒婆带着男孩到女孩子家中，然后女孩需要倒水沏茶给众人喝，算是给众人看下相貌和礼仪。这就是一个简单的图式或者说场景处理，不涉及到更深的认知过程，就好像时一个习俗一样的行为，如果这时女孩不愿意，或者装不知，那么大概率就是情绪在阻挠。</p>
-<p>图式的显像是个复杂的过程，但是在没有特定认知差异的情况下，我们可以判断一个人的主管意愿，这仅仅是该理论的一个简单应用。认知——图式——情绪，三者是顺序控制的，最后体现在行为之上。一个人的行为可以通过逆向推演这三者关系来判断是哪一步出现问题。</p>
-<h3 id="图式的应用"><a class="markdownIt-Anchor" href="#图式的应用"></a> 图式的应用</h3>
-<p>图式的一个简单应用就好像是营销一样，通过不断的宣传某一美好品德，在内心接受然后影响你的行为。这就是现在大多数广告的意义，也是目前德育宣传的手段。图式本质是一个学习的过程，所以我们可以看到，抖音，快手等短视频，通过一个个场景给予了我们一个个我们尚未遇见或者有可能遇见场景的图式，这就是一个简单的学习图式的过程，我们会在下一次对应场景或者下一个饭桌上将说听到的事或物再说出来。但是这只是一个图式的显现。我们会参照或者尽量使用我们内心熟悉的图式。同时图式是一个记忆的显像，所以不是所有人都会在抖音的影响下使用同样的一个图式，也许在某一次别的宴席上，觉得别人的图式更好于是就将其记入脑中学习。所以大多数人是可以在同一个场景下达到同步共识的。</p>
-<h3 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h3>
-<p>1，图式是我们踏入新领域的第一步，我们会按照心里的图式对其进行推演然后实践，这往往会给我们带来一些错误的方向，所以踏入新领域请学习其基础知识理论，目前的所有图式都有可能将我们带歪，只有建立了自己的认知理论才能防止这种行为。</p>
-<ol start="2">
-<li>
-<p>网络或者电视，任何传播手段都可以成为我们建立图式的手段</p>
-</li>
-<li>
-<p>三层理论是互相影响的，图式确定的情况下，无认知过程，那么就是主观情绪在影响，情绪有问题说明是认知不同。</p>
-</li>
-<li>
-<p>并不是所有人都可以从图式中总结出认知的，这与学习能力，图式的数量有所关联，所以我们需要判断一些未建立认知的过程的可能。</p>
-</li>
-<li>
-<p>这个理论更加贴近生活，我们可以根据每个人在图式中扮演的角色来判断他的心境。</p>
-</li>
-</ol>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>图式</tag>
-        <tag>认知</tag>
-        <tag>情绪</tag>
       </tags>
   </entry>
   <entry>
@@ -8765,36 +8765,6 @@ sysctl -p
       </tags>
   </entry>
   <entry>
-    <title>对未来和过去的一些想法</title>
-    <url>/2022/04/30/%E5%AF%B9%E6%9C%AA%E6%9D%A5%E5%92%8C%E8%BF%87%E5%8E%BB%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/</url>
-    <content><![CDATA[<p>最近似乎负能量满满，离职的想法老是会冒出，合租的室友越发的忍受不了，然后就是老是会想起于琴，跟着就是吴敏，似乎生活变得难以忍受。于是，我静心冥想，不外乎是这些事情有太多的不确定性导致我这个喜欢掌握一切的人无法忍受，其实，静下之后，似乎一切都并不是那么的不确定。</p>
-<p>工作：这份工作确实是不能继续下去，但是并不能急于一时，否则会重蹈覆辙，所以我需要等待，等待时机的到临。既然已经看清了这份工作缺点，目前又没办法脱离。那么，还不如静下来，看看他的优点吧。</p>
-<p>首先，工作时间短，这个比自己做过的所有工作时间都短，早上9：00-12：00，下午14：30-18：00，只有六个半小时的工作时间，中午充足的午休，还有时间看电影。这点没得黑。</p>
-<p>其次，合适的通勤时间，早上有班车，20分钟到达，可以7点半才起来，晚上虽然班车有时候坐不到，但是自己坐车半小时就可以回来，也在能接受的范围内，早晚通勤不足一个小时，这个是一个极大的优势，尤其在这交通并不便利的地方。</p>
-<p>跟着是并不算难的工作和不算很高的工作压力，工作难度并不难，很简单，虽然有时候会因为简单而犯困，但是也算是一个优势，然后工作压力一般，虽然这边难伺候，但是更多的是大姐头奇葩的脾气导致的，对于工作本身来说，并没有太大的压力，用户也好说话，沟通也没问题，唯一有问题的是自己想要从中获得的东西和付出时间不成正比。但是这点也算可以理解，要知道现在这工作可以让你夜晚无拘无束的跑步而不用担心明天客户问题，也无需烦心项目能不能顺利进行下去的苦恼。</p>
-<p>然后还有就是便宜的食堂，食堂说不上多便宜，只能说性价比高，一顿饭10块钱左右可以为自己省下很多，尤其在别人12块钱吃的一般般，自己10块钱两菜一汤还加水果，那么这就显的优点十足。</p>
-<p>最后，对于工作，我最担忧的两点：一个是薪水，归根结底在这边划水一两年，我怕出去跟不上时代，然后不敢提高薪资，这点无解，但是其实也不必妄自菲薄，相较于这边的很多人，我算是比较有经验了，对于项目经验不算没有，只能说自己还没有那种把人骗晕的本事吧，发挥不稳定，看状态。其次是：怕到时候失业，恩，这点来说，看着周围的经济环境在变化，一个个说企业不赚钱，要失业，要裁员。但是这个怎么说，环境我们无法改变，而且就算经济发展好也拓招，也不见的能把你招进去，这块还是看人，发挥稳定，出色，可以最大化减少经济环境的影响。其次就是别着急选择下家，去年的那次我最后还是着急了，在经历了一个礼拜面试失败之后，我还是在智合成面试的时候就决定，如果这家要我的话，我会留下来，虽然后面试用期发现，其规模并没有我想象的那么大，也不算太正规，但是我依旧选择留下来了。归根结底是那时候穷导致的，也许这次两年的积蓄可以让我休息一个月左右吧，出去玩玩，去趟天津或者上海吧，顺带面试。</p>
-<p>最后，对于工作目前已经有了大致的轮廓，我会在明年4-5月开始开放简历，离职理由是：没有发展，无法晋升，希望可以做到项目经理，但是这边两年了还是实施，而且后期项目变少。合适的话跳槽，薪资希望可以到1w，或者9k以上。薪资这块并不是越便宜越好，这块我的心态要清楚，不要以为我开低点对方就会要我，这个不是决定性关键，一个公司不可能为了薪水不要一个员工，更何况这个薪水不算太高。</p>
-<p>然后压在我心头的是：合租的室友吧。但是仔细想想又好像若有若无，偶尔干扰我睡觉，偶尔嫌弃我弄脏地板，偶尔说我厨房弄脏。似乎都是一些不痛不痒的事情，对此我应该放开我的成见，放松心态。室友最后肯定是要走人的，毕竟已经结婚。室友一场不必分外眼红，好聚好散，这些不过是花点钱和时间的问题，正好我目前这两者都算是有一点。睡觉无解，心态放松，地板的话，不行就自己拖下地，半个小时的问题，没有什么大的问题，事实上，对于和室友合租的话，心态就要富裕一点，无论是他开一天空调，还是洗个碗，洗个菜好像要放一小时的水，这些都没问题，一天空调最多几块钱，一个月多了50，两人分下也就多出了25，水更便宜，估计下来也就十几块，当一个月多花了50，少吃几顿饭的问题，可以省下很多精力。与其计算得失，还不如花50给自己开心。然后地板，厨房，其实就是卫生问题，我是不会对搞卫生有什么意见，哪怕他就像一个大爷一样，我负责家里的一切也不是不可，我有时间和精力，只要他别太理所应当就行。所以，后续的话，不行就自己搞下卫生吧，或者当他的话当耳边风吧。其实有时候就是因为太看重他的想法，所以相处的反而不自然，给自己莫大的压力。有事就问，有事就说，合适就说，不合适就闭嘴。情商有时候就是很简单粗暴</p>
-<p>的，说和不说。</p>
-<p>最后是吴敏和于琴的事吧，首先，虽然很难受，但是我得承认，我和他不可能的，中肯来讲，她的相貌确实符合我对另一半的要求，但是对于她的性格，家庭等等其他的一切我并不了解，之所以现在如此的执念，只是因为他的相貌。在客观来看，确实，我们刚开始交流的很顺畅，如果继续下去也许，有可能会变成情侣，但是最后的结果是忽然她就对你没有兴趣，不再接你话，不再和你打招呼，然后绕着你走。我们不是福尔摩斯，所以没办法知道各中缘由，但是目前的结果是这样，事实是这样，我们并不能单方面的否认它来改变事实。所以，我们是不可能的，也许，或者，有一定的几率，他会对我改观，我们又恢复友谊。但是这一切需要的是人为，是花费大量精力和金钱，不是坐在这写字可以实现的。最后，我花费了大量的时间和精力也许我们终成眷属，成就一段佳话。但是现实毕竟不如小说般如此容易，而且我是一个人，一个普普通通的人，不是小说中独树一帜的主角，我会思考，我会想万一我们在一起后</p>
-<p>发现两人并不合适，他需要一个人可以为他排忧解难，我需要一个同进同退的人呢，但是有时候又会想我们一定合适，根据他说话的声音，今天穿的衣服，已经刚才的举止这些不切实际的东西，然后我就会去尬聊，还有主动的打招呼。在经过一次又一次的试探，最后得出了结论，我们不可能。我得接受这个事实，所以我选择将他和室友一样，并不会关注他的想法，与其设想各种挽回他的场景，还不如花点时间，老老实实的接受这个事实，摆正自己的心态。这样也许生活就没那么难受。</p>
-<p>然后是于琴，我承认，对于那段感情我太过轻率，毕竟年少不懂事，所以如今还会回想起过去的种种，我和他和吴敏一样，都是不可能了，往事涌上心头，这个没法阻止，我也接受了那个事实，只是耐不住忽然涌上来的感觉和往事，然后是一阵愧疚，也许是我想错了，我也许是应该欣赏的看待过往，虽然有后悔，虽然有不舍，但那一切都是过去，都无法改变。与其对着无法更改的事实，也许换个心态对待会更好，欣赏自己的过去，不再从中提取什么教训之类了，过去一年我已经提取过千万次，现在到了安静的欣赏的时候了，我还年轻，无法背负如此多的过往前行，我已经从你那学到了很多，现在是时候让自己放下行囊，接受新的往事了。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>未来</tag>
-        <tag>过去</tag>
-        <tag>现在</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>对服务器的改动和一些思考</title>
     <url>/2022/06/03/%E5%AF%B9%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%94%B9%E5%8A%A8%E5%92%8C%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/</url>
     <content><![CDATA[<p>最近由于疫情和隔离在家的关系，对博客和服务器友联更多的时间和想法，同时最近也写了不少相关的博客，今天就来一个阶段性的总结吧。</p>
@@ -8846,6 +8816,36 @@ sysctl -p
         <tag>v2ray</tag>
         <tag>图床</tag>
         <tag>宝塔面板</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>对未来和过去的一些想法</title>
+    <url>/2022/04/30/%E5%AF%B9%E6%9C%AA%E6%9D%A5%E5%92%8C%E8%BF%87%E5%8E%BB%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/</url>
+    <content><![CDATA[<p>最近似乎负能量满满，离职的想法老是会冒出，合租的室友越发的忍受不了，然后就是老是会想起于琴，跟着就是吴敏，似乎生活变得难以忍受。于是，我静心冥想，不外乎是这些事情有太多的不确定性导致我这个喜欢掌握一切的人无法忍受，其实，静下之后，似乎一切都并不是那么的不确定。</p>
+<p>工作：这份工作确实是不能继续下去，但是并不能急于一时，否则会重蹈覆辙，所以我需要等待，等待时机的到临。既然已经看清了这份工作缺点，目前又没办法脱离。那么，还不如静下来，看看他的优点吧。</p>
+<p>首先，工作时间短，这个比自己做过的所有工作时间都短，早上9：00-12：00，下午14：30-18：00，只有六个半小时的工作时间，中午充足的午休，还有时间看电影。这点没得黑。</p>
+<p>其次，合适的通勤时间，早上有班车，20分钟到达，可以7点半才起来，晚上虽然班车有时候坐不到，但是自己坐车半小时就可以回来，也在能接受的范围内，早晚通勤不足一个小时，这个是一个极大的优势，尤其在这交通并不便利的地方。</p>
+<p>跟着是并不算难的工作和不算很高的工作压力，工作难度并不难，很简单，虽然有时候会因为简单而犯困，但是也算是一个优势，然后工作压力一般，虽然这边难伺候，但是更多的是大姐头奇葩的脾气导致的，对于工作本身来说，并没有太大的压力，用户也好说话，沟通也没问题，唯一有问题的是自己想要从中获得的东西和付出时间不成正比。但是这点也算可以理解，要知道现在这工作可以让你夜晚无拘无束的跑步而不用担心明天客户问题，也无需烦心项目能不能顺利进行下去的苦恼。</p>
+<p>然后还有就是便宜的食堂，食堂说不上多便宜，只能说性价比高，一顿饭10块钱左右可以为自己省下很多，尤其在别人12块钱吃的一般般，自己10块钱两菜一汤还加水果，那么这就显的优点十足。</p>
+<p>最后，对于工作，我最担忧的两点：一个是薪水，归根结底在这边划水一两年，我怕出去跟不上时代，然后不敢提高薪资，这点无解，但是其实也不必妄自菲薄，相较于这边的很多人，我算是比较有经验了，对于项目经验不算没有，只能说自己还没有那种把人骗晕的本事吧，发挥不稳定，看状态。其次是：怕到时候失业，恩，这点来说，看着周围的经济环境在变化，一个个说企业不赚钱，要失业，要裁员。但是这个怎么说，环境我们无法改变，而且就算经济发展好也拓招，也不见的能把你招进去，这块还是看人，发挥稳定，出色，可以最大化减少经济环境的影响。其次就是别着急选择下家，去年的那次我最后还是着急了，在经历了一个礼拜面试失败之后，我还是在智合成面试的时候就决定，如果这家要我的话，我会留下来，虽然后面试用期发现，其规模并没有我想象的那么大，也不算太正规，但是我依旧选择留下来了。归根结底是那时候穷导致的，也许这次两年的积蓄可以让我休息一个月左右吧，出去玩玩，去趟天津或者上海吧，顺带面试。</p>
+<p>最后，对于工作目前已经有了大致的轮廓，我会在明年4-5月开始开放简历，离职理由是：没有发展，无法晋升，希望可以做到项目经理，但是这边两年了还是实施，而且后期项目变少。合适的话跳槽，薪资希望可以到1w，或者9k以上。薪资这块并不是越便宜越好，这块我的心态要清楚，不要以为我开低点对方就会要我，这个不是决定性关键，一个公司不可能为了薪水不要一个员工，更何况这个薪水不算太高。</p>
+<p>然后压在我心头的是：合租的室友吧。但是仔细想想又好像若有若无，偶尔干扰我睡觉，偶尔嫌弃我弄脏地板，偶尔说我厨房弄脏。似乎都是一些不痛不痒的事情，对此我应该放开我的成见，放松心态。室友最后肯定是要走人的，毕竟已经结婚。室友一场不必分外眼红，好聚好散，这些不过是花点钱和时间的问题，正好我目前这两者都算是有一点。睡觉无解，心态放松，地板的话，不行就自己拖下地，半个小时的问题，没有什么大的问题，事实上，对于和室友合租的话，心态就要富裕一点，无论是他开一天空调，还是洗个碗，洗个菜好像要放一小时的水，这些都没问题，一天空调最多几块钱，一个月多了50，两人分下也就多出了25，水更便宜，估计下来也就十几块，当一个月多花了50，少吃几顿饭的问题，可以省下很多精力。与其计算得失，还不如花50给自己开心。然后地板，厨房，其实就是卫生问题，我是不会对搞卫生有什么意见，哪怕他就像一个大爷一样，我负责家里的一切也不是不可，我有时间和精力，只要他别太理所应当就行。所以，后续的话，不行就自己搞下卫生吧，或者当他的话当耳边风吧。其实有时候就是因为太看重他的想法，所以相处的反而不自然，给自己莫大的压力。有事就问，有事就说，合适就说，不合适就闭嘴。情商有时候就是很简单粗暴</p>
+<p>的，说和不说。</p>
+<p>最后是吴敏和于琴的事吧，首先，虽然很难受，但是我得承认，我和他不可能的，中肯来讲，她的相貌确实符合我对另一半的要求，但是对于她的性格，家庭等等其他的一切我并不了解，之所以现在如此的执念，只是因为他的相貌。在客观来看，确实，我们刚开始交流的很顺畅，如果继续下去也许，有可能会变成情侣，但是最后的结果是忽然她就对你没有兴趣，不再接你话，不再和你打招呼，然后绕着你走。我们不是福尔摩斯，所以没办法知道各中缘由，但是目前的结果是这样，事实是这样，我们并不能单方面的否认它来改变事实。所以，我们是不可能的，也许，或者，有一定的几率，他会对我改观，我们又恢复友谊。但是这一切需要的是人为，是花费大量精力和金钱，不是坐在这写字可以实现的。最后，我花费了大量的时间和精力也许我们终成眷属，成就一段佳话。但是现实毕竟不如小说般如此容易，而且我是一个人，一个普普通通的人，不是小说中独树一帜的主角，我会思考，我会想万一我们在一起后</p>
+<p>发现两人并不合适，他需要一个人可以为他排忧解难，我需要一个同进同退的人呢，但是有时候又会想我们一定合适，根据他说话的声音，今天穿的衣服，已经刚才的举止这些不切实际的东西，然后我就会去尬聊，还有主动的打招呼。在经过一次又一次的试探，最后得出了结论，我们不可能。我得接受这个事实，所以我选择将他和室友一样，并不会关注他的想法，与其设想各种挽回他的场景，还不如花点时间，老老实实的接受这个事实，摆正自己的心态。这样也许生活就没那么难受。</p>
+<p>然后是于琴，我承认，对于那段感情我太过轻率，毕竟年少不懂事，所以如今还会回想起过去的种种，我和他和吴敏一样，都是不可能了，往事涌上心头，这个没法阻止，我也接受了那个事实，只是耐不住忽然涌上来的感觉和往事，然后是一阵愧疚，也许是我想错了，我也许是应该欣赏的看待过往，虽然有后悔，虽然有不舍，但那一切都是过去，都无法改变。与其对着无法更改的事实，也许换个心态对待会更好，欣赏自己的过去，不再从中提取什么教训之类了，过去一年我已经提取过千万次，现在到了安静的欣赏的时候了，我还年轻，无法背负如此多的过往前行，我已经从你那学到了很多，现在是时候让自己放下行囊，接受新的往事了。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>未来</tag>
+        <tag>过去</tag>
+        <tag>现在</tag>
       </tags>
   </entry>
   <entry>
@@ -9071,29 +9071,6 @@ sysctl -p
       </tags>
   </entry>
   <entry>
-    <title>感情</title>
-    <url>/2022/04/30/%E6%84%9F%E6%83%85/</url>
-    <content><![CDATA[<p>我感情丰富</p>
-<p>我用它生活</p>
-<p>用它写诗</p>
-<p>也用它伤害自己</p>
-<p>但我又感情匮乏</p>
-<p>我用它平静</p>
-<p>用它观察</p>
-<p>也用它去追求爱情</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>感情</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>总结来说这件事情怪我</title>
     <url>/2022/04/30/%E6%80%BB%E7%BB%93%E6%9D%A5%E8%AF%B4%E8%BF%99%E4%BB%B6%E4%BA%8B%E6%83%85%E6%80%AA%E6%88%91/</url>
     <content><![CDATA[<p>其实我一开始就预计到有可能有这些事情发生，但是一直不知道怎么说出口，事实上唯一让我说不出口的理由完全是因为自己家人没必要搞得像跟外人做生意一样。</p>
@@ -9120,6 +9097,52 @@ sysctl -p
       </categories>
       <tags>
         <tag>nothing</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>情书</title>
+    <url>/2022/04/30/%E6%83%85%E4%B9%A6/</url>
+    <content><![CDATA[<p>我一面佯装平静，一面想把卡片揣进兜里，然而不凑巧，我喜欢的围裙，上下没有一个兜-----岩井俊二《情书》</p>
+<p>我不知道如何和女孩子交往，就像我不会写情书一样。很多时候话到嘴边，但是写不出来。我想表达我的温文尔雅，但是写下来不过是一些让人厌烦的话语。我想礼貌的问候，却变成了粗鲁的冒犯。在笔下，我似乎成为了一个不知礼仪，随意冒犯他人的鄙夫。</p>
+<p>我不知他人是怎么如何写下自己的情话，但是我在这方面确是实实在在的不灵活。</p>
+<p>写下自己的长篇大论，然后耐心的等待回应。真是一件漫长的事情，没有耐心的我做不到。</p>
+<p>我并不是对所有事情都没有耐心，唯独在等回应这件事上，我分外没有自信，我怕等来的是坏消息，那样，我的心会受伤，我怕等来的是好消息，那样，我还没准备好。我写下一封情书，只是因为我想写，我写它的时候没有憧憬，没有感情。有的只是文藻池列，我妄想她因为我的辞藻被我吸引，却忘记在里面加入自己的真心。我们写东西，并不是为了表达，仅仅是想写罢了。那么姑且就放下华丽的词汇，优美的句式，写下一封情书吧，一封粗俗的情书：</p>
+<p>我喜欢你，就这样。并不是在和你慢慢接触之后，我觉得这应该是我可以共度一生的人，所以喜欢。我对你并不了解，你的人生，过去，生活。对我来说都是一片空白，不过没关系，我已经脑补了，我从我们不多的聊天中脑补出了你的种种。就这样，我被我自己的脑补俘获，对你倾心。也许你会觉得，我并不是喜欢你，只是喜欢脑补后的你。但是没关系，我还是会喜欢你，喜欢你的这个想法已经在我脑海中盘旋了好久好久，如今根深蒂固，现在叫我拔起它，我不愿，也不敢，太疼，太疼。所以我喜欢你。我的喜欢，并不是慢慢的积累，它犹如洪水一般，向我袭来，我自己也无法抵挡，就这样的被它席卷。我在洪水之中，无法前进，亦不能后退，只能随波逐流。现在这洪水将我冲到了你的面前。在这里写下这些胡言乱语，没有一丝丝的逻辑，只有单纯的喜欢，没有一点点的辞藻，只有很多想说的话。我不知这份喜欢会持续多久，也不知这封情书何时得到回应，但是我知道我喜欢你。</p>
+<p>很多想说的话，写不下来。很多想写的，说不出来。文字和语言，竟是如此没用的东西。我想了解你的过往，但是却怕言语的误会，所以我只能在话语之间自己脑补出你的点点滴滴。也许你本是无意的回复，在我这却成了愤怒的话语，惊吓的我不敢造次。我们就这样，一步步的误会着对方。误会总有澄清的时候，但是那份伤痕还残留在我们心中。我不知如何前行。我想长篇阔论，但是又怕你太长不看，我想吐槽抱怨，又怕你反感幼稚，我想矫情造作，又怕你恶心想吐，我也想过坦诚以待，但又怕你接受不能。我琢磨不透你的情感，也看不清你的想法，我们隔着一张纸，想着不同的心事，写下看似一样的对话。也许这意味着我们并不合适。但我说过，喜欢你这件事，连我自己都没有决定权，我也是这场洪灾的受害者，现在处在这进退两难的境地。</p>
+<p>发出去的话又没有回复，就像寄出去的情书，要等待对方看过，写下，再邮寄。你不知道在哪一步停止了，是看过了，还是连看都没看，是有事耽误了,无法提笔，还是那粗心的邮差将你的信件丢失。每一种都是可能，但每一种的结果都是一样的。我不知，不知。最难知的是人心，最难写的是情书，前者隔着肚皮，后者隔着人心。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>那些年遇见的人</category>
+      </categories>
+      <tags>
+        <tag>我想写情书</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>感情</title>
+    <url>/2022/04/30/%E6%84%9F%E6%83%85/</url>
+    <content><![CDATA[<p>我感情丰富</p>
+<p>我用它生活</p>
+<p>用它写诗</p>
+<p>也用它伤害自己</p>
+<p>但我又感情匮乏</p>
+<p>我用它平静</p>
+<p>用它观察</p>
+<p>也用它去追求爱情</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>感情</tag>
       </tags>
   </entry>
   <entry>
@@ -9179,29 +9202,6 @@ sysctl -p
       </categories>
       <tags>
         <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>情书</title>
-    <url>/2022/04/30/%E6%83%85%E4%B9%A6/</url>
-    <content><![CDATA[<p>我一面佯装平静，一面想把卡片揣进兜里，然而不凑巧，我喜欢的围裙，上下没有一个兜-----岩井俊二《情书》</p>
-<p>我不知道如何和女孩子交往，就像我不会写情书一样。很多时候话到嘴边，但是写不出来。我想表达我的温文尔雅，但是写下来不过是一些让人厌烦的话语。我想礼貌的问候，却变成了粗鲁的冒犯。在笔下，我似乎成为了一个不知礼仪，随意冒犯他人的鄙夫。</p>
-<p>我不知他人是怎么如何写下自己的情话，但是我在这方面确是实实在在的不灵活。</p>
-<p>写下自己的长篇大论，然后耐心的等待回应。真是一件漫长的事情，没有耐心的我做不到。</p>
-<p>我并不是对所有事情都没有耐心，唯独在等回应这件事上，我分外没有自信，我怕等来的是坏消息，那样，我的心会受伤，我怕等来的是好消息，那样，我还没准备好。我写下一封情书，只是因为我想写，我写它的时候没有憧憬，没有感情。有的只是文藻池列，我妄想她因为我的辞藻被我吸引，却忘记在里面加入自己的真心。我们写东西，并不是为了表达，仅仅是想写罢了。那么姑且就放下华丽的词汇，优美的句式，写下一封情书吧，一封粗俗的情书：</p>
-<p>我喜欢你，就这样。并不是在和你慢慢接触之后，我觉得这应该是我可以共度一生的人，所以喜欢。我对你并不了解，你的人生，过去，生活。对我来说都是一片空白，不过没关系，我已经脑补了，我从我们不多的聊天中脑补出了你的种种。就这样，我被我自己的脑补俘获，对你倾心。也许你会觉得，我并不是喜欢你，只是喜欢脑补后的你。但是没关系，我还是会喜欢你，喜欢你的这个想法已经在我脑海中盘旋了好久好久，如今根深蒂固，现在叫我拔起它，我不愿，也不敢，太疼，太疼。所以我喜欢你。我的喜欢，并不是慢慢的积累，它犹如洪水一般，向我袭来，我自己也无法抵挡，就这样的被它席卷。我在洪水之中，无法前进，亦不能后退，只能随波逐流。现在这洪水将我冲到了你的面前。在这里写下这些胡言乱语，没有一丝丝的逻辑，只有单纯的喜欢，没有一点点的辞藻，只有很多想说的话。我不知这份喜欢会持续多久，也不知这封情书何时得到回应，但是我知道我喜欢你。</p>
-<p>很多想说的话，写不下来。很多想写的，说不出来。文字和语言，竟是如此没用的东西。我想了解你的过往，但是却怕言语的误会，所以我只能在话语之间自己脑补出你的点点滴滴。也许你本是无意的回复，在我这却成了愤怒的话语，惊吓的我不敢造次。我们就这样，一步步的误会着对方。误会总有澄清的时候，但是那份伤痕还残留在我们心中。我不知如何前行。我想长篇阔论，但是又怕你太长不看，我想吐槽抱怨，又怕你反感幼稚，我想矫情造作，又怕你恶心想吐，我也想过坦诚以待，但又怕你接受不能。我琢磨不透你的情感，也看不清你的想法，我们隔着一张纸，想着不同的心事，写下看似一样的对话。也许这意味着我们并不合适。但我说过，喜欢你这件事，连我自己都没有决定权，我也是这场洪灾的受害者，现在处在这进退两难的境地。</p>
-<p>发出去的话又没有回复，就像寄出去的情书，要等待对方看过，写下，再邮寄。你不知道在哪一步停止了，是看过了，还是连看都没看，是有事耽误了,无法提笔，还是那粗心的邮差将你的信件丢失。每一种都是可能，但每一种的结果都是一样的。我不知，不知。最难知的是人心，最难写的是情书，前者隔着肚皮，后者隔着人心。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>那些年遇见的人</category>
-      </categories>
-      <tags>
-        <tag>我想写情书</tag>
       </tags>
   </entry>
   <entry>
@@ -9399,6 +9399,27 @@ sysctl -p
       </tags>
   </entry>
   <entry>
+    <title>或许农业就是最大的骗局</title>
+    <url>/2022/05/19/%E6%88%96%E8%AE%B8%E5%86%9C%E4%B8%9A%E5%B0%B1%E6%98%AF%E6%9C%80%E5%A4%A7%E7%9A%84%E9%AA%97%E5%B1%80/</url>
+    <content><![CDATA[<p>我必须承认的《人类简史》相较于《枪炮，病菌和钢铁》是更适合我的一本人类史读物，它并不侧重于在历史遗迹的发现。它相反，指出了了解那个时代最准确的人，只有那个时代的人。我们最多只是能从中发现结果，但是事情的起因是什么，并不是简单的因果律能推断出来的。也没有必然性。而这点《枪炮，病菌和钢铁》则通篇充斥着因果律和必然性。诚然，从遗迹或者事情的结果来看。他会从海岛大小推断出居民的的好斗程度，因为地域小，无需太多的战争。它从一两个例子告诉我们这个故事，但是它往往也能拿出类似环境下的反例。整本书似乎在告诉你什么，但是又没有告诉。</p>
+<p>这点，《人类简史》做出了一个解释：相类似的海岛大小，但是对应的环境气候不同，就算气候相同，或者是领导人的想法不同，导致最后一个不一样的结果。确实，我们很多时候考虑一件事往往缺少考虑人在其中的关键作用。一件事情往往掺杂着天时地利人和的多重因素。就好比为啥智人最后会成为这个世界的赢家一样。作者描绘了那个年代拥有众多的人种，类似我们现在的人类，但是最后存活下来的只有智人。作者提出了一个新的概念：想象的现实。一个并不存在的现实，但是在所有人的想象下存在，是一个人群中的共识。这个武器的存在使得智人团结起来，为了一个不存在的共同想象进行杀戮。人类最多管理的人数上限在150人，也就是说在没有共同规则指导下，一个部落最大的人数就只有151人，再多的话，就无法控制，就会又年轻的人另立山头，成立另外一个部落。但是如果在一个共同的祖先，或者祭祀的对象下，他们虽然没有在一个部落，但是却可以以此作为团结的象征，融合在一起，一起开疆扩土。诚然，现在的你对这些概念很熟悉，毕竟我们已经在这个模式下生活好多年，我们遵守那不存在的《宪法》，也同意那并没有实体的《规则》。但是恰恰正是这个习以为常的概念，让我们的祖先在7万年前合作杀猛犸，与别的人种搏斗。这在当时是不可想象的，至于为啥会是智人呢，这点作者并没有解释，或者说无法解释。</p>
+<p>从上可以看出，这本书的侧重点并不是人类历史故事。而是更多的深思。包括人类从采集社会到农业社会，实际的劳动时长更加长，生活环境也没有更多的改善，对身体的负担也更大，作者赤裸裸的宣称：农业社会是人类史上最大的骗局。它并没有实现社会进步，反而让农民的身体承受更多的痛苦，而目的却是养活那些奴役他们的官员。作为粮食的生产者，他们却没有享受到高等的地位，还要纳税，上贡给那些不劳而获之人，仅仅是他们建立了一个基于想象现实而建立起来的社会制度。如果我们抛开现实的影响，这样看来，确实是一件本末倒置的事情。因为有了农业，人类需要定居，一旦定居，那么就需要土地，而土地正是古代农民痛苦的根源，土地的所有权并没有任何的自然法则，但是我们仅仅依据一个想象的现实，将土地归属到了某一个人身上，就好像哥伦布宣布美洲归西班牙国王所有。先来者制定了规则，占据了天时，而后来的人就只能在这个规则下，默默的耕耘。农业就成为了这一切的源头。诚然，农业革命带来了更多的人口，更低的初生儿死亡率。或许，每个物种都有自己的一个出生率死亡率，但是我们改变了他，更多的人口带来的是更多的土地需求，更多的农业，而更多的农业则又会带来更多的人口，这算是智人打破自然法则的第一步。智人开始不再按照预设的生存率生存，这样的结果就是现在地球上已经有70亿人口。</p>
+<p>后面还有很多，包括对科技的一些思考，对快乐的定义，万物皆追求其本质，在一切都探究其本质之后，我们就会发现，其实，很多东西，都并不是一件简单的因果律，万事都没有必然性。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220519204015.png" alt="20220519204015" /></p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>人类简史</tag>
+        <tag>农业革命</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>搬瓦工</title>
     <url>/2023/04/20/%E6%90%AC%E7%93%A6%E5%B7%A5/</url>
     <content><![CDATA[<h1 id="搬瓦工"><a class="markdownIt-Anchor" href="#搬瓦工"></a> 搬瓦工</h1>
@@ -9529,52 +9550,6 @@ sysctl -p
       </tags>
   </entry>
   <entry>
-    <title>或许农业就是最大的骗局</title>
-    <url>/2022/05/19/%E6%88%96%E8%AE%B8%E5%86%9C%E4%B8%9A%E5%B0%B1%E6%98%AF%E6%9C%80%E5%A4%A7%E7%9A%84%E9%AA%97%E5%B1%80/</url>
-    <content><![CDATA[<p>我必须承认的《人类简史》相较于《枪炮，病菌和钢铁》是更适合我的一本人类史读物，它并不侧重于在历史遗迹的发现。它相反，指出了了解那个时代最准确的人，只有那个时代的人。我们最多只是能从中发现结果，但是事情的起因是什么，并不是简单的因果律能推断出来的。也没有必然性。而这点《枪炮，病菌和钢铁》则通篇充斥着因果律和必然性。诚然，从遗迹或者事情的结果来看。他会从海岛大小推断出居民的的好斗程度，因为地域小，无需太多的战争。它从一两个例子告诉我们这个故事，但是它往往也能拿出类似环境下的反例。整本书似乎在告诉你什么，但是又没有告诉。</p>
-<p>这点，《人类简史》做出了一个解释：相类似的海岛大小，但是对应的环境气候不同，就算气候相同，或者是领导人的想法不同，导致最后一个不一样的结果。确实，我们很多时候考虑一件事往往缺少考虑人在其中的关键作用。一件事情往往掺杂着天时地利人和的多重因素。就好比为啥智人最后会成为这个世界的赢家一样。作者描绘了那个年代拥有众多的人种，类似我们现在的人类，但是最后存活下来的只有智人。作者提出了一个新的概念：想象的现实。一个并不存在的现实，但是在所有人的想象下存在，是一个人群中的共识。这个武器的存在使得智人团结起来，为了一个不存在的共同想象进行杀戮。人类最多管理的人数上限在150人，也就是说在没有共同规则指导下，一个部落最大的人数就只有151人，再多的话，就无法控制，就会又年轻的人另立山头，成立另外一个部落。但是如果在一个共同的祖先，或者祭祀的对象下，他们虽然没有在一个部落，但是却可以以此作为团结的象征，融合在一起，一起开疆扩土。诚然，现在的你对这些概念很熟悉，毕竟我们已经在这个模式下生活好多年，我们遵守那不存在的《宪法》，也同意那并没有实体的《规则》。但是恰恰正是这个习以为常的概念，让我们的祖先在7万年前合作杀猛犸，与别的人种搏斗。这在当时是不可想象的，至于为啥会是智人呢，这点作者并没有解释，或者说无法解释。</p>
-<p>从上可以看出，这本书的侧重点并不是人类历史故事。而是更多的深思。包括人类从采集社会到农业社会，实际的劳动时长更加长，生活环境也没有更多的改善，对身体的负担也更大，作者赤裸裸的宣称：农业社会是人类史上最大的骗局。它并没有实现社会进步，反而让农民的身体承受更多的痛苦，而目的却是养活那些奴役他们的官员。作为粮食的生产者，他们却没有享受到高等的地位，还要纳税，上贡给那些不劳而获之人，仅仅是他们建立了一个基于想象现实而建立起来的社会制度。如果我们抛开现实的影响，这样看来，确实是一件本末倒置的事情。因为有了农业，人类需要定居，一旦定居，那么就需要土地，而土地正是古代农民痛苦的根源，土地的所有权并没有任何的自然法则，但是我们仅仅依据一个想象的现实，将土地归属到了某一个人身上，就好像哥伦布宣布美洲归西班牙国王所有。先来者制定了规则，占据了天时，而后来的人就只能在这个规则下，默默的耕耘。农业就成为了这一切的源头。诚然，农业革命带来了更多的人口，更低的初生儿死亡率。或许，每个物种都有自己的一个出生率死亡率，但是我们改变了他，更多的人口带来的是更多的土地需求，更多的农业，而更多的农业则又会带来更多的人口，这算是智人打破自然法则的第一步。智人开始不再按照预设的生存率生存，这样的结果就是现在地球上已经有70亿人口。</p>
-<p>后面还有很多，包括对科技的一些思考，对快乐的定义，万物皆追求其本质，在一切都探究其本质之后，我们就会发现，其实，很多东西，都并不是一件简单的因果律，万事都没有必然性。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220519204015.png" alt="20220519204015" /></p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>人类简史</tag>
-        <tag>农业革命</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>时间不是万能的</title>
-    <url>/2023/03/30/%E6%97%B6%E9%97%B4%E4%B8%8D%E6%98%AF%E4%B8%87%E8%83%BD%E7%9A%84/</url>
-    <content><![CDATA[<h1 id="时间不是万能的"><a class="markdownIt-Anchor" href="#时间不是万能的"></a> 时间不是万能的</h1>
-<h2 id="他不是玫瑰"><a class="markdownIt-Anchor" href="#他不是玫瑰"></a> 他不是玫瑰</h2>
-<p>之前听说过，中国价值投资第一书《时间玫瑰》，抱着盛名，就下载下来看了，看完之后。觉得它说的有点对，但是又冥冥之中觉得，它说的道理我都懂，但是就是觉得有问题。时间是不是玫瑰我不知道，但是作者的这本书肯定不是玫瑰，书中充斥着大量自己参加会议的演讲稿，或者当初08年的一些投资建议。是的，当时它的眼光很好，很多企业也获得了长久的收益，如果按照他的建议，确实可能一朝翻身，成为百万富翁，当时他自己也说了，这中间的过程让人难以忍受，万科你08年买，过两年之后你的资产折价近一半，等到了18年左右才会实现20倍+的神话，茅台也是，在限酒令时期，茅台股价大跌，你那时候能拿的住么？诚然我现在是秋后算账，站在2023年的立场看过去15年的发展。但是他不也是，他站在18年的立场，看08年。</p>
-<p>价值投资，前提是价值，我们作为一个简单的股票投资者，我们是没办法像企业的领导人一样了解企业的，类似医药茅台的美年健康，不也是爆出大雷，作者站在幸存者的视角来审阅自己，肯定得出的是正向的反馈，那么如果我们当初投资美年健康呢？投资的中兴呢？所以，这就是我疑问的第一年，作为中国价值投资的第一书，他没有告诉我们如何判断一个企业是真的在做企业，还是在搞钱。所谓的价值投资难道就是他说的那些企业，那么其他兢兢业业的企业算什么？A股市场20年以上股票不在少数，其他的企业都是没有价值的玩意么？没有增长点？作者泛泛而谈自己的投资多么的精准，多么的好，却没有输出一点任何有用的价值，就像好多没有学问的大老板夸夸而谈自己的发家史，殊不知，是时代裹挟着他，他的个人努力不是重点，重点是他押对了宝，做对了行业。</p>
-<h2 id="时间仅仅是时间"><a class="markdownIt-Anchor" href="#时间仅仅是时间"></a> 时间仅仅是时间</h2>
-<p>时间玫瑰，我看不出时间在其中扮演的角色。也看不到作者的投资智慧。你如果能看到1年以后，那么你是一个神人，你看到50年以后，那么你就是一个普通人。时间是重要的，但是太过遥远的东西对我们来说并没有作用，作者举例从美国大萧条到现在持有股票，有意义么？有，但是也没有，资产如果是为下一代构筑的话，那么这一代的人做什么？我们追求资产的增值，而不要求时效，那么，可以选择存银行，每年吃复利，复利+时间，巴菲特的投资圣经。作者的资金很好，但是作为这么大的资金有很多种增值的机会，但是作者选择了最笨的方法，等。买房，玉石，信托在资金疯狂的年代，哪个不能做到1年翻几倍的地步，而偏偏选择了最笨的方法，买股票，然后等。中间的风险比前面几个投资渠道高多了，还自得其乐的说自己多么有远见。你看到的是10年之后，不是1年之后，在那个年代的普通人，只要有点了解，都会相信中国经济鹏飞，都觉得以后生活会越来越好，那么他们为啥不选择买股票呢，那是因为他们不笨，他们将他们的资金放在当前时代下最合适的地方，而不是靠着股票的自我增值，价值投资者在股票赚不到钱，巴菲特赚钱不是靠价值投资，是靠复利+时间。他投资的企业对企业有充分的理解，他花时间去经营和爱护这些未来现在有盈利能力的企业，而不是将钱给他，然后祈祷这个公司的管理者不要瞎搞。</p>
-<h3 id="没有价值投资"><a class="markdownIt-Anchor" href="#没有价值投资"></a> 没有价值投资</h3>
-<p>价值投资在A股没有出路，最近杉杉股份就是一个例子，它们上市做衣服的，后面转型做电子材料，还有一定的建树。那么如果你听到一个做衣服的企业忽然要跨行业做电子材料，你脑中的想法是不是这企业瞎搞，你的价值投资会让你离开，还是根据时间+价值，坚定持有呢？这种过分看中领导决策的企业并没不是说没有价值，但是它不算价值投资。商业是一个很复杂的信息圈，我们只能接收到我们自己的信息，但是信息差正是商业的来源，我们的价值投资理念如果说是看好一个股票，然后坚定持有10年，那么你这是在赌，不是在投资。真正的投资是信息，我如果知道杉杉股份的转型信息，知道他们实验室要取得重大进展，那么这时候你买入是不是价值投资，也不是，因为杉杉股份公告有可能是假的，夸大得，真正得消息往往需要你实地去接触，接触管理层，接触他们得领导，甚至还要搭配当时得大环境，所以没有价值投资，有得就是内部消息，有得就是信息差。股票市场这个非实物得市场，有得只是信息投资，没有价值投资。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>时间玫瑰</tag>
-        <tag>投资</tag>
-        <tag>A股</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>新教伦理和资本主义精神</title>
     <url>/2022/07/08/%E6%96%B0%E6%95%99%E4%BC%A6%E7%90%86%E5%92%8C%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E7%B2%BE%E7%A5%9E/</url>
     <content><![CDATA[<p>写在前面：</p>
@@ -9619,6 +9594,31 @@ sysctl -p
         <tag>马克思韦伯</tag>
         <tag>新教伦理</tag>
         <tag>资本主义精神</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>时间不是万能的</title>
+    <url>/2023/03/30/%E6%97%B6%E9%97%B4%E4%B8%8D%E6%98%AF%E4%B8%87%E8%83%BD%E7%9A%84/</url>
+    <content><![CDATA[<h1 id="时间不是万能的"><a class="markdownIt-Anchor" href="#时间不是万能的"></a> 时间不是万能的</h1>
+<h2 id="他不是玫瑰"><a class="markdownIt-Anchor" href="#他不是玫瑰"></a> 他不是玫瑰</h2>
+<p>之前听说过，中国价值投资第一书《时间玫瑰》，抱着盛名，就下载下来看了，看完之后。觉得它说的有点对，但是又冥冥之中觉得，它说的道理我都懂，但是就是觉得有问题。时间是不是玫瑰我不知道，但是作者的这本书肯定不是玫瑰，书中充斥着大量自己参加会议的演讲稿，或者当初08年的一些投资建议。是的，当时它的眼光很好，很多企业也获得了长久的收益，如果按照他的建议，确实可能一朝翻身，成为百万富翁，当时他自己也说了，这中间的过程让人难以忍受，万科你08年买，过两年之后你的资产折价近一半，等到了18年左右才会实现20倍+的神话，茅台也是，在限酒令时期，茅台股价大跌，你那时候能拿的住么？诚然我现在是秋后算账，站在2023年的立场看过去15年的发展。但是他不也是，他站在18年的立场，看08年。</p>
+<p>价值投资，前提是价值，我们作为一个简单的股票投资者，我们是没办法像企业的领导人一样了解企业的，类似医药茅台的美年健康，不也是爆出大雷，作者站在幸存者的视角来审阅自己，肯定得出的是正向的反馈，那么如果我们当初投资美年健康呢？投资的中兴呢？所以，这就是我疑问的第一年，作为中国价值投资的第一书，他没有告诉我们如何判断一个企业是真的在做企业，还是在搞钱。所谓的价值投资难道就是他说的那些企业，那么其他兢兢业业的企业算什么？A股市场20年以上股票不在少数，其他的企业都是没有价值的玩意么？没有增长点？作者泛泛而谈自己的投资多么的精准，多么的好，却没有输出一点任何有用的价值，就像好多没有学问的大老板夸夸而谈自己的发家史，殊不知，是时代裹挟着他，他的个人努力不是重点，重点是他押对了宝，做对了行业。</p>
+<h2 id="时间仅仅是时间"><a class="markdownIt-Anchor" href="#时间仅仅是时间"></a> 时间仅仅是时间</h2>
+<p>时间玫瑰，我看不出时间在其中扮演的角色。也看不到作者的投资智慧。你如果能看到1年以后，那么你是一个神人，你看到50年以后，那么你就是一个普通人。时间是重要的，但是太过遥远的东西对我们来说并没有作用，作者举例从美国大萧条到现在持有股票，有意义么？有，但是也没有，资产如果是为下一代构筑的话，那么这一代的人做什么？我们追求资产的增值，而不要求时效，那么，可以选择存银行，每年吃复利，复利+时间，巴菲特的投资圣经。作者的资金很好，但是作为这么大的资金有很多种增值的机会，但是作者选择了最笨的方法，等。买房，玉石，信托在资金疯狂的年代，哪个不能做到1年翻几倍的地步，而偏偏选择了最笨的方法，买股票，然后等。中间的风险比前面几个投资渠道高多了，还自得其乐的说自己多么有远见。你看到的是10年之后，不是1年之后，在那个年代的普通人，只要有点了解，都会相信中国经济鹏飞，都觉得以后生活会越来越好，那么他们为啥不选择买股票呢，那是因为他们不笨，他们将他们的资金放在当前时代下最合适的地方，而不是靠着股票的自我增值，价值投资者在股票赚不到钱，巴菲特赚钱不是靠价值投资，是靠复利+时间。他投资的企业对企业有充分的理解，他花时间去经营和爱护这些未来现在有盈利能力的企业，而不是将钱给他，然后祈祷这个公司的管理者不要瞎搞。</p>
+<h3 id="没有价值投资"><a class="markdownIt-Anchor" href="#没有价值投资"></a> 没有价值投资</h3>
+<p>价值投资在A股没有出路，最近杉杉股份就是一个例子，它们上市做衣服的，后面转型做电子材料，还有一定的建树。那么如果你听到一个做衣服的企业忽然要跨行业做电子材料，你脑中的想法是不是这企业瞎搞，你的价值投资会让你离开，还是根据时间+价值，坚定持有呢？这种过分看中领导决策的企业并没不是说没有价值，但是它不算价值投资。商业是一个很复杂的信息圈，我们只能接收到我们自己的信息，但是信息差正是商业的来源，我们的价值投资理念如果说是看好一个股票，然后坚定持有10年，那么你这是在赌，不是在投资。真正的投资是信息，我如果知道杉杉股份的转型信息，知道他们实验室要取得重大进展，那么这时候你买入是不是价值投资，也不是，因为杉杉股份公告有可能是假的，夸大得，真正得消息往往需要你实地去接触，接触管理层，接触他们得领导，甚至还要搭配当时得大环境，所以没有价值投资，有得就是内部消息，有得就是信息差。股票市场这个非实物得市场，有得只是信息投资，没有价值投资。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>时间玫瑰</tag>
+        <tag>投资</tag>
+        <tag>A股</tag>
       </tags>
   </entry>
   <entry>
@@ -9934,50 +9934,6 @@ sysctl -p
         <tag>机器学习</tag>
         <tag>数据科学导论</tag>
         <tag>数据科学入门</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习之路3</title>
-    <url>/2022/07/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF3/</url>
-    <content><![CDATA[<p>《Python的数据科学手册》</p>
-<p>这本书和我之前看的《数据科学入门》，《数据科学导论》其实都大差不离，数据科学的基础不在于python的操作，而是算法的不同，这本书的最后一章也是在重复的讲述那些算法。但是还是一样的问题，他的算法解释都是基于自己创造的数据来着，和实际场景有着千山万水的差别，总归来说，你没办法拿来主义的应用了。</p>
-<p>看了这么多，现在也差不多可以来谈谈自己对机器学习学习过程的一些经验推荐了。</p>
-<p>首先是python操作，这里我建议直接看《廖雪峰的python教程》网页上就有，跟着学习，打打代码，知道python的一些操作逻辑即可。无论是这本书还是接下来的书，更多的是入门，就是告诉你python有那些用处，但是它不会全面，仔细的告诉你，因为实际情况下每个业务环境都不同，就像我们以前学习SQL语句一样，看着学的是selcet，from这些简单的，但是它给了你一些衍生，允许你在需要更高级的操作时候去再次学习，然后不断加深自己的技巧，而机器学习和python操作一样，都是一个简单入门，然后你实际业务操作时候还需要大量的去查找资料，所以每次学习完成之后你都会觉得看起来没学一样，你需要大量的习题和现实业务来不断的磨练你的技巧。</p>
-<p>好的，基于以上原因《数据科学入门》，《数据科学导论》和《Python的数据科学手册》这三本书，你完全可以选择一本看就可以，推荐的是后面两本：《数据科学导论》和《Python的数据科学手册》都是O’Reilly精品图书系列，它出版的书确实都是具有一定科技前沿技术的。所有书的结构其实大同小异，前面都是讲述Python的安装，然后是nump包，pandas包，最后就是sklearn包，然后就是各个算法的实现，它没有体现各个算法实际过程，你就如同盲人摸象一样，慢慢的摸索，按照它的代码看着一张张美丽的图片出现，你甚至有点削足适履，将你的数据转换成它想要的格式，然后再进行学习计算。但这一过程是必备的，我们需要了解这些程序能够接受什么样的数据，然后再进行自己的推断和思考。</p>
-<p>但是这些书也是有不足之处的：他们很多时候都是只谈及他们经常用到的一些用法，而且数据结构简单，所以到了你实际操作的时候你还是需要一个速查表，或者别人的代码操作来实现自己的想法，正如上面所说的，这就是一个入门。它告诉你工具如何使用，但是不告诉你工具原理，但这一切又是必要的，知其然然后知其所以然。</p>
-<p>对此我的学习建议是跟着写代码，然后理解他的意思，最后再应用在自己的数据去。期间可以简单的应用在自己的工作中，比如我就拿了Pandas处理了日常excel的数据。方便自己导入到出纳系统。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF3.png" alt="机器学习之路3" /></p>
-<p>接下来我考虑学习具体的解析过程：算法的数学过程。很多时候面对的是不断累积的数据，我却没有一个比较好的思路对其进行处理，很多算法我只是知道其如何使用或者是分类算法，还是近似算法。这边推荐《白板推导》视频B站里面有，讲的不算深，他侧重不在于计算过程，而是整个概念得理解过程：比如不同角度理解线性回归等，所以不需要你会实际的操作或者计算，很多时候只需要理解概念即可。比如我虽然不会矩阵求导得方法，但是我知道他求导是为了求出极值，那么这就够了，足够我们继续学习下去了。</p>
-<p>然后根据白板得推荐，有几本很好得入门书籍可以值得阅读：</p>
-<p>《统计学习方法》</p>
-<p>PRML《模式识别与机器学习》</p>
-<p>MLAPP《》</p>
-<p>《统计学习基础(ESL)》</p>
-<p>《deep learning》</p>
-<p>视频：</p>
-<p>台大-林轩田</p>
-<p>《基石》VC,正则化，线性模型</p>
-<p>《技法》SVM，决策树，随机森林</p>
-<p>张志华：纯数学推导</p>
-<p>《机器学习导论》频率派</p>
-<p>《统计机器学习》贝叶斯</p>
-<p>台大：李宏毅-机器学习</p>
-<p>这些书和视频后续会找时间了解下。</p>
-<p>同时我也会练手几个项目，防止自己编码生疏。</p>
-<hr />
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220720140826.png" alt="20220720140826" /></p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>python的数据科学手册</tag>
-        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -10429,6 +10385,50 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
       <tags>
         <tag>概率论导论</tag>
         <tag>思维导图</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习之路3</title>
+    <url>/2022/07/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF3/</url>
+    <content><![CDATA[<p>《Python的数据科学手册》</p>
+<p>这本书和我之前看的《数据科学入门》，《数据科学导论》其实都大差不离，数据科学的基础不在于python的操作，而是算法的不同，这本书的最后一章也是在重复的讲述那些算法。但是还是一样的问题，他的算法解释都是基于自己创造的数据来着，和实际场景有着千山万水的差别，总归来说，你没办法拿来主义的应用了。</p>
+<p>看了这么多，现在也差不多可以来谈谈自己对机器学习学习过程的一些经验推荐了。</p>
+<p>首先是python操作，这里我建议直接看《廖雪峰的python教程》网页上就有，跟着学习，打打代码，知道python的一些操作逻辑即可。无论是这本书还是接下来的书，更多的是入门，就是告诉你python有那些用处，但是它不会全面，仔细的告诉你，因为实际情况下每个业务环境都不同，就像我们以前学习SQL语句一样，看着学的是selcet，from这些简单的，但是它给了你一些衍生，允许你在需要更高级的操作时候去再次学习，然后不断加深自己的技巧，而机器学习和python操作一样，都是一个简单入门，然后你实际业务操作时候还需要大量的去查找资料，所以每次学习完成之后你都会觉得看起来没学一样，你需要大量的习题和现实业务来不断的磨练你的技巧。</p>
+<p>好的，基于以上原因《数据科学入门》，《数据科学导论》和《Python的数据科学手册》这三本书，你完全可以选择一本看就可以，推荐的是后面两本：《数据科学导论》和《Python的数据科学手册》都是O’Reilly精品图书系列，它出版的书确实都是具有一定科技前沿技术的。所有书的结构其实大同小异，前面都是讲述Python的安装，然后是nump包，pandas包，最后就是sklearn包，然后就是各个算法的实现，它没有体现各个算法实际过程，你就如同盲人摸象一样，慢慢的摸索，按照它的代码看着一张张美丽的图片出现，你甚至有点削足适履，将你的数据转换成它想要的格式，然后再进行学习计算。但这一过程是必备的，我们需要了解这些程序能够接受什么样的数据，然后再进行自己的推断和思考。</p>
+<p>但是这些书也是有不足之处的：他们很多时候都是只谈及他们经常用到的一些用法，而且数据结构简单，所以到了你实际操作的时候你还是需要一个速查表，或者别人的代码操作来实现自己的想法，正如上面所说的，这就是一个入门。它告诉你工具如何使用，但是不告诉你工具原理，但这一切又是必要的，知其然然后知其所以然。</p>
+<p>对此我的学习建议是跟着写代码，然后理解他的意思，最后再应用在自己的数据去。期间可以简单的应用在自己的工作中，比如我就拿了Pandas处理了日常excel的数据。方便自己导入到出纳系统。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF3.png" alt="机器学习之路3" /></p>
+<p>接下来我考虑学习具体的解析过程：算法的数学过程。很多时候面对的是不断累积的数据，我却没有一个比较好的思路对其进行处理，很多算法我只是知道其如何使用或者是分类算法，还是近似算法。这边推荐《白板推导》视频B站里面有，讲的不算深，他侧重不在于计算过程，而是整个概念得理解过程：比如不同角度理解线性回归等，所以不需要你会实际的操作或者计算，很多时候只需要理解概念即可。比如我虽然不会矩阵求导得方法，但是我知道他求导是为了求出极值，那么这就够了，足够我们继续学习下去了。</p>
+<p>然后根据白板得推荐，有几本很好得入门书籍可以值得阅读：</p>
+<p>《统计学习方法》</p>
+<p>PRML《模式识别与机器学习》</p>
+<p>MLAPP《》</p>
+<p>《统计学习基础(ESL)》</p>
+<p>《deep learning》</p>
+<p>视频：</p>
+<p>台大-林轩田</p>
+<p>《基石》VC,正则化，线性模型</p>
+<p>《技法》SVM，决策树，随机森林</p>
+<p>张志华：纯数学推导</p>
+<p>《机器学习导论》频率派</p>
+<p>《统计机器学习》贝叶斯</p>
+<p>台大：李宏毅-机器学习</p>
+<p>这些书和视频后续会找时间了解下。</p>
+<p>同时我也会练手几个项目，防止自己编码生疏。</p>
+<hr />
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220720140826.png" alt="20220720140826" /></p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>python的数据科学手册</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -11272,25 +11272,6 @@ pip install requirements.txt
       </tags>
   </entry>
   <entry>
-    <title>随想</title>
-    <url>/2022/04/30/%E9%9A%8F%E6%83%B3/</url>
-    <content><![CDATA[<p>想养一只猫</p>
-<p>给他取名叫米奇</p>
-<p>为啥</p>
-<p>因为老一辈的人相信贱名好养活。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>喵</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>雨天随想</title>
     <url>/2022/04/30/%E9%9B%A8%E5%A4%A9%E9%9A%8F%E6%83%B3/</url>
     <content><![CDATA[<p>窗外下着大雨</p>
@@ -11342,31 +11323,22 @@ pip install requirements.txt
       </tags>
   </entry>
   <entry>
-    <title>青龙面板定时规则</title>
-    <url>/2023/03/28/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%AE%9A%E6%97%B6%E8%A7%84%E5%88%99/</url>
-    <content><![CDATA[<h1 id="青龙面板定时规则"><a class="markdownIt-Anchor" href="#青龙面板定时规则"></a> 青龙面板定时规则</h1>
-<p>青龙面板使用的是cron的时间格式，但是它又在上面基础上进行优化，使用的是5-6位的时间表达式：</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/!%5B20230328145315%5D(httpsraw.githubusercontent.comandroid1122typecho_imgmaster20230328145315.png).png" alt="20230328145315" /></p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230328145545.png" alt="20230328145545" /></p>
-<p>知道这些之后，看下青龙内部经常使用的通配符</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">,：表示在两个及以上的时间点中都执行。如在月中的值为1,3，则表示1月和3月都触发事件</span><br><span class="line"></span><br><span class="line">*：表示匹配该域任意值，可解读为 “每”，如小时的字段为*时，表示每一小时都触发事件</span><br><span class="line"></span><br><span class="line">?：表示不指定值，用于日期和星期字段之间进行互斥。通常在日期和星期字段中的一个指定值，另外一个用?表示不指定值。使用的场景为不需要关心当前设置这个字段的值。例如:要在每月的6号触发一个操作，但不关心是周几，我们可以这么设置 0 0 0 6 * ?</span><br><span class="line"></span><br><span class="line">-：表示范围，一个连续触发的区间。如：时的值为6-8，则表示6-8小时中的每个小时都触发事件。</span><br><span class="line"></span><br><span class="line">/：表示间隔时间触发事件（开始时间/时间间隔）。其中第一部分是起始值，除了秒以外都会降低一个单位，比如在 “秒” 上定义 5/10 表示从 第 5 秒开始 每 10 秒执行一次，而在 “分” 上则表示从 第 5 秒开始 每 10 分钟执行一次。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#：表示该月第n个星期x(x#n)，仅用星期域。如：星期：6#3，表示该月的第三个星期六。</span><br><span class="line"></span><br><span class="line">L：表示LAST 最后（最后一天或最后一个星期几）；仅出现在日和星期的域中。用在日则表示该月的最后一天，用在星期则表示该月的最后一个星期X。如：星期域上的值为5L，则表示该月最后一个星期的星期四。在使用&#x27;L&#x27;时，不要指定列表&#x27;,&#x27;或范围&#x27;-&#x27;，否则易导致出现意料之外的结果。</span><br><span class="line"></span><br><span class="line">W：仅用在日的域中，表示距离当月给定日期最近的工作日（周一到周五）。 如：&quot;4W&quot;表示距离4号最近的工作日（当月的）触发事件； （1）当4号就是工作日时，则表示当天触发；当4号为周六时，则表示3号（周五）触发； （2）当4号为周日时，则表示在5号（周一）触发； 再如：&quot;1W&quot;表示距离1号最近的工作日触发事件，但是，该工作日只算当月的。假如当月1号是周六，则”1W“表示在当月3号（周一）触发事件。就算上个月的最后一天是工作日，也不会触发事件。</span><br><span class="line"></span><br><span class="line">LW：‘L’和&#x27;W&#x27;可以一起组合在日字段使用。表示当月的最后一个工作日触发事件。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>0 0 7-20 * * * 比如这个0秒0分7-19点内每天每月每周执行，即每天的7-19内0分0秒执行</p>
-<p>如果要求在上班日（周一到周五），那么最后一个字符“周”就需要配置：0 0 7-20 * * 1-5</p>
-<p>当然如果你不会的话，可以选择使用<a href="https://cron.qqe2.com/">在线服务</a>,简单方便。</p>
-<h1 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h1>
-<p>青龙面板是个好东西，可视化的界面降低了开发人员的入门，没必要在部署上花费时间，简单的写个python程序，然后放到青龙上，剩下的就是等待，配合Gotify等通知软件，可以实现实时接收消息。</p>
+    <title>随想</title>
+    <url>/2022/04/30/%E9%9A%8F%E6%83%B3/</url>
+    <content><![CDATA[<p>想养一只猫</p>
+<p>给他取名叫米奇</p>
+<p>为啥</p>
+<p>因为老一辈的人相信贱名好养活。</p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
 
 <script src="/js/markmap.js"></script>
 ]]></content>
       <categories>
-        <category>技术顾问</category>
+        <category>随想</category>
       </categories>
       <tags>
-        <tag>青龙面板</tag>
-        <tag>python</tag>
-        <tag>Gotify</tag>
+        <tag>喵</tag>
       </tags>
   </entry>
   <entry>
@@ -11394,6 +11366,34 @@ pip install requirements.txt
       </categories>
       <tags>
         <tag>金蝶</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>青龙面板定时规则</title>
+    <url>/2023/03/28/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%AE%9A%E6%97%B6%E8%A7%84%E5%88%99/</url>
+    <content><![CDATA[<h1 id="青龙面板定时规则"><a class="markdownIt-Anchor" href="#青龙面板定时规则"></a> 青龙面板定时规则</h1>
+<p>青龙面板使用的是cron的时间格式，但是它又在上面基础上进行优化，使用的是5-6位的时间表达式：</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/!%5B20230328145315%5D(httpsraw.githubusercontent.comandroid1122typecho_imgmaster20230328145315.png).png" alt="20230328145315" /></p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230328145545.png" alt="20230328145545" /></p>
+<p>知道这些之后，看下青龙内部经常使用的通配符</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">,：表示在两个及以上的时间点中都执行。如在月中的值为1,3，则表示1月和3月都触发事件</span><br><span class="line"></span><br><span class="line">*：表示匹配该域任意值，可解读为 “每”，如小时的字段为*时，表示每一小时都触发事件</span><br><span class="line"></span><br><span class="line">?：表示不指定值，用于日期和星期字段之间进行互斥。通常在日期和星期字段中的一个指定值，另外一个用?表示不指定值。使用的场景为不需要关心当前设置这个字段的值。例如:要在每月的6号触发一个操作，但不关心是周几，我们可以这么设置 0 0 0 6 * ?</span><br><span class="line"></span><br><span class="line">-：表示范围，一个连续触发的区间。如：时的值为6-8，则表示6-8小时中的每个小时都触发事件。</span><br><span class="line"></span><br><span class="line">/：表示间隔时间触发事件（开始时间/时间间隔）。其中第一部分是起始值，除了秒以外都会降低一个单位，比如在 “秒” 上定义 5/10 表示从 第 5 秒开始 每 10 秒执行一次，而在 “分” 上则表示从 第 5 秒开始 每 10 分钟执行一次。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#：表示该月第n个星期x(x#n)，仅用星期域。如：星期：6#3，表示该月的第三个星期六。</span><br><span class="line"></span><br><span class="line">L：表示LAST 最后（最后一天或最后一个星期几）；仅出现在日和星期的域中。用在日则表示该月的最后一天，用在星期则表示该月的最后一个星期X。如：星期域上的值为5L，则表示该月最后一个星期的星期四。在使用&#x27;L&#x27;时，不要指定列表&#x27;,&#x27;或范围&#x27;-&#x27;，否则易导致出现意料之外的结果。</span><br><span class="line"></span><br><span class="line">W：仅用在日的域中，表示距离当月给定日期最近的工作日（周一到周五）。 如：&quot;4W&quot;表示距离4号最近的工作日（当月的）触发事件； （1）当4号就是工作日时，则表示当天触发；当4号为周六时，则表示3号（周五）触发； （2）当4号为周日时，则表示在5号（周一）触发； 再如：&quot;1W&quot;表示距离1号最近的工作日触发事件，但是，该工作日只算当月的。假如当月1号是周六，则”1W“表示在当月3号（周一）触发事件。就算上个月的最后一天是工作日，也不会触发事件。</span><br><span class="line"></span><br><span class="line">LW：‘L’和&#x27;W&#x27;可以一起组合在日字段使用。表示当月的最后一个工作日触发事件。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>0 0 7-20 * * * 比如这个0秒0分7-19点内每天每月每周执行，即每天的7-19内0分0秒执行</p>
+<p>如果要求在上班日（周一到周五），那么最后一个字符“周”就需要配置：0 0 7-20 * * 1-5</p>
+<p>当然如果你不会的话，可以选择使用<a href="https://cron.qqe2.com/">在线服务</a>,简单方便。</p>
+<h1 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h1>
+<p>青龙面板是个好东西，可视化的界面降低了开发人员的入门，没必要在部署上花费时间，简单的写个python程序，然后放到青龙上，剩下的就是等待，配合Gotify等通知软件，可以实现实时接收消息。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>青龙面板</tag>
+        <tag>python</tag>
+        <tag>Gotify</tag>
       </tags>
   </entry>
   <entry>
