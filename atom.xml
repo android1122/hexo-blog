@@ -6,7 +6,7 @@
   <link href="https://minsummer.com/atom.xml" rel="self"/>
   
   <link href="https://minsummer.com/"/>
-  <updated>2025-07-12T16:00:00.000Z</updated>
+  <updated>2025-08-05T16:00:00.000Z</updated>
   <id>https://minsummer.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>青龙面板自定义脚本配置</title>
+    <link href="https://minsummer.com/2025/08/05/210-%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E8%87%AA%E5%AE%9A%E4%B9%89%E8%84%9A%E6%9C%AC%E9%85%8D%E7%BD%AE/"/>
+    <id>https://minsummer.com/2025/08/05/210-%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E8%87%AA%E5%AE%9A%E4%B9%89%E8%84%9A%E6%9C%AC%E9%85%8D%E7%BD%AE/</id>
+    <published>2025-08-05T16:00:00.000Z</published>
+    <updated>2025-08-05T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;最近由于需要自定义一个脚本在青龙面板内执行，但是折腾了半天，发现指定的脚本无法调用青龙面板配置的环境变量。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="青龙面板" scheme="https://minsummer.com/tags/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF/"/>
+    
+    <category term="自定义脚本" scheme="https://minsummer.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E8%84%9A%E6%9C%AC/"/>
+    
+  </entry>
   
   <entry>
     <title>硬盘位拓展指北</title>
@@ -342,15 +363,16 @@
   </entry>
   
   <entry>
-    <title>ESXI安装HomeAsistantOS</title>
-    <link href="https://minsummer.com/2025/01/06/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS/"/>
-    <id>https://minsummer.com/2025/01/06/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS/</id>
+    <title>服务器NAS最佳实践</title>
+    <link href="https://minsummer.com/2025/01/06/192-%E6%9C%8D%E5%8A%A1%E5%99%A8NAS%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/"/>
+    <id>https://minsummer.com/2025/01/06/192-%E6%9C%8D%E5%8A%A1%E5%99%A8NAS%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</id>
     <published>2025-01-06T16:00:00.000Z</published>
     <updated>2025-01-06T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;我家里有一台小米的空气净化器，还有小米得几个空调遥控器，定时器。虽然可以使用官方得app控制，但是总归是不方便，还是希望可以更加得智能化，尤其我这人对空调吹多了冷，吹少了热。&lt;br /&gt;
-其实之前我使用过一阵子，但是那时候官方没有支持，导致我使用HA进行控制之后就不能使用官方app控制。正好这次官方宣布支持，我就想着再试试。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;我的服务器最终配置清单出炉：&lt;br /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/android1122/typecho_img/master/192-%E6%9C%8D%E5%8A%A1%E5%99%A8NAS%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5-2025-01-07-09-15-28.png&quot; alt=&quot;192-服务器NAS的最佳实践-2025-01-07-09-15-28&quot; /&gt;&lt;br /&gt;
+浪潮这台服务器是前面12加上后面4合计16个硬盘位，我目前只是安装了9个，而且都是小容量的，就这样已经占据目前成本的3分之一。可见硬盘才是成本的大头。&lt;/p&gt;</summary>
     
     
     
@@ -366,16 +388,15 @@
   </entry>
   
   <entry>
-    <title>服务器NAS最佳实践</title>
-    <link href="https://minsummer.com/2025/01/06/192-%E6%9C%8D%E5%8A%A1%E5%99%A8NAS%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/"/>
-    <id>https://minsummer.com/2025/01/06/192-%E6%9C%8D%E5%8A%A1%E5%99%A8NAS%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</id>
+    <title>ESXI安装HomeAsistantOS</title>
+    <link href="https://minsummer.com/2025/01/06/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS/"/>
+    <id>https://minsummer.com/2025/01/06/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS/</id>
     <published>2025-01-06T16:00:00.000Z</published>
     <updated>2025-01-06T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;我的服务器最终配置清单出炉：&lt;br /&gt;
-&lt;img src=&quot;https://raw.githubusercontent.com/android1122/typecho_img/master/192-%E6%9C%8D%E5%8A%A1%E5%99%A8NAS%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5-2025-01-07-09-15-28.png&quot; alt=&quot;192-服务器NAS的最佳实践-2025-01-07-09-15-28&quot; /&gt;&lt;br /&gt;
-浪潮这台服务器是前面12加上后面4合计16个硬盘位，我目前只是安装了9个，而且都是小容量的，就这样已经占据目前成本的3分之一。可见硬盘才是成本的大头。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;我家里有一台小米的空气净化器，还有小米得几个空调遥控器，定时器。虽然可以使用官方得app控制，但是总归是不方便，还是希望可以更加得智能化，尤其我这人对空调吹多了冷，吹少了热。&lt;br /&gt;
+其实之前我使用过一阵子，但是那时候官方没有支持，导致我使用HA进行控制之后就不能使用官方app控制。正好这次官方宣布支持，我就想着再试试。&lt;/p&gt;</summary>
     
     
     
