@@ -1417,92 +1417,6 @@ NaiveProxy是没有服务器软件的，直接使用包含naïve的caddy forward
       </tags>
   </entry>
   <entry>
-    <title>NaiveProxy优化</title>
-    <url>/2023/05/30/117-NaiveProxy%E4%BC%98%E5%8C%96/</url>
-    <content><![CDATA[<h2 id="代理链"><a class="markdownIt-Anchor" href="#代理链"></a> 代理链</h2>
-<p>之前在部署那边有个配置<code>upstream </code>可以配置上游代理链条，使用方法很简单，直接配置好上游的服务器然后在<code>upstram https://&lt;用户名&gt;:&lt;密码&gt;@&lt;上游网址&gt;</code>。<br />
-代理链的优势：</p>
-<ol>
-<li>拯救被墙的服务器</li>
-<li>优化线路速度</li>
-<li>可以随时变更中转机</li>
-<li>隐藏实际服务器</li>
-</ol>
-<p>缺点：</p>
-<ol>
-<li>消耗双边流量</li>
-</ol>
-<span id="more"></span>
-<p>完整线路：你的电脑——|墙|——<code>服务器（中转机）——上游服务器（落地机）——谷歌</code>。<br />
-后段路程是固定的，所以延迟就看你本地运营商和中转机之间的速度。中转机的位置可以在墙内也可以在墙外，看个人能力。中转机被封的话，只要换一个就可以，这样就不会出现一封封锁一大堆主机的情况。</p>
-<h2 id="完整配置"><a class="markdownIt-Anchor" href="#完整配置"></a> 完整配置</h2>
-<p>上游配置-落地机配置：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:443, xxxx.xxxx.com &#123; # 443必须的，否则无法执行，逗号后面有个空格，别忘记了。</span><br><span class="line">    route &#123;</span><br><span class="line">        forward_proxy &#123;</span><br><span class="line">            basic_auth &lt;用户名&gt; &lt;密码&gt;</span><br><span class="line">            hide_ip</span><br><span class="line">            hide_via</span><br><span class="line">        &#125;</span><br><span class="line">        file_server &#123;</span><br><span class="line">            root /usr/share/caddy/share # 可以在之前的网页路径下随便放一个index网页</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>下游配置-中转机配置：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:443, xxxx.xxxx.com &#123; # 443必须的，否则无法执行，逗号后面有个空格，别忘记了。</span><br><span class="line">    route &#123;</span><br><span class="line">        forward_proxy &#123;</span><br><span class="line">            basic_auth &lt;用户名&gt; &lt;密码&gt;</span><br><span class="line">            hide_ip</span><br><span class="line">            hide_via</span><br><span class="line">            upstram https://&lt;用户名&gt;:&lt;密码&gt;@&lt;上游网址&gt;</span><br><span class="line">        &#125;</span><br><span class="line">        file_server &#123;</span><br><span class="line">            root /usr/share/caddy/share # 可以在之前的网页路径下随便放一个index网页</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>最后说下速度：<br />
-链式后速度：<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/01%E5%8D%9A%E5%AE%A2%E6%A8%A1%E6%9D%BF-2023-05-31-13-52-45.png" alt="01博客模板-2023-05-31-13-52-45" /></p>
-<p>自建speedtest速度-套上了cloudfare的CDN：<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-NaiveProxy%E4%BC%98%E5%8C%96-2023-05-31-13-55-32.png" alt="117-NaiveProxy优化-2023-05-31-13-55-32" /><br />
-速度快了点，但是延迟也高了点，毕竟是转发再转发一层。而cloudfare它拥有大量的服务器，可以直接用最快的服务器代理。这样最大的好处就是拯救哪些被墙的服务器又一条路子。就是流量要两边损耗。<br />
-当然如果有想法的人可以在中转机写下脚本，增加一个负载均衡。</p>
-<h2 id="性能调优"><a class="markdownIt-Anchor" href="#性能调优"></a> 性能调优</h2>
-<p>NaiveProxy的作者写下了一些参数优化，分为服务器和本地：<br />
-服务器：</p>
-<ol>
-<li>使用BBR<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo sysctl -w net.ipv4.tcp_congestion_control=bbr</span><br></pre></td></tr></table></figure>
-</li>
-<li>关闭tcp_slow_start_after_idle，作者说是可以稍微提高持久连接<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo sysctl -w net.ipv4.tcp_slow_start_after_idle=0</span><br></pre></td></tr></table></figure>
-</li>
-<li>增加发送缓存大小<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo sysctl -w net.ipv4.tcp_notsent_lowat=16384</span><br></pre></td></tr></table></figure>
-</li>
-<li>关闭TCP Fast Open，这个会会产生独特的流量特征</li>
-</ol>
-<p>本地：</p>
-<ol>
-<li>
-<p>增加Chrome的最大代理连接数：chrome默认的代理连接数是32，可以增加连接数以获得更快的速度，但是需要注意最大值是99.<br />
-Linux的更改：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo mkdir -p /etc/chromium/policies/managed</span><br><span class="line"> echo &#x27;&#123; &quot;MaxConnectionsPerProxy&quot;: 99 &#125;&#x27; | sudo tee /etc/chromium/policies/managed/proxy.json</span><br></pre></td></tr></table></figure>
-<p>macOS的修改：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">defaults write com.google.Chrome MaxConnectionsPerProxy -int 99</span><br></pre></td></tr></table></figure>
-<p>最后是Windows的修改：</p>
-<ol>
-<li>在浏览器地址栏输入：</li>
-</ol>
- <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chrome://policy/</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>右上角搜索<code>MaxConnectionsPerProxy</code><br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-NaiveProxy%E4%BC%98%E5%8C%96-2023-05-31-15-10-34.png" alt="117-NaiveProxy优化-2023-05-31-15-10-34" /></li>
-<li>看下数值，如果为0，说明你系统没有导入过政策，需要去官方下载一个<a href="https://dl.google.com/dl/edgedl/chrome/policy/policy_templates.zip">模板</a>，模板文件windows下examples下有个注册表导入文件，右键使用记事本打开，然后复制下面内容（当然你可以直接在上面修改直至只剩下下面内容）：  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line">; chrome version: 114.0.5735.91</span><br><span class="line"></span><br><span class="line">[HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome]</span><br><span class="line">&quot;MaxConnectionsPerProxy&quot;=dword:00000020</span><br></pre></td></tr></table></figure>
-</li>
-<li>如果你的数值为32，这说明你安装时候已经导入过模板了，那么你直接到<strong>HKEY_LOCAL_MACHINE 或者 HKEY_CURRENT_USER</strong>下<code>Software\Policies\Google\Chrome</code>值：MaxConnectionsPerProxy，十进制，改为99即可<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-NaiveProxy%E4%BC%98%E5%8C%96-2023-05-31-15-09-05.png" alt="117-NaiveProxy优化-2023-05-31-15-09-05" /></li>
-<li>回到浏览器，点击重新加载政策，看到99即证明成功了，chrome政策有很多，喜欢的话可以研究一下，主要是公司用来防止员工上一些奇奇怪怪的东西控制：<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-NaiveProxy%E4%BC%98%E5%8C%96-2023-05-31-15-27-34.png" alt="117-NaiveProxy优化-2023-05-31-15-27-34" /></li>
-</ol>
-</li>
-</ol>
-<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
-<p>一日一技，无论是链式代理，还是性能调优，不会带来那种十分巨大的提升，但是在用户众多或者环境特殊的情况下，多了解服务器的上限也是好的，增加了代理连接数可以在浏览器开的多的情况下带来优化。适合自己需求的才是最好的。</p>
-<hr />
-<p><a href="https://github.com/klzgrad/naiveproxy/wiki/Performance-Tuning">官方性能调优</a><br />
-<a href="https://www.chromium.org/administrators/policy-templates/">chrome增加proxy连接说明</a></p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>速度优化</tag>
-        <tag>老生常谈</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>不是所有东西都是代价——《鬼灭之刃》</title>
     <url>/2023/06/01/118-%E4%B8%8D%E6%98%AF%E6%89%80%E6%9C%89%E4%B8%9C%E8%A5%BF%E9%83%BD%E6%98%AF%E4%BB%A3%E4%BB%B7%E2%80%94%E2%80%94%E3%80%8A%E9%AC%BC%E7%81%AD%E4%B9%8B%E5%88%83%E3%80%8B/</url>
     <content><![CDATA[<p>对于《鬼灭之刃》的爆火，我一开始是不明白的。毕竟题材不算新颖，画风说实话和大师还是优点差距，但是随着自己的深入，忽然发现，这是另一本的《一拳超人》</p>
@@ -1646,6 +1560,92 @@ Linux的更改：</p>
         <tag>中国经济</tag>
         <tag>民科经济学</tag>
         <tag>暴论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NaiveProxy优化</title>
+    <url>/2023/05/30/117-NaiveProxy%E4%BC%98%E5%8C%96/</url>
+    <content><![CDATA[<h2 id="代理链"><a class="markdownIt-Anchor" href="#代理链"></a> 代理链</h2>
+<p>之前在部署那边有个配置<code>upstream </code>可以配置上游代理链条，使用方法很简单，直接配置好上游的服务器然后在<code>upstram https://&lt;用户名&gt;:&lt;密码&gt;@&lt;上游网址&gt;</code>。<br />
+代理链的优势：</p>
+<ol>
+<li>拯救被墙的服务器</li>
+<li>优化线路速度</li>
+<li>可以随时变更中转机</li>
+<li>隐藏实际服务器</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>消耗双边流量</li>
+</ol>
+<span id="more"></span>
+<p>完整线路：你的电脑——|墙|——<code>服务器（中转机）——上游服务器（落地机）——谷歌</code>。<br />
+后段路程是固定的，所以延迟就看你本地运营商和中转机之间的速度。中转机的位置可以在墙内也可以在墙外，看个人能力。中转机被封的话，只要换一个就可以，这样就不会出现一封封锁一大堆主机的情况。</p>
+<h2 id="完整配置"><a class="markdownIt-Anchor" href="#完整配置"></a> 完整配置</h2>
+<p>上游配置-落地机配置：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:443, xxxx.xxxx.com &#123; # 443必须的，否则无法执行，逗号后面有个空格，别忘记了。</span><br><span class="line">    route &#123;</span><br><span class="line">        forward_proxy &#123;</span><br><span class="line">            basic_auth &lt;用户名&gt; &lt;密码&gt;</span><br><span class="line">            hide_ip</span><br><span class="line">            hide_via</span><br><span class="line">        &#125;</span><br><span class="line">        file_server &#123;</span><br><span class="line">            root /usr/share/caddy/share # 可以在之前的网页路径下随便放一个index网页</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下游配置-中转机配置：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:443, xxxx.xxxx.com &#123; # 443必须的，否则无法执行，逗号后面有个空格，别忘记了。</span><br><span class="line">    route &#123;</span><br><span class="line">        forward_proxy &#123;</span><br><span class="line">            basic_auth &lt;用户名&gt; &lt;密码&gt;</span><br><span class="line">            hide_ip</span><br><span class="line">            hide_via</span><br><span class="line">            upstram https://&lt;用户名&gt;:&lt;密码&gt;@&lt;上游网址&gt;</span><br><span class="line">        &#125;</span><br><span class="line">        file_server &#123;</span><br><span class="line">            root /usr/share/caddy/share # 可以在之前的网页路径下随便放一个index网页</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后说下速度：<br />
+链式后速度：<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/01%E5%8D%9A%E5%AE%A2%E6%A8%A1%E6%9D%BF-2023-05-31-13-52-45.png" alt="01博客模板-2023-05-31-13-52-45" /></p>
+<p>自建speedtest速度-套上了cloudfare的CDN：<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-NaiveProxy%E4%BC%98%E5%8C%96-2023-05-31-13-55-32.png" alt="117-NaiveProxy优化-2023-05-31-13-55-32" /><br />
+速度快了点，但是延迟也高了点，毕竟是转发再转发一层。而cloudfare它拥有大量的服务器，可以直接用最快的服务器代理。这样最大的好处就是拯救哪些被墙的服务器又一条路子。就是流量要两边损耗。<br />
+当然如果有想法的人可以在中转机写下脚本，增加一个负载均衡。</p>
+<h2 id="性能调优"><a class="markdownIt-Anchor" href="#性能调优"></a> 性能调优</h2>
+<p>NaiveProxy的作者写下了一些参数优化，分为服务器和本地：<br />
+服务器：</p>
+<ol>
+<li>使用BBR<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo sysctl -w net.ipv4.tcp_congestion_control=bbr</span><br></pre></td></tr></table></figure>
+</li>
+<li>关闭tcp_slow_start_after_idle，作者说是可以稍微提高持久连接<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo sysctl -w net.ipv4.tcp_slow_start_after_idle=0</span><br></pre></td></tr></table></figure>
+</li>
+<li>增加发送缓存大小<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo sysctl -w net.ipv4.tcp_notsent_lowat=16384</span><br></pre></td></tr></table></figure>
+</li>
+<li>关闭TCP Fast Open，这个会会产生独特的流量特征</li>
+</ol>
+<p>本地：</p>
+<ol>
+<li>
+<p>增加Chrome的最大代理连接数：chrome默认的代理连接数是32，可以增加连接数以获得更快的速度，但是需要注意最大值是99.<br />
+Linux的更改：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo mkdir -p /etc/chromium/policies/managed</span><br><span class="line"> echo &#x27;&#123; &quot;MaxConnectionsPerProxy&quot;: 99 &#125;&#x27; | sudo tee /etc/chromium/policies/managed/proxy.json</span><br></pre></td></tr></table></figure>
+<p>macOS的修改：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">defaults write com.google.Chrome MaxConnectionsPerProxy -int 99</span><br></pre></td></tr></table></figure>
+<p>最后是Windows的修改：</p>
+<ol>
+<li>在浏览器地址栏输入：</li>
+</ol>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chrome://policy/</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>右上角搜索<code>MaxConnectionsPerProxy</code><br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-NaiveProxy%E4%BC%98%E5%8C%96-2023-05-31-15-10-34.png" alt="117-NaiveProxy优化-2023-05-31-15-10-34" /></li>
+<li>看下数值，如果为0，说明你系统没有导入过政策，需要去官方下载一个<a href="https://dl.google.com/dl/edgedl/chrome/policy/policy_templates.zip">模板</a>，模板文件windows下examples下有个注册表导入文件，右键使用记事本打开，然后复制下面内容（当然你可以直接在上面修改直至只剩下下面内容）：  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line">; chrome version: 114.0.5735.91</span><br><span class="line"></span><br><span class="line">[HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome]</span><br><span class="line">&quot;MaxConnectionsPerProxy&quot;=dword:00000020</span><br></pre></td></tr></table></figure>
+</li>
+<li>如果你的数值为32，这说明你安装时候已经导入过模板了，那么你直接到<strong>HKEY_LOCAL_MACHINE 或者 HKEY_CURRENT_USER</strong>下<code>Software\Policies\Google\Chrome</code>值：MaxConnectionsPerProxy，十进制，改为99即可<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-NaiveProxy%E4%BC%98%E5%8C%96-2023-05-31-15-09-05.png" alt="117-NaiveProxy优化-2023-05-31-15-09-05" /></li>
+<li>回到浏览器，点击重新加载政策，看到99即证明成功了，chrome政策有很多，喜欢的话可以研究一下，主要是公司用来防止员工上一些奇奇怪怪的东西控制：<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/117-NaiveProxy%E4%BC%98%E5%8C%96-2023-05-31-15-27-34.png" alt="117-NaiveProxy优化-2023-05-31-15-27-34" /></li>
+</ol>
+</li>
+</ol>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>一日一技，无论是链式代理，还是性能调优，不会带来那种十分巨大的提升，但是在用户众多或者环境特殊的情况下，多了解服务器的上限也是好的，增加了代理连接数可以在浏览器开的多的情况下带来优化。适合自己需求的才是最好的。</p>
+<hr />
+<p><a href="https://github.com/klzgrad/naiveproxy/wiki/Performance-Tuning">官方性能调优</a><br />
+<a href="https://www.chromium.org/administrators/policy-templates/">chrome增加proxy连接说明</a></p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>速度优化</tag>
+        <tag>老生常谈</tag>
       </tags>
   </entry>
   <entry>
@@ -5066,6 +5066,41 @@ Debain系统</p>
       </tags>
   </entry>
   <entry>
+    <title>关于新装电脑的一些思考</title>
+    <url>/2024/07/03/178-%E5%85%B3%E4%BA%8E%E6%96%B0%E8%A3%85%E7%94%B5%E8%84%91%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/</url>
+    <content><![CDATA[<p>最近由于电商需要，就新配置了一台电脑，主要是一些PS，PR需要，也顺带着想着自己玩玩游戏。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/178-%E5%85%B3%E4%BA%8E%E6%96%B0%E8%A3%85%E7%94%B5%E8%84%91%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83-2024-07-04-11-48-48.png" alt="178-关于新装电脑的一些思考-2024-07-04-11-48-48" /></p>
+<span id="more"></span>
+<p>电脑的配置一半是网上抄的，一半是自己研究的。<br />
+在简单的配置完之后，我忽然突发奇想。如果这一套我选择去咸鱼上配置会有多少差价。<br />
+对于电子产品我是不介意二手的，毕竟电子产品很多都是在日常使用的环境，而且电子元器件没有损耗这么一说，大多数的问题是老化，电池不行等。而电脑配件是一个完整且完善的二手市场，所以我想通过这个了解下二手这个行业的价值。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/178-%E5%85%B3%E4%BA%8E%E6%96%B0%E8%A3%85%E7%94%B5%E8%84%91%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83-2024-07-04-11-51-16.png" alt="178-关于新装电脑的一些思考-2024-07-04-11-51-16" /></p>
+<ol>
+<li>板+U：咸鱼和我买的几乎没有人和差价，首先CPU本身就有很多二手冒充散件的，所以不意外，板的新旧没想到差距如此之小，不过能理解，毕竟板只要功能正常，可以洗成全新的。再加上板的上市时间短，几乎没有什么陈年老板，马上要报废这么一说。而且大多数买家都会刻意留下包装盒这些东西。</li>
+<li>内存：价差几乎为0，这倒是让我有点意外，首先内存条皮实耐造，没有什么明显的损耗可以看见，但是两者新旧差价这么低确实让我意外。</li>
+<li>硬盘：没有看二手，固态硬盘读写时间和寿命有关，我能想象差价有，但是不推荐，我看的是我当初买的和现在的价格，发现这玩意价格波动有点大，时而450，时而300。和A股有的一拼。固态硬盘也是我唯一不是很建议二手的配件，硬盘有价，数据无价。</li>
+<li>显卡：显卡是里面价差最大的一部分，差距接近1000，而全部差价也就1425，所以是主力差价，实际上，如果你预算不足，显卡是你省下预算的大头，毕竟同一型号显卡，能差出一个等级。</li>
+<li>电源：价格差距50%，看个人吧。电源是唯一不能省的一个配件，毕竟上万的电脑，一旦电源爆炸就全都报废。但是谁又能说新的就一定好。这是争议挺大的。</li>
+<li>散热：价格差距不大，20%-30%，不介意的话可以考虑买二手的；50来块。</li>
+<li>显示器：我也不是很建议二手，毕竟显示器算是一个大件，价格贵，而且二手容易扯皮，还有就是运费算上也不是很合适。但是如果预算有限，这里也可以省下不少，毕竟越难流通的东西，价差越低。还有一个，除开那些有钱的，很多人显示器几乎不会换，因为很难坏，所以换要么就是升级，要么就是有暗病。1080p的保有量大还好，2k，4k这些的少且价格高，不合适。</li>
+</ol>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>从电脑配件我们可以看出。首先，在一个完整的二手市场，产品的流通差价和产品的流转方便与否有莫大关系：比如显示器，机箱这些物流运输要求特别包装的，一般人很难会留下包装盒，所以流通价值就会降低。而显卡的价格差距，我个人认为是市场需求扰乱的，那几年显卡价格顶上来之后就一直保持高位。<br />
+电子产品由于不像衣服这些可以明显看出新旧痕迹的，哪怕有，现在技术也可以帮助你洗的干干净净，而且也没有和人体紧密接触，没有其他风险。所以在小配件，尤其板，cpu，内存这些价格差距十分小，毕竟转手买来，再加个包装，看不出来新旧的。电源的新旧还是能从电容，电阻这些看出点端倪，而且电源很多人不想冒风险，市场需求小，所以价格差距大。<br />
+二手市场，看新旧，看流转，看受众，新旧无法分辨的，价格差距越小，流转越方便的，价格差距越小，受众越多的，价格差距越小。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>自己组装电脑</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>无题</title>
     <url>/2024/06/21/177-%E6%97%A0%E9%A2%98/</url>
     <content><![CDATA[<p>还记得我当初上学的时候，老师总是三令五申的告诉我们，不要离题，不要离题。但是那个时候我往往因为想要写得出众，写得特立独行，写完后发现好像离题了。后面我就变成了按部就班得写作，难忘的事就是那件事，忘不掉得人就是那个人。我每次想要有新花样，但是都不知道如何下手。但是往往在书上看到一些无题得文章，我又很奇怪，无题怎么切。</p>
@@ -5105,41 +5140,6 @@ Debain系统</p>
       </categories>
       <tags>
         <tag>无题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于新装电脑的一些思考</title>
-    <url>/2024/07/03/178-%E5%85%B3%E4%BA%8E%E6%96%B0%E8%A3%85%E7%94%B5%E8%84%91%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/</url>
-    <content><![CDATA[<p>最近由于电商需要，就新配置了一台电脑，主要是一些PS，PR需要，也顺带着想着自己玩玩游戏。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/178-%E5%85%B3%E4%BA%8E%E6%96%B0%E8%A3%85%E7%94%B5%E8%84%91%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83-2024-07-04-11-48-48.png" alt="178-关于新装电脑的一些思考-2024-07-04-11-48-48" /></p>
-<span id="more"></span>
-<p>电脑的配置一半是网上抄的，一半是自己研究的。<br />
-在简单的配置完之后，我忽然突发奇想。如果这一套我选择去咸鱼上配置会有多少差价。<br />
-对于电子产品我是不介意二手的，毕竟电子产品很多都是在日常使用的环境，而且电子元器件没有损耗这么一说，大多数的问题是老化，电池不行等。而电脑配件是一个完整且完善的二手市场，所以我想通过这个了解下二手这个行业的价值。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/178-%E5%85%B3%E4%BA%8E%E6%96%B0%E8%A3%85%E7%94%B5%E8%84%91%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83-2024-07-04-11-51-16.png" alt="178-关于新装电脑的一些思考-2024-07-04-11-51-16" /></p>
-<ol>
-<li>板+U：咸鱼和我买的几乎没有人和差价，首先CPU本身就有很多二手冒充散件的，所以不意外，板的新旧没想到差距如此之小，不过能理解，毕竟板只要功能正常，可以洗成全新的。再加上板的上市时间短，几乎没有什么陈年老板，马上要报废这么一说。而且大多数买家都会刻意留下包装盒这些东西。</li>
-<li>内存：价差几乎为0，这倒是让我有点意外，首先内存条皮实耐造，没有什么明显的损耗可以看见，但是两者新旧差价这么低确实让我意外。</li>
-<li>硬盘：没有看二手，固态硬盘读写时间和寿命有关，我能想象差价有，但是不推荐，我看的是我当初买的和现在的价格，发现这玩意价格波动有点大，时而450，时而300。和A股有的一拼。固态硬盘也是我唯一不是很建议二手的配件，硬盘有价，数据无价。</li>
-<li>显卡：显卡是里面价差最大的一部分，差距接近1000，而全部差价也就1425，所以是主力差价，实际上，如果你预算不足，显卡是你省下预算的大头，毕竟同一型号显卡，能差出一个等级。</li>
-<li>电源：价格差距50%，看个人吧。电源是唯一不能省的一个配件，毕竟上万的电脑，一旦电源爆炸就全都报废。但是谁又能说新的就一定好。这是争议挺大的。</li>
-<li>散热：价格差距不大，20%-30%，不介意的话可以考虑买二手的；50来块。</li>
-<li>显示器：我也不是很建议二手，毕竟显示器算是一个大件，价格贵，而且二手容易扯皮，还有就是运费算上也不是很合适。但是如果预算有限，这里也可以省下不少，毕竟越难流通的东西，价差越低。还有一个，除开那些有钱的，很多人显示器几乎不会换，因为很难坏，所以换要么就是升级，要么就是有暗病。1080p的保有量大还好，2k，4k这些的少且价格高，不合适。</li>
-</ol>
-<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
-<p>从电脑配件我们可以看出。首先，在一个完整的二手市场，产品的流通差价和产品的流转方便与否有莫大关系：比如显示器，机箱这些物流运输要求特别包装的，一般人很难会留下包装盒，所以流通价值就会降低。而显卡的价格差距，我个人认为是市场需求扰乱的，那几年显卡价格顶上来之后就一直保持高位。<br />
-电子产品由于不像衣服这些可以明显看出新旧痕迹的，哪怕有，现在技术也可以帮助你洗的干干净净，而且也没有和人体紧密接触，没有其他风险。所以在小配件，尤其板，cpu，内存这些价格差距十分小，毕竟转手买来，再加个包装，看不出来新旧的。电源的新旧还是能从电容，电阻这些看出点端倪，而且电源很多人不想冒风险，市场需求小，所以价格差距大。<br />
-二手市场，看新旧，看流转，看受众，新旧无法分辨的，价格差距越小，流转越方便的，价格差距越小，受众越多的，价格差距越小。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>自己组装电脑</tag>
       </tags>
   </entry>
   <entry>
@@ -7352,6 +7352,67 @@ HBA卡就是一个通道卡，它的作用是让计算机能够对硬盘进行�
       <tags>
         <tag>青龙面板</tag>
         <tag>自定义脚本</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>山东游记</title>
+    <url>/2025/08/21/211-%E5%B1%B1%E4%B8%9C%E6%B8%B8%E8%AE%B0/</url>
+    <content><![CDATA[<p>最近趁着暑期的尾巴，去了一趟山东。计划的是四天三晚，做了很多的攻略，现在进行一个总结吧，也算是自我复盘。</p>
+<span id="more"></span>
+<h2 id="泰安"><a class="markdownIt-Anchor" href="#泰安"></a> 泰安</h2>
+<p>泰山就在泰安，我们计划是从红门爬泰山，然后从天外村下来，这个没问题。需要注意的是：</p>
+<ol>
+<li>登山杖不要提前买，5块钱两根，但是简陋，无法调整长度。建议非专业玩家就买一个，到了山脚随便给个大娘就行——是的，路上很多老奶奶会伸手要你手里的登山杖。</li>
+<li>白水，山脚2块，中天门2块，南天门2块，但是功能性饮料就贵了，所以推荐带个宝矿力调剂，一两包就行。</li>
+<li>如果坐高铁去的话，建议直接打车去红门，门口有公交车但是绕路，而且绕的路都是堵车的路，毕竟是几个爬山点，本来车就多，公交差不多1小时才能到红门，但是打车20分钟，可以自己取舍。</li>
+<li>护膝一定要带，否则膝盖受不了。</li>
+<li>红门到中天门爬山2小时，中天门到南天门爬山2小时，玉皇顶景点多要1个小时才能逛完，所以如果选择爬山记得看时间。下山的话4-6点是高峰期，差不多2小时才能排到南天门到中天门索道，中天门到天外村的车子多，不用太久排队，车子开20分钟到天外村入口，全程擦不多8-9小时，可以合理安排时间。</li>
+<li>酒店十分推荐天外村度假酒店，离天外村入口600米，可以走路到，旁边有一家连锁餐厅鲁菜根。</li>
+<li>不是很建议住在离天外村太远的地方，打车不好打，我在天外村酒店打车，遇见早晚高峰期车子过来要半小时。</li>
+<li>第二天清早可以去岱庙，距离3公里，建议走500到离景点远点的地方去打车，比较容易打到。</li>
+<li>岱庙一般般，可去可不去。去的话，下午一两点就可以坐高铁去济南。<br />
+泰安的计划是我花最多心思的，所以最后几乎完全按照计划进行。</li>
+</ol>
+<h2 id="济南"><a class="markdownIt-Anchor" href="#济南"></a> 济南</h2>
+<p>济南我原本是想要看趵突泉的，所以对那边一开始是没有抱太大的希望，但是这次旅程倒是给了我不一样的惊喜。</p>
+<ol>
+<li>我们是下午两点从泰安高铁去济南西，3点左右到酒店，酒店在趵突泉附近，你可以订大明湖，趵突泉，泉城广场附近的，都很不错，这三个地方都很近。</li>
+<li>济南特别推荐下午4点以后去逛大明湖和泉城广场，大明湖晚上7点有灯光秀，而且下午太阳不大，微风徐徐，很舒服。泉城广场则是8点有音乐喷泉，当地人都是那个时候出去，可以去领略下当地人的生活，4点出门走到大明湖或者泉城广场，在旁边吃个饭，有空可以沿着河边走到黑虎泉，消消食，等到7，8点最热闹的时候。</li>
+<li>趵突泉门票40，儿童半价，推荐进去，去完就去对面的五龙潭，免费，可以看到收费和不收费公园的区别，各有特色。</li>
+<li>大明湖免费，直接进去，乘船到湖心岛收费，但是大明湖最好的景色和时间是夕阳，傍晚。拍照好，天气也不热。<br />
+济南更多的是领略当地的一些风情，泉城广场的人上人海，大明湖畔的老人小孩，你踏步此间，觉得自己也是其中一员。</li>
+</ol>
+<h2 id="曲阜"><a class="markdownIt-Anchor" href="#曲阜"></a> 曲阜</h2>
+<p>曲阜是顺路，或者说是顺带过去的，家里有个读书人，想着拜一拜孔子。</p>
+<ol>
+<li>曲阜是个县，所以不要对当地有什么太大的希望，当地人靠景点吃景点，在景点附近的消费会高出一大截，在曲阜吃饭是我这4天吃的最贵，但是也是最差的</li>
+<li>酒店可以考虑阙里宫舍，老牌国企，国家领导人都去过，四星级，离景点就两步路，真的就两步路，他们家的后墙就是孔府的前墙。</li>
+<li>门票可以当天买，也可以提前订【我去的那天听说正好赶上领导检查为了体现热闹把微信买票给关了逼得人线下买票】。如果孔庙人多，可以去孔府门口买票，那里人少。</li>
+<li>建议买三孔联票，便宜10块钱。</li>
+<li>孔府和孔庙门口有导游，想听可以买69一人，一个人两个人都能走，当地人靠景点吃景点内容都是大差不差的，选个喜欢的就行，当然也可以选择进去之后再找50一个人，随机刷新不一定一直有。</li>
+<li>孔府孔庙看就是了，没什么注意，水和饮料比外面贵1块钱，能接受。</li>
+<li>不要在附近吃任何非国际大牌的东西，真心建议，那边的饭店无论评分还是推荐都不要相信，他们是靠景点吃景点的，推荐麦当劳肯德基等国际大牌。非要当地特色，建议走远点，有卖菜煎饼的，其他的别吃，别吃，尤其带有正宗两个字的，更加别吃。</li>
+<li>不要吃孔府菜，不要吃孔府菜，不要吃孔府菜</li>
+<li>孔林在孔府往后走2公里，人少可以扫一辆电动车开过去，人多可以电动三轮过去，价格10块钱，反正就是一个辛苦钱，看你自己</li>
+<li>孔林门口也有导游40-50一个团可以讲价，有兴趣可以听，反正钱不多，还有20元的浏览车，带你孔林转一圈，推荐。</li>
+<li>如果你目标是孔子墓的话，不用坐车，走路就能到，孔林很大，7公里的路程，走完得1个多小时。</li>
+</ol>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>这次算是对自己做计划得能力进行一次锻炼，从旅游景点到时间安排，最后得完成度接近90%，我个人是很满意得。如果有所遗憾就是曲阜确实差了点。如果说印象比较深刻得那就是第一天得泰山，我个人对那种看风景，看名胜不是很喜欢，相比较它我更喜欢爬山这种，这个也是本次旅行得初衷，一开始是想着3天左右得行程，毕竟一两天就结束太短了，最后不断得增加想去得地方变成了四天三晚，虽然其中有一些不尽如人意，但是这就是人生，只有你去了才知道有多坑。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>山东</tag>
+        <tag>泰安</tag>
+        <tag>济南</tag>
+        <tag>曲阜</tag>
+        <tag>暑期旅游</tag>
       </tags>
   </entry>
   <entry>
@@ -9888,32 +9949,6 @@ sysctl -p
       </tags>
   </entry>
   <entry>
-    <title>机器学习之路</title>
-    <url>/2022/05/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/</url>
-    <content><![CDATA[<p>我的本职工作并不是机器学习，甚至连数据都没有太多的接触.我并没有大量的数据需要挖掘，更没有一个良好的模型需要模拟．我想要的仅仅市一个有趣的，可以给我无聊的工作带来一丝乐趣的AI．至少我是这么认为的．</p>
-<p>机器学习的道路道阻且长.毕竟我的大学专业并不是这个，但是至少有接触过编程．其中python是我跟着廖雪峰老师自学的，虽说入门容易，但是精通难，我更多的只是了解了语言结构和一些常用的包，涉及更深则用不多，所以就没有深入．而对于此我并不觉得奇怪，至少我大学学过数据库之后，常用的语句也就那几个查询，删除，至于触发器．我学过，练习过，但是没有长久使用，还是在记忆中遗忘了．我对于现代社会的技能我更多的认为是，用的时候去学，保持一个快速学习的能力即可．更多的是需要你对一个系统或者语句的基础了解．当然这些只不过是能满足我目前的需求，实际涉及到底层的逻辑则就深不可测．而我也没有机会或者需求去处理那种问题．</p>
-<p>实际上，哪怕你是去大厂内，这种高级的底层逻辑也被大神们打包好，你只需要调用即可．自己从从头梳理那几乎干不了啥事．所以我对于机器学习只是希望入个门，就像python一样，哪天想用，可以快速上手，做过一个简单的数据分析．</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220513233627.png" alt="20220513233627" /></p>
-<p>数据科学导论这本书是我在知乎上搜索数据科学之后，大神推荐阅读的．首先说结论：书有用，很有用，介绍了几个主流的机器学习算法，以及一整套的机器学习的流程：数据－清洗－切片－学习－验证－学习．所有的机器学习都是这么一个整体流程的．但是这本书毕竟是一本入门书籍，它也许不会要求你有很多的数学知识储备，事实上书上没有涉及到任何的数学公式．但这也正是这本书的不足之处．</p>
-<p>读这本书的过程和结束有点像是在大学里面上的专业课．老师并不会或者简单的描述各个算法的背后逻辑，但是你自己却不甚明白，至少我用了一些我的自己日常数据进行测试，发现线性逻辑回归对我来说最好．大学的课程和这本书一样，都是一个简单的介绍入门，等到你进入社会或者以后有需要的时候，你就会深入的去了解每一个算法背后数学测算和原因．这就是这本书最大的作用，也是我读完这本书最大的观后感．读完感觉跟没读一样．跟着书中的代码编写，但是知道出现的结果一致，但是对中间的过程没有任何了解，也没有习题来加深或者拓展一下更加实际的场景应用．但恰如我所说的，它仅仅是一个入门，它激励着我去学习更多相关知识，至少目前是准备看中间算法的实现和对应机器学习包的参数设置．任重且道远啊．</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.png" alt="机器学习" /></p>
-<p>对于本书的阅读方式我建议是，看书加代码．代码可以自己跟着书敲，也可以主动看，这点没有差别．主要是为了看代码的一个写法，让你了解代码的一个结构．至于内容，如果是个新手，很多东西都是一个打包好的结果给你，你可以套用到你自己的现实数据，但是一般很少有如此恰好的数据模型给你，而且你不知道中间过程，你自己对此产生的结果也是没底的状态．不过用来查看数据的一些常用统计数据倒是很不错，也很快捷．</p>
-<p>读书之后的问题:</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E9%97%AE%E9%A2%98.jpg" alt="机器学习之路问题" /></p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>数据科学导论</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器学习之路2</title>
     <url>/2022/06/03/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF2/</url>
     <content><![CDATA[<p>在看完《数据科学导论》之后，我选择了另外一本讲授数据科学的书：《数据科学入门》。</p>
@@ -10750,6 +10785,32 @@ pip install requirements.txt
       </tags>
   </entry>
   <entry>
+    <title>机器学习之路</title>
+    <url>/2022/05/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/</url>
+    <content><![CDATA[<p>我的本职工作并不是机器学习，甚至连数据都没有太多的接触.我并没有大量的数据需要挖掘，更没有一个良好的模型需要模拟．我想要的仅仅市一个有趣的，可以给我无聊的工作带来一丝乐趣的AI．至少我是这么认为的．</p>
+<p>机器学习的道路道阻且长.毕竟我的大学专业并不是这个，但是至少有接触过编程．其中python是我跟着廖雪峰老师自学的，虽说入门容易，但是精通难，我更多的只是了解了语言结构和一些常用的包，涉及更深则用不多，所以就没有深入．而对于此我并不觉得奇怪，至少我大学学过数据库之后，常用的语句也就那几个查询，删除，至于触发器．我学过，练习过，但是没有长久使用，还是在记忆中遗忘了．我对于现代社会的技能我更多的认为是，用的时候去学，保持一个快速学习的能力即可．更多的是需要你对一个系统或者语句的基础了解．当然这些只不过是能满足我目前的需求，实际涉及到底层的逻辑则就深不可测．而我也没有机会或者需求去处理那种问题．</p>
+<p>实际上，哪怕你是去大厂内，这种高级的底层逻辑也被大神们打包好，你只需要调用即可．自己从从头梳理那几乎干不了啥事．所以我对于机器学习只是希望入个门，就像python一样，哪天想用，可以快速上手，做过一个简单的数据分析．</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220513233627.png" alt="20220513233627" /></p>
+<p>数据科学导论这本书是我在知乎上搜索数据科学之后，大神推荐阅读的．首先说结论：书有用，很有用，介绍了几个主流的机器学习算法，以及一整套的机器学习的流程：数据－清洗－切片－学习－验证－学习．所有的机器学习都是这么一个整体流程的．但是这本书毕竟是一本入门书籍，它也许不会要求你有很多的数学知识储备，事实上书上没有涉及到任何的数学公式．但这也正是这本书的不足之处．</p>
+<p>读这本书的过程和结束有点像是在大学里面上的专业课．老师并不会或者简单的描述各个算法的背后逻辑，但是你自己却不甚明白，至少我用了一些我的自己日常数据进行测试，发现线性逻辑回归对我来说最好．大学的课程和这本书一样，都是一个简单的介绍入门，等到你进入社会或者以后有需要的时候，你就会深入的去了解每一个算法背后数学测算和原因．这就是这本书最大的作用，也是我读完这本书最大的观后感．读完感觉跟没读一样．跟着书中的代码编写，但是知道出现的结果一致，但是对中间的过程没有任何了解，也没有习题来加深或者拓展一下更加实际的场景应用．但恰如我所说的，它仅仅是一个入门，它激励着我去学习更多相关知识，至少目前是准备看中间算法的实现和对应机器学习包的参数设置．任重且道远啊．</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.png" alt="机器学习" /></p>
+<p>对于本书的阅读方式我建议是，看书加代码．代码可以自己跟着书敲，也可以主动看，这点没有差别．主要是为了看代码的一个写法，让你了解代码的一个结构．至于内容，如果是个新手，很多东西都是一个打包好的结果给你，你可以套用到你自己的现实数据，但是一般很少有如此恰好的数据模型给你，而且你不知道中间过程，你自己对此产生的结果也是没底的状态．不过用来查看数据的一些常用统计数据倒是很不错，也很快捷．</p>
+<p>读书之后的问题:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E9%97%AE%E9%A2%98.jpg" alt="机器学习之路问题" /></p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>数据科学导论</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>第四章</title>
     <url>/2022/04/30/%E7%AC%AC%E5%9B%9B%E7%AB%A0/</url>
     <content><![CDATA[<p>我一直想找个轻松愉快的话题，但是天生悲观的我似乎与欢乐无缘。所以，我依旧选择一个让人无法笑颜的主题：时间。</p>
@@ -11084,27 +11145,6 @@ pip install requirements.txt
       </tags>
   </entry>
   <entry>
-    <title>过去</title>
-    <url>/2022/04/30/%E8%BF%87%E5%8E%BB/</url>
-    <content><![CDATA[<p>上一次是年前，这次就跑到了十四号了，看来时间在这里流逝的是相当的快</p>
-<p>我终于获得了宁静，在吵吵嚷嚷了一天之后。不知为何，我总希望在周末的时候，静下心来，看看书，但是我知道我的内心是拒绝的，因为有更多好玩的事情，但是我总是会在玩了一盘高端质量局的dota之后，后悔自己浪费了一个小时在这，然后反之回想如果我用这一个小时拿来看书，会看多少多少。恩，我将前者当作罪恶，而将后者当成了一个任务。如果放任不管，我也可以每天游戏娱乐，然后这样的过去，其实我每天看书也是这样的过去，且不要拿每天看书会增加学识的这种蠢话来迷糊自己，小说更多的时候是古人打发时间的道具，如果他们有电子游戏也许早就抛弃了他们。也许在未来，新的娱乐方式出现，游戏就会变成现在读书的地位，我的目的并不是在鼓吹读书无用论，而是调整自己的心态，时间是自己的，将他花费在读书还是游戏并没有什么贵贱之分，也没必要将其当成罪恶或者是一个任务，给予自己在这么一个宁静的周末施加如此大的负担。且开心的玩乐吧，生活需要它。</p>
-<p>我并不认为像苦修士将自己与快乐分开能让自己开心或者能让人生饱满。我跟看重的是可以专心一致的倾注于某件事，他们的存在让我倾注于读书，看进书中的内容，写下一点东西.而周围的戚戚嚷嚷和我这边是两个风格。我越发的佩服大隐隐于市的隐士了。坚持自我并不是一件难事，但是难得是在一个这样的环境里坚持自我。</p>
-<p>在一个环境并不适合做某件事情的时候，我将它延后，恩，他就从一个欲望转化为一个执念，一个任务。如果等到我时候的环境之后，我要是还没放下它，那么就会去做，要是放下了，也许就会去做那时候更合适的事情吧。这正如我对性的排解一样。</p>
-<p>回到最初，我总是后悔自己过去的一小时所作的事情，尤其是这件事情失败了，让我尤为懊恼，希望时间回去，做出别的行为。现在想来，大可不必如此。其实时间对所有事情都是公平的，我玩游戏获得了愉悦，看书也是。本没有高低之分，但是自己内心高傲的看低游戏，觉得读书是件高端的事情。但正如我上面所说的，那不过是另一种愉悦自己的方式罢了，我之所以更倾向读书，因为读书随时可以停止，但是游戏不行。所以会让我产生一种沉迷的概念，因为我必须连续一个小时专注于此。看来如此长时间的专注事项除了工作都可以叫做沉迷啊。</p>
-<p>这么说来，有些人该问，难道闲暇时间所耗费的都是打发时间，就没有让自己提升的东西么？恩，其实是有的，重要是看你对提升的定义吧，看更多的小说，提升的是你的文学，玩更多的游戏，提升的是你的技术，而学生花更多的时间，提升的则是你的学识和记忆，本质同样是花费时间来换取别的，正如土地是经济的最基础载体，时间也是。你当然也可以花上一个小时，看些高端的书，但是 你不能想说自己过去的一个小时都浪费了，其实没有。与其想过去的一个小时干了啥，我觉得更多的时候还是想想后面要干啥吧，我对过去更多的是别犯同样的错和昨天吃了什么，恩今天换个吧。而前者老是忘记，后者记得清楚，但是却也没多大用，今天想吃和昨天也没有什么必然的联系，回归这个欲望本身吧，看他想吃啥。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>过去</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>追光动画是垃圾</title>
     <url>/2022/08/21/%E8%BF%BD%E5%85%89%E5%8A%A8%E7%94%BB%E6%98%AF%E5%9E%83%E5%9C%BE/</url>
     <content><![CDATA[<p>周末无聊，就带了几个孩子去电影院看了下《新神榜：杨戬》<img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220821221115.png" alt="20220821221115" />，看完之后，我只想说：“日你妈，退钱”</p>
@@ -11156,6 +11196,27 @@ pip install requirements.txt
       <tags>
         <tag>追光动画</tag>
         <tag>新神榜：杨戬</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>过去</title>
+    <url>/2022/04/30/%E8%BF%87%E5%8E%BB/</url>
+    <content><![CDATA[<p>上一次是年前，这次就跑到了十四号了，看来时间在这里流逝的是相当的快</p>
+<p>我终于获得了宁静，在吵吵嚷嚷了一天之后。不知为何，我总希望在周末的时候，静下心来，看看书，但是我知道我的内心是拒绝的，因为有更多好玩的事情，但是我总是会在玩了一盘高端质量局的dota之后，后悔自己浪费了一个小时在这，然后反之回想如果我用这一个小时拿来看书，会看多少多少。恩，我将前者当作罪恶，而将后者当成了一个任务。如果放任不管，我也可以每天游戏娱乐，然后这样的过去，其实我每天看书也是这样的过去，且不要拿每天看书会增加学识的这种蠢话来迷糊自己，小说更多的时候是古人打发时间的道具，如果他们有电子游戏也许早就抛弃了他们。也许在未来，新的娱乐方式出现，游戏就会变成现在读书的地位，我的目的并不是在鼓吹读书无用论，而是调整自己的心态，时间是自己的，将他花费在读书还是游戏并没有什么贵贱之分，也没必要将其当成罪恶或者是一个任务，给予自己在这么一个宁静的周末施加如此大的负担。且开心的玩乐吧，生活需要它。</p>
+<p>我并不认为像苦修士将自己与快乐分开能让自己开心或者能让人生饱满。我跟看重的是可以专心一致的倾注于某件事，他们的存在让我倾注于读书，看进书中的内容，写下一点东西.而周围的戚戚嚷嚷和我这边是两个风格。我越发的佩服大隐隐于市的隐士了。坚持自我并不是一件难事，但是难得是在一个这样的环境里坚持自我。</p>
+<p>在一个环境并不适合做某件事情的时候，我将它延后，恩，他就从一个欲望转化为一个执念，一个任务。如果等到我时候的环境之后，我要是还没放下它，那么就会去做，要是放下了，也许就会去做那时候更合适的事情吧。这正如我对性的排解一样。</p>
+<p>回到最初，我总是后悔自己过去的一小时所作的事情，尤其是这件事情失败了，让我尤为懊恼，希望时间回去，做出别的行为。现在想来，大可不必如此。其实时间对所有事情都是公平的，我玩游戏获得了愉悦，看书也是。本没有高低之分，但是自己内心高傲的看低游戏，觉得读书是件高端的事情。但正如我上面所说的，那不过是另一种愉悦自己的方式罢了，我之所以更倾向读书，因为读书随时可以停止，但是游戏不行。所以会让我产生一种沉迷的概念，因为我必须连续一个小时专注于此。看来如此长时间的专注事项除了工作都可以叫做沉迷啊。</p>
+<p>这么说来，有些人该问，难道闲暇时间所耗费的都是打发时间，就没有让自己提升的东西么？恩，其实是有的，重要是看你对提升的定义吧，看更多的小说，提升的是你的文学，玩更多的游戏，提升的是你的技术，而学生花更多的时间，提升的则是你的学识和记忆，本质同样是花费时间来换取别的，正如土地是经济的最基础载体，时间也是。你当然也可以花上一个小时，看些高端的书，但是 你不能想说自己过去的一个小时都浪费了，其实没有。与其想过去的一个小时干了啥，我觉得更多的时候还是想想后面要干啥吧，我对过去更多的是别犯同样的错和昨天吃了什么，恩今天换个吧。而前者老是忘记，后者记得清楚，但是却也没多大用，今天想吃和昨天也没有什么必然的联系，回归这个欲望本身吧，看他想吃啥。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>过去</tag>
       </tags>
   </entry>
   <entry>
@@ -11395,33 +11456,6 @@ pip install requirements.txt
       </tags>
   </entry>
   <entry>
-    <title>预算报表汇总数不准——金蝶EAS</title>
-    <url>/2022/04/30/%E9%A2%84%E7%AE%97%E6%8A%A5%E8%A1%A8%E6%B1%87%E6%80%BB%E6%95%B0%E4%B8%8D%E5%87%86%E2%80%94%E2%80%94%E9%87%91%E8%9D%B6EAS/</url>
-    <content><![CDATA[<p>首先，预算报表只能编辑最细层级的数据，所以比如在某一个区域内的预算表，它是自动由其下面组织单元的预算表自动取数汇总而成，所以这个数值一般为其区域下的汇总数，我们可以通过数据联查进行查询。</p>
-<p>如果发生组织单元变动，就会导致，其上级的区域汇总表出现数据不准确的情况，这时候，我们就得将其组织架构进行删除，并且重新生成。</p>
-<p>首先以任意一个账号进入：企业建模——辅助数据——财务会计数据——币别</p>
-<p>然后，按住crtl+shift+Q进入后台，系统会提示你输入超级管理员密码（默认：kdadmin）：</p>
-<p>进入后，输入语句：delete from t_mbg_dbgorganization_closure，执行</p>
-<p>该语句是将数据库中t_mbg_dbgorganization_closure这个表删除，这是放置组织架构的表格，将其删除。</p>
-<p>然后，根据以上逻辑，我们应该让系统再次生成新的组织架构。</p>
-<p>进入系统平台——后台事物——事务定义——后台事务定义</p>
-<p>找到预算编制平台下的预算多维基础数据检查事务，测试下是否成功，成功后发布</p>
-<p>找到组织架构生成的事务并将其发布后，为以防万一，我们应该让其执行一次，以生成新的组织架构，进入系统平台——后台事物——事务定义——后台事务定义报表</p>
-<p>手动启动下。</p>
-<p>这样，就重新生成新的组织架构，这样就可以使预算汇总表内的数据汇总正确。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>金蝶</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>额</title>
     <url>/2022/04/30/%E9%A2%9D/</url>
     <content><![CDATA[<p>额，好吧，就拿这个开头</p>
@@ -11450,6 +11484,33 @@ pip install requirements.txt
       </categories>
       <tags>
         <tag>额</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>预算报表汇总数不准——金蝶EAS</title>
+    <url>/2022/04/30/%E9%A2%84%E7%AE%97%E6%8A%A5%E8%A1%A8%E6%B1%87%E6%80%BB%E6%95%B0%E4%B8%8D%E5%87%86%E2%80%94%E2%80%94%E9%87%91%E8%9D%B6EAS/</url>
+    <content><![CDATA[<p>首先，预算报表只能编辑最细层级的数据，所以比如在某一个区域内的预算表，它是自动由其下面组织单元的预算表自动取数汇总而成，所以这个数值一般为其区域下的汇总数，我们可以通过数据联查进行查询。</p>
+<p>如果发生组织单元变动，就会导致，其上级的区域汇总表出现数据不准确的情况，这时候，我们就得将其组织架构进行删除，并且重新生成。</p>
+<p>首先以任意一个账号进入：企业建模——辅助数据——财务会计数据——币别</p>
+<p>然后，按住crtl+shift+Q进入后台，系统会提示你输入超级管理员密码（默认：kdadmin）：</p>
+<p>进入后，输入语句：delete from t_mbg_dbgorganization_closure，执行</p>
+<p>该语句是将数据库中t_mbg_dbgorganization_closure这个表删除，这是放置组织架构的表格，将其删除。</p>
+<p>然后，根据以上逻辑，我们应该让系统再次生成新的组织架构。</p>
+<p>进入系统平台——后台事物——事务定义——后台事务定义</p>
+<p>找到预算编制平台下的预算多维基础数据检查事务，测试下是否成功，成功后发布</p>
+<p>找到组织架构生成的事务并将其发布后，为以防万一，我们应该让其执行一次，以生成新的组织架构，进入系统平台——后台事物——事务定义——后台事务定义报表</p>
+<p>手动启动下。</p>
+<p>这样，就重新生成新的组织架构，这样就可以使预算汇总表内的数据汇总正确。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>金蝶</tag>
       </tags>
   </entry>
   <entry>

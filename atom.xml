@@ -6,7 +6,7 @@
   <link href="https://minsummer.com/atom.xml" rel="self"/>
   
   <link href="https://minsummer.com/"/>
-  <updated>2025-08-05T16:00:00.000Z</updated>
+  <updated>2025-08-21T16:00:00.000Z</updated>
   <id>https://minsummer.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>山东游记</title>
+    <link href="https://minsummer.com/2025/08/21/211-%E5%B1%B1%E4%B8%9C%E6%B8%B8%E8%AE%B0/"/>
+    <id>https://minsummer.com/2025/08/21/211-%E5%B1%B1%E4%B8%9C%E6%B8%B8%E8%AE%B0/</id>
+    <published>2025-08-21T16:00:00.000Z</published>
+    <updated>2025-08-21T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;最近趁着暑期的尾巴，去了一趟山东。计划的是四天三晚，做了很多的攻略，现在进行一个总结吧，也算是自我复盘。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+    
+    <category term="山东" scheme="https://minsummer.com/tags/%E5%B1%B1%E4%B8%9C/"/>
+    
+    <category term="泰安" scheme="https://minsummer.com/tags/%E6%B3%B0%E5%AE%89/"/>
+    
+    <category term="济南" scheme="https://minsummer.com/tags/%E6%B5%8E%E5%8D%97/"/>
+    
+    <category term="曲阜" scheme="https://minsummer.com/tags/%E6%9B%B2%E9%98%9C/"/>
+    
+    <category term="暑期旅游" scheme="https://minsummer.com/tags/%E6%9A%91%E6%9C%9F%E6%97%85%E6%B8%B8/"/>
+    
+  </entry>
   
   <entry>
     <title>青龙面板自定义脚本配置</title>
