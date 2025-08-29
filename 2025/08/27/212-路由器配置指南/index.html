@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"minsummer.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.24.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="之前买的红米AX5 京东云版本最近不知道是因为何种原因，导致无法下放IPV4地址，无法上网，想来这个固件已经很久了，这次就趁机升级下固件，顺带重新说明下openwrt路由器的固件配置。">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="路由器配置指南">
+<meta property="og:url" content="https://minsummer.com/2025/08/27/212-%E8%B7%AF%E7%94%B1%E5%99%A8%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/">
+<meta property="og:site_name" content="我是豆豆">
+<meta property="og:description" content="之前买的红米AX5 京东云版本最近不知道是因为何种原因，导致无法下放IPV4地址，无法上网，想来这个固件已经很久了，这次就趁机升级下固件，顺带重新说明下openwrt路由器的固件配置。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/212-%E8%B7%AF%E7%94%B1%E5%99%A8%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97-2025-08-28-16-10-52.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/212-%E8%B7%AF%E7%94%B1%E5%99%A8%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97-2025-08-28-16-31-05.png">
+<meta property="article:published_time" content="2025-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-08-27T16:00:00.000Z">
+<meta property="article:author" content="张大爆">
+<meta property="article:tag" content="路由器">
+<meta property="article:tag" content="openwrt">
+<meta property="article:tag" content="软路由">
+<meta property="article:tag" content="硬路由">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/212-%E8%B7%AF%E7%94%B1%E5%99%A8%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97-2025-08-28-16-10-52.png">
+
+
+<link rel="canonical" href="https://minsummer.com/2025/08/27/212-%E8%B7%AF%E7%94%B1%E5%99%A8%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://minsummer.com/2025/08/27/212-%E8%B7%AF%E7%94%B1%E5%99%A8%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/","path":"2025/08/27/212-路由器配置指南/","title":"路由器配置指南"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>路由器配置指南 | 我是豆豆</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-189642379-1","only_pageview":true,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+
+
+
+  <script data-pjax defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{&quot;token&quot;: &quot;2c44721ef211470c8cb156f38ca476ea&quot;}'></script>
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.9.0/mermaid.min.js","integrity":"sha256-Cz7UN0EXNjgV2u/a38wg/3BNfdRRO1XtgDq93L2GqJg="}}</script>
+  <script src="/js/third-party/tags/mermaid.js" defer></script>
+
+
+
+  <script src="/js/third-party/pace.js" defer></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
+  <script class="next-config" data-name="katex" type="application/json">{"copy_tex_js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js","integrity":"sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs="}}</script>
+  <script src="/js/third-party/math/katex.js" defer></script>
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3599006834125162"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="我是豆豆" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">我是豆豆</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">吃饭，睡觉，打豆豆</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">387</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">212</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text"> 概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%99%85%E5%9C%BA%E6%99%AF"><span class="nav-number">2.</span> <span class="nav-text"> 实际场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text"> 总结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">张大爆</p>
+  <div class="site-description" itemprop="description">经常会忘记一些东西，用这里来记录我们曾经来过</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">212</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">387</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/android1122" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;android1122" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:noway@minsummer.com" title="E-Mail → mailto:noway@minsummer.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://speedtt.minsummer.com/" title="https:&#x2F;&#x2F;speedtt.minsummer.com&#x2F;" rel="noopener" target="_blank">共享机场-移动</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://speedttsjc.minsummer.com/" title="https:&#x2F;&#x2F;speedttsjc.minsummer.com&#x2F;" rel="noopener" target="_blank">共享机场-三网</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wangergoudebaobaodian.taobao.com/" title="https:&#x2F;&#x2F;wangergoudebaobaodian.taobao.com&#x2F;" rel="noopener" target="_blank">淘宝店</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://minsummer.com/2025/08/27/212-%E8%B7%AF%E7%94%B1%E5%99%A8%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="张大爆">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我是豆豆">
+      <meta itemprop="description" content="经常会忘记一些东西，用这里来记录我们曾经来过">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="路由器配置指南 | 我是豆豆">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          路由器配置指南
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-08-28 00:00:00" itemprop="dateCreated datePublished" datetime="2025-08-28T00:00:00+08:00">2025-08-28</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>之前买的红米AX5 京东云版本最近不知道是因为何种原因，导致无法下放IPV4地址，无法上网，想来这个固件已经很久了，这次就趁机升级下固件，顺带重新说明下openwrt路由器的固件配置。</p>
+<span id="more"></span>
+<h2 id="概念"><a class="markdownIt-Anchor" href="#概念"></a> 概念</h2>
+<p><a target="_blank" rel="noopener" href="https://sspai.com/post/59708">旁路由概念</a>很火，但是实际上由于个人情况不同，不仅仅是一个旁路由的概念就可以解释的清楚的，所以决定从实际场景来描述下具体的路由器要怎么配置。<br />
+在配置之前我们需要理解几个概念性的东西：<br />
+DHCP服务器：用来分发子网的服务器，比如给你电脑一个IP：192.168.1.2。现如今一般是光猫在负责，且如果你没有超级管理员是无法分配的，我们新增的路由器，要么关闭掉这个功能，要么配置的子网要在光猫之外，比如192.168.2.0/24。防止光猫给电脑1个IP，openwrt路由器给了另一个，产生冲突。<br />
+网关：简单说就是上网的中枢，配置对的话就可以上网，你发现openwrt无法上网一般是这里问题。光猫的网关是它自己的地址。openwrt的网关一般是光猫在内网的地址或者openwrt路由器自己的wan口地址。网关是负责上网行为的，如果你要翻墙的话，那么就需要将网关指向openwrt路由器，光猫可不具备翻墙功能。<br />
+DNS服务器：用来获取域名真实地址的，可以用光猫地址，也可以用wan口地址，区别在于某些域名被污染了，如果直接光猫的话，没办法获取到真实的IP地址。<br />
+wan口：就是openwrt路由器上标wan的口，用来连接上级路由器的，wan口是个相对概念，openwrt可以将任何一个lan口配置成wan口。<br />
+lan口：就是普通的网络接口，用来和wan口区分开来。</p>
+<h2 id="实际场景"><a class="markdownIt-Anchor" href="#实际场景"></a> 实际场景</h2>
+<p>正常人的家里，一般都有一个光猫，现在你买了一个openwrt的路由器，接下来就说明下几种方案和它对应实现的效果。<br />
+如果你有光猫的超级管理员密码的话：</p>
+<ol>
+<li>光猫桥接<br />
+这种方案是最简单的，直接通过超级管理员密码，将光猫状态改为桥接，然后通过复制下来的账号和用户名，使用openwrt路由器进行拨号即可。<br />
+这样实现的效果是，只要连接上这个openwrt路由器的设备及其他正规的路由器都可以实现上网，分流等。<br />
+唯一的问题是需要超级管理员的密码，各个地方不一样，而且有些设备断电后会重置。<br />
+这种是最简单的方式，我推荐。</li>
+</ol>
+<p>如果你没有光猫超级管理员密码，且光猫上都没办法操作呢？</p>
+<ol start="2">
+<li>
+<p>MAC地址克隆 + 静态IP伪装<br />
+由于你光猫无法操作所以你只能强制开启旁路由的DHCP服务器这里许需要注意，我们设置的DHCP的地址池不要和光猫的冲突，最简单的就是光猫所在网段是192.168.1.0/24，那么你就需要将DHCP的服务器设置为192.168.2.0/24。这样做的缺点是，如果你光猫下有其他设备，会由于网段不一致无法访问，需要手动访问IP地址。<br />
+另一个需要注意的是修改MAC地址，让wan口和lan口的MAC地址一致【必要设置，否则会出现无法访问网络】。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/212-%E8%B7%AF%E7%94%B1%E5%99%A8%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97-2025-08-28-16-10-52.png" alt="212-路由器配置指南-2025-08-28-16-10-52" /><br />
+然后配置就是将lan口集群设置为静态地址，将wan口设置为DHCP客户端，使用光猫下放的地址。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/212-%E8%B7%AF%E7%94%B1%E5%99%A8%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97-2025-08-28-16-31-05.png" alt="212-路由器配置指南-2025-08-28-16-31-05" /><br />
+这样实现的效果就是连接这个路由器的设备可以翻墙，不会影响到其他设备。<br />
+这个方案在我心中算是比较完美的。</p>
+</li>
+<li>
+<p>常见的旁路由模式【主路由DHCP + 旁路由网关】<br />
+用的是主路由器的lan口连接openwrt的lan口，算是主路由器光猫的一种延申，区别在于主路由器的网关设置到openwrt上去，这样子的效果就是，光猫负责分配IP，但是上网的翻墙和其他行为由openwrt这个旁路由配置，这个流行的原因很简单，配置难度低，你只需要修改光猫上网关配置即可。而且还能分担旁路由的工作【虽然这点工作量不大】。<br />
+还有的就是手动设置设备上的网关，手动指向openwrt，这样的效果就是固定几个设备可以可以翻墙。但是由于我希望自己手机翻墙，手机这东西时常切换不同WiFi，我不可能每次回来都要手动调整一次的，所以最后，我还是选择方案2。</p>
+</li>
+</ol>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>我这次折腾中间其实遇见过很多问题，比如忽然就访问不上了等等，后面我发现，其实你用网线直接连接openwrt路由器的话，只要访问不了后台，那么一定就是IP地址没设置对，常规来讲，要访问192.168.1.1这个地址，你需要将电脑IP设置成192.168.1.2/24。我遇见的很多时候是我改成了192.168.2.1作为静态地址，但是重启之后就访问不了，很多时候是openwrt系统发现应用以后链接丢失就恢复成原来的配置，所以这块需要注意下。<br />
+这里需要吐槽下lean的<a target="_blank" rel="noopener" href="https://github.com/coolsnowwolf/lede">GitHub自编译固件</a>，我折腾了好几次都没成功，生成的包无法刷进去，最后逼得我使用<a href="https://openwrt.ai/?target=ramips%2Fmt7621&amp;id=xiaomi_redmi-router-ac2100">kwrt这个在线生成固件</a>，不知道是不是我自己操作问题。<br />
+至于固件之间的差异，我个人就增加一个翻墙设置，其他的功能没有需求，固件之间差异我没发十分感受到，剩下的就是我用的是红米 AX5 京东云，这台路由器可以选择的固件不多，所以没办法。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" rel="tag"># 路由器</a>
+              <a href="/tags/openwrt/" rel="tag"># openwrt</a>
+              <a href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" rel="tag"># 软路由</a>
+              <a href="/tags/%E7%A1%AC%E8%B7%AF%E7%94%B1/" rel="tag"># 硬路由</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/08/21/211-%E5%B1%B1%E4%B8%9C%E6%B8%B8%E8%AE%B0/" rel="prev" title="山东游记">
+                  <i class="fa fa-angle-left"></i> 山东游记
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 国窖1573 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">张大爆</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">331k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">20:03</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/android1122" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"android1122","repo":"hexo-blog","client_id":"6950c9229796295b9867","client_secret":"9af4438d89e7a09669ec33d632ba554589a1f7d7","admin_user":"android1122","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"ee5c1e5be186350638fe2c3495ec294f"}</script>
+<script src="/js/third-party/comments/gitalk.js" defer></script>
+
+</body>
+</html>
