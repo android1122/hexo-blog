@@ -161,7 +161,7 @@
   </entry>
   
   <entry>
-    <title>Caddy下的Trojan和NaiveProxy配置.md</title>
+    <title>Caddy下的Trojan和NaiveProxy配置</title>
     <link href="https://minsummer.com/2025/05/29/206-caddy%E4%B8%8B%E7%9A%84Trojan%E5%92%8CNaiveProxy%E9%85%8D%E7%BD%AE/"/>
     <id>https://minsummer.com/2025/05/29/206-caddy%E4%B8%8B%E7%9A%84Trojan%E5%92%8CNaiveProxy%E9%85%8D%E7%BD%AE/</id>
     <published>2025-05-29T16:00:00.000Z</published>
@@ -255,27 +255,6 @@
   </entry>
   
   <entry>
-    <title>Calibre-Web搭建docker</title>
-    <link href="https://minsummer.com/2025/04/11/201-cralibre-web%E6%90%AD%E5%BB%BA/"/>
-    <id>https://minsummer.com/2025/04/11/201-cralibre-web%E6%90%AD%E5%BB%BA/</id>
-    <published>2025-04-11T16:00:00.000Z</published>
-    <updated>2025-04-11T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/janeczku/calibre-web&quot;&gt;Calibre-Web&lt;/a&gt;一款知名的电子书阅读器，支持格式转换和OPDS。我个人有时候需要一个可以随时随地看书的地方，所以就部署了一下，之前出过一个教程，但是由于那时候官方没有推出docker只能用玩家自己编译得，所以那时候选择使用宝塔面板部署，这次趁机更新一下。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
-    
-    
-    <category term="电子书" scheme="https://minsummer.com/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/"/>
-    
-    <category term="Calibre-Web" scheme="https://minsummer.com/tags/Calibre-Web/"/>
-    
-  </entry>
-  
-  <entry>
     <title>浅谈最近贸易战</title>
     <link href="https://minsummer.com/2025/04/11/200-%E6%B5%85%E8%B0%88%E6%9C%80%E8%BF%91%E8%B4%B8%E6%98%93%E6%88%98/"/>
     <id>https://minsummer.com/2025/04/11/200-%E6%B5%85%E8%B0%88%E6%9C%80%E8%BF%91%E8%B4%B8%E6%98%93%E6%88%98/</id>
@@ -293,6 +272,27 @@
     <category term="贸易战" scheme="https://minsummer.com/tags/%E8%B4%B8%E6%98%93%E6%88%98/"/>
     
     <category term="宏观经济" scheme="https://minsummer.com/tags/%E5%AE%8F%E8%A7%82%E7%BB%8F%E6%B5%8E/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Calibre-Web搭建docker</title>
+    <link href="https://minsummer.com/2025/04/11/201-cralibre-web%E6%90%AD%E5%BB%BA/"/>
+    <id>https://minsummer.com/2025/04/11/201-cralibre-web%E6%90%AD%E5%BB%BA/</id>
+    <published>2025-04-11T16:00:00.000Z</published>
+    <updated>2025-04-11T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/janeczku/calibre-web&quot;&gt;Calibre-Web&lt;/a&gt;一款知名的电子书阅读器，支持格式转换和OPDS。我个人有时候需要一个可以随时随地看书的地方，所以就部署了一下，之前出过一个教程，但是由于那时候官方没有推出docker只能用玩家自己编译得，所以那时候选择使用宝塔面板部署，这次趁机更新一下。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="电子书" scheme="https://minsummer.com/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/"/>
+    
+    <category term="Calibre-Web" scheme="https://minsummer.com/tags/Calibre-Web/"/>
     
   </entry>
   
@@ -1476,6 +1476,25 @@ CPU：1x Intel Xeon&lt;br /&gt;
   </entry>
   
   <entry>
+    <title>因果与时间</title>
+    <link href="https://minsummer.com/2024/01/16/147-%E5%9B%A0%E6%9E%9C%E4%B8%8E%E6%97%B6%E9%97%B4/"/>
+    <id>https://minsummer.com/2024/01/16/147-%E5%9B%A0%E6%9E%9C%E4%B8%8E%E6%97%B6%E9%97%B4/</id>
+    <published>2024-01-16T16:00:00.000Z</published>
+    <updated>2024-01-16T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这是一篇我早就该写的文章了，但是我迟迟没有下笔，仅仅是因为懒。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+    
+    <category term="哲学家们都干了什么 - 读后感" scheme="https://minsummer.com/tags/%E5%93%B2%E5%AD%A6%E5%AE%B6%E4%BB%AC%E9%83%BD%E5%B9%B2%E4%BA%86%E4%BB%80%E4%B9%88-%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>兵哥2</title>
     <link href="https://minsummer.com/2024/01/16/146-%E5%85%B5%E5%93%A52/"/>
     <id>https://minsummer.com/2024/01/16/146-%E5%85%B5%E5%93%A52/</id>
@@ -1493,25 +1512,6 @@ CPU：1x Intel Xeon&lt;br /&gt;
     <category term="兵哥" scheme="https://minsummer.com/tags/%E5%85%B5%E5%93%A5/"/>
     
     <category term="大伯" scheme="https://minsummer.com/tags/%E5%A4%A7%E4%BC%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>因果与时间</title>
-    <link href="https://minsummer.com/2024/01/16/147-%E5%9B%A0%E6%9E%9C%E4%B8%8E%E6%97%B6%E9%97%B4/"/>
-    <id>https://minsummer.com/2024/01/16/147-%E5%9B%A0%E6%9E%9C%E4%B8%8E%E6%97%B6%E9%97%B4/</id>
-    <published>2024-01-16T16:00:00.000Z</published>
-    <updated>2024-01-16T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;这是一篇我早就该写的文章了，但是我迟迟没有下笔，仅仅是因为懒。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
-    
-    
-    <category term="哲学家们都干了什么 - 读后感" scheme="https://minsummer.com/tags/%E5%93%B2%E5%AD%A6%E5%AE%B6%E4%BB%AC%E9%83%BD%E5%B9%B2%E4%BA%86%E4%BB%80%E4%B9%88-%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
     
   </entry>
   
