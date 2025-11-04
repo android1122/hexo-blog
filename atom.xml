@@ -6,7 +6,7 @@
   <link href="https://minsummer.com/atom.xml" rel="self"/>
   
   <link href="https://minsummer.com/"/>
-  <updated>2025-09-24T16:00:00.000Z</updated>
+  <updated>2025-11-02T16:00:00.000Z</updated>
   <id>https://minsummer.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>赛博视频指北</title>
+    <link href="https://minsummer.com/2025/11/02/2025-%E8%B5%9B%E5%8D%9A%E8%A7%86%E9%A2%91%E6%8C%87%E5%8C%97/"/>
+    <id>https://minsummer.com/2025/11/02/2025-%E8%B5%9B%E5%8D%9A%E8%A7%86%E9%A2%91%E6%8C%87%E5%8C%97/</id>
+    <published>2025-11-02T16:00:00.000Z</published>
+    <updated>2025-11-02T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;早在一年前我做电商的时候，我就接触了AI生成，之前用来生成产品图，我个人称之为洗图，正常我从1688上采购的产品自己有图，但是那些图被很多店铺用了，一旦找下同款就很容易被找到别的便宜商家，其次是那些图片的审美更侧重实用，而不是好看。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="机器学习" scheme="https://minsummer.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="comfyui" scheme="https://minsummer.com/tags/comfyui/"/>
+    
+    <category term="qianwen" scheme="https://minsummer.com/tags/qianwen/"/>
+    
+    <category term="图生视频" scheme="https://minsummer.com/tags/%E5%9B%BE%E7%94%9F%E8%A7%86%E9%A2%91/"/>
+    
+  </entry>
   
   <entry>
     <title>WOW的一点想法</title>
@@ -3010,9 +3035,9 @@ CPU：1x Intel Xeon&lt;br /&gt;
     <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
     
     
-    <category term="python" scheme="https://minsummer.com/tags/python/"/>
-    
     <category term="机器学习" scheme="https://minsummer.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="python" scheme="https://minsummer.com/tags/python/"/>
     
     <category term="最小二乘法" scheme="https://minsummer.com/tags/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/"/>
     
