@@ -6,7 +6,7 @@
   <link href="https://minsummer.com/atom.xml" rel="self"/>
   
   <link href="https://minsummer.com/"/>
-  <updated>2025-11-02T16:00:00.000Z</updated>
+  <updated>2025-11-07T16:00:00.000Z</updated>
   <id>https://minsummer.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>最近的一些财经观察</title>
+    <link href="https://minsummer.com/2025/11/07/216-%E6%9C%80%E8%BF%91%E7%9A%84%E4%B8%80%E4%BA%9B%E8%B4%A2%E7%BB%8F%E8%A7%82%E5%AF%9F/"/>
+    <id>https://minsummer.com/2025/11/07/216-%E6%9C%80%E8%BF%91%E7%9A%84%E4%B8%80%E4%BA%9B%E8%B4%A2%E7%BB%8F%E8%A7%82%E5%AF%9F/</id>
+    <published>2025-11-07T16:00:00.000Z</published>
+    <updated>2025-11-07T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;之前就想要写一些关于宏观上面的一些东西，但是一直懒，之前写过一篇，限制看来不好。首先，我不是专业的，所以我很多时候是提出一些问题，同时附上可能解决的方案，然后就是我个人观察宏观数据是为了防止一些影响到自己的事情，比如一些民生，自己的个人资产所在区域等等，所以一定会有偏颇的。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="宏观" scheme="https://minsummer.com/tags/%E5%AE%8F%E8%A7%82/"/>
+    
+    <category term="理论知识" scheme="https://minsummer.com/tags/%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="财经" scheme="https://minsummer.com/tags/%E8%B4%A2%E7%BB%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>赛博视频指北</title>
@@ -666,27 +689,6 @@ CPU：1x Intel Xeon&lt;br /&gt;
   </entry>
   
   <entry>
-    <title>2024VPS厂商优惠回顾</title>
-    <link href="https://minsummer.com/2024/12/13/186-2024VPS%E5%9B%9E%E9%A1%BE/"/>
-    <id>https://minsummer.com/2024/12/13/186-2024VPS%E5%9B%9E%E9%A1%BE/</id>
-    <published>2024-12-13T16:00:00.000Z</published>
-    <updated>2024-12-13T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;今年的VPS厂商可以说是安静如鸟，无论是黑五还是双十一，无论是国行还是国际，都没有什么比较优惠或者好的VPS。目前比较值得注意的只有2个：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
-    
-    
-    <category term="搬瓦工" scheme="https://minsummer.com/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/"/>
-    
-    <category term="VPS" scheme="https://minsummer.com/tags/VPS/"/>
-    
-  </entry>
-  
-  <entry>
     <title>关于2025的一些展望</title>
     <link href="https://minsummer.com/2024/12/13/185-%E5%85%B3%E4%BA%8E2025%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B1%95%E6%9C%9B/"/>
     <id>https://minsummer.com/2024/12/13/185-%E5%85%B3%E4%BA%8E2025%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B1%95%E6%9C%9B/</id>
@@ -706,6 +708,27 @@ CPU：1x Intel Xeon&lt;br /&gt;
     <category term="2025" scheme="https://minsummer.com/tags/2025/"/>
     
     <category term="一些想法" scheme="https://minsummer.com/tags/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2024VPS厂商优惠回顾</title>
+    <link href="https://minsummer.com/2024/12/13/186-2024VPS%E5%9B%9E%E9%A1%BE/"/>
+    <id>https://minsummer.com/2024/12/13/186-2024VPS%E5%9B%9E%E9%A1%BE/</id>
+    <published>2024-12-13T16:00:00.000Z</published>
+    <updated>2024-12-13T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;今年的VPS厂商可以说是安静如鸟，无论是黑五还是双十一，无论是国行还是国际，都没有什么比较优惠或者好的VPS。目前比较值得注意的只有2个：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="搬瓦工" scheme="https://minsummer.com/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/"/>
+    
+    <category term="VPS" scheme="https://minsummer.com/tags/VPS/"/>
     
   </entry>
   
@@ -2144,32 +2167,6 @@ CPU：1x Intel Xeon&lt;br /&gt;
   </entry>
   
   <entry>
-    <title>超能勇士崛起-又一好莱坞烂片</title>
-    <link href="https://minsummer.com/2023/07/21/127-%E8%B6%85%E8%83%BD%E5%8B%87%E5%A3%AB%E5%B4%9B%E8%B5%B7/"/>
-    <id>https://minsummer.com/2023/07/21/127-%E8%B6%85%E8%83%BD%E5%8B%87%E5%A3%AB%E5%B4%9B%E8%B5%B7/</id>
-    <published>2023-07-21T16:00:00.000Z</published>
-    <updated>2023-07-21T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;最近几年不知道是因为啥，好莱坞的爆米花大片连配爆米花都不行了。一个字，烂，特别的烂。&lt;br /&gt;
-《变形金刚——超能勇士崛起》一听这名字，我就知道，是在搞情怀，我的期望很低，剧情可以，打架场面好就行了。然后，——&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
-    
-    
-    <category term="好莱坞" scheme="https://minsummer.com/tags/%E5%A5%BD%E8%8E%B1%E5%9D%9E/"/>
-    
-    <category term="爆米花" scheme="https://minsummer.com/tags/%E7%88%86%E7%B1%B3%E8%8A%B1/"/>
-    
-    <category term="烂片吐槽" scheme="https://minsummer.com/tags/%E7%83%82%E7%89%87%E5%90%90%E6%A7%BD/"/>
-    
-    <category term="变形金刚" scheme="https://minsummer.com/tags/%E5%8F%98%E5%BD%A2%E9%87%91%E5%88%9A/"/>
-    
-  </entry>
-  
-  <entry>
     <title>关于死亡后的那亿万年</title>
     <link href="https://minsummer.com/2023/07/21/128-%E5%85%B3%E4%BA%8E%E6%AD%BB%E4%BA%A1%E5%90%8E%E7%9A%84%E9%82%A3%E4%BA%BF%E4%B8%87%E5%B9%B4/"/>
     <id>https://minsummer.com/2023/07/21/128-%E5%85%B3%E4%BA%8E%E6%AD%BB%E4%BA%A1%E5%90%8E%E7%9A%84%E9%82%A3%E4%BA%BF%E4%B8%87%E5%B9%B4/</id>
@@ -2194,6 +2191,32 @@ CPU：1x Intel Xeon&lt;br /&gt;
     <category term="生活这个游戏" scheme="https://minsummer.com/tags/%E7%94%9F%E6%B4%BB%E8%BF%99%E4%B8%AA%E6%B8%B8%E6%88%8F/"/>
     
     <category term="活着" scheme="https://minsummer.com/tags/%E6%B4%BB%E7%9D%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>超能勇士崛起-又一好莱坞烂片</title>
+    <link href="https://minsummer.com/2023/07/21/127-%E8%B6%85%E8%83%BD%E5%8B%87%E5%A3%AB%E5%B4%9B%E8%B5%B7/"/>
+    <id>https://minsummer.com/2023/07/21/127-%E8%B6%85%E8%83%BD%E5%8B%87%E5%A3%AB%E5%B4%9B%E8%B5%B7/</id>
+    <published>2023-07-21T16:00:00.000Z</published>
+    <updated>2023-07-21T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;最近几年不知道是因为啥，好莱坞的爆米花大片连配爆米花都不行了。一个字，烂，特别的烂。&lt;br /&gt;
+《变形金刚——超能勇士崛起》一听这名字，我就知道，是在搞情怀，我的期望很低，剧情可以，打架场面好就行了。然后，——&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+    
+    <category term="好莱坞" scheme="https://minsummer.com/tags/%E5%A5%BD%E8%8E%B1%E5%9D%9E/"/>
+    
+    <category term="爆米花" scheme="https://minsummer.com/tags/%E7%88%86%E7%B1%B3%E8%8A%B1/"/>
+    
+    <category term="烂片吐槽" scheme="https://minsummer.com/tags/%E7%83%82%E7%89%87%E5%90%90%E6%A7%BD/"/>
+    
+    <category term="变形金刚" scheme="https://minsummer.com/tags/%E5%8F%98%E5%BD%A2%E9%87%91%E5%88%9A/"/>
     
   </entry>
   
