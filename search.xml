@@ -2373,6 +2373,70 @@ Windows作为一个系统来说，现在越来越复杂，而且对于国内网�
       </tags>
   </entry>
   <entry>
+    <title>关于路由器的门门道道</title>
+    <url>/2023/11/09/135-%E5%85%B3%E4%BA%8E%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E9%97%A8%E9%97%A8%E9%81%93%E9%81%93/</url>
+    <content><![CDATA[<p>最近想要做个隐形代理-人话就是：路由器翻墙，所有连接路由器的设备都可以翻墙。然后研究了半天，听到的最多是软路由，旁路由。这边就简单的说明下两者区别：<br />
+软路由器：一般是性能强劲，<strong>且有多个网口的</strong>，网上卖的最多的就是这种。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/135-%E5%85%B3%E4%BA%8E%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E9%97%A8%E9%97%A8%E9%81%93%E9%81%93-2023-11-10-09-24-41.png" alt="135-关于路由器的门门道道-2023-11-10-09-24-41" /></p>
+<p>旁路由：一般是性能强劲，<strong>但是只有一个网口的</strong>，通常是由电脑设备刷机导致的，使用比较麻烦，需要配置。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/135-%E5%85%B3%E4%BA%8E%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E9%97%A8%E9%97%A8%E9%81%93%E9%81%93-2023-11-10-09-29-21.png" alt="135-关于路由器的门门道道-2023-11-10-09-29-21" /></p>
+<span id="more"></span>
+<hr />
+<h3 id="常见方案"><a class="markdownIt-Anchor" href="#常见方案"></a> 常见方案</h3>
+<p>现在大家都是光猫上网，但是光猫没办法直接翻墙，所以就需要在后面增加一个二级路由器/翻墙设备，于是就出现了几种不同的的方案：</p>
+<ol>
+<li>光猫-软路由-AP(普通的路由器)<br />
+光猫后面连接一个软路由，然后软路由上的网口再接入一个普通的路由器用来提供无线信号。你说软路由为啥不直接提供无线信号，简单说是术业有专攻，复杂就是这种提供的无线一般信号不强，而且不稳定。所以需要在后面接入一个普通的</li>
+<li>光猫-旁路由<br />
+光猫后面接一个旁路由，<strong>然后通过修改设备的网关</strong>，让你修改过网关的设备翻墙。比较复杂，而且如果设备经常移动，会导致经常上不了网，而且现在很多光猫也无法分配网关了，需要在中间再加一个路由器，有点脱裤子放屁的感觉。</li>
+<li>光猫-刷机后的无线路由器<br />
+这个是一开始的玩法，但是慢慢被抛弃，主要原因：<br />
+1. 性能太弱，<code>无法跑满翻墙的带宽和速度</code>；如果你要求不高，是够用的,。<br />
+2. 厂商推广，现在好多小主机上瞄准这个市场</li>
+<li><strong>高端玩法-1000m</strong>：猫棒-软路由-AP（普通路由器）<br />
+这个是高端玩法，前提条件你家的宽带接近1000m，由于运营商的光猫性能太差，所以推荐用猫棒发挥全部的功能。</li>
+</ol>
+<p>以上几种是常见的玩法，我之前分不清出旁路由和软路由的区别，是很多文章会把旁路由和刷机后的无线路由混淆，<strong>旁路由是一种模式</strong>，不是一种设备名称。这里我为了区分清楚，我就将两者应用设备对等。你可以选择对应的方案根据你家里的情况：比如可以光猫连接2个路由器，一个路由器正常上网，另一个路由器就是全部翻墙。你可以称翻墙路由器为旁路由。</p>
+<hr />
+<h3 id="经验总结"><a class="markdownIt-Anchor" href="#经验总结"></a> 经验总结</h3>
+<p>总结下我的一些经验：</p>
+<ol>
+<li>如果你是路由器刷机，那么一个翻墙插件就足够了，200元以下的路由器性能<code>差</code>，不推荐很多插件：我得红米AC2100跑了一个passwall+Adguardhome就死机，所以不推荐太多插件<s>其实大多数插件你都用不到或者不会用</s>。如果有需求请上J4125，N5105，N100等软路由成品。</li>
+<li>DNS是个大门道，如果没有特殊需求，建议直接用openwrt自带的转发器和smardns即可，这里的门道很深，<s>你把持不住的</s>。</li>
+<li>Adguardhome的本质是通过DNS+网址判断来隔绝广告的，所以如果你装了smartdns，又有openwrt自带的DNS转发器dnsmasq的话，那么你需要好好配置，捋清楚三者的顺序，其次Adguardhome很吃性能<s>很重要</s>。</li>
+<li>smartDns已经能满足你大部分需求，它通过查询多个dns服务器，对比，来确定那个是真的或者对的，可以有效防止像Github这种dns污染的。</li>
+</ol>
+<hr />
+<h3 id="广告"><a class="markdownIt-Anchor" href="#广告"></a> 广告</h3>
+<p>另外再说下广告，有两种：</p>
+<ol>
+<li>运营商现在劫持dns，然后在你申请的网页里面插入自己的广告。</li>
+<li>网站自己的广告<br />
+Adguardhome就是针对这两种提出解决方案：建立可信的dns库，不用运营商的dns；建立广告网址库，如果网址匹配就直接在路由器这边就拦截了。这比浏览器插件强大的地方在于它甚至可以拦截手机广告<s>理论上</s>。<code>PS:手机摇一摇它也没办法阻拦，阿里牛逼</code>。只能说理论很美好，但是如果一不小心拦截你需要的东西，那你就需要好好排查。技术不是万能的，并不能自动适应每个人的场景，所以要慎重。</li>
+</ol>
+<hr />
+<h3 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h3>
+<p>如果不是重度用户，推荐只要有个刷机路由器即可，这是最初大家的玩法，可以选择去<a href="https://www.right.com.cn/forum/">恩山</a>这些看下当下最流行的路由器，刷机后即可。需要注意是，刷机后无线性能有差距，有些好，有些坏，看有没有大神咯。<br />
+我最近看了这么多下来，发现越来越模糊：软路由，nas之间的差距。现在的openwrt里面可以安装dockers，可以建立homeasisten，所以相对应的，对路由器的性能要求就越来越大，也许是大家发现我软路由的性能越来越强，所以就越喜欢在里面装更多的东西，这就是越来越多的人搞ALL in One的原因，将路由器，Nas等都集中在一台设备中。我并不是反对这种做法，只是静下心来想一下，我有需要这么多功能么？<br />
+我需要一台翻墙的路由器，方便我查询谷歌的信息，然后有台nas，可以给我电视共享数据，方便电视放电影。这就是我得全部需求，甚至，有时候电视放电影也是伪需求，很多网站都已经可以直接在线，而且分辨率不低。在我没有升级电视和音响之前，我只是需要一个便捷的上网环境罢了。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>路由器</tag>
+        <tag>OPENWRT</tag>
+        <tag>翻墙</tag>
+        <tag>隐形代理</tag>
+        <tag>NAS</tag>
+        <tag>旁路由</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>上班族的晚餐</title>
     <url>/2023/11/06/134-%E4%B8%8A%E7%8F%AD%E6%97%8F%E7%9A%84%E6%99%9A%E9%A4%90/</url>
     <content><![CDATA[<p>今年再次独立搬出去住了，好消息是离公司近了，坏消息就是又是一个人需要为一日三餐所苦恼。<br />
@@ -2440,70 +2504,6 @@ Windows作为一个系统来说，现在越来越复杂，而且对于国内网�
         <tag>大卡</tag>
         <tag>晚餐</tag>
         <tag>烹饪计划</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于路由器的门门道道</title>
-    <url>/2023/11/09/135-%E5%85%B3%E4%BA%8E%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E9%97%A8%E9%97%A8%E9%81%93%E9%81%93/</url>
-    <content><![CDATA[<p>最近想要做个隐形代理-人话就是：路由器翻墙，所有连接路由器的设备都可以翻墙。然后研究了半天，听到的最多是软路由，旁路由。这边就简单的说明下两者区别：<br />
-软路由器：一般是性能强劲，<strong>且有多个网口的</strong>，网上卖的最多的就是这种。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/135-%E5%85%B3%E4%BA%8E%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E9%97%A8%E9%97%A8%E9%81%93%E9%81%93-2023-11-10-09-24-41.png" alt="135-关于路由器的门门道道-2023-11-10-09-24-41" /></p>
-<p>旁路由：一般是性能强劲，<strong>但是只有一个网口的</strong>，通常是由电脑设备刷机导致的，使用比较麻烦，需要配置。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/135-%E5%85%B3%E4%BA%8E%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E9%97%A8%E9%97%A8%E9%81%93%E9%81%93-2023-11-10-09-29-21.png" alt="135-关于路由器的门门道道-2023-11-10-09-29-21" /></p>
-<span id="more"></span>
-<hr />
-<h3 id="常见方案"><a class="markdownIt-Anchor" href="#常见方案"></a> 常见方案</h3>
-<p>现在大家都是光猫上网，但是光猫没办法直接翻墙，所以就需要在后面增加一个二级路由器/翻墙设备，于是就出现了几种不同的的方案：</p>
-<ol>
-<li>光猫-软路由-AP(普通的路由器)<br />
-光猫后面连接一个软路由，然后软路由上的网口再接入一个普通的路由器用来提供无线信号。你说软路由为啥不直接提供无线信号，简单说是术业有专攻，复杂就是这种提供的无线一般信号不强，而且不稳定。所以需要在后面接入一个普通的</li>
-<li>光猫-旁路由<br />
-光猫后面接一个旁路由，<strong>然后通过修改设备的网关</strong>，让你修改过网关的设备翻墙。比较复杂，而且如果设备经常移动，会导致经常上不了网，而且现在很多光猫也无法分配网关了，需要在中间再加一个路由器，有点脱裤子放屁的感觉。</li>
-<li>光猫-刷机后的无线路由器<br />
-这个是一开始的玩法，但是慢慢被抛弃，主要原因：<br />
-1. 性能太弱，<code>无法跑满翻墙的带宽和速度</code>；如果你要求不高，是够用的,。<br />
-2. 厂商推广，现在好多小主机上瞄准这个市场</li>
-<li><strong>高端玩法-1000m</strong>：猫棒-软路由-AP（普通路由器）<br />
-这个是高端玩法，前提条件你家的宽带接近1000m，由于运营商的光猫性能太差，所以推荐用猫棒发挥全部的功能。</li>
-</ol>
-<p>以上几种是常见的玩法，我之前分不清出旁路由和软路由的区别，是很多文章会把旁路由和刷机后的无线路由混淆，<strong>旁路由是一种模式</strong>，不是一种设备名称。这里我为了区分清楚，我就将两者应用设备对等。你可以选择对应的方案根据你家里的情况：比如可以光猫连接2个路由器，一个路由器正常上网，另一个路由器就是全部翻墙。你可以称翻墙路由器为旁路由。</p>
-<hr />
-<h3 id="经验总结"><a class="markdownIt-Anchor" href="#经验总结"></a> 经验总结</h3>
-<p>总结下我的一些经验：</p>
-<ol>
-<li>如果你是路由器刷机，那么一个翻墙插件就足够了，200元以下的路由器性能<code>差</code>，不推荐很多插件：我得红米AC2100跑了一个passwall+Adguardhome就死机，所以不推荐太多插件<s>其实大多数插件你都用不到或者不会用</s>。如果有需求请上J4125，N5105，N100等软路由成品。</li>
-<li>DNS是个大门道，如果没有特殊需求，建议直接用openwrt自带的转发器和smardns即可，这里的门道很深，<s>你把持不住的</s>。</li>
-<li>Adguardhome的本质是通过DNS+网址判断来隔绝广告的，所以如果你装了smartdns，又有openwrt自带的DNS转发器dnsmasq的话，那么你需要好好配置，捋清楚三者的顺序，其次Adguardhome很吃性能<s>很重要</s>。</li>
-<li>smartDns已经能满足你大部分需求，它通过查询多个dns服务器，对比，来确定那个是真的或者对的，可以有效防止像Github这种dns污染的。</li>
-</ol>
-<hr />
-<h3 id="广告"><a class="markdownIt-Anchor" href="#广告"></a> 广告</h3>
-<p>另外再说下广告，有两种：</p>
-<ol>
-<li>运营商现在劫持dns，然后在你申请的网页里面插入自己的广告。</li>
-<li>网站自己的广告<br />
-Adguardhome就是针对这两种提出解决方案：建立可信的dns库，不用运营商的dns；建立广告网址库，如果网址匹配就直接在路由器这边就拦截了。这比浏览器插件强大的地方在于它甚至可以拦截手机广告<s>理论上</s>。<code>PS:手机摇一摇它也没办法阻拦，阿里牛逼</code>。只能说理论很美好，但是如果一不小心拦截你需要的东西，那你就需要好好排查。技术不是万能的，并不能自动适应每个人的场景，所以要慎重。</li>
-</ol>
-<hr />
-<h3 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h3>
-<p>如果不是重度用户，推荐只要有个刷机路由器即可，这是最初大家的玩法，可以选择去<a href="https://www.right.com.cn/forum/">恩山</a>这些看下当下最流行的路由器，刷机后即可。需要注意是，刷机后无线性能有差距，有些好，有些坏，看有没有大神咯。<br />
-我最近看了这么多下来，发现越来越模糊：软路由，nas之间的差距。现在的openwrt里面可以安装dockers，可以建立homeasisten，所以相对应的，对路由器的性能要求就越来越大，也许是大家发现我软路由的性能越来越强，所以就越喜欢在里面装更多的东西，这就是越来越多的人搞ALL in One的原因，将路由器，Nas等都集中在一台设备中。我并不是反对这种做法，只是静下心来想一下，我有需要这么多功能么？<br />
-我需要一台翻墙的路由器，方便我查询谷歌的信息，然后有台nas，可以给我电视共享数据，方便电视放电影。这就是我得全部需求，甚至，有时候电视放电影也是伪需求，很多网站都已经可以直接在线，而且分辨率不低。在我没有升级电视和音响之前，我只是需要一个便捷的上网环境罢了。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>路由器</tag>
-        <tag>OPENWRT</tag>
-        <tag>翻墙</tag>
-        <tag>隐形代理</tag>
-        <tag>NAS</tag>
-        <tag>旁路由</tag>
       </tags>
   </entry>
   <entry>
@@ -3669,6 +3669,30 @@ Debain系统</p>
       </tags>
   </entry>
   <entry>
+    <title>相亲</title>
+    <url>/2024/02/24/151-%E7%9B%B8%E4%BA%B2%E6%97%A5%E8%AE%B0/</url>
+    <content><![CDATA[<p>这一篇是写着玩的，本来我一般是不会如此仔细的分析自己身边人，但是相亲的女孩子一般有一次没下次。而且主要是这一次的女孩子性格特征太过明显了，我在某个午睡时候玩的思维小游戏就分析出大概，在此就当作一个小练手把。</p>
+<span id="more"></span>
+<p>我和那个女孩子是同村，他们家在我们家后面走路10分钟左右吧，家很大，广场很宽，然后是最近几年建成的，看建筑风格可以知道。说明是最近几年有钱的，前后不会超过10年。算是一个new money。<br />
+家里3个孩子，上一代应该独生，没看到农村那种2个大厅的格局。3个孩子前两个女孩，最后一个男孩，还在上初中，年龄差距接近15岁吧，从此可以见到家风会比较传统-重男轻女。和女孩子聊天途中发现：父母对老大老二读书都没管，但是对老三男孩子读书专门请假在家租房子照顾。可以见到她是有怨言的，那么是反抗心理的，也许行为不会表现，但是内心的反抗，那么就有可能衍生出需求父亲的爱等等。<br />
+女孩父亲全程没有出现，两次上门都没有见到女孩子父亲。但是家庭和睦，我倾向于女孩子是恋父的，需求父爱的。<br />
+第二次媒婆过来传话是女孩子的奶奶传话，说明其爷爷辈还有话语权，那么注定家庭生活是压抑的。包括女孩子母亲也会是压抑的。我倾向女孩子会接受传统思想，父母之命，媒妁之言之类的，如果爷爷和奶奶能说出一些好话，会事半功倍。但是婚后的日子会比较古板且传统，而且爷爷辈会参与男方家庭太多，我倾向她最后会找一个也是爷爷主事的家庭。<br />
+还有就是学历崇拜，聊天过程为数不多的提高声调的地方，对学历有种崇拜，她自己也是大学，但是不够好，然而也足够她自己觉得这是好事了，她既是既得利益者，也是需求者。学历会是加分项，更高学历或者更好学校对她来说有致命吸引。<br />
+女孩的性格比较沉默寡言，也许是在家里透明习惯了，比较不活跃。不会太有自己的思想，会迷信，会尊重传统。最后我们没有成，因为她奶奶问过迷信，觉得年龄差6岁，不搭。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>那些年遇见的人</category>
+      </categories>
+      <tags>
+        <tag>心理分析</tag>
+        <tag>相亲</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>佛祖说了些什么-读书笔记</title>
     <url>/2024/02/25/152-%E4%BD%9B%E7%A5%96%E8%AF%B4%E4%BA%86%E4%BA%9B%E4%BB%80%E4%B9%88%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>这是用kindle标记的一些读书笔记，总结整理下，后续方便写观后感。</p>
@@ -3756,30 +3780,6 @@ Debain系统</p>
         <tag>摘要</tag>
         <tag>《佛祖说了些什么》</tag>
         <tag>林欣浩</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>相亲</title>
-    <url>/2024/02/24/151-%E7%9B%B8%E4%BA%B2%E6%97%A5%E8%AE%B0/</url>
-    <content><![CDATA[<p>这一篇是写着玩的，本来我一般是不会如此仔细的分析自己身边人，但是相亲的女孩子一般有一次没下次。而且主要是这一次的女孩子性格特征太过明显了，我在某个午睡时候玩的思维小游戏就分析出大概，在此就当作一个小练手把。</p>
-<span id="more"></span>
-<p>我和那个女孩子是同村，他们家在我们家后面走路10分钟左右吧，家很大，广场很宽，然后是最近几年建成的，看建筑风格可以知道。说明是最近几年有钱的，前后不会超过10年。算是一个new money。<br />
-家里3个孩子，上一代应该独生，没看到农村那种2个大厅的格局。3个孩子前两个女孩，最后一个男孩，还在上初中，年龄差距接近15岁吧，从此可以见到家风会比较传统-重男轻女。和女孩子聊天途中发现：父母对老大老二读书都没管，但是对老三男孩子读书专门请假在家租房子照顾。可以见到她是有怨言的，那么是反抗心理的，也许行为不会表现，但是内心的反抗，那么就有可能衍生出需求父亲的爱等等。<br />
-女孩父亲全程没有出现，两次上门都没有见到女孩子父亲。但是家庭和睦，我倾向于女孩子是恋父的，需求父爱的。<br />
-第二次媒婆过来传话是女孩子的奶奶传话，说明其爷爷辈还有话语权，那么注定家庭生活是压抑的。包括女孩子母亲也会是压抑的。我倾向女孩子会接受传统思想，父母之命，媒妁之言之类的，如果爷爷和奶奶能说出一些好话，会事半功倍。但是婚后的日子会比较古板且传统，而且爷爷辈会参与男方家庭太多，我倾向她最后会找一个也是爷爷主事的家庭。<br />
-还有就是学历崇拜，聊天过程为数不多的提高声调的地方，对学历有种崇拜，她自己也是大学，但是不够好，然而也足够她自己觉得这是好事了，她既是既得利益者，也是需求者。学历会是加分项，更高学历或者更好学校对她来说有致命吸引。<br />
-女孩的性格比较沉默寡言，也许是在家里透明习惯了，比较不活跃。不会太有自己的思想，会迷信，会尊重传统。最后我们没有成，因为她奶奶问过迷信，觉得年龄差6岁，不搭。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>那些年遇见的人</category>
-      </categories>
-      <tags>
-        <tag>心理分析</tag>
-        <tag>相亲</tag>
       </tags>
   </entry>
   <entry>
@@ -3900,35 +3900,6 @@ Debain系统</p>
       </tags>
   </entry>
   <entry>
-    <title>佛祖什么都说了</title>
-    <url>/2024/03/02/156-%E4%BD%9B%E7%A5%96%E4%BB%80%E4%B9%88%E9%83%BD%E8%AF%B4%E4%BA%86/</url>
-    <content><![CDATA[<p>《佛祖说了些什么》这本书我很早就读完了。但是经过过年，慵懒等理由，我迟迟不下笔写下这篇文章。我觉得值得为它写一篇文章。</p>
-<span id="more"></span>
-<p>佛教作为一个宗教，它是具有严格得推演和逻辑得。只不过像基督教得圣经一样，它推演得基础也在那些公案和典籍。且不论推演的基础是否正确，单单就推演也可以成为一门正经的学科。我以前还曾经迷惑，神学佛学有什么可以学习得，在很多教科书上都是一言以蔽之得东西。除开教科书无法详尽的描述它的原因之外，宗教在传播过程中，大量简化和浓缩它的教义，也许最后就总归成了一句：“善有善报，恶有恶报”。在看完这本书之后，确实发现，我们在门外看到得，和门内修行得人是两回事。专业的事有专业得人来干。<br />
-无论是“万法缘起得解读”，到后面为了适应民众得俗讲。佛学在那个古老的时代里确确实实构建出了一个世界观，包含人，世界，人生目标等等。在那个对世界一无所知的年代，它给了当时的人一个世界的解释；佛学也算是哲学，只不过它更大，更久，以至于独立出来；甚至很多哲学家从中获取灵感。宗教是一个庞大得系统，它不仅仅解释世界，还要求行为规范，它要随着时代发展来更新自己。大到航天飞机能否找到极乐世界，小到牛奶僧人是否可以喝。都是切切实实得摆在人面前得问题。一个宗教代表着另一个世界，你在现实世界中有得东西，佛学世界也必须有，甚至你还得引经据典得说明它如何而来，为何而来。因为它不同于别的哲学家，别的哲学家只对未知部分进行解释，宗教对已知的也进行解释。这就好像在现实世界中又套入了另一个世界。这和平时得圈子还不一样，在这个嵌套得世界里，它需要对外面世界来得所有东西都需要有一套自己得解释。如果解释不通，那么就说明外面得那个世界比你佛学世界要大，等级要高，甚至否定你的真实性。那么对宗教而言是打击性质得。所以它需要不断得发展和扩大，甚至超前。<br />
-最后是，在追求非理性上面，佛教和现代科学似乎都走在了同一条路上。佛教推崇顿悟，甚至要求信徒放弃逻辑，以达到那种与佛一致得概念。但是佛教也说了，顿悟只是心境得变化，不会是那种圣光加持，忽然变身得东西。佛，更多得向内而求，不是向外。所以很多人修佛，修得是自己心境。文人雅士为何喜欢他，正如里面说的：</p>
-<blockquote>
-<p>“只有酒足饭饱的知识分子才有精力去看文艺片，也只有酒足饭饱的知识分子才会喜欢禅宗。 文艺片和禅宗可以让人们不假任何万物，只靠精神上的运动就可以超越世俗的痛苦，平静对待世间万物。这很棒。但对于连饭都吃不饱的人来说，它们提供不了任何帮助。”</p>
-</blockquote>
-<p>而科学到了目前阶段，也不得不承认自己的逻辑无法完美的解释这个世界。那么真理在逻辑之外。其实如果我们更加客观的看待宗教的话，也许发现它并没有那么可怕，它只不过是给当世之人一个庇护之地罢了。<br />
-宗教有人把它当世外桃源，有人将它视为救命稻草。无论是家长里短，还是富贵长寿，在人的眼里，它无所不能，但是这一切都是宗教下潜到群众必须做得事情。理智的人也许只是花钱求个心安，疯狂的人会觉得自己不够虔诚。他们都在为自己的执念买单。而佛在那不问也不说，现在如此，以后也如此。<br />
-我并不想批判什么，只要它不是强迫威胁甚至威逼利诱即可。归根结底还是人傻，你又能奈它何。我恶心的是基层民众，会觉得增加一个信徒会是一件大功德，为了自己的功德，骗那些傻子屋里有鬼，需要搬家，需要虔诚。其实这点书中也提到过，人怀着自私自利的心去帮助他人呢？佛学的解释是你心怀不轨，做再大的功德也是枉然。宗教的体量很大，难免不了有大部分人都是心怀鬼胎的，这是它的管理问题，但是也是问题；我不想为它开脱，甚至想责难它。如果你管不好这么多人，那么就应该承受它带来的非议，甚至因此而落寞也是罪有应得。当然也有可能宗教就是最早的那批贩卖焦虑的人。如果一个东西根都坏了，只有少部分人保持真心，那么这个东西还是原来的东西么？说什么与时俱进，说什么顺应时代，归根揭底还不过是趴在人民群众身上的吸血鬼罢了。<br />
-人为刀殂，我为鱼肉。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>《佛祖说了些什么》</tag>
-        <tag>林欣浩</tag>
-        <tag>读后感</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>我在北京送快递</title>
     <url>/2024/03/09/157-%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E9%80%81%E5%BF%AB%E9%80%92-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>《我在北京送快递》我更喜欢它的前半部，在北京的那些生活。</p>
@@ -3979,6 +3950,35 @@ Debain系统</p>
       <tags>
         <tag>我在北京送快递</tag>
         <tag>胡安焉</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>佛祖什么都说了</title>
+    <url>/2024/03/02/156-%E4%BD%9B%E7%A5%96%E4%BB%80%E4%B9%88%E9%83%BD%E8%AF%B4%E4%BA%86/</url>
+    <content><![CDATA[<p>《佛祖说了些什么》这本书我很早就读完了。但是经过过年，慵懒等理由，我迟迟不下笔写下这篇文章。我觉得值得为它写一篇文章。</p>
+<span id="more"></span>
+<p>佛教作为一个宗教，它是具有严格得推演和逻辑得。只不过像基督教得圣经一样，它推演得基础也在那些公案和典籍。且不论推演的基础是否正确，单单就推演也可以成为一门正经的学科。我以前还曾经迷惑，神学佛学有什么可以学习得，在很多教科书上都是一言以蔽之得东西。除开教科书无法详尽的描述它的原因之外，宗教在传播过程中，大量简化和浓缩它的教义，也许最后就总归成了一句：“善有善报，恶有恶报”。在看完这本书之后，确实发现，我们在门外看到得，和门内修行得人是两回事。专业的事有专业得人来干。<br />
+无论是“万法缘起得解读”，到后面为了适应民众得俗讲。佛学在那个古老的时代里确确实实构建出了一个世界观，包含人，世界，人生目标等等。在那个对世界一无所知的年代，它给了当时的人一个世界的解释；佛学也算是哲学，只不过它更大，更久，以至于独立出来；甚至很多哲学家从中获取灵感。宗教是一个庞大得系统，它不仅仅解释世界，还要求行为规范，它要随着时代发展来更新自己。大到航天飞机能否找到极乐世界，小到牛奶僧人是否可以喝。都是切切实实得摆在人面前得问题。一个宗教代表着另一个世界，你在现实世界中有得东西，佛学世界也必须有，甚至你还得引经据典得说明它如何而来，为何而来。因为它不同于别的哲学家，别的哲学家只对未知部分进行解释，宗教对已知的也进行解释。这就好像在现实世界中又套入了另一个世界。这和平时得圈子还不一样，在这个嵌套得世界里，它需要对外面世界来得所有东西都需要有一套自己得解释。如果解释不通，那么就说明外面得那个世界比你佛学世界要大，等级要高，甚至否定你的真实性。那么对宗教而言是打击性质得。所以它需要不断得发展和扩大，甚至超前。<br />
+最后是，在追求非理性上面，佛教和现代科学似乎都走在了同一条路上。佛教推崇顿悟，甚至要求信徒放弃逻辑，以达到那种与佛一致得概念。但是佛教也说了，顿悟只是心境得变化，不会是那种圣光加持，忽然变身得东西。佛，更多得向内而求，不是向外。所以很多人修佛，修得是自己心境。文人雅士为何喜欢他，正如里面说的：</p>
+<blockquote>
+<p>“只有酒足饭饱的知识分子才有精力去看文艺片，也只有酒足饭饱的知识分子才会喜欢禅宗。 文艺片和禅宗可以让人们不假任何万物，只靠精神上的运动就可以超越世俗的痛苦，平静对待世间万物。这很棒。但对于连饭都吃不饱的人来说，它们提供不了任何帮助。”</p>
+</blockquote>
+<p>而科学到了目前阶段，也不得不承认自己的逻辑无法完美的解释这个世界。那么真理在逻辑之外。其实如果我们更加客观的看待宗教的话，也许发现它并没有那么可怕，它只不过是给当世之人一个庇护之地罢了。<br />
+宗教有人把它当世外桃源，有人将它视为救命稻草。无论是家长里短，还是富贵长寿，在人的眼里，它无所不能，但是这一切都是宗教下潜到群众必须做得事情。理智的人也许只是花钱求个心安，疯狂的人会觉得自己不够虔诚。他们都在为自己的执念买单。而佛在那不问也不说，现在如此，以后也如此。<br />
+我并不想批判什么，只要它不是强迫威胁甚至威逼利诱即可。归根结底还是人傻，你又能奈它何。我恶心的是基层民众，会觉得增加一个信徒会是一件大功德，为了自己的功德，骗那些傻子屋里有鬼，需要搬家，需要虔诚。其实这点书中也提到过，人怀着自私自利的心去帮助他人呢？佛学的解释是你心怀不轨，做再大的功德也是枉然。宗教的体量很大，难免不了有大部分人都是心怀鬼胎的，这是它的管理问题，但是也是问题；我不想为它开脱，甚至想责难它。如果你管不好这么多人，那么就应该承受它带来的非议，甚至因此而落寞也是罪有应得。当然也有可能宗教就是最早的那批贩卖焦虑的人。如果一个东西根都坏了，只有少部分人保持真心，那么这个东西还是原来的东西么？说什么与时俱进，说什么顺应时代，归根揭底还不过是趴在人民群众身上的吸血鬼罢了。<br />
+人为刀殂，我为鱼肉。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>《佛祖说了些什么》</tag>
+        <tag>林欣浩</tag>
+        <tag>读后感</tag>
       </tags>
   </entry>
   <entry>
@@ -5033,6 +5033,39 @@ Debain系统</p>
       </tags>
   </entry>
   <entry>
+    <title>瓦工46刀新增新加坡机房-限时限量</title>
+    <url>/2024/06/20/176-%E7%93%A6%E5%B7%A546%E5%88%80%E6%96%B0%E5%A2%9E%E6%96%B0%E5%8A%A0%E5%9D%A1%E6%9C%BA%E6%88%BF/</url>
+    <content><![CDATA[<p>套餐内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SPECIAL 10G KVM PROMO V5 - LOS ANGELES - CN2 GIA LIMITED EDITION VPS</span><br><span class="line">1 vCPU</span><br><span class="line">512M RAM</span><br><span class="line">10G SSD Storage</span><br><span class="line">500GB Transfer</span><br><span class="line">1Gbps VirtIO Interface</span><br><span class="line">1 IPv4 </span><br><span class="line">49.9 USD/Year </span><br></pre></td></tr></table></figure>
+<p>瓦工46刀套餐增加了一个机房-新加坡<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/176-%E7%93%A6%E5%B7%A546%E5%88%80%E6%96%B0%E5%A2%9E%E6%96%B0%E5%8A%A0%E5%9D%A1%E6%9C%BA%E6%88%BF-2024-06-21-12-13-42.png" alt="176-瓦工46刀新增新加坡机房-2024-06-21-
+12-13-42" /></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SG: Singapore (CN2GIA, early access, very limited capacity) [SG_1] (current) – Premium bandwidth multiplier: 0.33x</span><br></pre></td></tr></table></figure>
+<p>流量变为原来的三分之一，换算下来165G每个月，现在已经关闭通道了。可以说的上是限时限量了。</p>
+<p>测试了下数据，直接上结论：</p>
+<ol>
+<li>好机46刀，新加坡的亚洲鸡，没有香港被打的顾虑，延迟又近，还要啥自行车</li>
+<li>相比较动不动的100刀+的新加坡机，这个算是目前比较合适的套餐，有成为传家宝的趋势</li>
+<li>流量有限165G，一个人用勉强够</li>
+</ol>
+<p>现在市场溢价80-100，有人收这款机，只能说这机子有传家宝的潜力，但是根据今年的线路和机器大战，不介意的可以再等等。最后新加坡的机器由于带宽和线路还有当地政策，虽然近，但是贵。这款机的出现算是开了一个口子，相信后面还会有更合适你的机子。</p>
+<span id="more"></span>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">--------------------- A Bench Script By spiritlhl ----------------------</span><br><span class="line">                   测评频道: https://t.me/vps_reviews                    </span><br><span class="line">版本：2024.06.13</span><br><span class="line">更新日志：VPS融合怪测试(集百家之长)                       </span><br><span class="line">---------------------基础信息查询--感谢所有开源项目---------------------</span><br><span class="line"> CPU 型号          : AMD EPYC Processor (with IBPB)</span><br><span class="line"> CPU 核心数        : 1</span><br><span class="line"> CPU 频率          : 2445.404 MHz</span><br><span class="line"> CPU 缓存          : L1: 32.00 KB / L2: 512.00 KB / L3: 8.00 MB</span><br><span class="line"> AES-NI指令集      : ✔ Enabled</span><br><span class="line"> VM-x/AMD-V支持    : ❌ Disabled</span><br><span class="line"> 内存              : 112.31 MiB / 473.03 MiB</span><br><span class="line"> Swap              : 268 KiB / 1024.00 MiB</span><br><span class="line"> 硬盘空间          : 2.45 GiB / 9.31 GiB</span><br><span class="line"> 启动盘路径        : /dev/sda2</span><br><span class="line"> 系统在线时间      : 0 days, 0 hour 13 min</span><br><span class="line"> 负载              : 0.48, 0.14, 0.05</span><br><span class="line"> 系统              : Debian GNU/Linux 12 (bookworm) (x86_64)</span><br><span class="line"> 架构              : x86_64 (64 Bit)</span><br><span class="line"> 内核              : 6.1.0-9-amd64</span><br><span class="line"> TCP加速方式       : bbr</span><br><span class="line"> 虚拟化架构        : KVM</span><br><span class="line"> NAT类型           : Full Cone</span><br><span class="line"> IPV4 ASN          : AS23858 xTom</span><br><span class="line"> IPV4 位置         : Singapore / Singapore / SG</span><br><span class="line">----------------------CPU测试--通过sysbench测试-------------------------</span><br><span class="line"> -&gt; CPU 测试中 (Fast Mode, 1-Pass @ 5sec)</span><br><span class="line"> 1 线程测试(单核)得分:          3607 Scores</span><br><span class="line">---------------------内存测试--感谢lemonbench开源-----------------------</span><br><span class="line"> -&gt; 内存测试 Test (Fast Mode, 1-Pass @ 5sec)</span><br><span class="line"> 单线程读测试:          45477.56 MB/s</span><br><span class="line"> 单线程写测试:          26694.93 MB/s</span><br><span class="line">------------------磁盘dd读写测试--感谢lemonbench开源--------------------</span><br><span class="line"> -&gt; 磁盘IO测试中 (4K Block/1M Block, Direct Mode)</span><br><span class="line"> 测试操作               写速度                                  读速度</span><br><span class="line"> 100MB-4K Block         39.2 MB/s (9574 IOPS, 2.67s)            41.4 MB/s (10119 IOPS, 2.53s)</span><br><span class="line"> 1GB-1M Block           817 MB/s (780 IOPS, 1.28s)              1.4 GB/s (1299 IOPS, 0.77s)</span><br><span class="line">---------------------磁盘fio读写测试--感谢yabs开源----------------------</span><br><span class="line">Block Size | 4k            (IOPS) | 64k           (IOPS)</span><br><span class="line">  ------   | ---            ----  | ----           ---- </span><br><span class="line">Read       | 138.37 MB/s  (34.5k) | 771.54 MB/s  (12.0k)</span><br><span class="line">Write      | 138.73 MB/s  (34.6k) | 775.60 MB/s  (12.1k)</span><br><span class="line">Total      | 277.10 MB/s  (69.2k) | 1.54 GB/s    (24.1k)</span><br><span class="line">           |                      |                     </span><br><span class="line">Block Size | 512k          (IOPS) | 1m            (IOPS)</span><br><span class="line">  ------   | ---            ----  | ----           ---- </span><br><span class="line">Read       | 1.85 GB/s     (3.6k) | 2.31 GB/s     (2.2k)</span><br><span class="line">Write      | 1.95 GB/s     (3.8k) | 2.46 GB/s     (2.4k)</span><br><span class="line">Total      | 3.80 GB/s     (7.4k) | 4.77 GB/s     (4.6k)</span><br><span class="line">------------流媒体解锁--基于oneclickvirt/CommonMediaTests开源-----------</span><br><span class="line">以下测试的解锁地区是准确的，但是不是完整解锁的判断可能有误，这方面仅作参考使用</span><br><span class="line">----------------Netflix-----------------</span><br><span class="line">[IPV4]</span><br><span class="line">您的出口IP可以使用Netflix，但仅可看Netflix自制剧</span><br><span class="line">NF所识别的IP地域信息：新加坡</span><br><span class="line">[IPV6]</span><br><span class="line">您的网络可能没有正常配置IPv6，或者没有IPv6网络接入</span><br><span class="line">----------------Youtube-----------------</span><br><span class="line">[IPV4]</span><br><span class="line">连接方式: Youtube Video Server</span><br><span class="line">视频缓存节点地域: 新加坡 新加坡/樟宜  (SIN11S18)</span><br><span class="line">Youtube识别地域: 新加坡(SG)</span><br><span class="line">[IPV6]</span><br><span class="line">连接方式: Youtube Video Server</span><br><span class="line">视频缓存节点地域: 新加坡 新加坡/樟宜  (SIN11S18)</span><br><span class="line">Youtube识别地域: 新加坡(SG)</span><br><span class="line">---------------DisneyPlus---------------</span><br><span class="line">[IPV4]</span><br><span class="line">当前出口所在地区解锁DisneyPlus</span><br><span class="line">区域：SG 区</span><br><span class="line">[IPV6]</span><br><span class="line">当前出口所在地区解锁DisneyPlus</span><br><span class="line">区域：SG 区</span><br><span class="line">解锁Netflix，Youtube，DisneyPlus上面和下面进行比较，不同之处自行判断</span><br><span class="line">----------------流媒体解锁--感谢RegionRestrictionCheck开源--------------</span><br><span class="line"> 以下为IPV4网络测试，若无IPV4网络则无输出</span><br><span class="line">============[ Multination ]============</span><br><span class="line"> Dazn:                                  Yes (Region: SG)</span><br><span class="line"> Disney+:                               No (IP Banned By Disney+ 1)</span><br><span class="line"> Netflix:                               Originals Only</span><br><span class="line"> YouTube Premium:                       Yes (Region: SG)</span><br><span class="line"> Amazon Prime Video:                    Yes (Region: SG)</span><br><span class="line"> TVBAnywhere+:                          Yes</span><br><span class="line"> Spotify Registration:                  Yes (Region: SG)</span><br><span class="line"> Instagram Licensed Audio:              No</span><br><span class="line"> OneTrust Region:                       SG [Unknown]</span><br><span class="line"> iQyi Oversea Region:                   SG</span><br><span class="line"> Bing Region:                           SG</span><br><span class="line"> YouTube CDN:                           Singapore</span><br><span class="line"> Netflix Preferred CDN:                 Seattle, WA</span><br><span class="line"> ChatGPT:                               Yes</span><br><span class="line"> Wikipedia Editability:                 Yes</span><br><span class="line"> Google Search CAPTCHA Free:            Yes</span><br><span class="line"> Steam Currency:                        SGD</span><br><span class="line"> ---Forum---</span><br><span class="line"> Reddit:                                No</span><br><span class="line">=======================================</span><br><span class="line"> 以下为IPV6网络测试，若无IPV6网络则无输出</span><br><span class="line">---------------TikTok解锁--感谢lmc999的源脚本及fscarmen PR--------------</span><br><span class="line"> Tiktok Region:         【SG】</span><br><span class="line">-------------IP质量检测--基于oneclickvirt/securityCheck使用-------------</span><br><span class="line">数据仅作参考，不代表100%准确，如果和实际情况不一致请手动查询多个数据库比对</span><br><span class="line">以下为各数据库编号，输出结果后将自带数据库来源对应的编号</span><br><span class="line">ipinfo数据库  [0] | scamalytics数据库 [1] | virustotal数据库  [2] | abuseipdb数据库   [3] | ip2location数据库    [4]</span><br><span class="line">ip-api数据库  [5] | ipwhois数据库     [6] | ipregistry数据库  [7] | ipdata数据库      [8] | db-ip数据库          [9]</span><br><span class="line">ipapiis数据库 [A] | ipapicom数据库    [B] | abstractapi数据库 [C] | cheervision数据库 [D] | ipqualityscore数据库 [E]</span><br><span class="line">IPV4:</span><br><span class="line">安全得分:</span><br><span class="line">声誉(越高越好): 0 [2] </span><br><span class="line">信任得分(越高越好): 88 [8] </span><br><span class="line">VPN得分(越低越好): 2 [8] </span><br><span class="line">代理得分(越低越好): 14 [8] </span><br><span class="line">社区投票-无害: 0 [2]</span><br><span class="line">社区投票-恶意: 0 [2] </span><br><span class="line">威胁得分(越低越好): 20 [8] </span><br><span class="line">欺诈得分(越低越好): 0 [1] 65 [E]</span><br><span class="line">滥用得分(越低越好): 0 [3] </span><br><span class="line">ASN滥用得分(越低越好): 0.0007 (Low) [A] </span><br><span class="line">公司滥用得分(越低越好): 0.0039 (Low) [A] </span><br><span class="line">威胁级别: low [9 B] </span><br><span class="line">黑名单记录统计:(有多少黑名单网站有记录):</span><br><span class="line">无害记录数: 0 [2]  恶意记录数: 0 [2]  可疑记录数: 0 [2]  无记录数: 93 [2]  </span><br><span class="line">安全信息:</span><br><span class="line">使用类型: DataCenter/WebHosting/Transit [3] hosting [7 9 A] isp [0]</span><br><span class="line">公司类型: hosting [0 7] business [A]</span><br><span class="line">是否云提供商: Yes [7 D] </span><br><span class="line">是否数据中心: No [5 6 8] Yes [0 1 A]</span><br><span class="line">是否移动设备: Yes [E] No [5 A]</span><br><span class="line">是否代理: Yes [E] No [0 1 4 5 6 7 8 9 A B D]</span><br><span class="line">是否VPN: No [0 1 6 7 A C D] Yes [E]</span><br><span class="line">是否Tor: No [0 1 3 6 7 8 A B D E] </span><br><span class="line">是否Tor出口: No [1 7 D] </span><br><span class="line">是否网络爬虫: No [9 A B E] </span><br><span class="line">是否匿名: No [1 6 7 8 D] </span><br><span class="line">是否攻击者: No [7 8 D] </span><br><span class="line">是否滥用者: No [7 8 A D E] </span><br><span class="line">是否威胁: No [7 8 D] </span><br><span class="line">是否中继: No [0 7 8 D] </span><br><span class="line">是否Bogon: No [7 8 A D] </span><br><span class="line">是否机器人: No [E] </span><br><span class="line">DNS-黑名单: 311(Total_Check) 0(Clean) 7(Blacklisted) 8(Other) </span><br><span class="line">Google搜索可行性：YES</span><br><span class="line">-------------邮件端口检测--基于oneclickvirt/portchecker开源-------------</span><br><span class="line">Platform  SMTP  SMTPS POP3  POP3S IMAP  IMAPS</span><br><span class="line">LocalPort ✔     ✔     ✔     ✔     ✔     ✔    </span><br><span class="line">QQ        ✔     ✔     ✔     ✘     ✔     ✘    </span><br><span class="line">163       ✔     ✔     ✔     ✘     ✔     ✘    </span><br><span class="line">Sohu      ✔     ✔     ✔     ✘     ✔     ✘    </span><br><span class="line">Yandex    ✔     ✔     ✔     ✘     ✔     ✘    </span><br><span class="line">Gmail     ✔     ✔     ✘     ✘     ✘     ✘    </span><br><span class="line">Outlook   ✔     ✘     ✔     ✘     ✔     ✘    </span><br><span class="line">Office365 ✔     ✘     ✔     ✘     ✔     ✘    </span><br><span class="line">Yahoo     ✔     ✔     ✘     ✘     ✘     ✘    </span><br><span class="line">MailCOM   ✔     ✔     ✔     ✘     ✔     ✘    </span><br><span class="line">MailRU    ✔     ✔     ✘     ✘     ✔     ✘    </span><br><span class="line">AOL       ✔     ✔     ✘     ✘     ✘     ✘    </span><br><span class="line">GMX       ✔     ✘     ✔     ✘     ✔     ✘    </span><br><span class="line">Sina      ✔     ✔     ✔     ✘     ✔     ✘    </span><br><span class="line">----------------三网回程--基于oneclickvirt/backtrace开源----------------</span><br><span class="line">国家: SG 城市: Singapore 服务商: AS23858 xTom</span><br><span class="line">北京电信 219.141.140.10  电信CN2GIA [精品线路] </span><br><span class="line">北京联通 202.106.195.68  电信CN2GIA [精品线路] 联通4837   [普通线路] </span><br><span class="line">北京移动 221.179.155.161 电信CN2GIA [精品线路] </span><br><span class="line">上海电信 202.96.209.133  电信CN2GIA [精品线路] </span><br><span class="line">上海联通 210.22.97.1     电信CN2GIA [精品线路] 联通4837   [普通线路] </span><br><span class="line">上海移动 211.136.112.200 电信CN2GIA [精品线路] </span><br><span class="line">广州电信 58.60.188.222   电信CN2GIA [精品线路] </span><br><span class="line">广州联通 210.21.196.6    电信CN2GIA [精品线路] 联通4837   [普通线路] </span><br><span class="line">广州移动 120.196.165.24  电信CN2GIA [精品线路] </span><br><span class="line">成都电信 61.139.2.69     电信CN2GIA [精品线路] </span><br><span class="line">成都联通 119.6.6.6       电信CN2GIA [精品线路] 联通4837   [普通线路] </span><br><span class="line">成都移动 211.137.96.205  电信CN2GT  [优质线路] 电信163    [普通线路] </span><br><span class="line">准确线路自行查看详细路由，本测试结果仅作参考</span><br><span class="line">同一目标地址多个线路时，可能检测已越过汇聚层，除了第一个线路外，后续信息可能无效</span><br><span class="line">---------------------回程路由--感谢fscarmen开源及PR---------------------</span><br><span class="line">依次测试电信/联通/移动经过的地区及线路，核心程序来自ipip.net或nexttrace，请知悉!</span><br><span class="line">广州电信 58.60.188.222</span><br><span class="line">12.32 ms  AS8888,AS23858  新加坡, xtom.com</span><br><span class="line">1570.27 ms  AS23858  新加坡, xtom.com</span><br><span class="line">0.26 ms  AS23764  新加坡, chinatelecom.com.cn, 电信</span><br><span class="line">1.03 ms  AS23764  新加坡, chinatelecom.com.cn, 电信</span><br><span class="line">1.13 ms  *  亚太地区, chinatelecom.com.cn, 电信</span><br><span class="line">37.91 ms  *  中国, 香港, chinatelecom.com.cn, 电信</span><br><span class="line">41.82 ms  *  中国, 广东, 广州, chinatelecom.com.cn, 电信</span><br><span class="line">46.93 ms  *  中国, 广东, 深圳, chinatelecom.com.cn, 电信</span><br><span class="line">55.67 ms  AS4134  中国, 广东, 深圳, chinatelecom.com.cn, 电信</span><br><span class="line">45.18 ms  AS4134  中国, 广东, 深圳, chinatelecom.com.cn, 电信</span><br><span class="line">广州联通 210.21.196.6</span><br><span class="line">3.77 ms  AS8888,AS23858  新加坡, xtom.com</span><br><span class="line">1.94 ms  AS23858  新加坡, xtom.com</span><br><span class="line">0.20 ms  AS23764  新加坡, chinatelecom.com.cn, 电信</span><br><span class="line">1.15 ms  AS23764  新加坡, chinatelecom.com.cn, 电信</span><br><span class="line">1.15 ms  *  新加坡, chinatelecom.com.cn, 电信</span><br><span class="line">43.75 ms  *  中国, 香港, chinatelecom.com.cn, 电信</span><br><span class="line">44.82 ms  *  中国, 广东, 广州, chinatelecom.com.cn, 电信</span><br><span class="line">102.37 ms  AS4837  中国, 广东, 广州, chinaunicom.com, 联通</span><br><span class="line">103.96 ms  AS17816  中国, 广东, 广州, chinaunicom.com, 联通</span><br><span class="line">100.96 ms  AS17623  中国, 广东, 深圳, chinaunicom.com, 联通</span><br><span class="line">104.93 ms  AS17623  中国, 广东, 深圳, chinaunicom.com, 联通</span><br><span class="line">广州移动 120.196.165.24</span><br><span class="line">16.87 ms  AS8888,AS23858  新加坡, xtom.com</span><br><span class="line">7.77 ms  AS23858  新加坡, xtom.com</span><br><span class="line">0.55 ms  AS23764  新加坡, chinatelecom.com.cn, 电信</span><br><span class="line">1.01 ms  AS23764  新加坡, chinatelecom.com.cn, 电信</span><br><span class="line">1.10 ms  *  亚太地区, chinatelecom.com.cn, 电信</span><br><span class="line">36.72 ms  *  中国, 香港, chinatelecom.com.cn, 电信</span><br><span class="line">42.09 ms  *  中国, 广东, 广州, chinatelecom.com.cn, 电信</span><br><span class="line">46.61 ms  *  中国, 广东, 广州, chinatelecom.com.cn, 电信</span><br><span class="line">68.16 ms  AS9808  中国, 广东, 广州, chinamobile.com, 移动</span><br><span class="line">71.97 ms  AS9808  中国, 广东, 广州, chinamobile.com, 移动</span><br><span class="line">72.09 ms  AS9808  中国, 广东, 广州, chinamobile.com, 移动</span><br><span class="line">69.12 ms  AS56040  中国, 广东, 深圳, chinamobile.com, 移动</span><br><span class="line">--------------------自动更新测速节点列表--本脚本原创--------------------</span><br><span class="line">位置             上传速度        下载速度        延迟     丢包率</span><br><span class="line">Speedtest.net    7682.03 Mbps    7936.94 Mbps    0.77     0.0%</span><br><span class="line">新加坡           444.60 Mbps     47.26 Mbps      46.78    1.2%</span><br><span class="line">中国香港         95.74 Mbps      94.22 Mbps      35.27    0.0%</span><br><span class="line">联通WuXi         1679.91 Mbps    2874.72 Mbps    99.30    0.0%</span><br><span class="line">电信浙江         1231.84 Mbps    1789.65 Mbps    74.82    NULL</span><br><span class="line">电信合肥5G       28.91 Mbps      26.51 Mbps      70.86    0.0%</span><br><span class="line">移动Beijing      2015.23 Mbps    2081.03 Mbps    83.35    NULL</span><br><span class="line">------------------------------------------------------------------------</span><br><span class="line"> 总共花费      : 6 分 5 秒</span><br><span class="line"> 时间          : Thu Jun 20 05:49:03 PDT 2024</span><br><span class="line">------------------------------------------------------------------------</span><br></pre></td></tr></table></figure><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>瓦工</tag>
+        <tag>CNGIA</tag>
+        <tag>新加坡机房</tag>
+        <tag>亚洲鸡</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>无题</title>
     <url>/2024/06/21/177-%E6%97%A0%E9%A2%98/</url>
     <content><![CDATA[<p>还记得我当初上学的时候，老师总是三令五申的告诉我们，不要离题，不要离题。但是那个时候我往往因为想要写得出众，写得特立独行，写完后发现好像离题了。后面我就变成了按部就班得写作，难忘的事就是那件事，忘不掉得人就是那个人。我每次想要有新花样，但是都不知道如何下手。但是往往在书上看到一些无题得文章，我又很奇怪，无题怎么切。</p>
@@ -5072,39 +5105,6 @@ Debain系统</p>
       </categories>
       <tags>
         <tag>无题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>瓦工46刀新增新加坡机房-限时限量</title>
-    <url>/2024/06/20/176-%E7%93%A6%E5%B7%A546%E5%88%80%E6%96%B0%E5%A2%9E%E6%96%B0%E5%8A%A0%E5%9D%A1%E6%9C%BA%E6%88%BF/</url>
-    <content><![CDATA[<p>套餐内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SPECIAL 10G KVM PROMO V5 - LOS ANGELES - CN2 GIA LIMITED EDITION VPS</span><br><span class="line">1 vCPU</span><br><span class="line">512M RAM</span><br><span class="line">10G SSD Storage</span><br><span class="line">500GB Transfer</span><br><span class="line">1Gbps VirtIO Interface</span><br><span class="line">1 IPv4 </span><br><span class="line">49.9 USD/Year </span><br></pre></td></tr></table></figure>
-<p>瓦工46刀套餐增加了一个机房-新加坡<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/176-%E7%93%A6%E5%B7%A546%E5%88%80%E6%96%B0%E5%A2%9E%E6%96%B0%E5%8A%A0%E5%9D%A1%E6%9C%BA%E6%88%BF-2024-06-21-12-13-42.png" alt="176-瓦工46刀新增新加坡机房-2024-06-21-
-12-13-42" /></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SG: Singapore (CN2GIA, early access, very limited capacity) [SG_1] (current) – Premium bandwidth multiplier: 0.33x</span><br></pre></td></tr></table></figure>
-<p>流量变为原来的三分之一，换算下来165G每个月，现在已经关闭通道了。可以说的上是限时限量了。</p>
-<p>测试了下数据，直接上结论：</p>
-<ol>
-<li>好机46刀，新加坡的亚洲鸡，没有香港被打的顾虑，延迟又近，还要啥自行车</li>
-<li>相比较动不动的100刀+的新加坡机，这个算是目前比较合适的套餐，有成为传家宝的趋势</li>
-<li>流量有限165G，一个人用勉强够</li>
-</ol>
-<p>现在市场溢价80-100，有人收这款机，只能说这机子有传家宝的潜力，但是根据今年的线路和机器大战，不介意的可以再等等。最后新加坡的机器由于带宽和线路还有当地政策，虽然近，但是贵。这款机的出现算是开了一个口子，相信后面还会有更合适你的机子。</p>
-<span id="more"></span>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">--------------------- A Bench Script By spiritlhl ----------------------</span><br><span class="line">                   测评频道: https://t.me/vps_reviews                    </span><br><span class="line">版本：2024.06.13</span><br><span class="line">更新日志：VPS融合怪测试(集百家之长)                       </span><br><span class="line">---------------------基础信息查询--感谢所有开源项目---------------------</span><br><span class="line"> CPU 型号          : AMD EPYC Processor (with IBPB)</span><br><span class="line"> CPU 核心数        : 1</span><br><span class="line"> CPU 频率          : 2445.404 MHz</span><br><span class="line"> CPU 缓存          : L1: 32.00 KB / L2: 512.00 KB / L3: 8.00 MB</span><br><span class="line"> AES-NI指令集      : ✔ Enabled</span><br><span class="line"> VM-x/AMD-V支持    : ❌ Disabled</span><br><span class="line"> 内存              : 112.31 MiB / 473.03 MiB</span><br><span class="line"> Swap              : 268 KiB / 1024.00 MiB</span><br><span class="line"> 硬盘空间          : 2.45 GiB / 9.31 GiB</span><br><span class="line"> 启动盘路径        : /dev/sda2</span><br><span class="line"> 系统在线时间      : 0 days, 0 hour 13 min</span><br><span class="line"> 负载              : 0.48, 0.14, 0.05</span><br><span class="line"> 系统              : Debian GNU/Linux 12 (bookworm) (x86_64)</span><br><span class="line"> 架构              : x86_64 (64 Bit)</span><br><span class="line"> 内核              : 6.1.0-9-amd64</span><br><span class="line"> TCP加速方式       : bbr</span><br><span class="line"> 虚拟化架构        : KVM</span><br><span class="line"> NAT类型           : Full Cone</span><br><span class="line"> IPV4 ASN          : AS23858 xTom</span><br><span class="line"> IPV4 位置         : Singapore / Singapore / SG</span><br><span class="line">----------------------CPU测试--通过sysbench测试-------------------------</span><br><span class="line"> -&gt; CPU 测试中 (Fast Mode, 1-Pass @ 5sec)</span><br><span class="line"> 1 线程测试(单核)得分:          3607 Scores</span><br><span class="line">---------------------内存测试--感谢lemonbench开源-----------------------</span><br><span class="line"> -&gt; 内存测试 Test (Fast Mode, 1-Pass @ 5sec)</span><br><span class="line"> 单线程读测试:          45477.56 MB/s</span><br><span class="line"> 单线程写测试:          26694.93 MB/s</span><br><span class="line">------------------磁盘dd读写测试--感谢lemonbench开源--------------------</span><br><span class="line"> -&gt; 磁盘IO测试中 (4K Block/1M Block, Direct Mode)</span><br><span class="line"> 测试操作               写速度                                  读速度</span><br><span class="line"> 100MB-4K Block         39.2 MB/s (9574 IOPS, 2.67s)            41.4 MB/s (10119 IOPS, 2.53s)</span><br><span class="line"> 1GB-1M Block           817 MB/s (780 IOPS, 1.28s)              1.4 GB/s (1299 IOPS, 0.77s)</span><br><span class="line">---------------------磁盘fio读写测试--感谢yabs开源----------------------</span><br><span class="line">Block Size | 4k            (IOPS) | 64k           (IOPS)</span><br><span class="line">  ------   | ---            ----  | ----           ---- </span><br><span class="line">Read       | 138.37 MB/s  (34.5k) | 771.54 MB/s  (12.0k)</span><br><span class="line">Write      | 138.73 MB/s  (34.6k) | 775.60 MB/s  (12.1k)</span><br><span class="line">Total      | 277.10 MB/s  (69.2k) | 1.54 GB/s    (24.1k)</span><br><span class="line">           |                      |                     </span><br><span class="line">Block Size | 512k          (IOPS) | 1m            (IOPS)</span><br><span class="line">  ------   | ---            ----  | ----           ---- </span><br><span class="line">Read       | 1.85 GB/s     (3.6k) | 2.31 GB/s     (2.2k)</span><br><span class="line">Write      | 1.95 GB/s     (3.8k) | 2.46 GB/s     (2.4k)</span><br><span class="line">Total      | 3.80 GB/s     (7.4k) | 4.77 GB/s     (4.6k)</span><br><span class="line">------------流媒体解锁--基于oneclickvirt/CommonMediaTests开源-----------</span><br><span class="line">以下测试的解锁地区是准确的，但是不是完整解锁的判断可能有误，这方面仅作参考使用</span><br><span class="line">----------------Netflix-----------------</span><br><span class="line">[IPV4]</span><br><span class="line">您的出口IP可以使用Netflix，但仅可看Netflix自制剧</span><br><span class="line">NF所识别的IP地域信息：新加坡</span><br><span class="line">[IPV6]</span><br><span class="line">您的网络可能没有正常配置IPv6，或者没有IPv6网络接入</span><br><span class="line">----------------Youtube-----------------</span><br><span class="line">[IPV4]</span><br><span class="line">连接方式: Youtube Video Server</span><br><span class="line">视频缓存节点地域: 新加坡 新加坡/樟宜  (SIN11S18)</span><br><span class="line">Youtube识别地域: 新加坡(SG)</span><br><span class="line">[IPV6]</span><br><span class="line">连接方式: Youtube Video Server</span><br><span class="line">视频缓存节点地域: 新加坡 新加坡/樟宜  (SIN11S18)</span><br><span class="line">Youtube识别地域: 新加坡(SG)</span><br><span class="line">---------------DisneyPlus---------------</span><br><span class="line">[IPV4]</span><br><span class="line">当前出口所在地区解锁DisneyPlus</span><br><span class="line">区域：SG 区</span><br><span class="line">[IPV6]</span><br><span class="line">当前出口所在地区解锁DisneyPlus</span><br><span class="line">区域：SG 区</span><br><span class="line">解锁Netflix，Youtube，DisneyPlus上面和下面进行比较，不同之处自行判断</span><br><span class="line">----------------流媒体解锁--感谢RegionRestrictionCheck开源--------------</span><br><span class="line"> 以下为IPV4网络测试，若无IPV4网络则无输出</span><br><span class="line">============[ Multination ]============</span><br><span class="line"> Dazn:                                  Yes (Region: SG)</span><br><span class="line"> Disney+:                               No (IP Banned By Disney+ 1)</span><br><span class="line"> Netflix:                               Originals Only</span><br><span class="line"> YouTube Premium:                       Yes (Region: SG)</span><br><span class="line"> Amazon Prime Video:                    Yes (Region: SG)</span><br><span class="line"> TVBAnywhere+:                          Yes</span><br><span class="line"> Spotify Registration:                  Yes (Region: SG)</span><br><span class="line"> Instagram Licensed Audio:              No</span><br><span class="line"> OneTrust Region:                       SG [Unknown]</span><br><span class="line"> iQyi Oversea Region:                   SG</span><br><span class="line"> Bing Region:                           SG</span><br><span class="line"> YouTube CDN:                           Singapore</span><br><span class="line"> Netflix Preferred CDN:                 Seattle, WA</span><br><span class="line"> ChatGPT:                               Yes</span><br><span class="line"> Wikipedia Editability:                 Yes</span><br><span class="line"> Google Search CAPTCHA Free:            Yes</span><br><span class="line"> Steam Currency:                        SGD</span><br><span class="line"> ---Forum---</span><br><span class="line"> Reddit:                                No</span><br><span class="line">=======================================</span><br><span class="line"> 以下为IPV6网络测试，若无IPV6网络则无输出</span><br><span class="line">---------------TikTok解锁--感谢lmc999的源脚本及fscarmen PR--------------</span><br><span class="line"> Tiktok Region:         【SG】</span><br><span class="line">-------------IP质量检测--基于oneclickvirt/securityCheck使用-------------</span><br><span class="line">数据仅作参考，不代表100%准确，如果和实际情况不一致请手动查询多个数据库比对</span><br><span class="line">以下为各数据库编号，输出结果后将自带数据库来源对应的编号</span><br><span class="line">ipinfo数据库  [0] | scamalytics数据库 [1] | virustotal数据库  [2] | abuseipdb数据库   [3] | ip2location数据库    [4]</span><br><span class="line">ip-api数据库  [5] | ipwhois数据库     [6] | ipregistry数据库  [7] | ipdata数据库      [8] | db-ip数据库          [9]</span><br><span class="line">ipapiis数据库 [A] | ipapicom数据库    [B] | abstractapi数据库 [C] | cheervision数据库 [D] | ipqualityscore数据库 [E]</span><br><span class="line">IPV4:</span><br><span class="line">安全得分:</span><br><span class="line">声誉(越高越好): 0 [2] </span><br><span class="line">信任得分(越高越好): 88 [8] </span><br><span class="line">VPN得分(越低越好): 2 [8] </span><br><span class="line">代理得分(越低越好): 14 [8] </span><br><span class="line">社区投票-无害: 0 [2]</span><br><span class="line">社区投票-恶意: 0 [2] </span><br><span class="line">威胁得分(越低越好): 20 [8] </span><br><span class="line">欺诈得分(越低越好): 0 [1] 65 [E]</span><br><span class="line">滥用得分(越低越好): 0 [3] </span><br><span class="line">ASN滥用得分(越低越好): 0.0007 (Low) [A] </span><br><span class="line">公司滥用得分(越低越好): 0.0039 (Low) [A] </span><br><span class="line">威胁级别: low [9 B] </span><br><span class="line">黑名单记录统计:(有多少黑名单网站有记录):</span><br><span class="line">无害记录数: 0 [2]  恶意记录数: 0 [2]  可疑记录数: 0 [2]  无记录数: 93 [2]  </span><br><span class="line">安全信息:</span><br><span class="line">使用类型: DataCenter/WebHosting/Transit [3] hosting [7 9 A] isp [0]</span><br><span class="line">公司类型: hosting [0 7] business [A]</span><br><span class="line">是否云提供商: Yes [7 D] </span><br><span class="line">是否数据中心: No [5 6 8] Yes [0 1 A]</span><br><span class="line">是否移动设备: Yes [E] No [5 A]</span><br><span class="line">是否代理: Yes [E] No [0 1 4 5 6 7 8 9 A B D]</span><br><span class="line">是否VPN: No [0 1 6 7 A C D] Yes [E]</span><br><span class="line">是否Tor: No [0 1 3 6 7 8 A B D E] </span><br><span class="line">是否Tor出口: No [1 7 D] </span><br><span class="line">是否网络爬虫: No [9 A B E] </span><br><span class="line">是否匿名: No [1 6 7 8 D] </span><br><span class="line">是否攻击者: No [7 8 D] </span><br><span class="line">是否滥用者: No [7 8 A D E] </span><br><span class="line">是否威胁: No [7 8 D] </span><br><span class="line">是否中继: No [0 7 8 D] </span><br><span class="line">是否Bogon: No [7 8 A D] </span><br><span class="line">是否机器人: No [E] </span><br><span class="line">DNS-黑名单: 311(Total_Check) 0(Clean) 7(Blacklisted) 8(Other) </span><br><span class="line">Google搜索可行性：YES</span><br><span class="line">-------------邮件端口检测--基于oneclickvirt/portchecker开源-------------</span><br><span class="line">Platform  SMTP  SMTPS POP3  POP3S IMAP  IMAPS</span><br><span class="line">LocalPort ✔     ✔     ✔     ✔     ✔     ✔    </span><br><span class="line">QQ        ✔     ✔     ✔     ✘     ✔     ✘    </span><br><span class="line">163       ✔     ✔     ✔     ✘     ✔     ✘    </span><br><span class="line">Sohu      ✔     ✔     ✔     ✘     ✔     ✘    </span><br><span class="line">Yandex    ✔     ✔     ✔     ✘     ✔     ✘    </span><br><span class="line">Gmail     ✔     ✔     ✘     ✘     ✘     ✘    </span><br><span class="line">Outlook   ✔     ✘     ✔     ✘     ✔     ✘    </span><br><span class="line">Office365 ✔     ✘     ✔     ✘     ✔     ✘    </span><br><span class="line">Yahoo     ✔     ✔     ✘     ✘     ✘     ✘    </span><br><span class="line">MailCOM   ✔     ✔     ✔     ✘     ✔     ✘    </span><br><span class="line">MailRU    ✔     ✔     ✘     ✘     ✔     ✘    </span><br><span class="line">AOL       ✔     ✔     ✘     ✘     ✘     ✘    </span><br><span class="line">GMX       ✔     ✘     ✔     ✘     ✔     ✘    </span><br><span class="line">Sina      ✔     ✔     ✔     ✘     ✔     ✘    </span><br><span class="line">----------------三网回程--基于oneclickvirt/backtrace开源----------------</span><br><span class="line">国家: SG 城市: Singapore 服务商: AS23858 xTom</span><br><span class="line">北京电信 219.141.140.10  电信CN2GIA [精品线路] </span><br><span class="line">北京联通 202.106.195.68  电信CN2GIA [精品线路] 联通4837   [普通线路] </span><br><span class="line">北京移动 221.179.155.161 电信CN2GIA [精品线路] </span><br><span class="line">上海电信 202.96.209.133  电信CN2GIA [精品线路] </span><br><span class="line">上海联通 210.22.97.1     电信CN2GIA [精品线路] 联通4837   [普通线路] </span><br><span class="line">上海移动 211.136.112.200 电信CN2GIA [精品线路] </span><br><span class="line">广州电信 58.60.188.222   电信CN2GIA [精品线路] </span><br><span class="line">广州联通 210.21.196.6    电信CN2GIA [精品线路] 联通4837   [普通线路] </span><br><span class="line">广州移动 120.196.165.24  电信CN2GIA [精品线路] </span><br><span class="line">成都电信 61.139.2.69     电信CN2GIA [精品线路] </span><br><span class="line">成都联通 119.6.6.6       电信CN2GIA [精品线路] 联通4837   [普通线路] </span><br><span class="line">成都移动 211.137.96.205  电信CN2GT  [优质线路] 电信163    [普通线路] </span><br><span class="line">准确线路自行查看详细路由，本测试结果仅作参考</span><br><span class="line">同一目标地址多个线路时，可能检测已越过汇聚层，除了第一个线路外，后续信息可能无效</span><br><span class="line">---------------------回程路由--感谢fscarmen开源及PR---------------------</span><br><span class="line">依次测试电信/联通/移动经过的地区及线路，核心程序来自ipip.net或nexttrace，请知悉!</span><br><span class="line">广州电信 58.60.188.222</span><br><span class="line">12.32 ms  AS8888,AS23858  新加坡, xtom.com</span><br><span class="line">1570.27 ms  AS23858  新加坡, xtom.com</span><br><span class="line">0.26 ms  AS23764  新加坡, chinatelecom.com.cn, 电信</span><br><span class="line">1.03 ms  AS23764  新加坡, chinatelecom.com.cn, 电信</span><br><span class="line">1.13 ms  *  亚太地区, chinatelecom.com.cn, 电信</span><br><span class="line">37.91 ms  *  中国, 香港, chinatelecom.com.cn, 电信</span><br><span class="line">41.82 ms  *  中国, 广东, 广州, chinatelecom.com.cn, 电信</span><br><span class="line">46.93 ms  *  中国, 广东, 深圳, chinatelecom.com.cn, 电信</span><br><span class="line">55.67 ms  AS4134  中国, 广东, 深圳, chinatelecom.com.cn, 电信</span><br><span class="line">45.18 ms  AS4134  中国, 广东, 深圳, chinatelecom.com.cn, 电信</span><br><span class="line">广州联通 210.21.196.6</span><br><span class="line">3.77 ms  AS8888,AS23858  新加坡, xtom.com</span><br><span class="line">1.94 ms  AS23858  新加坡, xtom.com</span><br><span class="line">0.20 ms  AS23764  新加坡, chinatelecom.com.cn, 电信</span><br><span class="line">1.15 ms  AS23764  新加坡, chinatelecom.com.cn, 电信</span><br><span class="line">1.15 ms  *  新加坡, chinatelecom.com.cn, 电信</span><br><span class="line">43.75 ms  *  中国, 香港, chinatelecom.com.cn, 电信</span><br><span class="line">44.82 ms  *  中国, 广东, 广州, chinatelecom.com.cn, 电信</span><br><span class="line">102.37 ms  AS4837  中国, 广东, 广州, chinaunicom.com, 联通</span><br><span class="line">103.96 ms  AS17816  中国, 广东, 广州, chinaunicom.com, 联通</span><br><span class="line">100.96 ms  AS17623  中国, 广东, 深圳, chinaunicom.com, 联通</span><br><span class="line">104.93 ms  AS17623  中国, 广东, 深圳, chinaunicom.com, 联通</span><br><span class="line">广州移动 120.196.165.24</span><br><span class="line">16.87 ms  AS8888,AS23858  新加坡, xtom.com</span><br><span class="line">7.77 ms  AS23858  新加坡, xtom.com</span><br><span class="line">0.55 ms  AS23764  新加坡, chinatelecom.com.cn, 电信</span><br><span class="line">1.01 ms  AS23764  新加坡, chinatelecom.com.cn, 电信</span><br><span class="line">1.10 ms  *  亚太地区, chinatelecom.com.cn, 电信</span><br><span class="line">36.72 ms  *  中国, 香港, chinatelecom.com.cn, 电信</span><br><span class="line">42.09 ms  *  中国, 广东, 广州, chinatelecom.com.cn, 电信</span><br><span class="line">46.61 ms  *  中国, 广东, 广州, chinatelecom.com.cn, 电信</span><br><span class="line">68.16 ms  AS9808  中国, 广东, 广州, chinamobile.com, 移动</span><br><span class="line">71.97 ms  AS9808  中国, 广东, 广州, chinamobile.com, 移动</span><br><span class="line">72.09 ms  AS9808  中国, 广东, 广州, chinamobile.com, 移动</span><br><span class="line">69.12 ms  AS56040  中国, 广东, 深圳, chinamobile.com, 移动</span><br><span class="line">--------------------自动更新测速节点列表--本脚本原创--------------------</span><br><span class="line">位置             上传速度        下载速度        延迟     丢包率</span><br><span class="line">Speedtest.net    7682.03 Mbps    7936.94 Mbps    0.77     0.0%</span><br><span class="line">新加坡           444.60 Mbps     47.26 Mbps      46.78    1.2%</span><br><span class="line">中国香港         95.74 Mbps      94.22 Mbps      35.27    0.0%</span><br><span class="line">联通WuXi         1679.91 Mbps    2874.72 Mbps    99.30    0.0%</span><br><span class="line">电信浙江         1231.84 Mbps    1789.65 Mbps    74.82    NULL</span><br><span class="line">电信合肥5G       28.91 Mbps      26.51 Mbps      70.86    0.0%</span><br><span class="line">移动Beijing      2015.23 Mbps    2081.03 Mbps    83.35    NULL</span><br><span class="line">------------------------------------------------------------------------</span><br><span class="line"> 总共花费      : 6 分 5 秒</span><br><span class="line"> 时间          : Thu Jun 20 05:49:03 PDT 2024</span><br><span class="line">------------------------------------------------------------------------</span><br></pre></td></tr></table></figure><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>瓦工</tag>
-        <tag>CNGIA</tag>
-        <tag>新加坡机房</tag>
-        <tag>亚洲鸡</tag>
       </tags>
   </entry>
   <entry>
@@ -6811,6 +6811,59 @@ Pro系列是3网CN2GIA，EB系列是3网CMIN2，而前面得LAX代表得是位�
       </tags>
   </entry>
   <entry>
+    <title>OPENWRT的samba配置</title>
+    <url>/2025/05/25/204-OPENWRT%E7%9A%84samba%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>废话不多说，直接来，OPENWRT自带的网络共享，但是有时候我用Windows连接无法连接，于是就做个教程。</p>
+<span id="more"></span>
+<h2 id="打开windows的相关功能"><a class="markdownIt-Anchor" href="#打开windows的相关功能"></a> 打开Windows的相关功能</h2>
+<p>在应用设置中，选择打开系程序和功能，选择启用货关闭Windows功能<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/204-OPENWRT%E7%9A%84samba%E9%85%8D%E7%BD%AE-2025-05-26-10-14-55.png" alt="204-OPENWRT的samba配置-2025-05-26-10-14-55" /></p>
+<p>打开SMB的功能。</p>
+<h2 id="配置openwrt"><a class="markdownIt-Anchor" href="#配置openwrt"></a> 配置OPENWRT</h2>
+<p>在共享目录中选择对应的目录，然后将权限设置为0777，允许匿名用户访问。截至在模板中配置：server min protocol = NT1<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/204-OPENWRT%E7%9A%84samba%E9%85%8D%E7%BD%AE-2025-05-26-10-16-25.png" alt="204-OPENWRT的samba配置-2025-05-26-10-16-25" /></p>
+<p>这条命令是允许SMB 1.0协议访问，或者你的界面上有允许低版本协议访问的勾选，勾选上即可。</p>
+<h2 id="终极解决方法"><a class="markdownIt-Anchor" href="#终极解决方法"></a> 终极解决方法</h2>
+<p>正常这样子，你在网络下面就可以看到对应的机器名称，而且也可以访问。如果还是不行，使用管理者打开CMD，输入以下命令后重启系统：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sc.exe config lanmanworkstation depend= bowser/mrxsmb10/nsi</span><br><span class="line">回车  </span><br><span class="line">sc.exe config mrxsmb20 start= disabled  </span><br><span class="line">回车</span><br></pre></td></tr></table></figure>
+<p>这些命令用于修改 Windows 中 SMB 相关服务的配置，具体含义如下：</p>
+<ul>
+<li>
+<p>sc.exe config lanmanworkstation depend= bowser/mrxsmb10/nsi<br />
+修改 “LanmanWorkstation” 服务（工作站服务）的依赖关系<br />
+将其依赖项设置为：bowser（浏览器服务）、mrxsmb10（SMB 1.0 协议驱动）和 nsi（网络存储接口服务）<br />
+这会移除对 mrxsmb20（SMB 2.0 协议驱动）的依赖</p>
+</li>
+<li>
+<p>sc.exe config mrxsmb20 start= disabled<br />
+将 “mrxsmb20” 服务（SMB 2.0 协议驱动）的启动类型设置为&quot;禁用&quot;<br />
+这意味着系统启动时不会加载 SMB 2.0 协议支持</p>
+</li>
+</ul>
+<p>这些命令的总体效果是：禁用 SMB 2.0/3.0 协议支持，强制系统只使用 SMB 1.0 协议进行文件共享</p>
+<p>PS：<br />
+SMB 1.0 是过时且不安全的协议，微软已不建议使用<br />
+执行这些命令可能会影响文件共享功能和网络安全<br />
+通常只有在需要兼容非常旧的系统时才这样做<br />
+命令中的等号(=)后需要有一个空格<br />
+需要管理员权限才能执行这些命令<br />
+除非有特殊兼容性需求，否则不建议禁用 SMB 2.0/3.0，因为这会降低系统安全性和性能。</p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>正常Windows是支持SMB 2/3的但是个人情况不一样，如果你的openwrt系统版本较低或者别的情况，有可能是配置中没有配置好，导致迟迟无法连接则可以用这个方案。<a href="https://learn.microsoft.com/zh-cn/windows-server/storage/file-server/troubleshoot/smbv1-not-installed-by-default-in-windows">Windows是自带SMB V2的</a>，但是不知道为啥我的无法连接上去，有可能是路由器那边版本太低或者配置错误，所以只能强制使用SMB V1了。如果你想要测试<a href="https://learn.microsoft.com/zh-cn/windows-server/storage/file-server/troubleshoot/detect-enable-and-disable-smbv1-v2-v3?tabs=server">SMB v2</a>，可以试试这个。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>OPENWRT</tag>
+        <tag>samba</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo博客NEXT主题开启数学公式</title>
     <url>/2025/04/24/203-hexo%E5%8D%9A%E5%AE%A2NEXT%E4%B8%BB%E9%A2%98%E5%BC%80%E5%90%AF%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</url>
     <content><![CDATA[<p>之前写过<a href="https://minsummer.com/2022/07/30/104-%E6%A6%82%E7%8E%87%E8%AE%BA%E5%AF%BC%E8%AE%BA-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">《概率论导论》</a>，最近翻看，发现数学公式渲染好像没有成功，于是就花了一些时间研究一下。</p>
@@ -6865,59 +6918,6 @@ tags这个参数建议为ams，可以打开自动编号的功能，方便使用�
         <tag>KaTeX</tag>
         <tag>hexo博客</tag>
         <tag>NEXT主题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OPENWRT的samba配置</title>
-    <url>/2025/05/25/204-OPENWRT%E7%9A%84samba%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>废话不多说，直接来，OPENWRT自带的网络共享，但是有时候我用Windows连接无法连接，于是就做个教程。</p>
-<span id="more"></span>
-<h2 id="打开windows的相关功能"><a class="markdownIt-Anchor" href="#打开windows的相关功能"></a> 打开Windows的相关功能</h2>
-<p>在应用设置中，选择打开系程序和功能，选择启用货关闭Windows功能<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/204-OPENWRT%E7%9A%84samba%E9%85%8D%E7%BD%AE-2025-05-26-10-14-55.png" alt="204-OPENWRT的samba配置-2025-05-26-10-14-55" /></p>
-<p>打开SMB的功能。</p>
-<h2 id="配置openwrt"><a class="markdownIt-Anchor" href="#配置openwrt"></a> 配置OPENWRT</h2>
-<p>在共享目录中选择对应的目录，然后将权限设置为0777，允许匿名用户访问。截至在模板中配置：server min protocol = NT1<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/204-OPENWRT%E7%9A%84samba%E9%85%8D%E7%BD%AE-2025-05-26-10-16-25.png" alt="204-OPENWRT的samba配置-2025-05-26-10-16-25" /></p>
-<p>这条命令是允许SMB 1.0协议访问，或者你的界面上有允许低版本协议访问的勾选，勾选上即可。</p>
-<h2 id="终极解决方法"><a class="markdownIt-Anchor" href="#终极解决方法"></a> 终极解决方法</h2>
-<p>正常这样子，你在网络下面就可以看到对应的机器名称，而且也可以访问。如果还是不行，使用管理者打开CMD，输入以下命令后重启系统：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sc.exe config lanmanworkstation depend= bowser/mrxsmb10/nsi</span><br><span class="line">回车  </span><br><span class="line">sc.exe config mrxsmb20 start= disabled  </span><br><span class="line">回车</span><br></pre></td></tr></table></figure>
-<p>这些命令用于修改 Windows 中 SMB 相关服务的配置，具体含义如下：</p>
-<ul>
-<li>
-<p>sc.exe config lanmanworkstation depend= bowser/mrxsmb10/nsi<br />
-修改 “LanmanWorkstation” 服务（工作站服务）的依赖关系<br />
-将其依赖项设置为：bowser（浏览器服务）、mrxsmb10（SMB 1.0 协议驱动）和 nsi（网络存储接口服务）<br />
-这会移除对 mrxsmb20（SMB 2.0 协议驱动）的依赖</p>
-</li>
-<li>
-<p>sc.exe config mrxsmb20 start= disabled<br />
-将 “mrxsmb20” 服务（SMB 2.0 协议驱动）的启动类型设置为&quot;禁用&quot;<br />
-这意味着系统启动时不会加载 SMB 2.0 协议支持</p>
-</li>
-</ul>
-<p>这些命令的总体效果是：禁用 SMB 2.0/3.0 协议支持，强制系统只使用 SMB 1.0 协议进行文件共享</p>
-<p>PS：<br />
-SMB 1.0 是过时且不安全的协议，微软已不建议使用<br />
-执行这些命令可能会影响文件共享功能和网络安全<br />
-通常只有在需要兼容非常旧的系统时才这样做<br />
-命令中的等号(=)后需要有一个空格<br />
-需要管理员权限才能执行这些命令<br />
-除非有特殊兼容性需求，否则不建议禁用 SMB 2.0/3.0，因为这会降低系统安全性和性能。</p>
-<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
-<p>正常Windows是支持SMB 2/3的但是个人情况不一样，如果你的openwrt系统版本较低或者别的情况，有可能是配置中没有配置好，导致迟迟无法连接则可以用这个方案。<a href="https://learn.microsoft.com/zh-cn/windows-server/storage/file-server/troubleshoot/smbv1-not-installed-by-default-in-windows">Windows是自带SMB V2的</a>，但是不知道为啥我的无法连接上去，有可能是路由器那边版本太低或者配置错误，所以只能强制使用SMB V1了。如果你想要测试<a href="https://learn.microsoft.com/zh-cn/windows-server/storage/file-server/troubleshoot/detect-enable-and-disable-smbv1-v2-v3?tabs=server">SMB v2</a>，可以试试这个。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>OPENWRT</tag>
-        <tag>samba</tag>
       </tags>
   </entry>
   <entry>
@@ -7268,49 +7268,6 @@ PS：json文件无法注释，所以如果要用，复制后删除掉注释部�
       </tags>
   </entry>
   <entry>
-    <title>硬盘位拓展指北</title>
-    <url>/2025/07/12/209-%E7%A1%AC%E7%9B%98%E4%BD%8D%E6%8B%93%E5%B1%95%E6%8C%87%E5%8C%97/</url>
-    <content><![CDATA[<p>现在的ITX版型的硬盘位都是比较少的，很多时候如果你要组装NAS则需要使用硬盘位拓展卡，而主流的解决方案就是M2拓展5盘位的。本着追根究底的节奏我就来个简单的指北。</p>
-<span id="more"></span>
-<h2 id="sata-控制器"><a class="markdownIt-Anchor" href="#sata-控制器"></a> SATA 控制器</h2>
-<p>这边需要注意，截至25年7月份，推荐的芯片：</p>
-<ol>
-<li><a href="https://www.asmedia.com.tw/products-list/8a2YQ99xzaUH2qg5/58dYQ8bxZ4UR9wG5">ASM1166</a>芯片，asmedia兼容性要好于Marvell 。这款芯片拓展6个SATA接口。所以大多数六口都是用它。还有就是ASM1164和ASM1064这两款都是4口拓展，前者是PCIE 3.0x2后者是x1。</li>
-<li><a href="https://www.jmicron.com/products/list/15">JMB585</a>，最高支持5个Sata口，他的兄弟JMB582一般用在网卡拓展上，它可以拓展2个sata口。</li>
-<li>Marvell 92XX或者91XX，需要注意的是只支持PCIe 2.0 x1/x2。具体可以看<a href="https://cn.marvell.com/products/system-solutions.html">官网</a>，但是功耗低1W。而且6G速度满足你的需求。14xx是运行在PCIE 3.0下，但是他的功耗更高唯9w。我个人是不推荐Marvell的拓展卡。<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/209-%E7%A1%AC%E7%9B%98%E4%BD%8D%E6%8B%93%E5%B1%95%E6%8C%87%E5%8C%97-2025-07-13-15-15-43.png" alt="209-硬盘位拓展指北-2025-07-13-15-15-43" /></li>
-</ol>
-<p>芯片的能力代表的是拓展硬盘的上限，现在主流的芯片就上面这三种。一般拓展3-5个口之间。除开ASM和Marvell这两款其他的你大致都可以从拓展的接口判断出对应的芯片。</p>
-<h2 id="sas-控制器"><a class="markdownIt-Anchor" href="#sas-控制器"></a> SAS 控制器</h2>
-<p>SAS控制器的情况就比较复杂了，主要是我们用的很多都是服务器淘汰下来的，但是大多数使用的都是LSI的芯片，咸鱼上标注的LSISAS2008代表的是芯片，用的这个主控。然后各家在这个芯片上做出对应的接口和的产品,类似：<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/209-%E7%A1%AC%E7%9B%98%E4%BD%8D%E6%8B%93%E5%B1%95%E6%8C%87%E5%8C%97-2025-07-13-15-28-15.png" alt="209-硬盘位拓展指北-2025-07-13-15-28-15" /></p>
-<p>从图中我们可以看出对应的缓存，PCIE插槽，后置的接口等信息。这张图给的是官方的卡，但是浪潮，IBM等厂家也根据自己的情况推出了对应芯片的直通卡，但是万变不离其宗，芯片的性能摆在这，只不过接口插槽形状等更适合目前的。<br />
-以我们常见的2008和2308两款芯片来说，都是可以拓展出8个SAS/SATA接口的，但是<a href="https://docs.broadcom.com/doc/12351997">2308支持PCIE 3.0</a>，<a href="https://docs.broadcom.com/doc/12352283">2008是PCIE 2.0</a>。<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/209-%E7%A1%AC%E7%9B%98%E4%BD%8D%E6%8B%93%E5%B1%95%E6%8C%87%E5%8C%97-2025-07-15-16-11-04.png" alt="209-硬盘位拓展指北-2025-07-15-16-11-04" /><br />
-主要注意的是，这块拓展卡的功耗都不会低，以LSI SAS 9211-4i HBA卡为例：<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/209-%E7%A1%AC%E7%9B%98%E4%BD%8D%E6%8B%93%E5%B1%95%E6%8C%87%E5%8C%97-2025-07-13-16-13-21.png" alt="209-硬盘位拓展指北-2025-07-13-16-13-21" /><br />
-从MARVELL官网上也可以查到，一块功耗大概在7W-10W之间。<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/209-%E7%A1%AC%E7%9B%98%E4%BD%8D%E6%8B%93%E5%B1%95%E6%8C%87%E5%8C%97-2025-07-13-16-01-58.png" alt="209-硬盘位拓展指北-2025-07-13-16-01-58" /></p>
-<p>如果你对功耗有要求的话，这块请注意，这是必须功耗，几乎不可避免。这块<a href="https://www.chiphell.com/thread-2686032-1-1.html">前人的经验</a>也告诉了我们。</p>
-<h2 id="sata拓展器"><a class="markdownIt-Anchor" href="#sata拓展器"></a> SATA拓展器</h2>
-<p>这个和SATA控制器不一样，它是直接用同一个sata线进行拓展，相当于说用一根线分出五根，如果你对硬盘没那么大的控制需求的话，可以使用这个，这个组件的硬盘无法组成raid阵列，因为在系统内，它是被当作一个硬盘的。</p>
-<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
-<p>如果你要用SAS控制器的话，那么直接推荐你2008或者2038任意选择一个，这两个是市场上出货量最大的产品，退下来的多。<br />
-至于你让我选择使用SAS还是SATA硬盘，这块依据你的存储量，如果你的存储盘超过3个，且每个超过6T，那么我建议你直接用sata，因为6T以上的硬盘差价不大，但是6T以下的SAS盘和SATA盘差价能到100+。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>ITX主板</tag>
-        <tag>SATA和SAS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>常见ITX版型</title>
     <url>/2025/07/11/208-%E5%B8%B8%E8%A7%81ITX%E7%89%88%E5%9E%8B%E5%93%81%E9%89%B4/</url>
     <content><![CDATA[<p>上一篇文章选型了NAS主板，这篇就来讲解一些咸鱼上常见的NAS主板版型，我选择的版型是ITX版型的主板，异形板就不包括在里面。</p>
@@ -7363,6 +7320,49 @@ HBA卡就是一个通道卡，它的作用是让计算机能够对硬盘进行�
 所以我们需要的只是一个直通卡即可，至于缓存这些的，不是太重要，我们传输没达到人家的瓶颈。</p>
 <h1 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h1>
 <p>生命不止，折腾不息，三种主板的类型算是比较常见的，无论是N100，N5095之类的，都是有3个档次的。这个是有一定的必然性，毕竟需求摆在那，我们垃圾佬的需求只不过正好和他们一样而已，并没有什么特殊的。我最后买的是稀有品质的主板，现在正在纠结的是要不要上直通卡，我的主板上是由PCIE的拓展接口，如果不上直通卡也得上个PCIE拓展SATA的，最后的结果是一样的。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>ITX主板</tag>
+        <tag>SATA和SAS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>硬盘位拓展指北</title>
+    <url>/2025/07/12/209-%E7%A1%AC%E7%9B%98%E4%BD%8D%E6%8B%93%E5%B1%95%E6%8C%87%E5%8C%97/</url>
+    <content><![CDATA[<p>现在的ITX版型的硬盘位都是比较少的，很多时候如果你要组装NAS则需要使用硬盘位拓展卡，而主流的解决方案就是M2拓展5盘位的。本着追根究底的节奏我就来个简单的指北。</p>
+<span id="more"></span>
+<h2 id="sata-控制器"><a class="markdownIt-Anchor" href="#sata-控制器"></a> SATA 控制器</h2>
+<p>这边需要注意，截至25年7月份，推荐的芯片：</p>
+<ol>
+<li><a href="https://www.asmedia.com.tw/products-list/8a2YQ99xzaUH2qg5/58dYQ8bxZ4UR9wG5">ASM1166</a>芯片，asmedia兼容性要好于Marvell 。这款芯片拓展6个SATA接口。所以大多数六口都是用它。还有就是ASM1164和ASM1064这两款都是4口拓展，前者是PCIE 3.0x2后者是x1。</li>
+<li><a href="https://www.jmicron.com/products/list/15">JMB585</a>，最高支持5个Sata口，他的兄弟JMB582一般用在网卡拓展上，它可以拓展2个sata口。</li>
+<li>Marvell 92XX或者91XX，需要注意的是只支持PCIe 2.0 x1/x2。具体可以看<a href="https://cn.marvell.com/products/system-solutions.html">官网</a>，但是功耗低1W。而且6G速度满足你的需求。14xx是运行在PCIE 3.0下，但是他的功耗更高唯9w。我个人是不推荐Marvell的拓展卡。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/209-%E7%A1%AC%E7%9B%98%E4%BD%8D%E6%8B%93%E5%B1%95%E6%8C%87%E5%8C%97-2025-07-13-15-15-43.png" alt="209-硬盘位拓展指北-2025-07-13-15-15-43" /></li>
+</ol>
+<p>芯片的能力代表的是拓展硬盘的上限，现在主流的芯片就上面这三种。一般拓展3-5个口之间。除开ASM和Marvell这两款其他的你大致都可以从拓展的接口判断出对应的芯片。</p>
+<h2 id="sas-控制器"><a class="markdownIt-Anchor" href="#sas-控制器"></a> SAS 控制器</h2>
+<p>SAS控制器的情况就比较复杂了，主要是我们用的很多都是服务器淘汰下来的，但是大多数使用的都是LSI的芯片，咸鱼上标注的LSISAS2008代表的是芯片，用的这个主控。然后各家在这个芯片上做出对应的接口和的产品,类似：<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/209-%E7%A1%AC%E7%9B%98%E4%BD%8D%E6%8B%93%E5%B1%95%E6%8C%87%E5%8C%97-2025-07-13-15-28-15.png" alt="209-硬盘位拓展指北-2025-07-13-15-28-15" /></p>
+<p>从图中我们可以看出对应的缓存，PCIE插槽，后置的接口等信息。这张图给的是官方的卡，但是浪潮，IBM等厂家也根据自己的情况推出了对应芯片的直通卡，但是万变不离其宗，芯片的性能摆在这，只不过接口插槽形状等更适合目前的。<br />
+以我们常见的2008和2308两款芯片来说，都是可以拓展出8个SAS/SATA接口的，但是<a href="https://docs.broadcom.com/doc/12351997">2308支持PCIE 3.0</a>，<a href="https://docs.broadcom.com/doc/12352283">2008是PCIE 2.0</a>。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/209-%E7%A1%AC%E7%9B%98%E4%BD%8D%E6%8B%93%E5%B1%95%E6%8C%87%E5%8C%97-2025-07-15-16-11-04.png" alt="209-硬盘位拓展指北-2025-07-15-16-11-04" /><br />
+主要注意的是，这块拓展卡的功耗都不会低，以LSI SAS 9211-4i HBA卡为例：<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/209-%E7%A1%AC%E7%9B%98%E4%BD%8D%E6%8B%93%E5%B1%95%E6%8C%87%E5%8C%97-2025-07-13-16-13-21.png" alt="209-硬盘位拓展指北-2025-07-13-16-13-21" /><br />
+从MARVELL官网上也可以查到，一块功耗大概在7W-10W之间。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/209-%E7%A1%AC%E7%9B%98%E4%BD%8D%E6%8B%93%E5%B1%95%E6%8C%87%E5%8C%97-2025-07-13-16-01-58.png" alt="209-硬盘位拓展指北-2025-07-13-16-01-58" /></p>
+<p>如果你对功耗有要求的话，这块请注意，这是必须功耗，几乎不可避免。这块<a href="https://www.chiphell.com/thread-2686032-1-1.html">前人的经验</a>也告诉了我们。</p>
+<h2 id="sata拓展器"><a class="markdownIt-Anchor" href="#sata拓展器"></a> SATA拓展器</h2>
+<p>这个和SATA控制器不一样，它是直接用同一个sata线进行拓展，相当于说用一根线分出五根，如果你对硬盘没那么大的控制需求的话，可以使用这个，这个组件的硬盘无法组成raid阵列，因为在系统内，它是被当作一个硬盘的。</p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>如果你要用SAS控制器的话，那么直接推荐你2008或者2038任意选择一个，这两个是市场上出货量最大的产品，退下来的多。<br />
+至于你让我选择使用SAS还是SATA硬盘，这块依据你的存储量，如果你的存储盘超过3个，且每个超过6T，那么我建议你直接用sata，因为6T以上的硬盘差价不大，但是6T以下的SAS盘和SATA盘差价能到100+。</p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
 
@@ -7787,6 +7787,97 @@ pix_fmt：更改像素数据的存储方式。yuv420p10le具有更高的色彩�
       </tags>
   </entry>
   <entry>
+    <title>JD青龙库优化</title>
+    <url>/2025/11/28/218-JD%E9%9D%92%E9%BE%99%E5%BA%93%E4%BC%98%E5%8C%96/</url>
+    <content><![CDATA[<h2 id="目标最大化减少青龙jd库的操作"><a class="markdownIt-Anchor" href="#目标最大化减少青龙jd库的操作"></a> 目标：最大化减少青龙JD库的操作。</h2>
+<p>现在的操作太麻烦了，要先去浏览器开发模式打开找到cookie，然后还得去后台更新，再手动执行JD相关的任务。</p>
+<span id="more"></span>
+<h3 id="问题1如何获得jd的cookie以及jd获取cookie的网址时效长短"><a class="markdownIt-Anchor" href="#问题1如何获得jd的cookie以及jd获取cookie的网址时效长短"></a> 问题1：如何获得JD的cookie以及JD获取cookie的网址时效长短？</h3>
+<p>根据 <a href="https://mtnxu.com/2024/07/07/%E9%9D%92%E9%BE%99%E8%84%9A%E6%9C%AC%E4%B9%8B%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96JD-COOKIE/index.html">青龙脚本之如何获取JD COOKIE</a>中介绍，推荐使用：m.jd.com这个网址，使用手机验证码来登录，时效会比较长，为30天左右。<br />
+获得的cookie，只需要pt_pin：用户标识（明文，如 jd_xxx）和pt_key：身份认证令牌这两个字段。</p>
+<blockquote>
+<p>环境变量格式：<br />
+pt_key=字符串;pt_pin=字符串;<br />
+注意必须有分号连结</p>
+</blockquote>
+<p>然后根据<a href="https://github.com/6dylan6/jdpro/issues/270">GitHub</a>上的分享，大家有一些只有2-3天，大概率是被风控了。我估计就是这种情况，但是我可以通过每天登录来弥补。我在chrome商店内，包括询问deepseek，千问，大致可以确定：用m.jd.com这个网址通过短信验证来获得比较长的有效期</p>
+<h3 id="痛点获取cookie的过程太长需要打开f12而且还是一大串麻烦"><a class="markdownIt-Anchor" href="#痛点获取cookie的过程太长需要打开f12而且还是一大串麻烦"></a> 痛点：获取cookie的过程太长，需要打开F12，而且还是一大串，麻烦。</h3>
+<p>解决方案 ：</p>
+<ol>
+<li>通过selenium模拟登录过程，手动输入验证码，获取到对应的cookie，然后再去青龙那边更新环境变量，再去手动执行所有京东任务。【根据以往经验，如果不马上执行，cookie很快就会失效】</li>
+<li>如果是chrome浏览器，安装<a href="https://chromewebstore.google.com/detail/%E4%B8%80%E9%94%AE%E5%A4%8D%E5%88%B6%E4%BA%AC%E4%B8%9Ccookie/nkmdjdgahhhbkkmmfmkefbgcgmognigb">一键复制京东Cookie</a>这个插件，然后电脑端登录获取cookie。</li>
+</ol>
+<h4 id="解决方案1路径"><a class="markdownIt-Anchor" href="#解决方案1路径"></a> 解决方案1路径</h4>
+<p>通过python启动的浏览器会被JD拒绝，错误代码error 5？<br />
+分析：触发了JD的反爬机制。<br />
+解决：这边使用<a href="https://www.bilibili.com/video/BV1HGMvz6EQQ?spm_id_from=333.788.videopod.sections&amp;vd_source=004ea20ecc05f6fa780db2013e61781b">B站上推荐的几个方案</a>：</p>
+<ol>
+<li>使用浏览器的debug模式，让selenium进行后续操作：
+<blockquote>
+<p>新建一个浏览器图标，并且在快捷方式内配置 --remote-debugging-port=端口号 --user-data-die=“浏览器安装路径”。然后手工打开浏览器，并且操作到一定程度后停下。selenium内使用opt.debugger_address='127.0.0.1:端口号’进行连接即可。</p>
+</blockquote>
+</li>
+<li>使用undetected_chromedriver库【这个库更新慢，和最新版本的chrome有一定的差距，大概率会被分析出来】</li>
+<li>使用<a href="https://github.com/cloud-org/stealth.min.js/">stealth.min.js</a>文件，这个好多人说有效，但是测试下来，确实访问<a href="http://bot.sannysoft.xn--com-ys9dj4ul04huqa">http://bot.sannysoft.com可以通过</a>，但是我测试下来访问JD时候还是不行，有兴趣的可以下载下来按照视频里面测试下。</li>
+</ol>
+<p>由于我使用的selenium是docker部署的，所以现在摆在我面前两个方案：</p>
+<ol>
+<li>
+<p>打开docker里面的chrome的debug模式，一直开着，然后通过界面登录后，获取对应的cookie。<br />
+这个需要每次启动时候附上–remote-debugging-port，可以考虑在桌面上新建一个快捷方式，然后每次通过vnc进入docker内部时候，点击特定图标。<br />
+而这个还有另外一个小问题：我使用的docker是官方的selenium/standalone-chrome，他给了vnc【 x11vnc】的登录端口5900，但是登录进去之后没有没有对应的chrome图标，导致我每次都得在本地发送命令启动一个浏览器。这是因为很多 VNC 配置（如 x11vnc 或 tigervnc + 自定义 ~/.vnc/xstartup）只启动了窗口管理器（如 openbox、xfwm）而没有启动完整的桌面面板（panel）或应用菜单。<br />
+or<br />
+通过docker命令执行定义环境变量时，名称以 <code> SE_BROWSER_ARGS_&lt;config_key&gt;</code> 开头，后跟配置键（键值由您决定，但请确保定义多个参数时键值唯一）。</p>
+<blockquote>
+<p>docker run -d -p 4444:4444 <br />
+-e SE_BROWSER_ARGS_INCOGNITO=–incognito <br />
+-e SE_BROWSER_ARGS_DISABLE_DSHM=–disable-dev-shm-usage <br />
+selenium/standalone-chrome:latest</p>
+</blockquote>
+<p>这块具体可以看<a href="https://github.com/SeleniumHQ/docker-selenium?tab=readme-ov-file">GitHub上的介绍</a>，如果对<a href="https://peter.sh/experiments/chromium-command-line-switches/">chromium支持的命令行感兴趣也可以研究</a>。我发现在这样继续下去，整个项目越来越不可控，我就不继续下去，我决定采用<code>解决方案2</code>来获得cookie。</p>
+</li>
+<li>
+<p>通过selenium gird获取正在运行的浏览器session ID，然后切换。<br />
+这个方案同样也需要自己手动打开一个浏览器。但是由于docker使用的vnc版本，无法手动打开，所以还是一样的问题。如果要一劳永逸的解决这个问题，我需要修改docker。</p>
+</li>
+</ol>
+<hr />
+<p>总结：解决方案1最后确实走进了一条比较艰难的路，但是这是针对我个人而言。如果你有大量登录的需求，那么这条路还是走的通的，只要能解决掉JD拒绝，错误代码error 5这个问题，你就可以大量的薅羊毛了。</p>
+<h4 id="解决方案2"><a class="markdownIt-Anchor" href="#解决方案2"></a> 解决方案2：</h4>
+<p>这个方案就我得痛点在于，我哪怕使用了chrome插件获取到了cookie，我还是需要登录青龙后台，更新环境变量，然后执行京东相关任务。这块的痛点，我写了一个python来操作，这块就需要使用到<a href="https://qinglong.ukenn.top/#/">青龙面板的API</a></p>
+<ol>
+<li>
+<p>配置一个Client ID 和Client Secret<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/218-JD%E9%9D%92%E9%BE%99%E5%BA%93%E4%BC%98%E5%8C%96-2025-11-29-15-12-06.png" alt="218-JD青龙库优化-2025-11-29-15-12-06" /></p>
+</li>
+<li>
+<p>需要注意，我们使用的是open api的接口：</p>
+<blockquote>
+<p><a href="http://localhost:5700/open/auth/token?client_id=xxxxxx&amp;client_secret=xxxxxxxx">http://localhost:5700/open/auth/token?client_id=xxxxxx&amp;client_secret=xxxxxxxx</a></p>
+</blockquote>
+<p>如果你登录的时候报的是401错误，那么大概率你用的接口有问题，我就不说我在这个上面折腾了一早上了。具体的程序可以看我的GitHub。</p>
+</li>
+</ol>
+<p>其他的倒是没什么，按照所给的文档编程即可。这块可以看<a href="https://github.com/android1122/WYqiandao/tree/master">我的GitHub </a>，我分享出来了。</p>
+<hr />
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>之前我一直对class类不明所以，不理解什么是面向对象的开发，这次练习过程，deepseek一句话忽然让我豁然开朗，将数据和操作分离，这就让我豁然开朗了。我一直不理解为啥要打包成class，现在明白了，将变量和操作分开，后续的改变或者增加某些操作可以使得数据复用，如果按照我之前的函数式编程，我会一次次的重复获取变量。<br />
+只能说一些事到了一定年纪或者经历了足够多才明白。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>青龙面板</tag>
+        <tag>JD</tag>
+        <tag>PYTHON</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>FinalShell跳板配置</title>
     <url>/2022/12/05/FinalShell%E8%B7%B3%E6%9D%BF%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h1 id="finalshell跳板配置"><a class="markdownIt-Anchor" href="#finalshell跳板配置"></a> FinalShell跳板配置</h1>
@@ -7943,6 +8034,40 @@ pix_fmt：更改像素数据的存储方式。yuv420p10le具有更高的色彩�
       </tags>
   </entry>
   <entry>
+    <title>YT300型吊秤打印</title>
+    <url>/2022/10/25/YT300%E5%9E%8B%E5%90%8A%E7%A7%A4%E6%89%93%E5%8D%B0/</url>
+    <content><![CDATA[<h3 id="yt300型吊秤打印"><a class="markdownIt-Anchor" href="#yt300型吊秤打印"></a> YT300型吊秤打印</h3>
+<ol>
+<li>
+<p>清除历史数据,点击3:累显,查看历史数据,如果有,选择0累清,然后再进入后台设置</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221023150959.png" alt="20221023150959" /></p>
+</li>
+<li>
+<p>先按向上,再按向下键,进入数据编写</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221023150938.png" alt="20221023150938" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221023151020.png" alt="20221023151020" /></p>
+</li>
+<li>
+<p>填写完成之后,取消退出</p>
+</li>
+<li>
+<p>点击8,打印题头,然后再进入3,打印清单,其中合计数可以自动打出.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221023151039.png" alt="20221023151039" /></p>
+</li>
+</ol>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>吊秤</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vscode配置明细</title>
     <url>/2022/12/02/Vscode%E9%85%8D%E7%BD%AE%E6%98%8E%E7%BB%86/</url>
     <content><![CDATA[<h1 id="vscode配置明细"><a class="markdownIt-Anchor" href="#vscode配置明细"></a> Vscode配置明细</h1>
@@ -7989,40 +8114,6 @@ pix_fmt：更改像素数据的存储方式。yuv420p10le具有更高的色彩�
         <tag>配置项</tag>
         <tag>jupyter</tag>
         <tag>好用得插件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>YT300型吊秤打印</title>
-    <url>/2022/10/25/YT300%E5%9E%8B%E5%90%8A%E7%A7%A4%E6%89%93%E5%8D%B0/</url>
-    <content><![CDATA[<h3 id="yt300型吊秤打印"><a class="markdownIt-Anchor" href="#yt300型吊秤打印"></a> YT300型吊秤打印</h3>
-<ol>
-<li>
-<p>清除历史数据,点击3:累显,查看历史数据,如果有,选择0累清,然后再进入后台设置</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221023150959.png" alt="20221023150959" /></p>
-</li>
-<li>
-<p>先按向上,再按向下键,进入数据编写</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221023150938.png" alt="20221023150938" /></p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221023151020.png" alt="20221023151020" /></p>
-</li>
-<li>
-<p>填写完成之后,取消退出</p>
-</li>
-<li>
-<p>点击8,打印题头,然后再进入3,打印清单,其中合计数可以自动打出.</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221023151039.png" alt="20221023151039" /></p>
-</li>
-</ol>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>吊秤</tag>
       </tags>
   </entry>
   <entry>
@@ -8480,6 +8571,27 @@ Y=(y_1,y_2,\cdots,y_N)^T=\begin{pmatrix}
       </tags>
   </entry>
   <entry>
+    <title>一位故人</title>
+    <url>/2022/04/30/%E4%B8%80%E4%BD%8D%E6%95%85%E4%BA%BA/</url>
+    <content><![CDATA[<p>似乎我已经不再像过去那样多话，也许是成熟，知道无论说的再多别人也没办法理解你。也许是老了，开始连话都说不动了。但是，心里的话，不说出来那就写出来吧。</p>
+<p>近日在机缘巧合之下，去见了我的表嫂吧算是。我这人对于大家族算是有些向往，但是却不喜那种等级严明的叔叔婶婶这样的叫法。更喜欢想鲁迅笔下那样：打了太公也不会出现什么打不逆的事。</p>
+<p>表嫂算是标准的农村妇女，在她那里可以看到饱经日晒的脸，粗糙的手，还有那种小农特有的计较。但是不同于你们一般印象中的农村人，表嫂虽然也也对这陌生的城市感到畏缩，但是他却带来了她特有的豪迈。表嫂是个热情的人，这个我知道，很小的时候就知道。她家永远是最热闹的，时不时的会有人在她家打麻将，这个也许跟她的婆婆有关，表婶在我印象中就是一个很开朗的人，热情好客，而且能说会道，情商超高。对于别人他总是能看透，细心的照料着他的两个孩子，有时候看着我们几个孩子在那无聊，还会主动的说：我来给你们凑一桌吧，虽然我们几个小屁孩在她眼里就是移动的atm机，但是他还是陪我们我们几毛几毛的玩，有时候我们还耍赖，不给钱，她也不恼，就是笑笑说好。表嫂这点我觉得有点和他婆婆相似，虽然后面表婶去世了，但是她家的热闹却一点都没有消退。她依旧热情好客，虽然家里少了一个主事的人，但是表嫂主动扛起了这个家，家里大大小小的事情他都一并承揽，无论是卫生还是田地，他都收拾的井井有条，时不时的还会对上门的客人一起陪着打个麻将啥的。表嫂打麻将，单纯是为了打发时间或者不扫客人的兴，对于钱他不是很感兴趣，他更喜欢客人一起乐呵乐呵的说笑。</p>
+<p>对于表婶，我也有说不尽的话，表嫂也是。他们虽然是农村，但是他们思想并不封闭，他们的想法在我们村可算是开放，无论是对孩子的学习，还是对一些习俗的限度。很多时候他都是抱着一种为了孩子好的想法来做那些事。小时候，表哥家算是我最向往的地方，因为表叔喜欢种葡萄，西瓜这些稀罕玩意儿，不像我们家，只会种花生之类的，表叔家将自己家的院子开出了一块地，种了点葡萄，西瓜，每到夏天，表婶就会热情的要我们过去，虽然不是什么品种葡萄，所以葡萄粒小，酸的多。但是我们依旧很喜欢。表婶家孩子少，就三个孙子，那时候有一个还在吃奶，所以表婶就会煮一些肉汤啊，鸽子汤，来给孩子补充营养，我还记得她家的鸟，好像除了鸽子还有几只黄鹂。表婶也爱打麻将，在那个闭塞的年代，我表哥家算是少数几家有麻将的，那时候刚学会玩麻将，就去借一副回家玩，表叔小气不肯借，怕我小孩子弄丢弄坏。所以每次都是趁表叔不在跟表婶借的，有时候表叔在，表叔不借，表婶自顾自的给了我,一边给一边还在说表叔。她家的人好像都喜欢打麻将，从小到大，她家的麻将换了好几副了。好像有一副还是因为我弄丢的。</p>
+<p>表婶年轻，走的早，走的比他妈还早，这真是让人惋惜,如果这几年在这的话，也许表哥家就不会至此吧。</p>
+<p>前几年，表哥的奶奶去世了，家里一下子就剩下两个表哥夫妇了，两个表哥常年在外打工，似乎农村已经没有必要开门了，所以，表嫂这次来到了他女儿这边。表嫂的热情也带到这边，包着妯娌的孩子吃饭，对上门的我热情问候，虽然他有时候也会刻薄的挑他人毛病，但是都是在和我们吐槽吧，也许更多的恨铁不成钢吧。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>那些年遇见的人</category>
+      </categories>
+      <tags>
+        <tag>疑是故人来</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>一切的开端</title>
     <url>/2022/04/30/%E4%B8%80%E5%88%87%E7%9A%84%E5%BC%80%E7%AB%AF/</url>
     <content><![CDATA[<p>我已经不知道这是我第几次重建了，我不知自己为何要如此的执着于这个小小的博客，也许这是我最后的净土。</p>
@@ -8506,27 +8618,6 @@ Y=(y_1,y_2,\cdots,y_N)^T=\begin{pmatrix}
       </tags>
   </entry>
   <entry>
-    <title>一位故人</title>
-    <url>/2022/04/30/%E4%B8%80%E4%BD%8D%E6%95%85%E4%BA%BA/</url>
-    <content><![CDATA[<p>似乎我已经不再像过去那样多话，也许是成熟，知道无论说的再多别人也没办法理解你。也许是老了，开始连话都说不动了。但是，心里的话，不说出来那就写出来吧。</p>
-<p>近日在机缘巧合之下，去见了我的表嫂吧算是。我这人对于大家族算是有些向往，但是却不喜那种等级严明的叔叔婶婶这样的叫法。更喜欢想鲁迅笔下那样：打了太公也不会出现什么打不逆的事。</p>
-<p>表嫂算是标准的农村妇女，在她那里可以看到饱经日晒的脸，粗糙的手，还有那种小农特有的计较。但是不同于你们一般印象中的农村人，表嫂虽然也也对这陌生的城市感到畏缩，但是他却带来了她特有的豪迈。表嫂是个热情的人，这个我知道，很小的时候就知道。她家永远是最热闹的，时不时的会有人在她家打麻将，这个也许跟她的婆婆有关，表婶在我印象中就是一个很开朗的人，热情好客，而且能说会道，情商超高。对于别人他总是能看透，细心的照料着他的两个孩子，有时候看着我们几个孩子在那无聊，还会主动的说：我来给你们凑一桌吧，虽然我们几个小屁孩在她眼里就是移动的atm机，但是他还是陪我们我们几毛几毛的玩，有时候我们还耍赖，不给钱，她也不恼，就是笑笑说好。表嫂这点我觉得有点和他婆婆相似，虽然后面表婶去世了，但是她家的热闹却一点都没有消退。她依旧热情好客，虽然家里少了一个主事的人，但是表嫂主动扛起了这个家，家里大大小小的事情他都一并承揽，无论是卫生还是田地，他都收拾的井井有条，时不时的还会对上门的客人一起陪着打个麻将啥的。表嫂打麻将，单纯是为了打发时间或者不扫客人的兴，对于钱他不是很感兴趣，他更喜欢客人一起乐呵乐呵的说笑。</p>
-<p>对于表婶，我也有说不尽的话，表嫂也是。他们虽然是农村，但是他们思想并不封闭，他们的想法在我们村可算是开放，无论是对孩子的学习，还是对一些习俗的限度。很多时候他都是抱着一种为了孩子好的想法来做那些事。小时候，表哥家算是我最向往的地方，因为表叔喜欢种葡萄，西瓜这些稀罕玩意儿，不像我们家，只会种花生之类的，表叔家将自己家的院子开出了一块地，种了点葡萄，西瓜，每到夏天，表婶就会热情的要我们过去，虽然不是什么品种葡萄，所以葡萄粒小，酸的多。但是我们依旧很喜欢。表婶家孩子少，就三个孙子，那时候有一个还在吃奶，所以表婶就会煮一些肉汤啊，鸽子汤，来给孩子补充营养，我还记得她家的鸟，好像除了鸽子还有几只黄鹂。表婶也爱打麻将，在那个闭塞的年代，我表哥家算是少数几家有麻将的，那时候刚学会玩麻将，就去借一副回家玩，表叔小气不肯借，怕我小孩子弄丢弄坏。所以每次都是趁表叔不在跟表婶借的，有时候表叔在，表叔不借，表婶自顾自的给了我,一边给一边还在说表叔。她家的人好像都喜欢打麻将，从小到大，她家的麻将换了好几副了。好像有一副还是因为我弄丢的。</p>
-<p>表婶年轻，走的早，走的比他妈还早，这真是让人惋惜,如果这几年在这的话，也许表哥家就不会至此吧。</p>
-<p>前几年，表哥的奶奶去世了，家里一下子就剩下两个表哥夫妇了，两个表哥常年在外打工，似乎农村已经没有必要开门了，所以，表嫂这次来到了他女儿这边。表嫂的热情也带到这边，包着妯娌的孩子吃饭，对上门的我热情问候，虽然他有时候也会刻薄的挑他人毛病，但是都是在和我们吐槽吧，也许更多的恨铁不成钢吧。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>那些年遇见的人</category>
-      </categories>
-      <tags>
-        <tag>疑是故人来</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>两个孩子</title>
     <url>/2022/04/30/%E4%B8%A4%E4%B8%AA%E5%AD%A9%E5%AD%90/</url>
     <content><![CDATA[<p>说说最近的遇见的两个孩子吧，一个是去年已经毕业的孩子，准备在年底结婚，目前待业在家，一个是今年6月份毕业的孩子，目前在找工作。截止该文章他已经找了一份房地产的销售工作，我并不是排斥地产销售，只是觉得，他大专学习过机械相关的知识，所以还是希望说可以找到自己学有所用的工作，但是孩子不愿意，他似乎一开始就对地产销售有着莫名的执着，于是乎最后去了地产销售，早九晚九，中间休息2个半小时，可以说一天9个半小时的工作，赚的都是辛苦钱。一开始我挺不理解的，都是销售，如果能有点专业知识的，或者说偏门一点的销售会比较好找下家，而且专业知识也可以获得一定的前进，虽然地产行业也是一样，但是毕竟是从头学起，不能说比别人学的差，但是可以说没那么快。</p>
@@ -8544,22 +8635,6 @@ Y=(y_1,y_2,\cdots,y_N)^T=\begin{pmatrix}
       <tags>
         <tag>少爷</tag>
         <tag>另一个少爷</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>二哥新时代思想——作者：闷骚</title>
-    <url>/2022/04/30/%E4%BA%8C%E5%93%A5%E6%96%B0%E6%97%B6%E4%BB%A3%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E4%BD%9C%E8%80%85%EF%BC%9A%E9%97%B7%E9%AA%9A/</url>
-    <content><![CDATA[<p>二哥新时代神逻辑思想，科学地回答了实现什么样的神逻辑，怎样神逻辑和在新时期坚持什么样的神逻辑，怎样神逻辑的重大理论和实际问题，是当前和今后一个时期必须坚持的战略指导思想，二哥的神逻辑是对中华民族五千多年来神逻辑的精华的创造性运用、创新性发展。二哥神逻辑是神逻辑的核心内容，二哥神逻辑是神逻辑的本质特征，二哥神逻辑复合发展是二哥二十六年来历经艰辛开创的伟大理论体系、伟大道路、伟大制度、伟大文化。新时期必须长期坚持并不断发展二哥神逻辑理论、道路、制度、文化，筑牢神逻辑的宝贵理论基础和实践基石。<img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603151717.png" alt="20220603151717" /></p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>那些年遇见的人</category>
-      </categories>
-      <tags>
-        <tag>二哥</tag>
       </tags>
   </entry>
   <entry>
@@ -8583,8 +8658,24 @@ Y=(y_1,y_2,\cdots,y_N)^T=\begin{pmatrix}
         <category>那些年遇见的人</category>
       </categories>
       <tags>
-        <tag>二哥</tag>
         <tag>那些年的二哥</tag>
+        <tag>二哥</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>二哥新时代思想——作者：闷骚</title>
+    <url>/2022/04/30/%E4%BA%8C%E5%93%A5%E6%96%B0%E6%97%B6%E4%BB%A3%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E4%BD%9C%E8%80%85%EF%BC%9A%E9%97%B7%E9%AA%9A/</url>
+    <content><![CDATA[<p>二哥新时代神逻辑思想，科学地回答了实现什么样的神逻辑，怎样神逻辑和在新时期坚持什么样的神逻辑，怎样神逻辑的重大理论和实际问题，是当前和今后一个时期必须坚持的战略指导思想，二哥的神逻辑是对中华民族五千多年来神逻辑的精华的创造性运用、创新性发展。二哥神逻辑是神逻辑的核心内容，二哥神逻辑是神逻辑的本质特征，二哥神逻辑复合发展是二哥二十六年来历经艰辛开创的伟大理论体系、伟大道路、伟大制度、伟大文化。新时期必须长期坚持并不断发展二哥神逻辑理论、道路、制度、文化，筑牢神逻辑的宝贵理论基础和实践基石。<img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603151717.png" alt="20220603151717" /></p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>那些年遇见的人</category>
+      </categories>
+      <tags>
+        <tag>二哥</tag>
       </tags>
   </entry>
   <entry>
@@ -8859,29 +8950,6 @@ sysctl -p
       </tags>
   </entry>
   <entry>
-    <title>关于未来</title>
-    <url>/2022/04/30/%E5%85%B3%E4%BA%8E%E6%9C%AA%E6%9D%A5/</url>
-    <content><![CDATA[<p>有时候，我忽然感到莫名的恐惧，好似背后有人袭来一般，全身紧张。然后，就陷入了一股莫名的情绪不定中。</p>
-<p>在多次经历之后，我忽然发现这一切的原因既然来自未来。</p>
-<p>有时候会想到未来的某一天自己会怎么样，然后陷入开心或者恐惧之中，最后就导致上述事件的发生。在此我不禁想知道未来到底是什么。我知道这又是一个没有答案的问题，而我接下来的内容你完全可以参考你当初的八百文。</p>
-<p>好吧，在一切的开始，我们有过去，然后现在，幻想着未来。然后我们不止一次被人拿未来欺骗我们，而我们也一次次的为了这个不存在的东西努力，希望它实现。但事实是未来不存在。你想的只是你想的，未来是未来，不要拿自己的想法然后强加在一个不存在的事物，然后对我们宣布，看这就是未来，这就是当初我对你们说的未来。</p>
-<p>姑且不论唯物观点来说，未来根本连唯心主义概念都扯不上。他不想过去一样，有事情，有物体，有痕迹。也不像现在这样，只至少有人在感受和运动，但是未来有什么，物体？感受？没有，事实是没有。所以根本不存在预言未来这么一回事。至少在目前的体系内这事情是不存在的。有人说时间如同河流，奔流不息。这体现的是时间的流动，我更觉得时间就像一只笔，写下的都成事实无法更改，只有存在，而还没写的，就什么都没，我不能说接下来的字是存在的，事实上，到目前为止是存在的，但是以后，你没办法证明以后的事。</p>
-<p>当然你会在现在说上一段文字是存在的，但是你现在证明的是过去。额，这不是一个文字游戏，也不是人类对过去未来的定义错误，事实上，人们已经发现这个世界远比我们想象的复杂，两件事情最大的相关性也就才百分三十到四十，什么意思呢，就是说你叫你手下去买包烟，也才最大百分三十的可能性导致你手下去买烟。当然你也会在事后说，因为你是他老板所以他会去买，事实上这就跟我上面说的一样，你证明的是两件有已经发生的事情，当然是百分百。</p>
-<p>当然不必悲观，事实上，我们的世界的确很复杂，但是我们人类其实很简单，在大量的统计下，我们的事物其实有个趋近区间，简单说就是你这个老板叫下属买东西，下属去买的趋势靠近这个区间，依据人类的判断来说这个概率应该是很高的，但结果是我不知道，这个十分难统计，而且数量越大，结果越正确。以上只不过是我想说不是所有你想的事情都是百分百实现的，哪怕他多符合你的想法，话说，我好像讲理一大堆墨菲定律。</p>
-<p>好了，综上来看，似乎我们的未来处于一片混沌之中，现在的事情对他的影响可以说是有限的。于是乎未来这东西根本在我们如今的体系内是不存在的，因为他无法被证明，也无法被探知，更无法掌握规律。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>未来</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>利刃出鞘</title>
     <url>/2022/04/30/%E5%88%A9%E5%88%83%E5%87%BA%E9%9E%98/</url>
     <content><![CDATA[<p>利刃出鞘，这是我最近看过的一场酣畅淋漓的侦探佳作</p>
@@ -8906,6 +8974,29 @@ sysctl -p
       </categories>
       <tags>
         <tag>影评</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于未来</title>
+    <url>/2022/04/30/%E5%85%B3%E4%BA%8E%E6%9C%AA%E6%9D%A5/</url>
+    <content><![CDATA[<p>有时候，我忽然感到莫名的恐惧，好似背后有人袭来一般，全身紧张。然后，就陷入了一股莫名的情绪不定中。</p>
+<p>在多次经历之后，我忽然发现这一切的原因既然来自未来。</p>
+<p>有时候会想到未来的某一天自己会怎么样，然后陷入开心或者恐惧之中，最后就导致上述事件的发生。在此我不禁想知道未来到底是什么。我知道这又是一个没有答案的问题，而我接下来的内容你完全可以参考你当初的八百文。</p>
+<p>好吧，在一切的开始，我们有过去，然后现在，幻想着未来。然后我们不止一次被人拿未来欺骗我们，而我们也一次次的为了这个不存在的东西努力，希望它实现。但事实是未来不存在。你想的只是你想的，未来是未来，不要拿自己的想法然后强加在一个不存在的事物，然后对我们宣布，看这就是未来，这就是当初我对你们说的未来。</p>
+<p>姑且不论唯物观点来说，未来根本连唯心主义概念都扯不上。他不想过去一样，有事情，有物体，有痕迹。也不像现在这样，只至少有人在感受和运动，但是未来有什么，物体？感受？没有，事实是没有。所以根本不存在预言未来这么一回事。至少在目前的体系内这事情是不存在的。有人说时间如同河流，奔流不息。这体现的是时间的流动，我更觉得时间就像一只笔，写下的都成事实无法更改，只有存在，而还没写的，就什么都没，我不能说接下来的字是存在的，事实上，到目前为止是存在的，但是以后，你没办法证明以后的事。</p>
+<p>当然你会在现在说上一段文字是存在的，但是你现在证明的是过去。额，这不是一个文字游戏，也不是人类对过去未来的定义错误，事实上，人们已经发现这个世界远比我们想象的复杂，两件事情最大的相关性也就才百分三十到四十，什么意思呢，就是说你叫你手下去买包烟，也才最大百分三十的可能性导致你手下去买烟。当然你也会在事后说，因为你是他老板所以他会去买，事实上这就跟我上面说的一样，你证明的是两件有已经发生的事情，当然是百分百。</p>
+<p>当然不必悲观，事实上，我们的世界的确很复杂，但是我们人类其实很简单，在大量的统计下，我们的事物其实有个趋近区间，简单说就是你这个老板叫下属买东西，下属去买的趋势靠近这个区间，依据人类的判断来说这个概率应该是很高的，但结果是我不知道，这个十分难统计，而且数量越大，结果越正确。以上只不过是我想说不是所有你想的事情都是百分百实现的，哪怕他多符合你的想法，话说，我好像讲理一大堆墨菲定律。</p>
+<p>好了，综上来看，似乎我们的未来处于一片混沌之中，现在的事情对他的影响可以说是有限的。于是乎未来这东西根本在我们如今的体系内是不存在的，因为他无法被证明，也无法被探知，更无法掌握规律。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>未来</tag>
       </tags>
   </entry>
   <entry>
@@ -9094,6 +9185,37 @@ sysctl -p
       </tags>
   </entry>
   <entry>
+    <title>女人文学</title>
+    <url>/2022/04/30/%E5%A5%B3%E4%BA%BA%E6%96%87%E5%AD%A6/</url>
+    <content><![CDATA[<p>忘掉一个女人最好的方法，就是将她变成文学。——来自不知道是谁说的，但是我就是想拿它来当开头。</p>
+<p>正如上述所言，我想忘掉她，但是我却不知从何忘起。因为她似乎就没有在我的脑海中呆过,又拿什么来忘记.</p>
+<p>搜索我的脑海，我忽然找不到关于他的一切，但是在日常中却又不经意间出现——我们曾聊过这个话题。我记得但是忘记了时间,地点,原因，但是又能回忆起一些零零碎碎的碎片-“月中发工资很不舒服，好像离月底很远也离月初很远”，或是&quot;上个公司是每月28号发当月工资&quot;。不真实的让我怀疑这一切是不是我脑补的.也许是自己精神出了问题吧。我不知道是哪里出问题，也许我永远也不会知道。</p>
+<p>如今，我只想将她变成文学，一部简单的文学。</p>
+<p>可悲的是，这里的末尾并没有要求背诵全文</p>
+<p>但是我还是记下了碎片的全部，也许是我太孤单了，无处诉说我的悲哀</p>
+<p>然而就算我们真的在一起了，也许也没法向她倾诉吧，毕竟，她和我能说到一块的前提应该是他说我听，我为他排忧解难。但是这一切已经不再有可能.</p>
+<p>自私，不过人么？不都这样，你要一个人考虑周全，推己及人，那样她会很累。但是如果只考虑自己一切都将变得完美无瑕。我们没必要和自己过不去啊</p>
+<p>正如所有的爱情一样，我初遇倾心，再见更倾心。但是由于并没有恋爱，所以没有那些始于颜值，忠于品格的美好。我这边一直忠于的是颜值。也许我是个颜控吧，但感觉更多的是对美的贪婪，就像对钱的贪婪一般。如果将其换成足够吸引我的美钞，我想我的内心也会燃起那熊熊的欲望之火。</p>
+<p>好消息是：我们每个上班日还能偶尔的见面，但却连陌生人都不如,也许这是个坏消息</p>
+<p>坏消息是：男人对于细节的种种臆想总是能让男人自己疯狂，却改变不了现实，所以我一直在疯狂的边缘。</p>
+<p>我不知道我何时失去理智，但是也许在我失去理智之后，我会过得更开心。毕竟，理性使人痛苦。也许这是个好消息,我还尚存理性.</p>
+<p>然而毕竟不是什么大富子弟，还是要养活自己，也不是什么文艺青年，还是要卑躬屈膝。作为一个平凡的人，我重复着大多数人都在做的事，也许是只有我才觉得她是如此的不平凡。但这也无所谓。就好像我对睡眠采取的态度一样</p>
+<p>我是不是也该对我的爱情采取一个这样的态度</p>
+<p>最后的结果往往就跟我的睡眠状态一样，规律，但是没有赖床，多了理性，少了感性。我很喜欢目前的睡眠，但是我好歹也是享受过10多年的睡眠之后，才满足于现在，对于爱情，我经历的还太少。所以我并不想将其归入与此。那么就保持自己追爱的初心，然后抛弃那些不现实的想法吧，让那些兔子在你脑海奔跑吧，别去追逐。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>那些年遇见的人</category>
+      </categories>
+      <tags>
+        <tag>女人</tag>
+        <tag>那只兔子</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>好像我一直在期待</title>
     <url>/2022/04/30/%E5%A5%BD%E5%83%8F%E6%88%91%E4%B8%80%E7%9B%B4%E5%9C%A8%E6%9C%9F%E5%BE%85/</url>
     <content><![CDATA[<p>好像我一直在期待</p>
@@ -9128,37 +9250,6 @@ sysctl -p
       </categories>
       <tags>
         <tag>内省</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>女人文学</title>
-    <url>/2022/04/30/%E5%A5%B3%E4%BA%BA%E6%96%87%E5%AD%A6/</url>
-    <content><![CDATA[<p>忘掉一个女人最好的方法，就是将她变成文学。——来自不知道是谁说的，但是我就是想拿它来当开头。</p>
-<p>正如上述所言，我想忘掉她，但是我却不知从何忘起。因为她似乎就没有在我的脑海中呆过,又拿什么来忘记.</p>
-<p>搜索我的脑海，我忽然找不到关于他的一切，但是在日常中却又不经意间出现——我们曾聊过这个话题。我记得但是忘记了时间,地点,原因，但是又能回忆起一些零零碎碎的碎片-“月中发工资很不舒服，好像离月底很远也离月初很远”，或是&quot;上个公司是每月28号发当月工资&quot;。不真实的让我怀疑这一切是不是我脑补的.也许是自己精神出了问题吧。我不知道是哪里出问题，也许我永远也不会知道。</p>
-<p>如今，我只想将她变成文学，一部简单的文学。</p>
-<p>可悲的是，这里的末尾并没有要求背诵全文</p>
-<p>但是我还是记下了碎片的全部，也许是我太孤单了，无处诉说我的悲哀</p>
-<p>然而就算我们真的在一起了，也许也没法向她倾诉吧，毕竟，她和我能说到一块的前提应该是他说我听，我为他排忧解难。但是这一切已经不再有可能.</p>
-<p>自私，不过人么？不都这样，你要一个人考虑周全，推己及人，那样她会很累。但是如果只考虑自己一切都将变得完美无瑕。我们没必要和自己过不去啊</p>
-<p>正如所有的爱情一样，我初遇倾心，再见更倾心。但是由于并没有恋爱，所以没有那些始于颜值，忠于品格的美好。我这边一直忠于的是颜值。也许我是个颜控吧，但感觉更多的是对美的贪婪，就像对钱的贪婪一般。如果将其换成足够吸引我的美钞，我想我的内心也会燃起那熊熊的欲望之火。</p>
-<p>好消息是：我们每个上班日还能偶尔的见面，但却连陌生人都不如,也许这是个坏消息</p>
-<p>坏消息是：男人对于细节的种种臆想总是能让男人自己疯狂，却改变不了现实，所以我一直在疯狂的边缘。</p>
-<p>我不知道我何时失去理智，但是也许在我失去理智之后，我会过得更开心。毕竟，理性使人痛苦。也许这是个好消息,我还尚存理性.</p>
-<p>然而毕竟不是什么大富子弟，还是要养活自己，也不是什么文艺青年，还是要卑躬屈膝。作为一个平凡的人，我重复着大多数人都在做的事，也许是只有我才觉得她是如此的不平凡。但这也无所谓。就好像我对睡眠采取的态度一样</p>
-<p>我是不是也该对我的爱情采取一个这样的态度</p>
-<p>最后的结果往往就跟我的睡眠状态一样，规律，但是没有赖床，多了理性，少了感性。我很喜欢目前的睡眠，但是我好歹也是享受过10多年的睡眠之后，才满足于现在，对于爱情，我经历的还太少。所以我并不想将其归入与此。那么就保持自己追爱的初心，然后抛弃那些不现实的想法吧，让那些兔子在你脑海奔跑吧，别去追逐。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>那些年遇见的人</category>
-      </categories>
-      <tags>
-        <tag>女人</tag>
-        <tag>那只兔子</tag>
       </tags>
   </entry>
   <entry>
@@ -9856,27 +9947,6 @@ sysctl -p
       </tags>
   </entry>
   <entry>
-    <title>或许农业就是最大的骗局</title>
-    <url>/2022/05/19/%E6%88%96%E8%AE%B8%E5%86%9C%E4%B8%9A%E5%B0%B1%E6%98%AF%E6%9C%80%E5%A4%A7%E7%9A%84%E9%AA%97%E5%B1%80/</url>
-    <content><![CDATA[<p>我必须承认的《人类简史》相较于《枪炮，病菌和钢铁》是更适合我的一本人类史读物，它并不侧重于在历史遗迹的发现。它相反，指出了了解那个时代最准确的人，只有那个时代的人。我们最多只是能从中发现结果，但是事情的起因是什么，并不是简单的因果律能推断出来的。也没有必然性。而这点《枪炮，病菌和钢铁》则通篇充斥着因果律和必然性。诚然，从遗迹或者事情的结果来看。他会从海岛大小推断出居民的的好斗程度，因为地域小，无需太多的战争。它从一两个例子告诉我们这个故事，但是它往往也能拿出类似环境下的反例。整本书似乎在告诉你什么，但是又没有告诉。</p>
-<p>这点，《人类简史》做出了一个解释：相类似的海岛大小，但是对应的环境气候不同，就算气候相同，或者是领导人的想法不同，导致最后一个不一样的结果。确实，我们很多时候考虑一件事往往缺少考虑人在其中的关键作用。一件事情往往掺杂着天时地利人和的多重因素。就好比为啥智人最后会成为这个世界的赢家一样。作者描绘了那个年代拥有众多的人种，类似我们现在的人类，但是最后存活下来的只有智人。作者提出了一个新的概念：想象的现实。一个并不存在的现实，但是在所有人的想象下存在，是一个人群中的共识。这个武器的存在使得智人团结起来，为了一个不存在的共同想象进行杀戮。人类最多管理的人数上限在150人，也就是说在没有共同规则指导下，一个部落最大的人数就只有151人，再多的话，就无法控制，就会又年轻的人另立山头，成立另外一个部落。但是如果在一个共同的祖先，或者祭祀的对象下，他们虽然没有在一个部落，但是却可以以此作为团结的象征，融合在一起，一起开疆扩土。诚然，现在的你对这些概念很熟悉，毕竟我们已经在这个模式下生活好多年，我们遵守那不存在的《宪法》，也同意那并没有实体的《规则》。但是恰恰正是这个习以为常的概念，让我们的祖先在7万年前合作杀猛犸，与别的人种搏斗。这在当时是不可想象的，至于为啥会是智人呢，这点作者并没有解释，或者说无法解释。</p>
-<p>从上可以看出，这本书的侧重点并不是人类历史故事。而是更多的深思。包括人类从采集社会到农业社会，实际的劳动时长更加长，生活环境也没有更多的改善，对身体的负担也更大，作者赤裸裸的宣称：农业社会是人类史上最大的骗局。它并没有实现社会进步，反而让农民的身体承受更多的痛苦，而目的却是养活那些奴役他们的官员。作为粮食的生产者，他们却没有享受到高等的地位，还要纳税，上贡给那些不劳而获之人，仅仅是他们建立了一个基于想象现实而建立起来的社会制度。如果我们抛开现实的影响，这样看来，确实是一件本末倒置的事情。因为有了农业，人类需要定居，一旦定居，那么就需要土地，而土地正是古代农民痛苦的根源，土地的所有权并没有任何的自然法则，但是我们仅仅依据一个想象的现实，将土地归属到了某一个人身上，就好像哥伦布宣布美洲归西班牙国王所有。先来者制定了规则，占据了天时，而后来的人就只能在这个规则下，默默的耕耘。农业就成为了这一切的源头。诚然，农业革命带来了更多的人口，更低的初生儿死亡率。或许，每个物种都有自己的一个出生率死亡率，但是我们改变了他，更多的人口带来的是更多的土地需求，更多的农业，而更多的农业则又会带来更多的人口，这算是智人打破自然法则的第一步。智人开始不再按照预设的生存率生存，这样的结果就是现在地球上已经有70亿人口。</p>
-<p>后面还有很多，包括对科技的一些思考，对快乐的定义，万物皆追求其本质，在一切都探究其本质之后，我们就会发现，其实，很多东西，都并不是一件简单的因果律，万事都没有必然性。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220519204015.png" alt="20220519204015" /></p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>人类简史</tag>
-        <tag>农业革命</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>搬瓦工</title>
     <url>/2023/04/20/%E6%90%AC%E7%93%A6%E5%B7%A5/</url>
     <content><![CDATA[<h1 id="搬瓦工"><a class="markdownIt-Anchor" href="#搬瓦工"></a> 搬瓦工</h1>
@@ -9954,6 +10024,27 @@ sysctl -p
       <tags>
         <tag>搬瓦工</tag>
         <tag>vps</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>或许农业就是最大的骗局</title>
+    <url>/2022/05/19/%E6%88%96%E8%AE%B8%E5%86%9C%E4%B8%9A%E5%B0%B1%E6%98%AF%E6%9C%80%E5%A4%A7%E7%9A%84%E9%AA%97%E5%B1%80/</url>
+    <content><![CDATA[<p>我必须承认的《人类简史》相较于《枪炮，病菌和钢铁》是更适合我的一本人类史读物，它并不侧重于在历史遗迹的发现。它相反，指出了了解那个时代最准确的人，只有那个时代的人。我们最多只是能从中发现结果，但是事情的起因是什么，并不是简单的因果律能推断出来的。也没有必然性。而这点《枪炮，病菌和钢铁》则通篇充斥着因果律和必然性。诚然，从遗迹或者事情的结果来看。他会从海岛大小推断出居民的的好斗程度，因为地域小，无需太多的战争。它从一两个例子告诉我们这个故事，但是它往往也能拿出类似环境下的反例。整本书似乎在告诉你什么，但是又没有告诉。</p>
+<p>这点，《人类简史》做出了一个解释：相类似的海岛大小，但是对应的环境气候不同，就算气候相同，或者是领导人的想法不同，导致最后一个不一样的结果。确实，我们很多时候考虑一件事往往缺少考虑人在其中的关键作用。一件事情往往掺杂着天时地利人和的多重因素。就好比为啥智人最后会成为这个世界的赢家一样。作者描绘了那个年代拥有众多的人种，类似我们现在的人类，但是最后存活下来的只有智人。作者提出了一个新的概念：想象的现实。一个并不存在的现实，但是在所有人的想象下存在，是一个人群中的共识。这个武器的存在使得智人团结起来，为了一个不存在的共同想象进行杀戮。人类最多管理的人数上限在150人，也就是说在没有共同规则指导下，一个部落最大的人数就只有151人，再多的话，就无法控制，就会又年轻的人另立山头，成立另外一个部落。但是如果在一个共同的祖先，或者祭祀的对象下，他们虽然没有在一个部落，但是却可以以此作为团结的象征，融合在一起，一起开疆扩土。诚然，现在的你对这些概念很熟悉，毕竟我们已经在这个模式下生活好多年，我们遵守那不存在的《宪法》，也同意那并没有实体的《规则》。但是恰恰正是这个习以为常的概念，让我们的祖先在7万年前合作杀猛犸，与别的人种搏斗。这在当时是不可想象的，至于为啥会是智人呢，这点作者并没有解释，或者说无法解释。</p>
+<p>从上可以看出，这本书的侧重点并不是人类历史故事。而是更多的深思。包括人类从采集社会到农业社会，实际的劳动时长更加长，生活环境也没有更多的改善，对身体的负担也更大，作者赤裸裸的宣称：农业社会是人类史上最大的骗局。它并没有实现社会进步，反而让农民的身体承受更多的痛苦，而目的却是养活那些奴役他们的官员。作为粮食的生产者，他们却没有享受到高等的地位，还要纳税，上贡给那些不劳而获之人，仅仅是他们建立了一个基于想象现实而建立起来的社会制度。如果我们抛开现实的影响，这样看来，确实是一件本末倒置的事情。因为有了农业，人类需要定居，一旦定居，那么就需要土地，而土地正是古代农民痛苦的根源，土地的所有权并没有任何的自然法则，但是我们仅仅依据一个想象的现实，将土地归属到了某一个人身上，就好像哥伦布宣布美洲归西班牙国王所有。先来者制定了规则，占据了天时，而后来的人就只能在这个规则下，默默的耕耘。农业就成为了这一切的源头。诚然，农业革命带来了更多的人口，更低的初生儿死亡率。或许，每个物种都有自己的一个出生率死亡率，但是我们改变了他，更多的人口带来的是更多的土地需求，更多的农业，而更多的农业则又会带来更多的人口，这算是智人打破自然法则的第一步。智人开始不再按照预设的生存率生存，这样的结果就是现在地球上已经有70亿人口。</p>
+<p>后面还有很多，包括对科技的一些思考，对快乐的定义，万物皆追求其本质，在一切都探究其本质之后，我们就会发现，其实，很多东西，都并不是一件简单的因果律，万事都没有必然性。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220519204015.png" alt="20220519204015" /></p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>人类简史</tag>
+        <tag>农业革命</tag>
       </tags>
   </entry>
   <entry>
@@ -10120,6 +10211,72 @@ sysctl -p
       </tags>
   </entry>
   <entry>
+    <title>服务器线路测试</title>
+    <url>/2022/06/08/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BA%BF%E8%B7%AF%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<p>贴一下服务器配置：</p>
+<ul>
+<li>
+<p>cpu：1核</p>
+</li>
+<li>
+<p>内存：512M</p>
+</li>
+<li>
+<p>硬盘：10G</p>
+</li>
+<li>
+<p>带宽：1G</p>
+</li>
+<li>
+<p>流量：1000G/月</p>
+</li>
+</ul>
+<p>这个是搬瓦工的512M的洛杉矶CN2线路，访问国内速度很快，电信联通尤其好，移动差劲。</p>
+<p>最近需要更换宽带，正好借此机会，研究一下：我的服务器对为啥对移动这么排斥，联通和电信哪个更好？根据后台的Billing，我可以看出我得服务器，在洛杉矶，机房代号为：USCA_2。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220608110005.png" alt="20220608110005" /></p>
+<p>我查了下这个机房：</p>
+<blockquote>
+<p>搬瓦工的洛杉矶DC2机房来自QN机房(全称<a href="https://www.quadranet.com/cn/">QuadraNet机房</a>)，目前已接入CN2 GT直连线路，机房CN2直连线路由QN机房官方部署。</p>
+</blockquote>
+<p>这个机房是有自己得服务器业务的，包括托管别人的服务器，搬瓦工就相当于把这个服务器放在人家那托管，至于速度啥的由这个机房自己控制。这个机房是有自己的官网的，有兴趣可以做些测试。网站也提供一些测试IP。</p>
+<p>说完机房我们来说线路，我们经常听到CN2 GIA,CN2 GT线路之类的，简单说这两条线路都是<strong>中国电信</strong>的明星产品，GIA线路负载小，贵，所以快。GT性价比高，所以人多堵塞。但是这一切都是电信的线路。</p>
+<p>搬瓦工后面自己发行了一个CN2 GIA线路的自主机房，这时候那些卖机子的就开始狂吹。其实完全没有必要，只要是任何中国直连的线路都有不错的速度。我们只需要关注对应机房是否对中国线路有没有进行优化就可以。</p>
+<p>由于我的服务器在QuadraNet机房，归属于QuadraNet这个公司的，所以我不再使用自己的服务器IP进行测试，直接用他们<a href="https://www.quadranet.com/los-angeles-datacenter">洛杉矶机房提供的测试IP</a>和文件进行测试：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220608112920.png" alt="20220608112920" /></p>
+<p>这边官方贴心的提供了亚洲优化的IP,只用<a href="https://tools.ipip.net/traceroute.php">TraceRoute查询</a>查询对应IP在对应线路下的跳转，使用TCP进行查询，最大化模拟访问。</p>
+<p>| 访问IP | 节点数 |运营商|跨洋线路|落地表现|</p>
+<p>| -| – |-----|—|-|</p>
+<p>| 69.12.66.26-未优化 | 15 |电信|AS4134-163网络|到美国加利福尼亚，美国国内跳转5次，从cogentco跳转到QuadraNet</p>
+<p>|69.12.66.26-未优化|18|移动|AS9808跳AS58453|到美国，国内跳转8次，从cogentco跳转到QuadraNet</p>
+<p>|69.12.66.26-未优化|12|联通|AS4837-联通169网络|到美国，国内跳转3次，从cust.net跳转到QuadraNet</p>
+<p>| 204.152.218.25-优化IP | 12 |电信|AS4134-163网络|到美国直达QuadraNet</p>
+<p>|204.152.218.25-优化IP|16 |移动|AS9808跳AS58453|到美国后直达QuadraNet数据中心</p>
+<p>|204.152.218.25-优化IP |11|联通|AS4837-联通169网络|到美国后到美国联通公司再直达QuadraNet</p>
+<p>一通测试下来之后发现，这个机房的优化IP有效果，都可以在到达美国之后，直接跳转到机房，这个很重要。至于国内内部跳问题这个无解，就像移动老是喜欢跳香港（原因后面解释），再出国，联通喜欢走广东出国之类的。其实国内的内部跳转很快的都是1ms这些的，所以瓶颈在于跨洋线路和到美国之后的跳转，这些都是150+ms，跨洋线路的话，我这次测试没有遇见到的CN2 GT路线（AS4809）,三大运营商用的都是自己的主要干线，如果高峰期这条线路堵塞卡顿也是正常的，<strong>特别吐槽下移动：AS9808为移动境内的骨干网，未设与国际ISP Peer，故所有出境流量通过AS58453（CMI）与外网互联，所以好好的就是速度比联通慢</strong>。</p>
+<p>接下来测试自己VPS主机IP：</p>
+<p>|运营商|节点数|跨洋线路|表现|</p>
+<p>|-|-|-|-|</p>
+<p>|电信|13|AS4134-163网络|到美国后直达</p>
+<p>|联通|13|AS4837-联通169网络|到美国后直达</p>
+<p>|移动|16|AS9808跳AS58453|到美国后直达</p>
+<p>综合测试下来，我的服务器IP也享受到了QuadraNet的机房优化效果，至于电信的CN2线路，可以确定的是QuadraNet机房有接入这条线路，但是实际能不能用到要由机房决定。对几条骨干线路感兴趣的话，可以参考<a href="https://zhuanlan.zhihu.com/p/451683996">国内几大骨干网介绍</a>和<a href="https://zhuanlan.zhihu.com/p/64467370">国内主流网络运营商国际连接线路简谈</a>。</p>
+<p>所以购买服务器的时候，只要是对国内线路有优化的服务器就可以，没必要追求CN2线路，那是电信的线路，除非是专线：即所有的进出都走且只能走这条线路，否则一般你你运营商都会选择走自己的骨干网络。而如果你是专线的话，又会涉及到跨运营商访问的问题，除非你手机，宽带都是电信，还有别人访问你的网络也都是电信。但是这往往是不可能的。而跨运营商访问话，需要看你的城市是否有<strong>国家级互联网骨干直联点</strong>。否则你的路由也得经由这个城市再转发到电信线路去。所以，说实话，直接普通的<a href="https://bandwagonhost.com/aff.php?aff=20859">CN2线路</a>就能满足大部分人的大多数需求。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>搬瓦工</tag>
+        <tag>线路</tag>
+        <tag>CN2线路</tag>
+        <tag>TraceRoute</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>服务器docker化管理</title>
     <url>/2022/12/02/%E6%9C%8D%E5%8A%A1%E5%99%A8docker%E5%8C%96%E7%AE%A1%E7%90%86/</url>
     <content><![CDATA[<h1 id="服务器docker化管理"><a class="markdownIt-Anchor" href="#服务器docker化管理"></a> 服务器docker化管理</h1>
@@ -10251,72 +10408,6 @@ sysctl -p
         <tag>服务器</tag>
         <tag>v2ray</tag>
         <tag>caddyv2</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>服务器线路测试</title>
-    <url>/2022/06/08/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BA%BF%E8%B7%AF%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<p>贴一下服务器配置：</p>
-<ul>
-<li>
-<p>cpu：1核</p>
-</li>
-<li>
-<p>内存：512M</p>
-</li>
-<li>
-<p>硬盘：10G</p>
-</li>
-<li>
-<p>带宽：1G</p>
-</li>
-<li>
-<p>流量：1000G/月</p>
-</li>
-</ul>
-<p>这个是搬瓦工的512M的洛杉矶CN2线路，访问国内速度很快，电信联通尤其好，移动差劲。</p>
-<p>最近需要更换宽带，正好借此机会，研究一下：我的服务器对为啥对移动这么排斥，联通和电信哪个更好？根据后台的Billing，我可以看出我得服务器，在洛杉矶，机房代号为：USCA_2。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220608110005.png" alt="20220608110005" /></p>
-<p>我查了下这个机房：</p>
-<blockquote>
-<p>搬瓦工的洛杉矶DC2机房来自QN机房(全称<a href="https://www.quadranet.com/cn/">QuadraNet机房</a>)，目前已接入CN2 GT直连线路，机房CN2直连线路由QN机房官方部署。</p>
-</blockquote>
-<p>这个机房是有自己得服务器业务的，包括托管别人的服务器，搬瓦工就相当于把这个服务器放在人家那托管，至于速度啥的由这个机房自己控制。这个机房是有自己的官网的，有兴趣可以做些测试。网站也提供一些测试IP。</p>
-<p>说完机房我们来说线路，我们经常听到CN2 GIA,CN2 GT线路之类的，简单说这两条线路都是<strong>中国电信</strong>的明星产品，GIA线路负载小，贵，所以快。GT性价比高，所以人多堵塞。但是这一切都是电信的线路。</p>
-<p>搬瓦工后面自己发行了一个CN2 GIA线路的自主机房，这时候那些卖机子的就开始狂吹。其实完全没有必要，只要是任何中国直连的线路都有不错的速度。我们只需要关注对应机房是否对中国线路有没有进行优化就可以。</p>
-<p>由于我的服务器在QuadraNet机房，归属于QuadraNet这个公司的，所以我不再使用自己的服务器IP进行测试，直接用他们<a href="https://www.quadranet.com/los-angeles-datacenter">洛杉矶机房提供的测试IP</a>和文件进行测试：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220608112920.png" alt="20220608112920" /></p>
-<p>这边官方贴心的提供了亚洲优化的IP,只用<a href="https://tools.ipip.net/traceroute.php">TraceRoute查询</a>查询对应IP在对应线路下的跳转，使用TCP进行查询，最大化模拟访问。</p>
-<p>| 访问IP | 节点数 |运营商|跨洋线路|落地表现|</p>
-<p>| -| – |-----|—|-|</p>
-<p>| 69.12.66.26-未优化 | 15 |电信|AS4134-163网络|到美国加利福尼亚，美国国内跳转5次，从cogentco跳转到QuadraNet</p>
-<p>|69.12.66.26-未优化|18|移动|AS9808跳AS58453|到美国，国内跳转8次，从cogentco跳转到QuadraNet</p>
-<p>|69.12.66.26-未优化|12|联通|AS4837-联通169网络|到美国，国内跳转3次，从cust.net跳转到QuadraNet</p>
-<p>| 204.152.218.25-优化IP | 12 |电信|AS4134-163网络|到美国直达QuadraNet</p>
-<p>|204.152.218.25-优化IP|16 |移动|AS9808跳AS58453|到美国后直达QuadraNet数据中心</p>
-<p>|204.152.218.25-优化IP |11|联通|AS4837-联通169网络|到美国后到美国联通公司再直达QuadraNet</p>
-<p>一通测试下来之后发现，这个机房的优化IP有效果，都可以在到达美国之后，直接跳转到机房，这个很重要。至于国内内部跳问题这个无解，就像移动老是喜欢跳香港（原因后面解释），再出国，联通喜欢走广东出国之类的。其实国内的内部跳转很快的都是1ms这些的，所以瓶颈在于跨洋线路和到美国之后的跳转，这些都是150+ms，跨洋线路的话，我这次测试没有遇见到的CN2 GT路线（AS4809）,三大运营商用的都是自己的主要干线，如果高峰期这条线路堵塞卡顿也是正常的，<strong>特别吐槽下移动：AS9808为移动境内的骨干网，未设与国际ISP Peer，故所有出境流量通过AS58453（CMI）与外网互联，所以好好的就是速度比联通慢</strong>。</p>
-<p>接下来测试自己VPS主机IP：</p>
-<p>|运营商|节点数|跨洋线路|表现|</p>
-<p>|-|-|-|-|</p>
-<p>|电信|13|AS4134-163网络|到美国后直达</p>
-<p>|联通|13|AS4837-联通169网络|到美国后直达</p>
-<p>|移动|16|AS9808跳AS58453|到美国后直达</p>
-<p>综合测试下来，我的服务器IP也享受到了QuadraNet的机房优化效果，至于电信的CN2线路，可以确定的是QuadraNet机房有接入这条线路，但是实际能不能用到要由机房决定。对几条骨干线路感兴趣的话，可以参考<a href="https://zhuanlan.zhihu.com/p/451683996">国内几大骨干网介绍</a>和<a href="https://zhuanlan.zhihu.com/p/64467370">国内主流网络运营商国际连接线路简谈</a>。</p>
-<p>所以购买服务器的时候，只要是对国内线路有优化的服务器就可以，没必要追求CN2线路，那是电信的线路，除非是专线：即所有的进出都走且只能走这条线路，否则一般你你运营商都会选择走自己的骨干网络。而如果你是专线的话，又会涉及到跨运营商访问的问题，除非你手机，宽带都是电信，还有别人访问你的网络也都是电信。但是这往往是不可能的。而跨运营商访问话，需要看你的城市是否有<strong>国家级互联网骨干直联点</strong>。否则你的路由也得经由这个城市再转发到电信线路去。所以，说实话，直接普通的<a href="https://bandwagonhost.com/aff.php?aff=20859">CN2线路</a>就能满足大部分人的大多数需求。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>搬瓦工</tag>
-        <tag>线路</tag>
-        <tag>CN2线路</tag>
-        <tag>TraceRoute</tag>
       </tags>
   </entry>
   <entry>
@@ -10935,28 +11026,6 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
       </tags>
   </entry>
   <entry>
-    <title>活着</title>
-    <url>/2022/04/30/%E6%B4%BB%E7%9D%80/</url>
-    <content><![CDATA[<p>回想小时候，我好像无时无刻不在期待着假期，因为假期意味着可以开心的玩耍，可以一整天的看电视，到了现在，我忽然发现我我好像没那么期待着了，至少，我没办法像小时候那样，一整天都能给自己安排的满满的，更多的时候是无聊的在看电视，也许是我对电视的喜爱程度不如从前，但是我心中其实还有点想去干活，至少有事有目的，看来，漫无目的真的很可怕。</p>
-<p>不过好像明天就要上班了，希望我不会在明天写一篇说自己想要休息，额，翻看前面好像已经写了吧</p>
-<p>额，算了，这就是个循环。</p>
-<p>似乎我一直就是这么不安定,忙的时候想闲,闲的时候要忙.我只是对目前生活的不满,我不想碌碌无为的过完这一生,忙的时候干的也是毫无意义的工作,而闲的时候连无意义的工作都没有了.我在寻找着自己的人生目标,或者自己的活法.我父母的活法已经对我没有任何的参考性,我没办法像他们一样放羊,娶媳妇,生娃,放羊.我想从自己的生活找寻更多的东西:无论是悲伤还是欢乐,甚至是悔不当初.我会好好的感受那每一份情绪,让自己慢慢的感受生活.生活正是自己的当下,正是自己现在敲打的键盘.没有什么奇思妙想,没有什么峰回路转,有的只是当下的平静和未来的希望.</p>
-<p>我多想像二哥一样,给自己一个目标:一套大港的房子.至少它能驱使我继续前进.如果我想前进的话.但是我并不想,我不懂为何必须要在一座城市扎根,为何一定要有一套属于自己的房子.他们总是说:你还没长大,等你长大了有孩子了你就知道了.是的,在他们看来我没有长大,我没有孩子,没有学区的压力,没有家庭的束缚.我有的仅仅是自己,但着不就是我们出生时候的模样么?我保持至今,而你们都变了.人的长河最终的尽头是什么我不知道,也许他们的结合正是人应该追求的,而我只是一个跳出轨迹的坏小孩.</p>
-<p>那么就生于当下活于当下,在我被推回正轨之前,享受当下吧</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>书评</tag>
-        <tag>活着</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>流水账</title>
     <url>/2022/04/30/%E6%B5%81%E6%B0%B4%E8%B4%A6/</url>
     <content><![CDATA[<p>好久没来写了</p>
@@ -10982,6 +11051,28 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
       </categories>
       <tags>
         <tag>流水账</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>活着</title>
+    <url>/2022/04/30/%E6%B4%BB%E7%9D%80/</url>
+    <content><![CDATA[<p>回想小时候，我好像无时无刻不在期待着假期，因为假期意味着可以开心的玩耍，可以一整天的看电视，到了现在，我忽然发现我我好像没那么期待着了，至少，我没办法像小时候那样，一整天都能给自己安排的满满的，更多的时候是无聊的在看电视，也许是我对电视的喜爱程度不如从前，但是我心中其实还有点想去干活，至少有事有目的，看来，漫无目的真的很可怕。</p>
+<p>不过好像明天就要上班了，希望我不会在明天写一篇说自己想要休息，额，翻看前面好像已经写了吧</p>
+<p>额，算了，这就是个循环。</p>
+<p>似乎我一直就是这么不安定,忙的时候想闲,闲的时候要忙.我只是对目前生活的不满,我不想碌碌无为的过完这一生,忙的时候干的也是毫无意义的工作,而闲的时候连无意义的工作都没有了.我在寻找着自己的人生目标,或者自己的活法.我父母的活法已经对我没有任何的参考性,我没办法像他们一样放羊,娶媳妇,生娃,放羊.我想从自己的生活找寻更多的东西:无论是悲伤还是欢乐,甚至是悔不当初.我会好好的感受那每一份情绪,让自己慢慢的感受生活.生活正是自己的当下,正是自己现在敲打的键盘.没有什么奇思妙想,没有什么峰回路转,有的只是当下的平静和未来的希望.</p>
+<p>我多想像二哥一样,给自己一个目标:一套大港的房子.至少它能驱使我继续前进.如果我想前进的话.但是我并不想,我不懂为何必须要在一座城市扎根,为何一定要有一套属于自己的房子.他们总是说:你还没长大,等你长大了有孩子了你就知道了.是的,在他们看来我没有长大,我没有孩子,没有学区的压力,没有家庭的束缚.我有的仅仅是自己,但着不就是我们出生时候的模样么?我保持至今,而你们都变了.人的长河最终的尽头是什么我不知道,也许他们的结合正是人应该追求的,而我只是一个跳出轨迹的坏小孩.</p>
+<p>那么就生于当下活于当下,在我被推回正轨之前,享受当下吧</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>书评</tag>
+        <tag>活着</tag>
       </tags>
   </entry>
   <entry>
@@ -11031,43 +11122,6 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
       </tags>
   </entry>
   <entry>
-    <title>码农</title>
-    <url>/2022/04/30/%E7%A0%81%E5%86%9C/</url>
-    <content><![CDATA[<p>额，最近好像来的比较频繁，似乎跟上次一样，也是一阵时间内多次到来</p>
-<p>然后，取材一段时间，然后又过来了</p>
-<p>今天好像找到了一个一闪而过的思路，但是可惜，没抓住，然后现在我抱着空空的脑袋过来写这么一篇。</p>
-<p>额，仔细想想，我的生活平凡而又无趣，确切的是我的工作，作为一个维护人员，尤其是计算机维护人员，在系统没出问题前，我们就是放在储物间来织蜘蛛网的，尤其作为计算机人员，看着写代码的那么忙碌，在旁边看着，内心不禁想到：都是人，差距怎么这么大。</p>
-<p>有那么一瞬间，我在想是哪个傻逼非得分工合作。当然必有道理。我不想深究，只是一个任性的想法。</p>
-<p>当然，看到人类差距的我，心中升起了一个伟大的想法：我要当码农。</p>
-<p>为啥</p>
-<p>太闲了，当码农就可以享受到没日没夜的工作，然后还没加班费</p>
-<p>额，你是m吗</p>
-<p>我本着对自己负责的态度，我声明，以上不是黑码农，而且本人直且无受虐倾向</p>
-<p>好吧，有时候闲可以让人发疯的</p>
-<p>额，相信我我不是在炫耀，一个月入三千，不用干太多活，而且还包两顿饭，碾压一些人是可以，但是压不住太多人，对不。</p>
-<p>好吧，今天的内容是不是该结束了（我去，800字都没到，结束个毛）</p>
-<p>基于我多年作文的强大基础，我好像得了，东西不写满800字就结束不了的病。相较于要写800字正好的强迫症患者来说，我这还有得救，只要坚持吃药出门就好</p>
-<p>话说，我不禁感想其，当初我是有多么的委婉，转折，再加重复，才能将我最难忘的一件事写满800.然后还写出至少三个不同的版本</p>
-<p>额，我忽然好想静静，</p>
-<p>可以的话，或者早知道的话，我可以留下那些文章，用来恶心现在的我</p>
-<p>恩，我一闪而过一个新的伟大想法</p>
-<p>我可以去找那些名人小时侯写的作文（依据中国国情，我可以确定，100%的人写过，而且其中最经典的一定是你最难忘的xx）</p>
-<p>然后，以公开内容威胁，恐吓。</p>
-<p>恩，这是一个长期而且十分考验眼光的投资</p>
-<p>不说了，我现在去高中当老师去，然后把所有学生的作文保存下来。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>码农</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>私人图书馆搭建-clibre</title>
     <url>/2022/05/01/%E7%A7%81%E4%BA%BA%E5%9B%BE%E4%B9%A6%E9%A6%86%E6%90%AD%E5%BB%BA-Clibre/</url>
     <content><![CDATA[<p>clibre是一个在线书籍管理工具，可以在线阅读PDF，EPUB等格式的图书，配合z-library，可以搭建一个属于自己的在线学习，阅读中心，而且还能管理每本书的状态，很适合在自己的服务器上部署一个。</p>
@@ -11112,6 +11166,43 @@ pip install requirements.txt
       <tags>
         <tag>calibre</tag>
         <tag>电子书</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>码农</title>
+    <url>/2022/04/30/%E7%A0%81%E5%86%9C/</url>
+    <content><![CDATA[<p>额，最近好像来的比较频繁，似乎跟上次一样，也是一阵时间内多次到来</p>
+<p>然后，取材一段时间，然后又过来了</p>
+<p>今天好像找到了一个一闪而过的思路，但是可惜，没抓住，然后现在我抱着空空的脑袋过来写这么一篇。</p>
+<p>额，仔细想想，我的生活平凡而又无趣，确切的是我的工作，作为一个维护人员，尤其是计算机维护人员，在系统没出问题前，我们就是放在储物间来织蜘蛛网的，尤其作为计算机人员，看着写代码的那么忙碌，在旁边看着，内心不禁想到：都是人，差距怎么这么大。</p>
+<p>有那么一瞬间，我在想是哪个傻逼非得分工合作。当然必有道理。我不想深究，只是一个任性的想法。</p>
+<p>当然，看到人类差距的我，心中升起了一个伟大的想法：我要当码农。</p>
+<p>为啥</p>
+<p>太闲了，当码农就可以享受到没日没夜的工作，然后还没加班费</p>
+<p>额，你是m吗</p>
+<p>我本着对自己负责的态度，我声明，以上不是黑码农，而且本人直且无受虐倾向</p>
+<p>好吧，有时候闲可以让人发疯的</p>
+<p>额，相信我我不是在炫耀，一个月入三千，不用干太多活，而且还包两顿饭，碾压一些人是可以，但是压不住太多人，对不。</p>
+<p>好吧，今天的内容是不是该结束了（我去，800字都没到，结束个毛）</p>
+<p>基于我多年作文的强大基础，我好像得了，东西不写满800字就结束不了的病。相较于要写800字正好的强迫症患者来说，我这还有得救，只要坚持吃药出门就好</p>
+<p>话说，我不禁感想其，当初我是有多么的委婉，转折，再加重复，才能将我最难忘的一件事写满800.然后还写出至少三个不同的版本</p>
+<p>额，我忽然好想静静，</p>
+<p>可以的话，或者早知道的话，我可以留下那些文章，用来恶心现在的我</p>
+<p>恩，我一闪而过一个新的伟大想法</p>
+<p>我可以去找那些名人小时侯写的作文（依据中国国情，我可以确定，100%的人写过，而且其中最经典的一定是你最难忘的xx）</p>
+<p>然后，以公开内容威胁，恐吓。</p>
+<p>恩，这是一个长期而且十分考验眼光的投资</p>
+<p>不说了，我现在去高中当老师去，然后把所有学生的作文保存下来。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>码农</tag>
       </tags>
   </entry>
   <entry>
@@ -11447,6 +11538,27 @@ pip install requirements.txt
       </tags>
   </entry>
   <entry>
+    <title>过去</title>
+    <url>/2022/04/30/%E8%BF%87%E5%8E%BB/</url>
+    <content><![CDATA[<p>上一次是年前，这次就跑到了十四号了，看来时间在这里流逝的是相当的快</p>
+<p>我终于获得了宁静，在吵吵嚷嚷了一天之后。不知为何，我总希望在周末的时候，静下心来，看看书，但是我知道我的内心是拒绝的，因为有更多好玩的事情，但是我总是会在玩了一盘高端质量局的dota之后，后悔自己浪费了一个小时在这，然后反之回想如果我用这一个小时拿来看书，会看多少多少。恩，我将前者当作罪恶，而将后者当成了一个任务。如果放任不管，我也可以每天游戏娱乐，然后这样的过去，其实我每天看书也是这样的过去，且不要拿每天看书会增加学识的这种蠢话来迷糊自己，小说更多的时候是古人打发时间的道具，如果他们有电子游戏也许早就抛弃了他们。也许在未来，新的娱乐方式出现，游戏就会变成现在读书的地位，我的目的并不是在鼓吹读书无用论，而是调整自己的心态，时间是自己的，将他花费在读书还是游戏并没有什么贵贱之分，也没必要将其当成罪恶或者是一个任务，给予自己在这么一个宁静的周末施加如此大的负担。且开心的玩乐吧，生活需要它。</p>
+<p>我并不认为像苦修士将自己与快乐分开能让自己开心或者能让人生饱满。我跟看重的是可以专心一致的倾注于某件事，他们的存在让我倾注于读书，看进书中的内容，写下一点东西.而周围的戚戚嚷嚷和我这边是两个风格。我越发的佩服大隐隐于市的隐士了。坚持自我并不是一件难事，但是难得是在一个这样的环境里坚持自我。</p>
+<p>在一个环境并不适合做某件事情的时候，我将它延后，恩，他就从一个欲望转化为一个执念，一个任务。如果等到我时候的环境之后，我要是还没放下它，那么就会去做，要是放下了，也许就会去做那时候更合适的事情吧。这正如我对性的排解一样。</p>
+<p>回到最初，我总是后悔自己过去的一小时所作的事情，尤其是这件事情失败了，让我尤为懊恼，希望时间回去，做出别的行为。现在想来，大可不必如此。其实时间对所有事情都是公平的，我玩游戏获得了愉悦，看书也是。本没有高低之分，但是自己内心高傲的看低游戏，觉得读书是件高端的事情。但正如我上面所说的，那不过是另一种愉悦自己的方式罢了，我之所以更倾向读书，因为读书随时可以停止，但是游戏不行。所以会让我产生一种沉迷的概念，因为我必须连续一个小时专注于此。看来如此长时间的专注事项除了工作都可以叫做沉迷啊。</p>
+<p>这么说来，有些人该问，难道闲暇时间所耗费的都是打发时间，就没有让自己提升的东西么？恩，其实是有的，重要是看你对提升的定义吧，看更多的小说，提升的是你的文学，玩更多的游戏，提升的是你的技术，而学生花更多的时间，提升的则是你的学识和记忆，本质同样是花费时间来换取别的，正如土地是经济的最基础载体，时间也是。你当然也可以花上一个小时，看些高端的书，但是 你不能想说自己过去的一个小时都浪费了，其实没有。与其想过去的一个小时干了啥，我觉得更多的时候还是想想后面要干啥吧，我对过去更多的是别犯同样的错和昨天吃了什么，恩今天换个吧。而前者老是忘记，后者记得清楚，但是却也没多大用，今天想吃和昨天也没有什么必然的联系，回归这个欲望本身吧，看他想吃啥。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>过去</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>过于2023年的一些展望</title>
     <url>/2023/01/05/%E8%BF%87%E4%BA%8E2023%E5%B9%B4%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B1%95%E6%9C%9B/</url>
     <content><![CDATA[<p>先订个基调：2023年还是以房地产为主要驱动。这是毋庸置疑的，也是不得已的。</p>
@@ -11513,27 +11625,6 @@ pip install requirements.txt
         <tag>经济展望</tag>
         <tag>2023</tag>
         <tag>比亚迪</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>过去</title>
-    <url>/2022/04/30/%E8%BF%87%E5%8E%BB/</url>
-    <content><![CDATA[<p>上一次是年前，这次就跑到了十四号了，看来时间在这里流逝的是相当的快</p>
-<p>我终于获得了宁静，在吵吵嚷嚷了一天之后。不知为何，我总希望在周末的时候，静下心来，看看书，但是我知道我的内心是拒绝的，因为有更多好玩的事情，但是我总是会在玩了一盘高端质量局的dota之后，后悔自己浪费了一个小时在这，然后反之回想如果我用这一个小时拿来看书，会看多少多少。恩，我将前者当作罪恶，而将后者当成了一个任务。如果放任不管，我也可以每天游戏娱乐，然后这样的过去，其实我每天看书也是这样的过去，且不要拿每天看书会增加学识的这种蠢话来迷糊自己，小说更多的时候是古人打发时间的道具，如果他们有电子游戏也许早就抛弃了他们。也许在未来，新的娱乐方式出现，游戏就会变成现在读书的地位，我的目的并不是在鼓吹读书无用论，而是调整自己的心态，时间是自己的，将他花费在读书还是游戏并没有什么贵贱之分，也没必要将其当成罪恶或者是一个任务，给予自己在这么一个宁静的周末施加如此大的负担。且开心的玩乐吧，生活需要它。</p>
-<p>我并不认为像苦修士将自己与快乐分开能让自己开心或者能让人生饱满。我跟看重的是可以专心一致的倾注于某件事，他们的存在让我倾注于读书，看进书中的内容，写下一点东西.而周围的戚戚嚷嚷和我这边是两个风格。我越发的佩服大隐隐于市的隐士了。坚持自我并不是一件难事，但是难得是在一个这样的环境里坚持自我。</p>
-<p>在一个环境并不适合做某件事情的时候，我将它延后，恩，他就从一个欲望转化为一个执念，一个任务。如果等到我时候的环境之后，我要是还没放下它，那么就会去做，要是放下了，也许就会去做那时候更合适的事情吧。这正如我对性的排解一样。</p>
-<p>回到最初，我总是后悔自己过去的一小时所作的事情，尤其是这件事情失败了，让我尤为懊恼，希望时间回去，做出别的行为。现在想来，大可不必如此。其实时间对所有事情都是公平的，我玩游戏获得了愉悦，看书也是。本没有高低之分，但是自己内心高傲的看低游戏，觉得读书是件高端的事情。但正如我上面所说的，那不过是另一种愉悦自己的方式罢了，我之所以更倾向读书，因为读书随时可以停止，但是游戏不行。所以会让我产生一种沉迷的概念，因为我必须连续一个小时专注于此。看来如此长时间的专注事项除了工作都可以叫做沉迷啊。</p>
-<p>这么说来，有些人该问，难道闲暇时间所耗费的都是打发时间，就没有让自己提升的东西么？恩，其实是有的，重要是看你对提升的定义吧，看更多的小说，提升的是你的文学，玩更多的游戏，提升的是你的技术，而学生花更多的时间，提升的则是你的学识和记忆，本质同样是花费时间来换取别的，正如土地是经济的最基础载体，时间也是。你当然也可以花上一个小时，看些高端的书，但是 你不能想说自己过去的一个小时都浪费了，其实没有。与其想过去的一个小时干了啥，我觉得更多的时候还是想想后面要干啥吧，我对过去更多的是别犯同样的错和昨天吃了什么，恩今天换个吧。而前者老是忘记，后者记得清楚，但是却也没多大用，今天想吃和昨天也没有什么必然的联系，回归这个欲望本身吧，看他想吃啥。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>过去</tag>
       </tags>
   </entry>
   <entry>
