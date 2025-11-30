@@ -6,7 +6,7 @@
   <link href="https://minsummer.com/atom.xml" rel="self"/>
   
   <link href="https://minsummer.com/"/>
-  <updated>2025-11-28T16:00:00.000Z</updated>
+  <updated>2025-11-29T16:00:00.000Z</updated>
   <id>https://minsummer.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>selenium模拟手机错误</title>
+    <link href="https://minsummer.com/2025/11/29/219-selenium%E6%A8%A1%E6%8B%9F%E6%89%8B%E6%9C%BA%E9%94%99%E8%AF%AF/"/>
+    <id>https://minsummer.com/2025/11/29/219-selenium%E6%A8%A1%E6%8B%9F%E6%89%8B%E6%9C%BA%E9%94%99%E8%AF%AF/</id>
+    <published>2025-11-29T16:00:00.000Z</published>
+    <updated>2025-11-29T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;错误代码：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Message: Could not start a new session. Error while creating session with the driver service. Stopping driver service: Could not start a new session. Response code 400. Message: invalid argument: entry 0 of ‘firstMatch’ is invalid&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这是一个广泛性错误解释，即传入参数有问题。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="青龙面板" scheme="https://minsummer.com/tags/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF/"/>
+    
+    <category term="PYTHON" scheme="https://minsummer.com/tags/PYTHON/"/>
+    
+    <category term="selenium" scheme="https://minsummer.com/tags/selenium/"/>
+    
+  </entry>
   
   <entry>
     <title>JD青龙库优化</title>

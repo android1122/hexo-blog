@@ -2373,70 +2373,6 @@ Windows作为一个系统来说，现在越来越复杂，而且对于国内网�
       </tags>
   </entry>
   <entry>
-    <title>关于路由器的门门道道</title>
-    <url>/2023/11/09/135-%E5%85%B3%E4%BA%8E%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E9%97%A8%E9%97%A8%E9%81%93%E9%81%93/</url>
-    <content><![CDATA[<p>最近想要做个隐形代理-人话就是：路由器翻墙，所有连接路由器的设备都可以翻墙。然后研究了半天，听到的最多是软路由，旁路由。这边就简单的说明下两者区别：<br />
-软路由器：一般是性能强劲，<strong>且有多个网口的</strong>，网上卖的最多的就是这种。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/135-%E5%85%B3%E4%BA%8E%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E9%97%A8%E9%97%A8%E9%81%93%E9%81%93-2023-11-10-09-24-41.png" alt="135-关于路由器的门门道道-2023-11-10-09-24-41" /></p>
-<p>旁路由：一般是性能强劲，<strong>但是只有一个网口的</strong>，通常是由电脑设备刷机导致的，使用比较麻烦，需要配置。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/135-%E5%85%B3%E4%BA%8E%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E9%97%A8%E9%97%A8%E9%81%93%E9%81%93-2023-11-10-09-29-21.png" alt="135-关于路由器的门门道道-2023-11-10-09-29-21" /></p>
-<span id="more"></span>
-<hr />
-<h3 id="常见方案"><a class="markdownIt-Anchor" href="#常见方案"></a> 常见方案</h3>
-<p>现在大家都是光猫上网，但是光猫没办法直接翻墙，所以就需要在后面增加一个二级路由器/翻墙设备，于是就出现了几种不同的的方案：</p>
-<ol>
-<li>光猫-软路由-AP(普通的路由器)<br />
-光猫后面连接一个软路由，然后软路由上的网口再接入一个普通的路由器用来提供无线信号。你说软路由为啥不直接提供无线信号，简单说是术业有专攻，复杂就是这种提供的无线一般信号不强，而且不稳定。所以需要在后面接入一个普通的</li>
-<li>光猫-旁路由<br />
-光猫后面接一个旁路由，<strong>然后通过修改设备的网关</strong>，让你修改过网关的设备翻墙。比较复杂，而且如果设备经常移动，会导致经常上不了网，而且现在很多光猫也无法分配网关了，需要在中间再加一个路由器，有点脱裤子放屁的感觉。</li>
-<li>光猫-刷机后的无线路由器<br />
-这个是一开始的玩法，但是慢慢被抛弃，主要原因：<br />
-1. 性能太弱，<code>无法跑满翻墙的带宽和速度</code>；如果你要求不高，是够用的,。<br />
-2. 厂商推广，现在好多小主机上瞄准这个市场</li>
-<li><strong>高端玩法-1000m</strong>：猫棒-软路由-AP（普通路由器）<br />
-这个是高端玩法，前提条件你家的宽带接近1000m，由于运营商的光猫性能太差，所以推荐用猫棒发挥全部的功能。</li>
-</ol>
-<p>以上几种是常见的玩法，我之前分不清出旁路由和软路由的区别，是很多文章会把旁路由和刷机后的无线路由混淆，<strong>旁路由是一种模式</strong>，不是一种设备名称。这里我为了区分清楚，我就将两者应用设备对等。你可以选择对应的方案根据你家里的情况：比如可以光猫连接2个路由器，一个路由器正常上网，另一个路由器就是全部翻墙。你可以称翻墙路由器为旁路由。</p>
-<hr />
-<h3 id="经验总结"><a class="markdownIt-Anchor" href="#经验总结"></a> 经验总结</h3>
-<p>总结下我的一些经验：</p>
-<ol>
-<li>如果你是路由器刷机，那么一个翻墙插件就足够了，200元以下的路由器性能<code>差</code>，不推荐很多插件：我得红米AC2100跑了一个passwall+Adguardhome就死机，所以不推荐太多插件<s>其实大多数插件你都用不到或者不会用</s>。如果有需求请上J4125，N5105，N100等软路由成品。</li>
-<li>DNS是个大门道，如果没有特殊需求，建议直接用openwrt自带的转发器和smardns即可，这里的门道很深，<s>你把持不住的</s>。</li>
-<li>Adguardhome的本质是通过DNS+网址判断来隔绝广告的，所以如果你装了smartdns，又有openwrt自带的DNS转发器dnsmasq的话，那么你需要好好配置，捋清楚三者的顺序，其次Adguardhome很吃性能<s>很重要</s>。</li>
-<li>smartDns已经能满足你大部分需求，它通过查询多个dns服务器，对比，来确定那个是真的或者对的，可以有效防止像Github这种dns污染的。</li>
-</ol>
-<hr />
-<h3 id="广告"><a class="markdownIt-Anchor" href="#广告"></a> 广告</h3>
-<p>另外再说下广告，有两种：</p>
-<ol>
-<li>运营商现在劫持dns，然后在你申请的网页里面插入自己的广告。</li>
-<li>网站自己的广告<br />
-Adguardhome就是针对这两种提出解决方案：建立可信的dns库，不用运营商的dns；建立广告网址库，如果网址匹配就直接在路由器这边就拦截了。这比浏览器插件强大的地方在于它甚至可以拦截手机广告<s>理论上</s>。<code>PS:手机摇一摇它也没办法阻拦，阿里牛逼</code>。只能说理论很美好，但是如果一不小心拦截你需要的东西，那你就需要好好排查。技术不是万能的，并不能自动适应每个人的场景，所以要慎重。</li>
-</ol>
-<hr />
-<h3 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h3>
-<p>如果不是重度用户，推荐只要有个刷机路由器即可，这是最初大家的玩法，可以选择去<a href="https://www.right.com.cn/forum/">恩山</a>这些看下当下最流行的路由器，刷机后即可。需要注意是，刷机后无线性能有差距，有些好，有些坏，看有没有大神咯。<br />
-我最近看了这么多下来，发现越来越模糊：软路由，nas之间的差距。现在的openwrt里面可以安装dockers，可以建立homeasisten，所以相对应的，对路由器的性能要求就越来越大，也许是大家发现我软路由的性能越来越强，所以就越喜欢在里面装更多的东西，这就是越来越多的人搞ALL in One的原因，将路由器，Nas等都集中在一台设备中。我并不是反对这种做法，只是静下心来想一下，我有需要这么多功能么？<br />
-我需要一台翻墙的路由器，方便我查询谷歌的信息，然后有台nas，可以给我电视共享数据，方便电视放电影。这就是我得全部需求，甚至，有时候电视放电影也是伪需求，很多网站都已经可以直接在线，而且分辨率不低。在我没有升级电视和音响之前，我只是需要一个便捷的上网环境罢了。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>路由器</tag>
-        <tag>OPENWRT</tag>
-        <tag>翻墙</tag>
-        <tag>隐形代理</tag>
-        <tag>NAS</tag>
-        <tag>旁路由</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>上班族的晚餐</title>
     <url>/2023/11/06/134-%E4%B8%8A%E7%8F%AD%E6%97%8F%E7%9A%84%E6%99%9A%E9%A4%90/</url>
     <content><![CDATA[<p>今年再次独立搬出去住了，好消息是离公司近了，坏消息就是又是一个人需要为一日三餐所苦恼。<br />
@@ -2504,6 +2440,70 @@ Adguardhome就是针对这两种提出解决方案：建立可信的dns库，不
         <tag>大卡</tag>
         <tag>晚餐</tag>
         <tag>烹饪计划</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于路由器的门门道道</title>
+    <url>/2023/11/09/135-%E5%85%B3%E4%BA%8E%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E9%97%A8%E9%97%A8%E9%81%93%E9%81%93/</url>
+    <content><![CDATA[<p>最近想要做个隐形代理-人话就是：路由器翻墙，所有连接路由器的设备都可以翻墙。然后研究了半天，听到的最多是软路由，旁路由。这边就简单的说明下两者区别：<br />
+软路由器：一般是性能强劲，<strong>且有多个网口的</strong>，网上卖的最多的就是这种。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/135-%E5%85%B3%E4%BA%8E%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E9%97%A8%E9%97%A8%E9%81%93%E9%81%93-2023-11-10-09-24-41.png" alt="135-关于路由器的门门道道-2023-11-10-09-24-41" /></p>
+<p>旁路由：一般是性能强劲，<strong>但是只有一个网口的</strong>，通常是由电脑设备刷机导致的，使用比较麻烦，需要配置。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/135-%E5%85%B3%E4%BA%8E%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E9%97%A8%E9%97%A8%E9%81%93%E9%81%93-2023-11-10-09-29-21.png" alt="135-关于路由器的门门道道-2023-11-10-09-29-21" /></p>
+<span id="more"></span>
+<hr />
+<h3 id="常见方案"><a class="markdownIt-Anchor" href="#常见方案"></a> 常见方案</h3>
+<p>现在大家都是光猫上网，但是光猫没办法直接翻墙，所以就需要在后面增加一个二级路由器/翻墙设备，于是就出现了几种不同的的方案：</p>
+<ol>
+<li>光猫-软路由-AP(普通的路由器)<br />
+光猫后面连接一个软路由，然后软路由上的网口再接入一个普通的路由器用来提供无线信号。你说软路由为啥不直接提供无线信号，简单说是术业有专攻，复杂就是这种提供的无线一般信号不强，而且不稳定。所以需要在后面接入一个普通的</li>
+<li>光猫-旁路由<br />
+光猫后面接一个旁路由，<strong>然后通过修改设备的网关</strong>，让你修改过网关的设备翻墙。比较复杂，而且如果设备经常移动，会导致经常上不了网，而且现在很多光猫也无法分配网关了，需要在中间再加一个路由器，有点脱裤子放屁的感觉。</li>
+<li>光猫-刷机后的无线路由器<br />
+这个是一开始的玩法，但是慢慢被抛弃，主要原因：<br />
+1. 性能太弱，<code>无法跑满翻墙的带宽和速度</code>；如果你要求不高，是够用的,。<br />
+2. 厂商推广，现在好多小主机上瞄准这个市场</li>
+<li><strong>高端玩法-1000m</strong>：猫棒-软路由-AP（普通路由器）<br />
+这个是高端玩法，前提条件你家的宽带接近1000m，由于运营商的光猫性能太差，所以推荐用猫棒发挥全部的功能。</li>
+</ol>
+<p>以上几种是常见的玩法，我之前分不清出旁路由和软路由的区别，是很多文章会把旁路由和刷机后的无线路由混淆，<strong>旁路由是一种模式</strong>，不是一种设备名称。这里我为了区分清楚，我就将两者应用设备对等。你可以选择对应的方案根据你家里的情况：比如可以光猫连接2个路由器，一个路由器正常上网，另一个路由器就是全部翻墙。你可以称翻墙路由器为旁路由。</p>
+<hr />
+<h3 id="经验总结"><a class="markdownIt-Anchor" href="#经验总结"></a> 经验总结</h3>
+<p>总结下我的一些经验：</p>
+<ol>
+<li>如果你是路由器刷机，那么一个翻墙插件就足够了，200元以下的路由器性能<code>差</code>，不推荐很多插件：我得红米AC2100跑了一个passwall+Adguardhome就死机，所以不推荐太多插件<s>其实大多数插件你都用不到或者不会用</s>。如果有需求请上J4125，N5105，N100等软路由成品。</li>
+<li>DNS是个大门道，如果没有特殊需求，建议直接用openwrt自带的转发器和smardns即可，这里的门道很深，<s>你把持不住的</s>。</li>
+<li>Adguardhome的本质是通过DNS+网址判断来隔绝广告的，所以如果你装了smartdns，又有openwrt自带的DNS转发器dnsmasq的话，那么你需要好好配置，捋清楚三者的顺序，其次Adguardhome很吃性能<s>很重要</s>。</li>
+<li>smartDns已经能满足你大部分需求，它通过查询多个dns服务器，对比，来确定那个是真的或者对的，可以有效防止像Github这种dns污染的。</li>
+</ol>
+<hr />
+<h3 id="广告"><a class="markdownIt-Anchor" href="#广告"></a> 广告</h3>
+<p>另外再说下广告，有两种：</p>
+<ol>
+<li>运营商现在劫持dns，然后在你申请的网页里面插入自己的广告。</li>
+<li>网站自己的广告<br />
+Adguardhome就是针对这两种提出解决方案：建立可信的dns库，不用运营商的dns；建立广告网址库，如果网址匹配就直接在路由器这边就拦截了。这比浏览器插件强大的地方在于它甚至可以拦截手机广告<s>理论上</s>。<code>PS:手机摇一摇它也没办法阻拦，阿里牛逼</code>。只能说理论很美好，但是如果一不小心拦截你需要的东西，那你就需要好好排查。技术不是万能的，并不能自动适应每个人的场景，所以要慎重。</li>
+</ol>
+<hr />
+<h3 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h3>
+<p>如果不是重度用户，推荐只要有个刷机路由器即可，这是最初大家的玩法，可以选择去<a href="https://www.right.com.cn/forum/">恩山</a>这些看下当下最流行的路由器，刷机后即可。需要注意是，刷机后无线性能有差距，有些好，有些坏，看有没有大神咯。<br />
+我最近看了这么多下来，发现越来越模糊：软路由，nas之间的差距。现在的openwrt里面可以安装dockers，可以建立homeasisten，所以相对应的，对路由器的性能要求就越来越大，也许是大家发现我软路由的性能越来越强，所以就越喜欢在里面装更多的东西，这就是越来越多的人搞ALL in One的原因，将路由器，Nas等都集中在一台设备中。我并不是反对这种做法，只是静下心来想一下，我有需要这么多功能么？<br />
+我需要一台翻墙的路由器，方便我查询谷歌的信息，然后有台nas，可以给我电视共享数据，方便电视放电影。这就是我得全部需求，甚至，有时候电视放电影也是伪需求，很多网站都已经可以直接在线，而且分辨率不低。在我没有升级电视和音响之前，我只是需要一个便捷的上网环境罢了。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>路由器</tag>
+        <tag>OPENWRT</tag>
+        <tag>翻墙</tag>
+        <tag>隐形代理</tag>
+        <tag>NAS</tag>
+        <tag>旁路由</tag>
       </tags>
   </entry>
   <entry>
@@ -3900,6 +3900,35 @@ Debain系统</p>
       </tags>
   </entry>
   <entry>
+    <title>佛祖什么都说了</title>
+    <url>/2024/03/02/156-%E4%BD%9B%E7%A5%96%E4%BB%80%E4%B9%88%E9%83%BD%E8%AF%B4%E4%BA%86/</url>
+    <content><![CDATA[<p>《佛祖说了些什么》这本书我很早就读完了。但是经过过年，慵懒等理由，我迟迟不下笔写下这篇文章。我觉得值得为它写一篇文章。</p>
+<span id="more"></span>
+<p>佛教作为一个宗教，它是具有严格得推演和逻辑得。只不过像基督教得圣经一样，它推演得基础也在那些公案和典籍。且不论推演的基础是否正确，单单就推演也可以成为一门正经的学科。我以前还曾经迷惑，神学佛学有什么可以学习得，在很多教科书上都是一言以蔽之得东西。除开教科书无法详尽的描述它的原因之外，宗教在传播过程中，大量简化和浓缩它的教义，也许最后就总归成了一句：“善有善报，恶有恶报”。在看完这本书之后，确实发现，我们在门外看到得，和门内修行得人是两回事。专业的事有专业得人来干。<br />
+无论是“万法缘起得解读”，到后面为了适应民众得俗讲。佛学在那个古老的时代里确确实实构建出了一个世界观，包含人，世界，人生目标等等。在那个对世界一无所知的年代，它给了当时的人一个世界的解释；佛学也算是哲学，只不过它更大，更久，以至于独立出来；甚至很多哲学家从中获取灵感。宗教是一个庞大得系统，它不仅仅解释世界，还要求行为规范，它要随着时代发展来更新自己。大到航天飞机能否找到极乐世界，小到牛奶僧人是否可以喝。都是切切实实得摆在人面前得问题。一个宗教代表着另一个世界，你在现实世界中有得东西，佛学世界也必须有，甚至你还得引经据典得说明它如何而来，为何而来。因为它不同于别的哲学家，别的哲学家只对未知部分进行解释，宗教对已知的也进行解释。这就好像在现实世界中又套入了另一个世界。这和平时得圈子还不一样，在这个嵌套得世界里，它需要对外面世界来得所有东西都需要有一套自己得解释。如果解释不通，那么就说明外面得那个世界比你佛学世界要大，等级要高，甚至否定你的真实性。那么对宗教而言是打击性质得。所以它需要不断得发展和扩大，甚至超前。<br />
+最后是，在追求非理性上面，佛教和现代科学似乎都走在了同一条路上。佛教推崇顿悟，甚至要求信徒放弃逻辑，以达到那种与佛一致得概念。但是佛教也说了，顿悟只是心境得变化，不会是那种圣光加持，忽然变身得东西。佛，更多得向内而求，不是向外。所以很多人修佛，修得是自己心境。文人雅士为何喜欢他，正如里面说的：</p>
+<blockquote>
+<p>“只有酒足饭饱的知识分子才有精力去看文艺片，也只有酒足饭饱的知识分子才会喜欢禅宗。 文艺片和禅宗可以让人们不假任何万物，只靠精神上的运动就可以超越世俗的痛苦，平静对待世间万物。这很棒。但对于连饭都吃不饱的人来说，它们提供不了任何帮助。”</p>
+</blockquote>
+<p>而科学到了目前阶段，也不得不承认自己的逻辑无法完美的解释这个世界。那么真理在逻辑之外。其实如果我们更加客观的看待宗教的话，也许发现它并没有那么可怕，它只不过是给当世之人一个庇护之地罢了。<br />
+宗教有人把它当世外桃源，有人将它视为救命稻草。无论是家长里短，还是富贵长寿，在人的眼里，它无所不能，但是这一切都是宗教下潜到群众必须做得事情。理智的人也许只是花钱求个心安，疯狂的人会觉得自己不够虔诚。他们都在为自己的执念买单。而佛在那不问也不说，现在如此，以后也如此。<br />
+我并不想批判什么，只要它不是强迫威胁甚至威逼利诱即可。归根结底还是人傻，你又能奈它何。我恶心的是基层民众，会觉得增加一个信徒会是一件大功德，为了自己的功德，骗那些傻子屋里有鬼，需要搬家，需要虔诚。其实这点书中也提到过，人怀着自私自利的心去帮助他人呢？佛学的解释是你心怀不轨，做再大的功德也是枉然。宗教的体量很大，难免不了有大部分人都是心怀鬼胎的，这是它的管理问题，但是也是问题；我不想为它开脱，甚至想责难它。如果你管不好这么多人，那么就应该承受它带来的非议，甚至因此而落寞也是罪有应得。当然也有可能宗教就是最早的那批贩卖焦虑的人。如果一个东西根都坏了，只有少部分人保持真心，那么这个东西还是原来的东西么？说什么与时俱进，说什么顺应时代，归根揭底还不过是趴在人民群众身上的吸血鬼罢了。<br />
+人为刀殂，我为鱼肉。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>《佛祖说了些什么》</tag>
+        <tag>林欣浩</tag>
+        <tag>读后感</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我在北京送快递</title>
     <url>/2024/03/09/157-%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E9%80%81%E5%BF%AB%E9%80%92-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>《我在北京送快递》我更喜欢它的前半部，在北京的那些生活。</p>
@@ -3950,35 +3979,6 @@ Debain系统</p>
       <tags>
         <tag>我在北京送快递</tag>
         <tag>胡安焉</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>佛祖什么都说了</title>
-    <url>/2024/03/02/156-%E4%BD%9B%E7%A5%96%E4%BB%80%E4%B9%88%E9%83%BD%E8%AF%B4%E4%BA%86/</url>
-    <content><![CDATA[<p>《佛祖说了些什么》这本书我很早就读完了。但是经过过年，慵懒等理由，我迟迟不下笔写下这篇文章。我觉得值得为它写一篇文章。</p>
-<span id="more"></span>
-<p>佛教作为一个宗教，它是具有严格得推演和逻辑得。只不过像基督教得圣经一样，它推演得基础也在那些公案和典籍。且不论推演的基础是否正确，单单就推演也可以成为一门正经的学科。我以前还曾经迷惑，神学佛学有什么可以学习得，在很多教科书上都是一言以蔽之得东西。除开教科书无法详尽的描述它的原因之外，宗教在传播过程中，大量简化和浓缩它的教义，也许最后就总归成了一句：“善有善报，恶有恶报”。在看完这本书之后，确实发现，我们在门外看到得，和门内修行得人是两回事。专业的事有专业得人来干。<br />
-无论是“万法缘起得解读”，到后面为了适应民众得俗讲。佛学在那个古老的时代里确确实实构建出了一个世界观，包含人，世界，人生目标等等。在那个对世界一无所知的年代，它给了当时的人一个世界的解释；佛学也算是哲学，只不过它更大，更久，以至于独立出来；甚至很多哲学家从中获取灵感。宗教是一个庞大得系统，它不仅仅解释世界，还要求行为规范，它要随着时代发展来更新自己。大到航天飞机能否找到极乐世界，小到牛奶僧人是否可以喝。都是切切实实得摆在人面前得问题。一个宗教代表着另一个世界，你在现实世界中有得东西，佛学世界也必须有，甚至你还得引经据典得说明它如何而来，为何而来。因为它不同于别的哲学家，别的哲学家只对未知部分进行解释，宗教对已知的也进行解释。这就好像在现实世界中又套入了另一个世界。这和平时得圈子还不一样，在这个嵌套得世界里，它需要对外面世界来得所有东西都需要有一套自己得解释。如果解释不通，那么就说明外面得那个世界比你佛学世界要大，等级要高，甚至否定你的真实性。那么对宗教而言是打击性质得。所以它需要不断得发展和扩大，甚至超前。<br />
-最后是，在追求非理性上面，佛教和现代科学似乎都走在了同一条路上。佛教推崇顿悟，甚至要求信徒放弃逻辑，以达到那种与佛一致得概念。但是佛教也说了，顿悟只是心境得变化，不会是那种圣光加持，忽然变身得东西。佛，更多得向内而求，不是向外。所以很多人修佛，修得是自己心境。文人雅士为何喜欢他，正如里面说的：</p>
-<blockquote>
-<p>“只有酒足饭饱的知识分子才有精力去看文艺片，也只有酒足饭饱的知识分子才会喜欢禅宗。 文艺片和禅宗可以让人们不假任何万物，只靠精神上的运动就可以超越世俗的痛苦，平静对待世间万物。这很棒。但对于连饭都吃不饱的人来说，它们提供不了任何帮助。”</p>
-</blockquote>
-<p>而科学到了目前阶段，也不得不承认自己的逻辑无法完美的解释这个世界。那么真理在逻辑之外。其实如果我们更加客观的看待宗教的话，也许发现它并没有那么可怕，它只不过是给当世之人一个庇护之地罢了。<br />
-宗教有人把它当世外桃源，有人将它视为救命稻草。无论是家长里短，还是富贵长寿，在人的眼里，它无所不能，但是这一切都是宗教下潜到群众必须做得事情。理智的人也许只是花钱求个心安，疯狂的人会觉得自己不够虔诚。他们都在为自己的执念买单。而佛在那不问也不说，现在如此，以后也如此。<br />
-我并不想批判什么，只要它不是强迫威胁甚至威逼利诱即可。归根结底还是人傻，你又能奈它何。我恶心的是基层民众，会觉得增加一个信徒会是一件大功德，为了自己的功德，骗那些傻子屋里有鬼，需要搬家，需要虔诚。其实这点书中也提到过，人怀着自私自利的心去帮助他人呢？佛学的解释是你心怀不轨，做再大的功德也是枉然。宗教的体量很大，难免不了有大部分人都是心怀鬼胎的，这是它的管理问题，但是也是问题；我不想为它开脱，甚至想责难它。如果你管不好这么多人，那么就应该承受它带来的非议，甚至因此而落寞也是罪有应得。当然也有可能宗教就是最早的那批贩卖焦虑的人。如果一个东西根都坏了，只有少部分人保持真心，那么这个东西还是原来的东西么？说什么与时俱进，说什么顺应时代，归根揭底还不过是趴在人民群众身上的吸血鬼罢了。<br />
-人为刀殂，我为鱼肉。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>《佛祖说了些什么》</tag>
-        <tag>林欣浩</tag>
-        <tag>读后感</tag>
       </tags>
   </entry>
   <entry>
@@ -6811,59 +6811,6 @@ Pro系列是3网CN2GIA，EB系列是3网CMIN2，而前面得LAX代表得是位�
       </tags>
   </entry>
   <entry>
-    <title>OPENWRT的samba配置</title>
-    <url>/2025/05/25/204-OPENWRT%E7%9A%84samba%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>废话不多说，直接来，OPENWRT自带的网络共享，但是有时候我用Windows连接无法连接，于是就做个教程。</p>
-<span id="more"></span>
-<h2 id="打开windows的相关功能"><a class="markdownIt-Anchor" href="#打开windows的相关功能"></a> 打开Windows的相关功能</h2>
-<p>在应用设置中，选择打开系程序和功能，选择启用货关闭Windows功能<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/204-OPENWRT%E7%9A%84samba%E9%85%8D%E7%BD%AE-2025-05-26-10-14-55.png" alt="204-OPENWRT的samba配置-2025-05-26-10-14-55" /></p>
-<p>打开SMB的功能。</p>
-<h2 id="配置openwrt"><a class="markdownIt-Anchor" href="#配置openwrt"></a> 配置OPENWRT</h2>
-<p>在共享目录中选择对应的目录，然后将权限设置为0777，允许匿名用户访问。截至在模板中配置：server min protocol = NT1<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/204-OPENWRT%E7%9A%84samba%E9%85%8D%E7%BD%AE-2025-05-26-10-16-25.png" alt="204-OPENWRT的samba配置-2025-05-26-10-16-25" /></p>
-<p>这条命令是允许SMB 1.0协议访问，或者你的界面上有允许低版本协议访问的勾选，勾选上即可。</p>
-<h2 id="终极解决方法"><a class="markdownIt-Anchor" href="#终极解决方法"></a> 终极解决方法</h2>
-<p>正常这样子，你在网络下面就可以看到对应的机器名称，而且也可以访问。如果还是不行，使用管理者打开CMD，输入以下命令后重启系统：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sc.exe config lanmanworkstation depend= bowser/mrxsmb10/nsi</span><br><span class="line">回车  </span><br><span class="line">sc.exe config mrxsmb20 start= disabled  </span><br><span class="line">回车</span><br></pre></td></tr></table></figure>
-<p>这些命令用于修改 Windows 中 SMB 相关服务的配置，具体含义如下：</p>
-<ul>
-<li>
-<p>sc.exe config lanmanworkstation depend= bowser/mrxsmb10/nsi<br />
-修改 “LanmanWorkstation” 服务（工作站服务）的依赖关系<br />
-将其依赖项设置为：bowser（浏览器服务）、mrxsmb10（SMB 1.0 协议驱动）和 nsi（网络存储接口服务）<br />
-这会移除对 mrxsmb20（SMB 2.0 协议驱动）的依赖</p>
-</li>
-<li>
-<p>sc.exe config mrxsmb20 start= disabled<br />
-将 “mrxsmb20” 服务（SMB 2.0 协议驱动）的启动类型设置为&quot;禁用&quot;<br />
-这意味着系统启动时不会加载 SMB 2.0 协议支持</p>
-</li>
-</ul>
-<p>这些命令的总体效果是：禁用 SMB 2.0/3.0 协议支持，强制系统只使用 SMB 1.0 协议进行文件共享</p>
-<p>PS：<br />
-SMB 1.0 是过时且不安全的协议，微软已不建议使用<br />
-执行这些命令可能会影响文件共享功能和网络安全<br />
-通常只有在需要兼容非常旧的系统时才这样做<br />
-命令中的等号(=)后需要有一个空格<br />
-需要管理员权限才能执行这些命令<br />
-除非有特殊兼容性需求，否则不建议禁用 SMB 2.0/3.0，因为这会降低系统安全性和性能。</p>
-<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
-<p>正常Windows是支持SMB 2/3的但是个人情况不一样，如果你的openwrt系统版本较低或者别的情况，有可能是配置中没有配置好，导致迟迟无法连接则可以用这个方案。<a href="https://learn.microsoft.com/zh-cn/windows-server/storage/file-server/troubleshoot/smbv1-not-installed-by-default-in-windows">Windows是自带SMB V2的</a>，但是不知道为啥我的无法连接上去，有可能是路由器那边版本太低或者配置错误，所以只能强制使用SMB V1了。如果你想要测试<a href="https://learn.microsoft.com/zh-cn/windows-server/storage/file-server/troubleshoot/detect-enable-and-disable-smbv1-v2-v3?tabs=server">SMB v2</a>，可以试试这个。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>OPENWRT</tag>
-        <tag>samba</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo博客NEXT主题开启数学公式</title>
     <url>/2025/04/24/203-hexo%E5%8D%9A%E5%AE%A2NEXT%E4%B8%BB%E9%A2%98%E5%BC%80%E5%90%AF%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</url>
     <content><![CDATA[<p>之前写过<a href="https://minsummer.com/2022/07/30/104-%E6%A6%82%E7%8E%87%E8%AE%BA%E5%AF%BC%E8%AE%BA-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">《概率论导论》</a>，最近翻看，发现数学公式渲染好像没有成功，于是就花了一些时间研究一下。</p>
@@ -6918,6 +6865,59 @@ tags这个参数建议为ams，可以打开自动编号的功能，方便使用�
         <tag>KaTeX</tag>
         <tag>hexo博客</tag>
         <tag>NEXT主题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OPENWRT的samba配置</title>
+    <url>/2025/05/25/204-OPENWRT%E7%9A%84samba%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>废话不多说，直接来，OPENWRT自带的网络共享，但是有时候我用Windows连接无法连接，于是就做个教程。</p>
+<span id="more"></span>
+<h2 id="打开windows的相关功能"><a class="markdownIt-Anchor" href="#打开windows的相关功能"></a> 打开Windows的相关功能</h2>
+<p>在应用设置中，选择打开系程序和功能，选择启用货关闭Windows功能<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/204-OPENWRT%E7%9A%84samba%E9%85%8D%E7%BD%AE-2025-05-26-10-14-55.png" alt="204-OPENWRT的samba配置-2025-05-26-10-14-55" /></p>
+<p>打开SMB的功能。</p>
+<h2 id="配置openwrt"><a class="markdownIt-Anchor" href="#配置openwrt"></a> 配置OPENWRT</h2>
+<p>在共享目录中选择对应的目录，然后将权限设置为0777，允许匿名用户访问。截至在模板中配置：server min protocol = NT1<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/204-OPENWRT%E7%9A%84samba%E9%85%8D%E7%BD%AE-2025-05-26-10-16-25.png" alt="204-OPENWRT的samba配置-2025-05-26-10-16-25" /></p>
+<p>这条命令是允许SMB 1.0协议访问，或者你的界面上有允许低版本协议访问的勾选，勾选上即可。</p>
+<h2 id="终极解决方法"><a class="markdownIt-Anchor" href="#终极解决方法"></a> 终极解决方法</h2>
+<p>正常这样子，你在网络下面就可以看到对应的机器名称，而且也可以访问。如果还是不行，使用管理者打开CMD，输入以下命令后重启系统：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sc.exe config lanmanworkstation depend= bowser/mrxsmb10/nsi</span><br><span class="line">回车  </span><br><span class="line">sc.exe config mrxsmb20 start= disabled  </span><br><span class="line">回车</span><br></pre></td></tr></table></figure>
+<p>这些命令用于修改 Windows 中 SMB 相关服务的配置，具体含义如下：</p>
+<ul>
+<li>
+<p>sc.exe config lanmanworkstation depend= bowser/mrxsmb10/nsi<br />
+修改 “LanmanWorkstation” 服务（工作站服务）的依赖关系<br />
+将其依赖项设置为：bowser（浏览器服务）、mrxsmb10（SMB 1.0 协议驱动）和 nsi（网络存储接口服务）<br />
+这会移除对 mrxsmb20（SMB 2.0 协议驱动）的依赖</p>
+</li>
+<li>
+<p>sc.exe config mrxsmb20 start= disabled<br />
+将 “mrxsmb20” 服务（SMB 2.0 协议驱动）的启动类型设置为&quot;禁用&quot;<br />
+这意味着系统启动时不会加载 SMB 2.0 协议支持</p>
+</li>
+</ul>
+<p>这些命令的总体效果是：禁用 SMB 2.0/3.0 协议支持，强制系统只使用 SMB 1.0 协议进行文件共享</p>
+<p>PS：<br />
+SMB 1.0 是过时且不安全的协议，微软已不建议使用<br />
+执行这些命令可能会影响文件共享功能和网络安全<br />
+通常只有在需要兼容非常旧的系统时才这样做<br />
+命令中的等号(=)后需要有一个空格<br />
+需要管理员权限才能执行这些命令<br />
+除非有特殊兼容性需求，否则不建议禁用 SMB 2.0/3.0，因为这会降低系统安全性和性能。</p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>正常Windows是支持SMB 2/3的但是个人情况不一样，如果你的openwrt系统版本较低或者别的情况，有可能是配置中没有配置好，导致迟迟无法连接则可以用这个方案。<a href="https://learn.microsoft.com/zh-cn/windows-server/storage/file-server/troubleshoot/smbv1-not-installed-by-default-in-windows">Windows是自带SMB V2的</a>，但是不知道为啥我的无法连接上去，有可能是路由器那边版本太低或者配置错误，所以只能强制使用SMB V1了。如果你想要测试<a href="https://learn.microsoft.com/zh-cn/windows-server/storage/file-server/troubleshoot/detect-enable-and-disable-smbv1-v2-v3?tabs=server">SMB v2</a>，可以试试这个。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>OPENWRT</tag>
+        <tag>samba</tag>
       </tags>
   </entry>
   <entry>
@@ -7522,6 +7522,42 @@ lan口：就是普通的网络接口，用来和wan口区分开来。</p>
       </tags>
   </entry>
   <entry>
+    <title>WOW的一点想法</title>
+    <url>/2025/09/24/214-WOW%E7%9A%84%E4%B8%80%E7%82%B9%E6%83%B3%E6%B3%95/</url>
+    <content><![CDATA[<p>我是差不多16年毕业一年的时候AKF的，11年上大学的时候我哥带我玩的。毕业了之后，一个是因为笔记本带不动，再加上当时租房搬家，慢慢的就不上线了，直到国服关闭之前，我还关注着，关服当天我看到二哥上线怀念他的青春。</p>
+<span id="more"></span>
+<p>我们宿舍当时有4个人在玩魔兽，都是我带的，后面大四了，其中两个毕业就不玩了，只剩下二哥还在坚持，二哥这人一直很长情。<br />
+对于魔兽，我更多的是遗憾，一直没有玩到核心内容，大学四年我更多的玩法是地精，我记得在5w金一张点卡的时候，我赚了有250w的金币。倒是我宿舍的两个同学，进工会，跟团本，在当前版本完整的体验了那时候的魔兽真谛。说来惭愧，我哪怕在MOP末期都没有宝库普通的成就。这个和我的性格有关，也和当时宿舍环境有关。二哥多少次在我们都熄灯之后靠着笔记本电池的电量打完团本的。<br />
+这次是想要回归，于是闲着没事就去看了下14厅，在里面看到了一个让我感触很深的帖子<a href="https://bbs.nga.cn/read.php?tid=45042656">​[正式服] [破事氵] 关于不可描述打手的调查报告</a>，帖子是关于RMT的【real money trade】，简单说就是大家直接用淘宝咸鱼等工具下单而绕过系统的金币系统，这点在当前环境已经变得十分正常，从之前的G团，到现在已经摆脱G这个媒介，直接人民币交易了。帖子的观点就是：有需求就有存在。当然从帖子中我们也能看到一些魔兽现在的问题：</p>
+<h2 id="难度"><a class="markdownIt-Anchor" href="#难度"></a> 难度</h2>
+<p>魔兽的难不是游戏的难，是生活的难，是环境的难，是人和人直接的难。从一开始的25人，到10人，再到目前5人大秘境。他们明白一个宏伟的大团是有一定难度的，5人大秘境可以说是拯救了魔兽的后半期。随着游戏越来越快餐化，短平快的游戏才是这个世界的主流，动辄三四小时的团本在慢慢的失去了优势，这种情况下RMT的出现是解决了用户的需求。哪怕你BUFF开的再多，副本再简单，就会有那么一群人，没时间就是没时间。破碎的时间，让人轻松两把才是玩游戏的目的。而5人大秘境从一定程度上解决了这个问题，一场30-40分钟之间，5人就够，沟通成本和时间不高，可以冲层，可以速推，丰俭由人。出产的装备有毕业装，没有歧视链条。这种种拯救了那些已经没时间打团的老登。<br />
+要知道魔兽是一个学习成本很高的游戏。以我体验最深的MOP为例，当时是要求堆15%的命中，所有职业都要。当时哪怕我玩了快1年了，也并不知道，当时是打魔古山宝库老一，10人本，我的高装等术士打不出伤害，其实我不算一个完全的小白，至少当时我还知道看伤害构成，发现我的毁灭箭好多都未命中，然后查询了之后才知道这个。然后你还需要会调整插件，学习各个坐骑点，成就点。而最大的难度也许在于小号，当初的魔兽小号至少需要半个月才能满级，才能有资格体验另一个职业，而正常一个25人的大团一般每个人都会有几个小号，否则后续的farm会没有需求。这一系列的难度不仅成为了新人入坑的门槛，也是灭绝魔兽生命力的钝刀子。当我有一天学会了放弃，我就会放弃坐骑，放弃团本，放弃魔兽。因为太难了，我发现我玩这个游戏，但是享受不到这个游戏的核心。<br />
+魔兽这几年也在改变，比如开放流放岛，差不多8个小时游戏时间就可以满级，然后很多玩具可以战网共享，代币战网共享，方便练级小号。但是有些职业的核心装备依旧放在史诗级团本，这就让人有点搞不懂，英雄本的装备能用么？能，但是凭什么他们能用史诗，他们付出了努力，我们就付出金钱，这也是最近史诗RMT盛行的原因，当然不到700的价格实在便宜，年卡都要720啊。其实我不明白，大家都知道这些装备在新版本一开就是辣鸡，玩家只不过是想多爽一爽而已，就算史诗装备齐全了，还是会有一群喜欢打团的人去打团，他们可以有更多的容错，更多的战术。而不是让一些人打完英雄就不再打团，史诗难度太高不想冲击，而让一些人花钱购买进本的门槛。再好的内容没有人玩就是摆设，从英雄五人本就可以看出，除开刚刚满级时候打英雄五人本，谁还会去打五人本。而大秘境就给了这些没有用处的五人本第二次生命，将那些尘封的机制和副本重新焕发光彩。<br />
+装备的保值率是目前魔兽的一个痛点，新开的时光服就似乎是在探讨这个问题，无限升级的装备，只要职业不大改，那么就可以一套装备打遍团本，团本掉落代币给予更多的低保，装等变为了数字。等级不变，装备成型快，让玩家更注重团本的打法，而不是手法，装备不够导致压力巨大。甚至一个人可以多一套备用套装用来应对某些特殊环境。我是看好后续的时光服提高玩家人数。<br />
+<a href="https://bbs.nga.cn/read.php?tid=45201998">下一个给魔兽续命的模式会是什么呢？</a></p>
+<h2 id="价格"><a class="markdownIt-Anchor" href="#价格"></a> 价格</h2>
+<p>魔兽的价格是很贵的，以年卡720为例，你在steam上可以保底买两个3A大作，而这种大作一年也就2-3个，所以你可以爽玩，买完这游戏就是你的，能下载，能删除，十年之后想起来了还能进去再爽一把。但是魔兽世界是720一年的租期，账号所有权还不是你的。其实当初点卡转月卡时候大家就提过两个并行，如果月卡是我大学时候提出来的，那我是双手欢迎的，毕竟那时候一个月用个一两张很正常，但是毕业了你告诉我我不能时不时的上去看看，必须一次性租一个月，到期就没了。那我不能接受，我有几次就是闲着没事上去看看风景，然后忽然想去刷坐骑，又重新拾起了魔兽，但是现在这个成本太高了，我要先交75看看再说。<br />
+魔兽的这个75月卡的门槛就注定了新人很难入门，在我们的认知里面工作室是要打团就要招几个员工，然后练手法，巴拉巴拉的。其实不是，除开那种多开采矿的工作室。其他很多工作室的打手是大学生或者失业的老玩家。原因很简单，一个是单量不稳定，除开头部的几个工作室，很多淘宝店铺有时候没单子，养那么多员工对他们来说成本很高，还不如找那些玩家，装备自带，到时候分钱即可。打手大多数是三线线城市，大多是大学生或者玩家失业失业之后，从不固定打手转变为固定打手，打一场给一场钱。相比较网易的其他游戏，或者其他网游，魔兽属于收益比较低的那一类。在哪个帖子里面有不少打手现身说法，大家都在骂这些打手为啥不找个班上的时候，你会发现这些人正是因为找不到班才将自己的兴趣变为工作。<br />
+也许是装备成型快，难度低了，或者是大环境不好，工作室竞争激烈了，反正这两年国内的工作室价格是一跌再跌，700自己上号打史诗团本，装备都是你的。4块钱就可以进H本，我今天买了瓶饮料，4块5。</p>
+<h2 id="社交"><a class="markdownIt-Anchor" href="#社交"></a> 社交</h2>
+<p>魔兽自诩为一个强社交游戏，目前语音功能不完善，自带集合石也没人用，他明明知道25人需要沟通，需要一个平台交流，但是这么多年了一直没有做出来。魔兽也知道环境内装等歧视的问题，也明白卡拉赞毕业来卡拉赞。这些年一直被人诟病，工会系统形同虚设，也没有特别扶持。它就像一个国王一样，知道自己千疮百孔的国情，但是为了团本，为了史诗感，不愿意将这些事情放入自己的眼里，他傲慢的等待玩家自适应。他想要的史诗感靠的是一群人的牺牲才能达到。</p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>其实我想说的很多，这个游戏确实庞大，目前这尊巨人虽然还没到要倒塌的时候，也该注意下自己的缺陷了。本来一开始是想要回归的，于是做了很多功课，现在看来还是算了。这次回归的核心是不想要做地精，想要完完整整的感受下这个游戏的魅力，然而发现成本太高了。昨天刚在家里请人吃饭，11个人花了630，而魔兽一年的租期就要720。所以想想还是不舍得啊。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>WOW</tag>
+        <tag>魔兽世界</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>自走棋和酒馆得一点思考</title>
     <url>/2025/09/18/213-%E8%87%AA%E8%B5%B0%E6%A3%8B%E5%92%8C%E9%85%92%E9%A6%86%E5%BE%97%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/</url>
     <content><![CDATA[<p>最近闲来无事开始玩dota2得自走棋，作为一个前炉石玩家，前酒馆战旗玩家，我对这种类似得玩法还是比较感兴趣得，但是玩着玩着就感觉有点欠缺。</p>
@@ -7557,42 +7593,6 @@ lan口：就是普通的网络接口，用来和wan口区分开来。</p>
       <tags>
         <tag>酒馆战旗</tag>
         <tag>自走棋</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>WOW的一点想法</title>
-    <url>/2025/09/24/214-WOW%E7%9A%84%E4%B8%80%E7%82%B9%E6%83%B3%E6%B3%95/</url>
-    <content><![CDATA[<p>我是差不多16年毕业一年的时候AKF的，11年上大学的时候我哥带我玩的。毕业了之后，一个是因为笔记本带不动，再加上当时租房搬家，慢慢的就不上线了，直到国服关闭之前，我还关注着，关服当天我看到二哥上线怀念他的青春。</p>
-<span id="more"></span>
-<p>我们宿舍当时有4个人在玩魔兽，都是我带的，后面大四了，其中两个毕业就不玩了，只剩下二哥还在坚持，二哥这人一直很长情。<br />
-对于魔兽，我更多的是遗憾，一直没有玩到核心内容，大学四年我更多的玩法是地精，我记得在5w金一张点卡的时候，我赚了有250w的金币。倒是我宿舍的两个同学，进工会，跟团本，在当前版本完整的体验了那时候的魔兽真谛。说来惭愧，我哪怕在MOP末期都没有宝库普通的成就。这个和我的性格有关，也和当时宿舍环境有关。二哥多少次在我们都熄灯之后靠着笔记本电池的电量打完团本的。<br />
-这次是想要回归，于是闲着没事就去看了下14厅，在里面看到了一个让我感触很深的帖子<a href="https://bbs.nga.cn/read.php?tid=45042656">​[正式服] [破事氵] 关于不可描述打手的调查报告</a>，帖子是关于RMT的【real money trade】，简单说就是大家直接用淘宝咸鱼等工具下单而绕过系统的金币系统，这点在当前环境已经变得十分正常，从之前的G团，到现在已经摆脱G这个媒介，直接人民币交易了。帖子的观点就是：有需求就有存在。当然从帖子中我们也能看到一些魔兽现在的问题：</p>
-<h2 id="难度"><a class="markdownIt-Anchor" href="#难度"></a> 难度</h2>
-<p>魔兽的难不是游戏的难，是生活的难，是环境的难，是人和人直接的难。从一开始的25人，到10人，再到目前5人大秘境。他们明白一个宏伟的大团是有一定难度的，5人大秘境可以说是拯救了魔兽的后半期。随着游戏越来越快餐化，短平快的游戏才是这个世界的主流，动辄三四小时的团本在慢慢的失去了优势，这种情况下RMT的出现是解决了用户的需求。哪怕你BUFF开的再多，副本再简单，就会有那么一群人，没时间就是没时间。破碎的时间，让人轻松两把才是玩游戏的目的。而5人大秘境从一定程度上解决了这个问题，一场30-40分钟之间，5人就够，沟通成本和时间不高，可以冲层，可以速推，丰俭由人。出产的装备有毕业装，没有歧视链条。这种种拯救了那些已经没时间打团的老登。<br />
-要知道魔兽是一个学习成本很高的游戏。以我体验最深的MOP为例，当时是要求堆15%的命中，所有职业都要。当时哪怕我玩了快1年了，也并不知道，当时是打魔古山宝库老一，10人本，我的高装等术士打不出伤害，其实我不算一个完全的小白，至少当时我还知道看伤害构成，发现我的毁灭箭好多都未命中，然后查询了之后才知道这个。然后你还需要会调整插件，学习各个坐骑点，成就点。而最大的难度也许在于小号，当初的魔兽小号至少需要半个月才能满级，才能有资格体验另一个职业，而正常一个25人的大团一般每个人都会有几个小号，否则后续的farm会没有需求。这一系列的难度不仅成为了新人入坑的门槛，也是灭绝魔兽生命力的钝刀子。当我有一天学会了放弃，我就会放弃坐骑，放弃团本，放弃魔兽。因为太难了，我发现我玩这个游戏，但是享受不到这个游戏的核心。<br />
-魔兽这几年也在改变，比如开放流放岛，差不多8个小时游戏时间就可以满级，然后很多玩具可以战网共享，代币战网共享，方便练级小号。但是有些职业的核心装备依旧放在史诗级团本，这就让人有点搞不懂，英雄本的装备能用么？能，但是凭什么他们能用史诗，他们付出了努力，我们就付出金钱，这也是最近史诗RMT盛行的原因，当然不到700的价格实在便宜，年卡都要720啊。其实我不明白，大家都知道这些装备在新版本一开就是辣鸡，玩家只不过是想多爽一爽而已，就算史诗装备齐全了，还是会有一群喜欢打团的人去打团，他们可以有更多的容错，更多的战术。而不是让一些人打完英雄就不再打团，史诗难度太高不想冲击，而让一些人花钱购买进本的门槛。再好的内容没有人玩就是摆设，从英雄五人本就可以看出，除开刚刚满级时候打英雄五人本，谁还会去打五人本。而大秘境就给了这些没有用处的五人本第二次生命，将那些尘封的机制和副本重新焕发光彩。<br />
-装备的保值率是目前魔兽的一个痛点，新开的时光服就似乎是在探讨这个问题，无限升级的装备，只要职业不大改，那么就可以一套装备打遍团本，团本掉落代币给予更多的低保，装等变为了数字。等级不变，装备成型快，让玩家更注重团本的打法，而不是手法，装备不够导致压力巨大。甚至一个人可以多一套备用套装用来应对某些特殊环境。我是看好后续的时光服提高玩家人数。<br />
-<a href="https://bbs.nga.cn/read.php?tid=45201998">下一个给魔兽续命的模式会是什么呢？</a></p>
-<h2 id="价格"><a class="markdownIt-Anchor" href="#价格"></a> 价格</h2>
-<p>魔兽的价格是很贵的，以年卡720为例，你在steam上可以保底买两个3A大作，而这种大作一年也就2-3个，所以你可以爽玩，买完这游戏就是你的，能下载，能删除，十年之后想起来了还能进去再爽一把。但是魔兽世界是720一年的租期，账号所有权还不是你的。其实当初点卡转月卡时候大家就提过两个并行，如果月卡是我大学时候提出来的，那我是双手欢迎的，毕竟那时候一个月用个一两张很正常，但是毕业了你告诉我我不能时不时的上去看看，必须一次性租一个月，到期就没了。那我不能接受，我有几次就是闲着没事上去看看风景，然后忽然想去刷坐骑，又重新拾起了魔兽，但是现在这个成本太高了，我要先交75看看再说。<br />
-魔兽的这个75月卡的门槛就注定了新人很难入门，在我们的认知里面工作室是要打团就要招几个员工，然后练手法，巴拉巴拉的。其实不是，除开那种多开采矿的工作室。其他很多工作室的打手是大学生或者失业的老玩家。原因很简单，一个是单量不稳定，除开头部的几个工作室，很多淘宝店铺有时候没单子，养那么多员工对他们来说成本很高，还不如找那些玩家，装备自带，到时候分钱即可。打手大多数是三线线城市，大多是大学生或者玩家失业失业之后，从不固定打手转变为固定打手，打一场给一场钱。相比较网易的其他游戏，或者其他网游，魔兽属于收益比较低的那一类。在哪个帖子里面有不少打手现身说法，大家都在骂这些打手为啥不找个班上的时候，你会发现这些人正是因为找不到班才将自己的兴趣变为工作。<br />
-也许是装备成型快，难度低了，或者是大环境不好，工作室竞争激烈了，反正这两年国内的工作室价格是一跌再跌，700自己上号打史诗团本，装备都是你的。4块钱就可以进H本，我今天买了瓶饮料，4块5。</p>
-<h2 id="社交"><a class="markdownIt-Anchor" href="#社交"></a> 社交</h2>
-<p>魔兽自诩为一个强社交游戏，目前语音功能不完善，自带集合石也没人用，他明明知道25人需要沟通，需要一个平台交流，但是这么多年了一直没有做出来。魔兽也知道环境内装等歧视的问题，也明白卡拉赞毕业来卡拉赞。这些年一直被人诟病，工会系统形同虚设，也没有特别扶持。它就像一个国王一样，知道自己千疮百孔的国情，但是为了团本，为了史诗感，不愿意将这些事情放入自己的眼里，他傲慢的等待玩家自适应。他想要的史诗感靠的是一群人的牺牲才能达到。</p>
-<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
-<p>其实我想说的很多，这个游戏确实庞大，目前这尊巨人虽然还没到要倒塌的时候，也该注意下自己的缺陷了。本来一开始是想要回归的，于是做了很多功课，现在看来还是算了。这次回归的核心是不想要做地精，想要完完整整的感受下这个游戏的魅力，然而发现成本太高了。昨天刚在家里请人吃饭，11个人花了630，而魔兽一年的租期就要720。所以想想还是不舍得啊。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>WOW</tag>
-        <tag>魔兽世界</tag>
-        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -7878,6 +7878,41 @@ selenium/standalone-chrome:latest</p>
       </tags>
   </entry>
   <entry>
+    <title>selenium模拟手机错误</title>
+    <url>/2025/11/29/219-selenium%E6%A8%A1%E6%8B%9F%E6%89%8B%E6%9C%BA%E9%94%99%E8%AF%AF/</url>
+    <content><![CDATA[<p>错误代码：</p>
+<blockquote>
+<p>Message: Could not start a new session. Error while creating session with the driver service. Stopping driver service: Could not start a new session. Response code 400. Message: invalid argument: entry 0 of ‘firstMatch’ is invalid</p>
+</blockquote>
+<p>这是一个广泛性错误解释，即传入参数有问题。</p>
+<span id="more"></span>
+<p>我一开始想法是想要模拟手机，所以传入参数里面我要带上具体型号，根据selenium的<a href="https://www.selenium.dev/zh-cn/documentation/webdriver/browsers/chrome/">options</a>内容，要配置在option内，<br />
+根据<a href="https://developer.chrome.com/docs/chromedriver/mobile-emulation?hl=zh-cn">chrome官方文档</a>提供的案例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from selenium import webdriver</span><br><span class="line">mobile_emulation = &#123; &quot;deviceName&quot;: &quot;Nexus 5&quot; &#125;</span><br><span class="line">chrome_options = webdriver.ChromeOptions()</span><br><span class="line">chrome_options.add_experimental_option(&quot;mobileEmulation&quot;, mobile_emulation)</span><br><span class="line">driver = webdriver.Remote(command_executor=&#x27;http://127.0.0.1:4444/wd/hub&#x27;,</span><br><span class="line">desired_capabilities = chrome_options.to_capabilities())</span><br></pre></td></tr></table></figure>
+<p>我看了下这块desired_capabilities这个命令已经在selenium 4下删除了，现在直接使用option即可。<br />
+修改下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from selenium import webdriver</span><br><span class="line">mobile_emulation = &#123; &quot;deviceName&quot;: &quot;Nexus 5&quot; &#125;</span><br><span class="line">chrome_options = webdriver.ChromeOptions()</span><br><span class="line">chrome_options.add_experimental_option(&quot;mobileEmulation&quot;, mobile_emulation)</span><br><span class="line">self.driver = webdriver.Remote(self.remote_url, options=chrome_options)</span><br></pre></td></tr></table></figure>
+<p>其中：</p>
+<blockquote>
+<p>chrome_options.add_experimental_option(“mobileEmulation”, mobile_emulation)<br />
+就是启动增加额外的option命令，你只需要将参数传入进去即可。<br />
+我之前的add_argument是命令开关行，支持列表可以在 <a href="https://github.com/GoogleChrome/chrome-launcher/blob/main/docs/chrome-flags-for-tools.md">Chrome Flags for Tooling</a>内找到。</p>
+</blockquote>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>青龙面板</tag>
+        <tag>PYTHON</tag>
+        <tag>selenium</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>FinalShell跳板配置</title>
     <url>/2022/12/05/FinalShell%E8%B7%B3%E6%9D%BF%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h1 id="finalshell跳板配置"><a class="markdownIt-Anchor" href="#finalshell跳板配置"></a> FinalShell跳板配置</h1>
@@ -8034,40 +8069,6 @@ selenium/standalone-chrome:latest</p>
       </tags>
   </entry>
   <entry>
-    <title>YT300型吊秤打印</title>
-    <url>/2022/10/25/YT300%E5%9E%8B%E5%90%8A%E7%A7%A4%E6%89%93%E5%8D%B0/</url>
-    <content><![CDATA[<h3 id="yt300型吊秤打印"><a class="markdownIt-Anchor" href="#yt300型吊秤打印"></a> YT300型吊秤打印</h3>
-<ol>
-<li>
-<p>清除历史数据,点击3:累显,查看历史数据,如果有,选择0累清,然后再进入后台设置</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221023150959.png" alt="20221023150959" /></p>
-</li>
-<li>
-<p>先按向上,再按向下键,进入数据编写</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221023150938.png" alt="20221023150938" /></p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221023151020.png" alt="20221023151020" /></p>
-</li>
-<li>
-<p>填写完成之后,取消退出</p>
-</li>
-<li>
-<p>点击8,打印题头,然后再进入3,打印清单,其中合计数可以自动打出.</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221023151039.png" alt="20221023151039" /></p>
-</li>
-</ol>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>吊秤</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vscode配置明细</title>
     <url>/2022/12/02/Vscode%E9%85%8D%E7%BD%AE%E6%98%8E%E7%BB%86/</url>
     <content><![CDATA[<h1 id="vscode配置明细"><a class="markdownIt-Anchor" href="#vscode配置明细"></a> Vscode配置明细</h1>
@@ -8114,6 +8115,40 @@ selenium/standalone-chrome:latest</p>
         <tag>配置项</tag>
         <tag>jupyter</tag>
         <tag>好用得插件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>YT300型吊秤打印</title>
+    <url>/2022/10/25/YT300%E5%9E%8B%E5%90%8A%E7%A7%A4%E6%89%93%E5%8D%B0/</url>
+    <content><![CDATA[<h3 id="yt300型吊秤打印"><a class="markdownIt-Anchor" href="#yt300型吊秤打印"></a> YT300型吊秤打印</h3>
+<ol>
+<li>
+<p>清除历史数据,点击3:累显,查看历史数据,如果有,选择0累清,然后再进入后台设置</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221023150959.png" alt="20221023150959" /></p>
+</li>
+<li>
+<p>先按向上,再按向下键,进入数据编写</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221023150938.png" alt="20221023150938" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221023151020.png" alt="20221023151020" /></p>
+</li>
+<li>
+<p>填写完成之后,取消退出</p>
+</li>
+<li>
+<p>点击8,打印题头,然后再进入3,打印清单,其中合计数可以自动打出.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20221023151039.png" alt="20221023151039" /></p>
+</li>
+</ol>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>吊秤</tag>
       </tags>
   </entry>
   <entry>
@@ -8950,6 +8985,29 @@ sysctl -p
       </tags>
   </entry>
   <entry>
+    <title>关于未来</title>
+    <url>/2022/04/30/%E5%85%B3%E4%BA%8E%E6%9C%AA%E6%9D%A5/</url>
+    <content><![CDATA[<p>有时候，我忽然感到莫名的恐惧，好似背后有人袭来一般，全身紧张。然后，就陷入了一股莫名的情绪不定中。</p>
+<p>在多次经历之后，我忽然发现这一切的原因既然来自未来。</p>
+<p>有时候会想到未来的某一天自己会怎么样，然后陷入开心或者恐惧之中，最后就导致上述事件的发生。在此我不禁想知道未来到底是什么。我知道这又是一个没有答案的问题，而我接下来的内容你完全可以参考你当初的八百文。</p>
+<p>好吧，在一切的开始，我们有过去，然后现在，幻想着未来。然后我们不止一次被人拿未来欺骗我们，而我们也一次次的为了这个不存在的东西努力，希望它实现。但事实是未来不存在。你想的只是你想的，未来是未来，不要拿自己的想法然后强加在一个不存在的事物，然后对我们宣布，看这就是未来，这就是当初我对你们说的未来。</p>
+<p>姑且不论唯物观点来说，未来根本连唯心主义概念都扯不上。他不想过去一样，有事情，有物体，有痕迹。也不像现在这样，只至少有人在感受和运动，但是未来有什么，物体？感受？没有，事实是没有。所以根本不存在预言未来这么一回事。至少在目前的体系内这事情是不存在的。有人说时间如同河流，奔流不息。这体现的是时间的流动，我更觉得时间就像一只笔，写下的都成事实无法更改，只有存在，而还没写的，就什么都没，我不能说接下来的字是存在的，事实上，到目前为止是存在的，但是以后，你没办法证明以后的事。</p>
+<p>当然你会在现在说上一段文字是存在的，但是你现在证明的是过去。额，这不是一个文字游戏，也不是人类对过去未来的定义错误，事实上，人们已经发现这个世界远比我们想象的复杂，两件事情最大的相关性也就才百分三十到四十，什么意思呢，就是说你叫你手下去买包烟，也才最大百分三十的可能性导致你手下去买烟。当然你也会在事后说，因为你是他老板所以他会去买，事实上这就跟我上面说的一样，你证明的是两件有已经发生的事情，当然是百分百。</p>
+<p>当然不必悲观，事实上，我们的世界的确很复杂，但是我们人类其实很简单，在大量的统计下，我们的事物其实有个趋近区间，简单说就是你这个老板叫下属买东西，下属去买的趋势靠近这个区间，依据人类的判断来说这个概率应该是很高的，但结果是我不知道，这个十分难统计，而且数量越大，结果越正确。以上只不过是我想说不是所有你想的事情都是百分百实现的，哪怕他多符合你的想法，话说，我好像讲理一大堆墨菲定律。</p>
+<p>好了，综上来看，似乎我们的未来处于一片混沌之中，现在的事情对他的影响可以说是有限的。于是乎未来这东西根本在我们如今的体系内是不存在的，因为他无法被证明，也无法被探知，更无法掌握规律。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>未来</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>利刃出鞘</title>
     <url>/2022/04/30/%E5%88%A9%E5%88%83%E5%87%BA%E9%9E%98/</url>
     <content><![CDATA[<p>利刃出鞘，这是我最近看过的一场酣畅淋漓的侦探佳作</p>
@@ -8974,29 +9032,6 @@ sysctl -p
       </categories>
       <tags>
         <tag>影评</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于未来</title>
-    <url>/2022/04/30/%E5%85%B3%E4%BA%8E%E6%9C%AA%E6%9D%A5/</url>
-    <content><![CDATA[<p>有时候，我忽然感到莫名的恐惧，好似背后有人袭来一般，全身紧张。然后，就陷入了一股莫名的情绪不定中。</p>
-<p>在多次经历之后，我忽然发现这一切的原因既然来自未来。</p>
-<p>有时候会想到未来的某一天自己会怎么样，然后陷入开心或者恐惧之中，最后就导致上述事件的发生。在此我不禁想知道未来到底是什么。我知道这又是一个没有答案的问题，而我接下来的内容你完全可以参考你当初的八百文。</p>
-<p>好吧，在一切的开始，我们有过去，然后现在，幻想着未来。然后我们不止一次被人拿未来欺骗我们，而我们也一次次的为了这个不存在的东西努力，希望它实现。但事实是未来不存在。你想的只是你想的，未来是未来，不要拿自己的想法然后强加在一个不存在的事物，然后对我们宣布，看这就是未来，这就是当初我对你们说的未来。</p>
-<p>姑且不论唯物观点来说，未来根本连唯心主义概念都扯不上。他不想过去一样，有事情，有物体，有痕迹。也不像现在这样，只至少有人在感受和运动，但是未来有什么，物体？感受？没有，事实是没有。所以根本不存在预言未来这么一回事。至少在目前的体系内这事情是不存在的。有人说时间如同河流，奔流不息。这体现的是时间的流动，我更觉得时间就像一只笔，写下的都成事实无法更改，只有存在，而还没写的，就什么都没，我不能说接下来的字是存在的，事实上，到目前为止是存在的，但是以后，你没办法证明以后的事。</p>
-<p>当然你会在现在说上一段文字是存在的，但是你现在证明的是过去。额，这不是一个文字游戏，也不是人类对过去未来的定义错误，事实上，人们已经发现这个世界远比我们想象的复杂，两件事情最大的相关性也就才百分三十到四十，什么意思呢，就是说你叫你手下去买包烟，也才最大百分三十的可能性导致你手下去买烟。当然你也会在事后说，因为你是他老板所以他会去买，事实上这就跟我上面说的一样，你证明的是两件有已经发生的事情，当然是百分百。</p>
-<p>当然不必悲观，事实上，我们的世界的确很复杂，但是我们人类其实很简单，在大量的统计下，我们的事物其实有个趋近区间，简单说就是你这个老板叫下属买东西，下属去买的趋势靠近这个区间，依据人类的判断来说这个概率应该是很高的，但结果是我不知道，这个十分难统计，而且数量越大，结果越正确。以上只不过是我想说不是所有你想的事情都是百分百实现的，哪怕他多符合你的想法，话说，我好像讲理一大堆墨菲定律。</p>
-<p>好了，综上来看，似乎我们的未来处于一片混沌之中，现在的事情对他的影响可以说是有限的。于是乎未来这东西根本在我们如今的体系内是不存在的，因为他无法被证明，也无法被探知，更无法掌握规律。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>未来</tag>
       </tags>
   </entry>
   <entry>
@@ -9947,6 +9982,27 @@ sysctl -p
       </tags>
   </entry>
   <entry>
+    <title>或许农业就是最大的骗局</title>
+    <url>/2022/05/19/%E6%88%96%E8%AE%B8%E5%86%9C%E4%B8%9A%E5%B0%B1%E6%98%AF%E6%9C%80%E5%A4%A7%E7%9A%84%E9%AA%97%E5%B1%80/</url>
+    <content><![CDATA[<p>我必须承认的《人类简史》相较于《枪炮，病菌和钢铁》是更适合我的一本人类史读物，它并不侧重于在历史遗迹的发现。它相反，指出了了解那个时代最准确的人，只有那个时代的人。我们最多只是能从中发现结果，但是事情的起因是什么，并不是简单的因果律能推断出来的。也没有必然性。而这点《枪炮，病菌和钢铁》则通篇充斥着因果律和必然性。诚然，从遗迹或者事情的结果来看。他会从海岛大小推断出居民的的好斗程度，因为地域小，无需太多的战争。它从一两个例子告诉我们这个故事，但是它往往也能拿出类似环境下的反例。整本书似乎在告诉你什么，但是又没有告诉。</p>
+<p>这点，《人类简史》做出了一个解释：相类似的海岛大小，但是对应的环境气候不同，就算气候相同，或者是领导人的想法不同，导致最后一个不一样的结果。确实，我们很多时候考虑一件事往往缺少考虑人在其中的关键作用。一件事情往往掺杂着天时地利人和的多重因素。就好比为啥智人最后会成为这个世界的赢家一样。作者描绘了那个年代拥有众多的人种，类似我们现在的人类，但是最后存活下来的只有智人。作者提出了一个新的概念：想象的现实。一个并不存在的现实，但是在所有人的想象下存在，是一个人群中的共识。这个武器的存在使得智人团结起来，为了一个不存在的共同想象进行杀戮。人类最多管理的人数上限在150人，也就是说在没有共同规则指导下，一个部落最大的人数就只有151人，再多的话，就无法控制，就会又年轻的人另立山头，成立另外一个部落。但是如果在一个共同的祖先，或者祭祀的对象下，他们虽然没有在一个部落，但是却可以以此作为团结的象征，融合在一起，一起开疆扩土。诚然，现在的你对这些概念很熟悉，毕竟我们已经在这个模式下生活好多年，我们遵守那不存在的《宪法》，也同意那并没有实体的《规则》。但是恰恰正是这个习以为常的概念，让我们的祖先在7万年前合作杀猛犸，与别的人种搏斗。这在当时是不可想象的，至于为啥会是智人呢，这点作者并没有解释，或者说无法解释。</p>
+<p>从上可以看出，这本书的侧重点并不是人类历史故事。而是更多的深思。包括人类从采集社会到农业社会，实际的劳动时长更加长，生活环境也没有更多的改善，对身体的负担也更大，作者赤裸裸的宣称：农业社会是人类史上最大的骗局。它并没有实现社会进步，反而让农民的身体承受更多的痛苦，而目的却是养活那些奴役他们的官员。作为粮食的生产者，他们却没有享受到高等的地位，还要纳税，上贡给那些不劳而获之人，仅仅是他们建立了一个基于想象现实而建立起来的社会制度。如果我们抛开现实的影响，这样看来，确实是一件本末倒置的事情。因为有了农业，人类需要定居，一旦定居，那么就需要土地，而土地正是古代农民痛苦的根源，土地的所有权并没有任何的自然法则，但是我们仅仅依据一个想象的现实，将土地归属到了某一个人身上，就好像哥伦布宣布美洲归西班牙国王所有。先来者制定了规则，占据了天时，而后来的人就只能在这个规则下，默默的耕耘。农业就成为了这一切的源头。诚然，农业革命带来了更多的人口，更低的初生儿死亡率。或许，每个物种都有自己的一个出生率死亡率，但是我们改变了他，更多的人口带来的是更多的土地需求，更多的农业，而更多的农业则又会带来更多的人口，这算是智人打破自然法则的第一步。智人开始不再按照预设的生存率生存，这样的结果就是现在地球上已经有70亿人口。</p>
+<p>后面还有很多，包括对科技的一些思考，对快乐的定义，万物皆追求其本质，在一切都探究其本质之后，我们就会发现，其实，很多东西，都并不是一件简单的因果律，万事都没有必然性。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220519204015.png" alt="20220519204015" /></p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>人类简史</tag>
+        <tag>农业革命</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>搬瓦工</title>
     <url>/2023/04/20/%E6%90%AC%E7%93%A6%E5%B7%A5/</url>
     <content><![CDATA[<h1 id="搬瓦工"><a class="markdownIt-Anchor" href="#搬瓦工"></a> 搬瓦工</h1>
@@ -10024,27 +10080,6 @@ sysctl -p
       <tags>
         <tag>搬瓦工</tag>
         <tag>vps</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>或许农业就是最大的骗局</title>
-    <url>/2022/05/19/%E6%88%96%E8%AE%B8%E5%86%9C%E4%B8%9A%E5%B0%B1%E6%98%AF%E6%9C%80%E5%A4%A7%E7%9A%84%E9%AA%97%E5%B1%80/</url>
-    <content><![CDATA[<p>我必须承认的《人类简史》相较于《枪炮，病菌和钢铁》是更适合我的一本人类史读物，它并不侧重于在历史遗迹的发现。它相反，指出了了解那个时代最准确的人，只有那个时代的人。我们最多只是能从中发现结果，但是事情的起因是什么，并不是简单的因果律能推断出来的。也没有必然性。而这点《枪炮，病菌和钢铁》则通篇充斥着因果律和必然性。诚然，从遗迹或者事情的结果来看。他会从海岛大小推断出居民的的好斗程度，因为地域小，无需太多的战争。它从一两个例子告诉我们这个故事，但是它往往也能拿出类似环境下的反例。整本书似乎在告诉你什么，但是又没有告诉。</p>
-<p>这点，《人类简史》做出了一个解释：相类似的海岛大小，但是对应的环境气候不同，就算气候相同，或者是领导人的想法不同，导致最后一个不一样的结果。确实，我们很多时候考虑一件事往往缺少考虑人在其中的关键作用。一件事情往往掺杂着天时地利人和的多重因素。就好比为啥智人最后会成为这个世界的赢家一样。作者描绘了那个年代拥有众多的人种，类似我们现在的人类，但是最后存活下来的只有智人。作者提出了一个新的概念：想象的现实。一个并不存在的现实，但是在所有人的想象下存在，是一个人群中的共识。这个武器的存在使得智人团结起来，为了一个不存在的共同想象进行杀戮。人类最多管理的人数上限在150人，也就是说在没有共同规则指导下，一个部落最大的人数就只有151人，再多的话，就无法控制，就会又年轻的人另立山头，成立另外一个部落。但是如果在一个共同的祖先，或者祭祀的对象下，他们虽然没有在一个部落，但是却可以以此作为团结的象征，融合在一起，一起开疆扩土。诚然，现在的你对这些概念很熟悉，毕竟我们已经在这个模式下生活好多年，我们遵守那不存在的《宪法》，也同意那并没有实体的《规则》。但是恰恰正是这个习以为常的概念，让我们的祖先在7万年前合作杀猛犸，与别的人种搏斗。这在当时是不可想象的，至于为啥会是智人呢，这点作者并没有解释，或者说无法解释。</p>
-<p>从上可以看出，这本书的侧重点并不是人类历史故事。而是更多的深思。包括人类从采集社会到农业社会，实际的劳动时长更加长，生活环境也没有更多的改善，对身体的负担也更大，作者赤裸裸的宣称：农业社会是人类史上最大的骗局。它并没有实现社会进步，反而让农民的身体承受更多的痛苦，而目的却是养活那些奴役他们的官员。作为粮食的生产者，他们却没有享受到高等的地位，还要纳税，上贡给那些不劳而获之人，仅仅是他们建立了一个基于想象现实而建立起来的社会制度。如果我们抛开现实的影响，这样看来，确实是一件本末倒置的事情。因为有了农业，人类需要定居，一旦定居，那么就需要土地，而土地正是古代农民痛苦的根源，土地的所有权并没有任何的自然法则，但是我们仅仅依据一个想象的现实，将土地归属到了某一个人身上，就好像哥伦布宣布美洲归西班牙国王所有。先来者制定了规则，占据了天时，而后来的人就只能在这个规则下，默默的耕耘。农业就成为了这一切的源头。诚然，农业革命带来了更多的人口，更低的初生儿死亡率。或许，每个物种都有自己的一个出生率死亡率，但是我们改变了他，更多的人口带来的是更多的土地需求，更多的农业，而更多的农业则又会带来更多的人口，这算是智人打破自然法则的第一步。智人开始不再按照预设的生存率生存，这样的结果就是现在地球上已经有70亿人口。</p>
-<p>后面还有很多，包括对科技的一些思考，对快乐的定义，万物皆追求其本质，在一切都探究其本质之后，我们就会发现，其实，很多东西，都并不是一件简单的因果律，万事都没有必然性。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220519204015.png" alt="20220519204015" /></p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>人类简史</tag>
-        <tag>农业革命</tag>
       </tags>
   </entry>
   <entry>
@@ -10211,72 +10246,6 @@ sysctl -p
       </tags>
   </entry>
   <entry>
-    <title>服务器线路测试</title>
-    <url>/2022/06/08/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BA%BF%E8%B7%AF%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<p>贴一下服务器配置：</p>
-<ul>
-<li>
-<p>cpu：1核</p>
-</li>
-<li>
-<p>内存：512M</p>
-</li>
-<li>
-<p>硬盘：10G</p>
-</li>
-<li>
-<p>带宽：1G</p>
-</li>
-<li>
-<p>流量：1000G/月</p>
-</li>
-</ul>
-<p>这个是搬瓦工的512M的洛杉矶CN2线路，访问国内速度很快，电信联通尤其好，移动差劲。</p>
-<p>最近需要更换宽带，正好借此机会，研究一下：我的服务器对为啥对移动这么排斥，联通和电信哪个更好？根据后台的Billing，我可以看出我得服务器，在洛杉矶，机房代号为：USCA_2。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220608110005.png" alt="20220608110005" /></p>
-<p>我查了下这个机房：</p>
-<blockquote>
-<p>搬瓦工的洛杉矶DC2机房来自QN机房(全称<a href="https://www.quadranet.com/cn/">QuadraNet机房</a>)，目前已接入CN2 GT直连线路，机房CN2直连线路由QN机房官方部署。</p>
-</blockquote>
-<p>这个机房是有自己得服务器业务的，包括托管别人的服务器，搬瓦工就相当于把这个服务器放在人家那托管，至于速度啥的由这个机房自己控制。这个机房是有自己的官网的，有兴趣可以做些测试。网站也提供一些测试IP。</p>
-<p>说完机房我们来说线路，我们经常听到CN2 GIA,CN2 GT线路之类的，简单说这两条线路都是<strong>中国电信</strong>的明星产品，GIA线路负载小，贵，所以快。GT性价比高，所以人多堵塞。但是这一切都是电信的线路。</p>
-<p>搬瓦工后面自己发行了一个CN2 GIA线路的自主机房，这时候那些卖机子的就开始狂吹。其实完全没有必要，只要是任何中国直连的线路都有不错的速度。我们只需要关注对应机房是否对中国线路有没有进行优化就可以。</p>
-<p>由于我的服务器在QuadraNet机房，归属于QuadraNet这个公司的，所以我不再使用自己的服务器IP进行测试，直接用他们<a href="https://www.quadranet.com/los-angeles-datacenter">洛杉矶机房提供的测试IP</a>和文件进行测试：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220608112920.png" alt="20220608112920" /></p>
-<p>这边官方贴心的提供了亚洲优化的IP,只用<a href="https://tools.ipip.net/traceroute.php">TraceRoute查询</a>查询对应IP在对应线路下的跳转，使用TCP进行查询，最大化模拟访问。</p>
-<p>| 访问IP | 节点数 |运营商|跨洋线路|落地表现|</p>
-<p>| -| – |-----|—|-|</p>
-<p>| 69.12.66.26-未优化 | 15 |电信|AS4134-163网络|到美国加利福尼亚，美国国内跳转5次，从cogentco跳转到QuadraNet</p>
-<p>|69.12.66.26-未优化|18|移动|AS9808跳AS58453|到美国，国内跳转8次，从cogentco跳转到QuadraNet</p>
-<p>|69.12.66.26-未优化|12|联通|AS4837-联通169网络|到美国，国内跳转3次，从cust.net跳转到QuadraNet</p>
-<p>| 204.152.218.25-优化IP | 12 |电信|AS4134-163网络|到美国直达QuadraNet</p>
-<p>|204.152.218.25-优化IP|16 |移动|AS9808跳AS58453|到美国后直达QuadraNet数据中心</p>
-<p>|204.152.218.25-优化IP |11|联通|AS4837-联通169网络|到美国后到美国联通公司再直达QuadraNet</p>
-<p>一通测试下来之后发现，这个机房的优化IP有效果，都可以在到达美国之后，直接跳转到机房，这个很重要。至于国内内部跳问题这个无解，就像移动老是喜欢跳香港（原因后面解释），再出国，联通喜欢走广东出国之类的。其实国内的内部跳转很快的都是1ms这些的，所以瓶颈在于跨洋线路和到美国之后的跳转，这些都是150+ms，跨洋线路的话，我这次测试没有遇见到的CN2 GT路线（AS4809）,三大运营商用的都是自己的主要干线，如果高峰期这条线路堵塞卡顿也是正常的，<strong>特别吐槽下移动：AS9808为移动境内的骨干网，未设与国际ISP Peer，故所有出境流量通过AS58453（CMI）与外网互联，所以好好的就是速度比联通慢</strong>。</p>
-<p>接下来测试自己VPS主机IP：</p>
-<p>|运营商|节点数|跨洋线路|表现|</p>
-<p>|-|-|-|-|</p>
-<p>|电信|13|AS4134-163网络|到美国后直达</p>
-<p>|联通|13|AS4837-联通169网络|到美国后直达</p>
-<p>|移动|16|AS9808跳AS58453|到美国后直达</p>
-<p>综合测试下来，我的服务器IP也享受到了QuadraNet的机房优化效果，至于电信的CN2线路，可以确定的是QuadraNet机房有接入这条线路，但是实际能不能用到要由机房决定。对几条骨干线路感兴趣的话，可以参考<a href="https://zhuanlan.zhihu.com/p/451683996">国内几大骨干网介绍</a>和<a href="https://zhuanlan.zhihu.com/p/64467370">国内主流网络运营商国际连接线路简谈</a>。</p>
-<p>所以购买服务器的时候，只要是对国内线路有优化的服务器就可以，没必要追求CN2线路，那是电信的线路，除非是专线：即所有的进出都走且只能走这条线路，否则一般你你运营商都会选择走自己的骨干网络。而如果你是专线的话，又会涉及到跨运营商访问的问题，除非你手机，宽带都是电信，还有别人访问你的网络也都是电信。但是这往往是不可能的。而跨运营商访问话，需要看你的城市是否有<strong>国家级互联网骨干直联点</strong>。否则你的路由也得经由这个城市再转发到电信线路去。所以，说实话，直接普通的<a href="https://bandwagonhost.com/aff.php?aff=20859">CN2线路</a>就能满足大部分人的大多数需求。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>搬瓦工</tag>
-        <tag>线路</tag>
-        <tag>CN2线路</tag>
-        <tag>TraceRoute</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>服务器docker化管理</title>
     <url>/2022/12/02/%E6%9C%8D%E5%8A%A1%E5%99%A8docker%E5%8C%96%E7%AE%A1%E7%90%86/</url>
     <content><![CDATA[<h1 id="服务器docker化管理"><a class="markdownIt-Anchor" href="#服务器docker化管理"></a> 服务器docker化管理</h1>
@@ -10408,6 +10377,72 @@ sysctl -p
         <tag>服务器</tag>
         <tag>v2ray</tag>
         <tag>caddyv2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>服务器线路测试</title>
+    <url>/2022/06/08/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BA%BF%E8%B7%AF%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<p>贴一下服务器配置：</p>
+<ul>
+<li>
+<p>cpu：1核</p>
+</li>
+<li>
+<p>内存：512M</p>
+</li>
+<li>
+<p>硬盘：10G</p>
+</li>
+<li>
+<p>带宽：1G</p>
+</li>
+<li>
+<p>流量：1000G/月</p>
+</li>
+</ul>
+<p>这个是搬瓦工的512M的洛杉矶CN2线路，访问国内速度很快，电信联通尤其好，移动差劲。</p>
+<p>最近需要更换宽带，正好借此机会，研究一下：我的服务器对为啥对移动这么排斥，联通和电信哪个更好？根据后台的Billing，我可以看出我得服务器，在洛杉矶，机房代号为：USCA_2。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220608110005.png" alt="20220608110005" /></p>
+<p>我查了下这个机房：</p>
+<blockquote>
+<p>搬瓦工的洛杉矶DC2机房来自QN机房(全称<a href="https://www.quadranet.com/cn/">QuadraNet机房</a>)，目前已接入CN2 GT直连线路，机房CN2直连线路由QN机房官方部署。</p>
+</blockquote>
+<p>这个机房是有自己得服务器业务的，包括托管别人的服务器，搬瓦工就相当于把这个服务器放在人家那托管，至于速度啥的由这个机房自己控制。这个机房是有自己的官网的，有兴趣可以做些测试。网站也提供一些测试IP。</p>
+<p>说完机房我们来说线路，我们经常听到CN2 GIA,CN2 GT线路之类的，简单说这两条线路都是<strong>中国电信</strong>的明星产品，GIA线路负载小，贵，所以快。GT性价比高，所以人多堵塞。但是这一切都是电信的线路。</p>
+<p>搬瓦工后面自己发行了一个CN2 GIA线路的自主机房，这时候那些卖机子的就开始狂吹。其实完全没有必要，只要是任何中国直连的线路都有不错的速度。我们只需要关注对应机房是否对中国线路有没有进行优化就可以。</p>
+<p>由于我的服务器在QuadraNet机房，归属于QuadraNet这个公司的，所以我不再使用自己的服务器IP进行测试，直接用他们<a href="https://www.quadranet.com/los-angeles-datacenter">洛杉矶机房提供的测试IP</a>和文件进行测试：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220608112920.png" alt="20220608112920" /></p>
+<p>这边官方贴心的提供了亚洲优化的IP,只用<a href="https://tools.ipip.net/traceroute.php">TraceRoute查询</a>查询对应IP在对应线路下的跳转，使用TCP进行查询，最大化模拟访问。</p>
+<p>| 访问IP | 节点数 |运营商|跨洋线路|落地表现|</p>
+<p>| -| – |-----|—|-|</p>
+<p>| 69.12.66.26-未优化 | 15 |电信|AS4134-163网络|到美国加利福尼亚，美国国内跳转5次，从cogentco跳转到QuadraNet</p>
+<p>|69.12.66.26-未优化|18|移动|AS9808跳AS58453|到美国，国内跳转8次，从cogentco跳转到QuadraNet</p>
+<p>|69.12.66.26-未优化|12|联通|AS4837-联通169网络|到美国，国内跳转3次，从cust.net跳转到QuadraNet</p>
+<p>| 204.152.218.25-优化IP | 12 |电信|AS4134-163网络|到美国直达QuadraNet</p>
+<p>|204.152.218.25-优化IP|16 |移动|AS9808跳AS58453|到美国后直达QuadraNet数据中心</p>
+<p>|204.152.218.25-优化IP |11|联通|AS4837-联通169网络|到美国后到美国联通公司再直达QuadraNet</p>
+<p>一通测试下来之后发现，这个机房的优化IP有效果，都可以在到达美国之后，直接跳转到机房，这个很重要。至于国内内部跳问题这个无解，就像移动老是喜欢跳香港（原因后面解释），再出国，联通喜欢走广东出国之类的。其实国内的内部跳转很快的都是1ms这些的，所以瓶颈在于跨洋线路和到美国之后的跳转，这些都是150+ms，跨洋线路的话，我这次测试没有遇见到的CN2 GT路线（AS4809）,三大运营商用的都是自己的主要干线，如果高峰期这条线路堵塞卡顿也是正常的，<strong>特别吐槽下移动：AS9808为移动境内的骨干网，未设与国际ISP Peer，故所有出境流量通过AS58453（CMI）与外网互联，所以好好的就是速度比联通慢</strong>。</p>
+<p>接下来测试自己VPS主机IP：</p>
+<p>|运营商|节点数|跨洋线路|表现|</p>
+<p>|-|-|-|-|</p>
+<p>|电信|13|AS4134-163网络|到美国后直达</p>
+<p>|联通|13|AS4837-联通169网络|到美国后直达</p>
+<p>|移动|16|AS9808跳AS58453|到美国后直达</p>
+<p>综合测试下来，我的服务器IP也享受到了QuadraNet的机房优化效果，至于电信的CN2线路，可以确定的是QuadraNet机房有接入这条线路，但是实际能不能用到要由机房决定。对几条骨干线路感兴趣的话，可以参考<a href="https://zhuanlan.zhihu.com/p/451683996">国内几大骨干网介绍</a>和<a href="https://zhuanlan.zhihu.com/p/64467370">国内主流网络运营商国际连接线路简谈</a>。</p>
+<p>所以购买服务器的时候，只要是对国内线路有优化的服务器就可以，没必要追求CN2线路，那是电信的线路，除非是专线：即所有的进出都走且只能走这条线路，否则一般你你运营商都会选择走自己的骨干网络。而如果你是专线的话，又会涉及到跨运营商访问的问题，除非你手机，宽带都是电信，还有别人访问你的网络也都是电信。但是这往往是不可能的。而跨运营商访问话，需要看你的城市是否有<strong>国家级互联网骨干直联点</strong>。否则你的路由也得经由这个城市再转发到电信线路去。所以，说实话，直接普通的<a href="https://bandwagonhost.com/aff.php?aff=20859">CN2线路</a>就能满足大部分人的大多数需求。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>搬瓦工</tag>
+        <tag>线路</tag>
+        <tag>CN2线路</tag>
+        <tag>TraceRoute</tag>
       </tags>
   </entry>
   <entry>
@@ -11026,6 +11061,28 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
       </tags>
   </entry>
   <entry>
+    <title>活着</title>
+    <url>/2022/04/30/%E6%B4%BB%E7%9D%80/</url>
+    <content><![CDATA[<p>回想小时候，我好像无时无刻不在期待着假期，因为假期意味着可以开心的玩耍，可以一整天的看电视，到了现在，我忽然发现我我好像没那么期待着了，至少，我没办法像小时候那样，一整天都能给自己安排的满满的，更多的时候是无聊的在看电视，也许是我对电视的喜爱程度不如从前，但是我心中其实还有点想去干活，至少有事有目的，看来，漫无目的真的很可怕。</p>
+<p>不过好像明天就要上班了，希望我不会在明天写一篇说自己想要休息，额，翻看前面好像已经写了吧</p>
+<p>额，算了，这就是个循环。</p>
+<p>似乎我一直就是这么不安定,忙的时候想闲,闲的时候要忙.我只是对目前生活的不满,我不想碌碌无为的过完这一生,忙的时候干的也是毫无意义的工作,而闲的时候连无意义的工作都没有了.我在寻找着自己的人生目标,或者自己的活法.我父母的活法已经对我没有任何的参考性,我没办法像他们一样放羊,娶媳妇,生娃,放羊.我想从自己的生活找寻更多的东西:无论是悲伤还是欢乐,甚至是悔不当初.我会好好的感受那每一份情绪,让自己慢慢的感受生活.生活正是自己的当下,正是自己现在敲打的键盘.没有什么奇思妙想,没有什么峰回路转,有的只是当下的平静和未来的希望.</p>
+<p>我多想像二哥一样,给自己一个目标:一套大港的房子.至少它能驱使我继续前进.如果我想前进的话.但是我并不想,我不懂为何必须要在一座城市扎根,为何一定要有一套属于自己的房子.他们总是说:你还没长大,等你长大了有孩子了你就知道了.是的,在他们看来我没有长大,我没有孩子,没有学区的压力,没有家庭的束缚.我有的仅仅是自己,但着不就是我们出生时候的模样么?我保持至今,而你们都变了.人的长河最终的尽头是什么我不知道,也许他们的结合正是人应该追求的,而我只是一个跳出轨迹的坏小孩.</p>
+<p>那么就生于当下活于当下,在我被推回正轨之前,享受当下吧</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>书评</tag>
+        <tag>活着</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>流水账</title>
     <url>/2022/04/30/%E6%B5%81%E6%B0%B4%E8%B4%A6/</url>
     <content><![CDATA[<p>好久没来写了</p>
@@ -11051,28 +11108,6 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
       </categories>
       <tags>
         <tag>流水账</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>活着</title>
-    <url>/2022/04/30/%E6%B4%BB%E7%9D%80/</url>
-    <content><![CDATA[<p>回想小时候，我好像无时无刻不在期待着假期，因为假期意味着可以开心的玩耍，可以一整天的看电视，到了现在，我忽然发现我我好像没那么期待着了，至少，我没办法像小时候那样，一整天都能给自己安排的满满的，更多的时候是无聊的在看电视，也许是我对电视的喜爱程度不如从前，但是我心中其实还有点想去干活，至少有事有目的，看来，漫无目的真的很可怕。</p>
-<p>不过好像明天就要上班了，希望我不会在明天写一篇说自己想要休息，额，翻看前面好像已经写了吧</p>
-<p>额，算了，这就是个循环。</p>
-<p>似乎我一直就是这么不安定,忙的时候想闲,闲的时候要忙.我只是对目前生活的不满,我不想碌碌无为的过完这一生,忙的时候干的也是毫无意义的工作,而闲的时候连无意义的工作都没有了.我在寻找着自己的人生目标,或者自己的活法.我父母的活法已经对我没有任何的参考性,我没办法像他们一样放羊,娶媳妇,生娃,放羊.我想从自己的生活找寻更多的东西:无论是悲伤还是欢乐,甚至是悔不当初.我会好好的感受那每一份情绪,让自己慢慢的感受生活.生活正是自己的当下,正是自己现在敲打的键盘.没有什么奇思妙想,没有什么峰回路转,有的只是当下的平静和未来的希望.</p>
-<p>我多想像二哥一样,给自己一个目标:一套大港的房子.至少它能驱使我继续前进.如果我想前进的话.但是我并不想,我不懂为何必须要在一座城市扎根,为何一定要有一套属于自己的房子.他们总是说:你还没长大,等你长大了有孩子了你就知道了.是的,在他们看来我没有长大,我没有孩子,没有学区的压力,没有家庭的束缚.我有的仅仅是自己,但着不就是我们出生时候的模样么?我保持至今,而你们都变了.人的长河最终的尽头是什么我不知道,也许他们的结合正是人应该追求的,而我只是一个跳出轨迹的坏小孩.</p>
-<p>那么就生于当下活于当下,在我被推回正轨之前,享受当下吧</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>书评</tag>
-        <tag>活着</tag>
       </tags>
   </entry>
   <entry>
@@ -11122,6 +11157,43 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
       </tags>
   </entry>
   <entry>
+    <title>码农</title>
+    <url>/2022/04/30/%E7%A0%81%E5%86%9C/</url>
+    <content><![CDATA[<p>额，最近好像来的比较频繁，似乎跟上次一样，也是一阵时间内多次到来</p>
+<p>然后，取材一段时间，然后又过来了</p>
+<p>今天好像找到了一个一闪而过的思路，但是可惜，没抓住，然后现在我抱着空空的脑袋过来写这么一篇。</p>
+<p>额，仔细想想，我的生活平凡而又无趣，确切的是我的工作，作为一个维护人员，尤其是计算机维护人员，在系统没出问题前，我们就是放在储物间来织蜘蛛网的，尤其作为计算机人员，看着写代码的那么忙碌，在旁边看着，内心不禁想到：都是人，差距怎么这么大。</p>
+<p>有那么一瞬间，我在想是哪个傻逼非得分工合作。当然必有道理。我不想深究，只是一个任性的想法。</p>
+<p>当然，看到人类差距的我，心中升起了一个伟大的想法：我要当码农。</p>
+<p>为啥</p>
+<p>太闲了，当码农就可以享受到没日没夜的工作，然后还没加班费</p>
+<p>额，你是m吗</p>
+<p>我本着对自己负责的态度，我声明，以上不是黑码农，而且本人直且无受虐倾向</p>
+<p>好吧，有时候闲可以让人发疯的</p>
+<p>额，相信我我不是在炫耀，一个月入三千，不用干太多活，而且还包两顿饭，碾压一些人是可以，但是压不住太多人，对不。</p>
+<p>好吧，今天的内容是不是该结束了（我去，800字都没到，结束个毛）</p>
+<p>基于我多年作文的强大基础，我好像得了，东西不写满800字就结束不了的病。相较于要写800字正好的强迫症患者来说，我这还有得救，只要坚持吃药出门就好</p>
+<p>话说，我不禁感想其，当初我是有多么的委婉，转折，再加重复，才能将我最难忘的一件事写满800.然后还写出至少三个不同的版本</p>
+<p>额，我忽然好想静静，</p>
+<p>可以的话，或者早知道的话，我可以留下那些文章，用来恶心现在的我</p>
+<p>恩，我一闪而过一个新的伟大想法</p>
+<p>我可以去找那些名人小时侯写的作文（依据中国国情，我可以确定，100%的人写过，而且其中最经典的一定是你最难忘的xx）</p>
+<p>然后，以公开内容威胁，恐吓。</p>
+<p>恩，这是一个长期而且十分考验眼光的投资</p>
+<p>不说了，我现在去高中当老师去，然后把所有学生的作文保存下来。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>码农</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>私人图书馆搭建-clibre</title>
     <url>/2022/05/01/%E7%A7%81%E4%BA%BA%E5%9B%BE%E4%B9%A6%E9%A6%86%E6%90%AD%E5%BB%BA-Clibre/</url>
     <content><![CDATA[<p>clibre是一个在线书籍管理工具，可以在线阅读PDF，EPUB等格式的图书，配合z-library，可以搭建一个属于自己的在线学习，阅读中心，而且还能管理每本书的状态，很适合在自己的服务器上部署一个。</p>
@@ -11166,43 +11238,6 @@ pip install requirements.txt
       <tags>
         <tag>calibre</tag>
         <tag>电子书</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>码农</title>
-    <url>/2022/04/30/%E7%A0%81%E5%86%9C/</url>
-    <content><![CDATA[<p>额，最近好像来的比较频繁，似乎跟上次一样，也是一阵时间内多次到来</p>
-<p>然后，取材一段时间，然后又过来了</p>
-<p>今天好像找到了一个一闪而过的思路，但是可惜，没抓住，然后现在我抱着空空的脑袋过来写这么一篇。</p>
-<p>额，仔细想想，我的生活平凡而又无趣，确切的是我的工作，作为一个维护人员，尤其是计算机维护人员，在系统没出问题前，我们就是放在储物间来织蜘蛛网的，尤其作为计算机人员，看着写代码的那么忙碌，在旁边看着，内心不禁想到：都是人，差距怎么这么大。</p>
-<p>有那么一瞬间，我在想是哪个傻逼非得分工合作。当然必有道理。我不想深究，只是一个任性的想法。</p>
-<p>当然，看到人类差距的我，心中升起了一个伟大的想法：我要当码农。</p>
-<p>为啥</p>
-<p>太闲了，当码农就可以享受到没日没夜的工作，然后还没加班费</p>
-<p>额，你是m吗</p>
-<p>我本着对自己负责的态度，我声明，以上不是黑码农，而且本人直且无受虐倾向</p>
-<p>好吧，有时候闲可以让人发疯的</p>
-<p>额，相信我我不是在炫耀，一个月入三千，不用干太多活，而且还包两顿饭，碾压一些人是可以，但是压不住太多人，对不。</p>
-<p>好吧，今天的内容是不是该结束了（我去，800字都没到，结束个毛）</p>
-<p>基于我多年作文的强大基础，我好像得了，东西不写满800字就结束不了的病。相较于要写800字正好的强迫症患者来说，我这还有得救，只要坚持吃药出门就好</p>
-<p>话说，我不禁感想其，当初我是有多么的委婉，转折，再加重复，才能将我最难忘的一件事写满800.然后还写出至少三个不同的版本</p>
-<p>额，我忽然好想静静，</p>
-<p>可以的话，或者早知道的话，我可以留下那些文章，用来恶心现在的我</p>
-<p>恩，我一闪而过一个新的伟大想法</p>
-<p>我可以去找那些名人小时侯写的作文（依据中国国情，我可以确定，100%的人写过，而且其中最经典的一定是你最难忘的xx）</p>
-<p>然后，以公开内容威胁，恐吓。</p>
-<p>恩，这是一个长期而且十分考验眼光的投资</p>
-<p>不说了，我现在去高中当老师去，然后把所有学生的作文保存下来。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>码农</tag>
       </tags>
   </entry>
   <entry>
@@ -11538,27 +11573,6 @@ pip install requirements.txt
       </tags>
   </entry>
   <entry>
-    <title>过去</title>
-    <url>/2022/04/30/%E8%BF%87%E5%8E%BB/</url>
-    <content><![CDATA[<p>上一次是年前，这次就跑到了十四号了，看来时间在这里流逝的是相当的快</p>
-<p>我终于获得了宁静，在吵吵嚷嚷了一天之后。不知为何，我总希望在周末的时候，静下心来，看看书，但是我知道我的内心是拒绝的，因为有更多好玩的事情，但是我总是会在玩了一盘高端质量局的dota之后，后悔自己浪费了一个小时在这，然后反之回想如果我用这一个小时拿来看书，会看多少多少。恩，我将前者当作罪恶，而将后者当成了一个任务。如果放任不管，我也可以每天游戏娱乐，然后这样的过去，其实我每天看书也是这样的过去，且不要拿每天看书会增加学识的这种蠢话来迷糊自己，小说更多的时候是古人打发时间的道具，如果他们有电子游戏也许早就抛弃了他们。也许在未来，新的娱乐方式出现，游戏就会变成现在读书的地位，我的目的并不是在鼓吹读书无用论，而是调整自己的心态，时间是自己的，将他花费在读书还是游戏并没有什么贵贱之分，也没必要将其当成罪恶或者是一个任务，给予自己在这么一个宁静的周末施加如此大的负担。且开心的玩乐吧，生活需要它。</p>
-<p>我并不认为像苦修士将自己与快乐分开能让自己开心或者能让人生饱满。我跟看重的是可以专心一致的倾注于某件事，他们的存在让我倾注于读书，看进书中的内容，写下一点东西.而周围的戚戚嚷嚷和我这边是两个风格。我越发的佩服大隐隐于市的隐士了。坚持自我并不是一件难事，但是难得是在一个这样的环境里坚持自我。</p>
-<p>在一个环境并不适合做某件事情的时候，我将它延后，恩，他就从一个欲望转化为一个执念，一个任务。如果等到我时候的环境之后，我要是还没放下它，那么就会去做，要是放下了，也许就会去做那时候更合适的事情吧。这正如我对性的排解一样。</p>
-<p>回到最初，我总是后悔自己过去的一小时所作的事情，尤其是这件事情失败了，让我尤为懊恼，希望时间回去，做出别的行为。现在想来，大可不必如此。其实时间对所有事情都是公平的，我玩游戏获得了愉悦，看书也是。本没有高低之分，但是自己内心高傲的看低游戏，觉得读书是件高端的事情。但正如我上面所说的，那不过是另一种愉悦自己的方式罢了，我之所以更倾向读书，因为读书随时可以停止，但是游戏不行。所以会让我产生一种沉迷的概念，因为我必须连续一个小时专注于此。看来如此长时间的专注事项除了工作都可以叫做沉迷啊。</p>
-<p>这么说来，有些人该问，难道闲暇时间所耗费的都是打发时间，就没有让自己提升的东西么？恩，其实是有的，重要是看你对提升的定义吧，看更多的小说，提升的是你的文学，玩更多的游戏，提升的是你的技术，而学生花更多的时间，提升的则是你的学识和记忆，本质同样是花费时间来换取别的，正如土地是经济的最基础载体，时间也是。你当然也可以花上一个小时，看些高端的书，但是 你不能想说自己过去的一个小时都浪费了，其实没有。与其想过去的一个小时干了啥，我觉得更多的时候还是想想后面要干啥吧，我对过去更多的是别犯同样的错和昨天吃了什么，恩今天换个吧。而前者老是忘记，后者记得清楚，但是却也没多大用，今天想吃和昨天也没有什么必然的联系，回归这个欲望本身吧，看他想吃啥。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>过去</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>过于2023年的一些展望</title>
     <url>/2023/01/05/%E8%BF%87%E4%BA%8E2023%E5%B9%B4%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B1%95%E6%9C%9B/</url>
     <content><![CDATA[<p>先订个基调：2023年还是以房地产为主要驱动。这是毋庸置疑的，也是不得已的。</p>
@@ -11625,6 +11639,27 @@ pip install requirements.txt
         <tag>经济展望</tag>
         <tag>2023</tag>
         <tag>比亚迪</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>过去</title>
+    <url>/2022/04/30/%E8%BF%87%E5%8E%BB/</url>
+    <content><![CDATA[<p>上一次是年前，这次就跑到了十四号了，看来时间在这里流逝的是相当的快</p>
+<p>我终于获得了宁静，在吵吵嚷嚷了一天之后。不知为何，我总希望在周末的时候，静下心来，看看书，但是我知道我的内心是拒绝的，因为有更多好玩的事情，但是我总是会在玩了一盘高端质量局的dota之后，后悔自己浪费了一个小时在这，然后反之回想如果我用这一个小时拿来看书，会看多少多少。恩，我将前者当作罪恶，而将后者当成了一个任务。如果放任不管，我也可以每天游戏娱乐，然后这样的过去，其实我每天看书也是这样的过去，且不要拿每天看书会增加学识的这种蠢话来迷糊自己，小说更多的时候是古人打发时间的道具，如果他们有电子游戏也许早就抛弃了他们。也许在未来，新的娱乐方式出现，游戏就会变成现在读书的地位，我的目的并不是在鼓吹读书无用论，而是调整自己的心态，时间是自己的，将他花费在读书还是游戏并没有什么贵贱之分，也没必要将其当成罪恶或者是一个任务，给予自己在这么一个宁静的周末施加如此大的负担。且开心的玩乐吧，生活需要它。</p>
+<p>我并不认为像苦修士将自己与快乐分开能让自己开心或者能让人生饱满。我跟看重的是可以专心一致的倾注于某件事，他们的存在让我倾注于读书，看进书中的内容，写下一点东西.而周围的戚戚嚷嚷和我这边是两个风格。我越发的佩服大隐隐于市的隐士了。坚持自我并不是一件难事，但是难得是在一个这样的环境里坚持自我。</p>
+<p>在一个环境并不适合做某件事情的时候，我将它延后，恩，他就从一个欲望转化为一个执念，一个任务。如果等到我时候的环境之后，我要是还没放下它，那么就会去做，要是放下了，也许就会去做那时候更合适的事情吧。这正如我对性的排解一样。</p>
+<p>回到最初，我总是后悔自己过去的一小时所作的事情，尤其是这件事情失败了，让我尤为懊恼，希望时间回去，做出别的行为。现在想来，大可不必如此。其实时间对所有事情都是公平的，我玩游戏获得了愉悦，看书也是。本没有高低之分，但是自己内心高傲的看低游戏，觉得读书是件高端的事情。但正如我上面所说的，那不过是另一种愉悦自己的方式罢了，我之所以更倾向读书，因为读书随时可以停止，但是游戏不行。所以会让我产生一种沉迷的概念，因为我必须连续一个小时专注于此。看来如此长时间的专注事项除了工作都可以叫做沉迷啊。</p>
+<p>这么说来，有些人该问，难道闲暇时间所耗费的都是打发时间，就没有让自己提升的东西么？恩，其实是有的，重要是看你对提升的定义吧，看更多的小说，提升的是你的文学，玩更多的游戏，提升的是你的技术，而学生花更多的时间，提升的则是你的学识和记忆，本质同样是花费时间来换取别的，正如土地是经济的最基础载体，时间也是。你当然也可以花上一个小时，看些高端的书，但是 你不能想说自己过去的一个小时都浪费了，其实没有。与其想过去的一个小时干了啥，我觉得更多的时候还是想想后面要干啥吧，我对过去更多的是别犯同样的错和昨天吃了什么，恩今天换个吧。而前者老是忘记，后者记得清楚，但是却也没多大用，今天想吃和昨天也没有什么必然的联系，回归这个欲望本身吧，看他想吃啥。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>过去</tag>
       </tags>
   </entry>
   <entry>
