@@ -6,7 +6,7 @@
   <link href="https://minsummer.com/atom.xml" rel="self"/>
   
   <link href="https://minsummer.com/"/>
-  <updated>2025-11-29T16:00:00.000Z</updated>
+  <updated>2025-11-30T16:00:00.000Z</updated>
   <id>https://minsummer.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于内卷</title>
+    <link href="https://minsummer.com/2025/11/30/220-%E5%85%B3%E4%BA%8E%E5%86%85%E5%8D%B7/"/>
+    <id>https://minsummer.com/2025/11/30/220-%E5%85%B3%E4%BA%8E%E5%86%85%E5%8D%B7/</id>
+    <published>2025-11-30T16:00:00.000Z</published>
+    <updated>2025-11-30T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;最近媒体又在宣言反内卷，有一些背后的逻辑我很想说说。当然一切都是从宏观层面上。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="内卷" scheme="https://minsummer.com/tags/%E5%86%85%E5%8D%B7/"/>
+    
+    <category term="s宏观" scheme="https://minsummer.com/tags/s%E5%AE%8F%E8%A7%82/"/>
+    
+  </entry>
   
   <entry>
     <title>selenium模拟手机错误</title>
