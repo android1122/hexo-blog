@@ -863,6 +863,56 @@ PS: 首次下载有可能没有，多执行几次订阅即可。</p>
       </tags>
   </entry>
   <entry>
+    <title>NexT主题搭建指南</title>
+    <url>/2023/05/19/111-Hexo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E7%9A%84%E5%9D%91/</url>
+    <content><![CDATA[<h2 id="中文的弯路"><a class="markdownIt-Anchor" href="#中文的弯路"></a> 中文的弯路</h2>
+<p>Hexo搭建是完成了，后面就是选择主题，我选择的是NexT主题，但是网络上的文档，说实话：很乱。NexT主题经过多次升级，最新版的NexT主题已经是8.16，更新强度差不多1个月一次。所有这边就总结一下自己走过的弯路，还有<a href="https://theme-next.js.org/">主题文档</a>是这个，但是如果你用中文搜索出来，大概率是<a href="https://theme-next.iissnan.com/getting-started.html">这个</a>，其实两个都是对的，一个是GitHub官网给出的，一个是历史版本好像是5.0时代的中文文档。最新版好像没有人维护中文，两者差距还是有的，如果用最新的版本照着中文文档配置，那是会走弯路。</p>
+<span id="more"></span>
+<h2 id="各种坑"><a class="markdownIt-Anchor" href="#各种坑"></a> 各种坑</h2>
+<ol>
+<li>安装<br />
+根据中文文档，你需要将对应的NexT的主题包git到theme文件夹下，然后对文件夹内的_config.yml进行编辑。然后8.0版本之后只要一行代码搞定<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
+随着Hexo的升级，很多东西安装都是方便快捷的。后续的配置在_config.next.yml内配置，这个文件需要自己创建，内容可以直接复制<a href="https://github.com/next-theme/hexo-theme-next/blob/master/_config.yml">GitHub上</a></li>
+<li>添加页面|菜单<br />
+按照之前的教程你需要使用<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page xxx</span><br></pre></td></tr></table></figure>
+增加页面，由于我本地没有环境，我一开始还试着docker内安装执行，后面发现这个命令好像没有了。<br />
+Next增加页面十分简单，以增加分类categories页面为例，再source下增加文件夹categories，然后在categories文件夹内增加index.md文件，内容是：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2022-12-22 00:00:00</span><br><span class="line">type: categories</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+系统就会将他识别为分类页。同理tags标签云也是一样的方法，把<code>type</code>改成tags即可<br />
+然后将_config.next.yml的菜单配置<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">home: / || fa fa-home</span><br><span class="line">#about: /about/ || fa fa-user</span><br><span class="line">categories: /categories/ || fa fa-th</span><br><span class="line">tags: /tags/ || fa fa-tags</span><br><span class="line">archives: /archives/ || fa fa-archive</span><br><span class="line">#schedule: /schedule/ || fa fa-calendar</span><br><span class="line">#sitemap: /sitemap.xml || fa fa-sitemap</span><br><span class="line">#commonweal: /404/ || fa fa-heartbeat</span><br></pre></td></tr></table></figure>
+这边主义，如果你只是增加单页或者说是非分类标签，那么你的title字段需要一致，type字段可以不要掉，即：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 新页面名称</span><br><span class="line">date: 2022-12-22 00:00:00</span><br><span class="line">comments: false</span><br><span class="line">---</span><br><span class="line">页面内容，支持html</span><br></pre></td></tr></table></figure>
+然后系统会生成对应title的html文件，直接放在source下即可，访问路径就是<code>xxxx.com/新页面.html</code>。这是单页面的添加方法，由于Hexo是静态文件，所以你可以简单的将他理解为文件路径，只要它在哪个文件路径下，你网址就是哪个。</li>
+<li>搜索功能<br />
+搜索系统支持两种，第一张用的是<code>hexo-algolia</code>，插件，需要到对应网站填写注册。这边推荐第二种自带的搜索功能：安装对应的插件，如果是Github部署的，记得在部署文件内增加：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
+然后到_config.yml即Hexo的配置文件下增加<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">path: search.xml</span><br><span class="line">field: post</span><br><span class="line">content: true</span><br><span class="line">format: html</span><br></pre></td></tr></table></figure>
+最后再去<code>_config.next.yml</code>内打开对应的搜索功能即可<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Local search</span><br><span class="line"># Dependencies: https://github.com/next-theme/hexo-generator-searchdb</span><br><span class="line">local_search:</span><br><span class="line">enable: true</span><br><span class="line"># If auto, trigger search by changing input.</span><br><span class="line"># If manual, trigger search by pressing enter key or search button.</span><br><span class="line">trigger: auto</span><br><span class="line"># Show top n results per article, show all results by setting to -1</span><br><span class="line">top_n_per_article: 1</span><br><span class="line"># Unescape html strings to the readable one.</span><br><span class="line">unescape: false</span><br><span class="line"># Preload the search data when the page loads.</span><br><span class="line">preload: false</span><br></pre></td></tr></table></figure>
+说实话效果很不错<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/111-Hexo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E7%9A%84%E5%9D%91-2023-05-20-22-02-17.png" alt="111-Hexo主题搭建的坑-2023-05-20-22-02-17" /></li>
+<li>独特的标签插件<br />
+NexT不仅支持markdown，而且还在它的上层拓展了不少，例如突出显示，代码块，画廊，流程图等等。好看是好看，但是如果后续你还想折腾换一个博客系统的话，我的建议，还是一直使用markdown文件格式，系统虽好，但是换系统折磨人。</li>
+<li>评论系统<br />
+至此，你搭建了自定义菜单和搜索功能的插件，如果你还需要评论的话，可以使用Gitalk，这个是使用GitHub的issues进行评论，它会在你每次创建文章之后生成对应的issue来记录评论，需要注意的是，如果你路径变换的话，评论可是会消失的。配置的话也很简单：<br />
+打开<a href="https://github.com/settings/applications/new">链接</a>申请一个登陆验证<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/111-Hexo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E7%9A%84%E5%9D%91-2023-05-21-21-25-14.png" alt="111-Hexo主题搭建的坑-2023-05-21-21-25-14" /><br />
+名称随意，但是地址需要填写你的博客地址，因为后期它需要回调插件。然后再到_config.next.yml进行配置即可：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Gitalk</span><br><span class="line"># For more information: https://gitalk.github.io</span><br><span class="line">gitalk:</span><br><span class="line">enable: false</span><br><span class="line">github_id: # GitHub repo owner 这个写你的用户名</span><br><span class="line">repo: # Repository name to store issues 这个写你想要把它放在哪个仓库下</span><br><span class="line">client_id: # GitHub Application Client ID 这个填写申请之后会有</span><br><span class="line">client_secret: # GitHub Application Client Secret 这个填写申请之后会有</span><br><span class="line">admin_user: # GitHub repo owner and collaborators, only these guys can initialize gitHub issues</span><br><span class="line">distraction_free_mode: true # Facebook-like distraction free mode</span><br><span class="line"># When the official proxy is not available, you can change it to your own proxy address</span><br><span class="line">proxy: https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token # This is official proxy address</span><br><span class="line"># Gitalk&#x27;s display language depends on user&#x27;s browser or system environment</span><br><span class="line"># If you want everyone visiting your site to see a uniform language, you can set a force language value</span><br><span class="line"># Available values: en | es-ES | fr | ru | zh-CN | zh-TW</span><br><span class="line">language:</span><br></pre></td></tr></table></figure>
+然后就可以了。</li>
+</ol>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>虽然是用node安装的，但是很多东西其实系统都已经合在Hexo里面了，无论是搜索，还是技术，甚至分析都有。得益于丰富的js脚本，Hexo博客部署的方便性大大增加，前提是你要找好对应的文档，文档真的很重要。<br />
+至于这个会不会是我得最后一个博客，我可说不准。生命在于折腾，学到老活到老。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Next主题搭建</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo部署指南-基于GitHub</title>
     <url>/2023/05/17/110-hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<h2 id="折腾啊折腾"><a class="markdownIt-Anchor" href="#折腾啊折腾"></a> 折腾啊折腾</h2>
@@ -925,56 +975,6 @@ PS: 首次下载有可能没有，多执行几次订阅即可。</p>
         <tag>Hexo</tag>
         <tag>GitHub</tag>
         <tag>无环境搭建</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>NexT主题搭建指南</title>
-    <url>/2023/05/19/111-Hexo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E7%9A%84%E5%9D%91/</url>
-    <content><![CDATA[<h2 id="中文的弯路"><a class="markdownIt-Anchor" href="#中文的弯路"></a> 中文的弯路</h2>
-<p>Hexo搭建是完成了，后面就是选择主题，我选择的是NexT主题，但是网络上的文档，说实话：很乱。NexT主题经过多次升级，最新版的NexT主题已经是8.16，更新强度差不多1个月一次。所有这边就总结一下自己走过的弯路，还有<a href="https://theme-next.js.org/">主题文档</a>是这个，但是如果你用中文搜索出来，大概率是<a href="https://theme-next.iissnan.com/getting-started.html">这个</a>，其实两个都是对的，一个是GitHub官网给出的，一个是历史版本好像是5.0时代的中文文档。最新版好像没有人维护中文，两者差距还是有的，如果用最新的版本照着中文文档配置，那是会走弯路。</p>
-<span id="more"></span>
-<h2 id="各种坑"><a class="markdownIt-Anchor" href="#各种坑"></a> 各种坑</h2>
-<ol>
-<li>安装<br />
-根据中文文档，你需要将对应的NexT的主题包git到theme文件夹下，然后对文件夹内的_config.yml进行编辑。然后8.0版本之后只要一行代码搞定<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
-随着Hexo的升级，很多东西安装都是方便快捷的。后续的配置在_config.next.yml内配置，这个文件需要自己创建，内容可以直接复制<a href="https://github.com/next-theme/hexo-theme-next/blob/master/_config.yml">GitHub上</a></li>
-<li>添加页面|菜单<br />
-按照之前的教程你需要使用<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page xxx</span><br></pre></td></tr></table></figure>
-增加页面，由于我本地没有环境，我一开始还试着docker内安装执行，后面发现这个命令好像没有了。<br />
-Next增加页面十分简单，以增加分类categories页面为例，再source下增加文件夹categories，然后在categories文件夹内增加index.md文件，内容是：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2022-12-22 00:00:00</span><br><span class="line">type: categories</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-系统就会将他识别为分类页。同理tags标签云也是一样的方法，把<code>type</code>改成tags即可<br />
-然后将_config.next.yml的菜单配置<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">home: / || fa fa-home</span><br><span class="line">#about: /about/ || fa fa-user</span><br><span class="line">categories: /categories/ || fa fa-th</span><br><span class="line">tags: /tags/ || fa fa-tags</span><br><span class="line">archives: /archives/ || fa fa-archive</span><br><span class="line">#schedule: /schedule/ || fa fa-calendar</span><br><span class="line">#sitemap: /sitemap.xml || fa fa-sitemap</span><br><span class="line">#commonweal: /404/ || fa fa-heartbeat</span><br></pre></td></tr></table></figure>
-这边主义，如果你只是增加单页或者说是非分类标签，那么你的title字段需要一致，type字段可以不要掉，即：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 新页面名称</span><br><span class="line">date: 2022-12-22 00:00:00</span><br><span class="line">comments: false</span><br><span class="line">---</span><br><span class="line">页面内容，支持html</span><br></pre></td></tr></table></figure>
-然后系统会生成对应title的html文件，直接放在source下即可，访问路径就是<code>xxxx.com/新页面.html</code>。这是单页面的添加方法，由于Hexo是静态文件，所以你可以简单的将他理解为文件路径，只要它在哪个文件路径下，你网址就是哪个。</li>
-<li>搜索功能<br />
-搜索系统支持两种，第一张用的是<code>hexo-algolia</code>，插件，需要到对应网站填写注册。这边推荐第二种自带的搜索功能：安装对应的插件，如果是Github部署的，记得在部署文件内增加：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
-然后到_config.yml即Hexo的配置文件下增加<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">path: search.xml</span><br><span class="line">field: post</span><br><span class="line">content: true</span><br><span class="line">format: html</span><br></pre></td></tr></table></figure>
-最后再去<code>_config.next.yml</code>内打开对应的搜索功能即可<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Local search</span><br><span class="line"># Dependencies: https://github.com/next-theme/hexo-generator-searchdb</span><br><span class="line">local_search:</span><br><span class="line">enable: true</span><br><span class="line"># If auto, trigger search by changing input.</span><br><span class="line"># If manual, trigger search by pressing enter key or search button.</span><br><span class="line">trigger: auto</span><br><span class="line"># Show top n results per article, show all results by setting to -1</span><br><span class="line">top_n_per_article: 1</span><br><span class="line"># Unescape html strings to the readable one.</span><br><span class="line">unescape: false</span><br><span class="line"># Preload the search data when the page loads.</span><br><span class="line">preload: false</span><br></pre></td></tr></table></figure>
-说实话效果很不错<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/111-Hexo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E7%9A%84%E5%9D%91-2023-05-20-22-02-17.png" alt="111-Hexo主题搭建的坑-2023-05-20-22-02-17" /></li>
-<li>独特的标签插件<br />
-NexT不仅支持markdown，而且还在它的上层拓展了不少，例如突出显示，代码块，画廊，流程图等等。好看是好看，但是如果后续你还想折腾换一个博客系统的话，我的建议，还是一直使用markdown文件格式，系统虽好，但是换系统折磨人。</li>
-<li>评论系统<br />
-至此，你搭建了自定义菜单和搜索功能的插件，如果你还需要评论的话，可以使用Gitalk，这个是使用GitHub的issues进行评论，它会在你每次创建文章之后生成对应的issue来记录评论，需要注意的是，如果你路径变换的话，评论可是会消失的。配置的话也很简单：<br />
-打开<a href="https://github.com/settings/applications/new">链接</a>申请一个登陆验证<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/111-Hexo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E7%9A%84%E5%9D%91-2023-05-21-21-25-14.png" alt="111-Hexo主题搭建的坑-2023-05-21-21-25-14" /><br />
-名称随意，但是地址需要填写你的博客地址，因为后期它需要回调插件。然后再到_config.next.yml进行配置即可：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Gitalk</span><br><span class="line"># For more information: https://gitalk.github.io</span><br><span class="line">gitalk:</span><br><span class="line">enable: false</span><br><span class="line">github_id: # GitHub repo owner 这个写你的用户名</span><br><span class="line">repo: # Repository name to store issues 这个写你想要把它放在哪个仓库下</span><br><span class="line">client_id: # GitHub Application Client ID 这个填写申请之后会有</span><br><span class="line">client_secret: # GitHub Application Client Secret 这个填写申请之后会有</span><br><span class="line">admin_user: # GitHub repo owner and collaborators, only these guys can initialize gitHub issues</span><br><span class="line">distraction_free_mode: true # Facebook-like distraction free mode</span><br><span class="line"># When the official proxy is not available, you can change it to your own proxy address</span><br><span class="line">proxy: https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token # This is official proxy address</span><br><span class="line"># Gitalk&#x27;s display language depends on user&#x27;s browser or system environment</span><br><span class="line"># If you want everyone visiting your site to see a uniform language, you can set a force language value</span><br><span class="line"># Available values: en | es-ES | fr | ru | zh-CN | zh-TW</span><br><span class="line">language:</span><br></pre></td></tr></table></figure>
-然后就可以了。</li>
-</ol>
-<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
-<p>虽然是用node安装的，但是很多东西其实系统都已经合在Hexo里面了，无论是搜索，还是技术，甚至分析都有。得益于丰富的js脚本，Hexo博客部署的方便性大大增加，前提是你要找好对应的文档，文档真的很重要。<br />
-至于这个会不会是我得最后一个博客，我可说不准。生命在于折腾，学到老活到老。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Next主题搭建</tag>
       </tags>
   </entry>
   <entry>
@@ -7954,6 +7954,165 @@ selenium/standalone-chrome:latest</p>
       </tags>
   </entry>
   <entry>
+    <title>低显存comfyui解决思路</title>
+    <url>/2025/12/03/221-%E4%BD%8E%E6%98%BE%E5%AD%98comfyui%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF/</url>
+    <content><![CDATA[<p>最近又出了一个z-imgae的大模型，听说效果很好，于是我又按耐不住的想要试试赛博找图了。</p>
+<!-- more  -->
+<h2 id="需求"><a class="markdownIt-Anchor" href="#需求"></a> 需求</h2>
+<p>这次Z-Image-Turbo的牛逼之处在于引入了一个语言翻译器，让你的文本语言可以直接的转化为图片，而不是像之前那样需要一些抽象词汇，还有反方向的提示词。但是我现在的显卡显然是不足以运行这个6B参数的模型，当然这也是很多人的苦恼，于是解决方案不外乎这几个：</p>
+<ol>
+<li>购买api【白嫖党永不妥协】</li>
+<li>云端【花钱是不可能花钱的，这辈子都不可能的】</li>
+<li>使用蒸馏或者量化模型</li>
+</ol>
+<p>由于我们的需求不高，而且不要求稳定性，所以最合适的还是本地使用蒸馏后的模型。</p>
+<h2 id="显存需求计算和蒸馏"><a class="markdownIt-Anchor" href="#显存需求计算和蒸馏"></a> 显存需求计算和蒸馏</h2>
+<p>很多时候我们不知道我们需要的显存是多少，这边简单的提供两个公式： <strong>显存占用 ≈ 参数量 × 数据类型对应的字节数 × 系数</strong><br />
+其中，系数在不同阶段不同：<br />
+纯推理（只有权重）：系数 ≈ 1<br />
+训练（权重 + 梯度 + 优化器状态）：系数 ≈ 4 - 8，甚至更高。<br />
+简单说，如果你只是拿来生成图片，而不是训练的话： <strong>显存占用 ≈ 参数量 × 数据类型对应的字节数</strong>，首先我们来说参数里量，很多时候我们看到<strong>1B</strong>并不知道是什么意思。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">模型参数量</th>
+<th style="text-align:left">显存估算 (仅推理，FP16)</th>
+<th style="text-align:left">显存估算 (完整训练，FP16)</th>
+<th style="text-align:left">适合的量化方案 (供你参考)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>1B (十亿)</strong></td>
+<td style="text-align:left">约 <strong>2 GB</strong></td>
+<td style="text-align:left">约 <strong>8 - 12 GB</strong></td>
+<td style="text-align:left">8GB显存轻松应对，几乎无需量化。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>7B (七十亿)</strong></td>
+<td style="text-align:left">约 <strong>14 GB</strong></td>
+<td style="text-align:left">约 <strong>56 - 84 GB</strong></td>
+<td style="text-align:left"><strong>需要量化</strong>。4位量化后约4GB，是你8GB显存卡运行的理想选择。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>13B</strong></td>
+<td style="text-align:left">约 <strong>26 GB</strong></td>
+<td style="text-align:left">约 <strong>104 - 156 GB</strong></td>
+<td style="text-align:left">需强力量化。4位量化后约7-8GB，在你的卡上运行较极限。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>34B</strong></td>
+<td style="text-align:left">约 <strong>68 GB</strong></td>
+<td style="text-align:left">约 <strong>272 - 408 GB</strong></td>
+<td style="text-align:left">8GB显存<strong>无法运行</strong>，即使4位量化后也远超负载。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>70B</strong></td>
+<td style="text-align:left">约 <strong>140 GB</strong></td>
+<td style="text-align:left">约 <strong>560 - 840 GB</strong></td>
+<td style="text-align:left">远超单卡能力，必须依赖多卡并行。</td>
+</tr>
+</tbody>
+</table>
+<p>以这次<a href="https://huggingface.co/Tongyi-MAI/Z-Image-Turbo">Tongyi-MAI/Z-Image-Turbo</a>为例，它是个6B模型，如果拿来生成图的话，正常是要24GB显存的，但是官方做了优化，<strong>可以轻松适应 16G 显存的消费设备</strong>，那么我们就可以根据官方默认的数据，再通过精度之间换算。<br />
+蒸馏就是将原模型的FP32的数据精度，转变位精度比较小的数值，比如BF16或者FP8，通过减少小数点后面的位数，来达到显存占用更小的目的，不同数据精度之间的换算可以大致用下表判断出来。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">精度格式</th>
+<th style="text-align:left">比特位</th>
+<th style="text-align:left">数值范围与精度特点</th>
+<th style="text-align:left">内存占用 (相比FP32)</th>
+<th style="text-align:left">主要用途与关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>FP32 (float32)</strong></td>
+<td style="text-align:left">32 bit</td>
+<td style="text-align:left">范围广，精度高，是深度学习的<strong>基准精度</strong>。</td>
+<td style="text-align:left">1x (基准)</td>
+<td style="text-align:left"><strong>通用训练</strong>。是其他精度转换的起点和校准基准。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>BF16 (bfloat16)</strong></td>
+<td style="text-align:left">16 bit</td>
+<td style="text-align:left">保留FP32的8位指数（范围），牺牲部分尾数（精度）。<strong>范围大，不易溢出</strong>。</td>
+<td style="text-align:left">减少 <strong>50%</strong></td>
+<td style="text-align:left"><strong>现代AI训练（主流）</strong>。与FP32范围对齐，训练更稳定，被TPU和现代GPU广泛支持。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>FP16 (float16)</strong></td>
+<td style="text-align:left">16 bit</td>
+<td style="text-align:left">指数和尾数都比BF16小。<strong>范围小，易数值溢出</strong>（上溢/下溢）。</td>
+<td style="text-align:left">减少 <strong>50%</strong></td>
+<td style="text-align:left"><strong>训练与推理</strong>。需配合<strong>损失缩放</strong>等技术防止溢出，在特定任务和硬件上高效。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>FP8 (E4M3/E5M2)</strong></td>
+<td style="text-align:left">8 bit</td>
+<td style="text-align:left">新兴格式，如E4M3（精度好）、E5M2（范围大）。硬件原生支持，效率高。</td>
+<td style="text-align:left">减少 <strong>75%</strong></td>
+<td style="text-align:left"><strong>未来训练与推理</strong>。在<strong>NVIDIA H100</strong>等GPU上原生支持，是下一代低精度计算的关键。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>INT8</strong></td>
+<td style="text-align:left">8 bit</td>
+<td style="text-align:left">表示256个离散整数。需通过<strong>量化</strong>将浮点权重映射到整数范围。</td>
+<td style="text-align:left">减少 <strong>75%</strong></td>
+<td style="text-align:left"><strong>推理加速（主流）</strong>。<strong>训练后量化 (PTQ)</strong> 的常用目标，在保持较好精度下大幅提升速度。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>INT4</strong></td>
+<td style="text-align:left">4 bit</td>
+<td style="text-align:left">仅16个离散值，<strong>信息损失严重</strong>，需更精细的量化算法。</td>
+<td style="text-align:left">减少 <strong>87.5%</strong></td>
+<td style="text-align:left"><strong>极致压缩推理</strong>。用于资源严格受限的场景（如你的8GB显存跑7B模型），对量化算法要求高。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>注</strong>：更低比特的量化（如INT2、1-bit）是前沿研究，尚不成熟。</p>
+</blockquote>
+<p>需要注意：<strong>FP32 (float32)</strong> 是基准，所以Z-Image-Turbo，在BF16这个精度下，理论上只需要8GB显存的消费级显卡即可。同样的，我们看下官方推荐的语言模型qwen_3_4b是个4B模型，在<a href="https://qwen.readthedocs.io/zh-cn/latest/getting_started/speed_benchmark.html">官方测试基准</a>，使用量化BF16就是7973MB的显存，这样就可以大致确定了我们需要的显存大小了。当然这些都是拿来生成图片，如果是训练的话，所需资源就更多。<br />
+简而言之：8GB显存对应4B BF16或者8B FP8模型。你可以下载对应的蒸馏模型。</p>
+<h2 id="其他常见的量化技术分类和效果"><a class="markdownIt-Anchor" href="#其他常见的量化技术分类和效果"></a> 其他常见的量化技术分类和效果</h2>
+<p>目前还有其他几种用来量化方法</p>
+<ol>
+<li>GPTQ训练后量化方法，通过调整权重来节省显存。</li>
+<li>AWQ激活感知权重量化，既要量化，又需要精度 准确性高</li>
+<li>GGUF【之前叫GGML】： 基于C++，可以调用CPU进行</li>
+<li>QAT量化感知训练：用模型训练量化模型</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/221-%E4%BD%8E%E6%98%BE%E5%AD%98comfyui%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF-2025-12-04-14-20-06.png" alt="221-低显存comfyui解决思路-2025-12-04-14-20-06" /></p>
+<p><strong>注意</strong>，这些都是量化的技术，具体节省多少内存，还想需要数据精度来确定，<a href="https://blog.csdn.net/gitblog_02541/article/details/144880081">以GGUF</a>为例，节省了操过一半的显存，但是效果能保持在原版的98%。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/221-%E4%BD%8E%E6%98%BE%E5%AD%98comfyui%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF-2025-12-04-15-39-53.png" alt="221-低显存comfyui解决思路-2025-12-04-15-39-53" /></p>
+<p>这些量化技术是不想单纯的蒸馏数据，而是希望可以通过权重，精度，系统实现等方法节省显存，本质都是修改数据精度，但是思路不同效果也就不同。</p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>由于8GB显存显卡的原因，我只能玩图生图/文生图【6秒视频81张图片差不多30分钟】，所以目前应用：</p>
+<ol>
+<li>
+<p>可以简单生成所需图片，海报，为一些文章增加点配图等，比如</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/221-%E4%BD%8E%E6%98%BE%E5%AD%98comfyui%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF-2025-12-04-18-47-12.png" alt="221-低显存comfyui解决思路-2025-12-04-18-47-12" /></p>
+</li>
+</ol>
+<p>我测试下来，由于QWEN的语言解释模型，现在生成出来的图片很真实，平均花费30秒每张图，而且能满足日常需求，这在我看来是趋势，包括我看到的很多视频制作者都在使用AI来提供视频素材，缩短制作时长，当然也有心怀不轨的人，会借此机会用来做一些灰色行业。后续我会试着看看能不能用它处理一些日常工作。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>comfyui</tag>
+        <tag>低显存</tag>
+        <tag>RTX 4060 ti 8gb</tag>
+        <tag>Z-Image-Turbo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>FinalShell跳板配置</title>
     <url>/2022/12/05/FinalShell%E8%B7%B3%E6%9D%BF%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h1 id="finalshell跳板配置"><a class="markdownIt-Anchor" href="#finalshell跳板配置"></a> FinalShell跳板配置</h1>
@@ -9848,6 +10007,27 @@ sysctl -p
       </tags>
   </entry>
   <entry>
+    <title>我们有时候会成为别人想要做的人</title>
+    <url>/2022/04/30/%E6%88%91%E4%BB%AC%E6%9C%89%E6%97%B6%E5%80%99%E4%BC%9A%E6%88%90%E4%B8%BA%E5%88%AB%E4%BA%BA%E6%83%B3%E8%A6%81%E5%81%9A%E7%9A%84%E4%BA%BA/</url>
+    <content><![CDATA[<p>黑镜——第一季第一集</p>
+<p>对于这一集中的出现种种对于政治的暗示，我更多的是看到了人性的虚伪，或者说是群众的虚伪，他们呢一边说着我不会看的，一边却又在那边观看着这长达一小时的人兽虐恋，一边讲着我会理解的，但事实上即使事情过去了一年，也没有人真正的原谅或者理解他，也许在某个不知道的角落里，那个长达一小时的影片还在那里不停的流传。</p>
+<p>影片的剧情很值得人探讨，开始就是一个著名的公主被绑架，以此来要求首相来做一些“不雅”的事情，在这个舆论导向的社会里，影片也很大程度的告诉我们舆论的方向，他应该这么做，我不会看的，他做了可以流传千古，或者就是他就是变态。群众的角度或者说想法更多的是他应该这么做，然后说着一大堆虚伪的话，然而首相本人的想法却得不到重视，他的家人的想法却毫无作用，实行者却不是最终的决定者，这不免让人感叹。随着剧情的发展，首相一边为了让自己不陷入那个尴尬的处境而尽其所能的进行搜救，而另一边，他的智囊团开始进行着B计划，在开头处已经说明，这件事情没有前例可以参照，所以一切只能自己探索，这也为了后续漏洞百出的b计划做了一个伏笔，包括，替身被发现，没有进行舆论控制和最后真人上阵的无奈，都在此处有一定的说明。</p>
+<p>随着替身的被发现，然后断指的出现，舆论的方向开始变化，人们对他一开始的同情，变成了责难，愤怒，以及不满。好像在他们的心里，出现了一个无法接受的事物，本来这会是一个名流千古的真人秀，但是你却想着搞砸他，这是无法容忍的，首相也因此被自己的幕僚坑的不知所以，疯狂，愤怒占据了他的心，他开始不顾一切，只要能找到该死的公主，他可以付出一切，他冲进疑似的隐藏处，这是他最后的机会，然后结果却是成为压死骆驼的最后一根稻草。</p>
+<p>其实，剧情中出现很多耐人寻味的东西，包括一开头的群众的镜头，更多的人将这件事当中一件热闹来看，然后，首相妻子的愤怒，女王的电话，还有，不断的泄密，首相办公室和拍摄现场。而最后万人空巷的场景更是表现力，群众们对于这场真人秀的期待。</p>
+<p>整集都是一场秀，前面的预告，中场爆出的噱头，最后万人空巷的观看，台前和幕后，一步步的为我们展现，一个人是如何表演的，这也许是最真实也是最普通的一场秀，主角的想法一直都是不重要的，重点是我们想要看到啥</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>黑镜</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我在等</title>
     <url>/2022/04/30/%E6%88%91%E5%9C%A8%E7%AD%89/</url>
     <content><![CDATA[<p>我在等，在等一个晴天</p>
@@ -9901,27 +10081,6 @@ sysctl -p
       <tags>
         <tag>NAS</tag>
         <tag>机器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我们有时候会成为别人想要做的人</title>
-    <url>/2022/04/30/%E6%88%91%E4%BB%AC%E6%9C%89%E6%97%B6%E5%80%99%E4%BC%9A%E6%88%90%E4%B8%BA%E5%88%AB%E4%BA%BA%E6%83%B3%E8%A6%81%E5%81%9A%E7%9A%84%E4%BA%BA/</url>
-    <content><![CDATA[<p>黑镜——第一季第一集</p>
-<p>对于这一集中的出现种种对于政治的暗示，我更多的是看到了人性的虚伪，或者说是群众的虚伪，他们呢一边说着我不会看的，一边却又在那边观看着这长达一小时的人兽虐恋，一边讲着我会理解的，但事实上即使事情过去了一年，也没有人真正的原谅或者理解他，也许在某个不知道的角落里，那个长达一小时的影片还在那里不停的流传。</p>
-<p>影片的剧情很值得人探讨，开始就是一个著名的公主被绑架，以此来要求首相来做一些“不雅”的事情，在这个舆论导向的社会里，影片也很大程度的告诉我们舆论的方向，他应该这么做，我不会看的，他做了可以流传千古，或者就是他就是变态。群众的角度或者说想法更多的是他应该这么做，然后说着一大堆虚伪的话，然而首相本人的想法却得不到重视，他的家人的想法却毫无作用，实行者却不是最终的决定者，这不免让人感叹。随着剧情的发展，首相一边为了让自己不陷入那个尴尬的处境而尽其所能的进行搜救，而另一边，他的智囊团开始进行着B计划，在开头处已经说明，这件事情没有前例可以参照，所以一切只能自己探索，这也为了后续漏洞百出的b计划做了一个伏笔，包括，替身被发现，没有进行舆论控制和最后真人上阵的无奈，都在此处有一定的说明。</p>
-<p>随着替身的被发现，然后断指的出现，舆论的方向开始变化，人们对他一开始的同情，变成了责难，愤怒，以及不满。好像在他们的心里，出现了一个无法接受的事物，本来这会是一个名流千古的真人秀，但是你却想着搞砸他，这是无法容忍的，首相也因此被自己的幕僚坑的不知所以，疯狂，愤怒占据了他的心，他开始不顾一切，只要能找到该死的公主，他可以付出一切，他冲进疑似的隐藏处，这是他最后的机会，然后结果却是成为压死骆驼的最后一根稻草。</p>
-<p>其实，剧情中出现很多耐人寻味的东西，包括一开头的群众的镜头，更多的人将这件事当中一件热闹来看，然后，首相妻子的愤怒，女王的电话，还有，不断的泄密，首相办公室和拍摄现场。而最后万人空巷的场景更是表现力，群众们对于这场真人秀的期待。</p>
-<p>整集都是一场秀，前面的预告，中场爆出的噱头，最后万人空巷的观看，台前和幕后，一步步的为我们展现，一个人是如何表演的，这也许是最真实也是最普通的一场秀，主角的想法一直都是不重要的，重点是我们想要看到啥</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>黑镜</tag>
       </tags>
   </entry>
   <entry>
@@ -11198,43 +11357,6 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
       </tags>
   </entry>
   <entry>
-    <title>码农</title>
-    <url>/2022/04/30/%E7%A0%81%E5%86%9C/</url>
-    <content><![CDATA[<p>额，最近好像来的比较频繁，似乎跟上次一样，也是一阵时间内多次到来</p>
-<p>然后，取材一段时间，然后又过来了</p>
-<p>今天好像找到了一个一闪而过的思路，但是可惜，没抓住，然后现在我抱着空空的脑袋过来写这么一篇。</p>
-<p>额，仔细想想，我的生活平凡而又无趣，确切的是我的工作，作为一个维护人员，尤其是计算机维护人员，在系统没出问题前，我们就是放在储物间来织蜘蛛网的，尤其作为计算机人员，看着写代码的那么忙碌，在旁边看着，内心不禁想到：都是人，差距怎么这么大。</p>
-<p>有那么一瞬间，我在想是哪个傻逼非得分工合作。当然必有道理。我不想深究，只是一个任性的想法。</p>
-<p>当然，看到人类差距的我，心中升起了一个伟大的想法：我要当码农。</p>
-<p>为啥</p>
-<p>太闲了，当码农就可以享受到没日没夜的工作，然后还没加班费</p>
-<p>额，你是m吗</p>
-<p>我本着对自己负责的态度，我声明，以上不是黑码农，而且本人直且无受虐倾向</p>
-<p>好吧，有时候闲可以让人发疯的</p>
-<p>额，相信我我不是在炫耀，一个月入三千，不用干太多活，而且还包两顿饭，碾压一些人是可以，但是压不住太多人，对不。</p>
-<p>好吧，今天的内容是不是该结束了（我去，800字都没到，结束个毛）</p>
-<p>基于我多年作文的强大基础，我好像得了，东西不写满800字就结束不了的病。相较于要写800字正好的强迫症患者来说，我这还有得救，只要坚持吃药出门就好</p>
-<p>话说，我不禁感想其，当初我是有多么的委婉，转折，再加重复，才能将我最难忘的一件事写满800.然后还写出至少三个不同的版本</p>
-<p>额，我忽然好想静静，</p>
-<p>可以的话，或者早知道的话，我可以留下那些文章，用来恶心现在的我</p>
-<p>恩，我一闪而过一个新的伟大想法</p>
-<p>我可以去找那些名人小时侯写的作文（依据中国国情，我可以确定，100%的人写过，而且其中最经典的一定是你最难忘的xx）</p>
-<p>然后，以公开内容威胁，恐吓。</p>
-<p>恩，这是一个长期而且十分考验眼光的投资</p>
-<p>不说了，我现在去高中当老师去，然后把所有学生的作文保存下来。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>码农</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>私人图书馆搭建-clibre</title>
     <url>/2022/05/01/%E7%A7%81%E4%BA%BA%E5%9B%BE%E4%B9%A6%E9%A6%86%E6%90%AD%E5%BB%BA-Clibre/</url>
     <content><![CDATA[<p>clibre是一个在线书籍管理工具，可以在线阅读PDF，EPUB等格式的图书，配合z-library，可以搭建一个属于自己的在线学习，阅读中心，而且还能管理每本书的状态，很适合在自己的服务器上部署一个。</p>
@@ -11279,6 +11401,43 @@ pip install requirements.txt
       <tags>
         <tag>calibre</tag>
         <tag>电子书</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>码农</title>
+    <url>/2022/04/30/%E7%A0%81%E5%86%9C/</url>
+    <content><![CDATA[<p>额，最近好像来的比较频繁，似乎跟上次一样，也是一阵时间内多次到来</p>
+<p>然后，取材一段时间，然后又过来了</p>
+<p>今天好像找到了一个一闪而过的思路，但是可惜，没抓住，然后现在我抱着空空的脑袋过来写这么一篇。</p>
+<p>额，仔细想想，我的生活平凡而又无趣，确切的是我的工作，作为一个维护人员，尤其是计算机维护人员，在系统没出问题前，我们就是放在储物间来织蜘蛛网的，尤其作为计算机人员，看着写代码的那么忙碌，在旁边看着，内心不禁想到：都是人，差距怎么这么大。</p>
+<p>有那么一瞬间，我在想是哪个傻逼非得分工合作。当然必有道理。我不想深究，只是一个任性的想法。</p>
+<p>当然，看到人类差距的我，心中升起了一个伟大的想法：我要当码农。</p>
+<p>为啥</p>
+<p>太闲了，当码农就可以享受到没日没夜的工作，然后还没加班费</p>
+<p>额，你是m吗</p>
+<p>我本着对自己负责的态度，我声明，以上不是黑码农，而且本人直且无受虐倾向</p>
+<p>好吧，有时候闲可以让人发疯的</p>
+<p>额，相信我我不是在炫耀，一个月入三千，不用干太多活，而且还包两顿饭，碾压一些人是可以，但是压不住太多人，对不。</p>
+<p>好吧，今天的内容是不是该结束了（我去，800字都没到，结束个毛）</p>
+<p>基于我多年作文的强大基础，我好像得了，东西不写满800字就结束不了的病。相较于要写800字正好的强迫症患者来说，我这还有得救，只要坚持吃药出门就好</p>
+<p>话说，我不禁感想其，当初我是有多么的委婉，转折，再加重复，才能将我最难忘的一件事写满800.然后还写出至少三个不同的版本</p>
+<p>额，我忽然好想静静，</p>
+<p>可以的话，或者早知道的话，我可以留下那些文章，用来恶心现在的我</p>
+<p>恩，我一闪而过一个新的伟大想法</p>
+<p>我可以去找那些名人小时侯写的作文（依据中国国情，我可以确定，100%的人写过，而且其中最经典的一定是你最难忘的xx）</p>
+<p>然后，以公开内容威胁，恐吓。</p>
+<p>恩，这是一个长期而且十分考验眼光的投资</p>
+<p>不说了，我现在去高中当老师去，然后把所有学生的作文保存下来。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>码农</tag>
       </tags>
   </entry>
   <entry>
@@ -11835,6 +11994,38 @@ pip install requirements.txt
       </tags>
   </entry>
   <entry>
+    <title>酒馆战旗为啥不好玩了</title>
+    <url>/2022/06/13/%E9%85%92%E9%A6%86%E6%88%98%E6%97%97%E4%B8%BA%E5%95%A5%E4%B8%8D%E5%A5%BD%E7%8E%A9%E4%BA%86/</url>
+    <content><![CDATA[<h2 id="炉石传说"><a class="markdownIt-Anchor" href="#炉石传说"></a> 炉石传说</h2>
+<p>和麻将一样，炉石传说也具有麻将的一搬特性：特定数量的棋子数，随机的战斗过程。相较于炉石不同的是，麻将追求的是一个特定的组合，但是炉石则更复杂，是追求的是比烂，你不一定要达到完美的组合，但是你只要比其他几个好就行。而且对战过程的随机性使得运气成分占据一定的地位。</p>
+<h3 id="初期"><a class="markdownIt-Anchor" href="#初期"></a> 初期</h3>
+<p>在初期酒馆战旗确实可以算的上是可以和麻将并提的一个游戏，两者具有一定的相似性，那时候酒馆的版本答案：战狼瑞文，跳操海盗，剧毒鱼人，鸡杂圣盾，恶魔机枪。几乎每个种族都有一个自己的独特套路， 大家都能记住，并且在搜索的过程中慢慢接近，虽然结果并不一定是完美的版本答案，但是就如同麻将过程一样，大家是有目标。这是一个慢慢探索和逼近的过程，而对于对方大家也知道它的终极形态，可以预防，甚至早早的做好准备。游戏的竞技平衡性尚在，而提前做好准备更是体现选手对每个形态的理解和对策。</p>
+<h3 id="稳定期"><a class="markdownIt-Anchor" href="#稳定期"></a> 稳定期</h3>
+<p>游戏在过程中不断的优化，有时候会删除某些过分强势的组合：铜须，巨壳龙。这样，但是万变不离其宗。抛开英雄技能，很多时候一个种族只有一条出路，所以中间很多时候确定最终组合往往就是对应组合的核心出现，或者对应种族核心出现。虽然某些组合的削弱，但是由于对战的随机性和克制的随从存在，也并不是无解的地步，尚且没有出现一个巫妖王。哪怕你是完美跳操也有可能被别人圣盾机器人挡住。</p>
+<h3 id="疯狂期"><a class="markdownIt-Anchor" href="#疯狂期"></a> 疯狂期</h3>
+<p>不知道是出于什么考虑，炉石在22.0更新了酒馆伙伴。酒馆伙伴带来了肉眼可见的疯狂。很多时候一个英雄技能就能决定比赛的胜负，输赢的关键已经不是战斗的随机性和随从出现可能性。三连次数的增加降低了核心的获取难度，身材的无限扩张减少了战斗随机性带来的意外。很多时候身材无限大，三连无限多，唯一限制你的是时间，你只想加快进入下一个随从选择期，战斗过程完全不顾，各种几乎不可能实现的自动流派出现在平常人手里。那是酒馆最为疯狂的时期，但是对普通人来说也是最舒服的时期，那段时期只要你玩，你就有可能选到强势的英雄伙伴，选到牛逼英雄技能，剩下的就是爽，哪怕最后没有获得胜利，你中间的巨大操作量也使得你感到满足。但是这些完全毁坏了游戏的随机性和平衡性。很多英雄都有对应的操作。从对随从的特定组合变成了对英雄对随从组合的双重考验，满足其一即可舒服，都满足则大概率吃鸡，所以对游戏的理解又一次成为了重中之重。但是平衡性的缺失导致了8人游戏5-7人坐牢。本来游戏中间30秒后期100+秒的等待时间在之前被人诟病，现在如果是垃圾英雄，完全就不想等待这60秒，而对于某些英雄这60秒，却像黄金一样珍贵。</p>
+<h3 id="无趣期"><a class="markdownIt-Anchor" href="#无趣期"></a> 无趣期</h3>
+<p>或许是因为在疯狂期数据不好，或许是觉得完全不管平衡性也不合适。反正酒馆在23.0移除了伙伴机制，回到了之前的稳定期，同时带来了新的随从种类。从之前的6+野猪人+娜迦到8种随从种类，这个本来没什么，但是随着随从卡池轮换，6-8带来了质变。以前6选5，一种不见，大家还能接受，现在是8选5种，三种随从不见：第一带来的是用户本来想这局或者这个英雄玩什么种族，或者就是刚刚看到一个新套路，过来测试学习的，但是这局没有。其次是种族克制，跳操需要机器人克制的时候没有，龙人克制圣盾的时候也没有了。虽然有替换，但是增加了门槛，玩家不会去自责自己没有想出答案，只会责怪游戏。还有就是随从池的扩大，很多无用或者需要配合的随从增多，过多的讲究随从之间的配合，导致一旦我们出现一个核心随从，我就需要对应的随从进行配合，否则这个随从就是辣鸡，从身材到功能都是。但是这时候要么是自己已经靠近别的，要么就是对应随从一个都不出，因为池子里的怪增多了。这又加剧了普通玩家不满，很多时候我们只是过来玩一局放松放松。不是过来读研究生的。然后就是15血保护机制：本来是保护防止过早被那种运气爆棚的人前期带走，现在别人利用前期保护，快速升级到5-6。利用前期丢失一定量但是不致死亡的血来获得早期高级随从。一旦获得高级随从，从身材，从配合都有了更多的选择性和更好的成型。在15血保护的前几回合大家疯狂赌博，将随机性增加到了一个不属于它的地位。而15血保护机制的消失，又会让游戏加速结束。之前由于保护机制拖慢的游戏进程，在结束保护之后第一回合快速显现，很多时候一回合可以淘汰掉一半的人数。这带来的巨大体验落差。很多时候我们不仅要等待无聊的选随从时间，还要在之后快速的被淘汰出去，仅仅是因为自己按照正常的节奏一步步升级。完全感觉自己就是在陪那1-2个人玩游戏，甚至浪费了时间。</p>
+<h3 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h3>
+<p>酒馆战旗犯了一个所有的暴雪游戏的错误就是：暴雪爸爸教你玩游戏。我不仅一次对酒馆对随从的削弱感到奇怪，而且前期的一些随从配合也在暴雪的意料之外，比如跳操。随着暴雪发现，便开始在玩家的基础上对其进行改良，比如：5星镀金海盗，或者对其削弱，比如：圣盾峰哥鱼。暴雪将自己摆在了高于玩家一头的地位，由他来决定游戏的形式而不是玩家：我不喜欢太快结束战斗，我不喜欢圣盾剧毒的配合，我不喜欢过分强势的组合，我想让你们在那玩养成游戏，我想让你们慢点结束战斗等等。但是他的聪明才智又不足以支持他的野心，很多时候玩家往往能拿出不属于他们的创意，不属于他们的解决方案，然后他只能气急败坏的说：这是你能玩的么？你也姓赵。于是成就了一个玩家喜欢什么就砍什么的奇怪现象。炉石传说如此，魔兽世界如此，酒馆战旗也是如此。他们盛气凌人的模样让人生厌。他对自己游戏不信任不相信他们的酒馆战旗会像麻将，扑克这些，虽然形式单一，但是悠久流传。或者是他们不想要这样，因为他们对用户数有要求，他们希望无限的增长用户，他们希望获得用户的氪金。这或许是所有游戏公司的悲哀吧。所以他们在游戏刚更新之后立刻举行比赛，希望减少玩家思考时间防止玩家扯出什么幺蛾子，但是又不想一直保持游戏不变化。而玩家对此的投票也很正常，不玩，不带。不止一次比赛选手选择旧版本的卡组，一张新的版本卡都没带，这肯定不是暴雪想要看到的，但是对于选手来说，他们需要的是一个可以理解的，经过验证的卡组，而不是看起来花里胡哨的，他们对稳定的需求大于随机性的上限。</p>
+<p>目前暴雪感觉进入了一个死亡螺旋：开新版本，举办比赛增加热度——比赛卡组都是旧的，并没有带来新版本热度——玩家觉得无聊，退坑——开新版本，增加更加强力的卡，举办比赛增加热度——比赛开组都是旧的。他一遍遍的增加可怕的，超模的新卡，新随从反而让更多人离开，更频繁的更新导致入门门槛不断增加，虽然氪金数上来了，但是用户数不断减少，最后的结果必然是成为了小众游戏，即使他当初是一个众所周知的游戏。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220630141112.png" alt="20220630141112" /></p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>炉石传说</tag>
+        <tag>酒馆战旗</tag>
+        <tag>暴雪</tag>
+        <tag>六字真言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>都被你们教坏了</title>
     <url>/2022/04/30/%E9%83%BD%E8%A2%AB%E4%BD%A0%E4%BB%AC%E6%95%99%E5%9D%8F%E4%BA%86/</url>
     <content><![CDATA[<p>写在开头，这不是一篇洗地文</p>
@@ -11864,38 +12055,6 @@ pip install requirements.txt
       </tags>
   </entry>
   <entry>
-    <title>酒馆战旗为啥不好玩了</title>
-    <url>/2022/06/13/%E9%85%92%E9%A6%86%E6%88%98%E6%97%97%E4%B8%BA%E5%95%A5%E4%B8%8D%E5%A5%BD%E7%8E%A9%E4%BA%86/</url>
-    <content><![CDATA[<h2 id="炉石传说"><a class="markdownIt-Anchor" href="#炉石传说"></a> 炉石传说</h2>
-<p>和麻将一样，炉石传说也具有麻将的一搬特性：特定数量的棋子数，随机的战斗过程。相较于炉石不同的是，麻将追求的是一个特定的组合，但是炉石则更复杂，是追求的是比烂，你不一定要达到完美的组合，但是你只要比其他几个好就行。而且对战过程的随机性使得运气成分占据一定的地位。</p>
-<h3 id="初期"><a class="markdownIt-Anchor" href="#初期"></a> 初期</h3>
-<p>在初期酒馆战旗确实可以算的上是可以和麻将并提的一个游戏，两者具有一定的相似性，那时候酒馆的版本答案：战狼瑞文，跳操海盗，剧毒鱼人，鸡杂圣盾，恶魔机枪。几乎每个种族都有一个自己的独特套路， 大家都能记住，并且在搜索的过程中慢慢接近，虽然结果并不一定是完美的版本答案，但是就如同麻将过程一样，大家是有目标。这是一个慢慢探索和逼近的过程，而对于对方大家也知道它的终极形态，可以预防，甚至早早的做好准备。游戏的竞技平衡性尚在，而提前做好准备更是体现选手对每个形态的理解和对策。</p>
-<h3 id="稳定期"><a class="markdownIt-Anchor" href="#稳定期"></a> 稳定期</h3>
-<p>游戏在过程中不断的优化，有时候会删除某些过分强势的组合：铜须，巨壳龙。这样，但是万变不离其宗。抛开英雄技能，很多时候一个种族只有一条出路，所以中间很多时候确定最终组合往往就是对应组合的核心出现，或者对应种族核心出现。虽然某些组合的削弱，但是由于对战的随机性和克制的随从存在，也并不是无解的地步，尚且没有出现一个巫妖王。哪怕你是完美跳操也有可能被别人圣盾机器人挡住。</p>
-<h3 id="疯狂期"><a class="markdownIt-Anchor" href="#疯狂期"></a> 疯狂期</h3>
-<p>不知道是出于什么考虑，炉石在22.0更新了酒馆伙伴。酒馆伙伴带来了肉眼可见的疯狂。很多时候一个英雄技能就能决定比赛的胜负，输赢的关键已经不是战斗的随机性和随从出现可能性。三连次数的增加降低了核心的获取难度，身材的无限扩张减少了战斗随机性带来的意外。很多时候身材无限大，三连无限多，唯一限制你的是时间，你只想加快进入下一个随从选择期，战斗过程完全不顾，各种几乎不可能实现的自动流派出现在平常人手里。那是酒馆最为疯狂的时期，但是对普通人来说也是最舒服的时期，那段时期只要你玩，你就有可能选到强势的英雄伙伴，选到牛逼英雄技能，剩下的就是爽，哪怕最后没有获得胜利，你中间的巨大操作量也使得你感到满足。但是这些完全毁坏了游戏的随机性和平衡性。很多英雄都有对应的操作。从对随从的特定组合变成了对英雄对随从组合的双重考验，满足其一即可舒服，都满足则大概率吃鸡，所以对游戏的理解又一次成为了重中之重。但是平衡性的缺失导致了8人游戏5-7人坐牢。本来游戏中间30秒后期100+秒的等待时间在之前被人诟病，现在如果是垃圾英雄，完全就不想等待这60秒，而对于某些英雄这60秒，却像黄金一样珍贵。</p>
-<h3 id="无趣期"><a class="markdownIt-Anchor" href="#无趣期"></a> 无趣期</h3>
-<p>或许是因为在疯狂期数据不好，或许是觉得完全不管平衡性也不合适。反正酒馆在23.0移除了伙伴机制，回到了之前的稳定期，同时带来了新的随从种类。从之前的6+野猪人+娜迦到8种随从种类，这个本来没什么，但是随着随从卡池轮换，6-8带来了质变。以前6选5，一种不见，大家还能接受，现在是8选5种，三种随从不见：第一带来的是用户本来想这局或者这个英雄玩什么种族，或者就是刚刚看到一个新套路，过来测试学习的，但是这局没有。其次是种族克制，跳操需要机器人克制的时候没有，龙人克制圣盾的时候也没有了。虽然有替换，但是增加了门槛，玩家不会去自责自己没有想出答案，只会责怪游戏。还有就是随从池的扩大，很多无用或者需要配合的随从增多，过多的讲究随从之间的配合，导致一旦我们出现一个核心随从，我就需要对应的随从进行配合，否则这个随从就是辣鸡，从身材到功能都是。但是这时候要么是自己已经靠近别的，要么就是对应随从一个都不出，因为池子里的怪增多了。这又加剧了普通玩家不满，很多时候我们只是过来玩一局放松放松。不是过来读研究生的。然后就是15血保护机制：本来是保护防止过早被那种运气爆棚的人前期带走，现在别人利用前期保护，快速升级到5-6。利用前期丢失一定量但是不致死亡的血来获得早期高级随从。一旦获得高级随从，从身材，从配合都有了更多的选择性和更好的成型。在15血保护的前几回合大家疯狂赌博，将随机性增加到了一个不属于它的地位。而15血保护机制的消失，又会让游戏加速结束。之前由于保护机制拖慢的游戏进程，在结束保护之后第一回合快速显现，很多时候一回合可以淘汰掉一半的人数。这带来的巨大体验落差。很多时候我们不仅要等待无聊的选随从时间，还要在之后快速的被淘汰出去，仅仅是因为自己按照正常的节奏一步步升级。完全感觉自己就是在陪那1-2个人玩游戏，甚至浪费了时间。</p>
-<h3 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h3>
-<p>酒馆战旗犯了一个所有的暴雪游戏的错误就是：暴雪爸爸教你玩游戏。我不仅一次对酒馆对随从的削弱感到奇怪，而且前期的一些随从配合也在暴雪的意料之外，比如跳操。随着暴雪发现，便开始在玩家的基础上对其进行改良，比如：5星镀金海盗，或者对其削弱，比如：圣盾峰哥鱼。暴雪将自己摆在了高于玩家一头的地位，由他来决定游戏的形式而不是玩家：我不喜欢太快结束战斗，我不喜欢圣盾剧毒的配合，我不喜欢过分强势的组合，我想让你们在那玩养成游戏，我想让你们慢点结束战斗等等。但是他的聪明才智又不足以支持他的野心，很多时候玩家往往能拿出不属于他们的创意，不属于他们的解决方案，然后他只能气急败坏的说：这是你能玩的么？你也姓赵。于是成就了一个玩家喜欢什么就砍什么的奇怪现象。炉石传说如此，魔兽世界如此，酒馆战旗也是如此。他们盛气凌人的模样让人生厌。他对自己游戏不信任不相信他们的酒馆战旗会像麻将，扑克这些，虽然形式单一，但是悠久流传。或者是他们不想要这样，因为他们对用户数有要求，他们希望无限的增长用户，他们希望获得用户的氪金。这或许是所有游戏公司的悲哀吧。所以他们在游戏刚更新之后立刻举行比赛，希望减少玩家思考时间防止玩家扯出什么幺蛾子，但是又不想一直保持游戏不变化。而玩家对此的投票也很正常，不玩，不带。不止一次比赛选手选择旧版本的卡组，一张新的版本卡都没带，这肯定不是暴雪想要看到的，但是对于选手来说，他们需要的是一个可以理解的，经过验证的卡组，而不是看起来花里胡哨的，他们对稳定的需求大于随机性的上限。</p>
-<p>目前暴雪感觉进入了一个死亡螺旋：开新版本，举办比赛增加热度——比赛卡组都是旧的，并没有带来新版本热度——玩家觉得无聊，退坑——开新版本，增加更加强力的卡，举办比赛增加热度——比赛开组都是旧的。他一遍遍的增加可怕的，超模的新卡，新随从反而让更多人离开，更频繁的更新导致入门门槛不断增加，虽然氪金数上来了，但是用户数不断减少，最后的结果必然是成为了小众游戏，即使他当初是一个众所周知的游戏。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220630141112.png" alt="20220630141112" /></p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>炉石传说</tag>
-        <tag>酒馆战旗</tag>
-        <tag>六字真言</tag>
-        <tag>暴雪</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>随想</title>
     <url>/2022/04/30/%E9%9A%8F%E6%83%B3/</url>
     <content><![CDATA[<p>想养一只猫</p>
@@ -11912,6 +12071,34 @@ pip install requirements.txt
       </categories>
       <tags>
         <tag>喵</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>青龙面板定时规则</title>
+    <url>/2023/03/28/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%AE%9A%E6%97%B6%E8%A7%84%E5%88%99/</url>
+    <content><![CDATA[<h1 id="青龙面板定时规则"><a class="markdownIt-Anchor" href="#青龙面板定时规则"></a> 青龙面板定时规则</h1>
+<p>青龙面板使用的是cron的时间格式，但是它又在上面基础上进行优化，使用的是5-6位的时间表达式：</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/!%5B20230328145315%5D(httpsraw.githubusercontent.comandroid1122typecho_imgmaster20230328145315.png).png" alt="20230328145315" /></p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230328145545.png" alt="20230328145545" /></p>
+<p>知道这些之后，看下青龙内部经常使用的通配符</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">,：表示在两个及以上的时间点中都执行。如在月中的值为1,3，则表示1月和3月都触发事件</span><br><span class="line"></span><br><span class="line">*：表示匹配该域任意值，可解读为 “每”，如小时的字段为*时，表示每一小时都触发事件</span><br><span class="line"></span><br><span class="line">?：表示不指定值，用于日期和星期字段之间进行互斥。通常在日期和星期字段中的一个指定值，另外一个用?表示不指定值。使用的场景为不需要关心当前设置这个字段的值。例如:要在每月的6号触发一个操作，但不关心是周几，我们可以这么设置 0 0 0 6 * ?</span><br><span class="line"></span><br><span class="line">-：表示范围，一个连续触发的区间。如：时的值为6-8，则表示6-8小时中的每个小时都触发事件。</span><br><span class="line"></span><br><span class="line">/：表示间隔时间触发事件（开始时间/时间间隔）。其中第一部分是起始值，除了秒以外都会降低一个单位，比如在 “秒” 上定义 5/10 表示从 第 5 秒开始 每 10 秒执行一次，而在 “分” 上则表示从 第 5 秒开始 每 10 分钟执行一次。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#：表示该月第n个星期x(x#n)，仅用星期域。如：星期：6#3，表示该月的第三个星期六。</span><br><span class="line"></span><br><span class="line">L：表示LAST 最后（最后一天或最后一个星期几）；仅出现在日和星期的域中。用在日则表示该月的最后一天，用在星期则表示该月的最后一个星期X。如：星期域上的值为5L，则表示该月最后一个星期的星期四。在使用&#x27;L&#x27;时，不要指定列表&#x27;,&#x27;或范围&#x27;-&#x27;，否则易导致出现意料之外的结果。</span><br><span class="line"></span><br><span class="line">W：仅用在日的域中，表示距离当月给定日期最近的工作日（周一到周五）。 如：&quot;4W&quot;表示距离4号最近的工作日（当月的）触发事件； （1）当4号就是工作日时，则表示当天触发；当4号为周六时，则表示3号（周五）触发； （2）当4号为周日时，则表示在5号（周一）触发； 再如：&quot;1W&quot;表示距离1号最近的工作日触发事件，但是，该工作日只算当月的。假如当月1号是周六，则”1W“表示在当月3号（周一）触发事件。就算上个月的最后一天是工作日，也不会触发事件。</span><br><span class="line"></span><br><span class="line">LW：‘L’和&#x27;W&#x27;可以一起组合在日字段使用。表示当月的最后一个工作日触发事件。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>0 0 7-20 * * * 比如这个0秒0分7-19点内每天每月每周执行，即每天的7-19内0分0秒执行</p>
+<p>如果要求在上班日（周一到周五），那么最后一个字符“周”就需要配置：0 0 7-20 * * 1-5</p>
+<p>当然如果你不会的话，可以选择使用<a href="https://cron.qqe2.com/">在线服务</a>,简单方便。</p>
+<h1 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h1>
+<p>青龙面板是个好东西，可视化的界面降低了开发人员的入门，没必要在部署上花费时间，简单的写个python程序，然后放到青龙上，剩下的就是等待，配合Gotify等通知软件，可以实现实时接收消息。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>青龙面板</tag>
+        <tag>python</tag>
+        <tag>Gotify</tag>
       </tags>
   </entry>
   <entry>
@@ -11963,34 +12150,6 @@ pip install requirements.txt
       </categories>
       <tags>
         <tag>下雨</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>青龙面板定时规则</title>
-    <url>/2023/03/28/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%AE%9A%E6%97%B6%E8%A7%84%E5%88%99/</url>
-    <content><![CDATA[<h1 id="青龙面板定时规则"><a class="markdownIt-Anchor" href="#青龙面板定时规则"></a> 青龙面板定时规则</h1>
-<p>青龙面板使用的是cron的时间格式，但是它又在上面基础上进行优化，使用的是5-6位的时间表达式：</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/!%5B20230328145315%5D(httpsraw.githubusercontent.comandroid1122typecho_imgmaster20230328145315.png).png" alt="20230328145315" /></p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230328145545.png" alt="20230328145545" /></p>
-<p>知道这些之后，看下青龙内部经常使用的通配符</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">,：表示在两个及以上的时间点中都执行。如在月中的值为1,3，则表示1月和3月都触发事件</span><br><span class="line"></span><br><span class="line">*：表示匹配该域任意值，可解读为 “每”，如小时的字段为*时，表示每一小时都触发事件</span><br><span class="line"></span><br><span class="line">?：表示不指定值，用于日期和星期字段之间进行互斥。通常在日期和星期字段中的一个指定值，另外一个用?表示不指定值。使用的场景为不需要关心当前设置这个字段的值。例如:要在每月的6号触发一个操作，但不关心是周几，我们可以这么设置 0 0 0 6 * ?</span><br><span class="line"></span><br><span class="line">-：表示范围，一个连续触发的区间。如：时的值为6-8，则表示6-8小时中的每个小时都触发事件。</span><br><span class="line"></span><br><span class="line">/：表示间隔时间触发事件（开始时间/时间间隔）。其中第一部分是起始值，除了秒以外都会降低一个单位，比如在 “秒” 上定义 5/10 表示从 第 5 秒开始 每 10 秒执行一次，而在 “分” 上则表示从 第 5 秒开始 每 10 分钟执行一次。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#：表示该月第n个星期x(x#n)，仅用星期域。如：星期：6#3，表示该月的第三个星期六。</span><br><span class="line"></span><br><span class="line">L：表示LAST 最后（最后一天或最后一个星期几）；仅出现在日和星期的域中。用在日则表示该月的最后一天，用在星期则表示该月的最后一个星期X。如：星期域上的值为5L，则表示该月最后一个星期的星期四。在使用&#x27;L&#x27;时，不要指定列表&#x27;,&#x27;或范围&#x27;-&#x27;，否则易导致出现意料之外的结果。</span><br><span class="line"></span><br><span class="line">W：仅用在日的域中，表示距离当月给定日期最近的工作日（周一到周五）。 如：&quot;4W&quot;表示距离4号最近的工作日（当月的）触发事件； （1）当4号就是工作日时，则表示当天触发；当4号为周六时，则表示3号（周五）触发； （2）当4号为周日时，则表示在5号（周一）触发； 再如：&quot;1W&quot;表示距离1号最近的工作日触发事件，但是，该工作日只算当月的。假如当月1号是周六，则”1W“表示在当月3号（周一）触发事件。就算上个月的最后一天是工作日，也不会触发事件。</span><br><span class="line"></span><br><span class="line">LW：‘L’和&#x27;W&#x27;可以一起组合在日字段使用。表示当月的最后一个工作日触发事件。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>0 0 7-20 * * * 比如这个0秒0分7-19点内每天每月每周执行，即每天的7-19内0分0秒执行</p>
-<p>如果要求在上班日（周一到周五），那么最后一个字符“周”就需要配置：0 0 7-20 * * 1-5</p>
-<p>当然如果你不会的话，可以选择使用<a href="https://cron.qqe2.com/">在线服务</a>,简单方便。</p>
-<h1 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h1>
-<p>青龙面板是个好东西，可视化的界面降低了开发人员的入门，没必要在部署上花费时间，简单的写个python程序，然后放到青龙上，剩下的就是等待，配合Gotify等通知软件，可以实现实时接收消息。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>青龙面板</tag>
-        <tag>python</tag>
-        <tag>Gotify</tag>
       </tags>
   </entry>
   <entry>
@@ -12052,37 +12211,6 @@ pip install requirements.txt
       </tags>
   </entry>
   <entry>
-    <title>飞驰的人生</title>
-    <url>/2022/04/30/%E9%A3%9E%E9%A9%B0%E7%9A%84%E4%BA%BA%E7%94%9F/</url>
-    <content><![CDATA[<p>这也许是我第二次看这部飞驰的人生</p>
-<p>第一次将他当一部搞笑片来看</p>
-<p>第二次，则将它看成一部悲剧。</p>
-<p>影片的最后，屏幕上显示的是：仅以此片献给所有热爱的人。</p>
-<p>对此,我想说几句</p>
-<p>影片很好,至少我听懂了</p>
-<p>我羡慕他们的热爱,也羡慕他们将热爱的事情做到了第一</p>
-<p>曾几何时我与他们一样,幻想着从事自己热爱的事业,然后在上面努力耕耘,闯出自己的一番天地</p>
-<p>但是后来才发现这个事情很难,很难</p>
-<p>现实生活中,专业的人从事着不同专业的事情,甚至毫无相干的人都可以从事专业的活,在这些资源错位的背后,不是我所崇敬的热爱,是生活,是工资,是关系,是相貌.我们甚至会因为需要一个漂亮的女性,所以招聘入职,至于工作,无所谓,有的是别人.我不知那孩子进来之后发现自己是一个吉祥物般的存在会是什么感觉,也许很开心,毕竟不用做什么,还能拿到这么高的工资,甚至还有一定的地位.也许人各有志吧,但是却诛杀了热爱这份工作的人的热情.</p>
-<p>我并不是顽固不化,跨专业跨领域的事情我见的多了,也能接受,甚至理解一个人对一个专业的热爱胜过多少学历文凭.但是现实中见到的往往是谁谁的关系,或者是需要几个女等等.他们招聘的随意程度让我深深怀疑当初自己是不是也是他的一时兴起.但是看到后续的的领导表现,我才明白这他么的就是一个关系户,过来混吃等死拿福利,此生无忧还有靠山.</p>
-<p>我们的时代似乎过了那种努力拼搏实现自己的风口,现在你要是说出这样的话,旁边的人更多的是在心里骂你傻逼,他们的理想正是混吃等死,他们说社会内卷,卷死人了,你再努力也没用,因为前面还有好多人,好多牛逼的人,或者之前比你牛逼的人.我信这些话,也明白这些话的道理,甚至我看到清华北大的学生在我同一个公司时我也倍感压力</p>
-<p>但是不服输,我还喜欢这个工作,我还喜欢这个职业,我喜欢在用户抛出问题的时候,在有限的框架内给出一个双方都满意的方案,我喜欢拼搏,喜欢这种双方的博弈,也喜欢框架,大家在一个框架内遵守着同一个规则,我得到了短暂的公平.但是一个个搅局者的出现,让我一次次的伤心,双方的博弈变成了单方面的厮杀,毫无乐趣可言,甚至连投降的权利都没有,猪队友的出现让行军异常缓慢,甚至还要回头为其擦屁股,而最后的方案也变成了一种妥协,不是双方的互相妥协,是自己对工作的妥协.它毁了我对这份工作的热爱.</p>
-<p>我开始不再谋划万无一失的方案,开始不再面面俱到的考虑问题,我奇思为了偷懒,妙想为了划水.我开始计算工资和我的付出,觉得工资太低,我开始计算工资和上班时间的比例,觉得工资太低,我开始计算工资和我参加的会议,觉得工资太低,最后开始计算工资和我未来几年的发展,觉得工资太低.我的热爱用工资就可以计算,钱给够,方案给足.</p>
-<p>慢慢的,我开始同意那些人的想法,卷,太卷了,领导关系那么多,公司机制又不好,除了论资排辈,没有别的晋升机制.哪有那么多大项目啊,有也不一定你上,公司看的是利益,又不是训练你的机会.没有合适的师带徒机制,你就一辈子当实施吧,考个证吧,设点门槛,省的那些人天天要加薪,要升职.你们加薪了我赚什么,人力不是老板的走狗,他们只是单纯的抠而已.老板才不在乎这一千两千的,在乎的是下面的人,是那些打工的人.经济效益又不是一眼就看出来的,你说你值这个价?你们不懂,公司也很难,社保,保险,福利啊,还要交税.</p>
-<p>管事的人利益和公司不一致,每个人的经济效益不是一眼就能看穿,有人划水却看不出.好像公司管理确实是一个大难题.我们的热爱就这样被慢慢的抹平,消淡然后我们开始卷.因为我们明白去哪里都是一个样,我们只是为了钱工作,钱给够,活干满.</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>飞驰的人生</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>魔鬼的交易</title>
     <url>/2023/02/08/%E9%AD%94%E9%AC%BC%E7%9A%84%E4%BA%A4%E6%98%93/</url>
     <content><![CDATA[<p>人类和魔鬼的攻讦</p>
@@ -12138,6 +12266,37 @@ pip install requirements.txt
       </categories>
       <tags>
         <tag>魔鬼的交易</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>飞驰的人生</title>
+    <url>/2022/04/30/%E9%A3%9E%E9%A9%B0%E7%9A%84%E4%BA%BA%E7%94%9F/</url>
+    <content><![CDATA[<p>这也许是我第二次看这部飞驰的人生</p>
+<p>第一次将他当一部搞笑片来看</p>
+<p>第二次，则将它看成一部悲剧。</p>
+<p>影片的最后，屏幕上显示的是：仅以此片献给所有热爱的人。</p>
+<p>对此,我想说几句</p>
+<p>影片很好,至少我听懂了</p>
+<p>我羡慕他们的热爱,也羡慕他们将热爱的事情做到了第一</p>
+<p>曾几何时我与他们一样,幻想着从事自己热爱的事业,然后在上面努力耕耘,闯出自己的一番天地</p>
+<p>但是后来才发现这个事情很难,很难</p>
+<p>现实生活中,专业的人从事着不同专业的事情,甚至毫无相干的人都可以从事专业的活,在这些资源错位的背后,不是我所崇敬的热爱,是生活,是工资,是关系,是相貌.我们甚至会因为需要一个漂亮的女性,所以招聘入职,至于工作,无所谓,有的是别人.我不知那孩子进来之后发现自己是一个吉祥物般的存在会是什么感觉,也许很开心,毕竟不用做什么,还能拿到这么高的工资,甚至还有一定的地位.也许人各有志吧,但是却诛杀了热爱这份工作的人的热情.</p>
+<p>我并不是顽固不化,跨专业跨领域的事情我见的多了,也能接受,甚至理解一个人对一个专业的热爱胜过多少学历文凭.但是现实中见到的往往是谁谁的关系,或者是需要几个女等等.他们招聘的随意程度让我深深怀疑当初自己是不是也是他的一时兴起.但是看到后续的的领导表现,我才明白这他么的就是一个关系户,过来混吃等死拿福利,此生无忧还有靠山.</p>
+<p>我们的时代似乎过了那种努力拼搏实现自己的风口,现在你要是说出这样的话,旁边的人更多的是在心里骂你傻逼,他们的理想正是混吃等死,他们说社会内卷,卷死人了,你再努力也没用,因为前面还有好多人,好多牛逼的人,或者之前比你牛逼的人.我信这些话,也明白这些话的道理,甚至我看到清华北大的学生在我同一个公司时我也倍感压力</p>
+<p>但是不服输,我还喜欢这个工作,我还喜欢这个职业,我喜欢在用户抛出问题的时候,在有限的框架内给出一个双方都满意的方案,我喜欢拼搏,喜欢这种双方的博弈,也喜欢框架,大家在一个框架内遵守着同一个规则,我得到了短暂的公平.但是一个个搅局者的出现,让我一次次的伤心,双方的博弈变成了单方面的厮杀,毫无乐趣可言,甚至连投降的权利都没有,猪队友的出现让行军异常缓慢,甚至还要回头为其擦屁股,而最后的方案也变成了一种妥协,不是双方的互相妥协,是自己对工作的妥协.它毁了我对这份工作的热爱.</p>
+<p>我开始不再谋划万无一失的方案,开始不再面面俱到的考虑问题,我奇思为了偷懒,妙想为了划水.我开始计算工资和我的付出,觉得工资太低,我开始计算工资和上班时间的比例,觉得工资太低,我开始计算工资和我参加的会议,觉得工资太低,最后开始计算工资和我未来几年的发展,觉得工资太低.我的热爱用工资就可以计算,钱给够,方案给足.</p>
+<p>慢慢的,我开始同意那些人的想法,卷,太卷了,领导关系那么多,公司机制又不好,除了论资排辈,没有别的晋升机制.哪有那么多大项目啊,有也不一定你上,公司看的是利益,又不是训练你的机会.没有合适的师带徒机制,你就一辈子当实施吧,考个证吧,设点门槛,省的那些人天天要加薪,要升职.你们加薪了我赚什么,人力不是老板的走狗,他们只是单纯的抠而已.老板才不在乎这一千两千的,在乎的是下面的人,是那些打工的人.经济效益又不是一眼就看出来的,你说你值这个价?你们不懂,公司也很难,社保,保险,福利啊,还要交税.</p>
+<p>管事的人利益和公司不一致,每个人的经济效益不是一眼就能看穿,有人划水却看不出.好像公司管理确实是一个大难题.我们的热爱就这样被慢慢的抹平,消淡然后我们开始卷.因为我们明白去哪里都是一个样,我们只是为了钱工作,钱给够,活干满.</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>飞驰的人生</tag>
       </tags>
   </entry>
   <entry>

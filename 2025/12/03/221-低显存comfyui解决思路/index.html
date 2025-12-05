@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"minsummer.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.26.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="最近又出了一个z-imgae的大模型，听说效果很好，于是我又按耐不住的想要试试赛博找图了。   需求 这次Z-Image-Turbo的牛逼之处在于引入了一个语言翻译器，让你的文本语言可以直接的转化为图片，而不是像之前那样需要一些抽象词汇，还有反方向的提示词。但是我现在的显卡显然是不足以运行这个6B参数的模型，当然这也是很多人的苦恼，于是解决方案不外乎这几个：  购买api【白嫖党永不妥协】 云端【">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="低显存comfyui解决思路">
+<meta property="og:url" content="https://minsummer.com/2025/12/03/221-%E4%BD%8E%E6%98%BE%E5%AD%98comfyui%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF/">
+<meta property="og:site_name" content="我是豆豆">
+<meta property="og:description" content="最近又出了一个z-imgae的大模型，听说效果很好，于是我又按耐不住的想要试试赛博找图了。   需求 这次Z-Image-Turbo的牛逼之处在于引入了一个语言翻译器，让你的文本语言可以直接的转化为图片，而不是像之前那样需要一些抽象词汇，还有反方向的提示词。但是我现在的显卡显然是不足以运行这个6B参数的模型，当然这也是很多人的苦恼，于是解决方案不外乎这几个：  购买api【白嫖党永不妥协】 云端【">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/221-%E4%BD%8E%E6%98%BE%E5%AD%98comfyui%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF-2025-12-04-14-20-06.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/221-%E4%BD%8E%E6%98%BE%E5%AD%98comfyui%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF-2025-12-04-15-39-53.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/221-%E4%BD%8E%E6%98%BE%E5%AD%98comfyui%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF-2025-12-04-18-47-12.png">
+<meta property="article:published_time" content="2025-12-03T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-12-03T16:00:00.000Z">
+<meta property="article:author" content="张大爆">
+<meta property="article:tag" content="comfyui">
+<meta property="article:tag" content="低显存">
+<meta property="article:tag" content="RTX 4060 ti 8gb">
+<meta property="article:tag" content="Z-Image-Turbo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/221-%E4%BD%8E%E6%98%BE%E5%AD%98comfyui%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF-2025-12-04-14-20-06.png">
+
+
+<link rel="canonical" href="https://minsummer.com/2025/12/03/221-%E4%BD%8E%E6%98%BE%E5%AD%98comfyui%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://minsummer.com/2025/12/03/221-%E4%BD%8E%E6%98%BE%E5%AD%98comfyui%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF/","path":"2025/12/03/221-低显存comfyui解决思路/","title":"低显存comfyui解决思路"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>低显存comfyui解决思路 | 我是豆豆</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-189642379-1","only_pageview":true,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+
+
+
+  <script data-pjax defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{&quot;token&quot;: &quot;2c44721ef211470c8cb156f38ca476ea&quot;}'></script>
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.1/mermaid.min.js","integrity":"sha256-BmQmdWDS8X2OTbrwELWK366LV6escyWhHHe0XCTU/Hk="}}</script>
+  <script src="/js/third-party/tags/mermaid.js" defer></script>
+
+
+
+  <script src="/js/third-party/pace.js" defer></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
+  <script class="next-config" data-name="katex" type="application/json">{"copy_tex_js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js","integrity":"sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs="}}</script>
+  <script src="/js/third-party/math/katex.js" defer></script>
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3599006834125162"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="我是豆豆" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">我是豆豆</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">吃饭，睡觉，打豆豆</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">405</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">222</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9C%80%E6%B1%82"><span class="nav-number">1.</span> <span class="nav-text"> 需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%BE%E5%AD%98%E9%9C%80%E6%B1%82%E8%AE%A1%E7%AE%97%E5%92%8C%E8%92%B8%E9%A6%8F"><span class="nav-number">2.</span> <span class="nav-text"> 显存需求计算和蒸馏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%B8%B8%E8%A7%81%E7%9A%84%E9%87%8F%E5%8C%96%E6%8A%80%E6%9C%AF%E5%88%86%E7%B1%BB%E5%92%8C%E6%95%88%E6%9E%9C"><span class="nav-number">3.</span> <span class="nav-text"> 其他常见的量化技术分类和效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text"> 总结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">张大爆</p>
+  <div class="site-description" itemprop="description">经常会忘记一些东西，用这里来记录我们曾经来过</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">222</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">405</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/android1122" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;android1122" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:noway@minsummer.com" title="E-Mail → mailto:noway@minsummer.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://speedtt.minsummer.com/" title="https:&#x2F;&#x2F;speedtt.minsummer.com&#x2F;" rel="noopener" target="_blank">共享机场-移动</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://speedttsjc.minsummer.com/" title="https:&#x2F;&#x2F;speedttsjc.minsummer.com&#x2F;" rel="noopener" target="_blank">共享机场-三网</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wangergoudebaobaodian.taobao.com/" title="https:&#x2F;&#x2F;wangergoudebaobaodian.taobao.com&#x2F;" rel="noopener" target="_blank">淘宝店</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相关文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/2025/05/26/205-DMIT%20LAX.EB.CORONA%E5%92%8C%E7%93%A6%E5%B7%A5NODESEEK-MEGABOX-PRO/" rel="bookmark">
+        <time class="popular-posts-time">2025-05-27</time>
+        <br>
+      DMIT LAX.EB.CORONA和瓦工NODESEEK-MEGABOX-PRO测试结果
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/2024/01/04/145-OPENWRT-DNS%E6%8C%87%E5%8D%97/" rel="bookmark">
+        <time class="popular-posts-time">2024-01-05</time>
+        <br>
+      OPENWRT-DNS指南
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://minsummer.com/2025/12/03/221-%E4%BD%8E%E6%98%BE%E5%AD%98comfyui%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="张大爆">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我是豆豆">
+      <meta itemprop="description" content="经常会忘记一些东西，用这里来记录我们曾经来过">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="低显存comfyui解决思路 | 我是豆豆">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          低显存comfyui解决思路
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-12-04 00:00:00" itemprop="dateCreated datePublished" datetime="2025-12-04T00:00:00+08:00">2025-12-04</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>最近又出了一个z-imgae的大模型，听说效果很好，于是我又按耐不住的想要试试赛博找图了。</p>
+<!-- more  -->
+<h2 id="需求"><a class="markdownIt-Anchor" href="#需求"></a> 需求</h2>
+<p>这次Z-Image-Turbo的牛逼之处在于引入了一个语言翻译器，让你的文本语言可以直接的转化为图片，而不是像之前那样需要一些抽象词汇，还有反方向的提示词。但是我现在的显卡显然是不足以运行这个6B参数的模型，当然这也是很多人的苦恼，于是解决方案不外乎这几个：</p>
+<ol>
+<li>购买api【白嫖党永不妥协】</li>
+<li>云端【花钱是不可能花钱的，这辈子都不可能的】</li>
+<li>使用蒸馏或者量化模型</li>
+</ol>
+<p>由于我们的需求不高，而且不要求稳定性，所以最合适的还是本地使用蒸馏后的模型。</p>
+<h2 id="显存需求计算和蒸馏"><a class="markdownIt-Anchor" href="#显存需求计算和蒸馏"></a> 显存需求计算和蒸馏</h2>
+<p>很多时候我们不知道我们需要的显存是多少，这边简单的提供两个公式： <strong>显存占用 ≈ 参数量 × 数据类型对应的字节数 × 系数</strong><br />
+其中，系数在不同阶段不同：<br />
+纯推理（只有权重）：系数 ≈ 1<br />
+训练（权重 + 梯度 + 优化器状态）：系数 ≈ 4 - 8，甚至更高。<br />
+简单说，如果你只是拿来生成图片，而不是训练的话： <strong>显存占用 ≈ 参数量 × 数据类型对应的字节数</strong>，首先我们来说参数里量，很多时候我们看到<strong>1B</strong>并不知道是什么意思。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">模型参数量</th>
+<th style="text-align:left">显存估算 (仅推理，FP16)</th>
+<th style="text-align:left">显存估算 (完整训练，FP16)</th>
+<th style="text-align:left">适合的量化方案 (供你参考)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>1B (十亿)</strong></td>
+<td style="text-align:left">约 <strong>2 GB</strong></td>
+<td style="text-align:left">约 <strong>8 - 12 GB</strong></td>
+<td style="text-align:left">8GB显存轻松应对，几乎无需量化。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>7B (七十亿)</strong></td>
+<td style="text-align:left">约 <strong>14 GB</strong></td>
+<td style="text-align:left">约 <strong>56 - 84 GB</strong></td>
+<td style="text-align:left"><strong>需要量化</strong>。4位量化后约4GB，是你8GB显存卡运行的理想选择。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>13B</strong></td>
+<td style="text-align:left">约 <strong>26 GB</strong></td>
+<td style="text-align:left">约 <strong>104 - 156 GB</strong></td>
+<td style="text-align:left">需强力量化。4位量化后约7-8GB，在你的卡上运行较极限。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>34B</strong></td>
+<td style="text-align:left">约 <strong>68 GB</strong></td>
+<td style="text-align:left">约 <strong>272 - 408 GB</strong></td>
+<td style="text-align:left">8GB显存<strong>无法运行</strong>，即使4位量化后也远超负载。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>70B</strong></td>
+<td style="text-align:left">约 <strong>140 GB</strong></td>
+<td style="text-align:left">约 <strong>560 - 840 GB</strong></td>
+<td style="text-align:left">远超单卡能力，必须依赖多卡并行。</td>
+</tr>
+</tbody>
+</table>
+<p>以这次<a target="_blank" rel="noopener" href="https://huggingface.co/Tongyi-MAI/Z-Image-Turbo">Tongyi-MAI/Z-Image-Turbo</a>为例，它是个6B模型，如果拿来生成图的话，正常是要24GB显存的，但是官方做了优化，<strong>可以轻松适应 16G 显存的消费设备</strong>，那么我们就可以根据官方默认的数据，再通过精度之间换算。<br />
+蒸馏就是将原模型的FP32的数据精度，转变位精度比较小的数值，比如BF16或者FP8，通过减少小数点后面的位数，来达到显存占用更小的目的，不同数据精度之间的换算可以大致用下表判断出来。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">精度格式</th>
+<th style="text-align:left">比特位</th>
+<th style="text-align:left">数值范围与精度特点</th>
+<th style="text-align:left">内存占用 (相比FP32)</th>
+<th style="text-align:left">主要用途与关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>FP32 (float32)</strong></td>
+<td style="text-align:left">32 bit</td>
+<td style="text-align:left">范围广，精度高，是深度学习的<strong>基准精度</strong>。</td>
+<td style="text-align:left">1x (基准)</td>
+<td style="text-align:left"><strong>通用训练</strong>。是其他精度转换的起点和校准基准。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>BF16 (bfloat16)</strong></td>
+<td style="text-align:left">16 bit</td>
+<td style="text-align:left">保留FP32的8位指数（范围），牺牲部分尾数（精度）。<strong>范围大，不易溢出</strong>。</td>
+<td style="text-align:left">减少 <strong>50%</strong></td>
+<td style="text-align:left"><strong>现代AI训练（主流）</strong>。与FP32范围对齐，训练更稳定，被TPU和现代GPU广泛支持。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>FP16 (float16)</strong></td>
+<td style="text-align:left">16 bit</td>
+<td style="text-align:left">指数和尾数都比BF16小。<strong>范围小，易数值溢出</strong>（上溢/下溢）。</td>
+<td style="text-align:left">减少 <strong>50%</strong></td>
+<td style="text-align:left"><strong>训练与推理</strong>。需配合<strong>损失缩放</strong>等技术防止溢出，在特定任务和硬件上高效。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>FP8 (E4M3/E5M2)</strong></td>
+<td style="text-align:left">8 bit</td>
+<td style="text-align:left">新兴格式，如E4M3（精度好）、E5M2（范围大）。硬件原生支持，效率高。</td>
+<td style="text-align:left">减少 <strong>75%</strong></td>
+<td style="text-align:left"><strong>未来训练与推理</strong>。在<strong>NVIDIA H100</strong>等GPU上原生支持，是下一代低精度计算的关键。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>INT8</strong></td>
+<td style="text-align:left">8 bit</td>
+<td style="text-align:left">表示256个离散整数。需通过<strong>量化</strong>将浮点权重映射到整数范围。</td>
+<td style="text-align:left">减少 <strong>75%</strong></td>
+<td style="text-align:left"><strong>推理加速（主流）</strong>。<strong>训练后量化 (PTQ)</strong> 的常用目标，在保持较好精度下大幅提升速度。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>INT4</strong></td>
+<td style="text-align:left">4 bit</td>
+<td style="text-align:left">仅16个离散值，<strong>信息损失严重</strong>，需更精细的量化算法。</td>
+<td style="text-align:left">减少 <strong>87.5%</strong></td>
+<td style="text-align:left"><strong>极致压缩推理</strong>。用于资源严格受限的场景（如你的8GB显存跑7B模型），对量化算法要求高。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>注</strong>：更低比特的量化（如INT2、1-bit）是前沿研究，尚不成熟。</p>
+</blockquote>
+<p>需要注意：<strong>FP32 (float32)</strong> 是基准，所以Z-Image-Turbo，在BF16这个精度下，理论上只需要8GB显存的消费级显卡即可。同样的，我们看下官方推荐的语言模型qwen_3_4b是个4B模型，在<a target="_blank" rel="noopener" href="https://qwen.readthedocs.io/zh-cn/latest/getting_started/speed_benchmark.html">官方测试基准</a>，使用量化BF16就是7973MB的显存，这样就可以大致确定了我们需要的显存大小了。当然这些都是拿来生成图片，如果是训练的话，所需资源就更多。<br />
+简而言之：8GB显存对应4B BF16或者8B FP8模型。你可以下载对应的蒸馏模型。</p>
+<h2 id="其他常见的量化技术分类和效果"><a class="markdownIt-Anchor" href="#其他常见的量化技术分类和效果"></a> 其他常见的量化技术分类和效果</h2>
+<p>目前还有其他几种用来量化方法</p>
+<ol>
+<li>GPTQ训练后量化方法，通过调整权重来节省显存。</li>
+<li>AWQ激活感知权重量化，既要量化，又需要精度 准确性高</li>
+<li>GGUF【之前叫GGML】： 基于C++，可以调用CPU进行</li>
+<li>QAT量化感知训练：用模型训练量化模型</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/221-%E4%BD%8E%E6%98%BE%E5%AD%98comfyui%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF-2025-12-04-14-20-06.png" alt="221-低显存comfyui解决思路-2025-12-04-14-20-06" /></p>
+<p><strong>注意</strong>，这些都是量化的技术，具体节省多少内存，还想需要数据精度来确定，<a target="_blank" rel="noopener" href="https://blog.csdn.net/gitblog_02541/article/details/144880081">以GGUF</a>为例，节省了操过一半的显存，但是效果能保持在原版的98%。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/221-%E4%BD%8E%E6%98%BE%E5%AD%98comfyui%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF-2025-12-04-15-39-53.png" alt="221-低显存comfyui解决思路-2025-12-04-15-39-53" /></p>
+<p>这些量化技术是不想单纯的蒸馏数据，而是希望可以通过权重，精度，系统实现等方法节省显存，本质都是修改数据精度，但是思路不同效果也就不同。</p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>由于8GB显存显卡的原因，我只能玩图生图/文生图【6秒视频81张图片差不多30分钟】，所以目前应用：</p>
+<ol>
+<li>
+<p>可以简单生成所需图片，海报，为一些文章增加点配图等，比如</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/221-%E4%BD%8E%E6%98%BE%E5%AD%98comfyui%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF-2025-12-04-18-47-12.png" alt="221-低显存comfyui解决思路-2025-12-04-18-47-12" /></p>
+</li>
+</ol>
+<p>我测试下来，由于QWEN的语言解释模型，现在生成出来的图片很真实，平均花费30秒每张图，而且能满足日常需求，这在我看来是趋势，包括我看到的很多视频制作者都在使用AI来提供视频素材，缩短制作时长，当然也有心怀不轨的人，会借此机会用来做一些灰色行业。后续我会试着看看能不能用它处理一些日常工作。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/comfyui/" rel="tag"># comfyui</a>
+              <a href="/tags/%E4%BD%8E%E6%98%BE%E5%AD%98/" rel="tag"># 低显存</a>
+              <a href="/tags/RTX-4060-ti-8gb/" rel="tag"># RTX 4060 ti 8gb</a>
+              <a href="/tags/Z-Image-Turbo/" rel="tag"># Z-Image-Turbo</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/11/30/220-%E5%85%B3%E4%BA%8E%E5%86%85%E5%8D%B7/" rel="prev" title="关于内卷">
+                  <i class="fa fa-angle-left"></i> 关于内卷
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 国窖1573 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">张大爆</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">349k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">21:11</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/android1122" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"android1122","repo":"hexo-blog","client_id":"6950c9229796295b9867","client_secret":"9af4438d89e7a09669ec33d632ba554589a1f7d7","admin_user":"android1122","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"82a87181dbf7c1a2d09b64607aa35019"}</script>
+<script src="/js/third-party/comments/gitalk.js" defer></script>
+
+</body>
+</html>
