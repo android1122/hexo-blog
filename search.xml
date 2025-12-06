@@ -863,56 +863,6 @@ PS: 首次下载有可能没有，多执行几次订阅即可。</p>
       </tags>
   </entry>
   <entry>
-    <title>NexT主题搭建指南</title>
-    <url>/2023/05/19/111-Hexo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E7%9A%84%E5%9D%91/</url>
-    <content><![CDATA[<h2 id="中文的弯路"><a class="markdownIt-Anchor" href="#中文的弯路"></a> 中文的弯路</h2>
-<p>Hexo搭建是完成了，后面就是选择主题，我选择的是NexT主题，但是网络上的文档，说实话：很乱。NexT主题经过多次升级，最新版的NexT主题已经是8.16，更新强度差不多1个月一次。所有这边就总结一下自己走过的弯路，还有<a href="https://theme-next.js.org/">主题文档</a>是这个，但是如果你用中文搜索出来，大概率是<a href="https://theme-next.iissnan.com/getting-started.html">这个</a>，其实两个都是对的，一个是GitHub官网给出的，一个是历史版本好像是5.0时代的中文文档。最新版好像没有人维护中文，两者差距还是有的，如果用最新的版本照着中文文档配置，那是会走弯路。</p>
-<span id="more"></span>
-<h2 id="各种坑"><a class="markdownIt-Anchor" href="#各种坑"></a> 各种坑</h2>
-<ol>
-<li>安装<br />
-根据中文文档，你需要将对应的NexT的主题包git到theme文件夹下，然后对文件夹内的_config.yml进行编辑。然后8.0版本之后只要一行代码搞定<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
-随着Hexo的升级，很多东西安装都是方便快捷的。后续的配置在_config.next.yml内配置，这个文件需要自己创建，内容可以直接复制<a href="https://github.com/next-theme/hexo-theme-next/blob/master/_config.yml">GitHub上</a></li>
-<li>添加页面|菜单<br />
-按照之前的教程你需要使用<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page xxx</span><br></pre></td></tr></table></figure>
-增加页面，由于我本地没有环境，我一开始还试着docker内安装执行，后面发现这个命令好像没有了。<br />
-Next增加页面十分简单，以增加分类categories页面为例，再source下增加文件夹categories，然后在categories文件夹内增加index.md文件，内容是：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2022-12-22 00:00:00</span><br><span class="line">type: categories</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-系统就会将他识别为分类页。同理tags标签云也是一样的方法，把<code>type</code>改成tags即可<br />
-然后将_config.next.yml的菜单配置<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">home: / || fa fa-home</span><br><span class="line">#about: /about/ || fa fa-user</span><br><span class="line">categories: /categories/ || fa fa-th</span><br><span class="line">tags: /tags/ || fa fa-tags</span><br><span class="line">archives: /archives/ || fa fa-archive</span><br><span class="line">#schedule: /schedule/ || fa fa-calendar</span><br><span class="line">#sitemap: /sitemap.xml || fa fa-sitemap</span><br><span class="line">#commonweal: /404/ || fa fa-heartbeat</span><br></pre></td></tr></table></figure>
-这边主义，如果你只是增加单页或者说是非分类标签，那么你的title字段需要一致，type字段可以不要掉，即：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 新页面名称</span><br><span class="line">date: 2022-12-22 00:00:00</span><br><span class="line">comments: false</span><br><span class="line">---</span><br><span class="line">页面内容，支持html</span><br></pre></td></tr></table></figure>
-然后系统会生成对应title的html文件，直接放在source下即可，访问路径就是<code>xxxx.com/新页面.html</code>。这是单页面的添加方法，由于Hexo是静态文件，所以你可以简单的将他理解为文件路径，只要它在哪个文件路径下，你网址就是哪个。</li>
-<li>搜索功能<br />
-搜索系统支持两种，第一张用的是<code>hexo-algolia</code>，插件，需要到对应网站填写注册。这边推荐第二种自带的搜索功能：安装对应的插件，如果是Github部署的，记得在部署文件内增加：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
-然后到_config.yml即Hexo的配置文件下增加<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">path: search.xml</span><br><span class="line">field: post</span><br><span class="line">content: true</span><br><span class="line">format: html</span><br></pre></td></tr></table></figure>
-最后再去<code>_config.next.yml</code>内打开对应的搜索功能即可<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Local search</span><br><span class="line"># Dependencies: https://github.com/next-theme/hexo-generator-searchdb</span><br><span class="line">local_search:</span><br><span class="line">enable: true</span><br><span class="line"># If auto, trigger search by changing input.</span><br><span class="line"># If manual, trigger search by pressing enter key or search button.</span><br><span class="line">trigger: auto</span><br><span class="line"># Show top n results per article, show all results by setting to -1</span><br><span class="line">top_n_per_article: 1</span><br><span class="line"># Unescape html strings to the readable one.</span><br><span class="line">unescape: false</span><br><span class="line"># Preload the search data when the page loads.</span><br><span class="line">preload: false</span><br></pre></td></tr></table></figure>
-说实话效果很不错<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/111-Hexo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E7%9A%84%E5%9D%91-2023-05-20-22-02-17.png" alt="111-Hexo主题搭建的坑-2023-05-20-22-02-17" /></li>
-<li>独特的标签插件<br />
-NexT不仅支持markdown，而且还在它的上层拓展了不少，例如突出显示，代码块，画廊，流程图等等。好看是好看，但是如果后续你还想折腾换一个博客系统的话，我的建议，还是一直使用markdown文件格式，系统虽好，但是换系统折磨人。</li>
-<li>评论系统<br />
-至此，你搭建了自定义菜单和搜索功能的插件，如果你还需要评论的话，可以使用Gitalk，这个是使用GitHub的issues进行评论，它会在你每次创建文章之后生成对应的issue来记录评论，需要注意的是，如果你路径变换的话，评论可是会消失的。配置的话也很简单：<br />
-打开<a href="https://github.com/settings/applications/new">链接</a>申请一个登陆验证<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/111-Hexo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E7%9A%84%E5%9D%91-2023-05-21-21-25-14.png" alt="111-Hexo主题搭建的坑-2023-05-21-21-25-14" /><br />
-名称随意，但是地址需要填写你的博客地址，因为后期它需要回调插件。然后再到_config.next.yml进行配置即可：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Gitalk</span><br><span class="line"># For more information: https://gitalk.github.io</span><br><span class="line">gitalk:</span><br><span class="line">enable: false</span><br><span class="line">github_id: # GitHub repo owner 这个写你的用户名</span><br><span class="line">repo: # Repository name to store issues 这个写你想要把它放在哪个仓库下</span><br><span class="line">client_id: # GitHub Application Client ID 这个填写申请之后会有</span><br><span class="line">client_secret: # GitHub Application Client Secret 这个填写申请之后会有</span><br><span class="line">admin_user: # GitHub repo owner and collaborators, only these guys can initialize gitHub issues</span><br><span class="line">distraction_free_mode: true # Facebook-like distraction free mode</span><br><span class="line"># When the official proxy is not available, you can change it to your own proxy address</span><br><span class="line">proxy: https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token # This is official proxy address</span><br><span class="line"># Gitalk&#x27;s display language depends on user&#x27;s browser or system environment</span><br><span class="line"># If you want everyone visiting your site to see a uniform language, you can set a force language value</span><br><span class="line"># Available values: en | es-ES | fr | ru | zh-CN | zh-TW</span><br><span class="line">language:</span><br></pre></td></tr></table></figure>
-然后就可以了。</li>
-</ol>
-<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
-<p>虽然是用node安装的，但是很多东西其实系统都已经合在Hexo里面了，无论是搜索，还是技术，甚至分析都有。得益于丰富的js脚本，Hexo博客部署的方便性大大增加，前提是你要找好对应的文档，文档真的很重要。<br />
-至于这个会不会是我得最后一个博客，我可说不准。生命在于折腾，学到老活到老。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Next主题搭建</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo部署指南-基于GitHub</title>
     <url>/2023/05/17/110-hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<h2 id="折腾啊折腾"><a class="markdownIt-Anchor" href="#折腾啊折腾"></a> 折腾啊折腾</h2>
@@ -975,6 +925,56 @@ NexT不仅支持markdown，而且还在它的上层拓展了不少，例如突�
         <tag>Hexo</tag>
         <tag>GitHub</tag>
         <tag>无环境搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NexT主题搭建指南</title>
+    <url>/2023/05/19/111-Hexo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E7%9A%84%E5%9D%91/</url>
+    <content><![CDATA[<h2 id="中文的弯路"><a class="markdownIt-Anchor" href="#中文的弯路"></a> 中文的弯路</h2>
+<p>Hexo搭建是完成了，后面就是选择主题，我选择的是NexT主题，但是网络上的文档，说实话：很乱。NexT主题经过多次升级，最新版的NexT主题已经是8.16，更新强度差不多1个月一次。所有这边就总结一下自己走过的弯路，还有<a href="https://theme-next.js.org/">主题文档</a>是这个，但是如果你用中文搜索出来，大概率是<a href="https://theme-next.iissnan.com/getting-started.html">这个</a>，其实两个都是对的，一个是GitHub官网给出的，一个是历史版本好像是5.0时代的中文文档。最新版好像没有人维护中文，两者差距还是有的，如果用最新的版本照着中文文档配置，那是会走弯路。</p>
+<span id="more"></span>
+<h2 id="各种坑"><a class="markdownIt-Anchor" href="#各种坑"></a> 各种坑</h2>
+<ol>
+<li>安装<br />
+根据中文文档，你需要将对应的NexT的主题包git到theme文件夹下，然后对文件夹内的_config.yml进行编辑。然后8.0版本之后只要一行代码搞定<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
+随着Hexo的升级，很多东西安装都是方便快捷的。后续的配置在_config.next.yml内配置，这个文件需要自己创建，内容可以直接复制<a href="https://github.com/next-theme/hexo-theme-next/blob/master/_config.yml">GitHub上</a></li>
+<li>添加页面|菜单<br />
+按照之前的教程你需要使用<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page xxx</span><br></pre></td></tr></table></figure>
+增加页面，由于我本地没有环境，我一开始还试着docker内安装执行，后面发现这个命令好像没有了。<br />
+Next增加页面十分简单，以增加分类categories页面为例，再source下增加文件夹categories，然后在categories文件夹内增加index.md文件，内容是：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2022-12-22 00:00:00</span><br><span class="line">type: categories</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+系统就会将他识别为分类页。同理tags标签云也是一样的方法，把<code>type</code>改成tags即可<br />
+然后将_config.next.yml的菜单配置<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">home: / || fa fa-home</span><br><span class="line">#about: /about/ || fa fa-user</span><br><span class="line">categories: /categories/ || fa fa-th</span><br><span class="line">tags: /tags/ || fa fa-tags</span><br><span class="line">archives: /archives/ || fa fa-archive</span><br><span class="line">#schedule: /schedule/ || fa fa-calendar</span><br><span class="line">#sitemap: /sitemap.xml || fa fa-sitemap</span><br><span class="line">#commonweal: /404/ || fa fa-heartbeat</span><br></pre></td></tr></table></figure>
+这边主义，如果你只是增加单页或者说是非分类标签，那么你的title字段需要一致，type字段可以不要掉，即：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 新页面名称</span><br><span class="line">date: 2022-12-22 00:00:00</span><br><span class="line">comments: false</span><br><span class="line">---</span><br><span class="line">页面内容，支持html</span><br></pre></td></tr></table></figure>
+然后系统会生成对应title的html文件，直接放在source下即可，访问路径就是<code>xxxx.com/新页面.html</code>。这是单页面的添加方法，由于Hexo是静态文件，所以你可以简单的将他理解为文件路径，只要它在哪个文件路径下，你网址就是哪个。</li>
+<li>搜索功能<br />
+搜索系统支持两种，第一张用的是<code>hexo-algolia</code>，插件，需要到对应网站填写注册。这边推荐第二种自带的搜索功能：安装对应的插件，如果是Github部署的，记得在部署文件内增加：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
+然后到_config.yml即Hexo的配置文件下增加<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">path: search.xml</span><br><span class="line">field: post</span><br><span class="line">content: true</span><br><span class="line">format: html</span><br></pre></td></tr></table></figure>
+最后再去<code>_config.next.yml</code>内打开对应的搜索功能即可<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Local search</span><br><span class="line"># Dependencies: https://github.com/next-theme/hexo-generator-searchdb</span><br><span class="line">local_search:</span><br><span class="line">enable: true</span><br><span class="line"># If auto, trigger search by changing input.</span><br><span class="line"># If manual, trigger search by pressing enter key or search button.</span><br><span class="line">trigger: auto</span><br><span class="line"># Show top n results per article, show all results by setting to -1</span><br><span class="line">top_n_per_article: 1</span><br><span class="line"># Unescape html strings to the readable one.</span><br><span class="line">unescape: false</span><br><span class="line"># Preload the search data when the page loads.</span><br><span class="line">preload: false</span><br></pre></td></tr></table></figure>
+说实话效果很不错<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/111-Hexo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E7%9A%84%E5%9D%91-2023-05-20-22-02-17.png" alt="111-Hexo主题搭建的坑-2023-05-20-22-02-17" /></li>
+<li>独特的标签插件<br />
+NexT不仅支持markdown，而且还在它的上层拓展了不少，例如突出显示，代码块，画廊，流程图等等。好看是好看，但是如果后续你还想折腾换一个博客系统的话，我的建议，还是一直使用markdown文件格式，系统虽好，但是换系统折磨人。</li>
+<li>评论系统<br />
+至此，你搭建了自定义菜单和搜索功能的插件，如果你还需要评论的话，可以使用Gitalk，这个是使用GitHub的issues进行评论，它会在你每次创建文章之后生成对应的issue来记录评论，需要注意的是，如果你路径变换的话，评论可是会消失的。配置的话也很简单：<br />
+打开<a href="https://github.com/settings/applications/new">链接</a>申请一个登陆验证<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/111-Hexo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E7%9A%84%E5%9D%91-2023-05-21-21-25-14.png" alt="111-Hexo主题搭建的坑-2023-05-21-21-25-14" /><br />
+名称随意，但是地址需要填写你的博客地址，因为后期它需要回调插件。然后再到_config.next.yml进行配置即可：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Gitalk</span><br><span class="line"># For more information: https://gitalk.github.io</span><br><span class="line">gitalk:</span><br><span class="line">enable: false</span><br><span class="line">github_id: # GitHub repo owner 这个写你的用户名</span><br><span class="line">repo: # Repository name to store issues 这个写你想要把它放在哪个仓库下</span><br><span class="line">client_id: # GitHub Application Client ID 这个填写申请之后会有</span><br><span class="line">client_secret: # GitHub Application Client Secret 这个填写申请之后会有</span><br><span class="line">admin_user: # GitHub repo owner and collaborators, only these guys can initialize gitHub issues</span><br><span class="line">distraction_free_mode: true # Facebook-like distraction free mode</span><br><span class="line"># When the official proxy is not available, you can change it to your own proxy address</span><br><span class="line">proxy: https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token # This is official proxy address</span><br><span class="line"># Gitalk&#x27;s display language depends on user&#x27;s browser or system environment</span><br><span class="line"># If you want everyone visiting your site to see a uniform language, you can set a force language value</span><br><span class="line"># Available values: en | es-ES | fr | ru | zh-CN | zh-TW</span><br><span class="line">language:</span><br></pre></td></tr></table></figure>
+然后就可以了。</li>
+</ol>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>虽然是用node安装的，但是很多东西其实系统都已经合在Hexo里面了，无论是搜索，还是技术，甚至分析都有。得益于丰富的js脚本，Hexo博客部署的方便性大大增加，前提是你要找好对应的文档，文档真的很重要。<br />
+至于这个会不会是我得最后一个博客，我可说不准。生命在于折腾，学到老活到老。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Next主题搭建</tag>
       </tags>
   </entry>
   <entry>
@@ -1924,46 +1924,6 @@ Windows作为一个系统来说，现在越来越复杂，而且对于国内网�
       </tags>
   </entry>
   <entry>
-    <title>FileCodeBox部署指南</title>
-    <url>/2023/07/04/125-FileCodeBox%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p>我们时常会遇见一些需要拷贝资料的情况，这时候如果手头上正好没有U盘，那么就很麻烦。当然，你说你也可以使用微信的文件助手。<br />
-唯一的问题是这一点都不优雅，现在让我们提供一个优雅的工具给你：<a href="https://filebox.minsummer.com/">[FileCodeBox]</a></p>
-<span id="more"></span>
-<p>临时的文件夹网上有很多，比如之前我一直是用的奶牛快传，但是不知道是因为盈利还是啥，现在奶牛要求你必须登陆才可以上传。额，这就违背了我得初衷，我就是因为不想麻烦才使用你的，你现在让我这么麻烦？<br />
-我这边使用的是FileCodeBox，国人开发，<a href="https://github.com/vastsa/FileCodeBox">Github分享</a>，简单轻松。而且还支持ARM设备。</p>
-<h2 id="部署"><a class="markdownIt-Anchor" href="#部署"></a> 部署</h2>
-<p>一键部署：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --restart=always -p 12345:12345 -v /opt/FileCodeBox/:/app/data --name filecodebox lanol/filecodebox:latest</span><br></pre></td></tr></table></figure>
-<p>如果是ARM设备使用</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --restart=always -p 12345:12345 -v /opt/FileCodeBox/:/app/data --name filecodebox lanol/filecodebox:arm</span><br></pre></td></tr></table></figure>
-<p>打开对应的端口即可使用，如果你想要用caddy反向代理也可以。<br />
-需要注意的是，按照官方说法，需要使用<code>.env</code>文件放置到 /opt/FileCodeBox/下才可以开启客制化定制和后台管理，但是我配置了发现没法使用。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 端口</span><br><span class="line">PORT=12345</span><br><span class="line"># Sqlite数据库文件</span><br><span class="line">DATABASE_URL=sqlite+aiosqlite:///database.db</span><br><span class="line"># 静态文件夹</span><br><span class="line">DATA_ROOT=./static</span><br><span class="line"># 静态文件夹URL</span><br><span class="line">STATIC_URL=/static</span><br><span class="line"># 开启上传</span><br><span class="line">ENABLE_UPLOAD=True</span><br><span class="line"># 错误次数</span><br><span class="line">ERROR_COUNT=5</span><br><span class="line"># 错误限制分钟数</span><br><span class="line">ERROR_MINUTE=10</span><br><span class="line"># 上传次数</span><br><span class="line">UPLOAD_COUNT=60</span><br><span class="line"># 上传限制分钟数</span><br><span class="line">UPLOAD_MINUTE=1</span><br><span class="line"># 删除过期文件的间隔（分钟）</span><br><span class="line">DELETE_EXPIRE_FILES_INTERVAL=10</span><br><span class="line"># 管理地址</span><br><span class="line">ADMIN_ADDRESS=admin</span><br><span class="line"># 管理密码</span><br><span class="line">ADMIN_PASSWORD=admin</span><br><span class="line"># 文件大小限制，默认10MB</span><br><span class="line">FILE_SIZE_LIMIT=10</span><br><span class="line"># 网站标题</span><br><span class="line">TITLE=文件快递柜</span><br><span class="line"># 网站描述</span><br><span class="line">DESCRIPTION=FileCodeBox，文件快递柜，口令传送箱，匿名口令分享文本，文件，图片，视频，音频，压缩包等文件</span><br><span class="line"># 网站关键词</span><br><span class="line">KEYWORDS=FileCodeBox，文件快递柜，口令传送箱，匿名口令分享文本，文件，图片，视频，音频，压缩包等文件</span><br><span class="line"># 存储引擎</span><br><span class="line">STORAGE_ENGINE=filesystem</span><br><span class="line"># 如果使用阿里云OSS服务的话需要额外创建如下参数：</span><br><span class="line"># 阿里云账号AccessKey</span><br><span class="line">KeyId=阿里云账号AccessKey</span><br><span class="line"># 阿里云账号AccessKeySecret</span><br><span class="line">KeySecret=阿里云账号AccessKeySecret</span><br><span class="line"># 阿里云OSS Bucket的地域节点</span><br><span class="line">OSS_ENDPOINT=阿里云OSS Bucket的地域节点</span><br><span class="line"># 阿里云OSS Bucket的BucketName</span><br><span class="line">BUCKET_NAME=阿里云OSS Bucket的BucketName</span><br></pre></td></tr></table></figure>
-<p>后面根据<a href="https://github.com/vastsa/FileCodeBox/issues/8">issue</a>，发现是以环境变量优先级最高，所以我就修改了下运行命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --restart=always -p 12345:12345 -env # 管理地址 ADMIN_ADDRESS=admin # 管理密码 ADMIN_PASSWORD=admin -v /opt/FileCodeBox/:/app/data --name filecodebox lanol/filecodebox:latest</span><br></pre></td></tr></table></figure>
-<p>打开后台之后，就可以修改<code>.env</code>文件里面所有的内容了：<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/125-FileCodeBox%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-07-05-15-02-08.png" alt="125-FileCodeBox部署指南-2023-07-05-15-02-08" /></p>
-<p>当然如果你直接使用它原来的配置也是可以的</p>
-<h2 id="最后"><a class="markdownIt-Anchor" href="#最后"></a> 最后</h2>
-<p>这几年，随着互联网越来越兴起，很多以前免费的，或者以分享为主旨的网站越来越少。大家都想成为下一个百度，腾讯。但是我上网这么多年，无论是论坛，还是搜索内容。这几年优质的内容越来越少，好用的工具也越来越少。<br />
-其实在这些服务占用的资源很小，很小。我用的搬瓦工的92刀，2核2g内存1Tb的流量，每月最多使用100g的流量，多出来的也是浪费，所以我一直希望在力所能及的范围内，帮助下有需要的人。让别人知道，网络是一个好地方。<br />
-最后附上我部署的地址：<a href="https://filebox.minsummer.com/">https://filebox.minsummer.com/</a><br />
-功能简单，没有广告，7天内有效，不要暴力破解。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>FileCodeBox</tag>
-        <tag>网络U盘</tag>
-        <tag>资源分享</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>浅谈下经济</title>
     <url>/2023/07/21/126-%E6%B5%85%E8%B0%88%E4%B8%8B%E7%BB%8F%E6%B5%8E/</url>
     <content><![CDATA[<p>最近一则消息引爆了大多数人的神经：<br />
@@ -2007,6 +1967,46 @@ Windows作为一个系统来说，现在越来越复杂，而且对于国内网�
         <tag>地方债务</tag>
         <tag>国家债务</tag>
         <tag>国家经济</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FileCodeBox部署指南</title>
+    <url>/2023/07/04/125-FileCodeBox%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p>我们时常会遇见一些需要拷贝资料的情况，这时候如果手头上正好没有U盘，那么就很麻烦。当然，你说你也可以使用微信的文件助手。<br />
+唯一的问题是这一点都不优雅，现在让我们提供一个优雅的工具给你：<a href="https://filebox.minsummer.com/">[FileCodeBox]</a></p>
+<span id="more"></span>
+<p>临时的文件夹网上有很多，比如之前我一直是用的奶牛快传，但是不知道是因为盈利还是啥，现在奶牛要求你必须登陆才可以上传。额，这就违背了我得初衷，我就是因为不想麻烦才使用你的，你现在让我这么麻烦？<br />
+我这边使用的是FileCodeBox，国人开发，<a href="https://github.com/vastsa/FileCodeBox">Github分享</a>，简单轻松。而且还支持ARM设备。</p>
+<h2 id="部署"><a class="markdownIt-Anchor" href="#部署"></a> 部署</h2>
+<p>一键部署：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --restart=always -p 12345:12345 -v /opt/FileCodeBox/:/app/data --name filecodebox lanol/filecodebox:latest</span><br></pre></td></tr></table></figure>
+<p>如果是ARM设备使用</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --restart=always -p 12345:12345 -v /opt/FileCodeBox/:/app/data --name filecodebox lanol/filecodebox:arm</span><br></pre></td></tr></table></figure>
+<p>打开对应的端口即可使用，如果你想要用caddy反向代理也可以。<br />
+需要注意的是，按照官方说法，需要使用<code>.env</code>文件放置到 /opt/FileCodeBox/下才可以开启客制化定制和后台管理，但是我配置了发现没法使用。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 端口</span><br><span class="line">PORT=12345</span><br><span class="line"># Sqlite数据库文件</span><br><span class="line">DATABASE_URL=sqlite+aiosqlite:///database.db</span><br><span class="line"># 静态文件夹</span><br><span class="line">DATA_ROOT=./static</span><br><span class="line"># 静态文件夹URL</span><br><span class="line">STATIC_URL=/static</span><br><span class="line"># 开启上传</span><br><span class="line">ENABLE_UPLOAD=True</span><br><span class="line"># 错误次数</span><br><span class="line">ERROR_COUNT=5</span><br><span class="line"># 错误限制分钟数</span><br><span class="line">ERROR_MINUTE=10</span><br><span class="line"># 上传次数</span><br><span class="line">UPLOAD_COUNT=60</span><br><span class="line"># 上传限制分钟数</span><br><span class="line">UPLOAD_MINUTE=1</span><br><span class="line"># 删除过期文件的间隔（分钟）</span><br><span class="line">DELETE_EXPIRE_FILES_INTERVAL=10</span><br><span class="line"># 管理地址</span><br><span class="line">ADMIN_ADDRESS=admin</span><br><span class="line"># 管理密码</span><br><span class="line">ADMIN_PASSWORD=admin</span><br><span class="line"># 文件大小限制，默认10MB</span><br><span class="line">FILE_SIZE_LIMIT=10</span><br><span class="line"># 网站标题</span><br><span class="line">TITLE=文件快递柜</span><br><span class="line"># 网站描述</span><br><span class="line">DESCRIPTION=FileCodeBox，文件快递柜，口令传送箱，匿名口令分享文本，文件，图片，视频，音频，压缩包等文件</span><br><span class="line"># 网站关键词</span><br><span class="line">KEYWORDS=FileCodeBox，文件快递柜，口令传送箱，匿名口令分享文本，文件，图片，视频，音频，压缩包等文件</span><br><span class="line"># 存储引擎</span><br><span class="line">STORAGE_ENGINE=filesystem</span><br><span class="line"># 如果使用阿里云OSS服务的话需要额外创建如下参数：</span><br><span class="line"># 阿里云账号AccessKey</span><br><span class="line">KeyId=阿里云账号AccessKey</span><br><span class="line"># 阿里云账号AccessKeySecret</span><br><span class="line">KeySecret=阿里云账号AccessKeySecret</span><br><span class="line"># 阿里云OSS Bucket的地域节点</span><br><span class="line">OSS_ENDPOINT=阿里云OSS Bucket的地域节点</span><br><span class="line"># 阿里云OSS Bucket的BucketName</span><br><span class="line">BUCKET_NAME=阿里云OSS Bucket的BucketName</span><br></pre></td></tr></table></figure>
+<p>后面根据<a href="https://github.com/vastsa/FileCodeBox/issues/8">issue</a>，发现是以环境变量优先级最高，所以我就修改了下运行命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --restart=always -p 12345:12345 -env # 管理地址 ADMIN_ADDRESS=admin # 管理密码 ADMIN_PASSWORD=admin -v /opt/FileCodeBox/:/app/data --name filecodebox lanol/filecodebox:latest</span><br></pre></td></tr></table></figure>
+<p>打开后台之后，就可以修改<code>.env</code>文件里面所有的内容了：<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/125-FileCodeBox%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-07-05-15-02-08.png" alt="125-FileCodeBox部署指南-2023-07-05-15-02-08" /></p>
+<p>当然如果你直接使用它原来的配置也是可以的</p>
+<h2 id="最后"><a class="markdownIt-Anchor" href="#最后"></a> 最后</h2>
+<p>这几年，随着互联网越来越兴起，很多以前免费的，或者以分享为主旨的网站越来越少。大家都想成为下一个百度，腾讯。但是我上网这么多年，无论是论坛，还是搜索内容。这几年优质的内容越来越少，好用的工具也越来越少。<br />
+其实在这些服务占用的资源很小，很小。我用的搬瓦工的92刀，2核2g内存1Tb的流量，每月最多使用100g的流量，多出来的也是浪费，所以我一直希望在力所能及的范围内，帮助下有需要的人。让别人知道，网络是一个好地方。<br />
+最后附上我部署的地址：<a href="https://filebox.minsummer.com/">https://filebox.minsummer.com/</a><br />
+功能简单，没有广告，7天内有效，不要暴力破解。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>FileCodeBox</tag>
+        <tag>网络U盘</tag>
+        <tag>资源分享</tag>
       </tags>
   </entry>
   <entry>
@@ -5355,69 +5355,6 @@ Debain系统</p>
       </tags>
   </entry>
   <entry>
-    <title>Hexo打开RSS订阅</title>
-    <url>/2024/10/14/183-Hexo%E6%89%93%E5%BC%80RSS%E8%AE%A2%E9%98%85/</url>
-    <content><![CDATA[<p>好久没有写教程了，这次带来的是给博客主题开通RSS订阅。一开始我是没有开通的，觉得RSS需要的人不一定多。但是后面有个留言提醒了我，用户不可能闲着没事就上你网站刷新下，再加上我的更新频率不定，如果真的有志同道合的，点个RSS。遇见自己喜欢的文字也可以看看。</p>
-<span id="more"></span>
-<p>hexo实现RSS用的是插件：<a href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a>。实现靠的是插件，而不是主题。所以next主题在7.11版本之后就取消了默认开启RSS的按钮，因为会给人误解，主题自带RSS。<br />
-所以接下来就简单了。</p>
-<ol>
-<li>安装插件，如果你是本地自带环境，可以是用
-<blockquote>
-<p>npm install hexo-generator-feed --save</p>
-</blockquote>
-</li>
-</ol>
-<p>安装插件，如果你和我一样是使用GitHub的action部署，那么只要在workflows增加一句：npm install hexo-generator-feed即可。</p>
-<ol start="2">
-<li>网站配置：</li>
-</ol>
-<p>在<code>_config.yml</code>最下面增加下面代码，如果没有特殊需求，可以直接复制粘贴进去，下面是完美实例：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">feed:</span><br><span class="line">  enable: true</span><br><span class="line">  type: atom</span><br><span class="line">  path: atom.xml</span><br><span class="line">  limit: </span><br><span class="line">  hub:</span><br><span class="line">  content:ture</span><br><span class="line">  content_limit: 0</span><br><span class="line">  content_limit_delim: &#x27; &#x27;</span><br><span class="line">  order_by: -date</span><br><span class="line">  icon: icon.png</span><br><span class="line">  autodiscovery: true</span><br><span class="line">  template:</span><br></pre></td></tr></table></figure>
-<ul>
-<li>enable:是否开通</li>
-<li>type:rss类型，可以支持多个atom，rss2,需要指定对应路径。默认为空即可<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">feed:</span><br><span class="line">type: atom</span><br><span class="line">type:</span><br><span class="line">    - atom</span><br><span class="line">    - rss2</span><br><span class="line">path:</span><br><span class="line">    - atom.xml</span><br><span class="line">    - rss2.xml</span><br></pre></td></tr></table></figure>
-</li>
-<li>path:默认即可，如果有多个类型，要配置多个</li>
-<li>limit:每次订阅最大推送量，一般是为了一次性推送太多过去，打扰他人</li>
-<li>hub:忽略，订阅中心网址</li>
-<li>content:如果为true，会全文发送。即订阅里面包含文章。方便用户直接在自己的客户端观看。</li>
-<li>content_limit:文章字数限制</li>
-<li>content_limit_delim: 如果文章字数达到限制，会进行截断，并且附上这里的内容，比如：‘全文未完’</li>
-<li>order_by: 排序，默认是日期</li>
-<li>icon: 图标</li>
-<li>autodiscovery: 自动发现，建议打开，如果阅读者有RSS阅读工具，会自动识别</li>
-<li>template:配置模板，可以指定路径读取对应的配置模板，方便那种大型配置或者独立配置备份。</li>
-</ul>
-<ol>
-<li>打开你的主题RSS订阅按钮：</li>
-</ol>
-<p>你可以在你的主题，菜单，甚至文章末尾增加订阅按钮。<br />
-以Next为例，你可以在<code>_config.next.yml</code>下：</p>
-<ol>
-<li>menu:菜单</li>
-<li>sidebar:侧边栏</li>
-<li>follow_me:文章末尾</li>
-</ol>
-<p>在对应配置下面增加一句</p>
-<blockquote>
-<p>RSS: /atom.xml || fa fa-rss</p>
-</blockquote>
-<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结：</h2>
-<p>确实，对于一个更新不稳定的私人博客来说，RSS确实是一个不错的沟通桥梁。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>RSS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Power BI 指北</title>
     <url>/2024/12/04/184-PowerBI%E6%8C%87%E5%8C%97/</url>
     <content><![CDATA[<p>最近由于工作数据需要归集，所以在网络三找了一圈数据处理之后，发现了Power BI这个简单的神器。于是想着造福别人的角度，就做了这么一篇Power BI 指北教程，本文从最基础，最实用的概念教学，没有各种函数的复杂的研究，但是能满足入门者99%的需求。</p>
@@ -5530,6 +5467,69 @@ PS:你的微软账号登录了也没用，别折腾了。</p>
         <tag>2024</tag>
         <tag>2025</tag>
         <tag>一些想法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo打开RSS订阅</title>
+    <url>/2024/10/14/183-Hexo%E6%89%93%E5%BC%80RSS%E8%AE%A2%E9%98%85/</url>
+    <content><![CDATA[<p>好久没有写教程了，这次带来的是给博客主题开通RSS订阅。一开始我是没有开通的，觉得RSS需要的人不一定多。但是后面有个留言提醒了我，用户不可能闲着没事就上你网站刷新下，再加上我的更新频率不定，如果真的有志同道合的，点个RSS。遇见自己喜欢的文字也可以看看。</p>
+<span id="more"></span>
+<p>hexo实现RSS用的是插件：<a href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a>。实现靠的是插件，而不是主题。所以next主题在7.11版本之后就取消了默认开启RSS的按钮，因为会给人误解，主题自带RSS。<br />
+所以接下来就简单了。</p>
+<ol>
+<li>安装插件，如果你是本地自带环境，可以是用
+<blockquote>
+<p>npm install hexo-generator-feed --save</p>
+</blockquote>
+</li>
+</ol>
+<p>安装插件，如果你和我一样是使用GitHub的action部署，那么只要在workflows增加一句：npm install hexo-generator-feed即可。</p>
+<ol start="2">
+<li>网站配置：</li>
+</ol>
+<p>在<code>_config.yml</code>最下面增加下面代码，如果没有特殊需求，可以直接复制粘贴进去，下面是完美实例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">feed:</span><br><span class="line">  enable: true</span><br><span class="line">  type: atom</span><br><span class="line">  path: atom.xml</span><br><span class="line">  limit: </span><br><span class="line">  hub:</span><br><span class="line">  content:ture</span><br><span class="line">  content_limit: 0</span><br><span class="line">  content_limit_delim: &#x27; &#x27;</span><br><span class="line">  order_by: -date</span><br><span class="line">  icon: icon.png</span><br><span class="line">  autodiscovery: true</span><br><span class="line">  template:</span><br></pre></td></tr></table></figure>
+<ul>
+<li>enable:是否开通</li>
+<li>type:rss类型，可以支持多个atom，rss2,需要指定对应路径。默认为空即可<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">feed:</span><br><span class="line">type: atom</span><br><span class="line">type:</span><br><span class="line">    - atom</span><br><span class="line">    - rss2</span><br><span class="line">path:</span><br><span class="line">    - atom.xml</span><br><span class="line">    - rss2.xml</span><br></pre></td></tr></table></figure>
+</li>
+<li>path:默认即可，如果有多个类型，要配置多个</li>
+<li>limit:每次订阅最大推送量，一般是为了一次性推送太多过去，打扰他人</li>
+<li>hub:忽略，订阅中心网址</li>
+<li>content:如果为true，会全文发送。即订阅里面包含文章。方便用户直接在自己的客户端观看。</li>
+<li>content_limit:文章字数限制</li>
+<li>content_limit_delim: 如果文章字数达到限制，会进行截断，并且附上这里的内容，比如：‘全文未完’</li>
+<li>order_by: 排序，默认是日期</li>
+<li>icon: 图标</li>
+<li>autodiscovery: 自动发现，建议打开，如果阅读者有RSS阅读工具，会自动识别</li>
+<li>template:配置模板，可以指定路径读取对应的配置模板，方便那种大型配置或者独立配置备份。</li>
+</ul>
+<ol>
+<li>打开你的主题RSS订阅按钮：</li>
+</ol>
+<p>你可以在你的主题，菜单，甚至文章末尾增加订阅按钮。<br />
+以Next为例，你可以在<code>_config.next.yml</code>下：</p>
+<ol>
+<li>menu:菜单</li>
+<li>sidebar:侧边栏</li>
+<li>follow_me:文章末尾</li>
+</ol>
+<p>在对应配置下面增加一句</p>
+<blockquote>
+<p>RSS: /atom.xml || fa fa-rss</p>
+</blockquote>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结：</h2>
+<p>确实，对于一个更新不稳定的私人博客来说，RSS确实是一个不错的沟通桥梁。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>RSS</tag>
       </tags>
   </entry>
   <entry>
@@ -7957,7 +7957,7 @@ selenium/standalone-chrome:latest</p>
     <title>低显存comfyui解决思路</title>
     <url>/2025/12/03/221-%E4%BD%8E%E6%98%BE%E5%AD%98comfyui%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF/</url>
     <content><![CDATA[<p>最近又出了一个z-imgae的大模型，听说效果很好，于是我又按耐不住的想要试试赛博找图了。</p>
-<!-- more  -->
+<span id="more"></span>
 <h2 id="需求"><a class="markdownIt-Anchor" href="#需求"></a> 需求</h2>
 <p>这次Z-Image-Turbo的牛逼之处在于引入了一个语言翻译器，让你的文本语言可以直接的转化为图片，而不是像之前那样需要一些抽象词汇，还有反方向的提示词。但是我现在的显卡显然是不足以运行这个6B参数的模型，当然这也是很多人的苦恼，于是解决方案不外乎这几个：</p>
 <ol>
@@ -11357,6 +11357,43 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
       </tags>
   </entry>
   <entry>
+    <title>码农</title>
+    <url>/2022/04/30/%E7%A0%81%E5%86%9C/</url>
+    <content><![CDATA[<p>额，最近好像来的比较频繁，似乎跟上次一样，也是一阵时间内多次到来</p>
+<p>然后，取材一段时间，然后又过来了</p>
+<p>今天好像找到了一个一闪而过的思路，但是可惜，没抓住，然后现在我抱着空空的脑袋过来写这么一篇。</p>
+<p>额，仔细想想，我的生活平凡而又无趣，确切的是我的工作，作为一个维护人员，尤其是计算机维护人员，在系统没出问题前，我们就是放在储物间来织蜘蛛网的，尤其作为计算机人员，看着写代码的那么忙碌，在旁边看着，内心不禁想到：都是人，差距怎么这么大。</p>
+<p>有那么一瞬间，我在想是哪个傻逼非得分工合作。当然必有道理。我不想深究，只是一个任性的想法。</p>
+<p>当然，看到人类差距的我，心中升起了一个伟大的想法：我要当码农。</p>
+<p>为啥</p>
+<p>太闲了，当码农就可以享受到没日没夜的工作，然后还没加班费</p>
+<p>额，你是m吗</p>
+<p>我本着对自己负责的态度，我声明，以上不是黑码农，而且本人直且无受虐倾向</p>
+<p>好吧，有时候闲可以让人发疯的</p>
+<p>额，相信我我不是在炫耀，一个月入三千，不用干太多活，而且还包两顿饭，碾压一些人是可以，但是压不住太多人，对不。</p>
+<p>好吧，今天的内容是不是该结束了（我去，800字都没到，结束个毛）</p>
+<p>基于我多年作文的强大基础，我好像得了，东西不写满800字就结束不了的病。相较于要写800字正好的强迫症患者来说，我这还有得救，只要坚持吃药出门就好</p>
+<p>话说，我不禁感想其，当初我是有多么的委婉，转折，再加重复，才能将我最难忘的一件事写满800.然后还写出至少三个不同的版本</p>
+<p>额，我忽然好想静静，</p>
+<p>可以的话，或者早知道的话，我可以留下那些文章，用来恶心现在的我</p>
+<p>恩，我一闪而过一个新的伟大想法</p>
+<p>我可以去找那些名人小时侯写的作文（依据中国国情，我可以确定，100%的人写过，而且其中最经典的一定是你最难忘的xx）</p>
+<p>然后，以公开内容威胁，恐吓。</p>
+<p>恩，这是一个长期而且十分考验眼光的投资</p>
+<p>不说了，我现在去高中当老师去，然后把所有学生的作文保存下来。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>码农</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>私人图书馆搭建-clibre</title>
     <url>/2022/05/01/%E7%A7%81%E4%BA%BA%E5%9B%BE%E4%B9%A6%E9%A6%86%E6%90%AD%E5%BB%BA-Clibre/</url>
     <content><![CDATA[<p>clibre是一个在线书籍管理工具，可以在线阅读PDF，EPUB等格式的图书，配合z-library，可以搭建一个属于自己的在线学习，阅读中心，而且还能管理每本书的状态，很适合在自己的服务器上部署一个。</p>
@@ -11401,43 +11438,6 @@ pip install requirements.txt
       <tags>
         <tag>calibre</tag>
         <tag>电子书</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>码农</title>
-    <url>/2022/04/30/%E7%A0%81%E5%86%9C/</url>
-    <content><![CDATA[<p>额，最近好像来的比较频繁，似乎跟上次一样，也是一阵时间内多次到来</p>
-<p>然后，取材一段时间，然后又过来了</p>
-<p>今天好像找到了一个一闪而过的思路，但是可惜，没抓住，然后现在我抱着空空的脑袋过来写这么一篇。</p>
-<p>额，仔细想想，我的生活平凡而又无趣，确切的是我的工作，作为一个维护人员，尤其是计算机维护人员，在系统没出问题前，我们就是放在储物间来织蜘蛛网的，尤其作为计算机人员，看着写代码的那么忙碌，在旁边看着，内心不禁想到：都是人，差距怎么这么大。</p>
-<p>有那么一瞬间，我在想是哪个傻逼非得分工合作。当然必有道理。我不想深究，只是一个任性的想法。</p>
-<p>当然，看到人类差距的我，心中升起了一个伟大的想法：我要当码农。</p>
-<p>为啥</p>
-<p>太闲了，当码农就可以享受到没日没夜的工作，然后还没加班费</p>
-<p>额，你是m吗</p>
-<p>我本着对自己负责的态度，我声明，以上不是黑码农，而且本人直且无受虐倾向</p>
-<p>好吧，有时候闲可以让人发疯的</p>
-<p>额，相信我我不是在炫耀，一个月入三千，不用干太多活，而且还包两顿饭，碾压一些人是可以，但是压不住太多人，对不。</p>
-<p>好吧，今天的内容是不是该结束了（我去，800字都没到，结束个毛）</p>
-<p>基于我多年作文的强大基础，我好像得了，东西不写满800字就结束不了的病。相较于要写800字正好的强迫症患者来说，我这还有得救，只要坚持吃药出门就好</p>
-<p>话说，我不禁感想其，当初我是有多么的委婉，转折，再加重复，才能将我最难忘的一件事写满800.然后还写出至少三个不同的版本</p>
-<p>额，我忽然好想静静，</p>
-<p>可以的话，或者早知道的话，我可以留下那些文章，用来恶心现在的我</p>
-<p>恩，我一闪而过一个新的伟大想法</p>
-<p>我可以去找那些名人小时侯写的作文（依据中国国情，我可以确定，100%的人写过，而且其中最经典的一定是你最难忘的xx）</p>
-<p>然后，以公开内容威胁，恐吓。</p>
-<p>恩，这是一个长期而且十分考验眼光的投资</p>
-<p>不说了，我现在去高中当老师去，然后把所有学生的作文保存下来。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>码农</tag>
       </tags>
   </entry>
   <entry>
@@ -11863,6 +11863,47 @@ pip install requirements.txt
       </tags>
   </entry>
   <entry>
+    <title>遇见的问题</title>
+    <url>/2022/12/12/%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="遇见的问题"><a class="markdownIt-Anchor" href="#遇见的问题"></a> 遇见的问题</h1>
+<p>之前docker化遇见的问题：</p>
+<ol>
+<li>caddy配置如图\</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//2022_11_29_12_28_26.jpg" alt="2022_11_29_12_28_26" /></p>
+<ol start="2">
+<li>v2ray配置config文件其中listen需要使用当前IP地址,使用127.0.0.1会发生&quot;dial tcp 172.0.2:8888: connect:connnection refuse&quot;de 问题.</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//2022_11_29_13_57_47.jpg" alt="2022_11_29_13_57_47" /></p>
+<p>这个是v2ray得config配置里面得listen使用“127.0.0.1”监听导致得，将其改为对应得容器IP地址即可：</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221130093652.png" alt="20221130093652" /></p>
+<ol start="3">
+<li>在连接之后，会出现：“rejected  common/drain: common/drain: drained connection &gt; proxy/vmess/encoding: invalid user: VMessAEAD is enforced and a non VMessAEAD connection is received. You can still disable this security feature with environment variable v2ray.vmess.aead.forced = false . You will not be able to enable legacy header workaround in the future.”</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//2022_11_29_21_33_49.jpg" alt="2022_11_29_21_33_49" /></p>
+<p>如果你跟我一样使用docker的话，直接增加“command: /usr/bin/env v2ray.vmess.aead.forced=false /usr/bin/v2ray run -config /etc/v2ray/config.json” 覆盖容器原有得命令，简单粗暴，其他的可以看<a href="https://github.com/v2fly/v2ray-core/discussions/1514">v2ray配置环境变量</a>的GitHub方法，我就不班门弄斧了。</p>
+<p>直接使用上面的docker-composer文件就可以解决所有问题。</p>
+<ol start="4">
+<li>typecho的博客建议使用博客内部的备份还原来备份数据，不需要复制整个文档，复制完成后，直接解压新的typecho重新安装一遍之后再还原，这样可以节省很多时间，而且不会出现一些数据库读取的bug,我这边图片用的是GitHub的图床，所以不会出现文件问题，如果你文件需要备份的话，建议也要复制对应的文件夹。</li>
+</ol>
+<h2 id="参考文档"><a class="markdownIt-Anchor" href="#参考文档"></a> 参考文档</h2>
+<p><a href="https://lulin.org/451.html">v2rayMD5验证问题</a></p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>vscode</tag>
+        <tag>docker</tag>
+        <tag>v2ray</tag>
+        <tag>caddyv2</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>追光动画是垃圾</title>
     <url>/2022/08/21/%E8%BF%BD%E5%85%89%E5%8A%A8%E7%94%BB%E6%98%AF%E5%9E%83%E5%9C%BE/</url>
     <content><![CDATA[<p>周末无聊，就带了几个孩子去电影院看了下《新神榜：杨戬》<img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220821221115.png" alt="20220821221115" />，看完之后，我只想说：“日你妈，退钱”</p>
@@ -11917,47 +11958,6 @@ pip install requirements.txt
       </tags>
   </entry>
   <entry>
-    <title>遇见的问题</title>
-    <url>/2022/12/12/%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="遇见的问题"><a class="markdownIt-Anchor" href="#遇见的问题"></a> 遇见的问题</h1>
-<p>之前docker化遇见的问题：</p>
-<ol>
-<li>caddy配置如图\</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//2022_11_29_12_28_26.jpg" alt="2022_11_29_12_28_26" /></p>
-<ol start="2">
-<li>v2ray配置config文件其中listen需要使用当前IP地址,使用127.0.0.1会发生&quot;dial tcp 172.0.2:8888: connect:connnection refuse&quot;de 问题.</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//2022_11_29_13_57_47.jpg" alt="2022_11_29_13_57_47" /></p>
-<p>这个是v2ray得config配置里面得listen使用“127.0.0.1”监听导致得，将其改为对应得容器IP地址即可：</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221130093652.png" alt="20221130093652" /></p>
-<ol start="3">
-<li>在连接之后，会出现：“rejected  common/drain: common/drain: drained connection &gt; proxy/vmess/encoding: invalid user: VMessAEAD is enforced and a non VMessAEAD connection is received. You can still disable this security feature with environment variable v2ray.vmess.aead.forced = false . You will not be able to enable legacy header workaround in the future.”</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//2022_11_29_21_33_49.jpg" alt="2022_11_29_21_33_49" /></p>
-<p>如果你跟我一样使用docker的话，直接增加“command: /usr/bin/env v2ray.vmess.aead.forced=false /usr/bin/v2ray run -config /etc/v2ray/config.json” 覆盖容器原有得命令，简单粗暴，其他的可以看<a href="https://github.com/v2fly/v2ray-core/discussions/1514">v2ray配置环境变量</a>的GitHub方法，我就不班门弄斧了。</p>
-<p>直接使用上面的docker-composer文件就可以解决所有问题。</p>
-<ol start="4">
-<li>typecho的博客建议使用博客内部的备份还原来备份数据，不需要复制整个文档，复制完成后，直接解压新的typecho重新安装一遍之后再还原，这样可以节省很多时间，而且不会出现一些数据库读取的bug,我这边图片用的是GitHub的图床，所以不会出现文件问题，如果你文件需要备份的话，建议也要复制对应的文件夹。</li>
-</ol>
-<h2 id="参考文档"><a class="markdownIt-Anchor" href="#参考文档"></a> 参考文档</h2>
-<p><a href="https://lulin.org/451.html">v2rayMD5验证问题</a></p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>vscode</tag>
-        <tag>docker</tag>
-        <tag>v2ray</tag>
-        <tag>caddyv2</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>那些年遇见的人</title>
     <url>/2022/04/30/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/</url>
     <content><![CDATA[<p>大姐头：大姐头一来所有吃饭的人便都看着他笑，有的叫道，“大姐头，你怎么又垂头丧气！”他不回答，对阿姨里说，“荔枝肉，炒白菜，米饭半碗。”便排出九文大钱。他们又故意的高声嚷道，“你一定又在改系统了！”大姐头睁大眼睛说，“你怎么这样凭空污人清白……”；“什么清白?我前天亲眼见你驳回了一个方案，说那跟我们现在用的系统不一样，改方案。”大姐头便涨红了脸，额上的青筋条条绽出，争辩道，“那确实是往来的错，他跟我们系统现在不一样…系统的事，能不一样么？”接连便是难懂的话，什么“付款申请”，什么“往来”之类，引得众人都哄笑起来：食堂里充满了快活的空气。</p>
@@ -11991,38 +11991,6 @@ pip install requirements.txt
       </categories>
       <tags>
         <tag>同事</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>酒馆战旗为啥不好玩了</title>
-    <url>/2022/06/13/%E9%85%92%E9%A6%86%E6%88%98%E6%97%97%E4%B8%BA%E5%95%A5%E4%B8%8D%E5%A5%BD%E7%8E%A9%E4%BA%86/</url>
-    <content><![CDATA[<h2 id="炉石传说"><a class="markdownIt-Anchor" href="#炉石传说"></a> 炉石传说</h2>
-<p>和麻将一样，炉石传说也具有麻将的一搬特性：特定数量的棋子数，随机的战斗过程。相较于炉石不同的是，麻将追求的是一个特定的组合，但是炉石则更复杂，是追求的是比烂，你不一定要达到完美的组合，但是你只要比其他几个好就行。而且对战过程的随机性使得运气成分占据一定的地位。</p>
-<h3 id="初期"><a class="markdownIt-Anchor" href="#初期"></a> 初期</h3>
-<p>在初期酒馆战旗确实可以算的上是可以和麻将并提的一个游戏，两者具有一定的相似性，那时候酒馆的版本答案：战狼瑞文，跳操海盗，剧毒鱼人，鸡杂圣盾，恶魔机枪。几乎每个种族都有一个自己的独特套路， 大家都能记住，并且在搜索的过程中慢慢接近，虽然结果并不一定是完美的版本答案，但是就如同麻将过程一样，大家是有目标。这是一个慢慢探索和逼近的过程，而对于对方大家也知道它的终极形态，可以预防，甚至早早的做好准备。游戏的竞技平衡性尚在，而提前做好准备更是体现选手对每个形态的理解和对策。</p>
-<h3 id="稳定期"><a class="markdownIt-Anchor" href="#稳定期"></a> 稳定期</h3>
-<p>游戏在过程中不断的优化，有时候会删除某些过分强势的组合：铜须，巨壳龙。这样，但是万变不离其宗。抛开英雄技能，很多时候一个种族只有一条出路，所以中间很多时候确定最终组合往往就是对应组合的核心出现，或者对应种族核心出现。虽然某些组合的削弱，但是由于对战的随机性和克制的随从存在，也并不是无解的地步，尚且没有出现一个巫妖王。哪怕你是完美跳操也有可能被别人圣盾机器人挡住。</p>
-<h3 id="疯狂期"><a class="markdownIt-Anchor" href="#疯狂期"></a> 疯狂期</h3>
-<p>不知道是出于什么考虑，炉石在22.0更新了酒馆伙伴。酒馆伙伴带来了肉眼可见的疯狂。很多时候一个英雄技能就能决定比赛的胜负，输赢的关键已经不是战斗的随机性和随从出现可能性。三连次数的增加降低了核心的获取难度，身材的无限扩张减少了战斗随机性带来的意外。很多时候身材无限大，三连无限多，唯一限制你的是时间，你只想加快进入下一个随从选择期，战斗过程完全不顾，各种几乎不可能实现的自动流派出现在平常人手里。那是酒馆最为疯狂的时期，但是对普通人来说也是最舒服的时期，那段时期只要你玩，你就有可能选到强势的英雄伙伴，选到牛逼英雄技能，剩下的就是爽，哪怕最后没有获得胜利，你中间的巨大操作量也使得你感到满足。但是这些完全毁坏了游戏的随机性和平衡性。很多英雄都有对应的操作。从对随从的特定组合变成了对英雄对随从组合的双重考验，满足其一即可舒服，都满足则大概率吃鸡，所以对游戏的理解又一次成为了重中之重。但是平衡性的缺失导致了8人游戏5-7人坐牢。本来游戏中间30秒后期100+秒的等待时间在之前被人诟病，现在如果是垃圾英雄，完全就不想等待这60秒，而对于某些英雄这60秒，却像黄金一样珍贵。</p>
-<h3 id="无趣期"><a class="markdownIt-Anchor" href="#无趣期"></a> 无趣期</h3>
-<p>或许是因为在疯狂期数据不好，或许是觉得完全不管平衡性也不合适。反正酒馆在23.0移除了伙伴机制，回到了之前的稳定期，同时带来了新的随从种类。从之前的6+野猪人+娜迦到8种随从种类，这个本来没什么，但是随着随从卡池轮换，6-8带来了质变。以前6选5，一种不见，大家还能接受，现在是8选5种，三种随从不见：第一带来的是用户本来想这局或者这个英雄玩什么种族，或者就是刚刚看到一个新套路，过来测试学习的，但是这局没有。其次是种族克制，跳操需要机器人克制的时候没有，龙人克制圣盾的时候也没有了。虽然有替换，但是增加了门槛，玩家不会去自责自己没有想出答案，只会责怪游戏。还有就是随从池的扩大，很多无用或者需要配合的随从增多，过多的讲究随从之间的配合，导致一旦我们出现一个核心随从，我就需要对应的随从进行配合，否则这个随从就是辣鸡，从身材到功能都是。但是这时候要么是自己已经靠近别的，要么就是对应随从一个都不出，因为池子里的怪增多了。这又加剧了普通玩家不满，很多时候我们只是过来玩一局放松放松。不是过来读研究生的。然后就是15血保护机制：本来是保护防止过早被那种运气爆棚的人前期带走，现在别人利用前期保护，快速升级到5-6。利用前期丢失一定量但是不致死亡的血来获得早期高级随从。一旦获得高级随从，从身材，从配合都有了更多的选择性和更好的成型。在15血保护的前几回合大家疯狂赌博，将随机性增加到了一个不属于它的地位。而15血保护机制的消失，又会让游戏加速结束。之前由于保护机制拖慢的游戏进程，在结束保护之后第一回合快速显现，很多时候一回合可以淘汰掉一半的人数。这带来的巨大体验落差。很多时候我们不仅要等待无聊的选随从时间，还要在之后快速的被淘汰出去，仅仅是因为自己按照正常的节奏一步步升级。完全感觉自己就是在陪那1-2个人玩游戏，甚至浪费了时间。</p>
-<h3 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h3>
-<p>酒馆战旗犯了一个所有的暴雪游戏的错误就是：暴雪爸爸教你玩游戏。我不仅一次对酒馆对随从的削弱感到奇怪，而且前期的一些随从配合也在暴雪的意料之外，比如跳操。随着暴雪发现，便开始在玩家的基础上对其进行改良，比如：5星镀金海盗，或者对其削弱，比如：圣盾峰哥鱼。暴雪将自己摆在了高于玩家一头的地位，由他来决定游戏的形式而不是玩家：我不喜欢太快结束战斗，我不喜欢圣盾剧毒的配合，我不喜欢过分强势的组合，我想让你们在那玩养成游戏，我想让你们慢点结束战斗等等。但是他的聪明才智又不足以支持他的野心，很多时候玩家往往能拿出不属于他们的创意，不属于他们的解决方案，然后他只能气急败坏的说：这是你能玩的么？你也姓赵。于是成就了一个玩家喜欢什么就砍什么的奇怪现象。炉石传说如此，魔兽世界如此，酒馆战旗也是如此。他们盛气凌人的模样让人生厌。他对自己游戏不信任不相信他们的酒馆战旗会像麻将，扑克这些，虽然形式单一，但是悠久流传。或者是他们不想要这样，因为他们对用户数有要求，他们希望无限的增长用户，他们希望获得用户的氪金。这或许是所有游戏公司的悲哀吧。所以他们在游戏刚更新之后立刻举行比赛，希望减少玩家思考时间防止玩家扯出什么幺蛾子，但是又不想一直保持游戏不变化。而玩家对此的投票也很正常，不玩，不带。不止一次比赛选手选择旧版本的卡组，一张新的版本卡都没带，这肯定不是暴雪想要看到的，但是对于选手来说，他们需要的是一个可以理解的，经过验证的卡组，而不是看起来花里胡哨的，他们对稳定的需求大于随机性的上限。</p>
-<p>目前暴雪感觉进入了一个死亡螺旋：开新版本，举办比赛增加热度——比赛卡组都是旧的，并没有带来新版本热度——玩家觉得无聊，退坑——开新版本，增加更加强力的卡，举办比赛增加热度——比赛开组都是旧的。他一遍遍的增加可怕的，超模的新卡，新随从反而让更多人离开，更频繁的更新导致入门门槛不断增加，虽然氪金数上来了，但是用户数不断减少，最后的结果必然是成为了小众游戏，即使他当初是一个众所周知的游戏。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220630141112.png" alt="20220630141112" /></p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>炉石传说</tag>
-        <tag>酒馆战旗</tag>
-        <tag>暴雪</tag>
-        <tag>六字真言</tag>
       </tags>
   </entry>
   <entry>
@@ -12074,19 +12042,22 @@ pip install requirements.txt
       </tags>
   </entry>
   <entry>
-    <title>青龙面板定时规则</title>
-    <url>/2023/03/28/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%AE%9A%E6%97%B6%E8%A7%84%E5%88%99/</url>
-    <content><![CDATA[<h1 id="青龙面板定时规则"><a class="markdownIt-Anchor" href="#青龙面板定时规则"></a> 青龙面板定时规则</h1>
-<p>青龙面板使用的是cron的时间格式，但是它又在上面基础上进行优化，使用的是5-6位的时间表达式：</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/!%5B20230328145315%5D(httpsraw.githubusercontent.comandroid1122typecho_imgmaster20230328145315.png).png" alt="20230328145315" /></p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230328145545.png" alt="20230328145545" /></p>
-<p>知道这些之后，看下青龙内部经常使用的通配符</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">,：表示在两个及以上的时间点中都执行。如在月中的值为1,3，则表示1月和3月都触发事件</span><br><span class="line"></span><br><span class="line">*：表示匹配该域任意值，可解读为 “每”，如小时的字段为*时，表示每一小时都触发事件</span><br><span class="line"></span><br><span class="line">?：表示不指定值，用于日期和星期字段之间进行互斥。通常在日期和星期字段中的一个指定值，另外一个用?表示不指定值。使用的场景为不需要关心当前设置这个字段的值。例如:要在每月的6号触发一个操作，但不关心是周几，我们可以这么设置 0 0 0 6 * ?</span><br><span class="line"></span><br><span class="line">-：表示范围，一个连续触发的区间。如：时的值为6-8，则表示6-8小时中的每个小时都触发事件。</span><br><span class="line"></span><br><span class="line">/：表示间隔时间触发事件（开始时间/时间间隔）。其中第一部分是起始值，除了秒以外都会降低一个单位，比如在 “秒” 上定义 5/10 表示从 第 5 秒开始 每 10 秒执行一次，而在 “分” 上则表示从 第 5 秒开始 每 10 分钟执行一次。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#：表示该月第n个星期x(x#n)，仅用星期域。如：星期：6#3，表示该月的第三个星期六。</span><br><span class="line"></span><br><span class="line">L：表示LAST 最后（最后一天或最后一个星期几）；仅出现在日和星期的域中。用在日则表示该月的最后一天，用在星期则表示该月的最后一个星期X。如：星期域上的值为5L，则表示该月最后一个星期的星期四。在使用&#x27;L&#x27;时，不要指定列表&#x27;,&#x27;或范围&#x27;-&#x27;，否则易导致出现意料之外的结果。</span><br><span class="line"></span><br><span class="line">W：仅用在日的域中，表示距离当月给定日期最近的工作日（周一到周五）。 如：&quot;4W&quot;表示距离4号最近的工作日（当月的）触发事件； （1）当4号就是工作日时，则表示当天触发；当4号为周六时，则表示3号（周五）触发； （2）当4号为周日时，则表示在5号（周一）触发； 再如：&quot;1W&quot;表示距离1号最近的工作日触发事件，但是，该工作日只算当月的。假如当月1号是周六，则”1W“表示在当月3号（周一）触发事件。就算上个月的最后一天是工作日，也不会触发事件。</span><br><span class="line"></span><br><span class="line">LW：‘L’和&#x27;W&#x27;可以一起组合在日字段使用。表示当月的最后一个工作日触发事件。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>0 0 7-20 * * * 比如这个0秒0分7-19点内每天每月每周执行，即每天的7-19内0分0秒执行</p>
-<p>如果要求在上班日（周一到周五），那么最后一个字符“周”就需要配置：0 0 7-20 * * 1-5</p>
-<p>当然如果你不会的话，可以选择使用<a href="https://cron.qqe2.com/">在线服务</a>,简单方便。</p>
-<h1 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h1>
-<p>青龙面板是个好东西，可视化的界面降低了开发人员的入门，没必要在部署上花费时间，简单的写个python程序，然后放到青龙上，剩下的就是等待，配合Gotify等通知软件，可以实现实时接收消息。</p>
+    <title>酒馆战旗为啥不好玩了</title>
+    <url>/2022/06/13/%E9%85%92%E9%A6%86%E6%88%98%E6%97%97%E4%B8%BA%E5%95%A5%E4%B8%8D%E5%A5%BD%E7%8E%A9%E4%BA%86/</url>
+    <content><![CDATA[<h2 id="炉石传说"><a class="markdownIt-Anchor" href="#炉石传说"></a> 炉石传说</h2>
+<p>和麻将一样，炉石传说也具有麻将的一搬特性：特定数量的棋子数，随机的战斗过程。相较于炉石不同的是，麻将追求的是一个特定的组合，但是炉石则更复杂，是追求的是比烂，你不一定要达到完美的组合，但是你只要比其他几个好就行。而且对战过程的随机性使得运气成分占据一定的地位。</p>
+<h3 id="初期"><a class="markdownIt-Anchor" href="#初期"></a> 初期</h3>
+<p>在初期酒馆战旗确实可以算的上是可以和麻将并提的一个游戏，两者具有一定的相似性，那时候酒馆的版本答案：战狼瑞文，跳操海盗，剧毒鱼人，鸡杂圣盾，恶魔机枪。几乎每个种族都有一个自己的独特套路， 大家都能记住，并且在搜索的过程中慢慢接近，虽然结果并不一定是完美的版本答案，但是就如同麻将过程一样，大家是有目标。这是一个慢慢探索和逼近的过程，而对于对方大家也知道它的终极形态，可以预防，甚至早早的做好准备。游戏的竞技平衡性尚在，而提前做好准备更是体现选手对每个形态的理解和对策。</p>
+<h3 id="稳定期"><a class="markdownIt-Anchor" href="#稳定期"></a> 稳定期</h3>
+<p>游戏在过程中不断的优化，有时候会删除某些过分强势的组合：铜须，巨壳龙。这样，但是万变不离其宗。抛开英雄技能，很多时候一个种族只有一条出路，所以中间很多时候确定最终组合往往就是对应组合的核心出现，或者对应种族核心出现。虽然某些组合的削弱，但是由于对战的随机性和克制的随从存在，也并不是无解的地步，尚且没有出现一个巫妖王。哪怕你是完美跳操也有可能被别人圣盾机器人挡住。</p>
+<h3 id="疯狂期"><a class="markdownIt-Anchor" href="#疯狂期"></a> 疯狂期</h3>
+<p>不知道是出于什么考虑，炉石在22.0更新了酒馆伙伴。酒馆伙伴带来了肉眼可见的疯狂。很多时候一个英雄技能就能决定比赛的胜负，输赢的关键已经不是战斗的随机性和随从出现可能性。三连次数的增加降低了核心的获取难度，身材的无限扩张减少了战斗随机性带来的意外。很多时候身材无限大，三连无限多，唯一限制你的是时间，你只想加快进入下一个随从选择期，战斗过程完全不顾，各种几乎不可能实现的自动流派出现在平常人手里。那是酒馆最为疯狂的时期，但是对普通人来说也是最舒服的时期，那段时期只要你玩，你就有可能选到强势的英雄伙伴，选到牛逼英雄技能，剩下的就是爽，哪怕最后没有获得胜利，你中间的巨大操作量也使得你感到满足。但是这些完全毁坏了游戏的随机性和平衡性。很多英雄都有对应的操作。从对随从的特定组合变成了对英雄对随从组合的双重考验，满足其一即可舒服，都满足则大概率吃鸡，所以对游戏的理解又一次成为了重中之重。但是平衡性的缺失导致了8人游戏5-7人坐牢。本来游戏中间30秒后期100+秒的等待时间在之前被人诟病，现在如果是垃圾英雄，完全就不想等待这60秒，而对于某些英雄这60秒，却像黄金一样珍贵。</p>
+<h3 id="无趣期"><a class="markdownIt-Anchor" href="#无趣期"></a> 无趣期</h3>
+<p>或许是因为在疯狂期数据不好，或许是觉得完全不管平衡性也不合适。反正酒馆在23.0移除了伙伴机制，回到了之前的稳定期，同时带来了新的随从种类。从之前的6+野猪人+娜迦到8种随从种类，这个本来没什么，但是随着随从卡池轮换，6-8带来了质变。以前6选5，一种不见，大家还能接受，现在是8选5种，三种随从不见：第一带来的是用户本来想这局或者这个英雄玩什么种族，或者就是刚刚看到一个新套路，过来测试学习的，但是这局没有。其次是种族克制，跳操需要机器人克制的时候没有，龙人克制圣盾的时候也没有了。虽然有替换，但是增加了门槛，玩家不会去自责自己没有想出答案，只会责怪游戏。还有就是随从池的扩大，很多无用或者需要配合的随从增多，过多的讲究随从之间的配合，导致一旦我们出现一个核心随从，我就需要对应的随从进行配合，否则这个随从就是辣鸡，从身材到功能都是。但是这时候要么是自己已经靠近别的，要么就是对应随从一个都不出，因为池子里的怪增多了。这又加剧了普通玩家不满，很多时候我们只是过来玩一局放松放松。不是过来读研究生的。然后就是15血保护机制：本来是保护防止过早被那种运气爆棚的人前期带走，现在别人利用前期保护，快速升级到5-6。利用前期丢失一定量但是不致死亡的血来获得早期高级随从。一旦获得高级随从，从身材，从配合都有了更多的选择性和更好的成型。在15血保护的前几回合大家疯狂赌博，将随机性增加到了一个不属于它的地位。而15血保护机制的消失，又会让游戏加速结束。之前由于保护机制拖慢的游戏进程，在结束保护之后第一回合快速显现，很多时候一回合可以淘汰掉一半的人数。这带来的巨大体验落差。很多时候我们不仅要等待无聊的选随从时间，还要在之后快速的被淘汰出去，仅仅是因为自己按照正常的节奏一步步升级。完全感觉自己就是在陪那1-2个人玩游戏，甚至浪费了时间。</p>
+<h3 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h3>
+<p>酒馆战旗犯了一个所有的暴雪游戏的错误就是：暴雪爸爸教你玩游戏。我不仅一次对酒馆对随从的削弱感到奇怪，而且前期的一些随从配合也在暴雪的意料之外，比如跳操。随着暴雪发现，便开始在玩家的基础上对其进行改良，比如：5星镀金海盗，或者对其削弱，比如：圣盾峰哥鱼。暴雪将自己摆在了高于玩家一头的地位，由他来决定游戏的形式而不是玩家：我不喜欢太快结束战斗，我不喜欢圣盾剧毒的配合，我不喜欢过分强势的组合，我想让你们在那玩养成游戏，我想让你们慢点结束战斗等等。但是他的聪明才智又不足以支持他的野心，很多时候玩家往往能拿出不属于他们的创意，不属于他们的解决方案，然后他只能气急败坏的说：这是你能玩的么？你也姓赵。于是成就了一个玩家喜欢什么就砍什么的奇怪现象。炉石传说如此，魔兽世界如此，酒馆战旗也是如此。他们盛气凌人的模样让人生厌。他对自己游戏不信任不相信他们的酒馆战旗会像麻将，扑克这些，虽然形式单一，但是悠久流传。或者是他们不想要这样，因为他们对用户数有要求，他们希望无限的增长用户，他们希望获得用户的氪金。这或许是所有游戏公司的悲哀吧。所以他们在游戏刚更新之后立刻举行比赛，希望减少玩家思考时间防止玩家扯出什么幺蛾子，但是又不想一直保持游戏不变化。而玩家对此的投票也很正常，不玩，不带。不止一次比赛选手选择旧版本的卡组，一张新的版本卡都没带，这肯定不是暴雪想要看到的，但是对于选手来说，他们需要的是一个可以理解的，经过验证的卡组，而不是看起来花里胡哨的，他们对稳定的需求大于随机性的上限。</p>
+<p>目前暴雪感觉进入了一个死亡螺旋：开新版本，举办比赛增加热度——比赛卡组都是旧的，并没有带来新版本热度——玩家觉得无聊，退坑——开新版本，增加更加强力的卡，举办比赛增加热度——比赛开组都是旧的。他一遍遍的增加可怕的，超模的新卡，新随从反而让更多人离开，更频繁的更新导致入门门槛不断增加，虽然氪金数上来了，但是用户数不断减少，最后的结果必然是成为了小众游戏，即使他当初是一个众所周知的游戏。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220630141112.png" alt="20220630141112" /></p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
 
@@ -12096,9 +12067,10 @@ pip install requirements.txt
         <category>技术顾问</category>
       </categories>
       <tags>
-        <tag>青龙面板</tag>
-        <tag>python</tag>
-        <tag>Gotify</tag>
+        <tag>炉石传说</tag>
+        <tag>酒馆战旗</tag>
+        <tag>六字真言</tag>
+        <tag>暴雪</tag>
       </tags>
   </entry>
   <entry>
@@ -12150,6 +12122,34 @@ pip install requirements.txt
       </categories>
       <tags>
         <tag>下雨</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>青龙面板定时规则</title>
+    <url>/2023/03/28/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%AE%9A%E6%97%B6%E8%A7%84%E5%88%99/</url>
+    <content><![CDATA[<h1 id="青龙面板定时规则"><a class="markdownIt-Anchor" href="#青龙面板定时规则"></a> 青龙面板定时规则</h1>
+<p>青龙面板使用的是cron的时间格式，但是它又在上面基础上进行优化，使用的是5-6位的时间表达式：</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/!%5B20230328145315%5D(httpsraw.githubusercontent.comandroid1122typecho_imgmaster20230328145315.png).png" alt="20230328145315" /></p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20230328145545.png" alt="20230328145545" /></p>
+<p>知道这些之后，看下青龙内部经常使用的通配符</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">,：表示在两个及以上的时间点中都执行。如在月中的值为1,3，则表示1月和3月都触发事件</span><br><span class="line"></span><br><span class="line">*：表示匹配该域任意值，可解读为 “每”，如小时的字段为*时，表示每一小时都触发事件</span><br><span class="line"></span><br><span class="line">?：表示不指定值，用于日期和星期字段之间进行互斥。通常在日期和星期字段中的一个指定值，另外一个用?表示不指定值。使用的场景为不需要关心当前设置这个字段的值。例如:要在每月的6号触发一个操作，但不关心是周几，我们可以这么设置 0 0 0 6 * ?</span><br><span class="line"></span><br><span class="line">-：表示范围，一个连续触发的区间。如：时的值为6-8，则表示6-8小时中的每个小时都触发事件。</span><br><span class="line"></span><br><span class="line">/：表示间隔时间触发事件（开始时间/时间间隔）。其中第一部分是起始值，除了秒以外都会降低一个单位，比如在 “秒” 上定义 5/10 表示从 第 5 秒开始 每 10 秒执行一次，而在 “分” 上则表示从 第 5 秒开始 每 10 分钟执行一次。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#：表示该月第n个星期x(x#n)，仅用星期域。如：星期：6#3，表示该月的第三个星期六。</span><br><span class="line"></span><br><span class="line">L：表示LAST 最后（最后一天或最后一个星期几）；仅出现在日和星期的域中。用在日则表示该月的最后一天，用在星期则表示该月的最后一个星期X。如：星期域上的值为5L，则表示该月最后一个星期的星期四。在使用&#x27;L&#x27;时，不要指定列表&#x27;,&#x27;或范围&#x27;-&#x27;，否则易导致出现意料之外的结果。</span><br><span class="line"></span><br><span class="line">W：仅用在日的域中，表示距离当月给定日期最近的工作日（周一到周五）。 如：&quot;4W&quot;表示距离4号最近的工作日（当月的）触发事件； （1）当4号就是工作日时，则表示当天触发；当4号为周六时，则表示3号（周五）触发； （2）当4号为周日时，则表示在5号（周一）触发； 再如：&quot;1W&quot;表示距离1号最近的工作日触发事件，但是，该工作日只算当月的。假如当月1号是周六，则”1W“表示在当月3号（周一）触发事件。就算上个月的最后一天是工作日，也不会触发事件。</span><br><span class="line"></span><br><span class="line">LW：‘L’和&#x27;W&#x27;可以一起组合在日字段使用。表示当月的最后一个工作日触发事件。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>0 0 7-20 * * * 比如这个0秒0分7-19点内每天每月每周执行，即每天的7-19内0分0秒执行</p>
+<p>如果要求在上班日（周一到周五），那么最后一个字符“周”就需要配置：0 0 7-20 * * 1-5</p>
+<p>当然如果你不会的话，可以选择使用<a href="https://cron.qqe2.com/">在线服务</a>,简单方便。</p>
+<h1 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h1>
+<p>青龙面板是个好东西，可视化的界面降低了开发人员的入门，没必要在部署上花费时间，简单的写个python程序，然后放到青龙上，剩下的就是等待，配合Gotify等通知软件，可以实现实时接收消息。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>青龙面板</tag>
+        <tag>python</tag>
+        <tag>Gotify</tag>
       </tags>
   </entry>
   <entry>
@@ -12211,6 +12211,37 @@ pip install requirements.txt
       </tags>
   </entry>
   <entry>
+    <title>飞驰的人生</title>
+    <url>/2022/04/30/%E9%A3%9E%E9%A9%B0%E7%9A%84%E4%BA%BA%E7%94%9F/</url>
+    <content><![CDATA[<p>这也许是我第二次看这部飞驰的人生</p>
+<p>第一次将他当一部搞笑片来看</p>
+<p>第二次，则将它看成一部悲剧。</p>
+<p>影片的最后，屏幕上显示的是：仅以此片献给所有热爱的人。</p>
+<p>对此,我想说几句</p>
+<p>影片很好,至少我听懂了</p>
+<p>我羡慕他们的热爱,也羡慕他们将热爱的事情做到了第一</p>
+<p>曾几何时我与他们一样,幻想着从事自己热爱的事业,然后在上面努力耕耘,闯出自己的一番天地</p>
+<p>但是后来才发现这个事情很难,很难</p>
+<p>现实生活中,专业的人从事着不同专业的事情,甚至毫无相干的人都可以从事专业的活,在这些资源错位的背后,不是我所崇敬的热爱,是生活,是工资,是关系,是相貌.我们甚至会因为需要一个漂亮的女性,所以招聘入职,至于工作,无所谓,有的是别人.我不知那孩子进来之后发现自己是一个吉祥物般的存在会是什么感觉,也许很开心,毕竟不用做什么,还能拿到这么高的工资,甚至还有一定的地位.也许人各有志吧,但是却诛杀了热爱这份工作的人的热情.</p>
+<p>我并不是顽固不化,跨专业跨领域的事情我见的多了,也能接受,甚至理解一个人对一个专业的热爱胜过多少学历文凭.但是现实中见到的往往是谁谁的关系,或者是需要几个女等等.他们招聘的随意程度让我深深怀疑当初自己是不是也是他的一时兴起.但是看到后续的的领导表现,我才明白这他么的就是一个关系户,过来混吃等死拿福利,此生无忧还有靠山.</p>
+<p>我们的时代似乎过了那种努力拼搏实现自己的风口,现在你要是说出这样的话,旁边的人更多的是在心里骂你傻逼,他们的理想正是混吃等死,他们说社会内卷,卷死人了,你再努力也没用,因为前面还有好多人,好多牛逼的人,或者之前比你牛逼的人.我信这些话,也明白这些话的道理,甚至我看到清华北大的学生在我同一个公司时我也倍感压力</p>
+<p>但是不服输,我还喜欢这个工作,我还喜欢这个职业,我喜欢在用户抛出问题的时候,在有限的框架内给出一个双方都满意的方案,我喜欢拼搏,喜欢这种双方的博弈,也喜欢框架,大家在一个框架内遵守着同一个规则,我得到了短暂的公平.但是一个个搅局者的出现,让我一次次的伤心,双方的博弈变成了单方面的厮杀,毫无乐趣可言,甚至连投降的权利都没有,猪队友的出现让行军异常缓慢,甚至还要回头为其擦屁股,而最后的方案也变成了一种妥协,不是双方的互相妥协,是自己对工作的妥协.它毁了我对这份工作的热爱.</p>
+<p>我开始不再谋划万无一失的方案,开始不再面面俱到的考虑问题,我奇思为了偷懒,妙想为了划水.我开始计算工资和我的付出,觉得工资太低,我开始计算工资和上班时间的比例,觉得工资太低,我开始计算工资和我参加的会议,觉得工资太低,最后开始计算工资和我未来几年的发展,觉得工资太低.我的热爱用工资就可以计算,钱给够,方案给足.</p>
+<p>慢慢的,我开始同意那些人的想法,卷,太卷了,领导关系那么多,公司机制又不好,除了论资排辈,没有别的晋升机制.哪有那么多大项目啊,有也不一定你上,公司看的是利益,又不是训练你的机会.没有合适的师带徒机制,你就一辈子当实施吧,考个证吧,设点门槛,省的那些人天天要加薪,要升职.你们加薪了我赚什么,人力不是老板的走狗,他们只是单纯的抠而已.老板才不在乎这一千两千的,在乎的是下面的人,是那些打工的人.经济效益又不是一眼就看出来的,你说你值这个价?你们不懂,公司也很难,社保,保险,福利啊,还要交税.</p>
+<p>管事的人利益和公司不一致,每个人的经济效益不是一眼就能看穿,有人划水却看不出.好像公司管理确实是一个大难题.我们的热爱就这样被慢慢的抹平,消淡然后我们开始卷.因为我们明白去哪里都是一个样,我们只是为了钱工作,钱给够,活干满.</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>飞驰的人生</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>魔鬼的交易</title>
     <url>/2023/02/08/%E9%AD%94%E9%AC%BC%E7%9A%84%E4%BA%A4%E6%98%93/</url>
     <content><![CDATA[<p>人类和魔鬼的攻讦</p>
@@ -12266,37 +12297,6 @@ pip install requirements.txt
       </categories>
       <tags>
         <tag>魔鬼的交易</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>飞驰的人生</title>
-    <url>/2022/04/30/%E9%A3%9E%E9%A9%B0%E7%9A%84%E4%BA%BA%E7%94%9F/</url>
-    <content><![CDATA[<p>这也许是我第二次看这部飞驰的人生</p>
-<p>第一次将他当一部搞笑片来看</p>
-<p>第二次，则将它看成一部悲剧。</p>
-<p>影片的最后，屏幕上显示的是：仅以此片献给所有热爱的人。</p>
-<p>对此,我想说几句</p>
-<p>影片很好,至少我听懂了</p>
-<p>我羡慕他们的热爱,也羡慕他们将热爱的事情做到了第一</p>
-<p>曾几何时我与他们一样,幻想着从事自己热爱的事业,然后在上面努力耕耘,闯出自己的一番天地</p>
-<p>但是后来才发现这个事情很难,很难</p>
-<p>现实生活中,专业的人从事着不同专业的事情,甚至毫无相干的人都可以从事专业的活,在这些资源错位的背后,不是我所崇敬的热爱,是生活,是工资,是关系,是相貌.我们甚至会因为需要一个漂亮的女性,所以招聘入职,至于工作,无所谓,有的是别人.我不知那孩子进来之后发现自己是一个吉祥物般的存在会是什么感觉,也许很开心,毕竟不用做什么,还能拿到这么高的工资,甚至还有一定的地位.也许人各有志吧,但是却诛杀了热爱这份工作的人的热情.</p>
-<p>我并不是顽固不化,跨专业跨领域的事情我见的多了,也能接受,甚至理解一个人对一个专业的热爱胜过多少学历文凭.但是现实中见到的往往是谁谁的关系,或者是需要几个女等等.他们招聘的随意程度让我深深怀疑当初自己是不是也是他的一时兴起.但是看到后续的的领导表现,我才明白这他么的就是一个关系户,过来混吃等死拿福利,此生无忧还有靠山.</p>
-<p>我们的时代似乎过了那种努力拼搏实现自己的风口,现在你要是说出这样的话,旁边的人更多的是在心里骂你傻逼,他们的理想正是混吃等死,他们说社会内卷,卷死人了,你再努力也没用,因为前面还有好多人,好多牛逼的人,或者之前比你牛逼的人.我信这些话,也明白这些话的道理,甚至我看到清华北大的学生在我同一个公司时我也倍感压力</p>
-<p>但是不服输,我还喜欢这个工作,我还喜欢这个职业,我喜欢在用户抛出问题的时候,在有限的框架内给出一个双方都满意的方案,我喜欢拼搏,喜欢这种双方的博弈,也喜欢框架,大家在一个框架内遵守着同一个规则,我得到了短暂的公平.但是一个个搅局者的出现,让我一次次的伤心,双方的博弈变成了单方面的厮杀,毫无乐趣可言,甚至连投降的权利都没有,猪队友的出现让行军异常缓慢,甚至还要回头为其擦屁股,而最后的方案也变成了一种妥协,不是双方的互相妥协,是自己对工作的妥协.它毁了我对这份工作的热爱.</p>
-<p>我开始不再谋划万无一失的方案,开始不再面面俱到的考虑问题,我奇思为了偷懒,妙想为了划水.我开始计算工资和我的付出,觉得工资太低,我开始计算工资和上班时间的比例,觉得工资太低,我开始计算工资和我参加的会议,觉得工资太低,最后开始计算工资和我未来几年的发展,觉得工资太低.我的热爱用工资就可以计算,钱给够,方案给足.</p>
-<p>慢慢的,我开始同意那些人的想法,卷,太卷了,领导关系那么多,公司机制又不好,除了论资排辈,没有别的晋升机制.哪有那么多大项目啊,有也不一定你上,公司看的是利益,又不是训练你的机会.没有合适的师带徒机制,你就一辈子当实施吧,考个证吧,设点门槛,省的那些人天天要加薪,要升职.你们加薪了我赚什么,人力不是老板的走狗,他们只是单纯的抠而已.老板才不在乎这一千两千的,在乎的是下面的人,是那些打工的人.经济效益又不是一眼就看出来的,你说你值这个价?你们不懂,公司也很难,社保,保险,福利啊,还要交税.</p>
-<p>管事的人利益和公司不一致,每个人的经济效益不是一眼就能看穿,有人划水却看不出.好像公司管理确实是一个大难题.我们的热爱就这样被慢慢的抹平,消淡然后我们开始卷.因为我们明白去哪里都是一个样,我们只是为了钱工作,钱给够,活干满.</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>飞驰的人生</tag>
       </tags>
   </entry>
   <entry>
