@@ -6,7 +6,7 @@
   <link href="https://minsummer.com/atom.xml" rel="self"/>
   
   <link href="https://minsummer.com/"/>
-  <updated>2025-12-03T16:00:00.000Z</updated>
+  <updated>2025-12-24T16:00:00.000Z</updated>
   <id>https://minsummer.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>创世纪</title>
+    <link href="https://minsummer.com/2025/12/21/224-%E5%88%9B%E4%B8%96%E7%BA%AA/"/>
+    <id>https://minsummer.com/2025/12/21/224-%E5%88%9B%E4%B8%96%E7%BA%AA/</id>
+    <published>2025-12-21T16:00:00.000Z</published>
+    <updated>2025-12-24T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这篇文章我是25年12月22日开始其起标题，不知道啥时候才能更新完，反正不可能是7天。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="3D打印" scheme="https://minsummer.com/tags/3D%E6%89%93%E5%8D%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>低显存comfyui解决思路</title>
@@ -673,30 +692,6 @@
   </entry>
   
   <entry>
-    <title>ESXI安装HomeAsistantOS</title>
-    <link href="https://minsummer.com/2025/01/06/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS/"/>
-    <id>https://minsummer.com/2025/01/06/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS/</id>
-    <published>2025-01-06T16:00:00.000Z</published>
-    <updated>2025-01-06T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;我家里有一台小米的空气净化器，还有小米得几个空调遥控器，定时器。虽然可以使用官方得app控制，但是总归是不方便，还是希望可以更加得智能化，尤其我这人对空调吹多了冷，吹少了热。&lt;br /&gt;
-其实之前我使用过一阵子，但是那时候官方没有支持，导致我使用HA进行控制之后就不能使用官方app控制。正好这次官方宣布支持，我就想着再试试。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
-    
-    
-    <category term="NAS" scheme="https://minsummer.com/tags/NAS/"/>
-    
-    <category term="浪潮SA5112M4" scheme="https://minsummer.com/tags/%E6%B5%AA%E6%BD%AESA5112M4/"/>
-    
-    <category term="服务器" scheme="https://minsummer.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
     <title>openwrt使用指南</title>
     <link href="https://minsummer.com/2025/01/06/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
     <id>https://minsummer.com/2025/01/06/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
@@ -722,6 +717,30 @@
   </entry>
   
   <entry>
+    <title>ESXI安装HomeAsistantOS</title>
+    <link href="https://minsummer.com/2025/01/06/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS/"/>
+    <id>https://minsummer.com/2025/01/06/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS/</id>
+    <published>2025-01-06T16:00:00.000Z</published>
+    <updated>2025-01-06T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;我家里有一台小米的空气净化器，还有小米得几个空调遥控器，定时器。虽然可以使用官方得app控制，但是总归是不方便，还是希望可以更加得智能化，尤其我这人对空调吹多了冷，吹少了热。&lt;br /&gt;
+其实之前我使用过一阵子，但是那时候官方没有支持，导致我使用HA进行控制之后就不能使用官方app控制。正好这次官方宣布支持，我就想着再试试。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="NAS" scheme="https://minsummer.com/tags/NAS/"/>
+    
+    <category term="浪潮SA5112M4" scheme="https://minsummer.com/tags/%E6%B5%AA%E6%BD%AESA5112M4/"/>
+    
+    <category term="服务器" scheme="https://minsummer.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>浪潮SA5112M4安装ESXI</title>
     <link href="https://minsummer.com/2025/01/04/191-%E6%B5%AA%E6%BD%AESA5112M4%E5%AE%89%E8%A3%85ESXI/"/>
     <id>https://minsummer.com/2025/01/04/191-%E6%B5%AA%E6%BD%AESA5112M4%E5%AE%89%E8%A3%85ESXI/</id>
@@ -738,9 +757,9 @@
     
     <category term="NAS" scheme="https://minsummer.com/tags/NAS/"/>
     
-    <category term="家用服务器" scheme="https://minsummer.com/tags/%E5%AE%B6%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
     <category term="浪潮SA5112M4" scheme="https://minsummer.com/tags/%E6%B5%AA%E6%BD%AESA5112M4/"/>
+    
+    <category term="家用服务器" scheme="https://minsummer.com/tags/%E5%AE%B6%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
   </entry>
   
