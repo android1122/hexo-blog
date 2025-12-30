@@ -6,7 +6,7 @@
   <link href="https://minsummer.com/atom.xml" rel="self"/>
   
   <link href="https://minsummer.com/"/>
-  <updated>2025-12-24T16:00:00.000Z</updated>
+  <updated>2025-12-27T16:00:00.000Z</updated>
   <id>https://minsummer.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>创世纪2</title>
+    <link href="https://minsummer.com/2025/12/27/225-%E5%88%9B%E4%B8%96%E7%BA%AA2/"/>
+    <id>https://minsummer.com/2025/12/27/225-%E5%88%9B%E4%B8%96%E7%BA%AA2/</id>
+    <published>2025-12-27T16:00:00.000Z</published>
+    <updated>2025-12-27T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这一篇是升级3D打印机的教程，包括：klipper固件安装和升级，然后就是校准和其他。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="3D打印" scheme="https://minsummer.com/tags/3D%E6%89%93%E5%8D%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>创世纪</title>
@@ -461,27 +480,6 @@
   </entry>
   
   <entry>
-    <title>《深入浅出统计学》读书笔记</title>
-    <link href="https://minsummer.com/2025/04/24/202-%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%BB%9F%E8%AE%A1%E5%AD%A6%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    <id>https://minsummer.com/2025/04/24/202-%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%BB%9F%E8%AE%A1%E5%AD%A6%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</id>
-    <published>2025-04-24T16:00:00.000Z</published>
-    <updated>2025-04-24T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;之前读过&lt;a href=&quot;https://minsummer.com/2022/07/30/104-%E6%A6%82%E7%8E%87%E8%AE%BA%E5%AF%BC%E8%AE%BA-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/&quot;&gt;《概率论导论》&lt;/a&gt;，但是当时由于是纯粹的数学导论，比较艰涩难懂。这次在《深入浅出统计学》找到了对应的意义，于是就准备再次记录一下。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
-    
-    
-    <category term="概率论导论" scheme="https://minsummer.com/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%AF%BC%E8%AE%BA/"/>
-    
-    <category term="机器学习" scheme="https://minsummer.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
     <title>hexo博客NEXT主题开启数学公式</title>
     <link href="https://minsummer.com/2025/04/24/203-hexo%E5%8D%9A%E5%AE%A2NEXT%E4%B8%BB%E9%A2%98%E5%BC%80%E5%90%AF%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"/>
     <id>https://minsummer.com/2025/04/24/203-hexo%E5%8D%9A%E5%AE%A2NEXT%E4%B8%BB%E9%A2%98%E5%BC%80%E5%90%AF%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</id>
@@ -503,6 +501,27 @@
     <category term="hexo博客" scheme="https://minsummer.com/tags/hexo%E5%8D%9A%E5%AE%A2/"/>
     
     <category term="NEXT主题" scheme="https://minsummer.com/tags/NEXT%E4%B8%BB%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《深入浅出统计学》读书笔记</title>
+    <link href="https://minsummer.com/2025/04/24/202-%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%BB%9F%E8%AE%A1%E5%AD%A6%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    <id>https://minsummer.com/2025/04/24/202-%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%BB%9F%E8%AE%A1%E5%AD%A6%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</id>
+    <published>2025-04-24T16:00:00.000Z</published>
+    <updated>2025-04-24T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;之前读过&lt;a href=&quot;https://minsummer.com/2022/07/30/104-%E6%A6%82%E7%8E%87%E8%AE%BA%E5%AF%BC%E8%AE%BA-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/&quot;&gt;《概率论导论》&lt;/a&gt;，但是当时由于是纯粹的数学导论，比较艰涩难懂。这次在《深入浅出统计学》找到了对应的意义，于是就准备再次记录一下。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="概率论导论" scheme="https://minsummer.com/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%AF%BC%E8%AE%BA/"/>
+    
+    <category term="机器学习" scheme="https://minsummer.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -692,6 +711,30 @@
   </entry>
   
   <entry>
+    <title>ESXI安装HomeAsistantOS</title>
+    <link href="https://minsummer.com/2025/01/06/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS/"/>
+    <id>https://minsummer.com/2025/01/06/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS/</id>
+    <published>2025-01-06T16:00:00.000Z</published>
+    <updated>2025-01-06T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;我家里有一台小米的空气净化器，还有小米得几个空调遥控器，定时器。虽然可以使用官方得app控制，但是总归是不方便，还是希望可以更加得智能化，尤其我这人对空调吹多了冷，吹少了热。&lt;br /&gt;
+其实之前我使用过一阵子，但是那时候官方没有支持，导致我使用HA进行控制之后就不能使用官方app控制。正好这次官方宣布支持，我就想着再试试。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="NAS" scheme="https://minsummer.com/tags/NAS/"/>
+    
+    <category term="浪潮SA5112M4" scheme="https://minsummer.com/tags/%E6%B5%AA%E6%BD%AESA5112M4/"/>
+    
+    <category term="服务器" scheme="https://minsummer.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>openwrt使用指南</title>
     <link href="https://minsummer.com/2025/01/06/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
     <id>https://minsummer.com/2025/01/06/194-openwrt%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
@@ -717,30 +760,6 @@
   </entry>
   
   <entry>
-    <title>ESXI安装HomeAsistantOS</title>
-    <link href="https://minsummer.com/2025/01/06/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS/"/>
-    <id>https://minsummer.com/2025/01/06/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS/</id>
-    <published>2025-01-06T16:00:00.000Z</published>
-    <updated>2025-01-06T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;我家里有一台小米的空气净化器，还有小米得几个空调遥控器，定时器。虽然可以使用官方得app控制，但是总归是不方便，还是希望可以更加得智能化，尤其我这人对空调吹多了冷，吹少了热。&lt;br /&gt;
-其实之前我使用过一阵子，但是那时候官方没有支持，导致我使用HA进行控制之后就不能使用官方app控制。正好这次官方宣布支持，我就想着再试试。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
-    
-    
-    <category term="NAS" scheme="https://minsummer.com/tags/NAS/"/>
-    
-    <category term="浪潮SA5112M4" scheme="https://minsummer.com/tags/%E6%B5%AA%E6%BD%AESA5112M4/"/>
-    
-    <category term="服务器" scheme="https://minsummer.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
     <title>浪潮SA5112M4安装ESXI</title>
     <link href="https://minsummer.com/2025/01/04/191-%E6%B5%AA%E6%BD%AESA5112M4%E5%AE%89%E8%A3%85ESXI/"/>
     <id>https://minsummer.com/2025/01/04/191-%E6%B5%AA%E6%BD%AESA5112M4%E5%AE%89%E8%A3%85ESXI/</id>
@@ -757,9 +776,9 @@
     
     <category term="NAS" scheme="https://minsummer.com/tags/NAS/"/>
     
-    <category term="浪潮SA5112M4" scheme="https://minsummer.com/tags/%E6%B5%AA%E6%BD%AESA5112M4/"/>
-    
     <category term="家用服务器" scheme="https://minsummer.com/tags/%E5%AE%B6%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="浪潮SA5112M4" scheme="https://minsummer.com/tags/%E6%B5%AA%E6%BD%AESA5112M4/"/>
     
   </entry>
   

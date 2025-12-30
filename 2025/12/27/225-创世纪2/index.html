@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"minsummer.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.26.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="这一篇是升级3D打印机的教程，包括：klipper固件安装和升级，然后就是校准和其他。">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="创世纪2">
+<meta property="og:url" content="https://minsummer.com/2025/12/27/225-%E5%88%9B%E4%B8%96%E7%BA%AA2/">
+<meta property="og:site_name" content="我是豆豆">
+<meta property="og:description" content="这一篇是升级3D打印机的教程，包括：klipper固件安装和升级，然后就是校准和其他。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-28-16-17-01.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-28-16-22-33.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-28-16-23-52.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-09-32-04.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-09-44-02.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-09-52-33.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-10-23-16.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-13-21-28.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-13-23-09.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-13-23-26.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-14-12-13.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-14-43-56.png">
+<meta property="article:published_time" content="2025-12-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-12-27T16:00:00.000Z">
+<meta property="article:author" content="张大爆">
+<meta property="article:tag" content="3D打印">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-28-16-17-01.png">
+
+
+<link rel="canonical" href="https://minsummer.com/2025/12/27/225-%E5%88%9B%E4%B8%96%E7%BA%AA2/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://minsummer.com/2025/12/27/225-%E5%88%9B%E4%B8%96%E7%BA%AA2/","path":"2025/12/27/225-创世纪2/","title":"创世纪2"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>创世纪2 | 我是豆豆</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-189642379-1","only_pageview":true,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+
+
+
+  <script data-pjax defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{&quot;token&quot;: &quot;2c44721ef211470c8cb156f38ca476ea&quot;}'></script>
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.1/mermaid.min.js","integrity":"sha256-BmQmdWDS8X2OTbrwELWK366LV6escyWhHHe0XCTU/Hk="}}</script>
+  <script src="/js/third-party/tags/mermaid.js" defer></script>
+
+
+
+  <script src="/js/third-party/pace.js" defer></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
+  <script class="next-config" data-name="katex" type="application/json">{"copy_tex_js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js","integrity":"sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs="}}</script>
+  <script src="/js/third-party/math/katex.js" defer></script>
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3599006834125162"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="我是豆豆" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">我是豆豆</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">吃饭，睡觉，打豆豆</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-那些年遇见的人"><a href="/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/" rel="section"><i class="fa fa-users fa-fw"></i>那些年遇见的人</a></li><li class="menu-item menu-item-技术顾问"><a href="/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/" rel="section"><i class="fa fa-cogs fa-fw"></i>技术顾问</a></li><li class="menu-item menu-item-那本书"><a href="/categories/%E9%82%A3%E6%9C%AC%E4%B9%A6/" rel="section"><i class="fa fa-book fa-fw"></i>那本书</a></li><li class="menu-item menu-item-随想"><a href="/categories/%E9%9A%8F%E6%83%B3/" rel="section"><i class="fa fa-commenting fa-fw"></i>随想</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">406</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">224</span></a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#klipper"><span class="nav-number">1.</span> <span class="nav-text"> klipper</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text"> 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7"><span class="nav-number">3.</span> <span class="nav-text"> 升级</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E8%B0%83%E5%B9%B3"><span class="nav-number">3.1.</span> <span class="nav-text"> 自动调平</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B1%E6%8C%AF%E8%A1%A5%E5%81%BF"><span class="nav-number">3.2.</span> <span class="nav-text"> 共振补偿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%91%84%E5%83%8F%E5%A4%B4"><span class="nav-number">3.3.</span> <span class="nav-text"> 摄像头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E4%BE%9B%E6%96%99%E7%B3%BB%E7%BB%9F"><span class="nav-number">3.4.</span> <span class="nav-text"> 自动供料系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%8D%B0%E6%9D%BFpei%E6%9D%BF"><span class="nav-number">3.5.</span> <span class="nav-text"> 打印板【PEI板 】</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%90%8E"><span class="nav-number">4.</span> <span class="nav-text"> 最后</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">张大爆</p>
+  <div class="site-description" itemprop="description">经常会忘记一些东西，用这里来记录我们曾经来过</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">224</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">406</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/android1122" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;android1122" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:noway@minsummer.com" title="E-Mail → mailto:noway@minsummer.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://speedtt.minsummer.com/" title="https:&#x2F;&#x2F;speedtt.minsummer.com&#x2F;" rel="noopener" target="_blank">共享机场-移动</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://speedttsjc.minsummer.com/" title="https:&#x2F;&#x2F;speedttsjc.minsummer.com&#x2F;" rel="noopener" target="_blank">共享机场-三网</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wangergoudebaobaodian.taobao.com/" title="https:&#x2F;&#x2F;wangergoudebaobaodian.taobao.com&#x2F;" rel="noopener" target="_blank">淘宝店</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://minsummer.com/2025/12/27/225-%E5%88%9B%E4%B8%96%E7%BA%AA2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="张大爆">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我是豆豆">
+      <meta itemprop="description" content="经常会忘记一些东西，用这里来记录我们曾经来过">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="创世纪2 | 我是豆豆">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          创世纪2
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-12-28 00:00:00" itemprop="dateCreated datePublished" datetime="2025-12-28T00:00:00+08:00">2025-12-28</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>4.1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>15 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>这一篇是升级3D打印机的教程，包括：klipper固件安装和升级，然后就是校准和其他。</p>
+<span id="more"></span>
+<h2 id="klipper"><a class="markdownIt-Anchor" href="#klipper"></a> klipper</h2>
+<p>Klipper是3D打印机固件。它将通用计算机的运算能力与一个或多个微控制器相结合。它给你带来的是更好的用户操作界面，更强大的网络管理功能以及共振补偿等这些黑科技。<br />
+首先我们需要一个klipper的载体，俗称上位机，对应的MKS-Robin主板就是下位机，微控制器。通过klipper操作下位机达到提高打印效果的目的。我这边用的是一个之前买的机顶盒CM311-a。这边对上位机就两个要求：1. 可以运行debian系统即可，armdian这种专门为了arm设备配置的debian系统也可以。2. 有个USB-A插口。【最便宜的方案是红米A2，改装好60+，自带触摸屏】<br />
+系统要求是为了运行python，而USB插口是为了连接上下位机的。传统的工业设备上下位机连接会用专门的线束，而我们只需要一个USB连接线即可。下位机一般都会有个USB插口，有可能是双USB-A接口的，因为3D打印机有时候会用U盘进行打印，所以这种接口是最易得的。<br />
+确定好上位机载体之后就需要做两件事：</p>
+<ol>
+<li>
+<p>给上位机刷Klipper固件。<br />
+这一步很简单，有专门的脚本<a target="_blank" rel="noopener" href="https://github.com/dw-0/kiauh">kiauh</a>，全称是：Klipper Installation And Update Helper，安装和升级脚本，网页上有教程，复制命令即可。<br />
+这块需要注意的是，脚本不允许用root执行，这块需要将一个新用户，然后给他sudo的权限，可以参照命令：</p>
+<blockquote>
+<p>sudo adduser username -增加用户<br />
+sudo usermod -aG sudo username -增加用户权限<br />
+groups username -确认用户权限是否在用户组内</p>
+</blockquote>
+<p>这里我遇见的问题是，默认登录用户是root，然后我用su username进行切换，直接切换到username这个用户，但是没有把对应的用户文件夹给切换过来，如果你知道用户文件夹在根文件home下面的话还好，会切换。所以我建议使用<code>su - username</code>这个命令进行切换用户，这个会模拟完整的shell登录过程，将你带到这个用户的文件夹下，这样你执行<code>./kiauh/kiauh.sh</code>这些命令的时候，就不会提示找:<strong>不到文件夹或者没有对应的权限</strong>。【是的，你用klipper在root的用户文件夹操作那肯定不可能有权限，哪怕这个文件就在那】。   现在其实有了deepseek等工具，命令这些都可以现找的，我更加看中的是问对问题，而不是如何解决</p>
+</li>
+<li>
+<p>给下位机刷可以被klipper固件控制的固件<br />
+这块也很简单，首先找到你的你的主板型号，比如我得MKS-Robin V2.4，如果你是MKS主板，那么去<a target="_blank" rel="noopener" href="https://github.com/makerbase-mks/Klipper-for-MKS-Boards">这里</a>找到所有的MKS主板对应的klippe固件和配置。就是这么简单，我得机器刷固件只要把对应文档的固件放到SD卡里去，然后开机就会自动刷入里面还有张图片就是配置klipper，让上位机知道如何操作下位机的配置图。</p>
+</li>
+</ol>
+<p>后续就是用一条USB线连接上位机和下位机，进行配置和连接，一切顺利之后，你就可以在网页端看到界面，并且操作后续的。这块网上有很多教程，也没什么好讲的，原理就是刷两边相同的固件即可，这里需要提一句好多人希望通过klipper上位机刷下位机固件的，比如<a href="bilibili.com/video/BV1dqUXYMEZE/?spm_id_from=333.1391.0.0">这个视频</a>，但是很多人操作之后，提示：flash Error 255，下面很多评论都不知道为啥。其实这个原因在于它开头的时候是按着开关机按钮插电源的，这样的话，对应它这块主板进入到了DUF模式【主板DFU模式（Device Firmware Upgrade）是设备固件升级模式】，所以如果你按照它这么操作，有可能行，有可能失败。原因是不是所有主板都有DFU模式，其次是进入DFU的方法有可能不是这样，这个视频是直接进入主板的DFU模式，然后通过klipper脚本将下位机固件刷写的。</p>
+<h2 id="配置"><a class="markdownIt-Anchor" href="#配置"></a> 配置</h2>
+<p>在编写完成之后，进入后台界面，开始编写配置，一般主板厂商会提供一份基础配置，里面大部分数据是对的，尤其是针脚【pin】这块，因为大部分接口都是固定的，比如电机，热敏之类的。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-28-16-17-01.png" alt="225-创世纪2-2025-12-28-16-17-01" /><br />
+所以你只需要在那份文件上修改，然后再增加一些配置即可。<br />
+这里顺便说下如何查看针脚代码，以这款主板为例：我将散热分散没有接到对应的接口上，反而接到的是<code>挤出口1</code>这个接口，所以我用主板给的配置文件，导致我一开始启动之后散热风扇不运行。现在有两种方案：1. 拆机然后把电风扇的电线接到对应的接线口上。2. 找到<code>挤出口1</code>的针脚，告诉系统这个地方被我拿来当风扇了。<br />
+首先找到主板上对应位置的喷码，可以看主板，也可以看电路图。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-28-16-22-33.png" alt="225-创世纪2-2025-12-28-16-22-33" />，<br />
+然后找到对应主板的针脚图，找到HEATER1，看到对应的针脚是PC7，修改针脚即可。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-28-16-23-52.png" alt="225-创世纪2-2025-12-28-16-23-52" /><br />
+另外这边我遇见的困难是FAN和heater_fan是两个不同的参数，我这边的电风扇是热头的散热风扇，所以要用heater_fan，而前者则是热床或者打印件的散热，这块可以自由定义。<br />
+最后附上我得配置和描述</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line">[include fluidd.cfg] #不管</span><br><span class="line"></span><br><span class="line">[virtual_sdcard]#不管</span><br><span class="line">path: /home/klipper/printer_data/gcodes</span><br><span class="line">on_error_gcode: CANCEL_PRINT</span><br><span class="line"></span><br><span class="line">[mcu]#对应下位机连接的接口</span><br><span class="line">serial: /dev/serial/by-id/usb-1a86_USB2.0-Serial-if00-port0</span><br><span class="line">restart_method: command #推荐，这样编写完成代码之后自动重启下位机</span><br><span class="line"></span><br><span class="line">[printer]</span><br><span class="line">kinematics: corexy #3D打印机的结构类型</span><br><span class="line">max_velocity: 150 #最大速度限制，保险而已，最终速度由你的切片配置决定</span><br><span class="line">max_accel: 1500</span><br><span class="line">max_z_velocity: 10</span><br><span class="line">max_z_accel: 100</span><br><span class="line"></span><br><span class="line">[stepper_x] #x轴配置</span><br><span class="line">step_pin: PB8</span><br><span class="line">dir_pin: PB5</span><br><span class="line">enable_pin: !PB9</span><br><span class="line">microsteps: 16 #电机的细分，这里是16细分</span><br><span class="line">full_steps_per_rotation: 200 #步进电机一次旋转的完整步数</span><br><span class="line">rotation_distance: 40</span><br><span class="line">endstop_pin: !PB12  # PB0 for X-max; endstop have&#x27;!&#x27; is NO</span><br><span class="line">position_endstop: 0</span><br><span class="line">position_max: 200</span><br><span class="line">homing_speed: 10</span><br><span class="line">homing_retract_dist: 10</span><br><span class="line"></span><br><span class="line">[stepper_y]</span><br><span class="line">step_pin: PG15</span><br><span class="line">dir_pin: PG10</span><br><span class="line">enable_pin: !PB4</span><br><span class="line">microsteps: 16</span><br><span class="line">rotation_distance: 40</span><br><span class="line">full_steps_per_rotation: 200</span><br><span class="line">endstop_pin: !PC5  # PC4 for Y-max; endstop have&#x27;!&#x27; is NO</span><br><span class="line">position_endstop: 0</span><br><span class="line">position_max: 200</span><br><span class="line">homing_speed: 10</span><br><span class="line">homing_retract_dist: 10</span><br><span class="line"></span><br><span class="line">[stepper_z]</span><br><span class="line">step_pin: PD3</span><br><span class="line">dir_pin: !PG14</span><br><span class="line">enable_pin: !PD7</span><br><span class="line">microsteps: 16</span><br><span class="line">rotation_distance: 8</span><br><span class="line">endstop_pin: !PA4  # PF7 for Z-max; endstop have&#x27;!&#x27; is NO</span><br><span class="line">position_endstop: 0</span><br><span class="line">position_max: 200</span><br><span class="line">homing_speed: 25</span><br><span class="line"></span><br><span class="line">[extruder]</span><br><span class="line">step_pin: PG8</span><br><span class="line">dir_pin: PA15</span><br><span class="line">enable_pin: !PG13</span><br><span class="line">microsteps: 16</span><br><span class="line">rotation_distance: 36</span><br><span class="line">nozzle_diameter: 0.400</span><br><span class="line">filament_diameter: 1.750</span><br><span class="line">heater_pin: PC7</span><br><span class="line">sensor_type: EPCOS 100K B57560G104F</span><br><span class="line">sensor_pin: PC1</span><br><span class="line">control: pid</span><br><span class="line">pid_Kp: 22</span><br><span class="line">pid_Ki: 1.08</span><br><span class="line">pid_Kd: 114</span><br><span class="line">min_temp: 0</span><br><span class="line">max_temp: 250</span><br><span class="line"></span><br><span class="line">[heater_bed]</span><br><span class="line">heater_pin: PC6</span><br><span class="line">sensor_type: EPCOS 100K B57560G104F</span><br><span class="line">sensor_pin: PC0</span><br><span class="line">control: pid</span><br><span class="line">pid_Kp: 22</span><br><span class="line">pid_Ki: 1.08</span><br><span class="line">pid_Kd: 114</span><br><span class="line">min_temp: 0</span><br><span class="line">max_temp: 130</span><br><span class="line"></span><br><span class="line">[temperature_sensor MCU_Temperature] #mcu温度传感器</span><br><span class="line">sensor_type: temperature_mcu</span><br><span class="line">sensor_mcu: mcu</span><br><span class="line"></span><br><span class="line">[temperature_sensor KLIPPER_sensor]#上位机温度传感器</span><br><span class="line">sensor_type: temperature_host</span><br><span class="line">sensor_path: /sys/devices/virtual/thermal/thermal_zone0/temp #上位机温度</span><br><span class="line"></span><br><span class="line">[heater_fan heatbreak_cooling_fan] #加热器风扇和打印冷却风扇不一样</span><br><span class="line">pin: PA6</span><br><span class="line">heater: extruder #定义哪个加热器</span><br><span class="line">heater_temp: 50.0 #当加热器温度高于这个值时风扇才会启动</span><br><span class="line"></span><br><span class="line">[filament_switch_sensor file_sensor]</span><br><span class="line">pause_on_runout: True</span><br><span class="line">switch_pin: !PF11</span><br></pre></td></tr></table></figure>
+<p>这块推荐去看官方文档，说明的很详细，有中文，一些英文未翻译的可以直接翻译软件，不难，这边就解释两个概念，热床和挤出机加热的时候有两种控制方式：</p>
+<ol>
+<li>PID<br />
+pid_Kp:22<br />
+pid_Ki:1.08<br />
+pid_Kd:144<br />
+PID 反馈控制系统的比例 (pid_Kp)、积分 (pid_Ki) 和微分 (pid_Kd) 设置。Klipper 使用以下通用公式评估 PID 设置：<br />
+heater_pwm = (Kp<em>error + Ki</em>integral(error) - Kd*derivative(error)) / 255<br />
+其中“error”为“requested_temperature - measured_temperature”，“heater_pwm”为所需的加热速率，0.0 表示完全关闭，1.0 表示完全开启。建议使用 PID_CALIBRATE 命令来获取这些参数。对于 PID 加热器，必须提供 pid_Kp、pid_Ki 和 pid_Kd 参数。</li>
+<li>watermark<br />
+通过max_delta: 2.0控制，当温度高于目标温度2度时候就停止，低于目标温度2度的话就开始加热。</li>
+</ol>
+<p>一般推荐用PID，参数照搬即可，有大佬可以研究下公式。我试过了，尽力了。<br />
+至此，我们的打印机就可以正常且愉快的使用了，剩下的就是如何升级。</p>
+<h2 id="升级"><a class="markdownIt-Anchor" href="#升级"></a> 升级</h2>
+<p>正如我之前所说的，我买的这台是杂牌的机器，但是基础的框架是没问题的，系统现在我也改成klipper，虽然对线不了大牌，但是还是可以满足我得需求，但是由于先天硬件不行，还是有很多地方可以改进的，或者说如果你不知道如何升级，那么直接看最新品牌机，看看同样结构下它能做到什么，你这台机器大概率也可以，推荐看纵维立方这个牌子，别看拓竹，他们定制和开发了太多了。</p>
+<h3 id="自动调平"><a class="markdownIt-Anchor" href="#自动调平"></a> 自动调平</h3>
+<p>细心的朋友看出来了，我上面的配置里面是没有调平配置的，这是由于我在刷机之前刚刚调平过，就偷个懒，这边说下klipper支持的主流的调平方案和缺点吧，我查了下现在主流大厂都靠多点+压力来堆精度的。<br />
+1.BLTouch 探针/3DTouch 探针<br />
+都是一回事，后者是国内版本的，就是在挤出头旁边增加一个这个玩意，它一旦触碰到平台就会弹回，同时告诉系统到达平面了。这个算是最早开发出来的自动调平方案，缺点就是：大和丑，这么一大块就放在挤出头旁边。价格便宜：35-45之间<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-09-32-04.png" alt="225-创世纪2-2025-12-29-09-32-04" /><br />
+2. 热床压力传感器<br />
+这块是Duet 3D提出的，现在拓竹X1和P1系统用的就是这个方案，在热床四周放置这个传感器，然后通过挤出头去触碰特定区域，来确定是否平整，缺点是定点，比如四个点，但是中心或者别的地方有时候会因为各种原因突起，价格一个：39官方，普通的20一个，至少需要4个。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-09-44-02.png" alt="225-创世纪2-2025-12-29-09-44-02" /><br />
+3. 涡流感应探头<br />
+这个有个大前提：<code>具有均匀磁场的导电金属热床</code>，原理可以看图，很简单的东西，价格我找了几家都100+的，这块你买的时候需要注意看下自己主板是否还有位置，有can总线和USB接口两种，需要看下主板是否有相对应的位置。至于前提，一般有热床的都满足要求，缺点是看产品，有反应说不准的情况。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-09-52-33.png" alt="225-创世纪2-2025-12-29-09-52-33" /><br />
+4. 接近开关<br />
+就是一个距离传感器，靠近到多少就停止了，需要注意的是它的检测目标有一些是有限制的，比如检测铁制品之类的成功率高点。价格:5-100都有，贵的一般就是小型化，如果你用的是那种工业用大家伙，也就五六块<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-10-23-16.png" alt="225-创世纪2-2025-12-29-10-23-16" /><br />
+5. 挤出头压力传感器<br />
+这种方案是比较难，因为对挤出头得适配，简单说就是靠挤出头去接触热床，然后触发。类似BLTouch 探针，但是集成度更高，这块目前淘宝上还没有多少方案就是。</p>
+<p>在自动调平这块，配置不是难点，只要你选择好方式之后购买相对应的模块就行，现在网上方案很多，大部分都是可以匹配你的挤出头。归根下来其实就是接触和非接触式得，现在大多数人使用的就是klicky，也是3DTouch 探针得变种，不过我觉他好麻烦就是。</p>
+<h3 id="共振补偿"><a class="markdownIt-Anchor" href="#共振补偿"></a> 共振补偿</h3>
+<p>共振补偿这块klipper这块有一个比较麻烦得方案，就是打印出特定模型，然后手工测量共振幅度，然后调整，其实这块有个更加简单得处理方式，就是增加一个加速度传感计，比如ADXL345，这块得难点在于，由于角度传感器需要特定得安装角度，而且还需要固定住，所以你需要找一个合适得地方安装就是。然后就是接线：<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-13-21-28.png" alt="225-创世纪2-2025-12-29-13-21-28" /><br />
+官方推荐使用SPI接线模式，SPI接口的关键组成 (4线)：<br />
+SCLK (Serial Clock)：串行时钟线，由主机产生，用于同步数据传输。<br />
+MOSI (Master Out Slave In)：主设备数据输出、从设备数据输入线。<br />
+MISO (Master In Slave Out)：主设备数据输入、从设备数据输出线。<br />
+CS (Chip Select)：片选信号（也叫NSS），由主机控制，用于选择与哪个从设备通信<br />
+这时候你就要看下你得主板是否还有足够得针脚，还是以我的MKS Robin 为例，预留了几个拓展：<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-13-23-09.png" alt="225-创世纪2-2025-12-29-13-23-09" /><br />
+然后去查询对应得针脚：<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-13-23-26.png" alt="225-创世纪2-2025-12-29-13-23-26" /><br />
+这边我们可以看到我们缺少一个输出MOSI，但是其实我们有4个还未定义得GPIO针脚，所以理论上是可以定义GPIO针脚增加一个MOSI。或者你使用SD上面得针脚<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-14-12-13.png" alt="225-创世纪2-2025-12-29-14-12-13" /><br />
+但是需要注意，这个走的是SD卡得同一条路线，如果有SD卡得话，这个就用不了。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-14-43-56.png" alt="225-创世纪2-2025-12-29-14-43-56" /></p>
+<h3 id="摄像头"><a class="markdownIt-Anchor" href="#摄像头"></a> 摄像头</h3>
+<p>摄像头直接买个USB免驱得即可，注意下你需要得参数：</p>
+<blockquote>
+<p>像素/分辨率：这块买的时候对方会故意混肴，像素是机械性能，分辨率则是最后成品，有时候高像素为了展示效果会降低生产视频得分辨率，这个很正常，比如用了畸变得镜头需要处理掉一些边脚。现在推荐200-400万像素，分辨率在1080P以上为佳<br />
+镜头焦距焦距和像素是两回事，焦距是镜头，而上面像素是MOS芯片，要看它给相机配置得镜头焦距，我们由于在狭窄空间内使用，需要焦距小得，看得近，视角范围大，推荐2.8MM的<br />
+协议:UVC协议，这个就是USB免驱的</p>
+</blockquote>
+<p>如果你觉得自己购买太麻烦了话，有一个直接简单的解决方法：星云摄像头。创想三维3D打印机官方配件，现在150多就是。<br />
+这边建议像素高点，后续可以自己培训YOLO进行判断是否打印坏了，这是目前大多数厂商使用的方案，可以在打印过程中每几分钟拍一张照片，然后如果有坏的照片可以作为训练数据，后期用上位机或者另外一个机器进行判断，本身klipper就是python写的，这块连接很方便，期待大佬开发吧。</p>
+<h3 id="自动供料系统"><a class="markdownIt-Anchor" href="#自动供料系统"></a> 自动供料系统</h3>
+<p>自动供料带来得还有多色打印，但是个人对这块并没有太多需求，目前也有对应得开源方案，比如：兔子多色，这块如果你有需求可以直接看<a target="_blank" rel="noopener" href="https://vorondesign.com/">VORON</a>上面有具体得结构说明书。看到这里大多数人入坑3D打印其实是看到网上哪些色彩鲜艳的模型，前几年大多数人都是买单色的，然后回去自己上色的。现在</p>
+<h3 id="打印板pei板"><a class="markdownIt-Anchor" href="#打印板pei板"></a> 打印板【PEI板 】</h3>
+<p>目前使用的是晶格玻璃热床，目前没有想法换成打印板，玻璃的话只要冷却了之后还是很好取模的，平面度也还可以。</p>
+<h2 id="最后"><a class="markdownIt-Anchor" href="#最后"></a> 最后</h2>
+<p>不要陷入完美主义，如果你想要完美，那么建议直接<a target="_blank" rel="noopener" href="https://vorondesign.com/">VORON</a>，它就是3D打印机最后的形态了。<br />
+如果你没有做好<strong>万分</strong>准备，不要去动一个可以运行的系统，切记，不要去动。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/3D%E6%89%93%E5%8D%B0/" rel="tag"># 3D打印</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/12/21/224-%E5%88%9B%E4%B8%96%E7%BA%AA/" rel="prev" title="创世纪">
+                  <i class="fa fa-angle-left"></i> 创世纪
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 国窖1573 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">张大爆</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">356k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">21:35</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/android1122" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"android1122","repo":"hexo-blog","client_id":"6950c9229796295b9867","client_secret":"9af4438d89e7a09669ec33d632ba554589a1f7d7","admin_user":"android1122","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"6e1a0b59d2e3d3c74eb80cf52b85da5a"}</script>
+<script src="/js/third-party/comments/gitalk.js" defer></script>
+
+</body>
+</html>
