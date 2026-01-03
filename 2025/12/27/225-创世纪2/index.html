@@ -34,6 +34,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-28-16-23-52.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-09-32-04.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-09-44-02.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2026-01-03-09-18-34.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-09-52-33.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-10-23-16.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-13-21-28.png">
@@ -41,6 +42,8 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-13-23-26.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-14-12-13.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-14-43-56.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2026-01-03-09-30-18.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2026-01-03-09-39-46.png">
 <meta property="article:published_time" content="2025-12-27T16:00:00.000Z">
 <meta property="article:modified_time" content="2025-12-27T16:00:00.000Z">
 <meta property="article:author" content="张大爆">
@@ -316,14 +319,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.1k</span>
+      <span>4.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>15 分钟</span>
+      <span>17 分钟</span>
     </span>
 </div>
 
@@ -357,7 +360,7 @@ groups username -确认用户权限是否在用户组内</p>
 这块也很简单，首先找到你的你的主板型号，比如我得MKS-Robin V2.4，如果你是MKS主板，那么去<a target="_blank" rel="noopener" href="https://github.com/makerbase-mks/Klipper-for-MKS-Boards">这里</a>找到所有的MKS主板对应的klippe固件和配置。就是这么简单，我得机器刷固件只要把对应文档的固件放到SD卡里去，然后开机就会自动刷入里面还有张图片就是配置klipper，让上位机知道如何操作下位机的配置图。</p>
 </li>
 </ol>
-<p>后续就是用一条USB线连接上位机和下位机，进行配置和连接，一切顺利之后，你就可以在网页端看到界面，并且操作后续的。这块网上有很多教程，也没什么好讲的，原理就是刷两边相同的固件即可，这里需要提一句好多人希望通过klipper上位机刷下位机固件的，比如<a href="bilibili.com/video/BV1dqUXYMEZE/?spm_id_from=333.1391.0.0">这个视频</a>，但是很多人操作之后，提示：flash Error 255，下面很多评论都不知道为啥。其实这个原因在于它开头的时候是按着开关机按钮插电源的，这样的话，对应它这块主板进入到了DUF模式【主板DFU模式（Device Firmware Upgrade）是设备固件升级模式】，所以如果你按照它这么操作，有可能行，有可能失败。原因是不是所有主板都有DFU模式，其次是进入DFU的方法有可能不是这样，这个视频是直接进入主板的DFU模式，然后通过klipper脚本将下位机固件刷写的。</p>
+<p>后续就是用一条USB线连接上位机和下位机，进行配置和连接，一切顺利之后，你就可以在网页端看到界面，并且操作后续的校准。这块网上有很多教程，也没什么好讲的，原理就是刷两边相同的固件即可，这里需要提一句好多人希望通过klipper上位机刷下位机固件的，比如<a href="bilibili.com/video/BV1dqUXYMEZE/?spm_id_from=333.1391.0.0">这个视频</a>，但是很多人操作之后，提示：flash Error 255，下面很多评论都不知道为啥。其实这个原因在于它开头的时候是按着开关机按钮插电源的，这样的话，对应它这块主板进入到了DUF模式【主板DFU模式（Device Firmware Upgrade）是设备固件升级模式】，所以如果你按照它这么操作，有可能行，有可能失败。原因是不是所有主板都有DFU模式，其次是进入DFU的方法有可能不是这样，这个视频是直接进入主板的DFU模式，然后通过klipper脚本将下位机固件刷写的。</p>
 <h2 id="配置"><a class="markdownIt-Anchor" href="#配置"></a> 配置</h2>
 <p>在编写完成之后，进入后台界面，开始编写配置，一般主板厂商会提供一份基础配置，里面大部分数据是对的，尤其是针脚【pin】这块，因为大部分接口都是固定的，比如电机，热敏之类的。<br />
 <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-28-16-17-01.png" alt="225-创世纪2-2025-12-28-16-17-01" /><br />
@@ -387,22 +390,76 @@ heater_pwm = (Kp<em>error + Ki</em>integral(error) - Kd*derivative(error)) / 255
 <h2 id="升级"><a class="markdownIt-Anchor" href="#升级"></a> 升级</h2>
 <p>正如我之前所说的，我买的这台是杂牌的机器，但是基础的框架是没问题的，系统现在我也改成klipper，虽然对线不了大牌，但是还是可以满足我得需求，但是由于先天硬件不行，还是有很多地方可以改进的，或者说如果你不知道如何升级，那么直接看最新品牌机，看看同样结构下它能做到什么，你这台机器大概率也可以，推荐看纵维立方这个牌子，别看拓竹，他们定制和开发了太多了。</p>
 <h3 id="自动调平"><a class="markdownIt-Anchor" href="#自动调平"></a> 自动调平</h3>
-<p>细心的朋友看出来了，我上面的配置里面是没有调平配置的，这是由于我在刷机之前刚刚调平过，就偷个懒，这边说下klipper支持的主流的调平方案和缺点吧，我查了下现在主流大厂都靠多点+压力来堆精度的。<br />
-1.BLTouch 探针/3DTouch 探针<br />
+<p>细心的朋友看出来了，我上面的配置里面是没有调平配置的，这是由于我在刷机之前刚刚调平过，就偷个懒，这边说下klipper支持的主流的调平方案和缺点吧。</p>
+<ol>
+<li>
+<p>接触式</p>
+<ol>
+<li>BLTouch 探针/3DTouch 探针<br />
 都是一回事，后者是国内版本的，就是在挤出头旁边增加一个这个玩意，它一旦触碰到平台就会弹回，同时告诉系统到达平面了。这个算是最早开发出来的自动调平方案，缺点就是：大和丑，这么一大块就放在挤出头旁边。价格便宜：35-45之间<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-09-32-04.png" alt="225-创世纪2-2025-12-29-09-32-04" /><br />
-2. 热床压力传感器<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-09-32-04.png" alt="225-创世纪2-2025-12-29-09-32-04" />
+<ul>
+<li>优点：配置简单，直接一个架子安装以下即可</li>
+<li>缺点：复制版价格便宜，传感器是贴片得，用久了会有灵敏度的问题。</li>
+</ul>
+<ol>
+<li>热床压力传感器<br />
 这块是Duet 3D提出的，现在拓竹X1和P1系统用的就是这个方案，在热床四周放置这个传感器，然后通过挤出头去触碰特定区域，来确定是否平整，缺点是定点，比如四个点，但是中心或者别的地方有时候会因为各种原因突起，价格一个：39官方，普通的20一个，至少需要4个。<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-09-44-02.png" alt="225-创世纪2-2025-12-29-09-44-02" /><br />
-3. 涡流感应探头<br />
-这个有个大前提：<code>具有均匀磁场的导电金属热床</code>，原理可以看图，很简单的东西，价格我找了几家都100+的，这块你买的时候需要注意看下自己主板是否还有位置，有can总线和USB接口两种，需要看下主板是否有相对应的位置。至于前提，一般有热床的都满足要求，缺点是看产品，有反应说不准的情况。<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-09-52-33.png" alt="225-创世纪2-2025-12-29-09-52-33" /><br />
-4. 接近开关<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-09-44-02.png" alt="225-创世纪2-2025-12-29-09-44-02" />
+<ul>
+<li>优点：还是配置简单，是个固定螺丝安装一下就行</li>
+<li>缺点：调平是能调平，但是无法测准整个平面的</li>
+</ul>
+</li>
+<li>klicky<br />
+一个用鼠标微动，磁铁构成的调频装置，结构简单，而且不用担心灵敏度问题，通过磁铁传输信号，最重要的是测准精度好。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2026-01-03-09-18-34.png" alt="225-创世纪2-2026-01-03-09-18-34" />
+<ul>
+<li>优点：简单，准确，价格便宜</li>
+<li>缺点：配置比较复杂，需要打印头特定路径才可以测准</li>
+</ul>
+</li>
+<li>挤出头压力传感器/VORON Tap<br />
+通过一个光电感应，来判断是否打印头是否和平面接触，目前这个方案就VORON在用，其他的用的少
+<ul>
+<li>优点：准确</li>
+<li>缺点：结构复杂需要结构上的支持，还有就是价格贵，需要线轨</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>非接触式</p>
+<ol>
+<li>涡流感应探头<br />
+这个有个大前提：<code>具有均匀磁场的导电金属热床</code>，原理可以看图，很简单的东西，价格我找了几家都100+的，这块你买的时候需要注意看下自己主板是否还有位置，有can总线和USB接口两种，需要看下主板是否有相对应的位置。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-09-52-33.png" alt="225-创世纪2-2025-12-29-09-52-33" />
+<ul>
+<li>优点：配置简单，一个线，一个固定结构即可</li>
+<li>缺点：贵，需要热传支持，受温度和磁场影响，但是3d打印机里面有好多电机</li>
+</ul>
+</li>
+<li>接近开关<br />
 就是一个距离传感器，靠近到多少就停止了，需要注意的是它的检测目标有一些是有限制的，比如检测铁制品之类的成功率高点。价格:5-100都有，贵的一般就是小型化，如果你用的是那种工业用大家伙，也就五六块<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-10-23-16.png" alt="225-创世纪2-2025-12-29-10-23-16" /><br />
-5. 挤出头压力传感器<br />
-这种方案是比较难，因为对挤出头得适配，简单说就是靠挤出头去接触热床，然后触发。类似BLTouch 探针，但是集成度更高，这块目前淘宝上还没有多少方案就是。</p>
-<p>在自动调平这块，配置不是难点，只要你选择好方式之后购买相对应的模块就行，现在网上方案很多，大部分都是可以匹配你的挤出头。归根下来其实就是接触和非接触式得，现在大多数人使用的就是klicky，也是3DTouch 探针得变种，不过我觉他好麻烦就是。</p>
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-10-23-16.png" alt="225-创世纪2-2025-12-29-10-23-16" />
+<ul>
+<li>优点：配置简单</li>
+<li>缺点：对热床有要求，准确性看产品</li>
+</ul>
+</li>
+<li>视觉校准<br />
+热传上有特定的图案，然后根据摄像头进行校准，个人DIY难度巨大，不仅要求热床，还有摄像头角度等，需要大量经验。
+<ul>
+<li>优点：简单，甚至你无需额外投入</li>
+<li>缺点：一般人搞不定，搞定的人直接VORON</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<p>在自动调平这块，配置不是难点，只要你选择好方式之后购买相对应的模块就行，现在大多数人使用的就是klicky，从精准度和结构上来说，它是最简单易得的，很符合DIY的特点。</p>
 <h3 id="共振补偿"><a class="markdownIt-Anchor" href="#共振补偿"></a> 共振补偿</h3>
 <p>共振补偿这块klipper这块有一个比较麻烦得方案，就是打印出特定模型，然后手工测量共振幅度，然后调整，其实这块有个更加简单得处理方式，就是增加一个加速度传感计，比如ADXL345，这块得难点在于，由于角度传感器需要特定得安装角度，而且还需要固定住，所以你需要找一个合适得地方安装就是。然后就是接线：<br />
 <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-13-21-28.png" alt="225-创世纪2-2025-12-29-13-21-28" /><br />
@@ -418,22 +475,35 @@ CS (Chip Select)：片选信号（也叫NSS），由主机控制，用于选择�
 这边我们可以看到我们缺少一个输出MOSI，但是其实我们有4个还未定义得GPIO针脚，所以理论上是可以定义GPIO针脚增加一个MOSI。或者你使用SD上面得针脚<br />
 <img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-14-12-13.png" alt="225-创世纪2-2025-12-29-14-12-13" /><br />
 但是需要注意，这个走的是SD卡得同一条路线，如果有SD卡得话，这个就用不了。<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-14-43-56.png" alt="225-创世纪2-2025-12-29-14-43-56" /></p>
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2025-12-29-14-43-56.png" alt="225-创世纪2-2025-12-29-14-43-56" /><br />
+需要注意：</p>
+<ul>
+<li>SPI是高速通讯模式，所以一般对线的要求比较高，最好不要超过30厘米，而且最好有屏蔽</li>
+</ul>
+<p>当然，你说有没有一种简单有愉快的方式接入传感器呢？有的呢，兄弟，有的<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2026-01-03-09-30-18.png" alt="225-创世纪2-2026-01-03-09-30-18" /><br />
+自带一个RP2040的微处理器，省去了接线的麻烦，通过USB线直接和上位机通讯。</p>
+<ul>
+<li>优点：简单，不用担心SPI通讯干扰，而且自带安装孔位。</li>
+<li>缺点：40元，是自己接线的2倍</li>
+</ul>
 <h3 id="摄像头"><a class="markdownIt-Anchor" href="#摄像头"></a> 摄像头</h3>
 <p>摄像头直接买个USB免驱得即可，注意下你需要得参数：</p>
 <blockquote>
-<p>像素/分辨率：这块买的时候对方会故意混肴，像素是机械性能，分辨率则是最后成品，有时候高像素为了展示效果会降低生产视频得分辨率，这个很正常，比如用了畸变得镜头需要处理掉一些边脚。现在推荐200-400万像素，分辨率在1080P以上为佳<br />
-镜头焦距焦距和像素是两回事，焦距是镜头，而上面像素是MOS芯片，要看它给相机配置得镜头焦距，我们由于在狭窄空间内使用，需要焦距小得，看得近，视角范围大，推荐2.8MM的<br />
-协议:UVC协议，这个就是USB免驱的</p>
+<p>像素/分辨率：这块买的时候对方会故意混肴，像素是机械性能，分辨率则是最后成品，有时候高像素为了展示效果会降低生产视频得分辨率，这个很正常，比如用了畸变得镜头需要处理掉一些边脚。现在推荐200-400万像素，分辨率在1080P以上为佳。<br />
+镜头焦距焦距和像素是两回事，焦距是镜头，而上面像素是MOS芯片，要看它给相机配置得镜头焦距，我们由于在狭窄空间内使用，需要焦距小得，看得近，视角范围大，推荐2.8MM的。<br />
+协议:UVC协议，这个就是USB免驱的。</p>
 </blockquote>
 <p>如果你觉得自己购买太麻烦了话，有一个直接简单的解决方法：星云摄像头。创想三维3D打印机官方配件，现在150多就是。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E5%88%9B%E4%B8%96%E7%BA%AA2-2026-01-03-09-39-46.png" alt="225-创世纪2-2026-01-03-09-39-46" /><br />
 这边建议像素高点，后续可以自己培训YOLO进行判断是否打印坏了，这是目前大多数厂商使用的方案，可以在打印过程中每几分钟拍一张照片，然后如果有坏的照片可以作为训练数据，后期用上位机或者另外一个机器进行判断，本身klipper就是python写的，这块连接很方便，期待大佬开发吧。</p>
 <h3 id="自动供料系统"><a class="markdownIt-Anchor" href="#自动供料系统"></a> 自动供料系统</h3>
-<p>自动供料带来得还有多色打印，但是个人对这块并没有太多需求，目前也有对应得开源方案，比如：兔子多色，这块如果你有需求可以直接看<a target="_blank" rel="noopener" href="https://vorondesign.com/">VORON</a>上面有具体得结构说明书。看到这里大多数人入坑3D打印其实是看到网上哪些色彩鲜艳的模型，前几年大多数人都是买单色的，然后回去自己上色的。现在</p>
+<p>自动供料带来得还有多色打印，但是个人对这块并没有太多需求，目前也有对应得开源方案，比如：兔子多色，这块如果你有需求可以直接看<a target="_blank" rel="noopener" href="https://vorondesign.com/">VORON</a>上面有具体得结构说明书。<br />
+这边多提一嘴：如果你有硬性多色打印需求，那么直接建议你买<code>成品3D打印机</code>，如果你是大佬，那么直接建议<a target="_blank" rel="noopener" href="https://vorondesign.com/">VORON</a>，个人娱乐DIY十分不推荐，结构复杂而且还需要框架支持，在没有更好的解决方案之前，不建议。</p>
 <h3 id="打印板pei板"><a class="markdownIt-Anchor" href="#打印板pei板"></a> 打印板【PEI板 】</h3>
 <p>目前使用的是晶格玻璃热床，目前没有想法换成打印板，玻璃的话只要冷却了之后还是很好取模的，平面度也还可以。</p>
 <h2 id="最后"><a class="markdownIt-Anchor" href="#最后"></a> 最后</h2>
-<p>不要陷入完美主义，如果你想要完美，那么建议直接<a target="_blank" rel="noopener" href="https://vorondesign.com/">VORON</a>，它就是3D打印机最后的形态了。<br />
+<p>不要陷入完美主义，如果你想要完美，那么建议直接<a target="_blank" rel="noopener" href="https://vorondesign.com/">VORON</a>或者拓竹，它就是3D打印机最后的形态了。<br />
 如果你没有做好<strong>万分</strong>准备，不要去动一个可以运行的系统，切记，不要去动。</p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
@@ -508,13 +578,13 @@ CS (Chip Select)：片选信号（也叫NSS），由主机控制，用于选择�
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">356k</span>
+    <span title="站点总字数">357k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">21:36</span>
+    <span title="站点阅读时长">21:38</span>
   </span>
 </div>
 <div class="busuanzi-count">
