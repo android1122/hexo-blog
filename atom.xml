@@ -6,7 +6,7 @@
   <link href="https://minsummer.com/atom.xml" rel="self"/>
   
   <link href="https://minsummer.com/"/>
-  <updated>2025-12-27T16:00:00.000Z</updated>
+  <updated>2026-01-06T16:00:00.000Z</updated>
   <id>https://minsummer.com/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于调平</title>
+    <link href="https://minsummer.com/2026/01/06/222-%E5%85%B3%E4%BA%8E%E8%B0%83%E5%B9%B3/"/>
+    <id>https://minsummer.com/2026/01/06/222-%E5%85%B3%E4%BA%8E%E8%B0%83%E5%B9%B3/</id>
+    <published>2026-01-06T16:00:00.000Z</published>
+    <updated>2026-01-06T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;3D打印机的调平一直是一个比较大的问题，调平的好坏直接影响打印的效果，喷头距离热床太远，直接打面条，太近则会有可能因为热床不平导致喷头在热床上摩擦。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="klipper" scheme="https://minsummer.com/tags/klipper/"/>
+    
+    <category term="3D打印机" scheme="https://minsummer.com/tags/3D%E6%89%93%E5%8D%B0%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>klipper增加摄像头</title>
+    <link href="https://minsummer.com/2026/01/06/226-klipper%E5%A2%9E%E5%8A%A0%E6%91%84%E5%83%8F%E5%A4%B4/"/>
+    <id>https://minsummer.com/2026/01/06/226-klipper%E5%A2%9E%E5%8A%A0%E6%91%84%E5%83%8F%E5%A4%B4/</id>
+    <published>2026-01-06T16:00:00.000Z</published>
+    <updated>2026-01-06T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;给上位机增加一个摄像头就可以方便我们后续检查打印情况，而不是一次次的跑过去看。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="klipper" scheme="https://minsummer.com/tags/klipper/"/>
+    
+    <category term="3D打印" scheme="https://minsummer.com/tags/3D%E6%89%93%E5%8D%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>创世纪2</title>
