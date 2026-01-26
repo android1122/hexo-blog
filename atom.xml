@@ -6,7 +6,7 @@
   <link href="https://minsummer.com/atom.xml" rel="self"/>
   
   <link href="https://minsummer.com/"/>
-  <updated>2026-01-06T16:00:00.000Z</updated>
+  <updated>2026-01-25T16:00:00.000Z</updated>
   <id>https://minsummer.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>klipper下位机MCU丢失</title>
+    <link href="https://minsummer.com/2026/01/25/227-kilpper%E4%B8%8B%E4%BD%8D%E6%9C%BAmcu%E4%B8%A2%E5%A4%B1/"/>
+    <id>https://minsummer.com/2026/01/25/227-kilpper%E4%B8%8B%E4%BD%8D%E6%9C%BAmcu%E4%B8%A2%E5%A4%B1/</id>
+    <published>2026-01-25T16:00:00.000Z</published>
+    <updated>2026-01-25T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;最近我得打印机老是出现下面这个问题&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Lost communication with MCU ‘mcu’&lt;br /&gt;
+Once the underlying issue is corrected, use the&lt;br /&gt;
+“FIRMWARE_RESTART” command to reset the firmware, reload the&lt;br /&gt;
+config, and restart the host software.&lt;br /&gt;
+Printer is shutdown&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;于是就去寻找一下问题得原因。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="klipper" scheme="https://minsummer.com/tags/klipper/"/>
+    
+    <category term="3D打印机" scheme="https://minsummer.com/tags/3D%E6%89%93%E5%8D%B0%E6%9C%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>关于调平</title>
@@ -552,27 +581,6 @@
   </entry>
   
   <entry>
-    <title>《深入浅出统计学》读书笔记</title>
-    <link href="https://minsummer.com/2025/04/24/202-%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%BB%9F%E8%AE%A1%E5%AD%A6%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    <id>https://minsummer.com/2025/04/24/202-%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%BB%9F%E8%AE%A1%E5%AD%A6%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</id>
-    <published>2025-04-24T16:00:00.000Z</published>
-    <updated>2025-04-24T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;之前读过&lt;a href=&quot;https://minsummer.com/2022/07/30/104-%E6%A6%82%E7%8E%87%E8%AE%BA%E5%AF%BC%E8%AE%BA-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/&quot;&gt;《概率论导论》&lt;/a&gt;，但是当时由于是纯粹的数学导论，比较艰涩难懂。这次在《深入浅出统计学》找到了对应的意义，于是就准备再次记录一下。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
-    
-    
-    <category term="概率论导论" scheme="https://minsummer.com/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%AF%BC%E8%AE%BA/"/>
-    
-    <category term="机器学习" scheme="https://minsummer.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
     <title>hexo博客NEXT主题开启数学公式</title>
     <link href="https://minsummer.com/2025/04/24/203-hexo%E5%8D%9A%E5%AE%A2NEXT%E4%B8%BB%E9%A2%98%E5%BC%80%E5%90%AF%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"/>
     <id>https://minsummer.com/2025/04/24/203-hexo%E5%8D%9A%E5%AE%A2NEXT%E4%B8%BB%E9%A2%98%E5%BC%80%E5%90%AF%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</id>
@@ -594,6 +602,27 @@
     <category term="hexo博客" scheme="https://minsummer.com/tags/hexo%E5%8D%9A%E5%AE%A2/"/>
     
     <category term="NEXT主题" scheme="https://minsummer.com/tags/NEXT%E4%B8%BB%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《深入浅出统计学》读书笔记</title>
+    <link href="https://minsummer.com/2025/04/24/202-%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%BB%9F%E8%AE%A1%E5%AD%A6%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    <id>https://minsummer.com/2025/04/24/202-%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%BB%9F%E8%AE%A1%E5%AD%A6%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</id>
+    <published>2025-04-24T16:00:00.000Z</published>
+    <updated>2025-04-24T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;之前读过&lt;a href=&quot;https://minsummer.com/2022/07/30/104-%E6%A6%82%E7%8E%87%E8%AE%BA%E5%AF%BC%E8%AE%BA-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/&quot;&gt;《概率论导论》&lt;/a&gt;，但是当时由于是纯粹的数学导论，比较艰涩难懂。这次在《深入浅出统计学》找到了对应的意义，于是就准备再次记录一下。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="概率论导论" scheme="https://minsummer.com/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%AF%BC%E8%AE%BA/"/>
+    
+    <category term="机器学习" scheme="https://minsummer.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
