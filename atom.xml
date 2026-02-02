@@ -6,7 +6,7 @@
   <link href="https://minsummer.com/atom.xml" rel="self"/>
   
   <link href="https://minsummer.com/"/>
-  <updated>2026-01-25T16:00:00.000Z</updated>
+  <updated>2026-02-01T16:00:00.000Z</updated>
   <id>https://minsummer.com/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>复盘日记</title>
+    <link href="https://minsummer.com/2026/02/01/229-%E5%A4%8D%E7%9B%98%E6%97%A5%E8%AE%B0/"/>
+    <id>https://minsummer.com/2026/02/01/229-%E5%A4%8D%E7%9B%98%E6%97%A5%E8%AE%B0/</id>
+    <published>2026-02-01T16:00:00.000Z</published>
+    <updated>2026-02-01T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;它只是一把刀，它没有好坏。——查拉图斯特拉如是说&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="期货交易" scheme="https://minsummer.com/tags/%E6%9C%9F%E8%B4%A7%E4%BA%A4%E6%98%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>期货交易指北</title>
+    <link href="https://minsummer.com/2026/01/30/228-%E6%9C%9F%E8%B4%A7%E4%BA%A4%E6%98%93%E6%8C%87%E5%8C%97/"/>
+    <id>https://minsummer.com/2026/01/30/228-%E6%9C%9F%E8%B4%A7%E4%BA%A4%E6%98%93%E6%8C%87%E5%8C%97/</id>
+    <published>2026-01-30T16:00:00.000Z</published>
+    <updated>2026-01-30T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;它只是一把刀，它没有好坏。——查拉图斯特拉如是说&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="期货交易" scheme="https://minsummer.com/tags/%E6%9C%9F%E8%B4%A7%E4%BA%A4%E6%98%93/"/>
+    
+  </entry>
   
   <entry>
     <title>klipper下位机MCU丢失</title>
@@ -581,6 +619,27 @@ Printer is shutdown&lt;/p&gt;
   </entry>
   
   <entry>
+    <title>《深入浅出统计学》读书笔记</title>
+    <link href="https://minsummer.com/2025/04/24/202-%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%BB%9F%E8%AE%A1%E5%AD%A6%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    <id>https://minsummer.com/2025/04/24/202-%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%BB%9F%E8%AE%A1%E5%AD%A6%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</id>
+    <published>2025-04-24T16:00:00.000Z</published>
+    <updated>2025-04-24T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;之前读过&lt;a href=&quot;https://minsummer.com/2022/07/30/104-%E6%A6%82%E7%8E%87%E8%AE%BA%E5%AF%BC%E8%AE%BA-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/&quot;&gt;《概率论导论》&lt;/a&gt;，但是当时由于是纯粹的数学导论，比较艰涩难懂。这次在《深入浅出统计学》找到了对应的意义，于是就准备再次记录一下。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="概率论导论" scheme="https://minsummer.com/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%AF%BC%E8%AE%BA/"/>
+    
+    <category term="机器学习" scheme="https://minsummer.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>hexo博客NEXT主题开启数学公式</title>
     <link href="https://minsummer.com/2025/04/24/203-hexo%E5%8D%9A%E5%AE%A2NEXT%E4%B8%BB%E9%A2%98%E5%BC%80%E5%90%AF%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"/>
     <id>https://minsummer.com/2025/04/24/203-hexo%E5%8D%9A%E5%AE%A2NEXT%E4%B8%BB%E9%A2%98%E5%BC%80%E5%90%AF%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</id>
@@ -602,27 +661,6 @@ Printer is shutdown&lt;/p&gt;
     <category term="hexo博客" scheme="https://minsummer.com/tags/hexo%E5%8D%9A%E5%AE%A2/"/>
     
     <category term="NEXT主题" scheme="https://minsummer.com/tags/NEXT%E4%B8%BB%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《深入浅出统计学》读书笔记</title>
-    <link href="https://minsummer.com/2025/04/24/202-%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%BB%9F%E8%AE%A1%E5%AD%A6%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    <id>https://minsummer.com/2025/04/24/202-%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%BB%9F%E8%AE%A1%E5%AD%A6%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</id>
-    <published>2025-04-24T16:00:00.000Z</published>
-    <updated>2025-04-24T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;之前读过&lt;a href=&quot;https://minsummer.com/2022/07/30/104-%E6%A6%82%E7%8E%87%E8%AE%BA%E5%AF%BC%E8%AE%BA-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/&quot;&gt;《概率论导论》&lt;/a&gt;，但是当时由于是纯粹的数学导论，比较艰涩难懂。这次在《深入浅出统计学》找到了对应的意义，于是就准备再次记录一下。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
-    
-    
-    <category term="概率论导论" scheme="https://minsummer.com/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%AF%BC%E8%AE%BA/"/>
-    
-    <category term="机器学习" scheme="https://minsummer.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -1469,9 +1507,9 @@ CPU：1x Intel Xeon&lt;br /&gt;
     <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
     
     
-    <category term="经济" scheme="https://minsummer.com/tags/%E7%BB%8F%E6%B5%8E/"/>
-    
     <category term="政治" scheme="https://minsummer.com/tags/%E6%94%BF%E6%B2%BB/"/>
+    
+    <category term="经济" scheme="https://minsummer.com/tags/%E7%BB%8F%E6%B5%8E/"/>
     
     <category term="以旧换新" scheme="https://minsummer.com/tags/%E4%BB%A5%E6%97%A7%E6%8D%A2%E6%96%B0/"/>
     
@@ -1623,6 +1661,25 @@ CPU：1x Intel Xeon&lt;br /&gt;
   </entry>
   
   <entry>
+    <title>也许这就是生活</title>
+    <link href="https://minsummer.com/2024/03/09/158-%E4%B9%9F%E8%AE%B8%E8%BF%99%E5%B0%B1%E6%98%AF%E7%94%9F%E6%B4%BB/"/>
+    <id>https://minsummer.com/2024/03/09/158-%E4%B9%9F%E8%AE%B8%E8%BF%99%E5%B0%B1%E6%98%AF%E7%94%9F%E6%B4%BB/</id>
+    <published>2024-03-09T16:00:00.000Z</published>
+    <updated>2024-03-09T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;《我在北京送快递》这本书是我同学推荐给我的，他说让我看看什么是底层生活。于是我在回家的动车上看完了它。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+    
+    <category term="我在北京送快递" scheme="https://minsummer.com/tags/%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E9%80%81%E5%BF%AB%E9%80%92/"/>
+    
+  </entry>
+  
+  <entry>
     <title>我在北京送快递</title>
     <link href="https://minsummer.com/2024/03/09/157-%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E9%80%81%E5%BF%AB%E9%80%92-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     <id>https://minsummer.com/2024/03/09/157-%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E9%80%81%E5%BF%AB%E9%80%92-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</id>
@@ -1644,25 +1701,6 @@ CPU：1x Intel Xeon&lt;br /&gt;
   </entry>
   
   <entry>
-    <title>也许这就是生活</title>
-    <link href="https://minsummer.com/2024/03/09/158-%E4%B9%9F%E8%AE%B8%E8%BF%99%E5%B0%B1%E6%98%AF%E7%94%9F%E6%B4%BB/"/>
-    <id>https://minsummer.com/2024/03/09/158-%E4%B9%9F%E8%AE%B8%E8%BF%99%E5%B0%B1%E6%98%AF%E7%94%9F%E6%B4%BB/</id>
-    <published>2024-03-09T16:00:00.000Z</published>
-    <updated>2024-03-09T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;《我在北京送快递》这本书是我同学推荐给我的，他说让我看看什么是底层生活。于是我在回家的动车上看完了它。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
-    
-    
-    <category term="我在北京送快递" scheme="https://minsummer.com/tags/%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E9%80%81%E5%BF%AB%E9%80%92/"/>
-    
-  </entry>
-  
-  <entry>
     <title>佛祖什么都说了</title>
     <link href="https://minsummer.com/2024/03/02/156-%E4%BD%9B%E7%A5%96%E4%BB%80%E4%B9%88%E9%83%BD%E8%AF%B4%E4%BA%86/"/>
     <id>https://minsummer.com/2024/03/02/156-%E4%BD%9B%E7%A5%96%E4%BB%80%E4%B9%88%E9%83%BD%E8%AF%B4%E4%BA%86/</id>
@@ -1677,11 +1715,11 @@ CPU：1x Intel Xeon&lt;br /&gt;
     <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
     
     
+    <category term="读后感" scheme="https://minsummer.com/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    
     <category term="《佛祖说了些什么》" scheme="https://minsummer.com/tags/%E3%80%8A%E4%BD%9B%E7%A5%96%E8%AF%B4%E4%BA%86%E4%BA%9B%E4%BB%80%E4%B9%88%E3%80%8B/"/>
     
     <category term="林欣浩" scheme="https://minsummer.com/tags/%E6%9E%97%E6%AC%A3%E6%B5%A9/"/>
-    
-    <category term="读后感" scheme="https://minsummer.com/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
     
   </entry>
   
@@ -1753,11 +1791,11 @@ CPU：1x Intel Xeon&lt;br /&gt;
     
     <category term="读书笔记" scheme="https://minsummer.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="摘要" scheme="https://minsummer.com/tags/%E6%91%98%E8%A6%81/"/>
-    
     <category term="《佛祖说了些什么》" scheme="https://minsummer.com/tags/%E3%80%8A%E4%BD%9B%E7%A5%96%E8%AF%B4%E4%BA%86%E4%BA%9B%E4%BB%80%E4%B9%88%E3%80%8B/"/>
     
     <category term="林欣浩" scheme="https://minsummer.com/tags/%E6%9E%97%E6%AC%A3%E6%B5%A9/"/>
+    
+    <category term="摘要" scheme="https://minsummer.com/tags/%E6%91%98%E8%A6%81/"/>
     
   </entry>
   
@@ -2412,41 +2450,6 @@ CPU：1x Intel Xeon&lt;br /&gt;
   </entry>
   
   <entry>
-    <title>浅谈下经济</title>
-    <link href="https://minsummer.com/2023/07/21/126-%E6%B5%85%E8%B0%88%E4%B8%8B%E7%BB%8F%E6%B5%8E/"/>
-    <id>https://minsummer.com/2023/07/21/126-%E6%B5%85%E8%B0%88%E4%B8%8B%E7%BB%8F%E6%B5%8E/</id>
-    <published>2023-07-21T16:00:00.000Z</published>
-    <updated>2023-07-21T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;最近一则消息引爆了大多数人的神经：&lt;br /&gt;
-&lt;img src=&quot;https://raw.githubusercontent.com/android1122/typecho_img/master/126-%E6%B5%85%E8%B0%88%E4%B8%8B%E7%BB%8F%E6%B5%8E-2023-07-05-15-09-43.png&quot; alt=&quot;126-浅谈下经济-2023-07-05-15-09-43&quot; /&gt;&lt;br /&gt;
-借着这个机会，我浅谈下我对经济的了解。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;现有经济模式下，资本永不倒。&lt;/li&gt;
-&lt;li&gt;资本对利息的认可&lt;/li&gt;
-&lt;li&gt;资本的流动趋向固定&lt;/li&gt;
-&lt;li&gt;新时代的世袭制&lt;/li&gt;
-&lt;/ol&gt;</summary>
-    
-    
-    
-    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
-    
-    
-    <category term="资本永不落幕" scheme="https://minsummer.com/tags/%E8%B5%84%E6%9C%AC%E6%B0%B8%E4%B8%8D%E8%90%BD%E5%B9%95/"/>
-    
-    <category term="经济" scheme="https://minsummer.com/tags/%E7%BB%8F%E6%B5%8E/"/>
-    
-    <category term="地方债务" scheme="https://minsummer.com/tags/%E5%9C%B0%E6%96%B9%E5%80%BA%E5%8A%A1/"/>
-    
-    <category term="国家债务" scheme="https://minsummer.com/tags/%E5%9B%BD%E5%AE%B6%E5%80%BA%E5%8A%A1/"/>
-    
-    <category term="国家经济" scheme="https://minsummer.com/tags/%E5%9B%BD%E5%AE%B6%E7%BB%8F%E6%B5%8E/"/>
-    
-  </entry>
-  
-  <entry>
     <title>超能勇士崛起-又一好莱坞烂片</title>
     <link href="https://minsummer.com/2023/07/21/127-%E8%B6%85%E8%83%BD%E5%8B%87%E5%A3%AB%E5%B4%9B%E8%B5%B7/"/>
     <id>https://minsummer.com/2023/07/21/127-%E8%B6%85%E8%83%BD%E5%8B%87%E5%A3%AB%E5%B4%9B%E8%B5%B7/</id>
@@ -2497,6 +2500,41 @@ CPU：1x Intel Xeon&lt;br /&gt;
     <category term="生活这个游戏" scheme="https://minsummer.com/tags/%E7%94%9F%E6%B4%BB%E8%BF%99%E4%B8%AA%E6%B8%B8%E6%88%8F/"/>
     
     <category term="活着" scheme="https://minsummer.com/tags/%E6%B4%BB%E7%9D%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浅谈下经济</title>
+    <link href="https://minsummer.com/2023/07/21/126-%E6%B5%85%E8%B0%88%E4%B8%8B%E7%BB%8F%E6%B5%8E/"/>
+    <id>https://minsummer.com/2023/07/21/126-%E6%B5%85%E8%B0%88%E4%B8%8B%E7%BB%8F%E6%B5%8E/</id>
+    <published>2023-07-21T16:00:00.000Z</published>
+    <updated>2023-07-21T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;最近一则消息引爆了大多数人的神经：&lt;br /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/android1122/typecho_img/master/126-%E6%B5%85%E8%B0%88%E4%B8%8B%E7%BB%8F%E6%B5%8E-2023-07-05-15-09-43.png&quot; alt=&quot;126-浅谈下经济-2023-07-05-15-09-43&quot; /&gt;&lt;br /&gt;
+借着这个机会，我浅谈下我对经济的了解。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;现有经济模式下，资本永不倒。&lt;/li&gt;
+&lt;li&gt;资本对利息的认可&lt;/li&gt;
+&lt;li&gt;资本的流动趋向固定&lt;/li&gt;
+&lt;li&gt;新时代的世袭制&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+    
+    <category term="资本永不落幕" scheme="https://minsummer.com/tags/%E8%B5%84%E6%9C%AC%E6%B0%B8%E4%B8%8D%E8%90%BD%E5%B9%95/"/>
+    
+    <category term="经济" scheme="https://minsummer.com/tags/%E7%BB%8F%E6%B5%8E/"/>
+    
+    <category term="地方债务" scheme="https://minsummer.com/tags/%E5%9C%B0%E6%96%B9%E5%80%BA%E5%8A%A1/"/>
+    
+    <category term="国家债务" scheme="https://minsummer.com/tags/%E5%9B%BD%E5%AE%B6%E5%80%BA%E5%8A%A1/"/>
+    
+    <category term="国家经济" scheme="https://minsummer.com/tags/%E5%9B%BD%E5%AE%B6%E7%BB%8F%E6%B5%8E/"/>
     
   </entry>
   
@@ -2772,27 +2810,6 @@ CPU：1x Intel Xeon&lt;br /&gt;
   </entry>
   
   <entry>
-    <title>技能树梳理</title>
-    <link href="https://minsummer.com/2023/05/22/113-%E6%8A%80%E8%83%BD%E6%A0%91/"/>
-    <id>https://minsummer.com/2023/05/22/113-%E6%8A%80%E8%83%BD%E6%A0%91/</id>
-    <published>2023-05-22T16:00:00.000Z</published>
-    <updated>2023-05-22T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;梳理一下自己的技能树&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
-    
-    
-    <category term="思维导图" scheme="https://minsummer.com/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
-    
-    <category term="技能树" scheme="https://minsummer.com/tags/%E6%8A%80%E8%83%BD%E6%A0%91/"/>
-    
-  </entry>
-  
-  <entry>
     <title>git简明学习手册</title>
     <link href="https://minsummer.com/2023/05/22/114git%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/"/>
     <id>https://minsummer.com/2023/05/22/114git%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/</id>
@@ -2810,6 +2827,27 @@ CPU：1x Intel Xeon&lt;br /&gt;
     <category term="git" scheme="https://minsummer.com/tags/git/"/>
     
     <category term="一日一技术" scheme="https://minsummer.com/tags/%E4%B8%80%E6%97%A5%E4%B8%80%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>技能树梳理</title>
+    <link href="https://minsummer.com/2023/05/22/113-%E6%8A%80%E8%83%BD%E6%A0%91/"/>
+    <id>https://minsummer.com/2023/05/22/113-%E6%8A%80%E8%83%BD%E6%A0%91/</id>
+    <published>2023-05-22T16:00:00.000Z</published>
+    <updated>2023-05-22T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;梳理一下自己的技能树&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="思维导图" scheme="https://minsummer.com/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
+    
+    <category term="技能树" scheme="https://minsummer.com/tags/%E6%8A%80%E8%83%BD%E6%A0%91/"/>
     
   </entry>
   
