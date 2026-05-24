@@ -436,6 +436,53 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
       </tags>
   </entry>
   <entry>
+    <title>在线图书</title>
+    <url>/2022/05/01/106-%E5%9C%A8%E7%BA%BF%E5%9B%BE%E4%B9%A6/</url>
+    <content><![CDATA[<p>图书馆地址：<a href="https://book.minsummer.com/">https://book.minsummer.com/</a></p>
+<p>图书资源不定时更新，如果有想看的可以留言-已经重构</p>
+<p>目前目录：</p>
+<ul>
+<li>
+<p>机器学习-入门必备西瓜书</p>
+</li>
+<li>
+<p>机器学习公式详解-西瓜书的解释，南瓜书</p>
+</li>
+<li>
+<p>概率论基础教程-入门概率论</p>
+</li>
+<li>
+<p>概率论及其应用第二卷-不再枯燥的学习概率论，讲的很实际</p>
+</li>
+<li>
+<p>概率论机器应用第三卷-如题</p>
+</li>
+<li>
+<p>概率论导论-目前正在看，教材吧，反正挺枯燥的 数学之美-大佬写的书，确实好看，不涉及很深的数学计算，简单的提一嘴，让你自己零五</p>
+</li>
+<li>
+<p>数据科学导论python语言实现-数据科学入门吧，单纯的看肯定学不会，很多东西都被程序包装进去，背后原理需要自己另外找书 什么是数学</p>
+</li>
+<li>
+<p>女士品茶 人类简史-别看什么枪炮病菌了，看这个，内容一样，还不枯燥。</p>
+</li>
+<li>
+<p>置身事内-推荐看，通过大量的实例来解释一些政策的内在因素，在里面可以看到这几年大家都关注的事件，但是你不知道这些事件的背后因素。</p>
+</li>
+</ul>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>clibre</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>私人图书馆搭建-clibre</title>
     <url>/2022/05/01/105-%E7%A7%81%E4%BA%BA%E5%9B%BE%E4%B9%A6%E9%A6%86%E6%90%AD%E5%BB%BA-Clibre/</url>
     <content><![CDATA[<p>PS: 该博文已经过期，现在推荐直接使用官方得docker系统进行搭建。</p>
@@ -482,53 +529,6 @@ pip install requirements.txt
       <tags>
         <tag>calibre</tag>
         <tag>电子书</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在线图书</title>
-    <url>/2022/05/01/106-%E5%9C%A8%E7%BA%BF%E5%9B%BE%E4%B9%A6/</url>
-    <content><![CDATA[<p>图书馆地址：<a href="https://book.minsummer.com/">https://book.minsummer.com/</a></p>
-<p>图书资源不定时更新，如果有想看的可以留言-已经重构</p>
-<p>目前目录：</p>
-<ul>
-<li>
-<p>机器学习-入门必备西瓜书</p>
-</li>
-<li>
-<p>机器学习公式详解-西瓜书的解释，南瓜书</p>
-</li>
-<li>
-<p>概率论基础教程-入门概率论</p>
-</li>
-<li>
-<p>概率论及其应用第二卷-不再枯燥的学习概率论，讲的很实际</p>
-</li>
-<li>
-<p>概率论机器应用第三卷-如题</p>
-</li>
-<li>
-<p>概率论导论-目前正在看，教材吧，反正挺枯燥的 数学之美-大佬写的书，确实好看，不涉及很深的数学计算，简单的提一嘴，让你自己零五</p>
-</li>
-<li>
-<p>数据科学导论python语言实现-数据科学入门吧，单纯的看肯定学不会，很多东西都被程序包装进去，背后原理需要自己另外找书 什么是数学</p>
-</li>
-<li>
-<p>女士品茶 人类简史-别看什么枪炮病菌了，看这个，内容一样，还不枯燥。</p>
-</li>
-<li>
-<p>置身事内-推荐看，通过大量的实例来解释一些政策的内在因素，在里面可以看到这几年大家都关注的事件，但是你不知道这些事件的背后因素。</p>
-</li>
-</ul>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>clibre</tag>
       </tags>
   </entry>
   <entry>
@@ -863,71 +863,6 @@ PS: 首次下载有可能没有，多执行几次订阅即可。</p>
       </tags>
   </entry>
   <entry>
-    <title>Hexo部署指南-基于GitHub</title>
-    <url>/2023/05/17/110-hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h2 id="折腾啊折腾"><a class="markdownIt-Anchor" href="#折腾啊折腾"></a> 折腾啊折腾</h2>
-<p>之前使用的是typecho博客，简单，轻量。满足需求，唯一的问题是不是很好看，好看的主题需要付费，如handsome，而且很多时候速度不快。最让我不能忍的是更新慢，而且对一些数学公式的支持并不是那么有效果。所以从很早以前就衍生出了想要换一个博客的想法，归根揭底就是闲了，想折腾了。</p>
-<span id="more"></span>
-<p>之前考虑的博客有两种Hexo，Hugo。两者都是静态博客，简单说就是你在本地都生成了网页，然后放上去就行，不需要任何的框架。能打开就能看到。这点的好处就是完全不用担心被攻击。犹记得当年使用typecho+MySQL，然后数据库被黑，对面要求我支付比特币解锁，最后只能忍痛重建。博客的框架千千万，最后归属大概率就是静态。毕竟博客作为一种展示的平台，好看，速度快是最重要的。<br />
-在Hexo和Hugo之间，我最后选择了Hexo，主要是因为Hugo也好久没有更新了，虽然静态博客不需要太多更新，但是随着技术和审美的改变，我还是希望有一个可以长久支持的系统来更新我得博客，我并不希望像typecho那样五年才一个更新，然后更新完之后还是有bug。所以再三思量之后就想着使用Hexo作为我的下一个博客框架。其实也和我现在的写作习惯有关系，平时写作时在电脑上，然后再复制到博客发布，电脑端用vscode编写好了markdown文件，也是有留底的，主要是之前太多次的博客重建，导致我习惯性本地一份，电脑一份。如果这次换成静态文件，那么就不需要再拷贝，直接git上传就可以。<br />
-我看了网上好多的教程都是安装Git，node，hexo然后在写，再发布。我并不喜欢这种做法，毕竟乱七八糟的，还要在电脑端安装这个环境那个环境，搞不好哪天环境冲突，就傻眼了，我这边就自己看了下，感觉可以利用GitHub实现无本地环境的部署：</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-05-18-10-21-47.png" alt="hexo无本地环境部署指南-2023-05-18-10-21-47" /></p>
-<p>通过流程涂我们可以看到，本地环境的的作用其实就是用来渲染的，所以如果有一个机器能帮我们随时渲染的话，那么就不需要搭建本地环境。</p>
-<h2 id="部署步骤"><a class="markdownIt-Anchor" href="#部署步骤"></a> 部署步骤</h2>
-<ol>
-<li>
-<p>复制基本文件</p>
-<blockquote>
-<p><a href="https://github.com/hexojs/hexo-starter.git">https://github.com/hexojs/hexo-starter.git</a></p>
-</blockquote>
-<p>该文件是官方的初始文件，你可以选择下载，或者直接fork到你的GitHub库。具体文件夹可以查看官方<a href="https://hexo.io/zh-cn/docs/setup">文档说明</a>，对于我们来说，只需要知道，发布的放在/source/_posts，而相对应的主题放在themes文件夹下即可。</p>
-</li>
-<li>
-<p>渲染<br />
-有了文件之后，你就可以写自己的博客，就是这么简单，写完之后就是渲染的问题，渲染这边使用的是GitHub的action来渲染：官方推荐了一个action脚本，在自己文件夹下创建.github/workflows/xxx.yaml，然后输入官方的代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: Pages #名称，随便写</span><br><span class="line"> on:</span><br><span class="line"> push:</span><br><span class="line">     branches:</span><br><span class="line">     - master # 默认路径</span><br><span class="line"></span><br><span class="line"> jobs:</span><br><span class="line"> pages:</span><br><span class="line">     runs-on: ubuntu-latest #选定使用的系统</span><br><span class="line">     permissions:</span><br><span class="line">     contents: write</span><br><span class="line">     steps:</span><br><span class="line">     - uses: actions/checkout@v3 #调用官方的脚本，直接复制我们的项目文件到虚拟系统 </span><br><span class="line">     - name: 安装node</span><br><span class="line">         uses: actions/setup-node@v2 #调用前人写好的脚本，安装node环境</span><br><span class="line">         with:</span><br><span class="line">         node-version: &quot;18&quot;</span><br><span class="line">     - name: Cache NPM dependencies #加载缓存，增加速度</span><br><span class="line">         uses: actions/cache@v2</span><br><span class="line">         with:</span><br><span class="line">         path: node_modules</span><br><span class="line">         key: $&#123;&#123; runner.OS &#125;&#125;-npm-cache</span><br><span class="line">         restore-keys: |</span><br><span class="line">             $&#123;&#123; runner.OS &#125;&#125;-npm-cache</span><br><span class="line">     - name: Install Dependencies #这里很重要，官方脚本如果缺少插件，可以使用这里进行增加</span><br><span class="line">         run: |</span><br><span class="line">         npm install</span><br><span class="line">         npm install hexo-markmap #如果还需要插件就回车，然后输入npm install 你要的插件名称</span><br><span class="line">     - name: Build</span><br><span class="line">         run: npm run build</span><br><span class="line">     - name: Deploy</span><br><span class="line">         uses: peaceiris/actions-gh-pages@v3 #他会创建分支，然后将分支发布到GitHub Pages上</span><br><span class="line">         with:</span><br><span class="line">         github_token: $&#123;&#123; secrets.GITHUB_TOKEN &#125;&#125;</span><br><span class="line">         publish_dir: ./public</span><br></pre></td></tr></table></figure>
-<p>这样之后，每次你修改文件，都会重新渲染所有的文件，然后发布到对应的GitHub Pages上</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-05-18-10-46-58.png" alt="hexo无本地环境部署指南-2023-05-18-10-46-58" /></p>
-</li>
-<li>
-<p>发布<br />
-进入GitHub的settings，然后选择发布的分支，选择gh-pages，然后选择发布即可。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-05-18-10-34-15.png" alt="hexo无本地环境部署指南-2023-05-18-10-34-15" /></p>
-</li>
-<li>
-<p>浏览<br />
-打开分配的域名，你就可以看到对应的网页。</p>
-</li>
-<li>
-<p>分配自己的域名<br />
-如果你有一个自己的域名想要分配的话，那么你就要在DNS管理中加上A记录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">185.199.108.153</span><br><span class="line">185.199.109.153</span><br><span class="line">185.199.110.153</span><br><span class="line">185.199.111.153</span><br></pre></td></tr></table></figure>
-<p>然后在增加一个CNAME记录，使用www，目标定位<code>&lt;user&gt;.github.io</code>，然后再page页面输入customsite：<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-05-20-19-53-18.png" alt="hexo无本地环境部署指南-2023-05-20-19-53-18" /></p>
-<p>系统会检查DNS配置。</p>
-</li>
-</ol>
-<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
-<p>这个方法的好处是，不需要在本地搭建环境，而渲染的node环境你可以随时使用最新版的，所以极大的简化了自己搭建环境的问题。至于写作流程问题就更加的方便，可以简单的使用GitHub，也可以在本地写好之后，使用git上传上去，反正你的每次更改都会触发，让我更加专注于写作，而不需要去关注其他问题。<br />
-如果说唯一的缺点，那么就是无法实时预览你写的文章吧。</p>
-<hr />
-<p>参考文章：<br />
-<a href="https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">域名配置</a></p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>GitHub</tag>
-        <tag>无环境搭建</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>NexT主题搭建指南</title>
     <url>/2023/05/19/111-Hexo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E7%9A%84%E5%9D%91/</url>
     <content><![CDATA[<h2 id="中文的弯路"><a class="markdownIt-Anchor" href="#中文的弯路"></a> 中文的弯路</h2>
@@ -1188,6 +1123,71 @@ Settings下面有个<br />
       <tags>
         <tag>思维导图</tag>
         <tag>技能树</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo部署指南-基于GitHub</title>
+    <url>/2023/05/17/110-hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h2 id="折腾啊折腾"><a class="markdownIt-Anchor" href="#折腾啊折腾"></a> 折腾啊折腾</h2>
+<p>之前使用的是typecho博客，简单，轻量。满足需求，唯一的问题是不是很好看，好看的主题需要付费，如handsome，而且很多时候速度不快。最让我不能忍的是更新慢，而且对一些数学公式的支持并不是那么有效果。所以从很早以前就衍生出了想要换一个博客的想法，归根揭底就是闲了，想折腾了。</p>
+<span id="more"></span>
+<p>之前考虑的博客有两种Hexo，Hugo。两者都是静态博客，简单说就是你在本地都生成了网页，然后放上去就行，不需要任何的框架。能打开就能看到。这点的好处就是完全不用担心被攻击。犹记得当年使用typecho+MySQL，然后数据库被黑，对面要求我支付比特币解锁，最后只能忍痛重建。博客的框架千千万，最后归属大概率就是静态。毕竟博客作为一种展示的平台，好看，速度快是最重要的。<br />
+在Hexo和Hugo之间，我最后选择了Hexo，主要是因为Hugo也好久没有更新了，虽然静态博客不需要太多更新，但是随着技术和审美的改变，我还是希望有一个可以长久支持的系统来更新我得博客，我并不希望像typecho那样五年才一个更新，然后更新完之后还是有bug。所以再三思量之后就想着使用Hexo作为我的下一个博客框架。其实也和我现在的写作习惯有关系，平时写作时在电脑上，然后再复制到博客发布，电脑端用vscode编写好了markdown文件，也是有留底的，主要是之前太多次的博客重建，导致我习惯性本地一份，电脑一份。如果这次换成静态文件，那么就不需要再拷贝，直接git上传就可以。<br />
+我看了网上好多的教程都是安装Git，node，hexo然后在写，再发布。我并不喜欢这种做法，毕竟乱七八糟的，还要在电脑端安装这个环境那个环境，搞不好哪天环境冲突，就傻眼了，我这边就自己看了下，感觉可以利用GitHub实现无本地环境的部署：</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-05-18-10-21-47.png" alt="hexo无本地环境部署指南-2023-05-18-10-21-47" /></p>
+<p>通过流程涂我们可以看到，本地环境的的作用其实就是用来渲染的，所以如果有一个机器能帮我们随时渲染的话，那么就不需要搭建本地环境。</p>
+<h2 id="部署步骤"><a class="markdownIt-Anchor" href="#部署步骤"></a> 部署步骤</h2>
+<ol>
+<li>
+<p>复制基本文件</p>
+<blockquote>
+<p><a href="https://github.com/hexojs/hexo-starter.git">https://github.com/hexojs/hexo-starter.git</a></p>
+</blockquote>
+<p>该文件是官方的初始文件，你可以选择下载，或者直接fork到你的GitHub库。具体文件夹可以查看官方<a href="https://hexo.io/zh-cn/docs/setup">文档说明</a>，对于我们来说，只需要知道，发布的放在/source/_posts，而相对应的主题放在themes文件夹下即可。</p>
+</li>
+<li>
+<p>渲染<br />
+有了文件之后，你就可以写自己的博客，就是这么简单，写完之后就是渲染的问题，渲染这边使用的是GitHub的action来渲染：官方推荐了一个action脚本，在自己文件夹下创建.github/workflows/xxx.yaml，然后输入官方的代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: Pages #名称，随便写</span><br><span class="line"> on:</span><br><span class="line"> push:</span><br><span class="line">     branches:</span><br><span class="line">     - master # 默认路径</span><br><span class="line"></span><br><span class="line"> jobs:</span><br><span class="line"> pages:</span><br><span class="line">     runs-on: ubuntu-latest #选定使用的系统</span><br><span class="line">     permissions:</span><br><span class="line">     contents: write</span><br><span class="line">     steps:</span><br><span class="line">     - uses: actions/checkout@v3 #调用官方的脚本，直接复制我们的项目文件到虚拟系统 </span><br><span class="line">     - name: 安装node</span><br><span class="line">         uses: actions/setup-node@v2 #调用前人写好的脚本，安装node环境</span><br><span class="line">         with:</span><br><span class="line">         node-version: &quot;18&quot;</span><br><span class="line">     - name: Cache NPM dependencies #加载缓存，增加速度</span><br><span class="line">         uses: actions/cache@v2</span><br><span class="line">         with:</span><br><span class="line">         path: node_modules</span><br><span class="line">         key: $&#123;&#123; runner.OS &#125;&#125;-npm-cache</span><br><span class="line">         restore-keys: |</span><br><span class="line">             $&#123;&#123; runner.OS &#125;&#125;-npm-cache</span><br><span class="line">     - name: Install Dependencies #这里很重要，官方脚本如果缺少插件，可以使用这里进行增加</span><br><span class="line">         run: |</span><br><span class="line">         npm install</span><br><span class="line">         npm install hexo-markmap #如果还需要插件就回车，然后输入npm install 你要的插件名称</span><br><span class="line">     - name: Build</span><br><span class="line">         run: npm run build</span><br><span class="line">     - name: Deploy</span><br><span class="line">         uses: peaceiris/actions-gh-pages@v3 #他会创建分支，然后将分支发布到GitHub Pages上</span><br><span class="line">         with:</span><br><span class="line">         github_token: $&#123;&#123; secrets.GITHUB_TOKEN &#125;&#125;</span><br><span class="line">         publish_dir: ./public</span><br></pre></td></tr></table></figure>
+<p>这样之后，每次你修改文件，都会重新渲染所有的文件，然后发布到对应的GitHub Pages上</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-05-18-10-46-58.png" alt="hexo无本地环境部署指南-2023-05-18-10-46-58" /></p>
+</li>
+<li>
+<p>发布<br />
+进入GitHub的settings，然后选择发布的分支，选择gh-pages，然后选择发布即可。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-05-18-10-34-15.png" alt="hexo无本地环境部署指南-2023-05-18-10-34-15" /></p>
+</li>
+<li>
+<p>浏览<br />
+打开分配的域名，你就可以看到对应的网页。</p>
+</li>
+<li>
+<p>分配自己的域名<br />
+如果你有一个自己的域名想要分配的话，那么你就要在DNS管理中加上A记录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">185.199.108.153</span><br><span class="line">185.199.109.153</span><br><span class="line">185.199.110.153</span><br><span class="line">185.199.111.153</span><br></pre></td></tr></table></figure>
+<p>然后在增加一个CNAME记录，使用www，目标定位<code>&lt;user&gt;.github.io</code>，然后再page页面输入customsite：<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/hexo%E6%97%A0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97-2023-05-20-19-53-18.png" alt="hexo无本地环境部署指南-2023-05-20-19-53-18" /></p>
+<p>系统会检查DNS配置。</p>
+</li>
+</ol>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>这个方法的好处是，不需要在本地搭建环境，而渲染的node环境你可以随时使用最新版的，所以极大的简化了自己搭建环境的问题。至于写作流程问题就更加的方便，可以简单的使用GitHub，也可以在本地写好之后，使用git上传上去，反正你的每次更改都会触发，让我更加专注于写作，而不需要去关注其他问题。<br />
+如果说唯一的缺点，那么就是无法实时预览你写的文章吧。</p>
+<hr />
+<p>参考文章：<br />
+<a href="https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">域名配置</a></p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>GitHub</tag>
+        <tag>无环境搭建</tag>
       </tags>
   </entry>
   <entry>
@@ -1531,124 +1531,6 @@ Linux的更改：</p>
       </tags>
   </entry>
   <entry>
-    <title>关于着陆</title>
-    <url>/2023/06/15/119-%E5%85%B3%E4%BA%8E%E7%9D%80%E9%99%86/</url>
-    <content><![CDATA[<h2 id="免责声明"><a class="markdownIt-Anchor" href="#免责声明"></a> 免责声明</h2>
-<p>房地产跟我的生活息息相关，所以我总会思考它的一些事情。我不是一个专业的研究员，而且也没有详实的数据支持。我更喜欢简单的因果论，所以我大致建立了一套完整的，简单的因果模型来描述现在我对地产的一个认知。以及经常提到的着陆的一个想法。</p>
-<span id="more"></span>
-<h2 id="起因-08年4万亿"><a class="markdownIt-Anchor" href="#起因-08年4万亿"></a> 起因-08年4万亿</h2>
-<blockquote>
-<p>历来造反的都是种田的人，没听说商人能闹翻了天。<br />
-———《大明王朝1566》</p>
-</blockquote>
-<p>大多数人的起因都归结在08年。因为从08年开始房价就起飞了。我也这么人为，08年的经济危机中国大放水，放出来4万亿的货币规模。而彼时中国经济是没办法消耗这些的，所以就导致了房价的大幅上涨。<br />
-这中间的过程我们需要梳理一下货币的流程：</p>
-<blockquote>
-<p>银行发行1块钱——农民借1块钱种地——商贩花1.2收农民的菜——物流收0.5把货运到城里——商场花2块钱收了——花3块钱卖给客户</p>
-</blockquote>
-<p>粗劣的理解就是，源头发行一块钱，下游会变成3块钱甚至更多。而这中间产生的利润分配到社会各个阶层。这个就叫经济的流动性。经济的流动性是必须的，否则经济会是一潭死水，没办法产生收益，那么经济就会衰退。<br />
-看完经济的流动性，我们来看房价上涨的原因：<br />
-当源头资金放出，下游需要一个生意或者一条线路来让资金流动，但是如果原本的市场是饱和的，或者是健康的。理论上是不需要这么大的资金，于是资本就发挥了它的优势：居奇囤货。在我小时候，我经常能看到如：姜你军，蒜你狠这类的词汇，这些原因都是资金进入到了这个行业，居奇囤货，抬高物价，赚钱差价。这操作模式常见，而且能稳赚不赔。资金是聪明的，它会自己流向最赚钱的行业。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/119-%E5%85%B3%E4%BA%8E%E7%9D%80%E9%99%86-2023-06-16-10-05-10.png" alt="119-关于着陆-2023-06-16-10-05-10" /></p>
-<p>居奇囤货抬搞了物价，而且会影响普通百姓的吃喝，吃不饱饭可是会闹事的。于是在监管下，这些东西慢慢的就少见了。那么到了如今有没有刚需，而且不会影响到百姓吃饭的问题。地产就来了。<br />
-资金的进入本来没有什么问题，但是所有的资金下放都是通过银行贷款下放的，中国的银行更多的是政府工具的一种延申。所以遇上降息或者货币多发的时候，银行是有任务的；需要把这些钱贷出去；这就是为啥08年时候个体经营户都可以在银行贷款。放出去的越多，下游产生利润也就越多，经济就愈加繁荣。经济繁荣会带来好多好处但是也有问题。人们的钱花去哪里？我们可以看到日本经济腾飞的那几年，也是全世界买买买，但是中国外汇是管控的，那么就只能国内买买买。于是我们就看到了家电下乡，消费升级这类现象，但是最主要的还是房价上涨。</p>
-<h2 id="风险-一直都在"><a class="markdownIt-Anchor" href="#风险-一直都在"></a> 风险-一直都在</h2>
-<p>说完了因，我们来说说大家一直吹的房地产风险。什么是房地产的风险：是价格过高，让很多人都买不起么？<br />
-我觉得不是，房子在中国自古以来都是稀缺品，你可以看08年以前的报纸，在商品房初现的时候，就已经有相应的言论说要不吃不喝20年才能买的起，说明房价在起飞之前就已经是奢侈品。安得广厦千万间，大庇天下寒士尽欢颜，居者有其屋从古时候开始都是人民的梦想而不是目标。<br />
-那么什么是房地产的风险？<br />
-我们从房地产这条经济模式来看风险：</p>
-<blockquote>
-<p>政府卖地——地产商买地——地产商抵押地获得银行贷款——地产商盖到一定程度开始预售——购房者抵押买到的房子申请贷款</p>
-</blockquote>
-<p>这是一条房地产开发的常见模式，当然中间有好多细节忽略。这个模式看起来没问题，但是中间有一些操作，导致这个模式出现了一些奇奇怪怪的风险：</p>
-<ol>
-<li>政府卖地的土地出让金可以后期缴纳<br />
-这就是为啥有些房子盖好了之后，无法办理房产证，大多数是开发商没有交土地出纳金</li>
-<li>预售资格和预售资金监管不严<br />
-预售就是房子盖到比如说1楼，就允许你开始卖，这本来是提高地产商周转的好方法。理论上来说，它盖到这个地方，后续只需要房款30%-50%就可以盖完剩下的。然而实际过程有些刚开工就可以预售，而且预售资金也不是全部拿来盖房子了，而是拿去买下一快地了。</li>
-<li>银行接收了非个人的房产抵押<br />
-银行那些年还接收房地产商拿房子做抵押</li>
-</ol>
-<p>以上只是乱象中的一点现象，但是这些行为都增加了开放商的杠杆率。我们可以做一个完美的假设：<br />
-我花1亿买块地，但是出让金可以后续交，然后拿着1亿的地去银行贷款，贷出了8千万，拿其中4千万我去盖到一定程度，然后开始预售，我1亿的地，我卖房子2个亿。这些钱我通过途径拿了出来，现在我手现金里有2亿4千万；欠债1亿8千万。<br />
-现在摆在你面前的有两条路：</p>
-<ol>
-<li>还钱，还干净，然后拿着6千万的利润进入下一个循环。</li>
-<li>不还钱，拿着2亿4千万继续到处打点关系，买地。</li>
-</ol>
-<p>事实证明那时候大多数饿地产商选择了第二条路，那段时间我们时常可以看到开发商建房速度多么多么快。<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/119-%E5%85%B3%E4%BA%8E%E7%9D%80%E9%99%86-2023-06-16-10-09-37.png" alt="119-关于着陆-2023-06-16-10-09-37" /><br />
-这样无形中提高了开发商的杠杆率，理论上你可以空手套白狼。如果你有资金那么可以套更多的狼。<br />
-地产的高利润让资金趋之若鹜，推高了地价，也推高了房价。于是卖房更赚钱了，大家就更加愿意进来了。于是更高的房价。但是就在我们之前看到的，开发商过高的杠杆率，如果在房价上涨的时候这么玩可以。如果房价下跌，会发生什么？</p>
-<ol>
-<li>开放商风险：开发商资金回笼困难<br />
-跌价的原因正是因为卖不动了，所以如果我房子卖不出去，别说银行，我连房子都建不下去。</li>
-<li>购房者风险：抵押物价值低<br />
-如果房价下跌，你抵押的房子价值不足你的贷款，那么理论上你是需要补充抵押物，否则银行会考虑直接卖了你的房子。</li>
-<li>银行风险：收不回贷款<br />
-银行是不需要实物，无论是房子还是房子上的地。他的目的是放钱出去然后再收回来，如果继续恶化下去的话，那么就会出现银行成为最大的地产商和房产持有者——新一届的地主。</li>
-</ol>
-<p>这就是我们说得风险，系统性经济风险。一旦崩了的话，那么是一起崩，人民无所谓，开发商也死得其所，但是如果银行崩溃的话，那么就是国家经济的衰退。这个才是最重要的。</p>
-<h2 id="阶段性救援-16年棚改货币化"><a class="markdownIt-Anchor" href="#阶段性救援-16年棚改货币化"></a> 阶段性救援-16年棚改货币化</h2>
-<blockquote>
-<p>苦一苦百姓，骂名我来担<br />
-———《大明王朝1566》</p>
-</blockquote>
-<p>上面意识到了这个问题，也关注这个问题。于是，在13年年后发现房价下行，为了解决问题，也为了去掉越来越多的房子。政府推出了一个货币棚改化：简单说就是拆你家不给房子了，给钱。到了后期甚至定向给房票。给钱很简单，促进经济流动。给房票也可以，就是拿来抵债或者出让金。那么现在作为开发商你面前又有两条路：</p>
-<ol>
-<li>收手，卖完手上的房子开始还欠着的钱。</li>
-<li>油门踩死，反正出事了国家担着</li>
-<li>抓紧套现走人，欠的钱凭什么要还。</li>
-</ol>
-<p>大多数选择了2和3，第一条是死路，按照理论来说确实他们是赚钱的。但是那些年扩张，为了拿钱买地，他们20%-50%的利率贷款都借了，如果现在停下，那么算下来，这些年估计赚的钱都是给这些资金打工了。所以货币棚改化之后，恒大，碧桂园都是油门踩死，不同的是，当初恒大是一边踩油门，一边在套现。通过外债套现。<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/119-%E5%85%B3%E4%BA%8E%E7%9D%80%E9%99%86-2023-06-16-11-04-25.png" alt="119-关于着陆-2023-06-16-11-04-25" /><br />
-比如上面，许家印借公司钱，然后买公司的债。公司钱不用付利息，公司的债要付利息，这一来一回赚11.5%的利息差。然后如果公司破产，债券大于股权。要优先还债的。而许家印欠公司的钱？什么钱不钱的，都是一家人，分那么清楚干啥。<br />
-棚改化的直接结果就是再一次让房价起飞，从16年开始，本来是希望实现房价落地的举措，却在地产商的油门下，冲上了另一个顶端。如果16年的货币棚改正常落地的话，理论上是不会有这么多的烂尾楼，因为那时候是为了解决存量房而推出的，也不会有了接下来的烂尾断贷了。</p>
-<h2 id="体面-三道红线"><a class="markdownIt-Anchor" href="#体面-三道红线"></a> 体面-三道红线</h2>
-<p>既然你不体面，那么就让我帮你体面。<br />
-随着风险越来越不可控，终于国家选择了引爆这个炸弹，彼时地产销售已经陷入停滞，爆是迟早得事，针对风险，政府做了3件事，正好对应着风险的三个对象。</p>
-<ol>
-<li>三道红线<br />
-要求开发商降低自己得杠杆率，无论你去偷，去抢，去做抽屉协议，反正你要给我降下来，防止他们继续买地，强迫他们还钱。<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/119-%E5%85%B3%E4%BA%8E%E7%9D%80%E9%99%86-2023-06-16-11-19-27.png" alt="119-关于着陆-2023-06-16-11-19-27" /></li>
-<li>政府限价<br />
-政府限价明面上是防止价格过高，实际上是房子价格过低。防止买房者被银行追加抵押物，引发断贷现象。</li>
-<li>收紧银行贷款<br />
-防止银行在开放商端出现问题，收紧开放商得贷款。<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/119-%E5%85%B3%E4%BA%8E%E7%9D%80%E9%99%86-2023-06-16-11-22-53.png" alt="119-关于着陆-2023-06-16-11-22-53" /></li>
-</ol>
-<p>这三条主要是为了防止打击房地产，房价下跌而引起得系统性经济风险。<br />
-从结果来看，总体算好的，当然叠加疫情，叠加开放商得油门，出现来一些烂尾楼。但是这是无奈得，如果继续让开发商踩下去油门，后面烂尾的更多。而等开发商自己醒悟，那不可能的，参照16年得棚改。在踩刹车得过程中总有一些磨损。</p>
-<h2 id="新的问题何去何从"><a class="markdownIt-Anchor" href="#新的问题何去何从"></a> 新的问题—何去何从</h2>
-<p>房地产得问题似乎算是解决了，经济平稳，社会安定。虽然有一些不和谐，那可以归结为必须的代价。但是现在政府面对的一个新的问题：经济该何去何从。<br />
-从23年初，大家心心念念得经济复苏并没有到来。社会数据再好看，反映到现实就是没有一条新的经济模式给如今得社会。23年初为了刺激经济央行发行23万亿资金，但是这些资金却无法无处可去。随着监管抓紧，银行也没有地方放贷款。要钱得不能给，给钱得它不要。毕竟借贷没有合适得投资渠道也没有用。而以前得每次经济刺激下的期货也随着上层监控，不了了之。<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/119-%E5%85%B3%E4%BA%8E%E7%9D%80%E9%99%86-2023-06-16-12-11-36.png" alt="119-关于着陆-2023-06-16-12-11-36" /><br />
-截止到6月份，虽然数据好看，但是实际到社会层面没有人感受到经济的复苏。而之前央行发行得大量货币去了哪里？<br />
-有人说去借新还旧，借新的低利率得贷款，去还之前旧的高利率得贷款。也算是一种解决方案吧。后续还得有一条经济出路，否则社会整体上没有信心。<br />
-而我对于房地产还是有希望得，不可能因噎废食得，地产是正常得经济循环中的一节。至于新的经济领头羊，那估计就要看领导能否发现一条新的路线。</p>
-<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
-<p>这是我忽然想写得一篇文章，毕竟房地产问题一直是大家的心头病。我只不过以我得角度来将这些年得事串联起来。当然整体得事情发展肯定不是我写的那么简单，但是刨去多余得枝节，我愿意相信这是其中得主干。这里面没有涉及到阴谋论，更多的是个人得臆想，那么到了最后我也来总结一下：</p>
-<ol>
-<li>房价不可能跌，银行在那，银行比你重要的多</li>
-<li>地产不可能死，那是正常经济循环</li>
-<li>新的资金蓄水池还没找到，政府在摸，我们也在摸</li>
-</ol>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>房地产</tag>
-        <tag>中国经济</tag>
-        <tag>民科经济学</tag>
-        <tag>暴论</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>读史读的是什么——《明朝那些事儿》</title>
     <url>/2023/06/20/120-%E8%AF%BB%E5%8F%B2%E8%AF%BB%E7%9A%84%E6%98%AF%E4%BB%80%E4%B9%88/</url>
     <content><![CDATA[<p>闲来无事，想起来KK大神的一些言论。天底下没有新鲜事，于是就看了下白话的史书——《明朝那些事儿》。看完之后只能感叹，天底下果真没有啥新鲜事，其次就是，当年鲁迅说的狂人日记，原来就在我身边。<br />
@@ -1813,6 +1695,124 @@ Linux的更改：</p>
       <tags>
         <tag>黑镜第六季</tag>
         <tag>剧评</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于着陆</title>
+    <url>/2023/06/15/119-%E5%85%B3%E4%BA%8E%E7%9D%80%E9%99%86/</url>
+    <content><![CDATA[<h2 id="免责声明"><a class="markdownIt-Anchor" href="#免责声明"></a> 免责声明</h2>
+<p>房地产跟我的生活息息相关，所以我总会思考它的一些事情。我不是一个专业的研究员，而且也没有详实的数据支持。我更喜欢简单的因果论，所以我大致建立了一套完整的，简单的因果模型来描述现在我对地产的一个认知。以及经常提到的着陆的一个想法。</p>
+<span id="more"></span>
+<h2 id="起因-08年4万亿"><a class="markdownIt-Anchor" href="#起因-08年4万亿"></a> 起因-08年4万亿</h2>
+<blockquote>
+<p>历来造反的都是种田的人，没听说商人能闹翻了天。<br />
+———《大明王朝1566》</p>
+</blockquote>
+<p>大多数人的起因都归结在08年。因为从08年开始房价就起飞了。我也这么人为，08年的经济危机中国大放水，放出来4万亿的货币规模。而彼时中国经济是没办法消耗这些的，所以就导致了房价的大幅上涨。<br />
+这中间的过程我们需要梳理一下货币的流程：</p>
+<blockquote>
+<p>银行发行1块钱——农民借1块钱种地——商贩花1.2收农民的菜——物流收0.5把货运到城里——商场花2块钱收了——花3块钱卖给客户</p>
+</blockquote>
+<p>粗劣的理解就是，源头发行一块钱，下游会变成3块钱甚至更多。而这中间产生的利润分配到社会各个阶层。这个就叫经济的流动性。经济的流动性是必须的，否则经济会是一潭死水，没办法产生收益，那么经济就会衰退。<br />
+看完经济的流动性，我们来看房价上涨的原因：<br />
+当源头资金放出，下游需要一个生意或者一条线路来让资金流动，但是如果原本的市场是饱和的，或者是健康的。理论上是不需要这么大的资金，于是资本就发挥了它的优势：居奇囤货。在我小时候，我经常能看到如：姜你军，蒜你狠这类的词汇，这些原因都是资金进入到了这个行业，居奇囤货，抬高物价，赚钱差价。这操作模式常见，而且能稳赚不赔。资金是聪明的，它会自己流向最赚钱的行业。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/119-%E5%85%B3%E4%BA%8E%E7%9D%80%E9%99%86-2023-06-16-10-05-10.png" alt="119-关于着陆-2023-06-16-10-05-10" /></p>
+<p>居奇囤货抬搞了物价，而且会影响普通百姓的吃喝，吃不饱饭可是会闹事的。于是在监管下，这些东西慢慢的就少见了。那么到了如今有没有刚需，而且不会影响到百姓吃饭的问题。地产就来了。<br />
+资金的进入本来没有什么问题，但是所有的资金下放都是通过银行贷款下放的，中国的银行更多的是政府工具的一种延申。所以遇上降息或者货币多发的时候，银行是有任务的；需要把这些钱贷出去；这就是为啥08年时候个体经营户都可以在银行贷款。放出去的越多，下游产生利润也就越多，经济就愈加繁荣。经济繁荣会带来好多好处但是也有问题。人们的钱花去哪里？我们可以看到日本经济腾飞的那几年，也是全世界买买买，但是中国外汇是管控的，那么就只能国内买买买。于是我们就看到了家电下乡，消费升级这类现象，但是最主要的还是房价上涨。</p>
+<h2 id="风险-一直都在"><a class="markdownIt-Anchor" href="#风险-一直都在"></a> 风险-一直都在</h2>
+<p>说完了因，我们来说说大家一直吹的房地产风险。什么是房地产的风险：是价格过高，让很多人都买不起么？<br />
+我觉得不是，房子在中国自古以来都是稀缺品，你可以看08年以前的报纸，在商品房初现的时候，就已经有相应的言论说要不吃不喝20年才能买的起，说明房价在起飞之前就已经是奢侈品。安得广厦千万间，大庇天下寒士尽欢颜，居者有其屋从古时候开始都是人民的梦想而不是目标。<br />
+那么什么是房地产的风险？<br />
+我们从房地产这条经济模式来看风险：</p>
+<blockquote>
+<p>政府卖地——地产商买地——地产商抵押地获得银行贷款——地产商盖到一定程度开始预售——购房者抵押买到的房子申请贷款</p>
+</blockquote>
+<p>这是一条房地产开发的常见模式，当然中间有好多细节忽略。这个模式看起来没问题，但是中间有一些操作，导致这个模式出现了一些奇奇怪怪的风险：</p>
+<ol>
+<li>政府卖地的土地出让金可以后期缴纳<br />
+这就是为啥有些房子盖好了之后，无法办理房产证，大多数是开发商没有交土地出纳金</li>
+<li>预售资格和预售资金监管不严<br />
+预售就是房子盖到比如说1楼，就允许你开始卖，这本来是提高地产商周转的好方法。理论上来说，它盖到这个地方，后续只需要房款30%-50%就可以盖完剩下的。然而实际过程有些刚开工就可以预售，而且预售资金也不是全部拿来盖房子了，而是拿去买下一快地了。</li>
+<li>银行接收了非个人的房产抵押<br />
+银行那些年还接收房地产商拿房子做抵押</li>
+</ol>
+<p>以上只是乱象中的一点现象，但是这些行为都增加了开放商的杠杆率。我们可以做一个完美的假设：<br />
+我花1亿买块地，但是出让金可以后续交，然后拿着1亿的地去银行贷款，贷出了8千万，拿其中4千万我去盖到一定程度，然后开始预售，我1亿的地，我卖房子2个亿。这些钱我通过途径拿了出来，现在我手现金里有2亿4千万；欠债1亿8千万。<br />
+现在摆在你面前的有两条路：</p>
+<ol>
+<li>还钱，还干净，然后拿着6千万的利润进入下一个循环。</li>
+<li>不还钱，拿着2亿4千万继续到处打点关系，买地。</li>
+</ol>
+<p>事实证明那时候大多数饿地产商选择了第二条路，那段时间我们时常可以看到开发商建房速度多么多么快。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/119-%E5%85%B3%E4%BA%8E%E7%9D%80%E9%99%86-2023-06-16-10-09-37.png" alt="119-关于着陆-2023-06-16-10-09-37" /><br />
+这样无形中提高了开发商的杠杆率，理论上你可以空手套白狼。如果你有资金那么可以套更多的狼。<br />
+地产的高利润让资金趋之若鹜，推高了地价，也推高了房价。于是卖房更赚钱了，大家就更加愿意进来了。于是更高的房价。但是就在我们之前看到的，开发商过高的杠杆率，如果在房价上涨的时候这么玩可以。如果房价下跌，会发生什么？</p>
+<ol>
+<li>开放商风险：开发商资金回笼困难<br />
+跌价的原因正是因为卖不动了，所以如果我房子卖不出去，别说银行，我连房子都建不下去。</li>
+<li>购房者风险：抵押物价值低<br />
+如果房价下跌，你抵押的房子价值不足你的贷款，那么理论上你是需要补充抵押物，否则银行会考虑直接卖了你的房子。</li>
+<li>银行风险：收不回贷款<br />
+银行是不需要实物，无论是房子还是房子上的地。他的目的是放钱出去然后再收回来，如果继续恶化下去的话，那么就会出现银行成为最大的地产商和房产持有者——新一届的地主。</li>
+</ol>
+<p>这就是我们说得风险，系统性经济风险。一旦崩了的话，那么是一起崩，人民无所谓，开发商也死得其所，但是如果银行崩溃的话，那么就是国家经济的衰退。这个才是最重要的。</p>
+<h2 id="阶段性救援-16年棚改货币化"><a class="markdownIt-Anchor" href="#阶段性救援-16年棚改货币化"></a> 阶段性救援-16年棚改货币化</h2>
+<blockquote>
+<p>苦一苦百姓，骂名我来担<br />
+———《大明王朝1566》</p>
+</blockquote>
+<p>上面意识到了这个问题，也关注这个问题。于是，在13年年后发现房价下行，为了解决问题，也为了去掉越来越多的房子。政府推出了一个货币棚改化：简单说就是拆你家不给房子了，给钱。到了后期甚至定向给房票。给钱很简单，促进经济流动。给房票也可以，就是拿来抵债或者出让金。那么现在作为开发商你面前又有两条路：</p>
+<ol>
+<li>收手，卖完手上的房子开始还欠着的钱。</li>
+<li>油门踩死，反正出事了国家担着</li>
+<li>抓紧套现走人，欠的钱凭什么要还。</li>
+</ol>
+<p>大多数选择了2和3，第一条是死路，按照理论来说确实他们是赚钱的。但是那些年扩张，为了拿钱买地，他们20%-50%的利率贷款都借了，如果现在停下，那么算下来，这些年估计赚的钱都是给这些资金打工了。所以货币棚改化之后，恒大，碧桂园都是油门踩死，不同的是，当初恒大是一边踩油门，一边在套现。通过外债套现。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/119-%E5%85%B3%E4%BA%8E%E7%9D%80%E9%99%86-2023-06-16-11-04-25.png" alt="119-关于着陆-2023-06-16-11-04-25" /><br />
+比如上面，许家印借公司钱，然后买公司的债。公司钱不用付利息，公司的债要付利息，这一来一回赚11.5%的利息差。然后如果公司破产，债券大于股权。要优先还债的。而许家印欠公司的钱？什么钱不钱的，都是一家人，分那么清楚干啥。<br />
+棚改化的直接结果就是再一次让房价起飞，从16年开始，本来是希望实现房价落地的举措，却在地产商的油门下，冲上了另一个顶端。如果16年的货币棚改正常落地的话，理论上是不会有这么多的烂尾楼，因为那时候是为了解决存量房而推出的，也不会有了接下来的烂尾断贷了。</p>
+<h2 id="体面-三道红线"><a class="markdownIt-Anchor" href="#体面-三道红线"></a> 体面-三道红线</h2>
+<p>既然你不体面，那么就让我帮你体面。<br />
+随着风险越来越不可控，终于国家选择了引爆这个炸弹，彼时地产销售已经陷入停滞，爆是迟早得事，针对风险，政府做了3件事，正好对应着风险的三个对象。</p>
+<ol>
+<li>三道红线<br />
+要求开发商降低自己得杠杆率，无论你去偷，去抢，去做抽屉协议，反正你要给我降下来，防止他们继续买地，强迫他们还钱。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/119-%E5%85%B3%E4%BA%8E%E7%9D%80%E9%99%86-2023-06-16-11-19-27.png" alt="119-关于着陆-2023-06-16-11-19-27" /></li>
+<li>政府限价<br />
+政府限价明面上是防止价格过高，实际上是房子价格过低。防止买房者被银行追加抵押物，引发断贷现象。</li>
+<li>收紧银行贷款<br />
+防止银行在开放商端出现问题，收紧开放商得贷款。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/119-%E5%85%B3%E4%BA%8E%E7%9D%80%E9%99%86-2023-06-16-11-22-53.png" alt="119-关于着陆-2023-06-16-11-22-53" /></li>
+</ol>
+<p>这三条主要是为了防止打击房地产，房价下跌而引起得系统性经济风险。<br />
+从结果来看，总体算好的，当然叠加疫情，叠加开放商得油门，出现来一些烂尾楼。但是这是无奈得，如果继续让开发商踩下去油门，后面烂尾的更多。而等开发商自己醒悟，那不可能的，参照16年得棚改。在踩刹车得过程中总有一些磨损。</p>
+<h2 id="新的问题何去何从"><a class="markdownIt-Anchor" href="#新的问题何去何从"></a> 新的问题—何去何从</h2>
+<p>房地产得问题似乎算是解决了，经济平稳，社会安定。虽然有一些不和谐，那可以归结为必须的代价。但是现在政府面对的一个新的问题：经济该何去何从。<br />
+从23年初，大家心心念念得经济复苏并没有到来。社会数据再好看，反映到现实就是没有一条新的经济模式给如今得社会。23年初为了刺激经济央行发行23万亿资金，但是这些资金却无法无处可去。随着监管抓紧，银行也没有地方放贷款。要钱得不能给，给钱得它不要。毕竟借贷没有合适得投资渠道也没有用。而以前得每次经济刺激下的期货也随着上层监控，不了了之。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/119-%E5%85%B3%E4%BA%8E%E7%9D%80%E9%99%86-2023-06-16-12-11-36.png" alt="119-关于着陆-2023-06-16-12-11-36" /><br />
+截止到6月份，虽然数据好看，但是实际到社会层面没有人感受到经济的复苏。而之前央行发行得大量货币去了哪里？<br />
+有人说去借新还旧，借新的低利率得贷款，去还之前旧的高利率得贷款。也算是一种解决方案吧。后续还得有一条经济出路，否则社会整体上没有信心。<br />
+而我对于房地产还是有希望得，不可能因噎废食得，地产是正常得经济循环中的一节。至于新的经济领头羊，那估计就要看领导能否发现一条新的路线。</p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>这是我忽然想写得一篇文章，毕竟房地产问题一直是大家的心头病。我只不过以我得角度来将这些年得事串联起来。当然整体得事情发展肯定不是我写的那么简单，但是刨去多余得枝节，我愿意相信这是其中得主干。这里面没有涉及到阴谋论，更多的是个人得臆想，那么到了最后我也来总结一下：</p>
+<ol>
+<li>房价不可能跌，银行在那，银行比你重要的多</li>
+<li>地产不可能死，那是正常经济循环</li>
+<li>新的资金蓄水池还没找到，政府在摸，我们也在摸</li>
+</ol>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>房地产</tag>
+        <tag>中国经济</tag>
+        <tag>民科经济学</tag>
+        <tag>暴论</tag>
       </tags>
   </entry>
   <entry>
@@ -2010,35 +2010,6 @@ Windows作为一个系统来说，现在越来越复杂，而且对于国内网�
       </tags>
   </entry>
   <entry>
-    <title>超能勇士崛起-又一好莱坞烂片</title>
-    <url>/2023/07/21/127-%E8%B6%85%E8%83%BD%E5%8B%87%E5%A3%AB%E5%B4%9B%E8%B5%B7/</url>
-    <content><![CDATA[<p>最近几年不知道是因为啥，好莱坞的爆米花大片连配爆米花都不行了。一个字，烂，特别的烂。<br />
-《变形金刚——超能勇士崛起》一听这名字，我就知道，是在搞情怀，我的期望很低，剧情可以，打架场面好就行了。然后，——</p>
-<span id="more"></span>
-<p>吐槽的点很多，首当其冲的就是这女主角，我他么的，梅根呢，罗茜呢，我看的就是香车美女，美女没有了，来了一个政治正确？<br />
-好莱坞这几年是飘了，不知道自己的落脚点在哪？没有美女的爆米花烂片算片？<br />
-剧情我就无力吐槽了，反正人家也不是长项，所以我对这块没啥意见，反正也是为了折腾而折腾，都说了不计代价，那么一开始就毁了不就得了。而且巨无霸拿着钥匙在地球好几万年，如果钥匙没用你就毁掉，如果有用就用，是在等汽车人过来一起打一架么？然后就是主角动不动的就是家庭，动不动的就超越种族限制。一开始还想着毁，后面一句话就不毁了？<br />
-战斗力也是谜，一开始4打3打不过，说了高等生物，然后加了3个巨无霸，就变成了7挑军队了。<br />
-最后，最重要的：<br />
-打斗场面没法看，没有爆炸，没有变形的细节特写，没有，什么都没有。我们的童年回忆就变身了一次，然后也没有特写镜头，只知道变身了，然后没有了，掩埋在了战场。<br />
-玛德，没钱就别搞这一出。<br />
-烂片，烂片。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>好莱坞</tag>
-        <tag>爆米花</tag>
-        <tag>烂片吐槽</tag>
-        <tag>变形金刚</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>关于死亡后的那亿万年</title>
     <url>/2023/07/21/128-%E5%85%B3%E4%BA%8E%E6%AD%BB%E4%BA%A1%E5%90%8E%E7%9A%84%E9%82%A3%E4%BA%BF%E4%B8%87%E5%B9%B4/</url>
     <content><![CDATA[<p>那就像是一颗石头在我的心脏之中，嵌在那，每次泵动的时候我就会想到：<br />
@@ -2204,6 +2175,35 @@ Windows作为一个系统来说，现在越来越复杂，而且对于国内网�
         <tag>祛疤</tag>
         <tag>一个人得手术</tag>
         <tag>人生的第一次手术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>超能勇士崛起-又一好莱坞烂片</title>
+    <url>/2023/07/21/127-%E8%B6%85%E8%83%BD%E5%8B%87%E5%A3%AB%E5%B4%9B%E8%B5%B7/</url>
+    <content><![CDATA[<p>最近几年不知道是因为啥，好莱坞的爆米花大片连配爆米花都不行了。一个字，烂，特别的烂。<br />
+《变形金刚——超能勇士崛起》一听这名字，我就知道，是在搞情怀，我的期望很低，剧情可以，打架场面好就行了。然后，——</p>
+<span id="more"></span>
+<p>吐槽的点很多，首当其冲的就是这女主角，我他么的，梅根呢，罗茜呢，我看的就是香车美女，美女没有了，来了一个政治正确？<br />
+好莱坞这几年是飘了，不知道自己的落脚点在哪？没有美女的爆米花烂片算片？<br />
+剧情我就无力吐槽了，反正人家也不是长项，所以我对这块没啥意见，反正也是为了折腾而折腾，都说了不计代价，那么一开始就毁了不就得了。而且巨无霸拿着钥匙在地球好几万年，如果钥匙没用你就毁掉，如果有用就用，是在等汽车人过来一起打一架么？然后就是主角动不动的就是家庭，动不动的就超越种族限制。一开始还想着毁，后面一句话就不毁了？<br />
+战斗力也是谜，一开始4打3打不过，说了高等生物，然后加了3个巨无霸，就变成了7挑军队了。<br />
+最后，最重要的：<br />
+打斗场面没法看，没有爆炸，没有变形的细节特写，没有，什么都没有。我们的童年回忆就变身了一次，然后也没有特写镜头，只知道变身了，然后没有了，掩埋在了战场。<br />
+玛德，没钱就别搞这一出。<br />
+烂片，烂片。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>好莱坞</tag>
+        <tag>爆米花</tag>
+        <tag>烂片吐槽</tag>
+        <tag>变形金刚</tag>
       </tags>
   </entry>
   <entry>
@@ -4333,6 +4333,65 @@ Debain系统</p>
       </tags>
   </entry>
   <entry>
+    <title>杭州游记</title>
+    <url>/2024/05/02/164-%E6%9D%AD%E5%B7%9E%E6%B8%B8%E8%AE%B0/</url>
+    <content><![CDATA[<p>这次杭州之行获益良多，写下来防止自己忘记。<br />
+这次的是为了参观一个电商公司而过去的，公司的一个负责人是我亲戚，在我大伯听到他们的规模和盈利之后，就想着派我过去考察考察。其实之前我就了解了电商，但是从别人的模式或者口中。我并没有对着行业有个比较清晰的认识，在外行人看来，这就是个买卖东西的平台。但是这次通过金洪的介绍之后，我补齐了这块拼图，对电商，对整个商业模式都有所了解。</p>
+<span id="more"></span>
+<h2 id="风险和利润"><a class="markdownIt-Anchor" href="#风险和利润"></a> 风险和利润</h2>
+<p>我一开始很奇特，现在网络如此发达，只要工厂制造，然后转手销售即可。而电商一个不掌握上游生产资料又不掌握下游用户的人，就是个倒卖倒卖的。我时常幻想的是，工厂只需要增加一个营销部门即可，来几个主播，或者几个店铺。这完全就是一个门外汉的想法。</p>
+<ol>
+<li>工厂的运营本身就是一门学问，营销不会是它的重点，所以即使成立了营销部门也不会是主力。</li>
+<li>网络确实可以增加曝光，有流量瓶颈，所以额外的营销公司帮助它将信息达到它到不了的地方。</li>
+<li>工厂的主力在研发，在控制成本，营销则是在销售，营销和工厂一样需要资金，所以一般只有规模够大的产品才可以一边生产一边销售，如那些大牌美妆。但即便如此，大牌美妆依旧需要线下柜台，分销。</li>
+</ol>
+<p>在一个市场规模足够大的市场里面，只要有利润，那么就有承担对应风险的人出现，营销承担的就是产品卖不出去的风险，工厂是承担生产环节的风险。厂家直销没有中间商赚差价注定是一场梦，直销的最终结局是传销。如果一个工厂又做销售又做负责生产，如果控制不好，大概率结局是会向营销倾斜的，然后产品过时，研发投入不及时等问题就会出现。<br />
+所以，营销不是一个倒卖倒卖的行业，他是正常物品流通的一个环节，同样承担着风险，有着利润。而电商只不过是一门新的营销工具而已，和十几年前的电视广告，线下门店是一样的。由此也可以看出线下门店这几年的消亡本质是因为营销工具的转变。</p>
+<h2 id="技术时间资金和沉淀"><a class="markdownIt-Anchor" href="#技术时间资金和沉淀"></a> 技术，时间，资金和沉淀</h2>
+<p>金洪从我到杭州，一直到离开杭州，一直强调的是，这是一个需要沉淀的行业。电商已经过去了红利期，现在是一个沉淀行业，类似钢筋这样，已经是一个正常行业中的一种，那么他就有它特点。除开风口那段蛮荒时期，是个人就能赚钱。现在的电商已经是整个产品销售行业中的一环了，而一个常规的行业就需要技术，资金，时间，沉淀那么它都需要具备。</p>
+<ol>
+<li>技术<br />
+直播需要引流，需要话术，淘宝店也需要人能看到。这一切都需要技术的支持。而技术的来源就需要时间和金钱的沉淀，淘宝并没有一个模板或者一个必成的套路。不客气的说，现在的淘宝电商还属于一个摸索阶段，它们有工具，但是如何利用这个工具让你的生意进入正轨是一个摆在所有新入门人前的门槛。哪怕同一个操作下，不同的人，不同的产品也有不同的效果。</li>
+<li>资金<br />
+如同所有行业一样，电商是需要资金的。大资金有大资金的方法：建立影像部门，建立客户部门，构建库存等。小资金也有小资金的生存之道。这个是行业的容量所致。一个行业需要有一定的容量，那么必然会有大资金和小资金的地方。作为一个收取营销费用的平台，它需要的是容量，而不是巨头。平台建立巨头的结果很容易被巨头所裹挟。所以平台会不断的调整策略给小资金，小营销者活力。这也是目前电商还没定势的原因，也是我看重的地方，在很多行业已经固定阶级和门槛之后，电商算是为数不多的还没有门槛，还没有形成固定阶级的行业</li>
+<li>时间<br />
+时间永远是客观的。</li>
+<li>沉淀<br />
+金洪和我说的第二大的重点就是沉淀，他们公司成立10年，中间沉淀下来的就是他们的资产。作为一个不断变动的行业，他们需要不断的去适应新的规则，但是每次适应之后沉淀下来的东西都可以帮助他们迎接下一个挑战，无论是店铺，经验，还是人。总归来说，这个行业需要你的坚持，金洪见过太多来考察的人，过来之后，回去火急火燎的注册开店，然后就是几个月之后放置在一旁。他告诉我说，你要做好两年没有成效的准备，这是必然的，两年的时间让你去适应，去了解电商，甚至中间会亏损，但是最后沉淀下来的东西还只是有可能会帮助你成功。<br />
+没有什么必然性，哪怕你坚持五年六年，最后也不一定会成功。但是中间可以沉淀下经验，供应商，对行业的了解等知识。这话算是一个指导性的话吧，你要把电商当作一个行业，而不是仅仅是电商来对待，行业的上游，下游，中间商都是可以生存的，哪怕你最后失败，但是你可以仗着你了解整个行业的上中下游，你可以改变思路，没必要在电商这个中游一直呆着，这么多年失败的经验让你接触的圈子，上游供应商，下游客户等，总会在未来的路上帮助你，而不是仅仅的盯着电商，却丢失了金山。</li>
+</ol>
+<p>金洪说了很多，整个电商是一个全竞争的行业，这意味着竞争一直都在，也意味着无限的机遇。有可能你没跟上新的营销路径，你就会被淘汰，同理；你要是紧跟，有可能会吃上新平台的红利期，踏上云端。这很重要，这会让你在2年销售量都没有起来的时候给你信心，让你觉得下一次就会是你销量爆发的时候。在这个市场，万事皆有可能。</p>
+<h2 id="经营之道"><a class="markdownIt-Anchor" href="#经营之道"></a> 经营之道</h2>
+<p>想想金洪其实没有教我操作，更多的是补足我对电商的概念缺口，剩下的就是经营之道。它会告诉我如何管理一个产品，已经他们公司摸索出来的经营理念。那是一种虚无的东西，但是能给你指明方向，让你知道如何起步，如何做。他会让你坚持住，坚持2年起步，甚至3年，他们经历了10年才有如今100人的规模。会让你觉得付出是有回报的。<br />
+对比了我之前了解的，我大致将电商分为三个环节：采购-运营-售后。他告诉了我采购环节的情况，大致的一个模式，剩下两个后续环节就那么随着采购的到来引申出来。<br />
+我附近也有做电商的，他们会在遇见瓶颈的时候，不知道如何去破土。对于他们来说，一个产品只要赚钱即可。然后就再另一个产品，他们的理念是一个产品做到他们所能做的最大营业额，然后就换另一个产品。做大营业额的方式有可能是再开一家卖相同产品的店。不能说他们的方法是错的，我认为只要能够活下来都是对的。但是就是隐隐觉得他们这种模式下会产生的一些问题，比如如果产品卖不出去了，产品的生命周期结束了呢？新的产品无法保证可以有利润？还有就是不断地跑产品，代表着不断的风险。<br />
+金洪公司的模式倒是让我眼前一亮：</p>
+<ol>
+<li>不做一个平台，由于人员配置齐全，发布在不同平台的成本很低。</li>
+<li>项目制上线新产品，严格控制一个新产品从上线到成为利润点的过程，同时给予开荒的人员较高的利润的。</li>
+<li>遵守平台规则，优化到他们的极致。</li>
+</ol>
+<p>他们的公司完全是一个营销公司，项目制上线可以让一个产品的试错成本可控，降低风险。而多平台尽可能的增加自己的流量，最后是优化，他们为此设立了影像部门，专门拍照，PS。这样的模式下，我觉得只要产品不是太差，在这一套组合拳下，都可以成为他们公司的利润点，他们已经摆脱了产品，侧重在营销上。<br />
+在现在的你看来，这也许是一个正规公司该有的想法，但是如果你是一个从小规模做大的，你就不会觉得这会是必然。有人侧重营销，有人侧重产品，尤其在你刚起步的时候，你的资金有限，是侧重营销还是花钱定制产品呢？一次错误的抉择就有可能让你从头再来。<br />
+他们公司需要这么多人，而也只有这么多人才能支撑的起那么多平台的营销，这是一个双向选择的道路。他们提供了一条公司由小做大的经营之道，也许不是最正确的，但是可以给予你一个方向。</p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>杭州之行我过去看到的并不是什么实际操作，有的仅仅是一些理念是，一些指导思想。有些人觉得这些很虚，没有用处。但是在我看来，操作和经验这些东西是需要自己一步步验证，实践出来的。确实他们是可以将操作和经验全盘亲授，但是一开始的规模就要跟他们如今一样大，毕竟他们的经验大多数是建立在如今100多人的规模下的，你应用在自己身上不一定是好的。我学的是渔，不是过来要鱼的。当然最后我也拿走了他们的内部培训文档作为参考。那些文档正如他所说的，网上随便找，都有。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>创业</tag>
+        <tag>电商</tag>
+        <tag>杭州</tag>
+        <tag>游记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何阅读一本书</title>
     <url>/2024/04/14/162-%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/</url>
     <content><![CDATA[<p>要是多年前的我，看到这个标题肯定转头就关闭页面，但是今天轮到我自己，我觉得我还是花点时间来描述一下我得读书观点吧。首先我觉得一本书，要简洁清楚说明自己观点，然后例证；重点是简洁。当然不同得书籍会有不同得描写方法，针对我阅读最多得科普和观点类书籍来说，我总结了几个暴论：</p>
@@ -4598,65 +4657,6 @@ Debain系统</p>
       </tags>
   </entry>
   <entry>
-    <title>杭州游记</title>
-    <url>/2024/05/02/164-%E6%9D%AD%E5%B7%9E%E6%B8%B8%E8%AE%B0/</url>
-    <content><![CDATA[<p>这次杭州之行获益良多，写下来防止自己忘记。<br />
-这次的是为了参观一个电商公司而过去的，公司的一个负责人是我亲戚，在我大伯听到他们的规模和盈利之后，就想着派我过去考察考察。其实之前我就了解了电商，但是从别人的模式或者口中。我并没有对着行业有个比较清晰的认识，在外行人看来，这就是个买卖东西的平台。但是这次通过金洪的介绍之后，我补齐了这块拼图，对电商，对整个商业模式都有所了解。</p>
-<span id="more"></span>
-<h2 id="风险和利润"><a class="markdownIt-Anchor" href="#风险和利润"></a> 风险和利润</h2>
-<p>我一开始很奇特，现在网络如此发达，只要工厂制造，然后转手销售即可。而电商一个不掌握上游生产资料又不掌握下游用户的人，就是个倒卖倒卖的。我时常幻想的是，工厂只需要增加一个营销部门即可，来几个主播，或者几个店铺。这完全就是一个门外汉的想法。</p>
-<ol>
-<li>工厂的运营本身就是一门学问，营销不会是它的重点，所以即使成立了营销部门也不会是主力。</li>
-<li>网络确实可以增加曝光，有流量瓶颈，所以额外的营销公司帮助它将信息达到它到不了的地方。</li>
-<li>工厂的主力在研发，在控制成本，营销则是在销售，营销和工厂一样需要资金，所以一般只有规模够大的产品才可以一边生产一边销售，如那些大牌美妆。但即便如此，大牌美妆依旧需要线下柜台，分销。</li>
-</ol>
-<p>在一个市场规模足够大的市场里面，只要有利润，那么就有承担对应风险的人出现，营销承担的就是产品卖不出去的风险，工厂是承担生产环节的风险。厂家直销没有中间商赚差价注定是一场梦，直销的最终结局是传销。如果一个工厂又做销售又做负责生产，如果控制不好，大概率结局是会向营销倾斜的，然后产品过时，研发投入不及时等问题就会出现。<br />
-所以，营销不是一个倒卖倒卖的行业，他是正常物品流通的一个环节，同样承担着风险，有着利润。而电商只不过是一门新的营销工具而已，和十几年前的电视广告，线下门店是一样的。由此也可以看出线下门店这几年的消亡本质是因为营销工具的转变。</p>
-<h2 id="技术时间资金和沉淀"><a class="markdownIt-Anchor" href="#技术时间资金和沉淀"></a> 技术，时间，资金和沉淀</h2>
-<p>金洪从我到杭州，一直到离开杭州，一直强调的是，这是一个需要沉淀的行业。电商已经过去了红利期，现在是一个沉淀行业，类似钢筋这样，已经是一个正常行业中的一种，那么他就有它特点。除开风口那段蛮荒时期，是个人就能赚钱。现在的电商已经是整个产品销售行业中的一环了，而一个常规的行业就需要技术，资金，时间，沉淀那么它都需要具备。</p>
-<ol>
-<li>技术<br />
-直播需要引流，需要话术，淘宝店也需要人能看到。这一切都需要技术的支持。而技术的来源就需要时间和金钱的沉淀，淘宝并没有一个模板或者一个必成的套路。不客气的说，现在的淘宝电商还属于一个摸索阶段，它们有工具，但是如何利用这个工具让你的生意进入正轨是一个摆在所有新入门人前的门槛。哪怕同一个操作下，不同的人，不同的产品也有不同的效果。</li>
-<li>资金<br />
-如同所有行业一样，电商是需要资金的。大资金有大资金的方法：建立影像部门，建立客户部门，构建库存等。小资金也有小资金的生存之道。这个是行业的容量所致。一个行业需要有一定的容量，那么必然会有大资金和小资金的地方。作为一个收取营销费用的平台，它需要的是容量，而不是巨头。平台建立巨头的结果很容易被巨头所裹挟。所以平台会不断的调整策略给小资金，小营销者活力。这也是目前电商还没定势的原因，也是我看重的地方，在很多行业已经固定阶级和门槛之后，电商算是为数不多的还没有门槛，还没有形成固定阶级的行业</li>
-<li>时间<br />
-时间永远是客观的。</li>
-<li>沉淀<br />
-金洪和我说的第二大的重点就是沉淀，他们公司成立10年，中间沉淀下来的就是他们的资产。作为一个不断变动的行业，他们需要不断的去适应新的规则，但是每次适应之后沉淀下来的东西都可以帮助他们迎接下一个挑战，无论是店铺，经验，还是人。总归来说，这个行业需要你的坚持，金洪见过太多来考察的人，过来之后，回去火急火燎的注册开店，然后就是几个月之后放置在一旁。他告诉我说，你要做好两年没有成效的准备，这是必然的，两年的时间让你去适应，去了解电商，甚至中间会亏损，但是最后沉淀下来的东西还只是有可能会帮助你成功。<br />
-没有什么必然性，哪怕你坚持五年六年，最后也不一定会成功。但是中间可以沉淀下经验，供应商，对行业的了解等知识。这话算是一个指导性的话吧，你要把电商当作一个行业，而不是仅仅是电商来对待，行业的上游，下游，中间商都是可以生存的，哪怕你最后失败，但是你可以仗着你了解整个行业的上中下游，你可以改变思路，没必要在电商这个中游一直呆着，这么多年失败的经验让你接触的圈子，上游供应商，下游客户等，总会在未来的路上帮助你，而不是仅仅的盯着电商，却丢失了金山。</li>
-</ol>
-<p>金洪说了很多，整个电商是一个全竞争的行业，这意味着竞争一直都在，也意味着无限的机遇。有可能你没跟上新的营销路径，你就会被淘汰，同理；你要是紧跟，有可能会吃上新平台的红利期，踏上云端。这很重要，这会让你在2年销售量都没有起来的时候给你信心，让你觉得下一次就会是你销量爆发的时候。在这个市场，万事皆有可能。</p>
-<h2 id="经营之道"><a class="markdownIt-Anchor" href="#经营之道"></a> 经营之道</h2>
-<p>想想金洪其实没有教我操作，更多的是补足我对电商的概念缺口，剩下的就是经营之道。它会告诉我如何管理一个产品，已经他们公司摸索出来的经营理念。那是一种虚无的东西，但是能给你指明方向，让你知道如何起步，如何做。他会让你坚持住，坚持2年起步，甚至3年，他们经历了10年才有如今100人的规模。会让你觉得付出是有回报的。<br />
-对比了我之前了解的，我大致将电商分为三个环节：采购-运营-售后。他告诉了我采购环节的情况，大致的一个模式，剩下两个后续环节就那么随着采购的到来引申出来。<br />
-我附近也有做电商的，他们会在遇见瓶颈的时候，不知道如何去破土。对于他们来说，一个产品只要赚钱即可。然后就再另一个产品，他们的理念是一个产品做到他们所能做的最大营业额，然后就换另一个产品。做大营业额的方式有可能是再开一家卖相同产品的店。不能说他们的方法是错的，我认为只要能够活下来都是对的。但是就是隐隐觉得他们这种模式下会产生的一些问题，比如如果产品卖不出去了，产品的生命周期结束了呢？新的产品无法保证可以有利润？还有就是不断地跑产品，代表着不断的风险。<br />
-金洪公司的模式倒是让我眼前一亮：</p>
-<ol>
-<li>不做一个平台，由于人员配置齐全，发布在不同平台的成本很低。</li>
-<li>项目制上线新产品，严格控制一个新产品从上线到成为利润点的过程，同时给予开荒的人员较高的利润的。</li>
-<li>遵守平台规则，优化到他们的极致。</li>
-</ol>
-<p>他们的公司完全是一个营销公司，项目制上线可以让一个产品的试错成本可控，降低风险。而多平台尽可能的增加自己的流量，最后是优化，他们为此设立了影像部门，专门拍照，PS。这样的模式下，我觉得只要产品不是太差，在这一套组合拳下，都可以成为他们公司的利润点，他们已经摆脱了产品，侧重在营销上。<br />
-在现在的你看来，这也许是一个正规公司该有的想法，但是如果你是一个从小规模做大的，你就不会觉得这会是必然。有人侧重营销，有人侧重产品，尤其在你刚起步的时候，你的资金有限，是侧重营销还是花钱定制产品呢？一次错误的抉择就有可能让你从头再来。<br />
-他们公司需要这么多人，而也只有这么多人才能支撑的起那么多平台的营销，这是一个双向选择的道路。他们提供了一条公司由小做大的经营之道，也许不是最正确的，但是可以给予你一个方向。</p>
-<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
-<p>杭州之行我过去看到的并不是什么实际操作，有的仅仅是一些理念是，一些指导思想。有些人觉得这些很虚，没有用处。但是在我看来，操作和经验这些东西是需要自己一步步验证，实践出来的。确实他们是可以将操作和经验全盘亲授，但是一开始的规模就要跟他们如今一样大，毕竟他们的经验大多数是建立在如今100多人的规模下的，你应用在自己身上不一定是好的。我学的是渔，不是过来要鱼的。当然最后我也拿走了他们的内部培训文档作为参考。那些文档正如他所说的，网上随便找，都有。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>创业</tag>
-        <tag>电商</tag>
-        <tag>杭州</tag>
-        <tag>游记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>政治和经济</title>
     <url>/2024/05/10/165-%E6%94%BF%E6%B2%BB%E5%92%8C%E7%BB%8F%E6%B5%8E/</url>
     <content><![CDATA[<p>我不可否认的是政治和经济有很强关联性，尤其是在国内这种政策经济市场下。但是我不喜欢动不动就说国内是集权国家，不是市场经济。经济就是经济，我谈论经济的时候，那就很简单的是经济，是一个根据市场自行反馈的一种相对应的机制。你可以讨论政策，因为这是国内环境所致，确实是政策指导经济。但是不要臆想，我谈论的政策是政策的本意，是政策想要达成的效果，而不是政策落地后的畸变，那是完全靠人来实施的东西，肯定会有变形，但这并不是攻击国家政体的理由。我们仅仅是讨论政策背后的想法和风向。如果不能抛弃对基层实施的主观想法，会影响你对经济走向的判断，经济就是经济。政策的落地是政策落地的问题，我们可以讨论这个政策落地的可能性，可行性，可操作性。这和这个政策本身是两回事。讨论它的操作性这是中层领导的工作。</p>
@@ -4875,40 +4875,6 @@ Debain系统</p>
       </tags>
   </entry>
   <entry>
-    <title>V.PS2023款黑五香港测试</title>
-    <url>/2024/05/30/171-V.PS2023%E6%AC%BE%E9%BB%91%E4%BA%94%E9%A6%99%E6%B8%AF%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<p>套餐内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">V.PS 2023年黑五款-HK </span><br><span class="line">1 vCPU</span><br><span class="line">1 GB RAM</span><br><span class="line">20G SSD Storage</span><br><span class="line">400GB Transfer</span><br><span class="line">500Mbps VirtIO Interface</span><br><span class="line">1 IPv4 &amp; 1 IPv6 /64</span><br><span class="line">Premium Network Profile</span><br><span class="line">29.9 Euro/Year </span><br></pre></td></tr></table></figure>
-<h2 id="结论"><a class="markdownIt-Anchor" href="#结论"></a> 结论</h2>
-<p>上来先说结论：<br />
-优点：</p>
-<ol>
-<li>香港线路，延迟特别低，移动快乐机，联通电信也能用</li>
-<li>价格便宜，一年240人民币左右，一个月20</li>
-</ol>
-<p>缺点：</p>
-<ol>
-<li>流量双向的，翻墙可以直接默认200G,适合一个人用，而且还得少看YouTube，有一个月刷YouTube过多，直接给我关机了。</li>
-<li>经常被打，尤其是电信，建议绕道</li>
-</ol>
-<p>总结：推荐一个人使用，多一个人就马上捉急，然后就是这家后续更新服务说明，已经不保证线路了，唯一的优势是香港延迟低，但是除移动外其他线路丢包厉害，经常被打。今年到期我会放生它或者转卖出去。</p>
-<span id="more"></span>
-<p>融合怪测试</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">测评频道: https://t.me/vps_reviews                    </span><br><span class="line">版本：2023.12.07</span><br><span class="line">更新日志：VPS融合怪测试(集百家之长)                       </span><br><span class="line">---------------------基础信息查询--感谢所有开源项目---------------------</span><br><span class="line"> CPU 型号          : Intel(R) Xeon(R) Gold 6148 CPU @ 2.40GHz</span><br><span class="line"> CPU 核心数        : 1</span><br><span class="line"> CPU 频率          : 2394.374 MHz</span><br><span class="line"> CPU 缓存          : L1: 32.00 KB / L2: 4.00 MB / L3: 16.00 MB</span><br><span class="line"> 硬盘空间          : 5.57 GiB / 14.73 GiB</span><br><span class="line"> 启动盘路径        : overlay</span><br><span class="line"> 内存              : 708.37 MiB / 978.98 MiB</span><br><span class="line"> Swap              : 152.02 MiB / 1000.00 MiB</span><br><span class="line"> 系统在线时间      : 13 days, 23 hour 0 min</span><br><span class="line"> 负载              : 0.30, 0.11, 0.03</span><br><span class="line"> 系统              : Debian GNU/Linux 12 (bookworm) (x86_64)</span><br><span class="line"> AES-NI指令集      : ✔ Enabled</span><br><span class="line"> VM-x/AMD-V支持    : ✔ Enabled</span><br><span class="line"> 架构              : x86_64 (64 Bit)</span><br><span class="line"> 内核              : 5.10.0-26-cloud-amd64</span><br><span class="line"> TCP加速方式       : 未设置TCP拥塞控制算法</span><br><span class="line"> 虚拟化架构        : Docker</span><br><span class="line"> NAT类型           : 独立映射,独立过滤,不支持回环</span><br><span class="line"> IPV4 ASN          : AS9312 xTom</span><br><span class="line"> IPV4 位置         : Hong Kong / Central and Western / HK</span><br><span class="line">---------------------CPU测试--感谢lemonbench开源------------------------</span><br><span class="line"> -&gt; CPU 测试中 (Fast Mode, 1-Pass @ 5sec)</span><br><span class="line"> 1 线程测试(1核)得分: 		745 Scores</span><br><span class="line">---------------------内存测试--感谢lemonbench开源-----------------------</span><br><span class="line"> -&gt; 内存测试 Test (Fast Mode, 1-Pass @ 5sec)</span><br><span class="line"> 单线程读测试:		14962.69 MB/s</span><br><span class="line"> 单线程写测试:		12511.13 MB/s</span><br><span class="line">------------------磁盘dd读写测试--感谢lemonbench开源--------------------</span><br><span class="line"> -&gt; 磁盘IO测试中 (4K Block/1M Block, Direct Mode)</span><br><span class="line"> 测试操作		写速度					读速度</span><br><span class="line"> 100MB-4K Block		31.8 MB/s (7754 IOPS, 3.30s)		45.6 MB/s (11120 IOPS, 2.30s)</span><br><span class="line"> 1GB-1M Block		1.2 GB/s (1158 IOPS, 0.86s)		1.4 GB/s (1353 IOPS, 0.74s)</span><br><span class="line">---------------------磁盘fio读写测试--感谢yabs开源----------------------</span><br><span class="line">Block Size | 4k            (IOPS) | 64k           (IOPS)</span><br><span class="line">  ------   | ---            ----  | ----           ---- </span><br><span class="line">Read       | 66.57 MB/s   (16.6k) | 872.61 MB/s  (13.6k)</span><br><span class="line">Write      | 66.74 MB/s   (16.6k) | 877.20 MB/s  (13.7k)</span><br><span class="line">Total      | 133.32 MB/s  (33.3k) | 1.74 GB/s    (27.3k)           |                      |                     </span><br><span class="line">Block Size | 512k          (IOPS) | 1m            (IOPS)</span><br><span class="line">  ------   | ---            ----  | ----           ---- </span><br><span class="line">Read       | 1.23 GB/s     (2.4k) | 1.22 GB/s     (1.1k)</span><br><span class="line">Write      | 1.30 GB/s     (2.5k) | 1.30 GB/s     (1.2k)</span><br><span class="line">Total      | 2.54 GB/s     (4.9k) | 2.52 GB/s     (2.4k)</span><br><span class="line">---------------------流媒体解锁--感谢sjlleo开源-------------------------</span><br><span class="line">以下测试的解锁地区是准确的，但是不是完整解锁的判断可能有误，这方面仅作参考使用</span><br><span class="line">----------------Youtube----------------</span><br><span class="line">[IPv4]</span><br><span class="line">连接方式: Youtube Video Server</span><br><span class="line">视频缓存节点地域: 中国香港(HKG07S42)</span><br><span class="line">Youtube识别地域: 香港(HK)</span><br><span class="line">----------------Netflix----------------</span><br><span class="line">[IPv4]</span><br><span class="line">您的出口IP可以使用Netflix，但仅可看Netflix自制剧</span><br><span class="line">NF所识别的IP地域信息：香港</span><br><span class="line">[IPv6]</span><br><span class="line">您的网络可能没有正常配置IPv6，或者没有IPv6网络接入</span><br><span class="line">---------------DisneyPlus---------------</span><br><span class="line">[IPv4]</span><br><span class="line">当前IPv4出口解锁DisneyPlus</span><br><span class="line">区域：香港区</span><br><span class="line">解锁Youtube，Netflix，DisneyPlus上面和下面进行比较，不同之处自行判断</span><br><span class="line">----------------流媒体解锁--感谢RegionRestrictionCheck开源--------------</span><br><span class="line"> 以下为IPV4网络测试，若无IPV4网络则无输出</span><br><span class="line">============[ Multination ]============</span><br><span class="line"> Dazn:					Unsupport</span><br><span class="line"> HotStar:				No</span><br><span class="line"> Disney+:				No</span><br><span class="line"> Netflix:				Originals Only</span><br><span class="line"> YouTube Premium:			Yes (Region: HK)</span><br><span class="line"> Amazon Prime Video:			Yes (Region: HK)</span><br><span class="line"> TVBAnywhere+:				Failed</span><br><span class="line"> iQyi Oversea Region:			HK</span><br><span class="line"> Viu.com:				Yes (Region: HK)</span><br><span class="line"> YouTube CDN:				Hong Kong </span><br><span class="line"> Netflix Preferred CDN:			Associated with [] in [Hong Kong ]</span><br><span class="line"> Steam Currency:			HKD</span><br><span class="line"> ChatGPT:				Only Available with Mobile APP</span><br><span class="line"> Bing Region:				HK</span><br><span class="line">=======================================</span><br><span class="line"> 以下为IPV6网络测试，若无IPV6网络则无输出</span><br><span class="line">---------------TikTok解锁--感谢lmc999的源脚本及fscarmen PR--------------</span><br><span class="line"> Tiktok Region:		Failed</span><br><span class="line">-------------------欺诈分数以及IP质量检测--本脚本原创-------------------</span><br><span class="line">数据仅作参考，不代表100%准确，如果和实际情况不一致请手动查询多个数据库比对</span><br><span class="line">以下为各数据库编号，输出结果后将自带数据库来源对应的编号</span><br><span class="line">ipinfo数据库 ①  | scamalytics数据库 ②  | virustotal数据库 ③  | abuseipdb数据库 ④  | ip2location数据库   ⑤</span><br><span class="line">ip-api数据库 ⑥  | ipwhois数据库     ⑦  | ipregistry数据库 ⑧  | ipdata数据库    ⑨  | ipgeolocation数据库 ⑩</span><br><span class="line">欺诈分数(越低越好): 0②</span><br><span class="line">abuse得分(越低越好): 0④</span><br><span class="line">IP类型: </span><br><span class="line">  使用类型(usage_type):hosting①  Data Center/Web Hosting/Transit⑤  hosting⑧  business⑨  </span><br><span class="line">  公司类型(company_type):hosting①  isp⑧  </span><br><span class="line">  云服务提供商(cloud_provider):  Yes⑧ </span><br><span class="line">  数据中心(datacenter):  Yes⑥   No⑨ </span><br><span class="line">  移动网络(mobile):  No⑥ </span><br><span class="line">  代理(proxy):  No① ② ⑥ ⑦ ⑧ ⑨ ⑩ </span><br><span class="line">  VPN(vpn):  No① ② ⑦ ⑧ </span><br><span class="line">  TOR(tor):  No① ② ⑦ ⑧ ⑨ </span><br><span class="line">  TOR出口(tor_exit):  No⑧ </span><br><span class="line">  搜索引擎机器人(search_engine_robot):② </span><br><span class="line">  匿名代理(anonymous):  No⑦ ⑧ ⑨ </span><br><span class="line">  攻击方(attacker):  No⑧ ⑨ </span><br><span class="line">  滥用者(abuser):  No⑧ ⑨ </span><br><span class="line">  威胁(threat):  No⑧ ⑨ </span><br><span class="line">  iCloud中继(icloud_relay):  No① ⑧ ⑨ </span><br><span class="line">  未分配IP(bogon):  No⑧ ⑨ </span><br><span class="line">Google搜索可行性：YES</span><br><span class="line">----------------三网回程--感谢zhanghanyun/backtrace开源-----------------</span><br><span class="line">国家: HK 城市: Hong Kong 服务商: AS9312 xTom</span><br><span class="line">北京电信 219.141.136.12  移动CMI [普通线路]           </span><br><span class="line">北京联通 202.106.50.1    移动CMI [普通线路]           </span><br><span class="line">北京移动 221.179.155.161 移动CMI [普通线路]           </span><br><span class="line">上海电信 202.96.209.133  移动CMI [普通线路]           </span><br><span class="line">上海联通 210.22.97.1     移动CMI [普通线路]           </span><br><span class="line">上海移动 211.136.112.200 移动CMI [普通线路]           </span><br><span class="line">广州电信 58.60.188.222   移动CMI [普通线路]           </span><br><span class="line">广州联通 210.21.196.6    移动CMI [普通线路]           </span><br><span class="line">广州移动 120.196.165.24  移动CMI [普通线路]           </span><br><span class="line">成都电信 61.139.2.69     移动CMI [普通线路]           </span><br><span class="line">成都联通 119.6.6.6       移动CMI [普通线路]           </span><br><span class="line">成都移动 211.137.96.205  移动CMI [普通线路]           </span><br><span class="line">---------------------回程路由--感谢fscarmen开源及PR---------------------</span><br><span class="line">依次测试电信/联通/移动经过的地区及线路，核心程序来自ipip.net或nexttrace，请知悉!</span><br><span class="line">广州电信 58.60.188.222</span><br><span class="line">0.08 ms  *  局域网</span><br><span class="line">21.76 ms  AS9312  中国, 香港, xtom.com</span><br><span class="line">142.61 ms  AS9312  中国, 香港, xtom.com</span><br><span class="line">0.50 ms  AS9312  中国, 香港, xtom.com</span><br><span class="line">0.52 ms  AS58453  中国, 香港, chinamobile.com, 移动</span><br><span class="line">0.46 ms  AS58453  中国, 香港, chinamobile.com, 移动</span><br><span class="line">4.88 ms  AS58453  中国, 香港, chinamobile.com, 移动</span><br><span class="line">28.39 ms  AS58453  中国, 上海, chinamobile.com, 移动</span><br><span class="line">29.29 ms  AS9808  中国, 上海, chinamobile.com, 移动</span><br><span class="line">28.90 ms  AS9808  中国, 上海, chinamobile.com, 移动</span><br><span class="line">31.25 ms  AS9808  中国, 上海, chinamobile.com, 移动</span><br><span class="line">85.80 ms  AS4134  中国, 广东, 广州, chinatelecom.com.cn, 电信</span><br><span class="line">96.30 ms  AS4134  中国, 广东, 深圳, chinatelecom.com.cn, 电信</span><br><span class="line">89.79 ms  AS4134  中国, 广东, 深圳, chinatelecom.com.cn, 电信</span><br><span class="line">广州联通 210.21.196.6</span><br><span class="line">0.26 ms  *  局域网</span><br><span class="line">13.39 ms  AS9312  中国, 香港, xtom.com</span><br><span class="line">0.38 ms  AS9312  中国, 香港, xtom.com</span><br><span class="line">0.35 ms  AS58453  中国, 香港, chinamobile.com, 移动</span><br><span class="line">0.44 ms  AS58453  中国, 香港, chinamobile.com, 移动</span><br><span class="line">10.03 ms  AS58453  中国, 香港, chinamobile.com, 移动</span><br><span class="line">27.79 ms  AS58453  中国, 上海, chinamobile.com, 移动</span><br><span class="line">29.67 ms  AS9808  中国, 上海, chinamobile.com, 移动</span><br><span class="line">29.44 ms  AS9808  中国, 上海, chinamobile.com, 移动</span><br><span class="line">34.98 ms  AS9808  中国, 广东, 广州, chinamobile.com, 移动</span><br><span class="line">84.35 ms  AS9808  中国, 广东, 广州, chinamobile.com, 移动</span><br><span class="line">93.75 ms  AS17816  中国, 广东, 深圳, chinaunicom.com, 联通</span><br><span class="line">95.76 ms  AS17623  中国, 广东, 深圳, chinaunicom.com, 联通</span><br><span class="line">90.76 ms  AS17623  中国, 广东, 深圳, chinaunicom.com, 联通</span><br><span class="line">广州移动 120.196.165.24</span><br><span class="line">0.10 ms  *  局域网</span><br><span class="line">178.94 ms  AS9312  中国, 香港, xtom.com</span><br><span class="line">0.31 ms  AS9312  中国, 香港, xtom.com</span><br><span class="line">0.37 ms  AS58453  中国, 香港, chinamobile.com, 移动</span><br><span class="line">6.65 ms  AS58453  中国, 香港, chinamobile.com, 移动</span><br><span class="line">8.19 ms  AS58453  中国, 广东, 广州, chinamobile.com, 移动</span><br><span class="line">7.71 ms  AS9808  中国, 广东, 广州, chinamobile.com, 移动</span><br><span class="line">7.75 ms  AS9808  中国, 广东, 广州, chinamobile.com, 移动</span><br><span class="line">10.67 ms  AS9808  中国, 广东, 广州, chinamobile.com, 移动</span><br><span class="line">20.03 ms  AS9808  中国, 广东, 广州, chinamobile.com, 移动</span><br><span class="line">11.43 ms  AS56040  中国, 广东, 深圳, chinamobile.com, 移动</span><br><span class="line">--------------------自动更新测速节点列表--本脚本原创--------------------</span><br><span class="line">位置		 上传速度	 下载速度	 延迟	  丢包率</span><br><span class="line">Speedtest.net	 373.36 Mbps	 511.69 Mbps	 0.22	  NULL</span><br><span class="line">中国香港	 369.01 Mbps	 496.26 Mbps	 0.37	  0.0%</span><br><span class="line">新加坡		 521.57 Mbps	 505.19 Mbps	 38.44	  0.0%</span><br><span class="line">联通WuXi	 518.26 Mbps	 509.39 Mbps	 62.14	  0.0%</span><br><span class="line">联通上海5G	 515.03 Mbps	 512.27 Mbps	 57.47	  0.0%</span><br><span class="line">移动杭州5G	 515.38 Mbps	 525.49 Mbps	 31.30	  0.0%</span><br><span class="line">移动Zhengzhou5G	 506.07 Mbps	 497.52 Mbps	 54.66	  0.0%</span><br><span class="line">------------------------------------------------------------------------</span><br><span class="line"> 总共花费      : 5 分 20 秒</span><br><span class="line"> 时间          : Fri Dec  8 05:55:11 UTC 2023</span><br><span class="line">------------------------------------------------------------------------</span><br><span class="line"></span><br></pre></td></tr></table></figure><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>融合怪</tag>
-        <tag>V.PS 黑五HK</tag>
-        <tag>香港线路</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>V.PS2024款猫彦祖圣塞何测试</title>
     <url>/2024/05/30/172-V.PS2024%E6%AC%BE%E7%8C%AB%E5%BD%A6%E7%A5%96%E6%AC%BE%E6%B5%8B%E8%AF%95/</url>
     <content><![CDATA[<p>套餐内容：</p>
@@ -5008,16 +4974,26 @@ Debain系统</p>
       </tags>
   </entry>
   <entry>
-    <title>瓦工香港GIA补货</title>
-    <url>/2024/06/06/175-%E7%93%A6%E5%B7%A5%E9%A6%99%E6%B8%AFGIA%E8%A1%A5%E8%B4%A7/</url>
-    <content><![CDATA[<p>真是活久见，瓦工的香港GIA线路，补货。这个线路都绝版几年了。<br />
-套餐内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Basic VPS - Self-managed - SPECIAL 40G KVM PROMO V5 - HONG KONG CN2 GIA</span><br><span class="line">SSD: 40 GB RAID-10</span><br><span class="line">RAM: 2048 MB</span><br><span class="line">CPU: 2x Intel Xeon</span><br><span class="line">Transfer: 500 GB/mo</span><br><span class="line">Link speed: 1 Gigabit</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Location: Hong Kong MEGA2</span><br><span class="line">Direct route via China Telecom (CN2 GIA), China Unicom, China Mobile</span><br><span class="line"></span><br><span class="line">Free automatic backups</span><br><span class="line">Free snapshots</span><br><span class="line">VPS technology: KVM/KiwiVM</span><br><span class="line">OS: 32 or 64 bit Centos, Debian, Ubuntu</span><br><span class="line">Instant OS reload</span><br><span class="line">IPv4: 1 dedicated address</span><br><span class="line">Secondary private network interface</span><br><span class="line">IPv6 support: **No**</span><br><span class="line">Full root access</span><br><span class="line">Instant RDNS update from control panel</span><br><span class="line">No contract, anytime cancellation</span><br><span class="line">Strictly self-managed, no support</span><br><span class="line">99.9% uptime guarantee</span><br><span class="line"></span><br><span class="line">899.99 USD/Year</span><br></pre></td></tr></table></figure>
-<p>没钱测试，直接上结论：</p>
+    <title>V.PS2023款黑五香港测试</title>
+    <url>/2024/05/30/171-V.PS2023%E6%AC%BE%E9%BB%91%E4%BA%94%E9%A6%99%E6%B8%AF%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<p>套餐内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">V.PS 2023年黑五款-HK </span><br><span class="line">1 vCPU</span><br><span class="line">1 GB RAM</span><br><span class="line">20G SSD Storage</span><br><span class="line">400GB Transfer</span><br><span class="line">500Mbps VirtIO Interface</span><br><span class="line">1 IPv4 &amp; 1 IPv6 /64</span><br><span class="line">Premium Network Profile</span><br><span class="line">29.9 Euro/Year </span><br></pre></td></tr></table></figure>
+<h2 id="结论"><a class="markdownIt-Anchor" href="#结论"></a> 结论</h2>
+<p>上来先说结论：<br />
+优点：</p>
 <ol>
-<li>不缺钱的主上，炒作的主自己掂量着点</li>
+<li>香港线路，延迟特别低，移动快乐机，联通电信也能用</li>
+<li>价格便宜，一年240人民币左右，一个月20</li>
 </ol>
-<span id="more"></span><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<p>缺点：</p>
+<ol>
+<li>流量双向的，翻墙可以直接默认200G,适合一个人用，而且还得少看YouTube，有一个月刷YouTube过多，直接给我关机了。</li>
+<li>经常被打，尤其是电信，建议绕道</li>
+</ol>
+<p>总结：推荐一个人使用，多一个人就马上捉急，然后就是这家后续更新服务说明，已经不保证线路了，唯一的优势是香港延迟低，但是除移动外其他线路丢包厉害，经常被打。今年到期我会放生它或者转卖出去。</p>
+<span id="more"></span>
+<p>融合怪测试</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">测评频道: https://t.me/vps_reviews                    </span><br><span class="line">版本：2023.12.07</span><br><span class="line">更新日志：VPS融合怪测试(集百家之长)                       </span><br><span class="line">---------------------基础信息查询--感谢所有开源项目---------------------</span><br><span class="line"> CPU 型号          : Intel(R) Xeon(R) Gold 6148 CPU @ 2.40GHz</span><br><span class="line"> CPU 核心数        : 1</span><br><span class="line"> CPU 频率          : 2394.374 MHz</span><br><span class="line"> CPU 缓存          : L1: 32.00 KB / L2: 4.00 MB / L3: 16.00 MB</span><br><span class="line"> 硬盘空间          : 5.57 GiB / 14.73 GiB</span><br><span class="line"> 启动盘路径        : overlay</span><br><span class="line"> 内存              : 708.37 MiB / 978.98 MiB</span><br><span class="line"> Swap              : 152.02 MiB / 1000.00 MiB</span><br><span class="line"> 系统在线时间      : 13 days, 23 hour 0 min</span><br><span class="line"> 负载              : 0.30, 0.11, 0.03</span><br><span class="line"> 系统              : Debian GNU/Linux 12 (bookworm) (x86_64)</span><br><span class="line"> AES-NI指令集      : ✔ Enabled</span><br><span class="line"> VM-x/AMD-V支持    : ✔ Enabled</span><br><span class="line"> 架构              : x86_64 (64 Bit)</span><br><span class="line"> 内核              : 5.10.0-26-cloud-amd64</span><br><span class="line"> TCP加速方式       : 未设置TCP拥塞控制算法</span><br><span class="line"> 虚拟化架构        : Docker</span><br><span class="line"> NAT类型           : 独立映射,独立过滤,不支持回环</span><br><span class="line"> IPV4 ASN          : AS9312 xTom</span><br><span class="line"> IPV4 位置         : Hong Kong / Central and Western / HK</span><br><span class="line">---------------------CPU测试--感谢lemonbench开源------------------------</span><br><span class="line"> -&gt; CPU 测试中 (Fast Mode, 1-Pass @ 5sec)</span><br><span class="line"> 1 线程测试(1核)得分: 		745 Scores</span><br><span class="line">---------------------内存测试--感谢lemonbench开源-----------------------</span><br><span class="line"> -&gt; 内存测试 Test (Fast Mode, 1-Pass @ 5sec)</span><br><span class="line"> 单线程读测试:		14962.69 MB/s</span><br><span class="line"> 单线程写测试:		12511.13 MB/s</span><br><span class="line">------------------磁盘dd读写测试--感谢lemonbench开源--------------------</span><br><span class="line"> -&gt; 磁盘IO测试中 (4K Block/1M Block, Direct Mode)</span><br><span class="line"> 测试操作		写速度					读速度</span><br><span class="line"> 100MB-4K Block		31.8 MB/s (7754 IOPS, 3.30s)		45.6 MB/s (11120 IOPS, 2.30s)</span><br><span class="line"> 1GB-1M Block		1.2 GB/s (1158 IOPS, 0.86s)		1.4 GB/s (1353 IOPS, 0.74s)</span><br><span class="line">---------------------磁盘fio读写测试--感谢yabs开源----------------------</span><br><span class="line">Block Size | 4k            (IOPS) | 64k           (IOPS)</span><br><span class="line">  ------   | ---            ----  | ----           ---- </span><br><span class="line">Read       | 66.57 MB/s   (16.6k) | 872.61 MB/s  (13.6k)</span><br><span class="line">Write      | 66.74 MB/s   (16.6k) | 877.20 MB/s  (13.7k)</span><br><span class="line">Total      | 133.32 MB/s  (33.3k) | 1.74 GB/s    (27.3k)           |                      |                     </span><br><span class="line">Block Size | 512k          (IOPS) | 1m            (IOPS)</span><br><span class="line">  ------   | ---            ----  | ----           ---- </span><br><span class="line">Read       | 1.23 GB/s     (2.4k) | 1.22 GB/s     (1.1k)</span><br><span class="line">Write      | 1.30 GB/s     (2.5k) | 1.30 GB/s     (1.2k)</span><br><span class="line">Total      | 2.54 GB/s     (4.9k) | 2.52 GB/s     (2.4k)</span><br><span class="line">---------------------流媒体解锁--感谢sjlleo开源-------------------------</span><br><span class="line">以下测试的解锁地区是准确的，但是不是完整解锁的判断可能有误，这方面仅作参考使用</span><br><span class="line">----------------Youtube----------------</span><br><span class="line">[IPv4]</span><br><span class="line">连接方式: Youtube Video Server</span><br><span class="line">视频缓存节点地域: 中国香港(HKG07S42)</span><br><span class="line">Youtube识别地域: 香港(HK)</span><br><span class="line">----------------Netflix----------------</span><br><span class="line">[IPv4]</span><br><span class="line">您的出口IP可以使用Netflix，但仅可看Netflix自制剧</span><br><span class="line">NF所识别的IP地域信息：香港</span><br><span class="line">[IPv6]</span><br><span class="line">您的网络可能没有正常配置IPv6，或者没有IPv6网络接入</span><br><span class="line">---------------DisneyPlus---------------</span><br><span class="line">[IPv4]</span><br><span class="line">当前IPv4出口解锁DisneyPlus</span><br><span class="line">区域：香港区</span><br><span class="line">解锁Youtube，Netflix，DisneyPlus上面和下面进行比较，不同之处自行判断</span><br><span class="line">----------------流媒体解锁--感谢RegionRestrictionCheck开源--------------</span><br><span class="line"> 以下为IPV4网络测试，若无IPV4网络则无输出</span><br><span class="line">============[ Multination ]============</span><br><span class="line"> Dazn:					Unsupport</span><br><span class="line"> HotStar:				No</span><br><span class="line"> Disney+:				No</span><br><span class="line"> Netflix:				Originals Only</span><br><span class="line"> YouTube Premium:			Yes (Region: HK)</span><br><span class="line"> Amazon Prime Video:			Yes (Region: HK)</span><br><span class="line"> TVBAnywhere+:				Failed</span><br><span class="line"> iQyi Oversea Region:			HK</span><br><span class="line"> Viu.com:				Yes (Region: HK)</span><br><span class="line"> YouTube CDN:				Hong Kong </span><br><span class="line"> Netflix Preferred CDN:			Associated with [] in [Hong Kong ]</span><br><span class="line"> Steam Currency:			HKD</span><br><span class="line"> ChatGPT:				Only Available with Mobile APP</span><br><span class="line"> Bing Region:				HK</span><br><span class="line">=======================================</span><br><span class="line"> 以下为IPV6网络测试，若无IPV6网络则无输出</span><br><span class="line">---------------TikTok解锁--感谢lmc999的源脚本及fscarmen PR--------------</span><br><span class="line"> Tiktok Region:		Failed</span><br><span class="line">-------------------欺诈分数以及IP质量检测--本脚本原创-------------------</span><br><span class="line">数据仅作参考，不代表100%准确，如果和实际情况不一致请手动查询多个数据库比对</span><br><span class="line">以下为各数据库编号，输出结果后将自带数据库来源对应的编号</span><br><span class="line">ipinfo数据库 ①  | scamalytics数据库 ②  | virustotal数据库 ③  | abuseipdb数据库 ④  | ip2location数据库   ⑤</span><br><span class="line">ip-api数据库 ⑥  | ipwhois数据库     ⑦  | ipregistry数据库 ⑧  | ipdata数据库    ⑨  | ipgeolocation数据库 ⑩</span><br><span class="line">欺诈分数(越低越好): 0②</span><br><span class="line">abuse得分(越低越好): 0④</span><br><span class="line">IP类型: </span><br><span class="line">  使用类型(usage_type):hosting①  Data Center/Web Hosting/Transit⑤  hosting⑧  business⑨  </span><br><span class="line">  公司类型(company_type):hosting①  isp⑧  </span><br><span class="line">  云服务提供商(cloud_provider):  Yes⑧ </span><br><span class="line">  数据中心(datacenter):  Yes⑥   No⑨ </span><br><span class="line">  移动网络(mobile):  No⑥ </span><br><span class="line">  代理(proxy):  No① ② ⑥ ⑦ ⑧ ⑨ ⑩ </span><br><span class="line">  VPN(vpn):  No① ② ⑦ ⑧ </span><br><span class="line">  TOR(tor):  No① ② ⑦ ⑧ ⑨ </span><br><span class="line">  TOR出口(tor_exit):  No⑧ </span><br><span class="line">  搜索引擎机器人(search_engine_robot):② </span><br><span class="line">  匿名代理(anonymous):  No⑦ ⑧ ⑨ </span><br><span class="line">  攻击方(attacker):  No⑧ ⑨ </span><br><span class="line">  滥用者(abuser):  No⑧ ⑨ </span><br><span class="line">  威胁(threat):  No⑧ ⑨ </span><br><span class="line">  iCloud中继(icloud_relay):  No① ⑧ ⑨ </span><br><span class="line">  未分配IP(bogon):  No⑧ ⑨ </span><br><span class="line">Google搜索可行性：YES</span><br><span class="line">----------------三网回程--感谢zhanghanyun/backtrace开源-----------------</span><br><span class="line">国家: HK 城市: Hong Kong 服务商: AS9312 xTom</span><br><span class="line">北京电信 219.141.136.12  移动CMI [普通线路]           </span><br><span class="line">北京联通 202.106.50.1    移动CMI [普通线路]           </span><br><span class="line">北京移动 221.179.155.161 移动CMI [普通线路]           </span><br><span class="line">上海电信 202.96.209.133  移动CMI [普通线路]           </span><br><span class="line">上海联通 210.22.97.1     移动CMI [普通线路]           </span><br><span class="line">上海移动 211.136.112.200 移动CMI [普通线路]           </span><br><span class="line">广州电信 58.60.188.222   移动CMI [普通线路]           </span><br><span class="line">广州联通 210.21.196.6    移动CMI [普通线路]           </span><br><span class="line">广州移动 120.196.165.24  移动CMI [普通线路]           </span><br><span class="line">成都电信 61.139.2.69     移动CMI [普通线路]           </span><br><span class="line">成都联通 119.6.6.6       移动CMI [普通线路]           </span><br><span class="line">成都移动 211.137.96.205  移动CMI [普通线路]           </span><br><span class="line">---------------------回程路由--感谢fscarmen开源及PR---------------------</span><br><span class="line">依次测试电信/联通/移动经过的地区及线路，核心程序来自ipip.net或nexttrace，请知悉!</span><br><span class="line">广州电信 58.60.188.222</span><br><span class="line">0.08 ms  *  局域网</span><br><span class="line">21.76 ms  AS9312  中国, 香港, xtom.com</span><br><span class="line">142.61 ms  AS9312  中国, 香港, xtom.com</span><br><span class="line">0.50 ms  AS9312  中国, 香港, xtom.com</span><br><span class="line">0.52 ms  AS58453  中国, 香港, chinamobile.com, 移动</span><br><span class="line">0.46 ms  AS58453  中国, 香港, chinamobile.com, 移动</span><br><span class="line">4.88 ms  AS58453  中国, 香港, chinamobile.com, 移动</span><br><span class="line">28.39 ms  AS58453  中国, 上海, chinamobile.com, 移动</span><br><span class="line">29.29 ms  AS9808  中国, 上海, chinamobile.com, 移动</span><br><span class="line">28.90 ms  AS9808  中国, 上海, chinamobile.com, 移动</span><br><span class="line">31.25 ms  AS9808  中国, 上海, chinamobile.com, 移动</span><br><span class="line">85.80 ms  AS4134  中国, 广东, 广州, chinatelecom.com.cn, 电信</span><br><span class="line">96.30 ms  AS4134  中国, 广东, 深圳, chinatelecom.com.cn, 电信</span><br><span class="line">89.79 ms  AS4134  中国, 广东, 深圳, chinatelecom.com.cn, 电信</span><br><span class="line">广州联通 210.21.196.6</span><br><span class="line">0.26 ms  *  局域网</span><br><span class="line">13.39 ms  AS9312  中国, 香港, xtom.com</span><br><span class="line">0.38 ms  AS9312  中国, 香港, xtom.com</span><br><span class="line">0.35 ms  AS58453  中国, 香港, chinamobile.com, 移动</span><br><span class="line">0.44 ms  AS58453  中国, 香港, chinamobile.com, 移动</span><br><span class="line">10.03 ms  AS58453  中国, 香港, chinamobile.com, 移动</span><br><span class="line">27.79 ms  AS58453  中国, 上海, chinamobile.com, 移动</span><br><span class="line">29.67 ms  AS9808  中国, 上海, chinamobile.com, 移动</span><br><span class="line">29.44 ms  AS9808  中国, 上海, chinamobile.com, 移动</span><br><span class="line">34.98 ms  AS9808  中国, 广东, 广州, chinamobile.com, 移动</span><br><span class="line">84.35 ms  AS9808  中国, 广东, 广州, chinamobile.com, 移动</span><br><span class="line">93.75 ms  AS17816  中国, 广东, 深圳, chinaunicom.com, 联通</span><br><span class="line">95.76 ms  AS17623  中国, 广东, 深圳, chinaunicom.com, 联通</span><br><span class="line">90.76 ms  AS17623  中国, 广东, 深圳, chinaunicom.com, 联通</span><br><span class="line">广州移动 120.196.165.24</span><br><span class="line">0.10 ms  *  局域网</span><br><span class="line">178.94 ms  AS9312  中国, 香港, xtom.com</span><br><span class="line">0.31 ms  AS9312  中国, 香港, xtom.com</span><br><span class="line">0.37 ms  AS58453  中国, 香港, chinamobile.com, 移动</span><br><span class="line">6.65 ms  AS58453  中国, 香港, chinamobile.com, 移动</span><br><span class="line">8.19 ms  AS58453  中国, 广东, 广州, chinamobile.com, 移动</span><br><span class="line">7.71 ms  AS9808  中国, 广东, 广州, chinamobile.com, 移动</span><br><span class="line">7.75 ms  AS9808  中国, 广东, 广州, chinamobile.com, 移动</span><br><span class="line">10.67 ms  AS9808  中国, 广东, 广州, chinamobile.com, 移动</span><br><span class="line">20.03 ms  AS9808  中国, 广东, 广州, chinamobile.com, 移动</span><br><span class="line">11.43 ms  AS56040  中国, 广东, 深圳, chinamobile.com, 移动</span><br><span class="line">--------------------自动更新测速节点列表--本脚本原创--------------------</span><br><span class="line">位置		 上传速度	 下载速度	 延迟	  丢包率</span><br><span class="line">Speedtest.net	 373.36 Mbps	 511.69 Mbps	 0.22	  NULL</span><br><span class="line">中国香港	 369.01 Mbps	 496.26 Mbps	 0.37	  0.0%</span><br><span class="line">新加坡		 521.57 Mbps	 505.19 Mbps	 38.44	  0.0%</span><br><span class="line">联通WuXi	 518.26 Mbps	 509.39 Mbps	 62.14	  0.0%</span><br><span class="line">联通上海5G	 515.03 Mbps	 512.27 Mbps	 57.47	  0.0%</span><br><span class="line">移动杭州5G	 515.38 Mbps	 525.49 Mbps	 31.30	  0.0%</span><br><span class="line">移动Zhengzhou5G	 506.07 Mbps	 497.52 Mbps	 54.66	  0.0%</span><br><span class="line">------------------------------------------------------------------------</span><br><span class="line"> 总共花费      : 5 分 20 秒</span><br><span class="line"> 时间          : Fri Dec  8 05:55:11 UTC 2023</span><br><span class="line">------------------------------------------------------------------------</span><br><span class="line"></span><br></pre></td></tr></table></figure><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
 
 <script src="/js/markmap.js"></script>
@@ -5026,10 +5002,9 @@ Debain系统</p>
         <category>技术顾问</category>
       </categories>
       <tags>
-        <tag>搬瓦工</tag>
-        <tag>香港机房</tag>
-        <tag>CN-GIA</tag>
-        <tag>补货</tag>
+        <tag>融合怪</tag>
+        <tag>V.PS 黑五HK</tag>
+        <tag>香港线路</tag>
       </tags>
   </entry>
   <entry>
@@ -5143,6 +5118,31 @@ Debain系统</p>
       </tags>
   </entry>
   <entry>
+    <title>瓦工香港GIA补货</title>
+    <url>/2024/06/06/175-%E7%93%A6%E5%B7%A5%E9%A6%99%E6%B8%AFGIA%E8%A1%A5%E8%B4%A7/</url>
+    <content><![CDATA[<p>真是活久见，瓦工的香港GIA线路，补货。这个线路都绝版几年了。<br />
+套餐内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Basic VPS - Self-managed - SPECIAL 40G KVM PROMO V5 - HONG KONG CN2 GIA</span><br><span class="line">SSD: 40 GB RAID-10</span><br><span class="line">RAM: 2048 MB</span><br><span class="line">CPU: 2x Intel Xeon</span><br><span class="line">Transfer: 500 GB/mo</span><br><span class="line">Link speed: 1 Gigabit</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Location: Hong Kong MEGA2</span><br><span class="line">Direct route via China Telecom (CN2 GIA), China Unicom, China Mobile</span><br><span class="line"></span><br><span class="line">Free automatic backups</span><br><span class="line">Free snapshots</span><br><span class="line">VPS technology: KVM/KiwiVM</span><br><span class="line">OS: 32 or 64 bit Centos, Debian, Ubuntu</span><br><span class="line">Instant OS reload</span><br><span class="line">IPv4: 1 dedicated address</span><br><span class="line">Secondary private network interface</span><br><span class="line">IPv6 support: **No**</span><br><span class="line">Full root access</span><br><span class="line">Instant RDNS update from control panel</span><br><span class="line">No contract, anytime cancellation</span><br><span class="line">Strictly self-managed, no support</span><br><span class="line">99.9% uptime guarantee</span><br><span class="line"></span><br><span class="line">899.99 USD/Year</span><br></pre></td></tr></table></figure>
+<p>没钱测试，直接上结论：</p>
+<ol>
+<li>不缺钱的主上，炒作的主自己掂量着点</li>
+</ol>
+<span id="more"></span><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>搬瓦工</tag>
+        <tag>香港机房</tag>
+        <tag>CN-GIA</tag>
+        <tag>补货</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>电商的一些思路</title>
     <url>/2024/08/31/179-%E7%94%B5%E5%95%86%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%B7%AF/</url>
     <content><![CDATA[<p>首先，在6月份正式投入，经过7，8两个月的摸索，对淘宝的一些体系和思路也是有了一定的了解，也趁着这个机会，讲一讲我在这里的一些见解。</p>
@@ -5242,6 +5242,49 @@ Debain系统</p>
       </tags>
   </entry>
   <entry>
+    <title>关于营销</title>
+    <url>/2024/10/06/182-%E5%85%B3%E4%BA%8E%E8%90%A5%E9%94%80/</url>
+    <content><![CDATA[<p>从6月初开始准备电商，到如今4个月过去了，中间的经历不可谓不丰富，有过一分钱不投推广的，希望靠低价来吸引客户。也有过一天投入500+推广费用的，来引流促单。现在沉淀下来了一些所思所想。分享一下</p>
+<span id="more"></span>
+<h2 id="门槛"><a class="markdownIt-Anchor" href="#门槛"></a> 门槛：</h2>
+<p>电商这个行业是有门槛的，如果你觉得这还是当初一个人一台电脑就可以成功的行业，那么我建议你放弃这个梦想。我在三个月的时间，投入的资金超过3万，但是这仅仅是一声响，并没有给我带来太大的回报。<br />
+我们前期走的是平价亲民的路线，一款产品30+的成本，50就可以卖。在我们看来，我们完全就是赚个辛苦钱，一单十几块。但是我们在经历了初期一个月，发现没有任何动静。产品的低价并不会带来任何流量，每天只有一位数的访客。后面我们决定开启推广，然而我们的利润本身就不高，如果推广费设置100左右每天，我们就需要五单才可以回本。所以我们同步调整售价，提高到了100+。利润直接翻几番。在这段时间，我们一天最高烧过600的推广费，带来接近2000人的访客，最后成交1单。在如此一个之后，我们发现这样下去，不行。我们的投入遥遥无期。不知道何时才能回本，而且回本压力特别大，在每天接近2000人的访客下，依旧没有任何的成交，这意味着要么访客不对，要么我们不对。<br />
+实际上，我们确实面临问题。我们的产品退货特别高，我特别记得，一个月一共出11单，最后被退6单。其中有供应商代发货发了一些残次品，也有毫无理由的退货。然后我们就决定自己库存，来控制产品质量，但是依旧摆脱不了退货的问题。总归是：我们的产品在用户眼里不值这个价格。<br />
+现在摆在我们面前的是三个问题：流量，资金，产品。<br />
+淘宝是个营销平台，营销的关键，往往包含着一点：用户。我们找不到目标的用户群。淘宝的流量很贵，或者说用户很贵，3毛左右一个，2000个就要600一天，但是不保证每个用户都是由意愿或者想买的。我们需要不停的投入，只要人数达到一定之后，就有转化。巨大的流量，需要的是资金来支持，但是资金的不断投入，那么就会产生一个问题：我们何时才能盈利。在我们一个月烧完1万5之后，我们冷静了。凭借着我们一单50的毛利，我们至少要300单才能回本，每天都得10单。但是实际上，我们有时候一个礼拜才一单。淘宝已经过了那个流量溢出的时代，现在淘宝上的每个用户都是需要花钱去请，去抢的。所以，如果你没有做好长久准备，以及一定量的资金，那么就不要轻易涉及淘宝。我在万堂书院的一节课上听到老师说过：一个产品，一天三个计划，每个计划100的预算。一天至少烧300。如果连这300你都不准备投入。那么你就别做淘宝了。我亲身感受下来确实如此。一天300只是门槛，一个产品的门槛。<br />
+然后是资金，按照一天300的预算，一年是12万的投入，没有人能够保证这些投入是有回报的；持续不断的推广投入是必须的；三天打鱼两天晒网的做法并不适合淘宝电商。一旦你决定要涉及电商，那么一定要确定好自己准备投入的资金量，可以确定的如果准备投入10万块，那么我建议你直接买个车跑滴滴赚钱，会比电商更容易也更快。<br />
+产品，很多人涉及电商，一开始也许是产品上有价格优势，比如就是货源地的。我承认，如果你是一手拿货的话确实有优势，但是我不会建议你做淘宝，我会建议你做1688。经过几年的沉淀，现在淘宝和1688有着自己明确的定位，如果你不懂营销，仅仅是有自己一手货源的话，那么1688上会更适合你。淘宝更多的需要你营销技巧。我们前期确实因为产品质量问题退过单，更多时候我们退单的原因仅仅是用户觉得你的产品不值这个价格。我们仅仅采用淘宝平台的营销手段，没有直播，没有自己引流，没有站外粉丝等等。我们没有像明星带货，没有自己品牌，一个没有任何品牌，做工一般的东西，就只能被人挑剔，不值。这是很正常的问题。然而一旦要求品牌，价值这些，那就意味着更大的投入。<br />
+如果你准备10万准备来电子商务，那么我建议你直接买辆比亚迪秦plus去跑滴滴，赚钱更快。准备20万，那么我建议你只做一个产品的店铺，产品太多你铺开了也没有销量，不要以为可以一个产品带动其他产品销量，20万带来的销量太少了，带动不了其他产品。如果你说你可以拿到一手货源，或者就在货源工厂旁边，那么直接做1688。一旦维护好几个下游客户，那么几乎不用愁单子，而且不用太多推广，很多时候下游用户一旦卖了你的产品，就几乎和你绑定了。</p>
+<h2 id="破局"><a class="markdownIt-Anchor" href="#破局"></a> 破局</h2>
+<p>在了解完门槛之后，如果还能坚持，或者说还想要继续做电商的。也不是没有方法。我始终奉行的是没有绝对的黑夜也没有纯净的光明。</p>
+<ol>
+<li>小品类，服务类，销售额不高的品类<br />
+大品类意味着销售额大，销售额大意味着竞争的激烈，如果你卖的是衣服，那么你就能深刻体会到什么叫做水深火热，同样的货源有人可以赔本卖，很正常。所以我建议可以避开这些品类；类似我最近购买的一个更换鼠标微动，或者行业内的实验母材等等。这些品类市场规模小，带来的就是你的流量成本很低，甚至可以不用推广。以更换鼠标微动为例，我甚至不会去看它的销量，店铺评级，价格合适的随便选一家，太便宜的我也不敢选，甚至我筛选出来的店铺就没有很多。如果你做的再冷门点，有可能就只有几家。</li>
+<li>品牌代理<br />
+品牌代理算是不错的一个入门，主要是产品和品牌已经有人在前面给你做好了一些，甚至一些品牌还有限价保护，不允许你卖太低影响品牌定位。但是同样的品牌代理也是有一定的风险：1. 推广费少，但不意味着不用推广。2. 大品牌代理商众多很多时候会是互相压价比拼的，小品牌又看和品牌商的关系还看品牌商的实力。<br />
+品牌代理本质上是买船票上品牌的船，品牌商的营销是大头，你的只是锦上添花，一些小品牌会限制代理商的产品，然后将主力营销放在自己的限定品上，让代理商卖那些过时品的库存。所以确定要做品牌代理就要多考察品牌商实力，还有就是搞好和他们的关系。</li>
+<li>功夫在诗外<br />
+营销的关键在流量，如果你有一个自己的流量渠道：比如博客，抖音直播，vlog用户或者其他可以吸引人来的渠道。那么你也可以考虑做，这很类似前期那些游戏主播会在直播的界面上打自己的淘宝店名字。与其在淘宝和他的几个推广计划相互纠结，还不如在局外做更多功夫。</li>
+<li>任何你觉得可以的</li>
+</ol>
+<h2 id="思考"><a class="markdownIt-Anchor" href="#思考"></a> 思考</h2>
+<p>对于电商，一开始我想了很多，以为是淘宝的问题，换一个平台呢？去了拼多多平台，一样。拼多多的推广简单粗暴，推广扣钱，一单20块，成交扣钱，一天一个产品100元预算起步；能给你花完90%，但是令人气愤的是，每天凌晨1点就有人来下2单，然后退货。40+的预算就没了。你也许觉得它这样很恶心，我可以确切的告诉你，无论是不是系统故意如此，你总归是需要提高预算，来覆盖掉这些恶心人的成本，只不过这些成本之前是在你的预料之外的，但是遇见问题就要解决问题。<br />
+其次是对整体经济环境，在前几年，我的主力消费平台是淘宝，京东。每年双十一，618我都会消费个一两千块钱，然后这几年我慢慢的也全部转变为拼多多买东西。很多时候仅仅是它上面东西便宜就够了，我不会多平台比价，那样太累了，但是拼多多给我的印象就是便宜，于是我将它作为我购买东西的第一选择。现在回想起前几年，拼多多，淘宝，京东互相打擂台，但是基本面不会变，在京东消费的人还是会在京东消费，甚至会看不起拼多多。每个平台都有自己的特定用户，他们带着平台的定位和预期去上面选择自己的产品。这几年的经济下行之后，导致了用户群体的混乱，最直接的表现就是，对于一件50块钱的产品，他们会觉得这个东西不值，但是如果放在以前，他们会觉得在拼多多上买的就是这样。用户消费降级了，但是对产品的期待没有降级，这也许就是我们的退货率那么高的因素之一吧。</p>
+<h2 id="落点"><a class="markdownIt-Anchor" href="#落点"></a> 落点</h2>
+<p>以上算是从头走到尾的一些心路历程和思考吧，后面我还会继续投入，但是不会像以前那么大。我会降低每日预算，比如到50，然后回选择其他的营销渠道，比如淘宝上的短视频。之前测试过效果一般般，毕竟这东西要靠剪辑和创意，是一个比较系统的工程。其实直播会带来比较多的流量，但是目前还不会，而且还需要一定的设备投入。同时也会在侧重其他地方的引流，功夫在诗外。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>电商</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>宏观数据推演</title>
     <url>/2024/09/26/181-%E5%AE%8F%E8%A7%82%E6%95%B0%E6%8D%AE%E6%8E%A8%E6%BC%94/</url>
     <content><![CDATA[<p>宏观理论，说简单也简单，说复杂也复杂。重点在于你需要有一套自己的逻辑推演，以及验证。这不是街口侃大山；所以需要很详实的数据支撑。</p>
@@ -5309,49 +5352,6 @@ Debain系统</p>
       <tags>
         <tag>宏观数据推演</tag>
         <tag>宏观</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于营销</title>
-    <url>/2024/10/06/182-%E5%85%B3%E4%BA%8E%E8%90%A5%E9%94%80/</url>
-    <content><![CDATA[<p>从6月初开始准备电商，到如今4个月过去了，中间的经历不可谓不丰富，有过一分钱不投推广的，希望靠低价来吸引客户。也有过一天投入500+推广费用的，来引流促单。现在沉淀下来了一些所思所想。分享一下</p>
-<span id="more"></span>
-<h2 id="门槛"><a class="markdownIt-Anchor" href="#门槛"></a> 门槛：</h2>
-<p>电商这个行业是有门槛的，如果你觉得这还是当初一个人一台电脑就可以成功的行业，那么我建议你放弃这个梦想。我在三个月的时间，投入的资金超过3万，但是这仅仅是一声响，并没有给我带来太大的回报。<br />
-我们前期走的是平价亲民的路线，一款产品30+的成本，50就可以卖。在我们看来，我们完全就是赚个辛苦钱，一单十几块。但是我们在经历了初期一个月，发现没有任何动静。产品的低价并不会带来任何流量，每天只有一位数的访客。后面我们决定开启推广，然而我们的利润本身就不高，如果推广费设置100左右每天，我们就需要五单才可以回本。所以我们同步调整售价，提高到了100+。利润直接翻几番。在这段时间，我们一天最高烧过600的推广费，带来接近2000人的访客，最后成交1单。在如此一个之后，我们发现这样下去，不行。我们的投入遥遥无期。不知道何时才能回本，而且回本压力特别大，在每天接近2000人的访客下，依旧没有任何的成交，这意味着要么访客不对，要么我们不对。<br />
-实际上，我们确实面临问题。我们的产品退货特别高，我特别记得，一个月一共出11单，最后被退6单。其中有供应商代发货发了一些残次品，也有毫无理由的退货。然后我们就决定自己库存，来控制产品质量，但是依旧摆脱不了退货的问题。总归是：我们的产品在用户眼里不值这个价格。<br />
-现在摆在我们面前的是三个问题：流量，资金，产品。<br />
-淘宝是个营销平台，营销的关键，往往包含着一点：用户。我们找不到目标的用户群。淘宝的流量很贵，或者说用户很贵，3毛左右一个，2000个就要600一天，但是不保证每个用户都是由意愿或者想买的。我们需要不停的投入，只要人数达到一定之后，就有转化。巨大的流量，需要的是资金来支持，但是资金的不断投入，那么就会产生一个问题：我们何时才能盈利。在我们一个月烧完1万5之后，我们冷静了。凭借着我们一单50的毛利，我们至少要300单才能回本，每天都得10单。但是实际上，我们有时候一个礼拜才一单。淘宝已经过了那个流量溢出的时代，现在淘宝上的每个用户都是需要花钱去请，去抢的。所以，如果你没有做好长久准备，以及一定量的资金，那么就不要轻易涉及淘宝。我在万堂书院的一节课上听到老师说过：一个产品，一天三个计划，每个计划100的预算。一天至少烧300。如果连这300你都不准备投入。那么你就别做淘宝了。我亲身感受下来确实如此。一天300只是门槛，一个产品的门槛。<br />
-然后是资金，按照一天300的预算，一年是12万的投入，没有人能够保证这些投入是有回报的；持续不断的推广投入是必须的；三天打鱼两天晒网的做法并不适合淘宝电商。一旦你决定要涉及电商，那么一定要确定好自己准备投入的资金量，可以确定的如果准备投入10万块，那么我建议你直接买个车跑滴滴赚钱，会比电商更容易也更快。<br />
-产品，很多人涉及电商，一开始也许是产品上有价格优势，比如就是货源地的。我承认，如果你是一手拿货的话确实有优势，但是我不会建议你做淘宝，我会建议你做1688。经过几年的沉淀，现在淘宝和1688有着自己明确的定位，如果你不懂营销，仅仅是有自己一手货源的话，那么1688上会更适合你。淘宝更多的需要你营销技巧。我们前期确实因为产品质量问题退过单，更多时候我们退单的原因仅仅是用户觉得你的产品不值这个价格。我们仅仅采用淘宝平台的营销手段，没有直播，没有自己引流，没有站外粉丝等等。我们没有像明星带货，没有自己品牌，一个没有任何品牌，做工一般的东西，就只能被人挑剔，不值。这是很正常的问题。然而一旦要求品牌，价值这些，那就意味着更大的投入。<br />
-如果你准备10万准备来电子商务，那么我建议你直接买辆比亚迪秦plus去跑滴滴，赚钱更快。准备20万，那么我建议你只做一个产品的店铺，产品太多你铺开了也没有销量，不要以为可以一个产品带动其他产品销量，20万带来的销量太少了，带动不了其他产品。如果你说你可以拿到一手货源，或者就在货源工厂旁边，那么直接做1688。一旦维护好几个下游客户，那么几乎不用愁单子，而且不用太多推广，很多时候下游用户一旦卖了你的产品，就几乎和你绑定了。</p>
-<h2 id="破局"><a class="markdownIt-Anchor" href="#破局"></a> 破局</h2>
-<p>在了解完门槛之后，如果还能坚持，或者说还想要继续做电商的。也不是没有方法。我始终奉行的是没有绝对的黑夜也没有纯净的光明。</p>
-<ol>
-<li>小品类，服务类，销售额不高的品类<br />
-大品类意味着销售额大，销售额大意味着竞争的激烈，如果你卖的是衣服，那么你就能深刻体会到什么叫做水深火热，同样的货源有人可以赔本卖，很正常。所以我建议可以避开这些品类；类似我最近购买的一个更换鼠标微动，或者行业内的实验母材等等。这些品类市场规模小，带来的就是你的流量成本很低，甚至可以不用推广。以更换鼠标微动为例，我甚至不会去看它的销量，店铺评级，价格合适的随便选一家，太便宜的我也不敢选，甚至我筛选出来的店铺就没有很多。如果你做的再冷门点，有可能就只有几家。</li>
-<li>品牌代理<br />
-品牌代理算是不错的一个入门，主要是产品和品牌已经有人在前面给你做好了一些，甚至一些品牌还有限价保护，不允许你卖太低影响品牌定位。但是同样的品牌代理也是有一定的风险：1. 推广费少，但不意味着不用推广。2. 大品牌代理商众多很多时候会是互相压价比拼的，小品牌又看和品牌商的关系还看品牌商的实力。<br />
-品牌代理本质上是买船票上品牌的船，品牌商的营销是大头，你的只是锦上添花，一些小品牌会限制代理商的产品，然后将主力营销放在自己的限定品上，让代理商卖那些过时品的库存。所以确定要做品牌代理就要多考察品牌商实力，还有就是搞好和他们的关系。</li>
-<li>功夫在诗外<br />
-营销的关键在流量，如果你有一个自己的流量渠道：比如博客，抖音直播，vlog用户或者其他可以吸引人来的渠道。那么你也可以考虑做，这很类似前期那些游戏主播会在直播的界面上打自己的淘宝店名字。与其在淘宝和他的几个推广计划相互纠结，还不如在局外做更多功夫。</li>
-<li>任何你觉得可以的</li>
-</ol>
-<h2 id="思考"><a class="markdownIt-Anchor" href="#思考"></a> 思考</h2>
-<p>对于电商，一开始我想了很多，以为是淘宝的问题，换一个平台呢？去了拼多多平台，一样。拼多多的推广简单粗暴，推广扣钱，一单20块，成交扣钱，一天一个产品100元预算起步；能给你花完90%，但是令人气愤的是，每天凌晨1点就有人来下2单，然后退货。40+的预算就没了。你也许觉得它这样很恶心，我可以确切的告诉你，无论是不是系统故意如此，你总归是需要提高预算，来覆盖掉这些恶心人的成本，只不过这些成本之前是在你的预料之外的，但是遇见问题就要解决问题。<br />
-其次是对整体经济环境，在前几年，我的主力消费平台是淘宝，京东。每年双十一，618我都会消费个一两千块钱，然后这几年我慢慢的也全部转变为拼多多买东西。很多时候仅仅是它上面东西便宜就够了，我不会多平台比价，那样太累了，但是拼多多给我的印象就是便宜，于是我将它作为我购买东西的第一选择。现在回想起前几年，拼多多，淘宝，京东互相打擂台，但是基本面不会变，在京东消费的人还是会在京东消费，甚至会看不起拼多多。每个平台都有自己的特定用户，他们带着平台的定位和预期去上面选择自己的产品。这几年的经济下行之后，导致了用户群体的混乱，最直接的表现就是，对于一件50块钱的产品，他们会觉得这个东西不值，但是如果放在以前，他们会觉得在拼多多上买的就是这样。用户消费降级了，但是对产品的期待没有降级，这也许就是我们的退货率那么高的因素之一吧。</p>
-<h2 id="落点"><a class="markdownIt-Anchor" href="#落点"></a> 落点</h2>
-<p>以上算是从头走到尾的一些心路历程和思考吧，后面我还会继续投入，但是不会像以前那么大。我会降低每日预算，比如到50，然后回选择其他的营销渠道，比如淘宝上的短视频。之前测试过效果一般般，毕竟这东西要靠剪辑和创意，是一个比较系统的工程。其实直播会带来比较多的流量，但是目前还不会，而且还需要一定的设备投入。同时也会在侧重其他地方的引流，功夫在诗外。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>电商</tag>
       </tags>
   </entry>
   <entry>
@@ -6217,78 +6217,6 @@ QWRT的配置路径在接口-lan-DHCP服务器，DHCP选项选择6,192.168.1.187
       </tags>
   </entry>
   <entry>
-    <title>飞牛OS云端数据备份和取回</title>
-    <url>/2025/02/11/197-%E9%A3%9E%E7%89%9BOS%E4%BA%91%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%92%8C%E5%8F%96%E5%9B%9E/</url>
-    <content><![CDATA[<p>我算是比较早一批用云盘的用户，更多的是用来备份上班时候的数据，方便加班或者电脑没带的时候简单处理下。私心就是离职的时候我就不用费劲巴拉的拷贝文件。这些年主流的几个网盘程序都使用过了，趁现在自己买了一个NAS，想要把数据都回笼，所以趁着这个机会也来评判下用过网盘的优劣：</p>
-<span id="more"></span>
-<h2 id="1-百度云"><a class="markdownIt-Anchor" href="#1-百度云"></a> 1. 百度云</h2>
-<p>大名鼎鼎，我是早期用户，现在空间2T，我在里面存有毕业后1-4公司的资料，占用600GB。说重要么？也不是很重要，但是毕竟是自己当初一点点累积的，就想着下载回来。我一直用到百度网盘限速之后就不在使用，因为当初换到第5家公司，我发现下载下来花费的时间超级长，就暂且搁置了。<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/197-%E9%A3%9E%E7%89%9BOS%E4%BA%91%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%92%8C%E5%8F%96%E5%9B%9E-2025-02-12-09-45-08.png" alt="197-飞牛OS云端数据备份和取回-2025-02-12-09-45-08" /><br />
-数据下载：<br />
-飞牛OS支持直接挂载百度云盘，所以使用很简单。下载可以使用备份计划直接拉回来。速度么？不敢恭维，我前后一个春节在备份，差不多20天，现在只下载了76GB的数据，初略估计还得几个月。<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/197-%E9%A3%9E%E7%89%9BOS%E4%BA%91%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%92%8C%E5%8F%96%E5%9B%9E-2025-02-12-09-49-10.png" alt="197-飞牛OS云端数据备份和取回-2025-02-12-09-49-10" /><br />
-好处是上传没有限制速度，我将OneDrive的数据上传上去只花了几个小时，差不多36GB.<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/197-%E9%A3%9E%E7%89%9BOS%E4%BA%91%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%92%8C%E5%8F%96%E5%9B%9E-2025-02-12-09-54-00.png" alt="197-飞牛OS云端数据备份和取回-2025-02-12-09-54-00" /><br />
-百度云盘的会员分为好几种：<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/197-%E9%A3%9E%E7%89%9BOS%E4%BA%91%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%92%8C%E5%8F%96%E5%9B%9E-2025-02-12-09-53-02.png" alt="197-飞牛OS云端数据备份和取回-2025-02-12-09-53-02" /><br />
-最便宜的一个月40，我的想法是：后期将这2T的云盘当作容灾备份，万一出现极端情况，我可以花40块钱，将数据全部下载回来，不至于啥都没有。</p>
-<h2 id="2-坚果云"><a class="markdownIt-Anchor" href="#2-坚果云"></a> 2. 坚果云</h2>
-<p>我在坚果云里面存放第4个和第5个公司的文件，数据不多6GB左右。坚果云的优势是不限速，但是限制上传和下载的流量，上传1GB，下载3GB每个月，我预期取回所有数据需要2个月。<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/197-%E9%A3%9E%E7%89%9BOS%E4%BA%91%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%92%8C%E5%8F%96%E5%9B%9E-2025-02-12-09-56-37.png" alt="197-飞牛OS云端数据备份和取回-2025-02-12-09-56-37" /><br />
-所幸数据不多，如果是百度云的600GB那么估计要1年多才可以取回。当初是百度云限速才转换成它的，毕竟工作数据一个月不会太多，完全是满足的。<br />
-坚果云的会员也是最奇葩的，30块钱一个月，但是空间30GB，不限速。聊胜于无吧。<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/197-%E9%A3%9E%E7%89%9BOS%E4%BA%91%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%92%8C%E5%8F%96%E5%9B%9E-2025-02-12-10-01-00.png" alt="197-飞牛OS云端数据备份和取回-2025-02-12-10-01-00" /><br />
-这次花2个月把数据搬回之后，我应该是不会用它的。</p>
-<h2 id="3-onedrive"><a class="markdownIt-Anchor" href="#3-onedrive"></a> 3. Onedrive</h2>
-<p>我买的是家庭版，每年分担下来4块钱，1T空间，不限速，自带客户端好用，而且还可以回复历史版本。付费的东西就是好。目前使用数据37GB，存放的是我现在公司的数据。免费版本的是5GB，我是很推荐新入职场的用户使用这个东西。<br />
-飞牛OS目前没有像群晖那样有个cloudsync可以进行网盘互传，所以我使用的是OneDrive的<a href="https://github.com/abraunegg/onedrive/blob/master/docs/usage.md">Linux版本</a>，文档挺详细的，但是好像并不是官方的，有点是个人爱好者。<br />
-搭建教程：<br />
-docker部署<br />
-docker官方提供了很多版本，我选择默认的latest，需要根据你的硬件进行选择。<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/197-%E9%A3%9E%E7%89%9BOS%E4%BA%91%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%92%8C%E5%8F%96%E5%9B%9E-2025-02-12-10-09-05.png" alt="197-飞牛OS云端数据备份和取回-2025-02-12-10-09-05" /><br />
-你可以选择直接登录飞牛的SSH，然后复制粘贴以下命令即可。<br />
-&gt;docker run -it --name onedrive -v onedrive_conf:/onedrive/conf <br />
--v “备份路径:/root/onedrive” <br />
--e &quot;ONEDRIVE_UID=1000 <br />
--e &quot;ONEDRIVE_GID=1000 <br />
-driveone/onedrive:latest</p>
-<p>或者你可以使用飞牛自带docker进行部署。需要注意，如果你使用SSH进行部署，系统会弹出一个链接，你复制链接按照要求登录即可，最后在粘贴返回的链接即可。如果你使用的是飞牛docker进行部署，你则需要进入终端，重新执行下同步命令：</p>
-<blockquote>
-<p>onedrive -s<br />
-或者<br />
-docker exec -it 容器名称 onedrive -s</p>
-</blockquote>
-<p>这里有几点需要注意：<br />
-OneDrive的默认下载路径是和你登录进去的用户有关系，默认是~/OneDrive，所以你的备份路径需要根据实际情况进行调整，</p>
-<blockquote>
-<p>onedrive --display-config<br />
-查看当前运行的配置</p>
-</blockquote>
-<p>这个容器可以直接调用比如上面的 docker exec -it 容器名称 onedrive -s，也可以做长期监控</p>
-<blockquote>
-<p>onedrive -m</p>
-</blockquote>
-<p>具体可以看<a href="https://github.com/abraunegg/onedrive/blob/master/docs/usage.md">软件官方文档</a><br />
-我这边的配置是将ROOT下的.CONFIG文件一起映射出去，保存在docker外，否则会出现，每次重启docker就会要求你重新登录。<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/197-%E9%A3%9E%E7%89%9BOS%E4%BA%91%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%92%8C%E5%8F%96%E5%9B%9E-2025-02-12-16-22-45.png" alt="197-飞牛OS云端数据备份和取回-2025-02-12-16-22-45" /></p>
-<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
-<p>容灾备份算是玩NAS的必备条件，有些人喜欢使用UPS来保证数据安全，但是我还是选择直接使用云盘，它满足了，异地，异介质双重要求。除开那些几百GB的高清电影，其他东西我都会选择放在云端。最差的情况下，只需要40块钱开通一个月就可以拿回全部数据。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>飞牛OS</tag>
-        <tag>百度云盘</tag>
-        <tag>OneDrive</tag>
-        <tag>坚果云盘</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>哪吒探针部署指南</title>
     <url>/2025/02/11/198-%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<p>我之前用的是serverstatus，服务端直接docker部署，客户端python命令文件。好处是部署简单，功能够用，但是不如哪吒面板好看，而且客户端需要python对一些性能比较差的机器就无法监控，比如openwrt路由器，这次的想法就是将所有的设备进行监控。</p>
@@ -6698,6 +6626,78 @@ Pro系列是3网CN2GIA，EB系列是3网CMIN2，而前面得LAX代表得是位�
         <tag>VPS</tag>
         <tag>DMIT</tag>
         <tag>POWERBOX</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>飞牛OS云端数据备份和取回</title>
+    <url>/2025/02/11/197-%E9%A3%9E%E7%89%9BOS%E4%BA%91%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%92%8C%E5%8F%96%E5%9B%9E/</url>
+    <content><![CDATA[<p>我算是比较早一批用云盘的用户，更多的是用来备份上班时候的数据，方便加班或者电脑没带的时候简单处理下。私心就是离职的时候我就不用费劲巴拉的拷贝文件。这些年主流的几个网盘程序都使用过了，趁现在自己买了一个NAS，想要把数据都回笼，所以趁着这个机会也来评判下用过网盘的优劣：</p>
+<span id="more"></span>
+<h2 id="1-百度云"><a class="markdownIt-Anchor" href="#1-百度云"></a> 1. 百度云</h2>
+<p>大名鼎鼎，我是早期用户，现在空间2T，我在里面存有毕业后1-4公司的资料，占用600GB。说重要么？也不是很重要，但是毕竟是自己当初一点点累积的，就想着下载回来。我一直用到百度网盘限速之后就不在使用，因为当初换到第5家公司，我发现下载下来花费的时间超级长，就暂且搁置了。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/197-%E9%A3%9E%E7%89%9BOS%E4%BA%91%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%92%8C%E5%8F%96%E5%9B%9E-2025-02-12-09-45-08.png" alt="197-飞牛OS云端数据备份和取回-2025-02-12-09-45-08" /><br />
+数据下载：<br />
+飞牛OS支持直接挂载百度云盘，所以使用很简单。下载可以使用备份计划直接拉回来。速度么？不敢恭维，我前后一个春节在备份，差不多20天，现在只下载了76GB的数据，初略估计还得几个月。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/197-%E9%A3%9E%E7%89%9BOS%E4%BA%91%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%92%8C%E5%8F%96%E5%9B%9E-2025-02-12-09-49-10.png" alt="197-飞牛OS云端数据备份和取回-2025-02-12-09-49-10" /><br />
+好处是上传没有限制速度，我将OneDrive的数据上传上去只花了几个小时，差不多36GB.<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/197-%E9%A3%9E%E7%89%9BOS%E4%BA%91%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%92%8C%E5%8F%96%E5%9B%9E-2025-02-12-09-54-00.png" alt="197-飞牛OS云端数据备份和取回-2025-02-12-09-54-00" /><br />
+百度云盘的会员分为好几种：<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/197-%E9%A3%9E%E7%89%9BOS%E4%BA%91%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%92%8C%E5%8F%96%E5%9B%9E-2025-02-12-09-53-02.png" alt="197-飞牛OS云端数据备份和取回-2025-02-12-09-53-02" /><br />
+最便宜的一个月40，我的想法是：后期将这2T的云盘当作容灾备份，万一出现极端情况，我可以花40块钱，将数据全部下载回来，不至于啥都没有。</p>
+<h2 id="2-坚果云"><a class="markdownIt-Anchor" href="#2-坚果云"></a> 2. 坚果云</h2>
+<p>我在坚果云里面存放第4个和第5个公司的文件，数据不多6GB左右。坚果云的优势是不限速，但是限制上传和下载的流量，上传1GB，下载3GB每个月，我预期取回所有数据需要2个月。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/197-%E9%A3%9E%E7%89%9BOS%E4%BA%91%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%92%8C%E5%8F%96%E5%9B%9E-2025-02-12-09-56-37.png" alt="197-飞牛OS云端数据备份和取回-2025-02-12-09-56-37" /><br />
+所幸数据不多，如果是百度云的600GB那么估计要1年多才可以取回。当初是百度云限速才转换成它的，毕竟工作数据一个月不会太多，完全是满足的。<br />
+坚果云的会员也是最奇葩的，30块钱一个月，但是空间30GB，不限速。聊胜于无吧。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/197-%E9%A3%9E%E7%89%9BOS%E4%BA%91%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%92%8C%E5%8F%96%E5%9B%9E-2025-02-12-10-01-00.png" alt="197-飞牛OS云端数据备份和取回-2025-02-12-10-01-00" /><br />
+这次花2个月把数据搬回之后，我应该是不会用它的。</p>
+<h2 id="3-onedrive"><a class="markdownIt-Anchor" href="#3-onedrive"></a> 3. Onedrive</h2>
+<p>我买的是家庭版，每年分担下来4块钱，1T空间，不限速，自带客户端好用，而且还可以回复历史版本。付费的东西就是好。目前使用数据37GB，存放的是我现在公司的数据。免费版本的是5GB，我是很推荐新入职场的用户使用这个东西。<br />
+飞牛OS目前没有像群晖那样有个cloudsync可以进行网盘互传，所以我使用的是OneDrive的<a href="https://github.com/abraunegg/onedrive/blob/master/docs/usage.md">Linux版本</a>，文档挺详细的，但是好像并不是官方的，有点是个人爱好者。<br />
+搭建教程：<br />
+docker部署<br />
+docker官方提供了很多版本，我选择默认的latest，需要根据你的硬件进行选择。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/197-%E9%A3%9E%E7%89%9BOS%E4%BA%91%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%92%8C%E5%8F%96%E5%9B%9E-2025-02-12-10-09-05.png" alt="197-飞牛OS云端数据备份和取回-2025-02-12-10-09-05" /><br />
+你可以选择直接登录飞牛的SSH，然后复制粘贴以下命令即可。<br />
+&gt;docker run -it --name onedrive -v onedrive_conf:/onedrive/conf <br />
+-v “备份路径:/root/onedrive” <br />
+-e &quot;ONEDRIVE_UID=1000 <br />
+-e &quot;ONEDRIVE_GID=1000 <br />
+driveone/onedrive:latest</p>
+<p>或者你可以使用飞牛自带docker进行部署。需要注意，如果你使用SSH进行部署，系统会弹出一个链接，你复制链接按照要求登录即可，最后在粘贴返回的链接即可。如果你使用的是飞牛docker进行部署，你则需要进入终端，重新执行下同步命令：</p>
+<blockquote>
+<p>onedrive -s<br />
+或者<br />
+docker exec -it 容器名称 onedrive -s</p>
+</blockquote>
+<p>这里有几点需要注意：<br />
+OneDrive的默认下载路径是和你登录进去的用户有关系，默认是~/OneDrive，所以你的备份路径需要根据实际情况进行调整，</p>
+<blockquote>
+<p>onedrive --display-config<br />
+查看当前运行的配置</p>
+</blockquote>
+<p>这个容器可以直接调用比如上面的 docker exec -it 容器名称 onedrive -s，也可以做长期监控</p>
+<blockquote>
+<p>onedrive -m</p>
+</blockquote>
+<p>具体可以看<a href="https://github.com/abraunegg/onedrive/blob/master/docs/usage.md">软件官方文档</a><br />
+我这边的配置是将ROOT下的.CONFIG文件一起映射出去，保存在docker外，否则会出现，每次重启docker就会要求你重新登录。<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/197-%E9%A3%9E%E7%89%9BOS%E4%BA%91%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%92%8C%E5%8F%96%E5%9B%9E-2025-02-12-16-22-45.png" alt="197-飞牛OS云端数据备份和取回-2025-02-12-16-22-45" /></p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>容灾备份算是玩NAS的必备条件，有些人喜欢使用UPS来保证数据安全，但是我还是选择直接使用云盘，它满足了，异地，异介质双重要求。除开那些几百GB的高清电影，其他东西我都会选择放在云端。最差的情况下，只需要40块钱开通一个月就可以拿回全部数据。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>飞牛OS</tag>
+        <tag>百度云盘</tag>
+        <tag>OneDrive</tag>
+        <tag>坚果云盘</tag>
       </tags>
   </entry>
   <entry>
@@ -7462,6 +7462,44 @@ HBA卡就是一个通道卡，它的作用是让计算机能够对硬盘进行�
       </tags>
   </entry>
   <entry>
+    <title>自走棋和酒馆得一点思考</title>
+    <url>/2025/09/18/213-%E8%87%AA%E8%B5%B0%E6%A3%8B%E5%92%8C%E9%85%92%E9%A6%86%E5%BE%97%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/</url>
+    <content><![CDATA[<p>最近闲来无事开始玩dota2得自走棋，作为一个前炉石玩家，前酒馆战旗玩家，我对这种类似得玩法还是比较感兴趣得，但是玩着玩着就感觉有点欠缺。</p>
+<span id="more"></span>
+<h2 id="复杂度和平衡性"><a class="markdownIt-Anchor" href="#复杂度和平衡性"></a> 复杂度和平衡性</h2>
+<p>复杂度这个问题更多的和游戏平衡相关，但是自走棋和酒馆类似，还有个随机机制在这。所有游戏的复杂度变成了：阵容强度+个人随机运气。其中游戏强度是可以通过数值调整，个人随机运气可以通过池子的深度和数量进行一个影响，然而还是有那种黑的不能黑的人存在，而且这点在游戏中往往成为关键，哪怕万分酒馆，皇后自走棋在个人运气面前也是不值一提。我见过多少次因为找不到铜须瑞文而被迫速8的。也见过不少三星阵容把人速速抬走的。<br />
+所有游戏的平衡性已经变成了一个笑话，很多时候开局不是你想玩啥，而是发牌员给你玩啥。我们提供了一个游戏平衡，但是玩家不一定能拿到，那么这个平衡还存在不存在呢？从一些视频锦集可以看出，玩家发现克制点，然后再到找到克制的组件，只有这两者合在一起才能进入视频锦集，那么在玩家看来这是一种比较少见的情况。【想到是一回事，重点是找到，我个人认为一个自己都能打出来的操作是不配上那些视频锦集】<br />
+顺势而为这是我在这个游戏里面感受到的最大道理。而最终能否吃鸡很多时候已经在开局就注定了，如果所有人都是顺势而为的话，那么早已注定了，毕竟你想转型可老天不赏饭页没用。总归下来之后，我们就会发现，在这个游戏的策略不外乎两种：</p>
+<ol>
+<li>顺势而为，给什么就玩什么，发展什么。好处是早期血稳定，而且烂分有保障，缺点就是上限注定了，后期转型依旧靠天吃饭。</li>
+<li>速配一把，朝着自己目标走，要么吃鸡，要么速8。</li>
+</ol>
+<p>在这两种策略下，我们就会发现，平衡性在哪？洋洋洒洒写了一大堆的平衡补丁，只是告诉我们某些阵容别拿，是辣鸡。大多数人的想法则是两种策略的综合：顺势而为，然后借机翻盘。前期顺势而为，给什么玩什么，期间借机会转型。这就需要玩家了解和知道大量的阵容优缺点和克制点。但是游戏的复杂度越高，这些记忆点就越多。我怀念当初酒馆战旗套路固定的年代，那时候拿到海盗就是跳操，因为每个种族的固定套路几乎就那么一两种，所以游戏的复杂度就很少，新手上来容易，但是游戏会固化，大家开始拼谁更加胡。人们说一个好的游戏是上手容易，精通难，那么在有天梯排名，在有竞争环境的情况下，这个游戏就会变成上手即精通。<br />
+游戏的高复杂度将这个游戏的平衡性变成了笑话，大家不是想不到平衡，更多的是卡在找不到。</p>
+<h2 id="节奏"><a class="markdownIt-Anchor" href="#节奏"></a> 节奏</h2>
+<p>节奏是我个人认为的第二个问题，以战旗为例，一场比赛真正开始的是20-30回合以后，这就意味着你半个小时都在那按部就班，而结束呢？低分段差不多40-50之间就结束了。那也就意味着你玩一盘游戏，用了一半甚至超过一半的时间进行准备，然后在用4分之一时间进行发力，结束游戏只要几个回合。我看到最后和玩到最后，往往给我的感觉就是意犹未尽，我还没发力呢，怎么对手就倒下了。<br />
+我不知道这里面是否是故意使然，让人意犹未尽然后再开一局。但是这种得不到满足的感觉让我很不舒服，有种让人马上要高潮要享受的时候，寸止了。<br />
+我不知道对不对，但是这样确实让我很难受，不是很喜欢，也许这类游戏的受众不是我吧，我更喜欢玩那种积累，然后farm，有点类似魔兽世界，前期积累装备，后期farm，一点点的累积到最强或者比较强，然后可以换个打法，比如单个T，单个奶妈来挑战自己极限，这种是极大延长高潮和享受时间，而且中间不断的满足，虽然暴雪为了玩家在线，会让某些装备少掉，或者拉长毕业时间，但是在我看来，你增加了熟练度。包括之前玩的进化岛也是，我们不断的累积，然后挑战极限，这是我比较喜欢的一种游戏方式。<br />
+目前战旗和酒馆类游戏最大的问题就在于，一盘游戏时间动辄30分钟，什么概念呢，一天你最多玩48盘游戏，所以非主播的话1天能玩10盘游戏就不错，如果你回想起来，中间的差不多一半时间是无用的辣鸡时间，是拼搏运气的时间，就会让人很沮丧。我承认游戏是给人带来欢乐，但是这种类似上床前戏的节奏方式不够爽，明白了这点之后，我慢慢的对游戏有所改观，也许，或许，这个游戏已经无法给我带来更加快捷的多巴胺了。</p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>这篇的出发点是，我组建了一个满足我的xp的阵容，然后决赛，甚至前5都没进去，我感受到了射精之后的那种落寞感，我不禁思考，我在干什么。为啥明明只是一场游戏，但是却让我产生一种空虚，而获胜之后我也没有获得满足，反而是更多的欲望，还想，还想再来一局。我在欲求不满和落寞空虚之间徘徊，我忽然明白那些沉迷的人为啥会如此的阴晴不定。<br />
+我想过提升，我照常的怀疑自己能力不足，于是我想要去学习，去升级，就像生活中我遇见的困难一样。我搜遍了全网，找不到比较详细的攻略，也找不到比较钻研的数据研究，我猛然间陷入了迷茫，我无处可学。哪怕NGA，B站，小黑盒，抖音，我找遍了我可以找到的所有渠道，我想要知道狗头人的机制，我想要知道星级和装备哪个孰优孰劣，我想要详实的数据验证拼装备成功的概率。我想了解的很多，但是没有一个答案，我猛然发现这个游戏，也许不值得我玩。<br />
+也许是我魔兽世界玩起点太高了，有一个社区，而且还有人发帖子，告诉你攻略，告诉你技能取舍，告诉你操作手法，甚至有人会用详实的数据来验证，这才是我认为一个游戏繁荣昌盛的关键，交流和研究，游戏的玩法。我现在还闲着没事看NGA，无他，里面除了游戏攻略还有千奇百怪的东西。<br />
+什么是好游戏，上面的就是答案，我内心的好游戏是可以给人带来欢乐和思考，而不是空虚和欲求不满。诚然使用人性的弱点会比鼓励人积极向上更简单的让人沉迷，但是游戏一直想要摆脱的就是这种印象。什么是游戏运营，社区，论坛这就是运营，好的运营不仅仅是数值，还有交流，研究，游戏的机制不该是黑盒。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>酒馆战旗</tag>
+        <tag>自走棋</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>路由器配置指南</title>
     <url>/2025/08/27/212-%E8%B7%AF%E7%94%B1%E5%99%A8%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<p>之前买的红米AX5 京东云版本最近不知道是因为何种原因，导致无法下放IPV4地址，无法上网，想来这个固件已经很久了，这次就趁机升级下固件，顺带重新说明下openwrt路由器的固件配置。</p>
@@ -7519,44 +7557,6 @@ lan口：就是普通的网络接口，用来和wan口区分开来。</p>
         <tag>openwrt</tag>
         <tag>软路由</tag>
         <tag>硬路由</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>自走棋和酒馆得一点思考</title>
-    <url>/2025/09/18/213-%E8%87%AA%E8%B5%B0%E6%A3%8B%E5%92%8C%E9%85%92%E9%A6%86%E5%BE%97%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/</url>
-    <content><![CDATA[<p>最近闲来无事开始玩dota2得自走棋，作为一个前炉石玩家，前酒馆战旗玩家，我对这种类似得玩法还是比较感兴趣得，但是玩着玩着就感觉有点欠缺。</p>
-<span id="more"></span>
-<h2 id="复杂度和平衡性"><a class="markdownIt-Anchor" href="#复杂度和平衡性"></a> 复杂度和平衡性</h2>
-<p>复杂度这个问题更多的和游戏平衡相关，但是自走棋和酒馆类似，还有个随机机制在这。所有游戏的复杂度变成了：阵容强度+个人随机运气。其中游戏强度是可以通过数值调整，个人随机运气可以通过池子的深度和数量进行一个影响，然而还是有那种黑的不能黑的人存在，而且这点在游戏中往往成为关键，哪怕万分酒馆，皇后自走棋在个人运气面前也是不值一提。我见过多少次因为找不到铜须瑞文而被迫速8的。也见过不少三星阵容把人速速抬走的。<br />
-所有游戏的平衡性已经变成了一个笑话，很多时候开局不是你想玩啥，而是发牌员给你玩啥。我们提供了一个游戏平衡，但是玩家不一定能拿到，那么这个平衡还存在不存在呢？从一些视频锦集可以看出，玩家发现克制点，然后再到找到克制的组件，只有这两者合在一起才能进入视频锦集，那么在玩家看来这是一种比较少见的情况。【想到是一回事，重点是找到，我个人认为一个自己都能打出来的操作是不配上那些视频锦集】<br />
-顺势而为这是我在这个游戏里面感受到的最大道理。而最终能否吃鸡很多时候已经在开局就注定了，如果所有人都是顺势而为的话，那么早已注定了，毕竟你想转型可老天不赏饭页没用。总归下来之后，我们就会发现，在这个游戏的策略不外乎两种：</p>
-<ol>
-<li>顺势而为，给什么就玩什么，发展什么。好处是早期血稳定，而且烂分有保障，缺点就是上限注定了，后期转型依旧靠天吃饭。</li>
-<li>速配一把，朝着自己目标走，要么吃鸡，要么速8。</li>
-</ol>
-<p>在这两种策略下，我们就会发现，平衡性在哪？洋洋洒洒写了一大堆的平衡补丁，只是告诉我们某些阵容别拿，是辣鸡。大多数人的想法则是两种策略的综合：顺势而为，然后借机翻盘。前期顺势而为，给什么玩什么，期间借机会转型。这就需要玩家了解和知道大量的阵容优缺点和克制点。但是游戏的复杂度越高，这些记忆点就越多。我怀念当初酒馆战旗套路固定的年代，那时候拿到海盗就是跳操，因为每个种族的固定套路几乎就那么一两种，所以游戏的复杂度就很少，新手上来容易，但是游戏会固化，大家开始拼谁更加胡。人们说一个好的游戏是上手容易，精通难，那么在有天梯排名，在有竞争环境的情况下，这个游戏就会变成上手即精通。<br />
-游戏的高复杂度将这个游戏的平衡性变成了笑话，大家不是想不到平衡，更多的是卡在找不到。</p>
-<h2 id="节奏"><a class="markdownIt-Anchor" href="#节奏"></a> 节奏</h2>
-<p>节奏是我个人认为的第二个问题，以战旗为例，一场比赛真正开始的是20-30回合以后，这就意味着你半个小时都在那按部就班，而结束呢？低分段差不多40-50之间就结束了。那也就意味着你玩一盘游戏，用了一半甚至超过一半的时间进行准备，然后在用4分之一时间进行发力，结束游戏只要几个回合。我看到最后和玩到最后，往往给我的感觉就是意犹未尽，我还没发力呢，怎么对手就倒下了。<br />
-我不知道这里面是否是故意使然，让人意犹未尽然后再开一局。但是这种得不到满足的感觉让我很不舒服，有种让人马上要高潮要享受的时候，寸止了。<br />
-我不知道对不对，但是这样确实让我很难受，不是很喜欢，也许这类游戏的受众不是我吧，我更喜欢玩那种积累，然后farm，有点类似魔兽世界，前期积累装备，后期farm，一点点的累积到最强或者比较强，然后可以换个打法，比如单个T，单个奶妈来挑战自己极限，这种是极大延长高潮和享受时间，而且中间不断的满足，虽然暴雪为了玩家在线，会让某些装备少掉，或者拉长毕业时间，但是在我看来，你增加了熟练度。包括之前玩的进化岛也是，我们不断的累积，然后挑战极限，这是我比较喜欢的一种游戏方式。<br />
-目前战旗和酒馆类游戏最大的问题就在于，一盘游戏时间动辄30分钟，什么概念呢，一天你最多玩48盘游戏，所以非主播的话1天能玩10盘游戏就不错，如果你回想起来，中间的差不多一半时间是无用的辣鸡时间，是拼搏运气的时间，就会让人很沮丧。我承认游戏是给人带来欢乐，但是这种类似上床前戏的节奏方式不够爽，明白了这点之后，我慢慢的对游戏有所改观，也许，或许，这个游戏已经无法给我带来更加快捷的多巴胺了。</p>
-<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
-<p>这篇的出发点是，我组建了一个满足我的xp的阵容，然后决赛，甚至前5都没进去，我感受到了射精之后的那种落寞感，我不禁思考，我在干什么。为啥明明只是一场游戏，但是却让我产生一种空虚，而获胜之后我也没有获得满足，反而是更多的欲望，还想，还想再来一局。我在欲求不满和落寞空虚之间徘徊，我忽然明白那些沉迷的人为啥会如此的阴晴不定。<br />
-我想过提升，我照常的怀疑自己能力不足，于是我想要去学习，去升级，就像生活中我遇见的困难一样。我搜遍了全网，找不到比较详细的攻略，也找不到比较钻研的数据研究，我猛然间陷入了迷茫，我无处可学。哪怕NGA，B站，小黑盒，抖音，我找遍了我可以找到的所有渠道，我想要知道狗头人的机制，我想要知道星级和装备哪个孰优孰劣，我想要详实的数据验证拼装备成功的概率。我想了解的很多，但是没有一个答案，我猛然发现这个游戏，也许不值得我玩。<br />
-也许是我魔兽世界玩起点太高了，有一个社区，而且还有人发帖子，告诉你攻略，告诉你技能取舍，告诉你操作手法，甚至有人会用详实的数据来验证，这才是我认为一个游戏繁荣昌盛的关键，交流和研究，游戏的玩法。我现在还闲着没事看NGA，无他，里面除了游戏攻略还有千奇百怪的东西。<br />
-什么是好游戏，上面的就是答案，我内心的好游戏是可以给人带来欢乐和思考，而不是空虚和欲求不满。诚然使用人性的弱点会比鼓励人积极向上更简单的让人沉迷，但是游戏一直想要摆脱的就是这种印象。什么是游戏运营，社区，论坛这就是运营，好的运营不仅仅是数值，还有交流，研究，游戏的机制不该是黑盒。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>酒馆战旗</tag>
-        <tag>自走棋</tag>
       </tags>
   </entry>
   <entry>
@@ -7913,47 +7913,6 @@ selenium/standalone-chrome:latest</p>
       </tags>
   </entry>
   <entry>
-    <title>关于内卷</title>
-    <url>/2025/11/30/220-%E5%85%B3%E4%BA%8E%E5%86%85%E5%8D%B7/</url>
-    <content><![CDATA[<p>最近媒体又在宣言反内卷，有一些背后的逻辑我很想说说。当然一切都是从宏观层面上。</p>
-<span id="more"></span>
-<p>首先，我们确定一个大前提：<strong>目前整体经济下行</strong>。这就意味着，需求端减少，那么从最简朴的经济理论来讲，我们能应对内卷的方案由这几种：</p>
-<h2 id="1-新增需求"><a class="markdownIt-Anchor" href="#1-新增需求"></a> 1. 新增需求</h2>
-<p>新增需求这条路前几年就在喊着，喊着内循环，包括现在依旧是作为主力宣传口径，那么为啥失效，或者说没见到几个比较标志性的内循环成功案例呢？<br />
-其实，从我们看到一些证明购买力的视频，双方国家的购买力是一致的，无论是美国还是日本，甚至在某些方面上中国的购买力更高，国内的需求肯定是有的，否则家庭式作坊是不可能造那么多产品的，家庭作坊的优势就是灵活性。一旦他们发现产品销量降低甚至卖不出去，分分钟停止生产，其次消费者人群也是有的，<strong>从那几年设定的个税征缴来看，领导层是知道月薪5000的人群总数的</strong>，那么需求有，消费者有，为啥内循环就是循环不起来呢？</p>
-<h3 id="第一点我认为是国内的营商环境导致外贸企业转内需困难"><a class="markdownIt-Anchor" href="#第一点我认为是国内的营商环境导致外贸企业转内需困难"></a> 第一点我认为是国内的营商环境导致外贸企业转内需困难</h3>
-<p>这点高层也知道，之前就在喊着要<strong>处理中小企业应付账款</strong>，甚至从国务院直接处理。然而有点经济常识的都明白，一个应付款需要到国务院专门成立网站，成立部门处理么？理由是基层已经击穿了。在我们浅薄的认知，货到付款？哪怕晚点付，但是还是有欠款吧，**实在不行还可以去法院起诉。**目前法院处理的应付账款早已经堆积成山，但是实际结案的案子有限。<strong>打赢官司不算本事，执行的到才是本事</strong>，这就是目前基层现状，这几年执行法官地位已经空前高涨。中小企业欠款平台算是一个宣泄口，给底层一点希望，同时也是一个统计口，用来统计一下真实数据，也可以拿来当刀子，用来处理一些领导。<br />
-但是，目前这个已经有点实质性破产的感觉，我看了下最新的新闻在25年3月。这块处理难度十分大，各大利益集体在这里面，这是一套根深蒂固的弊端，目前拿着比亚迪和新能源汽车做表率，看看能不能恢复营商环境，大头还是在国企，本质在反腐。</p>
-<h3 id="第二点劣币驱逐良币"><a class="markdownIt-Anchor" href="#第二点劣币驱逐良币"></a> 第二点劣币驱逐良币</h3>
-<p><strong>从前几年的暴打消费主义风气可以看出国内的主流消费思想</strong>，国内的用户是价格敏感型的。于是就出现了一大群不符合标准的产品打着符合产品的标准进行出售，然后价格上又低，这就是劣币驱逐良币。中间的过程是国内的监管机制缺失，没有有效的监管产品生产过程和最终质量。<br />
-这点怪不得基层执行，实际干过基层的都明白这中间有多难做，领导层面的干预，民生的考量，将法律法规当作一张白纸。现在算是还债。说多了都是<strong>民生，管的严好多人没饭吃，管的不严就是目前这局面</strong>，符合国内一管就烂的一概作风。</p>
-<hr />
-<p>以上论证了，新增需求的路径的几个难点，当然这是从宏观角度，目前来看，领导层是有做一些举措的，收效甚微就是。</p>
-<h2 id="2降低价格"><a class="markdownIt-Anchor" href="#2降低价格"></a> 2.降低价格</h2>
-<p>降价来保证需求稳定是最正常的套路，工业品价格连续几个月都是下滑的，但是由于外贸行业的一些特殊性，相同条件下，外贸行业的利润就是会比内销的高，比如退税，所得税等。<br />
-在之前贸易战的形势下，外贸降价就是自己开出去的子弹，打在自己身上。于是就有了之前关税战上，国家不允许国内外贸厂家降低价格，这是行政层级上的命令，<strong>从战略和政策角度来讲，这不是一个很好的招数</strong>，但是那个环节上，也只能临时补救，后面领导层就发现了这一漏洞。<br />
-其实外贸厂商是不想降低自己的利润的，但是外贸行业尤其是成规模的厂商，面临的是降价还能苟延残喘，不降价那么一天的机器，房租，人工都是开销。国外采购至少他的账期或者说现金流是稳定的，到期能给钱，但是如果停了或者转内贸，那就是一个无底洞。这也是为啥国内很多都在卷的原因，一旦现金流不循环了，那么庞大的固定资产会在几个月内吃掉前几年的利润。摆在厂家面前的就两条路，要么不干，要么跌价继续干，厂家的在外贸或者说大企业面前的议价能力很弱的。<br />
-当然还有国家层面上的助力，外贸作为三驾马车之一，早已经形成了一股利益链条，退税，所得税等其他税务开销让一小部分人富起来了，其次是这两年的外贸电商如火如荼，忽然想要一个刹车是刹不住的，只能行政命令来抵抗，但是非强制性的命令，愿意执行的有几家呢？<br />
-后续为了防止他们继续降价，开始减少退税税种，增加电商税。一方面是正规化增加收入，一方面也是开始管控电商，毕竟电商在税务方面上节省的钱最后变成他们降低价格补贴外国了，这是无法容忍的。整体举措就是一点，提高成本，不能将伤害打在自己身上，砍头的生意有人做，赔钱的买卖没人干。当然，**也有一些头铁的，用宏大叙事来描绘一番，然后拿着投资人的钱，走互联网路线，先赔钱赚客户，然后再赚钱，实际上是把钱转移到海外，最后留下一堆烂摊子给国内。**这种套路是目前严打。<br />
-目前，内销和外贸至少是站在同一起跑线上了，不会出现内销补贴外贸这种情况，剩下的就是看产生厂商自己的能力了。</p>
-<h2 id="3减少产量"><a class="markdownIt-Anchor" href="#3减少产量"></a> 3.减少产量</h2>
-<p>这招用过，供给侧改革，简单说就关掉一些不听话的，没背景的行业企业。通过控制上游行业的公司，形成共同联盟，国家层面上的卡特尔，防止产品价格过低。之前在钢铁，后面是太阳能，新能源汽车，最近是冶炼相关的。目前也有相关政策在执行，从稀土可以看到目前还在控制到位。</p>
-<h1 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h1>
-<p>兴，百姓苦，亡，百姓苦</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>内卷</tag>
-        <tag>s宏观</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>低显存comfyui解决思路</title>
     <url>/2025/12/03/221-%E4%BD%8E%E6%98%BE%E5%AD%98comfyui%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF/</url>
     <content><![CDATA[<p>最近又出了一个z-imgae的大模型，听说效果很好，于是我又按耐不住的想要试试赛博找图了。</p>
@@ -8110,6 +8069,47 @@ selenium/standalone-chrome:latest</p>
         <tag>低显存</tag>
         <tag>RTX 4060 ti 8gb</tag>
         <tag>Z-Image-Turbo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于内卷</title>
+    <url>/2025/11/30/220-%E5%85%B3%E4%BA%8E%E5%86%85%E5%8D%B7/</url>
+    <content><![CDATA[<p>最近媒体又在宣言反内卷，有一些背后的逻辑我很想说说。当然一切都是从宏观层面上。</p>
+<span id="more"></span>
+<p>首先，我们确定一个大前提：<strong>目前整体经济下行</strong>。这就意味着，需求端减少，那么从最简朴的经济理论来讲，我们能应对内卷的方案由这几种：</p>
+<h2 id="1-新增需求"><a class="markdownIt-Anchor" href="#1-新增需求"></a> 1. 新增需求</h2>
+<p>新增需求这条路前几年就在喊着，喊着内循环，包括现在依旧是作为主力宣传口径，那么为啥失效，或者说没见到几个比较标志性的内循环成功案例呢？<br />
+其实，从我们看到一些证明购买力的视频，双方国家的购买力是一致的，无论是美国还是日本，甚至在某些方面上中国的购买力更高，国内的需求肯定是有的，否则家庭式作坊是不可能造那么多产品的，家庭作坊的优势就是灵活性。一旦他们发现产品销量降低甚至卖不出去，分分钟停止生产，其次消费者人群也是有的，<strong>从那几年设定的个税征缴来看，领导层是知道月薪5000的人群总数的</strong>，那么需求有，消费者有，为啥内循环就是循环不起来呢？</p>
+<h3 id="第一点我认为是国内的营商环境导致外贸企业转内需困难"><a class="markdownIt-Anchor" href="#第一点我认为是国内的营商环境导致外贸企业转内需困难"></a> 第一点我认为是国内的营商环境导致外贸企业转内需困难</h3>
+<p>这点高层也知道，之前就在喊着要<strong>处理中小企业应付账款</strong>，甚至从国务院直接处理。然而有点经济常识的都明白，一个应付款需要到国务院专门成立网站，成立部门处理么？理由是基层已经击穿了。在我们浅薄的认知，货到付款？哪怕晚点付，但是还是有欠款吧，**实在不行还可以去法院起诉。**目前法院处理的应付账款早已经堆积成山，但是实际结案的案子有限。<strong>打赢官司不算本事，执行的到才是本事</strong>，这就是目前基层现状，这几年执行法官地位已经空前高涨。中小企业欠款平台算是一个宣泄口，给底层一点希望，同时也是一个统计口，用来统计一下真实数据，也可以拿来当刀子，用来处理一些领导。<br />
+但是，目前这个已经有点实质性破产的感觉，我看了下最新的新闻在25年3月。这块处理难度十分大，各大利益集体在这里面，这是一套根深蒂固的弊端，目前拿着比亚迪和新能源汽车做表率，看看能不能恢复营商环境，大头还是在国企，本质在反腐。</p>
+<h3 id="第二点劣币驱逐良币"><a class="markdownIt-Anchor" href="#第二点劣币驱逐良币"></a> 第二点劣币驱逐良币</h3>
+<p><strong>从前几年的暴打消费主义风气可以看出国内的主流消费思想</strong>，国内的用户是价格敏感型的。于是就出现了一大群不符合标准的产品打着符合产品的标准进行出售，然后价格上又低，这就是劣币驱逐良币。中间的过程是国内的监管机制缺失，没有有效的监管产品生产过程和最终质量。<br />
+这点怪不得基层执行，实际干过基层的都明白这中间有多难做，领导层面的干预，民生的考量，将法律法规当作一张白纸。现在算是还债。说多了都是<strong>民生，管的严好多人没饭吃，管的不严就是目前这局面</strong>，符合国内一管就烂的一概作风。</p>
+<hr />
+<p>以上论证了，新增需求的路径的几个难点，当然这是从宏观角度，目前来看，领导层是有做一些举措的，收效甚微就是。</p>
+<h2 id="2降低价格"><a class="markdownIt-Anchor" href="#2降低价格"></a> 2.降低价格</h2>
+<p>降价来保证需求稳定是最正常的套路，工业品价格连续几个月都是下滑的，但是由于外贸行业的一些特殊性，相同条件下，外贸行业的利润就是会比内销的高，比如退税，所得税等。<br />
+在之前贸易战的形势下，外贸降价就是自己开出去的子弹，打在自己身上。于是就有了之前关税战上，国家不允许国内外贸厂家降低价格，这是行政层级上的命令，<strong>从战略和政策角度来讲，这不是一个很好的招数</strong>，但是那个环节上，也只能临时补救，后面领导层就发现了这一漏洞。<br />
+其实外贸厂商是不想降低自己的利润的，但是外贸行业尤其是成规模的厂商，面临的是降价还能苟延残喘，不降价那么一天的机器，房租，人工都是开销。国外采购至少他的账期或者说现金流是稳定的，到期能给钱，但是如果停了或者转内贸，那就是一个无底洞。这也是为啥国内很多都在卷的原因，一旦现金流不循环了，那么庞大的固定资产会在几个月内吃掉前几年的利润。摆在厂家面前的就两条路，要么不干，要么跌价继续干，厂家的在外贸或者说大企业面前的议价能力很弱的。<br />
+当然还有国家层面上的助力，外贸作为三驾马车之一，早已经形成了一股利益链条，退税，所得税等其他税务开销让一小部分人富起来了，其次是这两年的外贸电商如火如荼，忽然想要一个刹车是刹不住的，只能行政命令来抵抗，但是非强制性的命令，愿意执行的有几家呢？<br />
+后续为了防止他们继续降价，开始减少退税税种，增加电商税。一方面是正规化增加收入，一方面也是开始管控电商，毕竟电商在税务方面上节省的钱最后变成他们降低价格补贴外国了，这是无法容忍的。整体举措就是一点，提高成本，不能将伤害打在自己身上，砍头的生意有人做，赔钱的买卖没人干。当然，**也有一些头铁的，用宏大叙事来描绘一番，然后拿着投资人的钱，走互联网路线，先赔钱赚客户，然后再赚钱，实际上是把钱转移到海外，最后留下一堆烂摊子给国内。**这种套路是目前严打。<br />
+目前，内销和外贸至少是站在同一起跑线上了，不会出现内销补贴外贸这种情况，剩下的就是看产生厂商自己的能力了。</p>
+<h2 id="3减少产量"><a class="markdownIt-Anchor" href="#3减少产量"></a> 3.减少产量</h2>
+<p>这招用过，供给侧改革，简单说就关掉一些不听话的，没背景的行业企业。通过控制上游行业的公司，形成共同联盟，国家层面上的卡特尔，防止产品价格过低。之前在钢铁，后面是太阳能，新能源汽车，最近是冶炼相关的。目前也有相关政策在执行，从稀土可以看到目前还在控制到位。</p>
+<h1 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h1>
+<p>兴，百姓苦，亡，百姓苦</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>内卷</tag>
+        <tag>s宏观</tag>
       </tags>
   </entry>
   <entry>
@@ -9069,102 +9069,6 @@ k线是很迷惑人的一种数据结构，如果你不是剥头皮，这种超�
       </tags>
   </entry>
   <entry>
-    <title>炉石传说竞技场组牌思路</title>
-    <url>/2026/05/22/235-%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B4%E7%AB%9E%E6%8A%80%E5%9C%BA%E7%BB%84%E7%89%8C%E6%80%9D%E8%B7%AF/</url>
-    <content><![CDATA[<p>最近闲来没事，又玩起来炉石传说这个游戏，但是随着竞技场的改版，在我花费了快1w金币之后，总算是有点心得了。</p>
-<span id="more"></span>
-<h2 id="主流环境"><a class="markdownIt-Anchor" href="#主流环境"></a> 主流环境</h2>
-<p>目前主流得兆示职业代表得3种主流得获胜思路</p>
-<h3 id="dk前期铺场费用差"><a class="markdownIt-Anchor" href="#dk前期铺场费用差"></a> DK:前期铺场费用差</h3>
-<p>死骑得兆示就是铺场流派得代表，他可以通过前期卖血造成场面巨大，而且越是早期兆示，越让对手难以解决。但是到了中期尤其是8血得兆示，对英雄来说血量压力太大了，所以我们需要很多AOE，尤其是3-5费得aoe。本质上也是费用差的体现，只不过是通过血来弥补。<br />
-正常得打牌节奏，要求你需要3-7张AOE，因为很多前期铺场都是1-3费时期，往往这个时候属于压力最大得时候，一旦到达4费，出现5血及以上得怪，那么3-5费得AOE一般很难解决。那么现在计算下，初始手牌3-4张到4费，合计7-8张，这时候你手里必须有1-2张AOE，我们可以计算出：<br />
-<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B4%E7%AB%9E%E6%8A%80%E5%9C%BA%E7%BB%84%E7%89%8C%E6%80%9D%E8%B7%AF-2026-05-23-13-17-08.png" alt="225-炉石传说竞技场组牌思路-2026-05-23-13-17-08" /><br />
-所以一般我是很推荐4-5张AOE，费用在3-5费之间，且伤害在2-3之间，这也很符合卡牌得模型。这里特别提出超过5费得大AOE，这种得除非有很大得收益，比如：全局沉默，场面全清这类得否则不是很建议，高费AOE带来的全清场面但是没办法给你带来下一步优势，因为你得剩余费用不够了。高费用AOE在我看来已经不适合目前的模型了，很多高费用AOE要么带随从，要么能处理亡语体系，否则不建议选择。</p>
-<h3 id="盗贼卡牌差费用差"><a class="markdownIt-Anchor" href="#盗贼卡牌差费用差"></a> 盗贼：卡牌差+费用差</h3>
-<p>卡牌+费用差：贼得兆示是卡牌差和费用差得完美结合。由于贼得卡牌是随机性得，所以我们着重看卡牌差，以10费回合作为新一轮开始，正常快攻会在7-9费就结束战斗，那么我们可以计算下你到时候得手牌：<br />
-假如节奏良好，按费拍怪，那么到10费时候你手里卡牌就剩下3-4张，但是到5费以后，我们很多时候是会用1-2张，9费可能会用到3张，这就是很多时候，和贼对打我们常常出现这么一种情况：打不死对方，我们手牌也空了。更遑论它的费用差，可以4费打出6费得卡牌，差距就更大了。我们不考虑太久远的事情，我们就考虑10费回合，我们如果打不死对面，那么手里得卡牌至少要有5-7张手牌，才可以和对手有继续得机会。那么计算下这里面我们需要得过牌。<br />
-我们极端情况下10费回合是需要15-17张，即使是按费拍怪得情况下，我们至少需要2+以上得补牌，才能在结束时候达到5张手牌，如果是极端情况，你至少需要8张以上得补牌。也就是15张牌左右，你需要摸到8张牌至少可以1补1得情况。这样你结束之后可以有5-8张得手牌，给你继续打第二轮得情况。所以现在的情况摆在你面前，30张牌中可以有16张1补1的牌，至少也得有8张以上的补牌，否则在这个环境将打不了。<br />
-PS：很多人喜欢2费过3或者3费过3这类的卡牌，这里我是不推荐的，本质上它是1补3，看起来带来大量的补牌，但是如果你手牌充足的情况下，你是打不出这张牌的，为啥喜欢很多是因为这张卡往往会在绝境的时候给你带来一大波资源，你会在心理上加重它的地位。但是需要注意：1. 绝境的时候它不一定来，2. 我们尽量不要将自己打入绝境，这不是我们的目标。3. 它不符合我们上述的大牌逻辑，如果正常10费结束你有7张手牌这时候3费过牌对你来说没用。4. 最重要：它亏费用，3费却没有任何一个随从，这在当前模型下是不能接受的。</p>
-<h3 id="萨满后期满兆费用差"><a class="markdownIt-Anchor" href="#萨满后期满兆费用差"></a> 萨满：后期满兆费用差</h3>
-<p>萨满的战略思路则就是，费用差，在兆示满之后，他可以用1费打出4费的攻击力，这样的单卡费用差给对手代理，其实DK算是另外一种费用差打法，只不过它用血，而且靠的是数量，但是萨满则是反过来，我用1费得随从身材进行压制，通过一回合更多费用来铺场解场你解决不了得场面。另外低费兆示带来得8血身材已经是8费怪得身材了。一般得解牌很难解决，AOE更加难了。所以硬解必须有，萨满得兆示和战士得兆示差距就在1个4血8攻，1个8血4攻，另外战士不可控，萨满可控。</p>
-<h2 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路</h2>
-<p>从上面来看，我们的主流思路其实就很简单：<strong>费用差+卡牌差</strong>。这就是这个游戏的关键，由于兆示职业太容易打出费用差，所以兆示职业是很强的。卡牌差的问题可以通过大量的发现来解决，这就是为啥盗贼是目前的主流。其次还有几个其他思路：</p>
-<ol>
-<li>除开金币号，大多数人找到得兆示有限，所以卡牌差和费用差，次数是有限得，所以我们只要扛过那几波就可能获得胜利。</li>
-<li>上述几个获胜思路也是我们获胜得思路，但是我们不能只攻击不防守得，否则就变成了谁更加胡得游戏，这种情况下稳定性不足。毕竟很多人发现我既然后期打不过，那么我就拼前期。</li>
-</ol>
-<p>结合我们目前的环境和打牌节奏，我们就可以使用一些组牌的硬性要求：</p>
-<ol>
-<li>3-5以上得aoe，太多会卡手，7张是顶天，否则会出现满手AOE却无法使用得情况。</li>
-<li>至少8张，可能的话要15张过牌，至少不亏手牌。否则会出现牌不够应对不了场面得情况。当然有时候会抱着满手牌死亡得情况，随机性是这个游戏得玩法之一。【需要注意，补牌是补牌，润滑是润滑，很多元素会出现给一些1费的润滑牌，这些牌对盗贼很有用，但是不能把它算进补牌中，因为可预见且用处不大，其他职业如果没有更好的选择可以选择，否则一般不主动选择】</li>
-<li>判断牌的关键在于费用差，除开AOE和组件牌，剩下的就是费用差，一张牌如果能够带来更多的费用差，那么这张牌就可以选择，我们通过一点点的费用差来累积优势，直到胜利。</li>
-<li>高费情况下会出现2张卡打出10+费的情况，这也是获胜关键之一，但是前提是要活着+场面好。否则你铺一波但是对面场面好，有可能解场面，有可能冲你脸。</li>
-<li>沉默和硬解是必须的，由于现在场面的兆示和亡语的出现，所以沉默的优势无限大，尤其是4费图书馆管理员，既可以过牌，也可以裸下，如果卡牌很好不缺优质随从的情况下，可以见一个拿一个【你也不可能遇见10个的】，大多数沉默怪是亏身材的，所以沉默当场就已经将费用你部回来了。硬解也是费用差找回的关键。</li>
-<li>费用安排，环境的节奏变快，所以必须要求压低费用，低费用导致我们需要的过牌更多，如果你20张5费以下的牌，则要求你其中10张是不亏牌的，否则会出现10费打完，空手牌情况。高费用的情况则可以参考AOE，如果7张5费以上的，那么我们在前8抽抽到的概率是90+，大概率手上会有2-3张高费下不去的牌，我对高费随从的要求就是低于5张。【当然根据实际情况再酌情判断，不过高费不要太多是符合当前环境的】</li>
-<li>优化思路：不要拿正常费用的卡，由于这个环境变化，每回合我们至少要获得更多的费用差，否则就是慢性死亡或者等待对手卡节奏，优化思路就是要当回合费用差越大的卡越要，去卡的排序：会亏卡的牌【如果补牌数量够】&lt;正常费用&lt;打出费用差小的&lt;打出费用差大的。</li>
-</ol>
-<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
-<p>目前均胜不超过3，打的多但是思考的少，所以就想着写下来，目前这个游戏处于下跌周期，网上主播不少，但是教程很少，包括我写的也不是新手教程，而是进阶教程。说明现在走的是存量市场，没有新人，看的人不玩，玩得人都是老玩家。这对游戏来说不是好事，这点从制作组摆烂也能看出来，不可能有资本家会如此放生一款有上升势头的游戏。<br />
-且玩且珍惜，我自己也不知道会玩多久，毕竟这狗屎的金币号确实让人很难受。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>炉石传说</tag>
-        <tag>竞技场</tag>
-        <tag>组牌思路</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>FinalShell跳板配置</title>
-    <url>/2022/12/05/FinalShell%E8%B7%B3%E6%9D%BF%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h1 id="finalshell跳板配置"><a class="markdownIt-Anchor" href="#finalshell跳板配置"></a> FinalShell跳板配置</h1>
-<p>ssh跳板主要用来访问那些被封的IP，通过另外一台可以访问的IP跳板访问被墙的IP。</p>
-<h2 id="前提"><a class="markdownIt-Anchor" href="#前提"></a> 前提：</h2>
-<ol>
-<li>
-<p>一台可以本地可以访问的服务器且可以访问到被墙的服务器。</p>
-</li>
-<li>
-<p>FinalShell</p>
-</li>
-</ol>
-<p>如果没有中间服务器，推荐到<a href="https://www.vultr.com/">vultr</a>开一台按时间计费的服务器，用完即可关闭。</p>
-<h2 id="操作"><a class="markdownIt-Anchor" href="#操作"></a> 操作</h2>
-<ol>
-<li>打开SSH连接，然后输入中间服务器的登陆信息</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221205094943.png" alt="20221205094943" /></p>
-<p>2.输入之后，点击隧道，新建隧道，类型选择<code>本地</code>,端口无所谓，随便选择，IP设置为127.0.0.1，最后目标地址和端口选择对应被墙的服务器即可。</p>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221205095122.png" alt="20221205095122" /></p>
-<ol start="3">
-<li>之后点击保存，再新建一个SSH连接。端口和地址选择刚才输入的绑定IP和端口。</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221205095335.png" alt="20221205095335" /></p>
-<ol start="4">
-<li><code>需要注意的是：访问被墙主机，需要先打开中间主机的SSH连接，并且保持不关闭，再打开被墙主机的SSH连接</code>。</li>
-</ol>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>FinalShell</tag>
-        <tag>SSH</tag>
-        <tag>跳板机</tag>
-        <tag>被墙IP救活</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>FreshRSS定时规则的坑</title>
     <url>/2023/03/28/FreshRSS%E5%AE%9A%E6%97%B6%E8%A7%84%E5%88%99%E7%9A%84%E5%9D%91/</url>
     <content><![CDATA[<h1 id="freshrss定时规则的坑"><a class="markdownIt-Anchor" href="#freshrss定时规则的坑"></a> FreshRSS定时规则的坑</h1>
@@ -9274,6 +9178,103 @@ PS：很多人喜欢2费过3或者3费过3这类的卡牌，这里我是不推�
         <tag>vps</tag>
         <tag>v2ray</tag>
         <tag>网赚</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>炉石传说竞技场组牌思路</title>
+    <url>/2026/05/22/235-%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B4%E7%AB%9E%E6%8A%80%E5%9C%BA%E7%BB%84%E7%89%8C%E6%80%9D%E8%B7%AF/</url>
+    <content><![CDATA[<p>最近闲来没事，又玩起来炉石传说这个游戏，但是随着竞技场的改版，在我花费了快1w金币之后，总算是有点心得了。</p>
+<span id="more"></span>
+<h2 id="主流环境"><a class="markdownIt-Anchor" href="#主流环境"></a> 主流环境</h2>
+<p>目前主流得兆示职业代表得3种主流得获胜思路</p>
+<h3 id="dk前期铺场费用差"><a class="markdownIt-Anchor" href="#dk前期铺场费用差"></a> DK:前期铺场费用差</h3>
+<p>死骑得兆示就是铺场流派得代表，他可以通过前期卖血造成场面巨大，而且越是早期兆示，越让对手难以解决。但是到了中期尤其是8血得兆示，对英雄来说血量压力太大了，所以我们需要很多AOE，尤其是3-5费得aoe。本质上也是费用差的体现，只不过是通过血来弥补。<br />
+正常得打牌节奏，要求你需要3-7张AOE，因为很多前期铺场都是1-3费时期，往往这个时候属于压力最大得时候，一旦到达4费，出现5血及以上得怪，那么3-5费得AOE一般很难解决。那么现在计算下，初始手牌3-4张到4费，合计7-8张，这时候你手里必须有1-2张AOE，我们可以计算出：<br />
+<img src="https://raw.githubusercontent.com/android1122/typecho_img/master/225-%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B4%E7%AB%9E%E6%8A%80%E5%9C%BA%E7%BB%84%E7%89%8C%E6%80%9D%E8%B7%AF-2026-05-23-13-17-08.png" alt="225-炉石传说竞技场组牌思路-2026-05-23-13-17-08" /><br />
+所以一般我是很推荐4-5张AOE，费用在3-5费之间，且伤害在2-3之间，这也很符合卡牌得模型。这里特别提出超过5费得大AOE，这种得除非有很大得收益，比如：全局沉默，场面全清这类得否则不是很建议，高费AOE带来的全清场面但是没办法给你带来下一步优势，因为你得剩余费用不够了。高费用AOE在我看来已经不适合目前的模型了，很多高费用AOE要么带随从，要么能处理亡语体系，否则不建议选择。</p>
+<h3 id="盗贼卡牌差费用差"><a class="markdownIt-Anchor" href="#盗贼卡牌差费用差"></a> 盗贼：卡牌差+费用差</h3>
+<p>卡牌+费用差：贼得兆示是卡牌差和费用差得完美结合。由于贼得卡牌是随机性得，所以我们着重看卡牌差，以10费回合作为新一轮开始，正常快攻会在7-9费就结束战斗，那么我们可以计算下你到时候得手牌：<br />
+假如节奏良好，按费拍怪，那么到10费时候你手里卡牌就剩下3-4张，但是到5费以后，我们很多时候是会用1-2张，9费可能会用到3张，这就是很多时候，和贼对打我们常常出现这么一种情况：打不死对方，我们手牌也空了。更遑论它的费用差，可以4费打出6费得卡牌，差距就更大了。我们不考虑太久远的事情，我们就考虑10费回合，我们如果打不死对面，那么手里得卡牌至少要有5-7张手牌，才可以和对手有继续得机会。那么计算下这里面我们需要得过牌。<br />
+我们极端情况下10费回合是需要15-17张，即使是按费拍怪得情况下，我们至少需要2+以上得补牌，才能在结束时候达到5张手牌，如果是极端情况，你至少需要8张以上得补牌。也就是15张牌左右，你需要摸到8张牌至少可以1补1得情况。这样你结束之后可以有5-8张得手牌，给你继续打第二轮得情况。所以现在的情况摆在你面前，30张牌中可以有16张1补1的牌，至少也得有8张以上的补牌，否则在这个环境将打不了。<br />
+PS：很多人喜欢2费过3或者3费过3这类的卡牌，这里我是不推荐的，本质上它是1补3，看起来带来大量的补牌，但是如果你手牌充足的情况下，你是打不出这张牌的，为啥喜欢很多是因为这张卡往往会在绝境的时候给你带来一大波资源，你会在心理上加重它的地位。但是需要注意：1. 绝境的时候它不一定来，2. 我们尽量不要将自己打入绝境，这不是我们的目标。3. 它不符合我们上述的打牌逻辑，如果正常10费结束你有7张手牌这时候3费过牌对你来说没用。4. 最重要：它亏费用，3费却没有任何一个随从，这在当前模型下是不能接受的。<br />
+PS2：盗贼强大的另一个方面是它拥有1费找传说随从，由于现在固定就一个传说随从，加上暴雪为了卖卡，传说随从的费用差十分巨大，往往能做到一卡打三卡，而且巨型的出现，兼具站场，解场双功能。</p>
+<h3 id="萨满后期满兆费用差"><a class="markdownIt-Anchor" href="#萨满后期满兆费用差"></a> 萨满：后期满兆费用差</h3>
+<p>萨满的战略思路则就是，费用差，在兆示满之后，他可以用1费打出4费的攻击力，这样的单卡费用差给对手代理，其实DK算是另外一种费用差打法，只不过它用血，而且靠的是数量，但是萨满则是反过来，我用1费得随从身材进行压制，通过一回合更多费用来铺场解场你解决不了得场面。另外低费兆示带来得8血身材已经是8费怪得身材了。一般得解牌很难解决，AOE更加难了。所以硬解必须有，萨满得兆示和战士得兆示差距就在1个4血8攻，1个8血4攻，另外战士不可控，萨满可控。</p>
+<h2 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路</h2>
+<p>从上面来看，我们的主流思路其实就很简单：<strong>费用差+卡牌差</strong>。这就是这个游戏的关键，由于兆示职业太容易打出费用差，所以兆示职业是很强的。卡牌差的问题可以通过大量的发现来解决，这就是为啥盗贼是目前的主流。其次还有几个其他思路：</p>
+<ol>
+<li>除开金币号，大多数人找到得兆示有限，所以卡牌差和费用差，次数是有限得，所以我们只要扛过那几波就可能获得胜利。</li>
+<li>上述几个获胜思路也是我们获胜得思路，但是我们不能只攻击不防守得，否则就变成了谁更加胡得游戏，这种情况下稳定性不足。毕竟很多人发现我既然后期打不过，那么我就拼前期。</li>
+</ol>
+<p>结合我们目前的环境和打牌节奏，我们就可以使用一些组牌的硬性要求：</p>
+<ol>
+<li>3-5以上得aoe，太多会卡手，7张是顶天，否则会出现满手AOE却无法使用得情况。</li>
+<li>至少8张，可能的话要15张过牌，至少不亏手牌。否则会出现牌不够应对不了场面得情况。当然有时候会抱着满手牌死亡得情况，随机性是这个游戏得玩法之一。【需要注意，补牌是补牌，润滑是润滑，很多元素会出现给一些1费的润滑牌，这些牌对盗贼很有用，但是不能把它算进补牌中，因为可预见且用处不大，其他职业如果没有更好的选择可以选择，否则一般不主动选择】</li>
+<li>判断牌的关键在于费用差，除开AOE和组件牌，剩下的就是费用差，一张牌如果能够带来更多的费用差，那么这张牌就可以选择，我们通过一点点的费用差来累积优势，直到胜利。</li>
+<li>高费情况下会出现2张卡打出10+费的情况，这也是获胜关键之一，但是前提是要活着+场面好。否则你铺一波但是对面场面好，有可能解场面，有可能冲你脸。</li>
+<li>沉默和硬解是必须的，由于现在场面的兆示和亡语的出现，所以沉默的优势无限大，尤其是4费图书馆管理员，既可以过牌，也可以裸下，如果卡牌很好不缺优质随从的情况下，可以见一个拿一个【你也不可能遇见10个的】，大多数沉默怪是亏身材的，所以沉默当场就已经将费用你部回来了。硬解也是费用差找回的关键。</li>
+<li>费用安排，环境的节奏变快，所以必须要求压低费用，低费用导致我们需要的过牌更多，如果你20张5费以下的牌，则要求你其中10张是不亏牌的，否则会出现10费打完，空手牌情况。高费用的情况则可以参考AOE，如果7张5费以上的，那么我们在前8抽抽到的概率是90+，大概率手上会有2-3张高费下不去的牌，我对高费随从的要求就是低于5张。【当然根据实际情况再酌情判断，不过高费不要太多是符合当前环境的】</li>
+<li>优化思路：不要拿正常费用的卡，由于这个环境变化，每回合我们至少要获得更多的费用差，否则就是慢性死亡或者等待对手卡节奏，优化思路就是要当回合费用差越大的卡越要，去卡的排序：会亏卡的牌【如果补牌数量够】&lt;正常费用&lt;打出费用差小的&lt;打出费用差大的。</li>
+</ol>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>目前均胜不超过3，打的多但是思考的少，所以就想着写下来，目前这个游戏处于下跌周期，网上主播不少，但是教程很少，包括我写的也不是新手教程，而是进阶教程。说明现在走的是存量市场，没有新人，看的人不玩，玩得人都是老玩家。这对游戏来说不是好事，这点从制作组摆烂也能看出来，不可能有资本家会如此放生一款有上升势头的游戏。<br />
+且玩且珍惜，我自己也不知道会玩多久，毕竟这狗屎的金币号确实让人很难受。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>炉石传说</tag>
+        <tag>竞技场</tag>
+        <tag>组牌思路</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FinalShell跳板配置</title>
+    <url>/2022/12/05/FinalShell%E8%B7%B3%E6%9D%BF%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="finalshell跳板配置"><a class="markdownIt-Anchor" href="#finalshell跳板配置"></a> FinalShell跳板配置</h1>
+<p>ssh跳板主要用来访问那些被封的IP，通过另外一台可以访问的IP跳板访问被墙的IP。</p>
+<h2 id="前提"><a class="markdownIt-Anchor" href="#前提"></a> 前提：</h2>
+<ol>
+<li>
+<p>一台可以本地可以访问的服务器且可以访问到被墙的服务器。</p>
+</li>
+<li>
+<p>FinalShell</p>
+</li>
+</ol>
+<p>如果没有中间服务器，推荐到<a href="https://www.vultr.com/">vultr</a>开一台按时间计费的服务器，用完即可关闭。</p>
+<h2 id="操作"><a class="markdownIt-Anchor" href="#操作"></a> 操作</h2>
+<ol>
+<li>打开SSH连接，然后输入中间服务器的登陆信息</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221205094943.png" alt="20221205094943" /></p>
+<p>2.输入之后，点击隧道，新建隧道，类型选择<code>本地</code>,端口无所谓，随便选择，IP设置为127.0.0.1，最后目标地址和端口选择对应被墙的服务器即可。</p>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221205095122.png" alt="20221205095122" /></p>
+<ol start="3">
+<li>之后点击保存，再新建一个SSH连接。端口和地址选择刚才输入的绑定IP和端口。</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/android1122/typecho_img/master/20221205095335.png" alt="20221205095335" /></p>
+<ol start="4">
+<li><code>需要注意的是：访问被墙主机，需要先打开中间主机的SSH连接，并且保持不关闭，再打开被墙主机的SSH连接</code>。</li>
+</ol>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>FinalShell</tag>
+        <tag>SSH</tag>
+        <tag>跳板机</tag>
+        <tag>被墙IP救活</tag>
       </tags>
   </entry>
   <entry>
@@ -9881,6 +9882,22 @@ Y=(y_1,y_2,\cdots,y_N)^T=\begin{pmatrix}
       </tags>
   </entry>
   <entry>
+    <title>二哥新时代思想——作者：闷骚</title>
+    <url>/2022/04/30/%E4%BA%8C%E5%93%A5%E6%96%B0%E6%97%B6%E4%BB%A3%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E4%BD%9C%E8%80%85%EF%BC%9A%E9%97%B7%E9%AA%9A/</url>
+    <content><![CDATA[<p>二哥新时代神逻辑思想，科学地回答了实现什么样的神逻辑，怎样神逻辑和在新时期坚持什么样的神逻辑，怎样神逻辑的重大理论和实际问题，是当前和今后一个时期必须坚持的战略指导思想，二哥的神逻辑是对中华民族五千多年来神逻辑的精华的创造性运用、创新性发展。二哥神逻辑是神逻辑的核心内容，二哥神逻辑是神逻辑的本质特征，二哥神逻辑复合发展是二哥二十六年来历经艰辛开创的伟大理论体系、伟大道路、伟大制度、伟大文化。新时期必须长期坚持并不断发展二哥神逻辑理论、道路、制度、文化，筑牢神逻辑的宝贵理论基础和实践基石。<img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603151717.png" alt="20220603151717" /></p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>那些年遇见的人</category>
+      </categories>
+      <tags>
+        <tag>二哥</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>二哥2</title>
     <url>/2022/08/20/%E4%BA%8C%E5%93%A52/</url>
     <content><![CDATA[<p>二哥是我为数不多大学还在联系的人，也是我仅剩的毕业之后还在一座城市的同学。</p>
@@ -9901,24 +9918,8 @@ Y=(y_1,y_2,\cdots,y_N)^T=\begin{pmatrix}
         <category>那些年遇见的人</category>
       </categories>
       <tags>
+        <tag>二哥</tag>
         <tag>那些年的二哥</tag>
-        <tag>二哥</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>二哥新时代思想——作者：闷骚</title>
-    <url>/2022/04/30/%E4%BA%8C%E5%93%A5%E6%96%B0%E6%97%B6%E4%BB%A3%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E4%BD%9C%E8%80%85%EF%BC%9A%E9%97%B7%E9%AA%9A/</url>
-    <content><![CDATA[<p>二哥新时代神逻辑思想，科学地回答了实现什么样的神逻辑，怎样神逻辑和在新时期坚持什么样的神逻辑，怎样神逻辑的重大理论和实际问题，是当前和今后一个时期必须坚持的战略指导思想，二哥的神逻辑是对中华民族五千多年来神逻辑的精华的创造性运用、创新性发展。二哥神逻辑是神逻辑的核心内容，二哥神逻辑是神逻辑的本质特征，二哥神逻辑复合发展是二哥二十六年来历经艰辛开创的伟大理论体系、伟大道路、伟大制度、伟大文化。新时期必须长期坚持并不断发展二哥神逻辑理论、道路、制度、文化，筑牢神逻辑的宝贵理论基础和实践基石。<img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220603151717.png" alt="20220603151717" /></p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>那些年遇见的人</category>
-      </categories>
-      <tags>
-        <tag>二哥</tag>
       </tags>
   </entry>
   <entry>
@@ -10306,52 +10307,6 @@ sysctl -p
       </tags>
   </entry>
   <entry>
-    <title>图式的三层理论</title>
-    <url>/2022/10/12/%E5%9B%BE%E5%BC%8F%E7%9A%84%E4%B8%89%E5%B1%82%E7%90%86%E8%AE%BA/</url>
-    <content><![CDATA[<p>相较于认知理论盘根错节的基础，这是一个更加具有操作性和实践性的理论，主要是用来解决我在日常生活工作中遇见的一些行为前后矛盾，因为根据认知相同，在同一件事情或者大差不离的环境下应该产生一样的结果，所以我认为在认知的上层是图式——一种对事务的具体操作流程，是一种记录在脑中的场景推演。随着人类社会的复杂程度增加，我认为人们在处理一些复杂的场景下，使用的是记忆中对应或者类似场景的记忆来处理当前复杂场景的，更多的体现在行为和话语，而对基本的认知和心理不做太多评判。图式是一个学习的过程然后通过记忆进行保存，而当前场景处理即图式实践的一个过程。我认为，一个人除了最基础的认知，他们在社会之中，更多的是图式的一种学习方式来学习社会关系和人际交往。不同于基础学科知识，没有一个恰当的理论帮助人从幼年开始学习人际，交往等其他学校内没有教的东西，所以我认为，人的成长过程就是图式不断积累的过程。和学习过程大差不离，通过不断的对试错和对损失的厌恶，我们会在脑中形成某些场景下的认知理论，来代替复杂繁多的图式帮助人交往交流。</p>
-<h3 id="图式和认知"><a class="markdownIt-Anchor" href="#图式和认知"></a> 图式和认知</h3>
-<p>当我们小的时候，叔叔阿姨过来了，我们并不知道要问好。父母会叫我们问好，这就是一个简单的图式。我们就学会了最基础的交际。明白了相似甚至新出现的场景下，我们的正确行为和言语。图式和认知最大的区别就是，认知是一种理论基础，它可以发展出图式，知道图式的边界和范围，使其不做出超过认知的事情。这就像我们小学的义务教育的内容一样，理论知识和习题同时给予你，是一个从理论发展到习题，在从习题这种图式反过来验证加强理论的一个过程，后续你使用的时候更多的是一个从认知到发展图式的方式。从理论发展出图式，我称之为认知过程。</p>
-<p>如果你小时候看过一些电视剧，你可以发现，电视剧里面总是会宣言主角通过诚实守信，通过真材实料打败使用虚假材料的对手，从此不断的赚钱，成为人生赢家。虽然不敢百分百确定，但是可以肯定的是，如果你做生意的话，你有可能也会选择诚实守信，真材实料。这里并不是宣言偷奸耍滑，我们可以看到这就是图式的作用。在我们涉及到的一个新的领域，如果我们没有对应领域的基础知识，无法从认知理论出发，那么就只能从我们记忆中的影像，来推演我们即将踏入的行业。但是实际上，如果你做生意，更加看重的应该是利润，只有利润能够帮你实现人生赢家，真材实料和诚实并不能。所以我们可以看到，这就是图式和认知的区别，在没有认知的情况下，我们用图式来做出行为，而有认知理论就能更加明白如何去做，已经为何这么做。</p>
-<p>我们默认会用图式来解决我们生活中遇见的问题，因为图式更加的便捷且易操作，如果未经过特殊训练或者理论知识，那么一个人表现出来的行为会和他内心最接近的图式相同。这也解释了为何一些人会表现出手足无措的想象，很多时候他的心里没有图式或者认知来帮他了解现在的情况，一时之间不明白如何操作也是正常的。而图式的另一个作用就是帮助我们提前预演未来可能发生的情况，让我们的内心更好的为未来的挑战做准备。</p>
-<p>图式和认知是可以简单的概括成一个学习的过程，我们通过学习例子来加深给出的理论，通过不断的试错和反复，来达到最终的答案，这个过程就好像神经网络学习的过程。所以如果图式够丰富，是会形成自己一套认知，从而在在某个领域内融会贯通。但是并不是所有人都能通过图式来达到建立认知的过程。现在很多人看到海底捞火，就觉得我也行。于是模仿海底捞的服务，但是作为一个餐饮业来说，味道和干净才是重中之重，我曾经说过，海底捞可以达到肯德基，麦当劳的地位。为啥？并不是因为服务，是标准化的味道和强大的供应链。你在任何地方吃到的海底捞的味道肯定是一样的，这满足了人们对它的期望，我过去吃饭是为了吃到我之前想吃的味道，而不是过去碰运气去看看今天厨师或者供应链好不好，海底捞取巧的解决了厨师的问题，就像肯德基和麦当劳没有厨师一样，海底捞也没有，然后就是供应链，和肯德基麦当劳一样，海底捞有强大的供应链公司，可以保证他食材的同步，这至关重要。很多时候有人说我在四川吃到了xxx火锅比海底捞好吃多了，四川人根本不吃海底捞。没错，天底下比海底捞好的火锅店多了，但是他只能盘踞四川，出了四川有些食材没地搞，四川运出去由太贵。所以现在很多模仿海底捞的服务，有一说一都是只是模仿人家的图式，却没有学习认知理论。总归是照猫画虎。</p>
-<h3 id="图式的显像"><a class="markdownIt-Anchor" href="#图式的显像"></a> 图式的显像</h3>
-<p>但是社会交际中，我们更多的是从图式来学习认知过程的，因为没有一个可以让我们明白的理论给予我们，而且由于不是书本上固定的内容，所以认知过程是千变万化的，是千人千面的。我觉得见面得点头问好，他觉得见面不是什么要紧的事情，所以在没有事得情况下无需交流。这就是图式的显像，虽然我们知道了应该怎么做，但是有时候根据情绪根据认知程度的问题，每个人对待同一个情景不会有相似的行为。</p>
-<p>我会对某个叔叔问好，但是我哥不会，因为他知道整个叔叔外面赌博欠钱还欠我家一大笔钱，所以他遇见时更多有那种高高在上的感觉，这就是简单的信息加工后，导致我哥对这个人的认知和我产生差异。所以认知的构建是一个包含图式和其他信息加工的复杂过程，我们无法通过同一场景下的一个简单行为来判断他的情绪和认知，但是在某些特殊场景下，我们可以通过情绪来判断他的认知，比如相亲的时候，你可以观察相亲对象的情绪，因为在信息都不明朗的情况下，我们都会默认按照自己内心的图式进行流程，但是如果有情绪反抗的话，就会出现我明知道该这么做，但是我不想这么做的一些矛盾。</p>
-<p>大多数相亲是有一个大致流程：媒婆带着男孩到女孩子家中，然后女孩需要倒水沏茶给众人喝，算是给众人看下相貌和礼仪。这就是一个简单的图式或者说场景处理，不涉及到更深的认知过程，就好像时一个习俗一样的行为，如果这时女孩不愿意，或者装不知，那么大概率就是情绪在阻挠。</p>
-<p>图式的显像是个复杂的过程，但是在没有特定认知差异的情况下，我们可以判断一个人的主管意愿，这仅仅是该理论的一个简单应用。认知——图式——情绪，三者是顺序控制的，最后体现在行为之上。一个人的行为可以通过逆向推演这三者关系来判断是哪一步出现问题。</p>
-<h3 id="图式的应用"><a class="markdownIt-Anchor" href="#图式的应用"></a> 图式的应用</h3>
-<p>图式的一个简单应用就好像是营销一样，通过不断的宣传某一美好品德，在内心接受然后影响你的行为。这就是现在大多数广告的意义，也是目前德育宣传的手段。图式本质是一个学习的过程，所以我们可以看到，抖音，快手等短视频，通过一个个场景给予了我们一个个我们尚未遇见或者有可能遇见场景的图式，这就是一个简单的学习图式的过程，我们会在下一次对应场景或者下一个饭桌上将说听到的事或物再说出来。但是这只是一个图式的显现。我们会参照或者尽量使用我们内心熟悉的图式。同时图式是一个记忆的显像，所以不是所有人都会在抖音的影响下使用同样的一个图式，也许在某一次别的宴席上，觉得别人的图式更好于是就将其记入脑中学习。所以大多数人是可以在同一个场景下达到同步共识的。</p>
-<h3 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h3>
-<p>1，图式是我们踏入新领域的第一步，我们会按照心里的图式对其进行推演然后实践，这往往会给我们带来一些错误的方向，所以踏入新领域请学习其基础知识理论，目前的所有图式都有可能将我们带歪，只有建立了自己的认知理论才能防止这种行为。</p>
-<ol start="2">
-<li>
-<p>网络或者电视，任何传播手段都可以成为我们建立图式的手段</p>
-</li>
-<li>
-<p>三层理论是互相影响的，图式确定的情况下，无认知过程，那么就是主观情绪在影响，情绪有问题说明是认知不同。</p>
-</li>
-<li>
-<p>并不是所有人都可以从图式中总结出认知的，这与学习能力，图式的数量有所关联，所以我们需要判断一些未建立认知的过程的可能。</p>
-</li>
-<li>
-<p>这个理论更加贴近生活，我们可以根据每个人在图式中扮演的角色来判断他的心境。</p>
-</li>
-</ol>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>图式</tag>
-        <tag>认知</tag>
-        <tag>情绪</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>在线图书</title>
     <url>/2022/05/01/%E5%9C%A8%E7%BA%BF%E5%9B%BE%E4%B9%A6/</url>
     <content><![CDATA[<p>图书馆地址：<a href="https://clibre.minsummer.com/">https://clibre.minsummer.com/</a></p>
@@ -10396,6 +10351,52 @@ sysctl -p
       </categories>
       <tags>
         <tag>clibre</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图式的三层理论</title>
+    <url>/2022/10/12/%E5%9B%BE%E5%BC%8F%E7%9A%84%E4%B8%89%E5%B1%82%E7%90%86%E8%AE%BA/</url>
+    <content><![CDATA[<p>相较于认知理论盘根错节的基础，这是一个更加具有操作性和实践性的理论，主要是用来解决我在日常生活工作中遇见的一些行为前后矛盾，因为根据认知相同，在同一件事情或者大差不离的环境下应该产生一样的结果，所以我认为在认知的上层是图式——一种对事务的具体操作流程，是一种记录在脑中的场景推演。随着人类社会的复杂程度增加，我认为人们在处理一些复杂的场景下，使用的是记忆中对应或者类似场景的记忆来处理当前复杂场景的，更多的体现在行为和话语，而对基本的认知和心理不做太多评判。图式是一个学习的过程然后通过记忆进行保存，而当前场景处理即图式实践的一个过程。我认为，一个人除了最基础的认知，他们在社会之中，更多的是图式的一种学习方式来学习社会关系和人际交往。不同于基础学科知识，没有一个恰当的理论帮助人从幼年开始学习人际，交往等其他学校内没有教的东西，所以我认为，人的成长过程就是图式不断积累的过程。和学习过程大差不离，通过不断的对试错和对损失的厌恶，我们会在脑中形成某些场景下的认知理论，来代替复杂繁多的图式帮助人交往交流。</p>
+<h3 id="图式和认知"><a class="markdownIt-Anchor" href="#图式和认知"></a> 图式和认知</h3>
+<p>当我们小的时候，叔叔阿姨过来了，我们并不知道要问好。父母会叫我们问好，这就是一个简单的图式。我们就学会了最基础的交际。明白了相似甚至新出现的场景下，我们的正确行为和言语。图式和认知最大的区别就是，认知是一种理论基础，它可以发展出图式，知道图式的边界和范围，使其不做出超过认知的事情。这就像我们小学的义务教育的内容一样，理论知识和习题同时给予你，是一个从理论发展到习题，在从习题这种图式反过来验证加强理论的一个过程，后续你使用的时候更多的是一个从认知到发展图式的方式。从理论发展出图式，我称之为认知过程。</p>
+<p>如果你小时候看过一些电视剧，你可以发现，电视剧里面总是会宣言主角通过诚实守信，通过真材实料打败使用虚假材料的对手，从此不断的赚钱，成为人生赢家。虽然不敢百分百确定，但是可以肯定的是，如果你做生意的话，你有可能也会选择诚实守信，真材实料。这里并不是宣言偷奸耍滑，我们可以看到这就是图式的作用。在我们涉及到的一个新的领域，如果我们没有对应领域的基础知识，无法从认知理论出发，那么就只能从我们记忆中的影像，来推演我们即将踏入的行业。但是实际上，如果你做生意，更加看重的应该是利润，只有利润能够帮你实现人生赢家，真材实料和诚实并不能。所以我们可以看到，这就是图式和认知的区别，在没有认知的情况下，我们用图式来做出行为，而有认知理论就能更加明白如何去做，已经为何这么做。</p>
+<p>我们默认会用图式来解决我们生活中遇见的问题，因为图式更加的便捷且易操作，如果未经过特殊训练或者理论知识，那么一个人表现出来的行为会和他内心最接近的图式相同。这也解释了为何一些人会表现出手足无措的想象，很多时候他的心里没有图式或者认知来帮他了解现在的情况，一时之间不明白如何操作也是正常的。而图式的另一个作用就是帮助我们提前预演未来可能发生的情况，让我们的内心更好的为未来的挑战做准备。</p>
+<p>图式和认知是可以简单的概括成一个学习的过程，我们通过学习例子来加深给出的理论，通过不断的试错和反复，来达到最终的答案，这个过程就好像神经网络学习的过程。所以如果图式够丰富，是会形成自己一套认知，从而在在某个领域内融会贯通。但是并不是所有人都能通过图式来达到建立认知的过程。现在很多人看到海底捞火，就觉得我也行。于是模仿海底捞的服务，但是作为一个餐饮业来说，味道和干净才是重中之重，我曾经说过，海底捞可以达到肯德基，麦当劳的地位。为啥？并不是因为服务，是标准化的味道和强大的供应链。你在任何地方吃到的海底捞的味道肯定是一样的，这满足了人们对它的期望，我过去吃饭是为了吃到我之前想吃的味道，而不是过去碰运气去看看今天厨师或者供应链好不好，海底捞取巧的解决了厨师的问题，就像肯德基和麦当劳没有厨师一样，海底捞也没有，然后就是供应链，和肯德基麦当劳一样，海底捞有强大的供应链公司，可以保证他食材的同步，这至关重要。很多时候有人说我在四川吃到了xxx火锅比海底捞好吃多了，四川人根本不吃海底捞。没错，天底下比海底捞好的火锅店多了，但是他只能盘踞四川，出了四川有些食材没地搞，四川运出去由太贵。所以现在很多模仿海底捞的服务，有一说一都是只是模仿人家的图式，却没有学习认知理论。总归是照猫画虎。</p>
+<h3 id="图式的显像"><a class="markdownIt-Anchor" href="#图式的显像"></a> 图式的显像</h3>
+<p>但是社会交际中，我们更多的是从图式来学习认知过程的，因为没有一个可以让我们明白的理论给予我们，而且由于不是书本上固定的内容，所以认知过程是千变万化的，是千人千面的。我觉得见面得点头问好，他觉得见面不是什么要紧的事情，所以在没有事得情况下无需交流。这就是图式的显像，虽然我们知道了应该怎么做，但是有时候根据情绪根据认知程度的问题，每个人对待同一个情景不会有相似的行为。</p>
+<p>我会对某个叔叔问好，但是我哥不会，因为他知道整个叔叔外面赌博欠钱还欠我家一大笔钱，所以他遇见时更多有那种高高在上的感觉，这就是简单的信息加工后，导致我哥对这个人的认知和我产生差异。所以认知的构建是一个包含图式和其他信息加工的复杂过程，我们无法通过同一场景下的一个简单行为来判断他的情绪和认知，但是在某些特殊场景下，我们可以通过情绪来判断他的认知，比如相亲的时候，你可以观察相亲对象的情绪，因为在信息都不明朗的情况下，我们都会默认按照自己内心的图式进行流程，但是如果有情绪反抗的话，就会出现我明知道该这么做，但是我不想这么做的一些矛盾。</p>
+<p>大多数相亲是有一个大致流程：媒婆带着男孩到女孩子家中，然后女孩需要倒水沏茶给众人喝，算是给众人看下相貌和礼仪。这就是一个简单的图式或者说场景处理，不涉及到更深的认知过程，就好像时一个习俗一样的行为，如果这时女孩不愿意，或者装不知，那么大概率就是情绪在阻挠。</p>
+<p>图式的显像是个复杂的过程，但是在没有特定认知差异的情况下，我们可以判断一个人的主管意愿，这仅仅是该理论的一个简单应用。认知——图式——情绪，三者是顺序控制的，最后体现在行为之上。一个人的行为可以通过逆向推演这三者关系来判断是哪一步出现问题。</p>
+<h3 id="图式的应用"><a class="markdownIt-Anchor" href="#图式的应用"></a> 图式的应用</h3>
+<p>图式的一个简单应用就好像是营销一样，通过不断的宣传某一美好品德，在内心接受然后影响你的行为。这就是现在大多数广告的意义，也是目前德育宣传的手段。图式本质是一个学习的过程，所以我们可以看到，抖音，快手等短视频，通过一个个场景给予了我们一个个我们尚未遇见或者有可能遇见场景的图式，这就是一个简单的学习图式的过程，我们会在下一次对应场景或者下一个饭桌上将说听到的事或物再说出来。但是这只是一个图式的显现。我们会参照或者尽量使用我们内心熟悉的图式。同时图式是一个记忆的显像，所以不是所有人都会在抖音的影响下使用同样的一个图式，也许在某一次别的宴席上，觉得别人的图式更好于是就将其记入脑中学习。所以大多数人是可以在同一个场景下达到同步共识的。</p>
+<h3 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h3>
+<p>1，图式是我们踏入新领域的第一步，我们会按照心里的图式对其进行推演然后实践，这往往会给我们带来一些错误的方向，所以踏入新领域请学习其基础知识理论，目前的所有图式都有可能将我们带歪，只有建立了自己的认知理论才能防止这种行为。</p>
+<ol start="2">
+<li>
+<p>网络或者电视，任何传播手段都可以成为我们建立图式的手段</p>
+</li>
+<li>
+<p>三层理论是互相影响的，图式确定的情况下，无认知过程，那么就是主观情绪在影响，情绪有问题说明是认知不同。</p>
+</li>
+<li>
+<p>并不是所有人都可以从图式中总结出认知的，这与学习能力，图式的数量有所关联，所以我们需要判断一些未建立认知的过程的可能。</p>
+</li>
+<li>
+<p>这个理论更加贴近生活，我们可以根据每个人在图式中扮演的角色来判断他的心境。</p>
+</li>
+</ol>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>图式</tag>
+        <tag>认知</tag>
+        <tag>情绪</tag>
       </tags>
   </entry>
   <entry>
@@ -10663,32 +10664,6 @@ sysctl -p
       </tags>
   </entry>
   <entry>
-    <title>张豆豆历险记-他们</title>
-    <url>/2022/04/30/%E5%BC%A0%E8%B1%86%E8%B1%86%E5%8E%86%E9%99%A9%E8%AE%B0-%E4%BB%96%E4%BB%AC/</url>
-    <content><![CDATA[<p>事情发生在豆豆萌生退意之前.</p>
-<p>他的同事离职了，这个同事原本在一个项目组内。现在他走了，需要一个人来顶替他的位置。组长已经在别的项目组不行了，备孕姐是不会接手这些事，毕竟他是本部的，不能干这些外部的活。大姐头虽然是老资格，而且技术娴熟，但是不会派他去-因为没有油水或者她知道这个项目有多坑。富帅是新人，才来不到半个月，不行。好了只剩下豆豆，相较于内部的一潭死水,张豆豆觉得出去或许是比较好的选择,毕竟一个新的项目就像一个新的公司一样,对张豆豆来说这是充满了吸引力.于是乎张豆豆顶替了离职成员加入了项目组.</p>
-<p>首先，简单介绍这个项目,这个项目已经进入尾声,项目开始于张豆豆刚入职时候,到此已经历时3,4个月,项目初期,在内部寻找实施时,离职同事自告奋勇请求加入,然后拉上了另外一个新来的同事,配上一个老员工做项目经理.就这样,一个标准的实施团队建立起来了.由于外部项目人员很少回来,加之同事之间还没熟络,所以张豆豆并不了解项目的进展,反而对其充满了期待.</p>
-<p>随着第一次的接触,张豆豆获知了这个项目的外号:死亡项目组.这个项目似乎是个炼狱场,不仅项目实施和开发在张豆豆之前已经换了好几波,这个项目涉及到第三个系统，所以会有两个实施团队，对方团队从实施到开发都换过一波，似乎由于对方团队交接没交接好，新的实施团队和张豆豆就工作内容上有分歧，在张豆豆接触的第一天，项目经理就摆明态度，对对方的一切要求都拒绝。</p>
-<p>张豆豆前同事曾经私下里劝阻张豆豆不要接手，说坑。但是当时一心想要恢复自己的对生活的期望的张豆豆不听劝阻，义无反顾的进入了项目组。这次也许是忌惮于项目组的威名，这次只是张豆豆一人加入，虽然业务实施也离职了，但是似乎项目经理要亲自下场，就这样一个简易实施团队成立了，介绍一下项目组成员：</p>
-<p>项目经理：那个人吧，犹如伏地魔一般无法提及他的姓名，集无能和暴躁于一体,前两位组员离职主要原因，包括但不仅限于：无事加班混时长，进度落后不催促，需求不明上了再说，文档不写全靠口述，用户不培全靠奶茶，有锅就甩，后期没人。</p>
-<p>在张豆豆接手后这个项目，首先是简单的工作交接，虽然有些不懂或者交接的不尽详细，豆豆想着后续可以咨询下项目经理，毕竟离职的人又有几个真心愿意交接。但是在第一次咨询项目经理以后，豆豆后悔了，这逼对系统的了解程度仅限自己的一亩三分地，对财务模块的配置需求完全没有，而且这个项目，前期需求调研，确认，培训文档等资料一个都没有。项目经理的原话是，这个财务和内部的完全一样。于是就这么没有任何客制化的将内部财务模块上线了。</p>
-<p>张豆豆忽然不知道该如何处理这种问题，就这么不明不白的系统上线了，随之而来的就是大量的用户反馈。系统不行啊？这个功能怎么用啊？这个菜单用来干啥的？一点都不意外。</p>
-<p>张豆豆忽然明白死亡项目组的本质了，能想象当初组员是在什么样的情景下上线系统，没有与关键用户任何沟通，只是一味的将这个系统搬上去，然后不知道为何而搬，就这样花费了三四个月，期间为了表现工作忙碌，还天天无事加班到8点走，据离职同事透露，项目经理明确在群里要求不允许8点之前下班。</p>
-<p>系统的上线噩梦就这么开始了，在经过几场用户培训，已经修改用户业务操作流程之后，大致解决了大部分的业务不吻合问题。接下来要面对的就是和另外一个系统的对接。</p>
-<p>对方项目组员已经全部换掉，新的项目经理似乎在成本控制上有巨大压力，很多客制化接口开发，似乎都不想做，想着我们将系统数据推送过去，他们仅仅作为一个接收者，这样节省大量开发资源和时间。在三方合作会议上，对方的项目经理极力促成此事。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>那些年遇见的人</category>
-      </categories>
-      <tags>
-        <tag>张豆豆</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>就这么写下去吧</title>
     <url>/2022/04/30/%E5%B0%B1%E8%BF%99%E4%B9%88%E5%86%99%E4%B8%8B%E5%8E%BB%E5%90%A7/</url>
     <content><![CDATA[<p>从何时起，我们的文章得有主题，得有内容，得有顺序。</p>
@@ -10732,6 +10707,32 @@ sysctl -p
       </categories>
       <tags>
         <tag>那是一本书</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>张豆豆历险记-他们</title>
+    <url>/2022/04/30/%E5%BC%A0%E8%B1%86%E8%B1%86%E5%8E%86%E9%99%A9%E8%AE%B0-%E4%BB%96%E4%BB%AC/</url>
+    <content><![CDATA[<p>事情发生在豆豆萌生退意之前.</p>
+<p>他的同事离职了，这个同事原本在一个项目组内。现在他走了，需要一个人来顶替他的位置。组长已经在别的项目组不行了，备孕姐是不会接手这些事，毕竟他是本部的，不能干这些外部的活。大姐头虽然是老资格，而且技术娴熟，但是不会派他去-因为没有油水或者她知道这个项目有多坑。富帅是新人，才来不到半个月，不行。好了只剩下豆豆，相较于内部的一潭死水,张豆豆觉得出去或许是比较好的选择,毕竟一个新的项目就像一个新的公司一样,对张豆豆来说这是充满了吸引力.于是乎张豆豆顶替了离职成员加入了项目组.</p>
+<p>首先，简单介绍这个项目,这个项目已经进入尾声,项目开始于张豆豆刚入职时候,到此已经历时3,4个月,项目初期,在内部寻找实施时,离职同事自告奋勇请求加入,然后拉上了另外一个新来的同事,配上一个老员工做项目经理.就这样,一个标准的实施团队建立起来了.由于外部项目人员很少回来,加之同事之间还没熟络,所以张豆豆并不了解项目的进展,反而对其充满了期待.</p>
+<p>随着第一次的接触,张豆豆获知了这个项目的外号:死亡项目组.这个项目似乎是个炼狱场,不仅项目实施和开发在张豆豆之前已经换了好几波,这个项目涉及到第三个系统，所以会有两个实施团队，对方团队从实施到开发都换过一波，似乎由于对方团队交接没交接好，新的实施团队和张豆豆就工作内容上有分歧，在张豆豆接触的第一天，项目经理就摆明态度，对对方的一切要求都拒绝。</p>
+<p>张豆豆前同事曾经私下里劝阻张豆豆不要接手，说坑。但是当时一心想要恢复自己的对生活的期望的张豆豆不听劝阻，义无反顾的进入了项目组。这次也许是忌惮于项目组的威名，这次只是张豆豆一人加入，虽然业务实施也离职了，但是似乎项目经理要亲自下场，就这样一个简易实施团队成立了，介绍一下项目组成员：</p>
+<p>项目经理：那个人吧，犹如伏地魔一般无法提及他的姓名，集无能和暴躁于一体,前两位组员离职主要原因，包括但不仅限于：无事加班混时长，进度落后不催促，需求不明上了再说，文档不写全靠口述，用户不培全靠奶茶，有锅就甩，后期没人。</p>
+<p>在张豆豆接手后这个项目，首先是简单的工作交接，虽然有些不懂或者交接的不尽详细，豆豆想着后续可以咨询下项目经理，毕竟离职的人又有几个真心愿意交接。但是在第一次咨询项目经理以后，豆豆后悔了，这逼对系统的了解程度仅限自己的一亩三分地，对财务模块的配置需求完全没有，而且这个项目，前期需求调研，确认，培训文档等资料一个都没有。项目经理的原话是，这个财务和内部的完全一样。于是就这么没有任何客制化的将内部财务模块上线了。</p>
+<p>张豆豆忽然不知道该如何处理这种问题，就这么不明不白的系统上线了，随之而来的就是大量的用户反馈。系统不行啊？这个功能怎么用啊？这个菜单用来干啥的？一点都不意外。</p>
+<p>张豆豆忽然明白死亡项目组的本质了，能想象当初组员是在什么样的情景下上线系统，没有与关键用户任何沟通，只是一味的将这个系统搬上去，然后不知道为何而搬，就这样花费了三四个月，期间为了表现工作忙碌，还天天无事加班到8点走，据离职同事透露，项目经理明确在群里要求不允许8点之前下班。</p>
+<p>系统的上线噩梦就这么开始了，在经过几场用户培训，已经修改用户业务操作流程之后，大致解决了大部分的业务不吻合问题。接下来要面对的就是和另外一个系统的对接。</p>
+<p>对方项目组员已经全部换掉，新的项目经理似乎在成本控制上有巨大压力，很多客制化接口开发，似乎都不想做，想着我们将系统数据推送过去，他们仅仅作为一个接收者，这样节省大量开发资源和时间。在三方合作会议上，对方的项目经理极力促成此事。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>那些年遇见的人</category>
+      </categories>
+      <tags>
+        <tag>张豆豆</tag>
       </tags>
   </entry>
   <entry>
@@ -11435,6 +11436,98 @@ sysctl -p
       </tags>
   </entry>
   <entry>
+    <title>服务器线路测试</title>
+    <url>/2022/06/08/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BA%BF%E8%B7%AF%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<p>贴一下服务器配置：</p>
+<ul>
+<li>
+<p>cpu：1核</p>
+</li>
+<li>
+<p>内存：512M</p>
+</li>
+<li>
+<p>硬盘：10G</p>
+</li>
+<li>
+<p>带宽：1G</p>
+</li>
+<li>
+<p>流量：1000G/月</p>
+</li>
+</ul>
+<p>这个是搬瓦工的512M的洛杉矶CN2线路，访问国内速度很快，电信联通尤其好，移动差劲。</p>
+<p>最近需要更换宽带，正好借此机会，研究一下：我的服务器对为啥对移动这么排斥，联通和电信哪个更好？根据后台的Billing，我可以看出我得服务器，在洛杉矶，机房代号为：USCA_2。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220608110005.png" alt="20220608110005" /></p>
+<p>我查了下这个机房：</p>
+<blockquote>
+<p>搬瓦工的洛杉矶DC2机房来自QN机房(全称<a href="https://www.quadranet.com/cn/">QuadraNet机房</a>)，目前已接入CN2 GT直连线路，机房CN2直连线路由QN机房官方部署。</p>
+</blockquote>
+<p>这个机房是有自己得服务器业务的，包括托管别人的服务器，搬瓦工就相当于把这个服务器放在人家那托管，至于速度啥的由这个机房自己控制。这个机房是有自己的官网的，有兴趣可以做些测试。网站也提供一些测试IP。</p>
+<p>说完机房我们来说线路，我们经常听到CN2 GIA,CN2 GT线路之类的，简单说这两条线路都是<strong>中国电信</strong>的明星产品，GIA线路负载小，贵，所以快。GT性价比高，所以人多堵塞。但是这一切都是电信的线路。</p>
+<p>搬瓦工后面自己发行了一个CN2 GIA线路的自主机房，这时候那些卖机子的就开始狂吹。其实完全没有必要，只要是任何中国直连的线路都有不错的速度。我们只需要关注对应机房是否对中国线路有没有进行优化就可以。</p>
+<p>由于我的服务器在QuadraNet机房，归属于QuadraNet这个公司的，所以我不再使用自己的服务器IP进行测试，直接用他们<a href="https://www.quadranet.com/los-angeles-datacenter">洛杉矶机房提供的测试IP</a>和文件进行测试：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220608112920.png" alt="20220608112920" /></p>
+<p>这边官方贴心的提供了亚洲优化的IP,只用<a href="https://tools.ipip.net/traceroute.php">TraceRoute查询</a>查询对应IP在对应线路下的跳转，使用TCP进行查询，最大化模拟访问。</p>
+<p>| 访问IP | 节点数 |运营商|跨洋线路|落地表现|</p>
+<p>| -| – |-----|—|-|</p>
+<p>| 69.12.66.26-未优化 | 15 |电信|AS4134-163网络|到美国加利福尼亚，美国国内跳转5次，从cogentco跳转到QuadraNet</p>
+<p>|69.12.66.26-未优化|18|移动|AS9808跳AS58453|到美国，国内跳转8次，从cogentco跳转到QuadraNet</p>
+<p>|69.12.66.26-未优化|12|联通|AS4837-联通169网络|到美国，国内跳转3次，从cust.net跳转到QuadraNet</p>
+<p>| 204.152.218.25-优化IP | 12 |电信|AS4134-163网络|到美国直达QuadraNet</p>
+<p>|204.152.218.25-优化IP|16 |移动|AS9808跳AS58453|到美国后直达QuadraNet数据中心</p>
+<p>|204.152.218.25-优化IP |11|联通|AS4837-联通169网络|到美国后到美国联通公司再直达QuadraNet</p>
+<p>一通测试下来之后发现，这个机房的优化IP有效果，都可以在到达美国之后，直接跳转到机房，这个很重要。至于国内内部跳问题这个无解，就像移动老是喜欢跳香港（原因后面解释），再出国，联通喜欢走广东出国之类的。其实国内的内部跳转很快的都是1ms这些的，所以瓶颈在于跨洋线路和到美国之后的跳转，这些都是150+ms，跨洋线路的话，我这次测试没有遇见到的CN2 GT路线（AS4809）,三大运营商用的都是自己的主要干线，如果高峰期这条线路堵塞卡顿也是正常的，<strong>特别吐槽下移动：AS9808为移动境内的骨干网，未设与国际ISP Peer，故所有出境流量通过AS58453（CMI）与外网互联，所以好好的就是速度比联通慢</strong>。</p>
+<p>接下来测试自己VPS主机IP：</p>
+<p>|运营商|节点数|跨洋线路|表现|</p>
+<p>|-|-|-|-|</p>
+<p>|电信|13|AS4134-163网络|到美国后直达</p>
+<p>|联通|13|AS4837-联通169网络|到美国后直达</p>
+<p>|移动|16|AS9808跳AS58453|到美国后直达</p>
+<p>综合测试下来，我的服务器IP也享受到了QuadraNet的机房优化效果，至于电信的CN2线路，可以确定的是QuadraNet机房有接入这条线路，但是实际能不能用到要由机房决定。对几条骨干线路感兴趣的话，可以参考<a href="https://zhuanlan.zhihu.com/p/451683996">国内几大骨干网介绍</a>和<a href="https://zhuanlan.zhihu.com/p/64467370">国内主流网络运营商国际连接线路简谈</a>。</p>
+<p>所以购买服务器的时候，只要是对国内线路有优化的服务器就可以，没必要追求CN2线路，那是电信的线路，除非是专线：即所有的进出都走且只能走这条线路，否则一般你你运营商都会选择走自己的骨干网络。而如果你是专线的话，又会涉及到跨运营商访问的问题，除非你手机，宽带都是电信，还有别人访问你的网络也都是电信。但是这往往是不可能的。而跨运营商访问话，需要看你的城市是否有<strong>国家级互联网骨干直联点</strong>。否则你的路由也得经由这个城市再转发到电信线路去。所以，说实话，直接普通的<a href="https://bandwagonhost.com/aff.php?aff=20859">CN2线路</a>就能满足大部分人的大多数需求。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>搬瓦工</tag>
+        <tag>线路</tag>
+        <tag>CN2线路</tag>
+        <tag>TraceRoute</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习之路</title>
+    <url>/2022/05/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/</url>
+    <content><![CDATA[<p>我的本职工作并不是机器学习，甚至连数据都没有太多的接触.我并没有大量的数据需要挖掘，更没有一个良好的模型需要模拟．我想要的仅仅市一个有趣的，可以给我无聊的工作带来一丝乐趣的AI．至少我是这么认为的．</p>
+<p>机器学习的道路道阻且长.毕竟我的大学专业并不是这个，但是至少有接触过编程．其中python是我跟着廖雪峰老师自学的，虽说入门容易，但是精通难，我更多的只是了解了语言结构和一些常用的包，涉及更深则用不多，所以就没有深入．而对于此我并不觉得奇怪，至少我大学学过数据库之后，常用的语句也就那几个查询，删除，至于触发器．我学过，练习过，但是没有长久使用，还是在记忆中遗忘了．我对于现代社会的技能我更多的认为是，用的时候去学，保持一个快速学习的能力即可．更多的是需要你对一个系统或者语句的基础了解．当然这些只不过是能满足我目前的需求，实际涉及到底层的逻辑则就深不可测．而我也没有机会或者需求去处理那种问题．</p>
+<p>实际上，哪怕你是去大厂内，这种高级的底层逻辑也被大神们打包好，你只需要调用即可．自己从从头梳理那几乎干不了啥事．所以我对于机器学习只是希望入个门，就像python一样，哪天想用，可以快速上手，做过一个简单的数据分析．</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220513233627.png" alt="20220513233627" /></p>
+<p>数据科学导论这本书是我在知乎上搜索数据科学之后，大神推荐阅读的．首先说结论：书有用，很有用，介绍了几个主流的机器学习算法，以及一整套的机器学习的流程：数据－清洗－切片－学习－验证－学习．所有的机器学习都是这么一个整体流程的．但是这本书毕竟是一本入门书籍，它也许不会要求你有很多的数学知识储备，事实上书上没有涉及到任何的数学公式．但这也正是这本书的不足之处．</p>
+<p>读这本书的过程和结束有点像是在大学里面上的专业课．老师并不会或者简单的描述各个算法的背后逻辑，但是你自己却不甚明白，至少我用了一些我的自己日常数据进行测试，发现线性逻辑回归对我来说最好．大学的课程和这本书一样，都是一个简单的介绍入门，等到你进入社会或者以后有需要的时候，你就会深入的去了解每一个算法背后数学测算和原因．这就是这本书最大的作用，也是我读完这本书最大的观后感．读完感觉跟没读一样．跟着书中的代码编写，但是知道出现的结果一致，但是对中间的过程没有任何了解，也没有习题来加深或者拓展一下更加实际的场景应用．但恰如我所说的，它仅仅是一个入门，它激励着我去学习更多相关知识，至少目前是准备看中间算法的实现和对应机器学习包的参数设置．任重且道远啊．</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.png" alt="机器学习" /></p>
+<p>对于本书的阅读方式我建议是，看书加代码．代码可以自己跟着书敲，也可以主动看，这点没有差别．主要是为了看代码的一个写法，让你了解代码的一个结构．至于内容，如果是个新手，很多东西都是一个打包好的结果给你，你可以套用到你自己的现实数据，但是一般很少有如此恰好的数据模型给你，而且你不知道中间过程，你自己对此产生的结果也是没底的状态．不过用来查看数据的一些常用统计数据倒是很不错，也很快捷．</p>
+<p>读书之后的问题:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E9%97%AE%E9%A2%98.jpg" alt="机器学习之路问题" /></p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>数据科学导论</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>朋友圈</title>
     <url>/2022/04/30/%E6%9C%8B%E5%8F%8B%E5%9C%88/</url>
     <content><![CDATA[<p>我以为他的朋友圈是为我而发的</p>
@@ -11585,98 +11678,6 @@ sysctl -p
         <tag>服务器</tag>
         <tag>v2ray</tag>
         <tag>caddyv2</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>服务器线路测试</title>
-    <url>/2022/06/08/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BA%BF%E8%B7%AF%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<p>贴一下服务器配置：</p>
-<ul>
-<li>
-<p>cpu：1核</p>
-</li>
-<li>
-<p>内存：512M</p>
-</li>
-<li>
-<p>硬盘：10G</p>
-</li>
-<li>
-<p>带宽：1G</p>
-</li>
-<li>
-<p>流量：1000G/月</p>
-</li>
-</ul>
-<p>这个是搬瓦工的512M的洛杉矶CN2线路，访问国内速度很快，电信联通尤其好，移动差劲。</p>
-<p>最近需要更换宽带，正好借此机会，研究一下：我的服务器对为啥对移动这么排斥，联通和电信哪个更好？根据后台的Billing，我可以看出我得服务器，在洛杉矶，机房代号为：USCA_2。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220608110005.png" alt="20220608110005" /></p>
-<p>我查了下这个机房：</p>
-<blockquote>
-<p>搬瓦工的洛杉矶DC2机房来自QN机房(全称<a href="https://www.quadranet.com/cn/">QuadraNet机房</a>)，目前已接入CN2 GT直连线路，机房CN2直连线路由QN机房官方部署。</p>
-</blockquote>
-<p>这个机房是有自己得服务器业务的，包括托管别人的服务器，搬瓦工就相当于把这个服务器放在人家那托管，至于速度啥的由这个机房自己控制。这个机房是有自己的官网的，有兴趣可以做些测试。网站也提供一些测试IP。</p>
-<p>说完机房我们来说线路，我们经常听到CN2 GIA,CN2 GT线路之类的，简单说这两条线路都是<strong>中国电信</strong>的明星产品，GIA线路负载小，贵，所以快。GT性价比高，所以人多堵塞。但是这一切都是电信的线路。</p>
-<p>搬瓦工后面自己发行了一个CN2 GIA线路的自主机房，这时候那些卖机子的就开始狂吹。其实完全没有必要，只要是任何中国直连的线路都有不错的速度。我们只需要关注对应机房是否对中国线路有没有进行优化就可以。</p>
-<p>由于我的服务器在QuadraNet机房，归属于QuadraNet这个公司的，所以我不再使用自己的服务器IP进行测试，直接用他们<a href="https://www.quadranet.com/los-angeles-datacenter">洛杉矶机房提供的测试IP</a>和文件进行测试：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220608112920.png" alt="20220608112920" /></p>
-<p>这边官方贴心的提供了亚洲优化的IP,只用<a href="https://tools.ipip.net/traceroute.php">TraceRoute查询</a>查询对应IP在对应线路下的跳转，使用TCP进行查询，最大化模拟访问。</p>
-<p>| 访问IP | 节点数 |运营商|跨洋线路|落地表现|</p>
-<p>| -| – |-----|—|-|</p>
-<p>| 69.12.66.26-未优化 | 15 |电信|AS4134-163网络|到美国加利福尼亚，美国国内跳转5次，从cogentco跳转到QuadraNet</p>
-<p>|69.12.66.26-未优化|18|移动|AS9808跳AS58453|到美国，国内跳转8次，从cogentco跳转到QuadraNet</p>
-<p>|69.12.66.26-未优化|12|联通|AS4837-联通169网络|到美国，国内跳转3次，从cust.net跳转到QuadraNet</p>
-<p>| 204.152.218.25-优化IP | 12 |电信|AS4134-163网络|到美国直达QuadraNet</p>
-<p>|204.152.218.25-优化IP|16 |移动|AS9808跳AS58453|到美国后直达QuadraNet数据中心</p>
-<p>|204.152.218.25-优化IP |11|联通|AS4837-联通169网络|到美国后到美国联通公司再直达QuadraNet</p>
-<p>一通测试下来之后发现，这个机房的优化IP有效果，都可以在到达美国之后，直接跳转到机房，这个很重要。至于国内内部跳问题这个无解，就像移动老是喜欢跳香港（原因后面解释），再出国，联通喜欢走广东出国之类的。其实国内的内部跳转很快的都是1ms这些的，所以瓶颈在于跨洋线路和到美国之后的跳转，这些都是150+ms，跨洋线路的话，我这次测试没有遇见到的CN2 GT路线（AS4809）,三大运营商用的都是自己的主要干线，如果高峰期这条线路堵塞卡顿也是正常的，<strong>特别吐槽下移动：AS9808为移动境内的骨干网，未设与国际ISP Peer，故所有出境流量通过AS58453（CMI）与外网互联，所以好好的就是速度比联通慢</strong>。</p>
-<p>接下来测试自己VPS主机IP：</p>
-<p>|运营商|节点数|跨洋线路|表现|</p>
-<p>|-|-|-|-|</p>
-<p>|电信|13|AS4134-163网络|到美国后直达</p>
-<p>|联通|13|AS4837-联通169网络|到美国后直达</p>
-<p>|移动|16|AS9808跳AS58453|到美国后直达</p>
-<p>综合测试下来，我的服务器IP也享受到了QuadraNet的机房优化效果，至于电信的CN2线路，可以确定的是QuadraNet机房有接入这条线路，但是实际能不能用到要由机房决定。对几条骨干线路感兴趣的话，可以参考<a href="https://zhuanlan.zhihu.com/p/451683996">国内几大骨干网介绍</a>和<a href="https://zhuanlan.zhihu.com/p/64467370">国内主流网络运营商国际连接线路简谈</a>。</p>
-<p>所以购买服务器的时候，只要是对国内线路有优化的服务器就可以，没必要追求CN2线路，那是电信的线路，除非是专线：即所有的进出都走且只能走这条线路，否则一般你你运营商都会选择走自己的骨干网络。而如果你是专线的话，又会涉及到跨运营商访问的问题，除非你手机，宽带都是电信，还有别人访问你的网络也都是电信。但是这往往是不可能的。而跨运营商访问话，需要看你的城市是否有<strong>国家级互联网骨干直联点</strong>。否则你的路由也得经由这个城市再转发到电信线路去。所以，说实话，直接普通的<a href="https://bandwagonhost.com/aff.php?aff=20859">CN2线路</a>就能满足大部分人的大多数需求。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>搬瓦工</tag>
-        <tag>线路</tag>
-        <tag>CN2线路</tag>
-        <tag>TraceRoute</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>机器学习之路</title>
-    <url>/2022/05/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/</url>
-    <content><![CDATA[<p>我的本职工作并不是机器学习，甚至连数据都没有太多的接触.我并没有大量的数据需要挖掘，更没有一个良好的模型需要模拟．我想要的仅仅市一个有趣的，可以给我无聊的工作带来一丝乐趣的AI．至少我是这么认为的．</p>
-<p>机器学习的道路道阻且长.毕竟我的大学专业并不是这个，但是至少有接触过编程．其中python是我跟着廖雪峰老师自学的，虽说入门容易，但是精通难，我更多的只是了解了语言结构和一些常用的包，涉及更深则用不多，所以就没有深入．而对于此我并不觉得奇怪，至少我大学学过数据库之后，常用的语句也就那几个查询，删除，至于触发器．我学过，练习过，但是没有长久使用，还是在记忆中遗忘了．我对于现代社会的技能我更多的认为是，用的时候去学，保持一个快速学习的能力即可．更多的是需要你对一个系统或者语句的基础了解．当然这些只不过是能满足我目前的需求，实际涉及到底层的逻辑则就深不可测．而我也没有机会或者需求去处理那种问题．</p>
-<p>实际上，哪怕你是去大厂内，这种高级的底层逻辑也被大神们打包好，你只需要调用即可．自己从从头梳理那几乎干不了啥事．所以我对于机器学习只是希望入个门，就像python一样，哪天想用，可以快速上手，做过一个简单的数据分析．</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220513233627.png" alt="20220513233627" /></p>
-<p>数据科学导论这本书是我在知乎上搜索数据科学之后，大神推荐阅读的．首先说结论：书有用，很有用，介绍了几个主流的机器学习算法，以及一整套的机器学习的流程：数据－清洗－切片－学习－验证－学习．所有的机器学习都是这么一个整体流程的．但是这本书毕竟是一本入门书籍，它也许不会要求你有很多的数学知识储备，事实上书上没有涉及到任何的数学公式．但这也正是这本书的不足之处．</p>
-<p>读这本书的过程和结束有点像是在大学里面上的专业课．老师并不会或者简单的描述各个算法的背后逻辑，但是你自己却不甚明白，至少我用了一些我的自己日常数据进行测试，发现线性逻辑回归对我来说最好．大学的课程和这本书一样，都是一个简单的介绍入门，等到你进入社会或者以后有需要的时候，你就会深入的去了解每一个算法背后数学测算和原因．这就是这本书最大的作用，也是我读完这本书最大的观后感．读完感觉跟没读一样．跟着书中的代码编写，但是知道出现的结果一致，但是对中间的过程没有任何了解，也没有习题来加深或者拓展一下更加实际的场景应用．但恰如我所说的，它仅仅是一个入门，它激励着我去学习更多相关知识，至少目前是准备看中间算法的实现和对应机器学习包的参数设置．任重且道远啊．</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.png" alt="机器学习" /></p>
-<p>对于本书的阅读方式我建议是，看书加代码．代码可以自己跟着书敲，也可以主动看，这点没有差别．主要是为了看代码的一个写法，让你了解代码的一个结构．至于内容，如果是个新手，很多东西都是一个打包好的结果给你，你可以套用到你自己的现实数据，但是一般很少有如此恰好的数据模型给你，而且你不知道中间过程，你自己对此产生的结果也是没底的状态．不过用来查看数据的一些常用统计数据倒是很不错，也很快捷．</p>
-<p>读书之后的问题:</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E9%97%AE%E9%A2%98.jpg" alt="机器学习之路问题" /></p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>数据科学导论</tag>
       </tags>
   </entry>
   <entry>
@@ -12269,28 +12270,6 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
       </tags>
   </entry>
   <entry>
-    <title>活着</title>
-    <url>/2022/04/30/%E6%B4%BB%E7%9D%80/</url>
-    <content><![CDATA[<p>回想小时候，我好像无时无刻不在期待着假期，因为假期意味着可以开心的玩耍，可以一整天的看电视，到了现在，我忽然发现我我好像没那么期待着了，至少，我没办法像小时候那样，一整天都能给自己安排的满满的，更多的时候是无聊的在看电视，也许是我对电视的喜爱程度不如从前，但是我心中其实还有点想去干活，至少有事有目的，看来，漫无目的真的很可怕。</p>
-<p>不过好像明天就要上班了，希望我不会在明天写一篇说自己想要休息，额，翻看前面好像已经写了吧</p>
-<p>额，算了，这就是个循环。</p>
-<p>似乎我一直就是这么不安定,忙的时候想闲,闲的时候要忙.我只是对目前生活的不满,我不想碌碌无为的过完这一生,忙的时候干的也是毫无意义的工作,而闲的时候连无意义的工作都没有了.我在寻找着自己的人生目标,或者自己的活法.我父母的活法已经对我没有任何的参考性,我没办法像他们一样放羊,娶媳妇,生娃,放羊.我想从自己的生活找寻更多的东西:无论是悲伤还是欢乐,甚至是悔不当初.我会好好的感受那每一份情绪,让自己慢慢的感受生活.生活正是自己的当下,正是自己现在敲打的键盘.没有什么奇思妙想,没有什么峰回路转,有的只是当下的平静和未来的希望.</p>
-<p>我多想像二哥一样,给自己一个目标:一套大港的房子.至少它能驱使我继续前进.如果我想前进的话.但是我并不想,我不懂为何必须要在一座城市扎根,为何一定要有一套属于自己的房子.他们总是说:你还没长大,等你长大了有孩子了你就知道了.是的,在他们看来我没有长大,我没有孩子,没有学区的压力,没有家庭的束缚.我有的仅仅是自己,但着不就是我们出生时候的模样么?我保持至今,而你们都变了.人的长河最终的尽头是什么我不知道,也许他们的结合正是人应该追求的,而我只是一个跳出轨迹的坏小孩.</p>
-<p>那么就生于当下活于当下,在我被推回正轨之前,享受当下吧</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>书评</tag>
-        <tag>活着</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>流水账</title>
     <url>/2022/04/30/%E6%B5%81%E6%B0%B4%E8%B4%A6/</url>
     <content><![CDATA[<p>好久没来写了</p>
@@ -12340,6 +12319,28 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
       </tags>
   </entry>
   <entry>
+    <title>活着</title>
+    <url>/2022/04/30/%E6%B4%BB%E7%9D%80/</url>
+    <content><![CDATA[<p>回想小时候，我好像无时无刻不在期待着假期，因为假期意味着可以开心的玩耍，可以一整天的看电视，到了现在，我忽然发现我我好像没那么期待着了，至少，我没办法像小时候那样，一整天都能给自己安排的满满的，更多的时候是无聊的在看电视，也许是我对电视的喜爱程度不如从前，但是我心中其实还有点想去干活，至少有事有目的，看来，漫无目的真的很可怕。</p>
+<p>不过好像明天就要上班了，希望我不会在明天写一篇说自己想要休息，额，翻看前面好像已经写了吧</p>
+<p>额，算了，这就是个循环。</p>
+<p>似乎我一直就是这么不安定,忙的时候想闲,闲的时候要忙.我只是对目前生活的不满,我不想碌碌无为的过完这一生,忙的时候干的也是毫无意义的工作,而闲的时候连无意义的工作都没有了.我在寻找着自己的人生目标,或者自己的活法.我父母的活法已经对我没有任何的参考性,我没办法像他们一样放羊,娶媳妇,生娃,放羊.我想从自己的生活找寻更多的东西:无论是悲伤还是欢乐,甚至是悔不当初.我会好好的感受那每一份情绪,让自己慢慢的感受生活.生活正是自己的当下,正是自己现在敲打的键盘.没有什么奇思妙想,没有什么峰回路转,有的只是当下的平静和未来的希望.</p>
+<p>我多想像二哥一样,给自己一个目标:一套大港的房子.至少它能驱使我继续前进.如果我想前进的话.但是我并不想,我不懂为何必须要在一座城市扎根,为何一定要有一套属于自己的房子.他们总是说:你还没长大,等你长大了有孩子了你就知道了.是的,在他们看来我没有长大,我没有孩子,没有学区的压力,没有家庭的束缚.我有的仅仅是自己,但着不就是我们出生时候的模样么?我保持至今,而你们都变了.人的长河最终的尽头是什么我不知道,也许他们的结合正是人应该追求的,而我只是一个跳出轨迹的坏小孩.</p>
+<p>那么就生于当下活于当下,在我被推回正轨之前,享受当下吧</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>书评</tag>
+        <tag>活着</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>瞎眼吱吱</title>
     <url>/2022/12/02/%E7%9E%8E%E7%9C%BC%E5%90%B1%E5%90%B1/</url>
     <content><![CDATA[<h1 id="瞎眼吱吱"><a class="markdownIt-Anchor" href="#瞎眼吱吱"></a> 瞎眼吱吱</h1>
@@ -12362,43 +12363,6 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
       </categories>
       <tags>
         <tag>一些往事</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>码农</title>
-    <url>/2022/04/30/%E7%A0%81%E5%86%9C/</url>
-    <content><![CDATA[<p>额，最近好像来的比较频繁，似乎跟上次一样，也是一阵时间内多次到来</p>
-<p>然后，取材一段时间，然后又过来了</p>
-<p>今天好像找到了一个一闪而过的思路，但是可惜，没抓住，然后现在我抱着空空的脑袋过来写这么一篇。</p>
-<p>额，仔细想想，我的生活平凡而又无趣，确切的是我的工作，作为一个维护人员，尤其是计算机维护人员，在系统没出问题前，我们就是放在储物间来织蜘蛛网的，尤其作为计算机人员，看着写代码的那么忙碌，在旁边看着，内心不禁想到：都是人，差距怎么这么大。</p>
-<p>有那么一瞬间，我在想是哪个傻逼非得分工合作。当然必有道理。我不想深究，只是一个任性的想法。</p>
-<p>当然，看到人类差距的我，心中升起了一个伟大的想法：我要当码农。</p>
-<p>为啥</p>
-<p>太闲了，当码农就可以享受到没日没夜的工作，然后还没加班费</p>
-<p>额，你是m吗</p>
-<p>我本着对自己负责的态度，我声明，以上不是黑码农，而且本人直且无受虐倾向</p>
-<p>好吧，有时候闲可以让人发疯的</p>
-<p>额，相信我我不是在炫耀，一个月入三千，不用干太多活，而且还包两顿饭，碾压一些人是可以，但是压不住太多人，对不。</p>
-<p>好吧，今天的内容是不是该结束了（我去，800字都没到，结束个毛）</p>
-<p>基于我多年作文的强大基础，我好像得了，东西不写满800字就结束不了的病。相较于要写800字正好的强迫症患者来说，我这还有得救，只要坚持吃药出门就好</p>
-<p>话说，我不禁感想其，当初我是有多么的委婉，转折，再加重复，才能将我最难忘的一件事写满800.然后还写出至少三个不同的版本</p>
-<p>额，我忽然好想静静，</p>
-<p>可以的话，或者早知道的话，我可以留下那些文章，用来恶心现在的我</p>
-<p>恩，我一闪而过一个新的伟大想法</p>
-<p>我可以去找那些名人小时侯写的作文（依据中国国情，我可以确定，100%的人写过，而且其中最经典的一定是你最难忘的xx）</p>
-<p>然后，以公开内容威胁，恐吓。</p>
-<p>恩，这是一个长期而且十分考验眼光的投资</p>
-<p>不说了，我现在去高中当老师去，然后把所有学生的作文保存下来。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>码农</tag>
       </tags>
   </entry>
   <entry>
@@ -12446,6 +12410,43 @@ pip install requirements.txt
       <tags>
         <tag>calibre</tag>
         <tag>电子书</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>码农</title>
+    <url>/2022/04/30/%E7%A0%81%E5%86%9C/</url>
+    <content><![CDATA[<p>额，最近好像来的比较频繁，似乎跟上次一样，也是一阵时间内多次到来</p>
+<p>然后，取材一段时间，然后又过来了</p>
+<p>今天好像找到了一个一闪而过的思路，但是可惜，没抓住，然后现在我抱着空空的脑袋过来写这么一篇。</p>
+<p>额，仔细想想，我的生活平凡而又无趣，确切的是我的工作，作为一个维护人员，尤其是计算机维护人员，在系统没出问题前，我们就是放在储物间来织蜘蛛网的，尤其作为计算机人员，看着写代码的那么忙碌，在旁边看着，内心不禁想到：都是人，差距怎么这么大。</p>
+<p>有那么一瞬间，我在想是哪个傻逼非得分工合作。当然必有道理。我不想深究，只是一个任性的想法。</p>
+<p>当然，看到人类差距的我，心中升起了一个伟大的想法：我要当码农。</p>
+<p>为啥</p>
+<p>太闲了，当码农就可以享受到没日没夜的工作，然后还没加班费</p>
+<p>额，你是m吗</p>
+<p>我本着对自己负责的态度，我声明，以上不是黑码农，而且本人直且无受虐倾向</p>
+<p>好吧，有时候闲可以让人发疯的</p>
+<p>额，相信我我不是在炫耀，一个月入三千，不用干太多活，而且还包两顿饭，碾压一些人是可以，但是压不住太多人，对不。</p>
+<p>好吧，今天的内容是不是该结束了（我去，800字都没到，结束个毛）</p>
+<p>基于我多年作文的强大基础，我好像得了，东西不写满800字就结束不了的病。相较于要写800字正好的强迫症患者来说，我这还有得救，只要坚持吃药出门就好</p>
+<p>话说，我不禁感想其，当初我是有多么的委婉，转折，再加重复，才能将我最难忘的一件事写满800.然后还写出至少三个不同的版本</p>
+<p>额，我忽然好想静静，</p>
+<p>可以的话，或者早知道的话，我可以留下那些文章，用来恶心现在的我</p>
+<p>恩，我一闪而过一个新的伟大想法</p>
+<p>我可以去找那些名人小时侯写的作文（依据中国国情，我可以确定，100%的人写过，而且其中最经典的一定是你最难忘的xx）</p>
+<p>然后，以公开内容威胁，恐吓。</p>
+<p>恩，这是一个长期而且十分考验眼光的投资</p>
+<p>不说了，我现在去高中当老师去，然后把所有学生的作文保存下来。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>码农</tag>
       </tags>
   </entry>
   <entry>
@@ -12516,28 +12517,6 @@ pip install requirements.txt
       </tags>
   </entry>
   <entry>
-    <title>第四章</title>
-    <url>/2022/04/30/%E7%AC%AC%E5%9B%9B%E7%AB%A0/</url>
-    <content><![CDATA[<p>我一直想找个轻松愉快的话题，但是天生悲观的我似乎与欢乐无缘。所以，我依旧选择一个让人无法笑颜的主题：时间。</p>
-<p>我一直想找个机会写写时间，但是我一直没有写，因为我知道我一定写的很差，时间伴随着我已经近25年了，但是我却对他一点都不了解，如同呼吸一般，它无时无刻不伴随着我们，但是我们对他的所知仅仅是它支持着我们的活动。</p>
-<p>抛开物理层面那些晦涩难懂的概念，我仅剩下的就是一些关于它的故事。如同每个人都有的一样，我跟他有着二十五年的故事。有时候，认识的久感情就会越深，然而时间这个连物品都算不上，我们又怎么能希望他能通灵呢，那么这章就这么结束吧，对于时间我所知甚少，所写就更少了。</p>
-<p>我一直想用我贫瘠的物理知识来描述这个三维世界的第三维，但是我却始终找不到答案，要知道，在还没看过时间简史之前，我一直认为时间是一种文学，而不是一个物理概念，时间对我更像是一种玄学，所以我迷恋仙道，因为他们能穿越古今，后来迷恋机器，以为他们带我回到过去，唯一没想到的是，真正的可能穿越之路，在于一个计算你的加速度这个无聊的科目里，我始终无法明白为何物理要在你我他之间的速度纠结半天，最后来句，理论上会是如此，但是实际就。</p>
-<p>对于时间，这个你甚至说不出他的最基本的组成部分，因为他既像实体，但又不是实体，是力但却找不到发生点，好似一个无源无终的物品。因为无源，我们无法知道我们已经过去多久，因为无终，我们不知道自己还有多久。这就是小时候一直缠绕着我的噩梦，我甚至为这个想法入迷，我不知何时结束，也不知何时开始，我一想到，在我之后，还有好长好长的时间，或者以后永远不会有我，我就害怕，我害怕的无法入睡，直至今日，我依旧将其当作我的一个无法进行深思的想法。</p>
-<p>或许这在他人看来有点杞人忧天，但是对于我来说，这是一个接受和不接受的行为，我不允许我不是永恒的存在，我希望自己永久的活着。虽然这看来就是一场梦，但是我的内心依旧追求的是永恒，而不是永生。我可以死去，但是我的意识希望还能继续，能像此时一样思考，即使是一件不值得思考的事情。如此的想法也许会给我未来带来很大的麻烦，也许未来的某一天，我可能加入今日我嘲笑的不切实际的宗教团体，并为之疯狂。人老后总是会干出一些奇怪的事情，我希望那时的如此时一般明智，而不是跟此时一样自信。</p>
-<p>对于时间，我是又爱又恨，如同大多数人一样，我在小时候渴望长大，我希望时间过得快些，我甚至发呆，祈求时间就这样飞速的过去吧，但是到了25岁，我发现，时间并不是达成我愿望的最好途径，你要知道，在15岁的年龄里，我幻想着自己18岁以后可以跟女人上床，于是我希望三年的时间快点过去，然而到了18岁，我发现原来上床和书上所说的并不一样，不是你进入女人的房间，然后发生，过程充满的艰辛。于是，我只能不停的等待，等待一个愿意让我进入他房间的女人，然后。。。，就这样，七年过去了，当初的三年等的我急不可耐，而如今的七年，对我来说恍如昨日。我就不吐槽时间的善变了，如今的我只能一天一天的过去，对它却毫无办法，我永远不知道时间是什么，什么时候快，什么时候慢，就如同女人的喜怒一样。时间和女人，我这辈子最大的伤悲。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>那本书</category>
-      </categories>
-      <tags>
-        <tag>曾经我想写一本书</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>算是迟来的网站描述吧</title>
     <url>/2022/04/30/%E7%AE%97%E6%98%AF%E8%BF%9F%E6%9D%A5%E7%9A%84%E7%BD%91%E7%AB%99%E6%8F%8F%E8%BF%B0%E5%90%A7/</url>
     <content><![CDATA[<p>似乎想要写些什么，但是一到提笔，就什么都写不出来 。</p>
@@ -12560,6 +12539,28 @@ pip install requirements.txt
       </categories>
       <tags>
         <tag>我为啥要写下这些</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第四章</title>
+    <url>/2022/04/30/%E7%AC%AC%E5%9B%9B%E7%AB%A0/</url>
+    <content><![CDATA[<p>我一直想找个轻松愉快的话题，但是天生悲观的我似乎与欢乐无缘。所以，我依旧选择一个让人无法笑颜的主题：时间。</p>
+<p>我一直想找个机会写写时间，但是我一直没有写，因为我知道我一定写的很差，时间伴随着我已经近25年了，但是我却对他一点都不了解，如同呼吸一般，它无时无刻不伴随着我们，但是我们对他的所知仅仅是它支持着我们的活动。</p>
+<p>抛开物理层面那些晦涩难懂的概念，我仅剩下的就是一些关于它的故事。如同每个人都有的一样，我跟他有着二十五年的故事。有时候，认识的久感情就会越深，然而时间这个连物品都算不上，我们又怎么能希望他能通灵呢，那么这章就这么结束吧，对于时间我所知甚少，所写就更少了。</p>
+<p>我一直想用我贫瘠的物理知识来描述这个三维世界的第三维，但是我却始终找不到答案，要知道，在还没看过时间简史之前，我一直认为时间是一种文学，而不是一个物理概念，时间对我更像是一种玄学，所以我迷恋仙道，因为他们能穿越古今，后来迷恋机器，以为他们带我回到过去，唯一没想到的是，真正的可能穿越之路，在于一个计算你的加速度这个无聊的科目里，我始终无法明白为何物理要在你我他之间的速度纠结半天，最后来句，理论上会是如此，但是实际就。</p>
+<p>对于时间，这个你甚至说不出他的最基本的组成部分，因为他既像实体，但又不是实体，是力但却找不到发生点，好似一个无源无终的物品。因为无源，我们无法知道我们已经过去多久，因为无终，我们不知道自己还有多久。这就是小时候一直缠绕着我的噩梦，我甚至为这个想法入迷，我不知何时结束，也不知何时开始，我一想到，在我之后，还有好长好长的时间，或者以后永远不会有我，我就害怕，我害怕的无法入睡，直至今日，我依旧将其当作我的一个无法进行深思的想法。</p>
+<p>或许这在他人看来有点杞人忧天，但是对于我来说，这是一个接受和不接受的行为，我不允许我不是永恒的存在，我希望自己永久的活着。虽然这看来就是一场梦，但是我的内心依旧追求的是永恒，而不是永生。我可以死去，但是我的意识希望还能继续，能像此时一样思考，即使是一件不值得思考的事情。如此的想法也许会给我未来带来很大的麻烦，也许未来的某一天，我可能加入今日我嘲笑的不切实际的宗教团体，并为之疯狂。人老后总是会干出一些奇怪的事情，我希望那时的如此时一般明智，而不是跟此时一样自信。</p>
+<p>对于时间，我是又爱又恨，如同大多数人一样，我在小时候渴望长大，我希望时间过得快些，我甚至发呆，祈求时间就这样飞速的过去吧，但是到了25岁，我发现，时间并不是达成我愿望的最好途径，你要知道，在15岁的年龄里，我幻想着自己18岁以后可以跟女人上床，于是我希望三年的时间快点过去，然而到了18岁，我发现原来上床和书上所说的并不一样，不是你进入女人的房间，然后发生，过程充满的艰辛。于是，我只能不停的等待，等待一个愿意让我进入他房间的女人，然后。。。，就这样，七年过去了，当初的三年等的我急不可耐，而如今的七年，对我来说恍如昨日。我就不吐槽时间的善变了，如今的我只能一天一天的过去，对它却毫无办法，我永远不知道时间是什么，什么时候快，什么时候慢，就如同女人的喜怒一样。时间和女人，我这辈子最大的伤悲。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>那本书</category>
+      </categories>
+      <tags>
+        <tag>曾经我想写一本书</tag>
       </tags>
   </entry>
   <entry>
@@ -12781,6 +12782,27 @@ pip install requirements.txt
       </tags>
   </entry>
   <entry>
+    <title>过去</title>
+    <url>/2022/04/30/%E8%BF%87%E5%8E%BB/</url>
+    <content><![CDATA[<p>上一次是年前，这次就跑到了十四号了，看来时间在这里流逝的是相当的快</p>
+<p>我终于获得了宁静，在吵吵嚷嚷了一天之后。不知为何，我总希望在周末的时候，静下心来，看看书，但是我知道我的内心是拒绝的，因为有更多好玩的事情，但是我总是会在玩了一盘高端质量局的dota之后，后悔自己浪费了一个小时在这，然后反之回想如果我用这一个小时拿来看书，会看多少多少。恩，我将前者当作罪恶，而将后者当成了一个任务。如果放任不管，我也可以每天游戏娱乐，然后这样的过去，其实我每天看书也是这样的过去，且不要拿每天看书会增加学识的这种蠢话来迷糊自己，小说更多的时候是古人打发时间的道具，如果他们有电子游戏也许早就抛弃了他们。也许在未来，新的娱乐方式出现，游戏就会变成现在读书的地位，我的目的并不是在鼓吹读书无用论，而是调整自己的心态，时间是自己的，将他花费在读书还是游戏并没有什么贵贱之分，也没必要将其当成罪恶或者是一个任务，给予自己在这么一个宁静的周末施加如此大的负担。且开心的玩乐吧，生活需要它。</p>
+<p>我并不认为像苦修士将自己与快乐分开能让自己开心或者能让人生饱满。我跟看重的是可以专心一致的倾注于某件事，他们的存在让我倾注于读书，看进书中的内容，写下一点东西.而周围的戚戚嚷嚷和我这边是两个风格。我越发的佩服大隐隐于市的隐士了。坚持自我并不是一件难事，但是难得是在一个这样的环境里坚持自我。</p>
+<p>在一个环境并不适合做某件事情的时候，我将它延后，恩，他就从一个欲望转化为一个执念，一个任务。如果等到我时候的环境之后，我要是还没放下它，那么就会去做，要是放下了，也许就会去做那时候更合适的事情吧。这正如我对性的排解一样。</p>
+<p>回到最初，我总是后悔自己过去的一小时所作的事情，尤其是这件事情失败了，让我尤为懊恼，希望时间回去，做出别的行为。现在想来，大可不必如此。其实时间对所有事情都是公平的，我玩游戏获得了愉悦，看书也是。本没有高低之分，但是自己内心高傲的看低游戏，觉得读书是件高端的事情。但正如我上面所说的，那不过是另一种愉悦自己的方式罢了，我之所以更倾向读书，因为读书随时可以停止，但是游戏不行。所以会让我产生一种沉迷的概念，因为我必须连续一个小时专注于此。看来如此长时间的专注事项除了工作都可以叫做沉迷啊。</p>
+<p>这么说来，有些人该问，难道闲暇时间所耗费的都是打发时间，就没有让自己提升的东西么？恩，其实是有的，重要是看你对提升的定义吧，看更多的小说，提升的是你的文学，玩更多的游戏，提升的是你的技术，而学生花更多的时间，提升的则是你的学识和记忆，本质同样是花费时间来换取别的，正如土地是经济的最基础载体，时间也是。你当然也可以花上一个小时，看些高端的书，但是 你不能想说自己过去的一个小时都浪费了，其实没有。与其想过去的一个小时干了啥，我觉得更多的时候还是想想后面要干啥吧，我对过去更多的是别犯同样的错和昨天吃了什么，恩今天换个吧。而前者老是忘记，后者记得清楚，但是却也没多大用，今天想吃和昨天也没有什么必然的联系，回归这个欲望本身吧，看他想吃啥。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+      <tags>
+        <tag>过去</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>过于2023年的一些展望</title>
     <url>/2023/01/05/%E8%BF%87%E4%BA%8E2023%E5%B9%B4%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B1%95%E6%9C%9B/</url>
     <content><![CDATA[<p>先订个基调：2023年还是以房地产为主要驱动。这是毋庸置疑的，也是不得已的。</p>
@@ -12847,81 +12869,6 @@ pip install requirements.txt
         <tag>经济展望</tag>
         <tag>2023</tag>
         <tag>比亚迪</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>过去</title>
-    <url>/2022/04/30/%E8%BF%87%E5%8E%BB/</url>
-    <content><![CDATA[<p>上一次是年前，这次就跑到了十四号了，看来时间在这里流逝的是相当的快</p>
-<p>我终于获得了宁静，在吵吵嚷嚷了一天之后。不知为何，我总希望在周末的时候，静下心来，看看书，但是我知道我的内心是拒绝的，因为有更多好玩的事情，但是我总是会在玩了一盘高端质量局的dota之后，后悔自己浪费了一个小时在这，然后反之回想如果我用这一个小时拿来看书，会看多少多少。恩，我将前者当作罪恶，而将后者当成了一个任务。如果放任不管，我也可以每天游戏娱乐，然后这样的过去，其实我每天看书也是这样的过去，且不要拿每天看书会增加学识的这种蠢话来迷糊自己，小说更多的时候是古人打发时间的道具，如果他们有电子游戏也许早就抛弃了他们。也许在未来，新的娱乐方式出现，游戏就会变成现在读书的地位，我的目的并不是在鼓吹读书无用论，而是调整自己的心态，时间是自己的，将他花费在读书还是游戏并没有什么贵贱之分，也没必要将其当成罪恶或者是一个任务，给予自己在这么一个宁静的周末施加如此大的负担。且开心的玩乐吧，生活需要它。</p>
-<p>我并不认为像苦修士将自己与快乐分开能让自己开心或者能让人生饱满。我跟看重的是可以专心一致的倾注于某件事，他们的存在让我倾注于读书，看进书中的内容，写下一点东西.而周围的戚戚嚷嚷和我这边是两个风格。我越发的佩服大隐隐于市的隐士了。坚持自我并不是一件难事，但是难得是在一个这样的环境里坚持自我。</p>
-<p>在一个环境并不适合做某件事情的时候，我将它延后，恩，他就从一个欲望转化为一个执念，一个任务。如果等到我时候的环境之后，我要是还没放下它，那么就会去做，要是放下了，也许就会去做那时候更合适的事情吧。这正如我对性的排解一样。</p>
-<p>回到最初，我总是后悔自己过去的一小时所作的事情，尤其是这件事情失败了，让我尤为懊恼，希望时间回去，做出别的行为。现在想来，大可不必如此。其实时间对所有事情都是公平的，我玩游戏获得了愉悦，看书也是。本没有高低之分，但是自己内心高傲的看低游戏，觉得读书是件高端的事情。但正如我上面所说的，那不过是另一种愉悦自己的方式罢了，我之所以更倾向读书，因为读书随时可以停止，但是游戏不行。所以会让我产生一种沉迷的概念，因为我必须连续一个小时专注于此。看来如此长时间的专注事项除了工作都可以叫做沉迷啊。</p>
-<p>这么说来，有些人该问，难道闲暇时间所耗费的都是打发时间，就没有让自己提升的东西么？恩，其实是有的，重要是看你对提升的定义吧，看更多的小说，提升的是你的文学，玩更多的游戏，提升的是你的技术，而学生花更多的时间，提升的则是你的学识和记忆，本质同样是花费时间来换取别的，正如土地是经济的最基础载体，时间也是。你当然也可以花上一个小时，看些高端的书，但是 你不能想说自己过去的一个小时都浪费了，其实没有。与其想过去的一个小时干了啥，我觉得更多的时候还是想想后面要干啥吧，我对过去更多的是别犯同样的错和昨天吃了什么，恩今天换个吧。而前者老是忘记，后者记得清楚，但是却也没多大用，今天想吃和昨天也没有什么必然的联系，回归这个欲望本身吧，看他想吃啥。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-      <tags>
-        <tag>过去</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>追光动画是垃圾</title>
-    <url>/2022/08/21/%E8%BF%BD%E5%85%89%E5%8A%A8%E7%94%BB%E6%98%AF%E5%9E%83%E5%9C%BE/</url>
-    <content><![CDATA[<p>周末无聊，就带了几个孩子去电影院看了下《新神榜：杨戬》<img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220821221115.png" alt="20220821221115" />，看完之后，我只想说：“日你妈，退钱”</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220821220746.png" alt="20220821220746" /></p>
-<p>这片完全就是营销的产物，属实除了营销一点不剩了，就是个垃圾。我是当初看了姜子牙片尾的宣传片才对这片充满期待，然后发现就是个大便。追光全家都是大便。</p>
-<p>首先从剧情来说：这部片的剧情很简单：沉香救母。没了，就这么简单，刨去了靠嘴巴说的设定，片的内容就是沉香救母。这剧情，完全就是一片段一片段接在一起的。开头来段抓人表现杨戬的牛逼，然后是故作玄虚的来个机会引杨戬来主线，主线就是沉香一块块集齐宝莲灯，然后就是最后boss自爆，杨戬开眼，绝地反杀，再劈山救母，没了。你故事简单也可以，你至少讲好一个故事吧，对不起，讲不好，我是站着赚钱的，故事那是跪着的，做不来。故事的逻辑bug比比皆是：</p>
-<ol>
-<li>
-<p>沉香师傅为啥要死？沉香师傅本身就对沉香不好，大可来一个劝反，告诉沉香事实，让沉香偷走宝物，然后逃走。不行，要死，而且死的不明不白，好歹是二师兄，没个过场就这么死了。</p>
-</li>
-<li>
-<p>申公豹为啥要死？你说师傅死，有可能失手，有可能有你不想浪费笔墨，但是申公豹你给弄死了，巫山神女来一句：“我看救不活了，给补刀了。”我他么的，你是神女，不是变态，人家救不活慢慢死不行啊，用你补刀，而且他师兄都没下狠手，你倒好。直接给补了，他师兄要想杀他用的着你。你这不会做人啊。申公豹完全就是和二师兄出来打酱油的，看起来好像要重点着墨申公豹为何如此的原因，但是又点到为止，告诉你我背后有好大的秘密，但是我不告诉是什么秘密。对此，我只想说：“去你妈的”</p>
-</li>
-<li>
-<p>魔家四将又是谁的，这四个工具人到底是那一派的：公家？还是师傅？你杨戬不好奇么？你查一下不就知道，除了你还有谁在弄沉香，也就可以证明背后到底是不是师傅，证明巫山神女的话到底是不是对的，妈的，就是不查，我等师傅自己自爆。这他么的编剧脑袋里面是装大便了。喜欢突突的自己出来么？</p>
-</li>
-<li>
-<p>除了剧情逻辑不同，人物的逻辑也是变态。我，杨戬，无父无母，就一个妹妹，妹妹因为救苍生牺牲自己，我把他儿子带到师傅那里。那老头说：“成年之前不要来看他。”？？？？</p>
-</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220821220842.png" alt="20220821220842" /></p>
-<p>我给你侄子取名叫沉香，我也不告诉你一声。？？？？</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220821220905.png" alt="20220821220905" /></p>
-<p>你侄子杀了他师傅。我也没想通知你。？？？？</p>
-<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220821220937.png" alt="20220821220937" /></p>
-<p>妈的，这怕是个假舅舅，假哥哥吧。你师傅把他分配给了脾气最不好的二师兄，你也不给你侄子走走后门？玛德，这杨戬不会也是个变态吧</p>
-<ol start="5">
-<li>
-<p>然后就是巫山神女，她谁啊，自我介绍是杨禅的闺蜜，但是没有个前情提要，后面山劈开了，也没打声招呼，委托照顾下孩子。然后你沉香怎么就叫上她姥姥了，你啥时候和她勾搭上的，是申公豹引荐的么，沉香你这样子很容易被骗哦。还有姐姐，你之前不是在乐坊里面跳舞么？怎么说走就走啊？你这样下份工作职调的时候HR可不会给你说好话的哦。</p>
-</li>
-<li>
-<p>这片里面除了杨戬都是工具人，开头快30分钟抓的那个卖假药的，也是一个工具人，抓了，然后没了。宝莲灯回忆的时候碎成那么多片。收集的时候就一个灯罩，一个灯油，一个灯芯，行了，齐活。宝莲灯用来干啥的不知道，有什么神奇能力不知道。劈山用的是他舅的斧头，要灯干啥。照明么？</p>
-</li>
-<li>
-<p>故事的主线也是不清不楚，正邪两方为啥要打，沉香为啥要劈山？救母？他妈已经和那个啥化为一气了，他不知道？而且你这举目无亲的，不想着先投靠下舅舅，一出来就这么大的志向？那师傅为啥不让他劈山呢？人类浩劫？自己的金霞洞？两个是绑在一起的，山开洞没了，人类还有一场打劫。那么这个电车难题还用选？肯定不劈开啊。杨戬直到最后一刻都没说他是为啥劈开，你就算不管金霞洞，你不管人类浩劫？那巫山神女的动机是啥？我闺蜜被压在下面，要救？我他么的，我都不知道师傅最后是不是黑化了？他说的很对啊，开山人类浩劫，金霞洞只是个添头，一举两得，你杨戬有什么理由劈开，劈开救你妹？你妹早就没了。那你劈开干啥。来场大劫害苍生，那你14年前为啥救呢？还有那些师叔师伯，东西都借了，人为啥不来，现在倒好，这些东西回不来了，以后杨戬拿着每个东西，去登门拜访，你怎么搞，你是和平的一方，现在杨戬开山乱世，你不是该出兵讨伐？</p>
-</li>
-</ol>
-<p>这片的剧情完全就是一坨屎，你讲一个故事好歹要逻辑自洽，前后呼应。你倒好，写到哪算哪，通篇就是卖弄我后面有个宏大的设定，吊足你的胃口，吊了整整2小时，是个人都受不了。然后就是立意。你说，你作为一个故事片，好歹有点东西吧。《魔童降世》为啥大火，就是人家有一个符合大众价值取向的立意：我命由我不由天。讲的是一个人定胜天的故事，看完让人心血澎湃。一个好的故事片除了讲好一个故事，还有让观众共情，连《唐人街探案》都会想着用母亲为了孩子食物出卖身体这种下三滥的手段去引起观众的共情，你倒好，一点共情的方法方式都没有，反而处处透露着人情的冷漠。师兄杀师弟，哥哥不管妹妹的孩子，甚至连沉香我都没有共情到他妈有多好，值得我这么去救么。哥哥啊，你要让观众共情啊，沉香想救他妈不是没有理由的，有可能是小时候被欺负没有妈妈保护，想着想救，有可能听到妈妈还活着，在华山下受苦受难想救。而不是我他么的就想救我妈，怎么了，这就是理由。</p>
-<p>现在的这些编剧真的是太高高在上了，他们似乎没有了普通人的情感了，要真是一个如此受尽磨难的孩子，逃出来之后，估计躲躲藏藏的，然后过上平凡的生活。母亲是伟大的，但是生活是现实的，你需要让我们这些生活在现实的人去感受到为何沉香要如此坚定的救母，可以来点情节，来点回忆，甚至来点被人欺负，让观众知道母亲的宝贵。妈的，这傻逼片从头到尾就没有这种操作，你妈的你就是学唐探得下三滥操作也可以，至少让我知道你是一个专业人士，只是技术太差而已。</p>
-<p>这片就这样微博上还都是：帅，好看得评价。妈的，再看微博推荐我就是狗，微博就是垃圾场。这片凡是吹画面好的，都是拿钱得。吹剧情得，都是拿钱得傻逼。这片完全就是一片专门拿来营销得玩意儿：有cp，有帅哥，有逗趣，还有那让人想起须佐能乎得画面。反正你们吹吧，我话放这了，这片就是垃圾。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>追光动画</tag>
-        <tag>新神榜：杨戬</tag>
       </tags>
   </entry>
   <entry>
@@ -12999,6 +12946,60 @@ pip install requirements.txt
       </categories>
       <tags>
         <tag>同事</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>追光动画是垃圾</title>
+    <url>/2022/08/21/%E8%BF%BD%E5%85%89%E5%8A%A8%E7%94%BB%E6%98%AF%E5%9E%83%E5%9C%BE/</url>
+    <content><![CDATA[<p>周末无聊，就带了几个孩子去电影院看了下《新神榜：杨戬》<img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220821221115.png" alt="20220821221115" />，看完之后，我只想说：“日你妈，退钱”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220821220746.png" alt="20220821220746" /></p>
+<p>这片完全就是营销的产物，属实除了营销一点不剩了，就是个垃圾。我是当初看了姜子牙片尾的宣传片才对这片充满期待，然后发现就是个大便。追光全家都是大便。</p>
+<p>首先从剧情来说：这部片的剧情很简单：沉香救母。没了，就这么简单，刨去了靠嘴巴说的设定，片的内容就是沉香救母。这剧情，完全就是一片段一片段接在一起的。开头来段抓人表现杨戬的牛逼，然后是故作玄虚的来个机会引杨戬来主线，主线就是沉香一块块集齐宝莲灯，然后就是最后boss自爆，杨戬开眼，绝地反杀，再劈山救母，没了。你故事简单也可以，你至少讲好一个故事吧，对不起，讲不好，我是站着赚钱的，故事那是跪着的，做不来。故事的逻辑bug比比皆是：</p>
+<ol>
+<li>
+<p>沉香师傅为啥要死？沉香师傅本身就对沉香不好，大可来一个劝反，告诉沉香事实，让沉香偷走宝物，然后逃走。不行，要死，而且死的不明不白，好歹是二师兄，没个过场就这么死了。</p>
+</li>
+<li>
+<p>申公豹为啥要死？你说师傅死，有可能失手，有可能有你不想浪费笔墨，但是申公豹你给弄死了，巫山神女来一句：“我看救不活了，给补刀了。”我他么的，你是神女，不是变态，人家救不活慢慢死不行啊，用你补刀，而且他师兄都没下狠手，你倒好。直接给补了，他师兄要想杀他用的着你。你这不会做人啊。申公豹完全就是和二师兄出来打酱油的，看起来好像要重点着墨申公豹为何如此的原因，但是又点到为止，告诉你我背后有好大的秘密，但是我不告诉是什么秘密。对此，我只想说：“去你妈的”</p>
+</li>
+<li>
+<p>魔家四将又是谁的，这四个工具人到底是那一派的：公家？还是师傅？你杨戬不好奇么？你查一下不就知道，除了你还有谁在弄沉香，也就可以证明背后到底是不是师傅，证明巫山神女的话到底是不是对的，妈的，就是不查，我等师傅自己自爆。这他么的编剧脑袋里面是装大便了。喜欢突突的自己出来么？</p>
+</li>
+<li>
+<p>除了剧情逻辑不同，人物的逻辑也是变态。我，杨戬，无父无母，就一个妹妹，妹妹因为救苍生牺牲自己，我把他儿子带到师傅那里。那老头说：“成年之前不要来看他。”？？？？</p>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220821220842.png" alt="20220821220842" /></p>
+<p>我给你侄子取名叫沉香，我也不告诉你一声。？？？？</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220821220905.png" alt="20220821220905" /></p>
+<p>你侄子杀了他师傅。我也没想通知你。？？？？</p>
+<p><img src="https://cdn.jsdelivr.net/gh/android1122/typecho_img@master//20220821220937.png" alt="20220821220937" /></p>
+<p>妈的，这怕是个假舅舅，假哥哥吧。你师傅把他分配给了脾气最不好的二师兄，你也不给你侄子走走后门？玛德，这杨戬不会也是个变态吧</p>
+<ol start="5">
+<li>
+<p>然后就是巫山神女，她谁啊，自我介绍是杨禅的闺蜜，但是没有个前情提要，后面山劈开了，也没打声招呼，委托照顾下孩子。然后你沉香怎么就叫上她姥姥了，你啥时候和她勾搭上的，是申公豹引荐的么，沉香你这样子很容易被骗哦。还有姐姐，你之前不是在乐坊里面跳舞么？怎么说走就走啊？你这样下份工作职调的时候HR可不会给你说好话的哦。</p>
+</li>
+<li>
+<p>这片里面除了杨戬都是工具人，开头快30分钟抓的那个卖假药的，也是一个工具人，抓了，然后没了。宝莲灯回忆的时候碎成那么多片。收集的时候就一个灯罩，一个灯油，一个灯芯，行了，齐活。宝莲灯用来干啥的不知道，有什么神奇能力不知道。劈山用的是他舅的斧头，要灯干啥。照明么？</p>
+</li>
+<li>
+<p>故事的主线也是不清不楚，正邪两方为啥要打，沉香为啥要劈山？救母？他妈已经和那个啥化为一气了，他不知道？而且你这举目无亲的，不想着先投靠下舅舅，一出来就这么大的志向？那师傅为啥不让他劈山呢？人类浩劫？自己的金霞洞？两个是绑在一起的，山开洞没了，人类还有一场打劫。那么这个电车难题还用选？肯定不劈开啊。杨戬直到最后一刻都没说他是为啥劈开，你就算不管金霞洞，你不管人类浩劫？那巫山神女的动机是啥？我闺蜜被压在下面，要救？我他么的，我都不知道师傅最后是不是黑化了？他说的很对啊，开山人类浩劫，金霞洞只是个添头，一举两得，你杨戬有什么理由劈开，劈开救你妹？你妹早就没了。那你劈开干啥。来场大劫害苍生，那你14年前为啥救呢？还有那些师叔师伯，东西都借了，人为啥不来，现在倒好，这些东西回不来了，以后杨戬拿着每个东西，去登门拜访，你怎么搞，你是和平的一方，现在杨戬开山乱世，你不是该出兵讨伐？</p>
+</li>
+</ol>
+<p>这片的剧情完全就是一坨屎，你讲一个故事好歹要逻辑自洽，前后呼应。你倒好，写到哪算哪，通篇就是卖弄我后面有个宏大的设定，吊足你的胃口，吊了整整2小时，是个人都受不了。然后就是立意。你说，你作为一个故事片，好歹有点东西吧。《魔童降世》为啥大火，就是人家有一个符合大众价值取向的立意：我命由我不由天。讲的是一个人定胜天的故事，看完让人心血澎湃。一个好的故事片除了讲好一个故事，还有让观众共情，连《唐人街探案》都会想着用母亲为了孩子食物出卖身体这种下三滥的手段去引起观众的共情，你倒好，一点共情的方法方式都没有，反而处处透露着人情的冷漠。师兄杀师弟，哥哥不管妹妹的孩子，甚至连沉香我都没有共情到他妈有多好，值得我这么去救么。哥哥啊，你要让观众共情啊，沉香想救他妈不是没有理由的，有可能是小时候被欺负没有妈妈保护，想着想救，有可能听到妈妈还活着，在华山下受苦受难想救。而不是我他么的就想救我妈，怎么了，这就是理由。</p>
+<p>现在的这些编剧真的是太高高在上了，他们似乎没有了普通人的情感了，要真是一个如此受尽磨难的孩子，逃出来之后，估计躲躲藏藏的，然后过上平凡的生活。母亲是伟大的，但是生活是现实的，你需要让我们这些生活在现实的人去感受到为何沉香要如此坚定的救母，可以来点情节，来点回忆，甚至来点被人欺负，让观众知道母亲的宝贵。妈的，这傻逼片从头到尾就没有这种操作，你妈的你就是学唐探得下三滥操作也可以，至少让我知道你是一个专业人士，只是技术太差而已。</p>
+<p>这片就这样微博上还都是：帅，好看得评价。妈的，再看微博推荐我就是狗，微博就是垃圾场。这片凡是吹画面好的，都是拿钱得。吹剧情得，都是拿钱得傻逼。这片完全就是一片专门拿来营销得玩意儿：有cp，有帅哥，有逗趣，还有那让人想起须佐能乎得画面。反正你们吹吧，我话放这了，这片就是垃圾。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>追光动画</tag>
+        <tag>新神榜：杨戬</tag>
       </tags>
   </entry>
   <entry>
@@ -13133,6 +13134,33 @@ pip install requirements.txt
       </tags>
   </entry>
   <entry>
+    <title>预算报表汇总数不准——金蝶EAS</title>
+    <url>/2022/04/30/%E9%A2%84%E7%AE%97%E6%8A%A5%E8%A1%A8%E6%B1%87%E6%80%BB%E6%95%B0%E4%B8%8D%E5%87%86%E2%80%94%E2%80%94%E9%87%91%E8%9D%B6EAS/</url>
+    <content><![CDATA[<p>首先，预算报表只能编辑最细层级的数据，所以比如在某一个区域内的预算表，它是自动由其下面组织单元的预算表自动取数汇总而成，所以这个数值一般为其区域下的汇总数，我们可以通过数据联查进行查询。</p>
+<p>如果发生组织单元变动，就会导致，其上级的区域汇总表出现数据不准确的情况，这时候，我们就得将其组织架构进行删除，并且重新生成。</p>
+<p>首先以任意一个账号进入：企业建模——辅助数据——财务会计数据——币别</p>
+<p>然后，按住crtl+shift+Q进入后台，系统会提示你输入超级管理员密码（默认：kdadmin）：</p>
+<p>进入后，输入语句：delete from t_mbg_dbgorganization_closure，执行</p>
+<p>该语句是将数据库中t_mbg_dbgorganization_closure这个表删除，这是放置组织架构的表格，将其删除。</p>
+<p>然后，根据以上逻辑，我们应该让系统再次生成新的组织架构。</p>
+<p>进入系统平台——后台事物——事务定义——后台事务定义</p>
+<p>找到预算编制平台下的预算多维基础数据检查事务，测试下是否成功，成功后发布</p>
+<p>找到组织架构生成的事务并将其发布后，为以防万一，我们应该让其执行一次，以生成新的组织架构，进入系统平台——后台事物——事务定义——后台事务定义报表</p>
+<p>手动启动下。</p>
+<p>这样，就重新生成新的组织架构，这样就可以使预算汇总表内的数据汇总正确。</p>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>技术顾问</category>
+      </categories>
+      <tags>
+        <tag>金蝶</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>青龙面板定时规则</title>
     <url>/2023/03/28/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%AE%9A%E6%97%B6%E8%A7%84%E5%88%99/</url>
     <content><![CDATA[<h1 id="青龙面板定时规则"><a class="markdownIt-Anchor" href="#青龙面板定时规则"></a> 青龙面板定时规则</h1>
@@ -13158,33 +13186,6 @@ pip install requirements.txt
         <tag>青龙面板</tag>
         <tag>python</tag>
         <tag>Gotify</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>预算报表汇总数不准——金蝶EAS</title>
-    <url>/2022/04/30/%E9%A2%84%E7%AE%97%E6%8A%A5%E8%A1%A8%E6%B1%87%E6%80%BB%E6%95%B0%E4%B8%8D%E5%87%86%E2%80%94%E2%80%94%E9%87%91%E8%9D%B6EAS/</url>
-    <content><![CDATA[<p>首先，预算报表只能编辑最细层级的数据，所以比如在某一个区域内的预算表，它是自动由其下面组织单元的预算表自动取数汇总而成，所以这个数值一般为其区域下的汇总数，我们可以通过数据联查进行查询。</p>
-<p>如果发生组织单元变动，就会导致，其上级的区域汇总表出现数据不准确的情况，这时候，我们就得将其组织架构进行删除，并且重新生成。</p>
-<p>首先以任意一个账号进入：企业建模——辅助数据——财务会计数据——币别</p>
-<p>然后，按住crtl+shift+Q进入后台，系统会提示你输入超级管理员密码（默认：kdadmin）：</p>
-<p>进入后，输入语句：delete from t_mbg_dbgorganization_closure，执行</p>
-<p>该语句是将数据库中t_mbg_dbgorganization_closure这个表删除，这是放置组织架构的表格，将其删除。</p>
-<p>然后，根据以上逻辑，我们应该让系统再次生成新的组织架构。</p>
-<p>进入系统平台——后台事物——事务定义——后台事务定义</p>
-<p>找到预算编制平台下的预算多维基础数据检查事务，测试下是否成功，成功后发布</p>
-<p>找到组织架构生成的事务并将其发布后，为以防万一，我们应该让其执行一次，以生成新的组织架构，进入系统平台——后台事物——事务定义——后台事务定义报表</p>
-<p>手动启动下。</p>
-<p>这样，就重新生成新的组织架构，这样就可以使预算汇总表内的数据汇总正确。</p>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/css/markmap.css">
-
-<script src="/js/markmap.js"></script>
-]]></content>
-      <categories>
-        <category>技术顾问</category>
-      </categories>
-      <tags>
-        <tag>金蝶</tag>
       </tags>
   </entry>
   <entry>
