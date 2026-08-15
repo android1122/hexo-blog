@@ -6,7 +6,7 @@
   <link href="https://minsummer.com/atom.xml" rel="self"/>
   
   <link href="https://minsummer.com/"/>
-  <updated>2026-05-22T16:00:00.000Z</updated>
+  <updated>2026-08-14T16:00:00.000Z</updated>
   <id>https://minsummer.com/</id>
   
   <author>
@@ -15,6 +15,67 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于植物扦插的一点纪录</title>
+    <link href="https://minsummer.com/2026/08/14/237-%E5%85%B3%E4%BA%8E%E6%A4%8D%E7%89%A9%E6%89%A6%E6%8F%92%E7%9A%84%E4%B8%80%E7%82%B9%E7%BA%AA%E5%BD%95/"/>
+    <id>https://minsummer.com/2026/08/14/237-%E5%85%B3%E4%BA%8E%E6%A4%8D%E7%89%A9%E6%89%A6%E6%8F%92%E7%9A%84%E4%B8%80%E7%82%B9%E7%BA%AA%E5%BD%95/</id>
+    <published>2026-08-14T16:00:00.000Z</published>
+    <updated>2026-08-14T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;之前一段时间比较清闲，于是就种了些花花草草，正好赶上春夏这个植物扦插的好季节，于是就扦插了点茉莉花，前前后后经历两个月，总算是有点心得。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+    
+    <category term="植物" scheme="https://minsummer.com/tags/%E6%A4%8D%E7%89%A9/"/>
+    
+    <category term="扦插" scheme="https://minsummer.com/tags/%E6%89%A6%E6%8F%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于京东养车的碎碎念</title>
+    <link href="https://minsummer.com/2026/08/14/238-%E5%85%B3%E4%BA%8E%E4%BA%AC%E4%B8%9C%E5%85%BB%E8%BD%A6%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    <id>https://minsummer.com/2026/08/14/238-%E5%85%B3%E4%BA%8E%E4%BA%AC%E4%B8%9C%E5%85%BB%E8%BD%A6%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/</id>
+    <published>2026-08-14T16:00:00.000Z</published>
+    <updated>2026-08-14T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;首先说明，京东这么大的一个公司，肯定有自己的企业规划，只是我有些不吐不快的。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+    
+    <category term="京东养车" scheme="https://minsummer.com/tags/%E4%BA%AC%E4%B8%9C%E5%85%BB%E8%BD%A6/"/>
+    
+    <category term="碎碎念" scheme="https://minsummer.com/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于店铺位置的一些想法</title>
+    <link href="https://minsummer.com/2026/08/14/239-%E5%85%B3%E4%BA%8E%E5%BA%97%E9%93%BA%E4%BD%8D%E7%BD%AE%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/"/>
+    <id>https://minsummer.com/2026/08/14/239-%E5%85%B3%E4%BA%8E%E5%BA%97%E9%93%BA%E4%BD%8D%E7%BD%AE%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/</id>
+    <published>2026-08-14T16:00:00.000Z</published>
+    <updated>2026-08-14T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;最近沉迷勇哥，看到一些些餐饮选址，店铺营业额之类的说法，加上最近投资的一家小店获得一定收益，综合来看，我就有一些想法。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+    
+    <category term="店铺位置" scheme="https://minsummer.com/tags/%E5%BA%97%E9%93%BA%E4%BD%8D%E7%BD%AE/"/>
+    
+  </entry>
   
   <entry>
     <title>炉石传说竞技场组牌思路</title>
@@ -889,25 +950,6 @@ Printer is shutdown&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>哪吒探针部署指南</title>
-    <link href="https://minsummer.com/2025/02/11/198-%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/"/>
-    <id>https://minsummer.com/2025/02/11/198-%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/</id>
-    <published>2025-02-11T16:00:00.000Z</published>
-    <updated>2025-02-11T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;我之前用的是serverstatus，服务端直接docker部署，客户端python命令文件。好处是部署简单，功能够用，但是不如哪吒面板好看，而且客户端需要python对一些性能比较差的机器就无法监控，比如openwrt路由器，这次的想法就是将所有的设备进行监控。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
-    
-    
-    <category term="哪吒探针" scheme="https://minsummer.com/tags/%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88/"/>
-    
-  </entry>
-  
-  <entry>
     <title>飞牛OS云端数据备份和取回</title>
     <link href="https://minsummer.com/2025/02/11/197-%E9%A3%9E%E7%89%9BOS%E4%BA%91%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%92%8C%E5%8F%96%E5%9B%9E/"/>
     <id>https://minsummer.com/2025/02/11/197-%E9%A3%9E%E7%89%9BOS%E4%BA%91%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%92%8C%E5%8F%96%E5%9B%9E/</id>
@@ -929,6 +971,25 @@ Printer is shutdown&lt;/p&gt;
     <category term="OneDrive" scheme="https://minsummer.com/tags/OneDrive/"/>
     
     <category term="坚果云盘" scheme="https://minsummer.com/tags/%E5%9D%9A%E6%9E%9C%E4%BA%91%E7%9B%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>哪吒探针部署指南</title>
+    <link href="https://minsummer.com/2025/02/11/198-%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/"/>
+    <id>https://minsummer.com/2025/02/11/198-%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/</id>
+    <published>2025-02-11T16:00:00.000Z</published>
+    <updated>2025-02-11T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;我之前用的是serverstatus，服务端直接docker部署，客户端python命令文件。好处是部署简单，功能够用，但是不如哪吒面板好看，而且客户端需要python对一些性能比较差的机器就无法监控，比如openwrt路由器，这次的想法就是将所有的设备进行监控。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="哪吒探针" scheme="https://minsummer.com/tags/%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88/"/>
     
   </entry>
   
@@ -2600,32 +2661,6 @@ CPU：1x Intel Xeon&lt;br /&gt;
   </entry>
   
   <entry>
-    <title>超能勇士崛起-又一好莱坞烂片</title>
-    <link href="https://minsummer.com/2023/07/21/127-%E8%B6%85%E8%83%BD%E5%8B%87%E5%A3%AB%E5%B4%9B%E8%B5%B7/"/>
-    <id>https://minsummer.com/2023/07/21/127-%E8%B6%85%E8%83%BD%E5%8B%87%E5%A3%AB%E5%B4%9B%E8%B5%B7/</id>
-    <published>2023-07-21T16:00:00.000Z</published>
-    <updated>2023-07-21T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;最近几年不知道是因为啥，好莱坞的爆米花大片连配爆米花都不行了。一个字，烂，特别的烂。&lt;br /&gt;
-《变形金刚——超能勇士崛起》一听这名字，我就知道，是在搞情怀，我的期望很低，剧情可以，打架场面好就行了。然后，——&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
-    
-    
-    <category term="好莱坞" scheme="https://minsummer.com/tags/%E5%A5%BD%E8%8E%B1%E5%9D%9E/"/>
-    
-    <category term="爆米花" scheme="https://minsummer.com/tags/%E7%88%86%E7%B1%B3%E8%8A%B1/"/>
-    
-    <category term="烂片吐槽" scheme="https://minsummer.com/tags/%E7%83%82%E7%89%87%E5%90%90%E6%A7%BD/"/>
-    
-    <category term="变形金刚" scheme="https://minsummer.com/tags/%E5%8F%98%E5%BD%A2%E9%87%91%E5%88%9A/"/>
-    
-  </entry>
-  
-  <entry>
     <title>浅谈下经济</title>
     <link href="https://minsummer.com/2023/07/21/126-%E6%B5%85%E8%B0%88%E4%B8%8B%E7%BB%8F%E6%B5%8E/"/>
     <id>https://minsummer.com/2023/07/21/126-%E6%B5%85%E8%B0%88%E4%B8%8B%E7%BB%8F%E6%B5%8E/</id>
@@ -2657,6 +2692,32 @@ CPU：1x Intel Xeon&lt;br /&gt;
     <category term="国家债务" scheme="https://minsummer.com/tags/%E5%9B%BD%E5%AE%B6%E5%80%BA%E5%8A%A1/"/>
     
     <category term="国家经济" scheme="https://minsummer.com/tags/%E5%9B%BD%E5%AE%B6%E7%BB%8F%E6%B5%8E/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>超能勇士崛起-又一好莱坞烂片</title>
+    <link href="https://minsummer.com/2023/07/21/127-%E8%B6%85%E8%83%BD%E5%8B%87%E5%A3%AB%E5%B4%9B%E8%B5%B7/"/>
+    <id>https://minsummer.com/2023/07/21/127-%E8%B6%85%E8%83%BD%E5%8B%87%E5%A3%AB%E5%B4%9B%E8%B5%B7/</id>
+    <published>2023-07-21T16:00:00.000Z</published>
+    <updated>2023-07-21T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;最近几年不知道是因为啥，好莱坞的爆米花大片连配爆米花都不行了。一个字，烂，特别的烂。&lt;br /&gt;
+《变形金刚——超能勇士崛起》一听这名字，我就知道，是在搞情怀，我的期望很低，剧情可以，打架场面好就行了。然后，——&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+    
+    <category term="好莱坞" scheme="https://minsummer.com/tags/%E5%A5%BD%E8%8E%B1%E5%9D%9E/"/>
+    
+    <category term="爆米花" scheme="https://minsummer.com/tags/%E7%88%86%E7%B1%B3%E8%8A%B1/"/>
+    
+    <category term="烂片吐槽" scheme="https://minsummer.com/tags/%E7%83%82%E7%89%87%E5%90%90%E6%A7%BD/"/>
+    
+    <category term="变形金刚" scheme="https://minsummer.com/tags/%E5%8F%98%E5%BD%A2%E9%87%91%E5%88%9A/"/>
     
   </entry>
   
