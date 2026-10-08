@@ -64,6 +64,27 @@
   </entry>
   
   <entry>
+    <title>关于植物扦插的一点纪录</title>
+    <link href="https://minsummer.com/2026/08/14/237-%E5%85%B3%E4%BA%8E%E6%A4%8D%E7%89%A9%E6%89%A6%E6%8F%92%E7%9A%84%E4%B8%80%E7%82%B9%E7%BA%AA%E5%BD%95/"/>
+    <id>https://minsummer.com/2026/08/14/237-%E5%85%B3%E4%BA%8E%E6%A4%8D%E7%89%A9%E6%89%A6%E6%8F%92%E7%9A%84%E4%B8%80%E7%82%B9%E7%BA%AA%E5%BD%95/</id>
+    <published>2026-08-14T16:00:00.000Z</published>
+    <updated>2026-08-14T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;之前一段时间比较清闲，于是就种了些花花草草，正好赶上春夏这个植物扦插的好季节，于是就扦插了点茉莉花，前前后后经历两个月，总算是有点心得。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+    
+    <category term="植物" scheme="https://minsummer.com/tags/%E6%A4%8D%E7%89%A9/"/>
+    
+    <category term="扦插" scheme="https://minsummer.com/tags/%E6%89%A6%E6%8F%92/"/>
+    
+  </entry>
+  
+  <entry>
     <title>关于京东养车的碎碎念</title>
     <link href="https://minsummer.com/2026/08/14/238-%E5%85%B3%E4%BA%8E%E4%BA%AC%E4%B8%9C%E5%85%BB%E8%BD%A6%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     <id>https://minsummer.com/2026/08/14/238-%E5%85%B3%E4%BA%8E%E4%BA%AC%E4%B8%9C%E5%85%BB%E8%BD%A6%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/</id>
@@ -100,27 +121,6 @@
     
     
     <category term="店铺位置" scheme="https://minsummer.com/tags/%E5%BA%97%E9%93%BA%E4%BD%8D%E7%BD%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于植物扦插的一点纪录</title>
-    <link href="https://minsummer.com/2026/08/14/237-%E5%85%B3%E4%BA%8E%E6%A4%8D%E7%89%A9%E6%89%A6%E6%8F%92%E7%9A%84%E4%B8%80%E7%82%B9%E7%BA%AA%E5%BD%95/"/>
-    <id>https://minsummer.com/2026/08/14/237-%E5%85%B3%E4%BA%8E%E6%A4%8D%E7%89%A9%E6%89%A6%E6%8F%92%E7%9A%84%E4%B8%80%E7%82%B9%E7%BA%AA%E5%BD%95/</id>
-    <published>2026-08-14T16:00:00.000Z</published>
-    <updated>2026-08-14T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;之前一段时间比较清闲，于是就种了些花花草草，正好赶上春夏这个植物扦插的好季节，于是就扦插了点茉莉花，前前后后经历两个月，总算是有点心得。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
-    
-    
-    <category term="植物" scheme="https://minsummer.com/tags/%E6%A4%8D%E7%89%A9/"/>
-    
-    <category term="扦插" scheme="https://minsummer.com/tags/%E6%89%A6%E6%8F%92/"/>
     
   </entry>
   
@@ -351,27 +351,6 @@ Printer is shutdown&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>klipper增加摄像头</title>
-    <link href="https://minsummer.com/2026/01/06/226-klipper%E5%A2%9E%E5%8A%A0%E6%91%84%E5%83%8F%E5%A4%B4/"/>
-    <id>https://minsummer.com/2026/01/06/226-klipper%E5%A2%9E%E5%8A%A0%E6%91%84%E5%83%8F%E5%A4%B4/</id>
-    <published>2026-01-06T16:00:00.000Z</published>
-    <updated>2026-01-06T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;给上位机增加一个摄像头就可以方便我们后续检查打印情况，而不是一次次的跑过去看。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
-    
-    
-    <category term="3D打印" scheme="https://minsummer.com/tags/3D%E6%89%93%E5%8D%B0/"/>
-    
-    <category term="klipper" scheme="https://minsummer.com/tags/klipper/"/>
-    
-  </entry>
-  
-  <entry>
     <title>关于调平</title>
     <link href="https://minsummer.com/2026/01/06/222-%E5%85%B3%E4%BA%8E%E8%B0%83%E5%B9%B3/"/>
     <id>https://minsummer.com/2026/01/06/222-%E5%85%B3%E4%BA%8E%E8%B0%83%E5%B9%B3/</id>
@@ -389,6 +368,27 @@ Printer is shutdown&lt;/p&gt;
     <category term="klipper" scheme="https://minsummer.com/tags/klipper/"/>
     
     <category term="3D打印机" scheme="https://minsummer.com/tags/3D%E6%89%93%E5%8D%B0%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>klipper增加摄像头</title>
+    <link href="https://minsummer.com/2026/01/06/226-klipper%E5%A2%9E%E5%8A%A0%E6%91%84%E5%83%8F%E5%A4%B4/"/>
+    <id>https://minsummer.com/2026/01/06/226-klipper%E5%A2%9E%E5%8A%A0%E6%91%84%E5%83%8F%E5%A4%B4/</id>
+    <published>2026-01-06T16:00:00.000Z</published>
+    <updated>2026-01-06T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;给上位机增加一个摄像头就可以方便我们后续检查打印情况，而不是一次次的跑过去看。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="klipper" scheme="https://minsummer.com/tags/klipper/"/>
+    
+    <category term="3D打印" scheme="https://minsummer.com/tags/3D%E6%89%93%E5%8D%B0/"/>
     
   </entry>
   
@@ -1083,6 +1083,31 @@ Printer is shutdown&lt;/p&gt;
   </entry>
   
   <entry>
+    <title>服务器NAS最佳实践</title>
+    <link href="https://minsummer.com/2025/01/06/192-%E6%9C%8D%E5%8A%A1%E5%99%A8NAS%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/"/>
+    <id>https://minsummer.com/2025/01/06/192-%E6%9C%8D%E5%8A%A1%E5%99%A8NAS%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</id>
+    <published>2025-01-06T16:00:00.000Z</published>
+    <updated>2025-01-06T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;我的服务器最终配置清单出炉：&lt;br /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/android1122/typecho_img/master/192-%E6%9C%8D%E5%8A%A1%E5%99%A8NAS%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5-2025-01-07-09-15-28.png&quot; alt=&quot;192-服务器NAS的最佳实践-2025-01-07-09-15-28&quot; /&gt;&lt;br /&gt;
+浪潮这台服务器是前面12加上后面4合计16个硬盘位，我目前只是安装了9个，而且都是小容量的，就这样已经占据目前成本的3分之一。可见硬盘才是成本的大头。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="NAS" scheme="https://minsummer.com/tags/NAS/"/>
+    
+    <category term="浪潮SA5112M4" scheme="https://minsummer.com/tags/%E6%B5%AA%E6%BD%AESA5112M4/"/>
+    
+    <category term="服务器" scheme="https://minsummer.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ESXI安装HomeAsistantOS</title>
     <link href="https://minsummer.com/2025/01/06/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS/"/>
     <id>https://minsummer.com/2025/01/06/193-ESXI%E5%AE%89%E8%A3%85HomeAsistantOS/</id>
@@ -1128,31 +1153,6 @@ Printer is shutdown&lt;/p&gt;
     <category term="lede" scheme="https://minsummer.com/tags/lede/"/>
     
     <category term="IPQ60XX" scheme="https://minsummer.com/tags/IPQ60XX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>服务器NAS最佳实践</title>
-    <link href="https://minsummer.com/2025/01/06/192-%E6%9C%8D%E5%8A%A1%E5%99%A8NAS%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/"/>
-    <id>https://minsummer.com/2025/01/06/192-%E6%9C%8D%E5%8A%A1%E5%99%A8NAS%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</id>
-    <published>2025-01-06T16:00:00.000Z</published>
-    <updated>2025-01-06T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;我的服务器最终配置清单出炉：&lt;br /&gt;
-&lt;img src=&quot;https://raw.githubusercontent.com/android1122/typecho_img/master/192-%E6%9C%8D%E5%8A%A1%E5%99%A8NAS%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5-2025-01-07-09-15-28.png&quot; alt=&quot;192-服务器NAS的最佳实践-2025-01-07-09-15-28&quot; /&gt;&lt;br /&gt;
-浪潮这台服务器是前面12加上后面4合计16个硬盘位，我目前只是安装了9个，而且都是小容量的，就这样已经占据目前成本的3分之一。可见硬盘才是成本的大头。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
-    
-    
-    <category term="NAS" scheme="https://minsummer.com/tags/NAS/"/>
-    
-    <category term="浪潮SA5112M4" scheme="https://minsummer.com/tags/%E6%B5%AA%E6%BD%AESA5112M4/"/>
-    
-    <category term="服务器" scheme="https://minsummer.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
   </entry>
   
@@ -1265,6 +1265,27 @@ CPU：1x Intel Xeon&lt;br /&gt;
   </entry>
   
   <entry>
+    <title>2024VPS厂商优惠回顾</title>
+    <link href="https://minsummer.com/2024/12/13/186-2024VPS%E5%9B%9E%E9%A1%BE/"/>
+    <id>https://minsummer.com/2024/12/13/186-2024VPS%E5%9B%9E%E9%A1%BE/</id>
+    <published>2024-12-13T16:00:00.000Z</published>
+    <updated>2024-12-13T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;今年的VPS厂商可以说是安静如鸟，无论是黑五还是双十一，无论是国行还是国际，都没有什么比较优惠或者好的VPS。目前比较值得注意的只有2个：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="搬瓦工" scheme="https://minsummer.com/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/"/>
+    
+    <category term="VPS" scheme="https://minsummer.com/tags/VPS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>关于2025的一些展望</title>
     <link href="https://minsummer.com/2024/12/13/185-%E5%85%B3%E4%BA%8E2025%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B1%95%E6%9C%9B/"/>
     <id>https://minsummer.com/2024/12/13/185-%E5%85%B3%E4%BA%8E2025%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B1%95%E6%9C%9B/</id>
@@ -1284,27 +1305,6 @@ CPU：1x Intel Xeon&lt;br /&gt;
     <category term="2025" scheme="https://minsummer.com/tags/2025/"/>
     
     <category term="一些想法" scheme="https://minsummer.com/tags/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2024VPS厂商优惠回顾</title>
-    <link href="https://minsummer.com/2024/12/13/186-2024VPS%E5%9B%9E%E9%A1%BE/"/>
-    <id>https://minsummer.com/2024/12/13/186-2024VPS%E5%9B%9E%E9%A1%BE/</id>
-    <published>2024-12-13T16:00:00.000Z</published>
-    <updated>2024-12-13T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;今年的VPS厂商可以说是安静如鸟，无论是黑五还是双十一，无论是国行还是国际，都没有什么比较优惠或者好的VPS。目前比较值得注意的只有2个：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
-    
-    
-    <category term="搬瓦工" scheme="https://minsummer.com/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/"/>
-    
-    <category term="VPS" scheme="https://minsummer.com/tags/VPS/"/>
     
   </entry>
   
@@ -1600,6 +1600,43 @@ CPU：1x Intel Xeon&lt;br /&gt;
   </entry>
   
   <entry>
+    <title>V.PS2023款黑五香港测试</title>
+    <link href="https://minsummer.com/2024/05/30/171-V.PS2023%E6%AC%BE%E9%BB%91%E4%BA%94%E9%A6%99%E6%B8%AF%E6%B5%8B%E8%AF%95/"/>
+    <id>https://minsummer.com/2024/05/30/171-V.PS2023%E6%AC%BE%E9%BB%91%E4%BA%94%E9%A6%99%E6%B8%AF%E6%B5%8B%E8%AF%95/</id>
+    <published>2024-05-30T16:00:00.000Z</published>
+    <updated>2024-05-30T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;套餐内容：&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;V.PS 2023年黑五款-HK &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 vCPU&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 GB RAM&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20G SSD Storage&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;400GB Transfer&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;500Mbps VirtIO Interface&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 IPv4 &amp;amp; 1 IPv6 /64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Premium Network Profile&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29.9 Euro/Year &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;结论&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#结论&quot;&gt;&lt;/a&gt; 结论&lt;/h2&gt;
+&lt;p&gt;上来先说结论：&lt;br /&gt;
+优点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;香港线路，延迟特别低，移动快乐机，联通电信也能用&lt;/li&gt;
+&lt;li&gt;价格便宜，一年240人民币左右，一个月20&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;缺点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;流量双向的，翻墙可以直接默认200G,适合一个人用，而且还得少看YouTube，有一个月刷YouTube过多，直接给我关机了。&lt;/li&gt;
+&lt;li&gt;经常被打，尤其是电信，建议绕道&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;总结：推荐一个人使用，多一个人就马上捉急，然后就是这家后续更新服务说明，已经不保证线路了，唯一的优势是香港延迟低，但是除移动外其他线路丢包厉害，经常被打。今年到期我会放生它或者转卖出去。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="融合怪" scheme="https://minsummer.com/tags/%E8%9E%8D%E5%90%88%E6%80%AA/"/>
+    
+    <category term="V.PS 黑五HK" scheme="https://minsummer.com/tags/V-PS-%E9%BB%91%E4%BA%94HK/"/>
+    
+    <category term="香港线路" scheme="https://minsummer.com/tags/%E9%A6%99%E6%B8%AF%E7%BA%BF%E8%B7%AF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>V.PS2024款猫彦祖圣塞何测试</title>
     <link href="https://minsummer.com/2024/05/30/172-V.PS2024%E6%AC%BE%E7%8C%AB%E5%BD%A6%E7%A5%96%E6%AC%BE%E6%B5%8B%E8%AF%95/"/>
     <id>https://minsummer.com/2024/05/30/172-V.PS2024%E6%AC%BE%E7%8C%AB%E5%BD%A6%E7%A5%96%E6%AC%BE%E6%B5%8B%E8%AF%95/</id>
@@ -1636,43 +1673,6 @@ CPU：1x Intel Xeon&lt;br /&gt;
     <category term="美西线路" scheme="https://minsummer.com/tags/%E7%BE%8E%E8%A5%BF%E7%BA%BF%E8%B7%AF/"/>
     
     <category term="三网优化" scheme="https://minsummer.com/tags/%E4%B8%89%E7%BD%91%E4%BC%98%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>V.PS2023款黑五香港测试</title>
-    <link href="https://minsummer.com/2024/05/30/171-V.PS2023%E6%AC%BE%E9%BB%91%E4%BA%94%E9%A6%99%E6%B8%AF%E6%B5%8B%E8%AF%95/"/>
-    <id>https://minsummer.com/2024/05/30/171-V.PS2023%E6%AC%BE%E9%BB%91%E4%BA%94%E9%A6%99%E6%B8%AF%E6%B5%8B%E8%AF%95/</id>
-    <published>2024-05-30T16:00:00.000Z</published>
-    <updated>2024-05-30T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;套餐内容：&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;V.PS 2023年黑五款-HK &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 vCPU&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 GB RAM&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20G SSD Storage&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;400GB Transfer&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;500Mbps VirtIO Interface&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1 IPv4 &amp;amp; 1 IPv6 /64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Premium Network Profile&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29.9 Euro/Year &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;结论&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#结论&quot;&gt;&lt;/a&gt; 结论&lt;/h2&gt;
-&lt;p&gt;上来先说结论：&lt;br /&gt;
-优点：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;香港线路，延迟特别低，移动快乐机，联通电信也能用&lt;/li&gt;
-&lt;li&gt;价格便宜，一年240人民币左右，一个月20&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;缺点：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;流量双向的，翻墙可以直接默认200G,适合一个人用，而且还得少看YouTube，有一个月刷YouTube过多，直接给我关机了。&lt;/li&gt;
-&lt;li&gt;经常被打，尤其是电信，建议绕道&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;总结：推荐一个人使用，多一个人就马上捉急，然后就是这家后续更新服务说明，已经不保证线路了，唯一的优势是香港延迟低，但是除移动外其他线路丢包厉害，经常被打。今年到期我会放生它或者转卖出去。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
-    
-    
-    <category term="融合怪" scheme="https://minsummer.com/tags/%E8%9E%8D%E5%90%88%E6%80%AA/"/>
-    
-    <category term="V.PS 黑五HK" scheme="https://minsummer.com/tags/V-PS-%E9%BB%91%E4%BA%94HK/"/>
-    
-    <category term="香港线路" scheme="https://minsummer.com/tags/%E9%A6%99%E6%B8%AF%E7%BA%BF%E8%B7%AF/"/>
     
   </entry>
   
@@ -1831,6 +1831,27 @@ CPU：1x Intel Xeon&lt;br /&gt;
   </entry>
   
   <entry>
+    <title>如何阅读一本书</title>
+    <link href="https://minsummer.com/2024/04/14/162-%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/"/>
+    <id>https://minsummer.com/2024/04/14/162-%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/</id>
+    <published>2024-04-14T16:00:00.000Z</published>
+    <updated>2024-04-14T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;要是多年前的我，看到这个标题肯定转头就关闭页面，但是今天轮到我自己，我觉得我还是花点时间来描述一下我得读书观点吧。首先我觉得一本书，要简洁清楚说明自己观点，然后例证；重点是简洁。当然不同得书籍会有不同得描写方法，针对我阅读最多得科普和观点类书籍来说，我总结了几个暴论：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+    
+    <category term="读书指南" scheme="https://minsummer.com/tags/%E8%AF%BB%E4%B9%A6%E6%8C%87%E5%8D%97/"/>
+    
+    <category term="放弃一些读不懂的书" scheme="https://minsummer.com/tags/%E6%94%BE%E5%BC%83%E4%B8%80%E4%BA%9B%E8%AF%BB%E4%B8%8D%E6%87%82%E7%9A%84%E4%B9%A6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>2024推荐书单-1</title>
     <link href="https://minsummer.com/2024/04/14/161-2024%E6%8E%A8%E8%8D%90%E4%B9%A6%E5%8D%951/"/>
     <id>https://minsummer.com/2024/04/14/161-2024%E6%8E%A8%E8%8D%90%E4%B9%A6%E5%8D%951/</id>
@@ -1850,27 +1871,6 @@ CPU：1x Intel Xeon&lt;br /&gt;
     <category term="读书" scheme="https://minsummer.com/tags/%E8%AF%BB%E4%B9%A6/"/>
     
     <category term="书单" scheme="https://minsummer.com/tags/%E4%B9%A6%E5%8D%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何阅读一本书</title>
-    <link href="https://minsummer.com/2024/04/14/162-%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/"/>
-    <id>https://minsummer.com/2024/04/14/162-%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/</id>
-    <published>2024-04-14T16:00:00.000Z</published>
-    <updated>2024-04-14T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;要是多年前的我，看到这个标题肯定转头就关闭页面，但是今天轮到我自己，我觉得我还是花点时间来描述一下我得读书观点吧。首先我觉得一本书，要简洁清楚说明自己观点，然后例证；重点是简洁。当然不同得书籍会有不同得描写方法，针对我阅读最多得科普和观点类书籍来说，我总结了几个暴论：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
-    
-    
-    <category term="读书指南" scheme="https://minsummer.com/tags/%E8%AF%BB%E4%B9%A6%E6%8C%87%E5%8D%97/"/>
-    
-    <category term="放弃一些读不懂的书" scheme="https://minsummer.com/tags/%E6%94%BE%E5%BC%83%E4%B8%80%E4%BA%9B%E8%AF%BB%E4%B8%8D%E6%87%82%E7%9A%84%E4%B9%A6/"/>
     
   </entry>
   
@@ -2743,32 +2743,6 @@ CPU：1x Intel Xeon&lt;br /&gt;
   </entry>
   
   <entry>
-    <title>超能勇士崛起-又一好莱坞烂片</title>
-    <link href="https://minsummer.com/2023/07/21/127-%E8%B6%85%E8%83%BD%E5%8B%87%E5%A3%AB%E5%B4%9B%E8%B5%B7/"/>
-    <id>https://minsummer.com/2023/07/21/127-%E8%B6%85%E8%83%BD%E5%8B%87%E5%A3%AB%E5%B4%9B%E8%B5%B7/</id>
-    <published>2023-07-21T16:00:00.000Z</published>
-    <updated>2023-07-21T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;最近几年不知道是因为啥，好莱坞的爆米花大片连配爆米花都不行了。一个字，烂，特别的烂。&lt;br /&gt;
-《变形金刚——超能勇士崛起》一听这名字，我就知道，是在搞情怀，我的期望很低，剧情可以，打架场面好就行了。然后，——&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
-    
-    
-    <category term="好莱坞" scheme="https://minsummer.com/tags/%E5%A5%BD%E8%8E%B1%E5%9D%9E/"/>
-    
-    <category term="爆米花" scheme="https://minsummer.com/tags/%E7%88%86%E7%B1%B3%E8%8A%B1/"/>
-    
-    <category term="烂片吐槽" scheme="https://minsummer.com/tags/%E7%83%82%E7%89%87%E5%90%90%E6%A7%BD/"/>
-    
-    <category term="变形金刚" scheme="https://minsummer.com/tags/%E5%8F%98%E5%BD%A2%E9%87%91%E5%88%9A/"/>
-    
-  </entry>
-  
-  <entry>
     <title>关于死亡后的那亿万年</title>
     <link href="https://minsummer.com/2023/07/21/128-%E5%85%B3%E4%BA%8E%E6%AD%BB%E4%BA%A1%E5%90%8E%E7%9A%84%E9%82%A3%E4%BA%BF%E4%B8%87%E5%B9%B4/"/>
     <id>https://minsummer.com/2023/07/21/128-%E5%85%B3%E4%BA%8E%E6%AD%BB%E4%BA%A1%E5%90%8E%E7%9A%84%E9%82%A3%E4%BA%BF%E4%B8%87%E5%B9%B4/</id>
@@ -2793,6 +2767,32 @@ CPU：1x Intel Xeon&lt;br /&gt;
     <category term="生活这个游戏" scheme="https://minsummer.com/tags/%E7%94%9F%E6%B4%BB%E8%BF%99%E4%B8%AA%E6%B8%B8%E6%88%8F/"/>
     
     <category term="活着" scheme="https://minsummer.com/tags/%E6%B4%BB%E7%9D%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>超能勇士崛起-又一好莱坞烂片</title>
+    <link href="https://minsummer.com/2023/07/21/127-%E8%B6%85%E8%83%BD%E5%8B%87%E5%A3%AB%E5%B4%9B%E8%B5%B7/"/>
+    <id>https://minsummer.com/2023/07/21/127-%E8%B6%85%E8%83%BD%E5%8B%87%E5%A3%AB%E5%B4%9B%E8%B5%B7/</id>
+    <published>2023-07-21T16:00:00.000Z</published>
+    <updated>2023-07-21T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;最近几年不知道是因为啥，好莱坞的爆米花大片连配爆米花都不行了。一个字，烂，特别的烂。&lt;br /&gt;
+《变形金刚——超能勇士崛起》一听这名字，我就知道，是在搞情怀，我的期望很低，剧情可以，打架场面好就行了。然后，——&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想" scheme="https://minsummer.com/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+    
+    <category term="好莱坞" scheme="https://minsummer.com/tags/%E5%A5%BD%E8%8E%B1%E5%9D%9E/"/>
+    
+    <category term="爆米花" scheme="https://minsummer.com/tags/%E7%88%86%E7%B1%B3%E8%8A%B1/"/>
+    
+    <category term="烂片吐槽" scheme="https://minsummer.com/tags/%E7%83%82%E7%89%87%E5%90%90%E6%A7%BD/"/>
+    
+    <category term="变形金刚" scheme="https://minsummer.com/tags/%E5%8F%98%E5%BD%A2%E9%87%91%E5%88%9A/"/>
     
   </entry>
   
@@ -3068,27 +3068,6 @@ CPU：1x Intel Xeon&lt;br /&gt;
   </entry>
   
   <entry>
-    <title>技能树梳理</title>
-    <link href="https://minsummer.com/2023/05/22/113-%E6%8A%80%E8%83%BD%E6%A0%91/"/>
-    <id>https://minsummer.com/2023/05/22/113-%E6%8A%80%E8%83%BD%E6%A0%91/</id>
-    <published>2023-05-22T16:00:00.000Z</published>
-    <updated>2023-05-22T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;梳理一下自己的技能树&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
-    
-    
-    <category term="思维导图" scheme="https://minsummer.com/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
-    
-    <category term="技能树" scheme="https://minsummer.com/tags/%E6%8A%80%E8%83%BD%E6%A0%91/"/>
-    
-  </entry>
-  
-  <entry>
     <title>git简明学习手册</title>
     <link href="https://minsummer.com/2023/05/22/114git%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/"/>
     <id>https://minsummer.com/2023/05/22/114git%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/</id>
@@ -3106,6 +3085,27 @@ CPU：1x Intel Xeon&lt;br /&gt;
     <category term="git" scheme="https://minsummer.com/tags/git/"/>
     
     <category term="一日一技术" scheme="https://minsummer.com/tags/%E4%B8%80%E6%97%A5%E4%B8%80%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>技能树梳理</title>
+    <link href="https://minsummer.com/2023/05/22/113-%E6%8A%80%E8%83%BD%E6%A0%91/"/>
+    <id>https://minsummer.com/2023/05/22/113-%E6%8A%80%E8%83%BD%E6%A0%91/</id>
+    <published>2023-05-22T16:00:00.000Z</published>
+    <updated>2023-05-22T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;梳理一下自己的技能树&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="思维导图" scheme="https://minsummer.com/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
+    
+    <category term="技能树" scheme="https://minsummer.com/tags/%E6%8A%80%E8%83%BD%E6%A0%91/"/>
     
   </entry>
   
@@ -4085,9 +4085,9 @@ CPU：1x Intel Xeon&lt;br /&gt;
     <category term="那些年遇见的人" scheme="https://minsummer.com/categories/%E9%82%A3%E4%BA%9B%E5%B9%B4%E9%81%87%E8%A7%81%E7%9A%84%E4%BA%BA/"/>
     
     
-    <category term="二哥" scheme="https://minsummer.com/tags/%E4%BA%8C%E5%93%A5/"/>
-    
     <category term="那些年的二哥" scheme="https://minsummer.com/tags/%E9%82%A3%E4%BA%9B%E5%B9%B4%E7%9A%84%E4%BA%8C%E5%93%A5/"/>
+    
+    <category term="二哥" scheme="https://minsummer.com/tags/%E4%BA%8C%E5%93%A5/"/>
     
   </entry>
   
@@ -4811,6 +4811,35 @@ CPU：1x Intel Xeon&lt;br /&gt;
   </entry>
   
   <entry>
+    <title>v2ray的一些Tips</title>
+    <link href="https://minsummer.com/2022/04/30/v2ray%E7%9A%84%E4%B8%80%E4%BA%9BTips/"/>
+    <id>https://minsummer.com/2022/04/30/v2ray%E7%9A%84%E4%B8%80%E4%BA%9BTips/</id>
+    <published>2022-04-30T13:50:00.000Z</published>
+    <updated>2022-04-30T13:50:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1，使用脚本安装V2，这个脚本内容放在GIT上，理论上是不会消失的，脚本里面覆盖了大多数的常用配置&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;bash &amp;lt;(curl -s -L &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
+    
+    
+    <category term="v2ray" scheme="https://minsummer.com/tags/v2ray/"/>
+    
+    <category term="websocket+tls" scheme="https://minsummer.com/tags/websocket-tls/"/>
+    
+  </entry>
+  
+  <entry>
     <title>vscode搭建虚拟环境</title>
     <link href="https://minsummer.com/2022/04/30/vscode%E6%90%AD%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/"/>
     <id>https://minsummer.com/2022/04/30/vscode%E6%90%AD%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</id>
@@ -4837,35 +4866,6 @@ CPU：1x Intel Xeon&lt;br /&gt;
     <category term="jupyter" scheme="https://minsummer.com/tags/jupyter/"/>
     
     <category term="python" scheme="https://minsummer.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>v2ray的一些Tips</title>
-    <link href="https://minsummer.com/2022/04/30/v2ray%E7%9A%84%E4%B8%80%E4%BA%9BTips/"/>
-    <id>https://minsummer.com/2022/04/30/v2ray%E7%9A%84%E4%B8%80%E4%BA%9BTips/</id>
-    <published>2022-04-30T13:50:00.000Z</published>
-    <updated>2022-04-30T13:50:00.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;1，使用脚本安装V2，这个脚本内容放在GIT上，理论上是不会消失的，脚本里面覆盖了大多数的常用配置&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;bash &amp;lt;(curl -s -L &lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="技术顾问" scheme="https://minsummer.com/categories/%E6%8A%80%E6%9C%AF%E9%A1%BE%E9%97%AE/"/>
-    
-    
-    <category term="v2ray" scheme="https://minsummer.com/tags/v2ray/"/>
-    
-    <category term="websocket+tls" scheme="https://minsummer.com/tags/websocket-tls/"/>
     
   </entry>
   
